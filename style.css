@@ -1,0 +1,124 @@
+/* CSS Document */
+BODY{
+    margin:0px;
+    font-family:Helvetica, Arial, sans-serif
+}
+
+.header{
+    height:120px;
+    background-color:#444444;
+    color:#FFFFFF;
+    margin:0px;
+}
+
+a:link, a:active, a:visited {
+	color: #c30;
+	text-decoration: none;
+	}
+	
+a:hover {
+	color: #FF0000;
+	text-decoration: underline;
+	}
+	
+.navigation{
+	color:#999999;
+	margin-left: 50px;
+	font-weight:bold;
+	width:100%;
+	padding-top: 10px;
+}
+
+.navigation a {
+    color:#CCCCCC;
+    padding-right: 20px;
+    text-decoration:none;
+}
+
+.nav:hover{
+    color:#CCCCCC;
+    text-decoration:none;
+}
+
+.logo, .logo a {
+	color:#FFFFFF;
+	font-size:100px;
+	font-weight:bold;
+	margin-left:90px;
+/*	margin-bottom: -80px; */
+	margin-top: -28px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	letter-spacing:-5px;
+}
+
+
+.main_body{
+width:700px;
+margin-left:150px;
+float:left;
+background-color:#FFFFFF;
+margin-top:20px;
+}
+
+h2 {
+	margin: 0;
+	margin-left:-40px;
+	color: #000;
+	font-size: 20px;
+	font-weight: normal;
+	letter-spacing: 2px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+h2 a:link, h2 a:hover, h2 a:visited {
+	color: #000;
+	text-decoration: none;
+}
+	
+h1 {
+	font-size: 20px;
+	font-weight: normal;
+	letter-spacing: -1px;
+	color: #000;
+	margin: 0;
+}
+
+h1 a:link, h1 a:visited, h1 a:hover {
+	text-decoration: none;
+	color: #000;
+}
+	
+h4 {
+	margin: 0;
+	color: #000;
+	font-size: 12px;
+}
+
+h3 {
+	margin: 0 0 8px 0;
+	color: #999;
+	font-size: 19px;
+	font-weight: normal;
+	letter-spacing: -1px;
+	text-transform: uppercase;
+}
+
+h5 {
+	margin: 0 0 8px 0;
+	color: #999;
+	font-size: 12px;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+content p {
+    margin-bottom:1.5em;
+}
+
+.console {
+    border:1px solid #FF6161;
+    font-family:monospace;
+    font-size:10pt;
+    padding:5px;
+}
+
