@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos.audio.SDL.rwops module &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="up" title="cocos.audio.SDL package" href="cocos.audio.SDL.html" />
+    <link rel="next" title="cocos.audio.SDL.sound module" href="cocos.audio.SDL.sound.html" />
+    <link rel="prev" title="cocos.audio.SDL.mixer module" href="cocos.audio.SDL.mixer.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.SDL.sound.html" title="cocos.audio.SDL.sound module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.SDL.mixer.html" title="cocos.audio.SDL.mixer module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &raquo;</li>
+          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" accesskey="U">cocos.audio.SDL package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cocos.audio.SDL.rwops">
+<span id="cocos-audio-sdl-rwops-module"></span><h1>cocos.audio.SDL.rwops module<a class="headerlink" href="#module-cocos.audio.SDL.rwops" title="Permalink to this headline">¶</a></h1>
+<p>General interface for SDL to read and write data sources.</p>
+<p>For files, use <cite>SDL_RWFromFile</cite>.  Other Python file-type objects can be
+used with <cite>SDL_RWFromObject</cite>.  If another library provides a constant void
+pointer to a contiguous region of memory, <cite>SDL_RWFromMem</cite> and
+<cite>SDL_RWFromConstMem</cite> can be used.</p>
+<dl class="class">
+<dt id="cocos.audio.SDL.rwops.SDL_RWops">
+<em class="property">class </em><code class="descname">SDL_RWops</code><a class="headerlink" href="#cocos.audio.SDL.rwops.SDL_RWops" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">_ctypes.Structure</span></code></p>
+<p>Read/write operations structure.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Ivariables:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>seek</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
+<dd><p class="first last">seek(context: <cite>SDL_RWops</cite>, offset: int, whence: int) -&gt; int</p>
+</dd>
+<dt><cite>read</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
+<dd><p class="first last">read(context: <cite>SDL_RWops</cite>, ptr: c_void_p, size: int, maxnum: int)
+-&gt; int</p>
+</dd>
+<dt><cite>write</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
+<dd><p class="first last">write(context: <cite>SDL_RWops</cite>, ptr: c_void_p, size: int, num: int) -&gt;
+int</p>
+</dd>
+<dt><cite>close</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
+<dd><p class="first last">close(context: <cite>SDL_RWops</cite>) -&gt; int</p>
+</dd>
+<dt><cite>type</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Undocumented</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cocos.audio.SDL.rwops.SDL_RWops.close">
+<code class="descname">close</code><a class="headerlink" href="#cocos.audio.SDL.rwops.SDL_RWops.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.audio.SDL.rwops.SDL_RWops.read">
+<code class="descname">read</code><a class="headerlink" href="#cocos.audio.SDL.rwops.SDL_RWops.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.audio.SDL.rwops.SDL_RWops.seek">
+<code class="descname">seek</code><a class="headerlink" href="#cocos.audio.SDL.rwops.SDL_RWops.seek" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.audio.SDL.rwops.SDL_RWops.type">
+<code class="descname">type</code><a class="headerlink" href="#cocos.audio.SDL.rwops.SDL_RWops.type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.audio.SDL.rwops.SDL_RWops.write">
+<code class="descname">write</code><a class="headerlink" href="#cocos.audio.SDL.rwops.SDL_RWops.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.SDL.rwops.SDL_RWFromConstMem">
+<code class="descname">SDL_RWFromConstMem</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.rwops.SDL_RWFromConstMem" title="Permalink to this definition">¶</a></dt>
+<dd><p>These functions shouldn&#8217;t be useful to Pythoners.
+SDL_AllocRW = dll.function(&#8216;SDL_AllocRW&#8217;,</p>
+<div class="system-message">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">C:\cocos_pristine\cocos2d-python\cocos\audio\SDL\rwops.py:docstring of cocos.audio.SDL.rwops.SDL_RWFromConstMem</tt>, line 3)</p>
+Unexpected indentation.</div>
+<blockquote>
+<div><p>&#8216;&#8217;&#8216;Allocate a blank SDL_Rwops structure.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">rtype:</th><td class="field-body"><cite>SDL_RWops</cite></td>
+</tr>
+</tbody>
+</table>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">C:\cocos_pristine\cocos2d-python\cocos\audio\SDL\rwops.py:docstring of cocos.audio.SDL.rwops.SDL_RWFromConstMem</tt>, line 6)</p>
+Field list ends without a blank line; unexpected unindent.</div>
+<p>&#8216;&#8217;&#8217;
+args=[],
+arg_types=[],
+return_type=POINTER(SDL_RWops),
+dereference_return=True,
+require_return=True)</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>SDL_FreeRW = dll.function(&#8216;SDL_FreeRW&#8217;,</dt>
+<dd><p class="first">&#8216;&#8217;&#8216;Free a SDL_RWops structure.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">param area:</th><td class="field-body"><cite>SDL_RWops</cite></td>
+</tr>
+</tbody>
+</table>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">C:\cocos_pristine\cocos2d-python\cocos\audio\SDL\rwops.py:docstring of cocos.audio.SDL.rwops.SDL_RWFromConstMem</tt>, line 17)</p>
+Field list ends without a blank line; unexpected unindent.</div>
+<p class="last">&#8216;&#8217;&#8217;
+args=[&#8216;area&#8217;],
+arg_types=[POINTER(SDL_RWops)],
+return_type=None)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.SDL.rwops.SDL_RWFromObject">
+<code class="descname">SDL_RWFromObject</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.rwops.SDL_RWFromObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an SDL_RWops structure from a Python file-like object.</p>
+<p>The object must support the following methods in the same fashion as
+the builtin file object:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">read(len)</span> <span class="pre">-&gt;</span> <span class="pre">data</span></code></li>
+<li><code class="docutils literal"><span class="pre">write(data)</span></code></li>
+<li><code class="docutils literal"><span class="pre">seek(offset,</span> <span class="pre">whence)</span></code></li>
+<li><code class="docutils literal"><span class="pre">close()</span></code></li>
+</ul>
+</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><cite>obj</cite>: Python file-like object to wrap</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><cite>SDL_RWops</cite></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cocos.audio.SDL.mixer.html"
+                        title="previous chapter">cocos.audio.SDL.mixer module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cocos.audio.SDL.sound.html"
+                        title="next chapter">cocos.audio.SDL.sound module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/cocos.audio.SDL.rwops.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.SDL.sound.html" title="cocos.audio.SDL.sound module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.SDL.mixer.html" title="cocos.audio.SDL.mixer module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &raquo;</li>
+          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" >cocos.audio.SDL package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

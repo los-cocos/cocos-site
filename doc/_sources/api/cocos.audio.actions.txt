@@ -1,0 +1,7 @@
+cocos.audio.actions module
+==========================
+
+.. automodule:: cocos.audio.actions
+    :members:
+    :undoc-members:
+    :show-inheritance:

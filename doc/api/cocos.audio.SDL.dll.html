@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos.audio.SDL.dll module &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="up" title="cocos.audio.SDL package" href="cocos.audio.SDL.html" />
+    <link rel="next" title="cocos.audio.SDL.endian module" href="cocos.audio.SDL.endian.html" />
+    <link rel="prev" title="cocos.audio.SDL.darwin module" href="cocos.audio.SDL.darwin.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.SDL.endian.html" title="cocos.audio.SDL.endian module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.SDL.darwin.html" title="cocos.audio.SDL.darwin module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &raquo;</li>
+          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" accesskey="U">cocos.audio.SDL package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cocos.audio.SDL.dll">
+<span id="cocos-audio-sdl-dll-module"></span><h1>cocos.audio.SDL.dll module<a class="headerlink" href="#module-cocos.audio.SDL.dll" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="cocos.audio.SDL.dll.SDL_DLL">
+<em class="property">class </em><code class="descname">SDL_DLL</code><span class="sig-paren">(</span><em>library_name</em>, <em>version_function_name</em>, <em>version=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="cocos.audio.SDL.dll.SDL_DLL.assert_version_compatible">
+<code class="descname">assert_version_compatible</code><span class="sig-paren">(</span><em>name</em>, <em>since</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.assert_version_compatible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raises an exception if <cite>since</cite> is later than the loaded library.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.SDL.dll.SDL_DLL.function">
+<code class="descname">function</code><span class="sig-paren">(</span><em>name</em>, <em>doc</em>, <em>args=[]</em>, <em>arg_types=[]</em>, <em>return_type=None</em>, <em>dereference_return=False</em>, <em>require_return=False</em>, <em>success_return=None</em>, <em>error_return=None</em>, <em>since=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a wrapper function for ctypes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>name</cite></dt>
+<dd><p class="first last">The name of the function as it appears in the shared library.</p>
+</dd>
+<dt><cite>doc</cite></dt>
+<dd><p class="first last">Docstring to associate with the wrapper function.</p>
+</dd>
+<dt><cite>args</cite></dt>
+<dd><p class="first last">List of strings giving the argument names.</p>
+</dd>
+<dt><cite>arg_types</cite></dt>
+<dd><p class="first last">List of ctypes classes giving the argument types.</p>
+</dd>
+<dt><cite>return_type</cite></dt>
+<dd><p class="first last">The ctypes class giving the wrapped function&#8217;s native
+return type.</p>
+</dd>
+<dt><cite>dereference_return</cite></dt>
+<dd><p class="first last">If True, the return value is assumed to be a pointer and
+will be dereferenced via <code class="docutils literal"><span class="pre">.contents</span></code> before being
+returned to the user application.</p>
+</dd>
+<dt><cite>require_return</cite></dt>
+<dd><p class="first last">Used in conjunction with <cite>dereference_return</cite>; if True, an
+exception will be raised if the result is NULL; if False
+None will be returned when the result is NULL.</p>
+</dd>
+<dt><cite>success_return</cite></dt>
+<dd><p class="first last">If not None, the expected result of the wrapped function.
+If the return value does not equal success_return, an
+exception will be raised.</p>
+</dd>
+<dt><cite>error_return</cite></dt>
+<dd><p class="first last">If not None, the error result of the wrapped function.  If
+the return value equals error_return, an exception will be
+raised.  Cannot be used in conjunction with
+<cite>success_return</cite>.</p>
+</dd>
+<dt><cite>since</cite></dt>
+<dd><p class="first last">Tuple (major, minor, patch) or string &#8216;x.y.z&#8217; of the first
+version of SDL in which this function appears.  If the
+loaded version predates it, a placeholder function that
+raises <cite>SDL_NotImplementedError</cite> will be returned instead.
+Set to None if the function is in all versions of SDL.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.SDL.dll.SDL_DLL.private_function">
+<code class="descname">private_function</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.private_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a wrapper function for ctypes with internal documentation
+and no argument names.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.SDL.dll.SDL_DLL.version_compatible">
+<code class="descname">version_compatible</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.version_compatible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True iff <cite>v</cite> is equal to or later than the loaded library
+version.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cocos.audio.SDL.darwin.html"
+                        title="previous chapter">cocos.audio.SDL.darwin module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cocos.audio.SDL.endian.html"
+                        title="next chapter">cocos.audio.SDL.endian module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/cocos.audio.SDL.dll.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.SDL.endian.html" title="cocos.audio.SDL.endian module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.SDL.darwin.html" title="cocos.audio.SDL.darwin module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &raquo;</li>
+          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" >cocos.audio.SDL package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

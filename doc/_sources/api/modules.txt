@@ -1,0 +1,7 @@
+cocos
+=====
+
+.. toctree::
+   :maxdepth: 4
+
+   cocos

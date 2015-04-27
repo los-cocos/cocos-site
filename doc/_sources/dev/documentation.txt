@@ -1,0 +1,63 @@
+===================
+Documentation Notes
+===================
+
+Making the switch to sphinx
+===========================
+
+Documentation was rendered with epydoc and some custom extensions until cocos 0.5.5. Epydoc is long time unmaintained, and needs patchs to work with newer python and docutils versions, so a change to a well maintained doc library was needed.
+
+Sphinx is the current de facto standard, so documentation will use sphinx.
+
+Guidelines for sphinx customization
+===================================
+
+Keep customization at a minimun to avoid the need of maintenace when sphinx changes.
+
+Hints for some common markup operations
+=======================================
+
+please use 4 spaces indentation
+
+tabs usually break things, convert them to spaces
+
+inline literal text: \`\`:class:\`\` -> ``:class:`` 
+
+(in link syntax ``~`` is a modidier that supress the high parts in a dotted name)
+ 
+link to a cocos module: ``:mod:`~cocos.cocosnode` ->`` :mod:`~cocos.cocosnode`
+
+link to a cocos module: ``:mod:`cocos.cocosnode` ->`` :mod:`cocos.cocosnode`
+
+link to a class: ``:class:`~cocos.cocosnode.CocosNode` ->`` :class:`~cocos.cocosnode.CocosNode`
+
+link to a method: ``:meth:`~cocos.cocosnode.CocosNode.add` ->``  :meth:`~cocos.cocosnode.CocosNode.add`
+
+link to a method:
+
+``:meth:`CocosNode.add<cocos.cocosnode.CocosNode.add>` ->``  :meth:`CocosNode.add()<cocos.cocosnode.CocosNode.add>`
+
+link to a function: ``:func:`cocos.tiles.load` ->`` :func:`cocos.tiles.load`
+
+There are other roles like
+
+``:data:`` -> Reference a module-level variable.
+
+``:const:`` -> Reference a defined constant. This may be a Python variable that is not intended to be changed.
+
+``:attr:`` -> Reference a data attribute of an object.
+
+``:exc:``  -> Reference an exception. A dotted name may be used.
+
+``:obj:``  -> Reference an object of unspecified type. Useful e.g. as the default_role.
+
+Link to a section or some arbitrary point in any document:
+
+	- declare a label at the target location with ``.. _labelname:`` (the '_' is not part of labelname)
+	- write the link as ``:ref:`TextToShowInLink<labelname>``` (brackets included)
+	- if TextToShowInLink is ommited the ref should be just before a section and the section title will be used as the text to show in the link
+	- labelname must be unique across all documents
+	
+Link to another document in the current sphinx build: 
+    - ``:doc:`TextToShowInLink<documentName>``` (brackets included)
+    - ``:doc:`documentName``` (will show the document title in the link)

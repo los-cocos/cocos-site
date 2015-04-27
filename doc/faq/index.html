@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos2d FAQ &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="next" title="Dev Notes" href="../dev/index.html" />
+    <link rel="prev" title="cocos.wired module" href="../api/cocos.wired.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../dev/index.html" title="Dev Notes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../api/cocos.wired.html" title="cocos.wired module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="cocos2d-faq">
+<h1>cocos2d FAQ<a class="headerlink" href="#cocos2d-faq" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cocos2d-frequently-asked-questions">
+<h2>cocos2d Frequently Asked Questions<a class="headerlink" href="#cocos2d-frequently-asked-questions" title="Permalink to this headline">¶</a></h2>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#can-i-use-3d-objects-in-cocos2d" id="id1">Can I use 3D objects in cocos2d ?</a></li>
+<li><a class="reference internal" href="#can-i-use-cocos2d-s-sprites-and-actions-without-the-rest-of-the-framework" id="id2">Can I use cocos2d&#8217;s sprites and actions without the rest of the framework ?</a></li>
+<li><a class="reference internal" href="#can-i-code-a-presentation-ala-powerpoint-in-cocos2d" id="id3">Can I code a presentation (ala PowerPoint) in cocos2d ?</a></li>
+<li><a class="reference internal" href="#i-get-this-error-error-gpu-doesn-t-support-frame-buffers-objects-can-t-continue" id="id4">I get this error: ERROR: GPU doesn&#8217;t support Frame Buffers Objects. Can&#8217;t continue</a></li>
+</ul>
+</div>
+<div class="section" id="can-i-use-3d-objects-in-cocos2d">
+<h3><a class="toc-backref" href="#id1">Can I use 3D objects in cocos2d ?</a><a class="headerlink" href="#can-i-use-3d-objects-in-cocos2d" title="Permalink to this headline">¶</a></h3>
+<p>Yes. cocos2d uses <a class="reference external" href="http://www.pyglet.org">pyglet</a> / OpenGL so you can
+use 3D objects and use them within cocos2d.</p>
+<p>You can include some 3D objects in your 2d game
+to improve the quality of your graphics without any problem.</p>
+<p>Also, the default projection matrix of cocos2d is a 3D one,
+so probably you won&#8217;t need to change it. But you can override
+the projection matrix by registering to the <code class="docutils literal"><span class="pre">director</span> <span class="pre">on_resize</span></code>
+event. See the <cite>test/test_custom_on_resize.py</cite> code as an example.</p>
+<p>To enable OpenGL depth test, you can call Director&#8217;s <cite>set_depth_test</cite> method.</p>
+<p>Also, remember that cocos2d focuses on 2D games, so if you want
+to create a full-blown 3D game, <a class="reference external" href="http://www.panda3d.org">Panda3d</a> will suit you best.</p>
+</div>
+<div class="section" id="can-i-use-cocos2d-s-sprites-and-actions-without-the-rest-of-the-framework">
+<h3><a class="toc-backref" href="#id2">Can I use cocos2d&#8217;s sprites and actions without the rest of the framework ?</a><a class="headerlink" href="#can-i-use-cocos2d-s-sprites-and-actions-without-the-rest-of-the-framework" title="Permalink to this headline">¶</a></h3>
+<p>Short answer: <strong>No</strong>.
+Long answer: <strong>Yes</strong>.</p>
+<p>Almost everything in cocos2d is <cite>CocosNode</cite> object (<code class="docutils literal"><span class="pre">sprites</span></code>, <code class="docutils literal"><span class="pre">layers</span></code>,
+<code class="docutils literal"><span class="pre">scenes</span></code>, etc...), so the easiest way to use cocos2d&#8217;s sprites (or any
+other <cite>CocosNode</cite> object) is to port <cite>CocosNode</cite> to your project.</p>
+<p>Since <cite>CocosNode</cite> uses director&#8217;s <cite>get_window_size</cite> method, you shall create
+a Director stub in your project that implements <cite>get_window_size</cite>.
+You shall also call the <cite>CocosNode.visit</cite> method from your main loop to draw
+the sprites.</p>
+<p>Although I haven&#8217;t tried it, I think this shall work ok. If it doesn&#8217;t work,
+let us know.</p>
+</div>
+<div class="section" id="can-i-code-a-presentation-ala-powerpoint-in-cocos2d">
+<h3><a class="toc-backref" href="#id3">Can I code a presentation (ala PowerPoint) in cocos2d ?</a><a class="headerlink" href="#can-i-code-a-presentation-ala-powerpoint-in-cocos2d" title="Permalink to this headline">¶</a></h3>
+<p>Yes, you can.</p>
+<p>Since cocos2d has features like &#8216;scene flow control&#8217; and transitions
+you can code a presentation using cocos2d relatively easy, and make
+it look pretty cool using those transitions.</p>
+<p>Did you know that we have OpenGL transitions, like the ones you will find
+in Apple&#8217;s Keynote and OpenOffice&#8217;s Impress ? That&#8217;s cool :-)</p>
+<p>For example, the lighting talk that we did in PyCon 2008 was coded in cocos2d.
+The source code is here: <a class="reference external" href="http://los-cocos.googlecode.com/svn/branches/pycon-lighting-talk/">pycon 2008 cocos2d lighting talk</a></p>
+<p>That being said, you should bear in mind that cocos2d is not a presentation
+tool. We are not planning to add presentation-like features to cocos2d.</p>
+<p>If you want a python presentation tool, we recommend:
+<a class="reference external" href="http://code.google.com/p/bruce-tpt/">Bruce the Presentation Tool</a></p>
+</div>
+<div class="section" id="i-get-this-error-error-gpu-doesn-t-support-frame-buffers-objects-can-t-continue">
+<h3><a class="toc-backref" href="#id4">I get this error: ERROR: GPU doesn&#8217;t support Frame Buffers Objects. Can&#8217;t continue</a><a class="headerlink" href="#i-get-this-error-error-gpu-doesn-t-support-frame-buffers-objects-can-t-continue" title="Permalink to this headline">¶</a></h3>
+<p>This means that your GPU doesn&#8217;t support the <code class="docutils literal"><span class="pre">GL_EXT_framebuffer_object</span></code> extension.</p>
+<p>cocos2d&#8217;s <a class="reference external" href="http://python.cocos2d.org/doc/programming_guide/effects.html">effects</a> needs this extension, and some transitions that depends on
+some effects will need it too.</p>
+<p>The workaround is to activate the <em>GenericGrabber</em> by editing the <code class="docutils literal"><span class="pre">cocos/framegrabber.py</span></code> file.
+To do so, modify these lines:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s">&quot;ERROR: GPU doesn&#39;t support Frame Buffers Objects. Can&#39;t continue&quot;</span><span class="p">)</span>
+<span class="c">#_best_grabber = GenericGrabber</span>
+<span class="c">#return _best_grabber()</span>
+</pre></div>
+</div>
+<p>into these ones:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">#raise Exception(&quot;ERROR: GPU doesn&#39;t support Frame Buffers Objects. Can&#39;t continue&quot;)</span>
+<span class="n">_best_grabber</span> <span class="o">=</span> <span class="n">GenericGrabber</span>
+<span class="k">return</span> <span class="n">_best_grabber</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>WARNING</strong> : This modification will let you see the effects, but it doesn&#8217;t
+support some features, like having effects on layers or sprites.
+It will also perform much slower. And we don&#8217;t support it.</p>
+<p>As we said, it is a workaround, not a fix.</p>
+<p>If you want to fix it, you can contribute with a <a class="reference external" href="http://oss.sgi.com/projects/ogl-sample/registry/SGIX/pbuffer.txt">pbuffer grabber</a> .
+This unfinished code might help you: <a class="reference external" href="http://los-cocos.googlecode.com/svn/branches/branch-0.2/cocos/gl_pbuffer.py">gl_pbuffer.py</a></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">cocos2d FAQ</a><ul>
+<li><a class="reference internal" href="#cocos2d-frequently-asked-questions">cocos2d Frequently Asked Questions</a><ul>
+<li><a class="reference internal" href="#can-i-use-3d-objects-in-cocos2d">Can I use 3D objects in cocos2d ?</a></li>
+<li><a class="reference internal" href="#can-i-use-cocos2d-s-sprites-and-actions-without-the-rest-of-the-framework">Can I use cocos2d&#8217;s sprites and actions without the rest of the framework ?</a></li>
+<li><a class="reference internal" href="#can-i-code-a-presentation-ala-powerpoint-in-cocos2d">Can I code a presentation (ala PowerPoint) in cocos2d ?</a></li>
+<li><a class="reference internal" href="#i-get-this-error-error-gpu-doesn-t-support-frame-buffers-objects-can-t-continue">I get this error: ERROR: GPU doesn&#8217;t support Frame Buffers Objects. Can&#8217;t continue</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../api/cocos.wired.html"
+                        title="previous chapter">cocos.wired module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../dev/index.html"
+                        title="next chapter">Dev Notes</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/faq/index.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../dev/index.html" title="Dev Notes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../api/cocos.wired.html" title="cocos.wired module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos2d Programming Guide &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="next" title="Introduction" href="introduction.html" />
+    <link rel="prev" title="cocos2d 0.6.3 Documentation Index" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="cocos2d 0.6.3 Documentation Index"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="cocos2d-programming-guide">
+<h1>cocos2d Programming Guide<a class="headerlink" href="#cocos2d-programming-guide" title="Permalink to this headline">¶</a></h1>
+<div class="figure">
+<img alt="../_images/coco.png" src="../_images/coco.png" />
+</div>
+<p>The cocos2d Programming Guide provides in-depth documentation for writing
+applications that use cocos2d.  Many topics described here reference the cocos2d
+API reference, provided separately.</p>
+<p>If this is your first time reading about cocos2d, we suggest you start at <a class="reference internal" href="quickstart.html"><em>Writing a cocos2d application</em></a> .</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation, Dependencies and Compatibility</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Writing a cocos2d application</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic_concepts.html">Basic Concepts</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="actions.html">Actions, Transformations and Effects</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">Scenes &amp; Transitions</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tiled_map.html">Tiled maps</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cocosnodes.html">CocosNodes</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="interpreter.html">Built-in Python Interpreter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="default_handlers.html">Default Handlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collision.html">Collision</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="skeleton/skeleton.html">Skeletal Animations</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation, Dependencies and Compatibility</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#dependencies">Dependencies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#most-of-functionality">most of functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#particles-support">particles support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#audio-and-video-support-by-avbin">audio and video support by AVbin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#audio-support-by-sdl">audio support by SDL</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#compatibility">Compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#installing">Installing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#using-pythonpath-or-pth">Using PYTHONPATH or .pth</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Writing a cocos2d application</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#hello-world">Hello, World</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#hello-actions">Hello Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#handling-events">Handling Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#where-to-next">Where to next?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="basic_concepts.html">Basic Concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts.html#scenes">Scenes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts.html#director">Director</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts.html#layers">Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts.html#sprites">Sprites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_concepts.html#events">Events</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts.html#the-pyglet-event-framework-in-a-pinch">The pyglet event framework in a pinch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basic_concepts.html#cocos-and-events">Cocos and events</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="actions.html">Actions, Transformations and Effects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="actions.html#actions">Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html#basic-actions">Basic actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html#special-actions">Special Actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html#composition-and-modification-of-actions">Composition and modification of actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html#effects">Effects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="actions.html#how-they-work">How they work</a></li>
+<li class="toctree-l3"><a class="reference internal" href="actions.html#d-actions">3D actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="actions.html#index-of-grid-effects">Index of grid effects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="actions.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="actions.html#creating-your-own-actions">Creating your own actions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="actions.html#basic-internals">Basic Internals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="actions.html#instant-actions">Instant Actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="actions.html#interval-actions">Interval Actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="actions.html#grid-actions">Grid Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transitions.html">Scenes &amp; Transitions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="transitions.html#using-director-s-api">Using Director&#8217;s API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transitions.html#transitions">Transitions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tiled_map.html">Tiled maps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tiled_map.html#maps">Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiled_map.html#the-xml-file-specification">The XML File Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiled_map.html#xml-file-contents">XML file contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiled_map.html#map-cell-and-tile-properties">Map, Cell and Tile Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiled_map.html#controlling-map-scrolling">Controlling Map Scrolling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiled_map.html#map-queries">Map Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiled_map.html#rectangular-maps">Rectangular Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiled_map.html#rectangular-map-collisions">Rectangular Map Collisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiled_map.html#support-for-tmx-object-layers">Support for TMX object layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiled_map.html#support-for-tmx-maps-with-hexagonal-tiles">Support for .TMX maps with hexagonal tiles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cocosnodes.html">CocosNodes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cocosnodes.html#cocosnode-functionality">CocosNode Functionality</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#parent-child">Parent-child</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#spatial-placement">Spatial Placement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#going-in-or-out-of-the-active-scene">Going in or out of the active scene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#render">Render</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#time-management">Time management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#automated-changes-along-the-time-actions-management">Automated changes along the time (actions management)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cocosnodes.html#brief-tour-of-built-in-cocosnode-subclasses">Brief tour of built-in CocosNode subclasses</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#scene">Scene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#transitionscene">TransitionScene</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#layer">Layer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#colorlayer">ColorLayer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#multiplexlayer">MultiplexLayer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#scrollingmanager">ScrollingManager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#scrollablelayer">ScrollableLayer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#rectmaplayer-and-hexmaplayer">RectMapLayer and HexMapLayer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#pythoninterpreterlayer">PythonInterpreterLayer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#sprite">Sprite</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#particle-systems">Particle Systems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#textelement-label-htmllabel-richlabel">TextElement, Label, HTMLLabel, RichLabel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#menu">Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#menu-items">Menu items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#creating-your-cocosnode-subclasses">Creating your CocosNode subclasses</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cocosnodes.html#cocosnodes-examples">CocosNodes Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#parent-child-examples">Parent-Child examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#spatial-placement-snippets">Spatial Placement snippets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocosnodes.html#automated-changes-along-the-time-snippets">Automated changes along the time snippets</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="interpreter.html">Built-in Python Interpreter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="default_handlers.html">Default Handlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collision.html">Collision</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="collision.html#collision-model">Collision Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="collision.html#use-cases">Use cases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collision.html#simplified-shapes">Simplified shapes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collision.html#what-an-object-must-comply-to-be-collidable">What an object must comply to be collidable ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collision.html#the-role-of-collision-manager">The role of collision manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collision.html#limitations-and-weaknesees">Limitations and weaknesees</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collision.html#more-details">More details</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="collision.html#performance-numbers">Performance numbers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="collision.html#the-benchmark">The benchmark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collision.html#comparing-with-brute-force">Comparing with brute force</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collision.html#shape-comparisson">Shape comparisson</a></li>
+<li class="toctree-l3"><a class="reference internal" href="collision.html#ballpark-fps">Ballpark fps</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="skeleton/skeleton.html">Skeletal Animations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="skeleton/skeleton.html#creating-skeletons-and-skins">Creating Skeletons and skins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="skeleton/skeleton.html#the-skeleton-file">The skeleton file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="skeleton/skeleton.html#the-skin-file">The skin file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="skeleton/skeleton.html#the-skeleton-editor">The skeleton editor</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="skeleton/skeleton.html#animations">Animations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="skeleton/skeleton.html#the-animator-editor">The animator editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="skeleton/skeleton.html#playing-animations">Playing animations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">cocos2d 0.6.3 Documentation Index</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="introduction.html"
+                        title="next chapter">Introduction</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/programming_guide/index.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="Introduction"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="cocos2d 0.6.3 Documentation Index"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

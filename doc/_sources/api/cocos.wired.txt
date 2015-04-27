@@ -1,0 +1,7 @@
+cocos.wired module
+==================
+
+.. automodule:: cocos.wired
+    :members:
+    :undoc-members:
+    :show-inheritance:

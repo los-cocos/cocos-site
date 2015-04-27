@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos.grid module &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="up" title="cocos package" href="cocos.html" />
+    <link rel="next" title="cocos.menu module" href="cocos.menu.html" />
+    <link rel="prev" title="cocos.gl_framebuffer_object module" href="cocos.gl_framebuffer_object.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.menu.html" title="cocos.menu module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cocos.gl_framebuffer_object.html" title="cocos.gl_framebuffer_object module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cocos.grid">
+<span id="cocos-grid-module"></span><h1>cocos.grid module<a class="headerlink" href="#module-cocos.grid" title="Permalink to this headline">¶</a></h1>
+<p>Grid data structure</p>
+<dl class="class">
+<dt id="cocos.grid.GridBase">
+<em class="property">class </em><code class="descname">GridBase</code><a class="headerlink" href="#cocos.grid.GridBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>A Scene that takes two scenes and makes a transition between them</p>
+<dl class="method">
+<dt id="cocos.grid.GridBase.after_draw">
+<code class="descname">after_draw</code><span class="sig-paren">(</span><em>camera</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.GridBase.after_draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called by CocosNode when the texture is already grabbed.
+The FrameBuffer will be unbound and the texture will be drawn</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>camera</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Camera</cite></span></dt>
+<dd><p class="first last">The target&#8217;s camera object.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.grid.GridBase.before_draw">
+<code class="descname">before_draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.GridBase.before_draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Binds the framebuffer to a texture
+and set a 2d projection before binding
+to prevent calculating a new texture</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.grid.GridBase.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>grid</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.GridBase.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the grid creating both a vertex_list for an independent-tiled grid
+and creating also a vertex_list_indexed for a &#8220;united&#8221; (non independent tile) grid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>grid</cite> <span class="classifier-delimiter">:</span> <span class="classifier">euclid.Point2</span></dt>
+<dd><p class="first last">size of a 2D grid</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.grid.GridBase.active">
+<code class="descname">active</code><a class="headerlink" href="#cocos.grid.GridBase.active" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether the grid is active or not
+:type: bool</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.grid.GridBase.texture">
+<code class="descname">texture</code><em class="property"> = None</em><a class="headerlink" href="#cocos.grid.GridBase.texture" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.grid.Grid3D">
+<em class="property">class </em><code class="descname">Grid3D</code><a class="headerlink" href="#cocos.grid.Grid3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.grid.GridBase" title="cocos.grid.GridBase"><code class="xref py py-class docutils literal"><span class="pre">cocos.grid.GridBase</span></code></a></p>
+<p><cite>Grid3D</cite> is a 3D grid implementation. Each vertex has 3 dimensions: x,y,z</p>
+<p>The indexed vertex array will be built with:</p>
+<div class="highlight-python"><div class="highlight"><pre>self.vertex_list.vertices: x,y,z (floats)
+self.vertex_list.tex_coords: x,y,z (floats)
+self.vertex_list.colors: RGBA, with values from 0 - 255
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cocos.grid.Grid3D.get_original_vertex">
+<code class="descname">get_original_vertex</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.Grid3D.get_original_vertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the original vertex coordinate.
+The original vertices are the ones weren&#8217;t modified by the current action.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">x-vertex</p>
+</dd>
+<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">y-vertex</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">(float, float, float)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.grid.Grid3D.get_vertex">
+<code class="descname">get_vertex</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.Grid3D.get_vertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current vertex coordinate</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">x-vertex</p>
+</dd>
+<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">y-vertex</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">(float, float, float)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.grid.Grid3D.set_vertex">
+<code class="descname">set_vertex</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.Grid3D.set_vertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a vertex point is a certain value</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">x-vertex</p>
+</dd>
+<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">y-vertex</p>
+</dd>
+<dt><cite>v</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(float, float, float)</span></dt>
+<dd><p class="first last">tuple value for the vertex</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.grid.TiledGrid3D">
+<em class="property">class </em><code class="descname">TiledGrid3D</code><a class="headerlink" href="#cocos.grid.TiledGrid3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.grid.GridBase" title="cocos.grid.GridBase"><code class="xref py py-class docutils literal"><span class="pre">cocos.grid.GridBase</span></code></a></p>
+<p><cite>TiledGrid3D</cite> is a 3D grid implementation. It differs from <cite>Grid3D</cite> in that
+the tiles can be separated from the grid.</p>
+<p>The vertex array will be built with:</p>
+<div class="highlight-python"><div class="highlight"><pre>self.vertex_list.vertices: x,y,z (floats)
+self.vertex_list.tex_coords: x,y (floats)
+self.vertex_list.colors: RGBA, with values from 0 - 255
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cocos.grid.TiledGrid3D.get_original_tile">
+<code class="descname">get_original_tile</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.TiledGrid3D.get_original_tile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the 4-original tile coordinates.</p>
+<p>Coordinates positions:</p>
+<div class="highlight-python"><div class="highlight"><pre>3 &lt;-- 2
+      ^
+      |
+0 --&gt; 1
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">x coordinate of the tile</p>
+</dd>
+<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">y coordinate of the tile</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">[ float, float, float, float, float, float, float, float, float, float, float, float ]</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The 4 coordinates with the following order: x0, y0, z0, x1, y1, z1,...,x3, y3, z3</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.grid.TiledGrid3D.get_tile">
+<code class="descname">get_tile</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.TiledGrid3D.get_tile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current tile coordinates.</p>
+<p>Coordinates positions:</p>
+<div class="highlight-python"><div class="highlight"><pre>3 &lt;-- 2
+      ^
+      |
+0 --&gt; 1
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">x coordinate of the tile</p>
+</dd>
+<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">y coordinate of the tile</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">[ float, float, float, float, float, float, float, float, float, float, float, float ]</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The 4 coordinates with the following order: x0, y0, z0, x1, y1, z1,...,x3, y3, z3</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.grid.TiledGrid3D.set_tile">
+<code class="descname">set_tile</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>coords</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.TiledGrid3D.set_tile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the 4 tile coordinates</p>
+<p>Coordinates positions:</p>
+<div class="highlight-python"><div class="highlight"><pre>3 &lt;-- 2
+      ^
+      |
+0 --&gt; 1
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">x coodinate of the tile</p>
+</dd>
+<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">y coordinate of the tile</p>
+</dd>
+<dt><cite>coords</cite> <span class="classifier-delimiter">:</span> <span class="classifier">[ float, float, float, float, float, float, float, float, float, float, float, float ]</span></dt>
+<dd><p class="first last">The 4 coordinates in the format (x0, y0, z0, x1, y1, z1,..., x3, y3, z3)</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cocos.gl_framebuffer_object.html"
+                        title="previous chapter">cocos.gl_framebuffer_object module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cocos.menu.html"
+                        title="next chapter">cocos.menu module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/cocos.grid.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.menu.html" title="cocos.menu module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cocos.gl_framebuffer_object.html" title="cocos.gl_framebuffer_object module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

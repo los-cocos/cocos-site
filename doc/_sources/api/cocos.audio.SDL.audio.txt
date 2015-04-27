@@ -1,0 +1,7 @@
+cocos.audio.SDL.audio module
+============================
+
+.. automodule:: cocos.audio.SDL.audio
+    :members:
+    :undoc-members:
+    :show-inheritance:

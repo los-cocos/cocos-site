@@ -1,0 +1,7 @@
+cocos.audio.pygame.mixer module
+===============================
+
+.. automodule:: cocos.audio.pygame.mixer
+    :members:
+    :undoc-members:
+    :show-inheritance:

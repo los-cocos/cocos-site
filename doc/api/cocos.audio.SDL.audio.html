@@ -1,0 +1,538 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos.audio.SDL.audio module &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="up" title="cocos.audio.SDL package" href="cocos.audio.SDL.html" />
+    <link rel="next" title="cocos.audio.SDL.constants module" href="cocos.audio.SDL.constants.html" />
+    <link rel="prev" title="cocos.audio.SDL.array module" href="cocos.audio.SDL.array.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.SDL.constants.html" title="cocos.audio.SDL.constants module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.SDL.array.html" title="cocos.audio.SDL.array module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &raquo;</li>
+          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" accesskey="U">cocos.audio.SDL package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cocos.audio.SDL.audio">
+<span id="cocos-audio-sdl-audio-module"></span><h1>cocos.audio.SDL.audio module<a class="headerlink" href="#module-cocos.audio.SDL.audio" title="Permalink to this headline">¶</a></h1>
+<p>Access to the raw audio mixing buffer.</p>
+<dl class="class">
+<dt id="cocos.audio.SDL.audio.SDL_AudioCVT">
+<em class="property">class </em><code class="descname">SDL_AudioCVT</code><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioCVT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">_ctypes.Structure</span></code></p>
+<p>Set of audio conversion filters and buffers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Ivariables:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>needed</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">1 if conversion is possible</p>
+</dd>
+<dt><cite>src_format</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Source audio format.  See <cite>SDL_AudioSpec.format</cite></p>
+</dd>
+<dt><cite>dst_format</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Destination audio format.  See <cite>SDL_AudioSpec.format</cite></p>
+</dd>
+<dt><cite>rate_incr</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Rate conversion increment</p>
+</dd>
+<dt><cite>len</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Length of original audio buffer</p>
+</dd>
+<dt><cite>len_cvt</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Length of converted audio buffer</p>
+</dd>
+<dt><cite>len_mult</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Buffer must be len * len_mult big</p>
+</dd>
+<dt><cite>len_ratio</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Given len, final size is len * len_ratio</p>
+</dd>
+<dt><cite>filter_index</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Current audio conversion function</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cocos.audio.SDL.audio.SDL_AudioCVT.buf">
+<code class="descname">buf</code><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioCVT.buf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.audio.SDL.audio.SDL_AudioCVT.dst_format">
+<code class="descname">dst_format</code><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioCVT.dst_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.audio.SDL.audio.SDL_AudioCVT.filter_index">
+<code class="descname">filter_index</code><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioCVT.filter_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.audio.SDL.audio.SDL_AudioCVT.filters">
+<code class="descname">filters</code><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioCVT.filters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.audio.SDL.audio.SDL_AudioCVT.len">
+<code class="descname">len</code><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioCVT.len" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.audio.SDL.audio.SDL_AudioCVT.len_cvt">
+<code class="descname">len_cvt</code><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioCVT.len_cvt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.audio.SDL.audio.SDL_AudioCVT.len_mult">
+<code class="descname">len_mult</code><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioCVT.len_mult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.audio.SDL.audio.SDL_AudioCVT.len_ratio">
+<code class="descname">len_ratio</code><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioCVT.len_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.audio.SDL.audio.SDL_AudioCVT.needed">
+<code class="descname">needed</code><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioCVT.needed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.audio.SDL.audio.SDL_AudioCVT.rate_incr">
+<code class="descname">rate_incr</code><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioCVT.rate_incr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.audio.SDL.audio.SDL_AudioCVT.src_format">
+<code class="descname">src_format</code><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioCVT.src_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.audio.SDL.audio.SDL_AudioSpec">
+<em class="property">class </em><code class="descname">SDL_AudioSpec</code><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioSpec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">_ctypes.Structure</span></code></p>
+<p>Audio format structure.</p>
+<p>The calculated values in this structure are calculated by <cite>SDL_OpenAudio</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Ivariables:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>freq</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">DSP frequency, in samples per second</p>
+</dd>
+<dt><cite>format</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Audio data format. One of AUDIO_U8, AUDIO_S8, AUDIO_U16LSB,
+AUDIO_S16LSB, AUDIO_U16MSB or AUDIO_S16MSB</p>
+</dd>
+<dt><cite>channels</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of channels; 1 for mono or 2 for stereo.</p>
+</dd>
+<dt><cite>silence</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Audio buffer silence value (calculated)</p>
+</dd>
+<dt><cite>samples</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Audio buffer size in samples (power of 2)</p>
+</dd>
+<dt><cite>size</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Audio buffer size in bytes (calculated)</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cocos.audio.SDL.audio.SDL_AudioSpec.channels">
+<code class="descname">channels</code><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioSpec.channels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.audio.SDL.audio.SDL_AudioSpec.format">
+<code class="descname">format</code><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioSpec.format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.audio.SDL.audio.SDL_AudioSpec.freq">
+<code class="descname">freq</code><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioSpec.freq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.audio.SDL.audio.SDL_AudioSpec.samples">
+<code class="descname">samples</code><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioSpec.samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.audio.SDL.audio.SDL_AudioSpec.silence">
+<code class="descname">silence</code><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioSpec.silence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.audio.SDL.audio.SDL_AudioSpec.size">
+<code class="descname">size</code><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioSpec.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure/Union member</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.SDL.audio.SDL_AudioDriverName">
+<code class="descname">SDL_AudioDriverName</code><span class="sig-paren">(</span><em>maxlen=1024</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_AudioDriverName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the audio driver.  Returns None if no driver has
+been initialised.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><cite>maxlen</cite></dt>
+<dd><p class="first last">Maximum length of the returned driver name; defaults to 1024.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.SDL.audio.SDL_BuildAudioCVT">
+<code class="descname">SDL_BuildAudioCVT</code><span class="sig-paren">(</span><em>src_format</em>, <em>src_channels</em>, <em>src_rate</em>, <em>dst_format</em>, <em>dst_channels</em>, <em>dst_rate</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_BuildAudioCVT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take a source format and rate and a destination format and rate,
+and return a <cite>SDL_AudioCVT</cite> structure.</p>
+<p>The <cite>SDL_AudioCVT</cite> structure is used by <cite>SDL_ConvertAudio</cite> to convert
+a buffer of audio data from one format to the other.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><cite>src_format</cite>: int</li>
+<li><cite>src_channels</cite>: int</li>
+<li><cite>src_rate</cite>: int</li>
+<li><cite>dst_format</cite>: int</li>
+<li><cite>dst_channels</cite>: int</li>
+<li><cite>dst_rate</cite>: int</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><cite>SDL_AudioCVT</cite></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.SDL.audio.SDL_FreeWAV">
+<code class="descname">SDL_FreeWAV</code><span class="sig-paren">(</span><em>audio_buf</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_FreeWAV" title="Permalink to this definition">¶</a></dt>
+<dd><p>Free a buffer previously allocated with <cite>SDL_LoadWAV_RW</cite> or
+<cite>SDL_LoadWAV</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><cite>audio_buf</cite>: <cite>SDL_array</cite></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.SDL.audio.SDL_LoadWAV">
+<code class="descname">SDL_LoadWAV</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_LoadWAV" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a WAVE from a file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><cite>file</cite>: str</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">(<cite>SDL_AudioSpec</cite>, <cite>SDL_array</cite>)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">See:</th><td class="field-body"><p class="first last"><cite>SDL_LoadWAV_RW</cite></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.SDL.audio.SDL_LoadWAV_RW">
+<code class="descname">SDL_LoadWAV_RW</code><span class="sig-paren">(</span><em>src</em>, <em>freesrc</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_LoadWAV_RW" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a WAVE from the data source.</p>
+<p>The source is automatically freed if <cite>freesrc</cite> is non-zero.  For
+example, to load a WAVE file, you could do:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">SDL_LoadWAV_RW</span><span class="p">(</span><span class="n">SDL_RWFromFile</span><span class="p">(</span><span class="s">&#39;sample.wav&#39;</span><span class="p">,</span> <span class="s">&#39;rb&#39;</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You need to free the returned buffer with <cite>SDL_FreeWAV</cite> when you
+are done with it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><cite>src</cite>: <cite>SDL_RWops</cite></li>
+<li><cite>freesrc</cite>: int</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">(<cite>SDL_AudioSpec</cite>, <cite>SDL_array</cite>)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">a tuple (<cite>spec</cite>, <cite>audio_buf</cite>) where <cite>spec</cite> describes the data
+format and <cite>audio_buf</cite> is the buffer containing audio data.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.SDL.audio.SDL_MixAudio">
+<code class="descname">SDL_MixAudio</code><span class="sig-paren">(</span><em>dst</em>, <em>src</em>, <em>length</em>, <em>volume</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_MixAudio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mix two audio buffers.</p>
+<p>This takes two audio buffers of the playing audio format and mixes
+them, performing addition, volume adjustment, and overflow clipping.
+The volume ranges from 0 - 128, and should be set to SDL_MIX_MAXVOLUME
+for full audio volume.  Note this does not change hardware volume.
+This is provided for convenience &#8211; you can mix your own audio data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Note:</th><td class="field-body"><p class="first">SDL-ctypes doesn&#8217;t know the current play format, so you must
+always pass in byte buffers (SDL_array or sequence) to this function,
+rather than of the native data type.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><cite>dst</cite>: <cite>SDL_array</cite></li>
+<li><cite>src</cite>: <cite>SDL_array</cite></li>
+<li><cite>length</cite>: int</li>
+<li><cite>volume</cite>: int</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.SDL.audio.SDL_OpenAudio">
+<code class="descname">SDL_OpenAudio</code><span class="sig-paren">(</span><em>desired</em>, <em>obtained</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.audio.SDL_OpenAudio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open the audio device with the desired parameters.</p>
+<p>If successful, the actual hardware parameters will be set in the
+instance passed into <cite>obtained</cite>.  If <cite>obtained</cite> is None, the audio
+data passed to the callback function will be guaranteed to be in
+the requested format, and will be automatically converted to the
+hardware audio format if necessary.</p>
+<p>An exception will be raised if the audio device couldn&#8217;t be opened,
+or the audio thread could not be set up.</p>
+<p>The fields of <cite>desired</cite> are interpreted as follows:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><cite>desired.freq</cite></dt>
+<dd>desired audio frequency in samples per second</dd>
+<dt><cite>desired.format</cite></dt>
+<dd>desired audio format, i.e., one of AUDIO_U8, AUDIO_S8,
+AUDIO_U16LSB, AUDIO_S16LSB, AUDIO_U16MSB or AUDIO_S16MSB</dd>
+<dt><cite>desired.samples</cite></dt>
+<dd><p class="first">size of the audio buffer, in samples.  This number should
+be a power of two, and may be adjusted by the audio driver
+to a value more suitable for the hardware.  Good values seem
+to range between 512 and 8096 inclusive, depending on the
+application and CPU speed.  Smaller values yield faster response
+time, but can lead to underflow if the application is doing
+heavy processing and cannot fill the audio buffer in time.
+A stereo sample consists of both right and left channels in
+LR ordering.  Note that the number of samples is directly
+related to time by the following formula:</p>
+<div class="last highlight-python"><div class="highlight"><pre><span class="n">ms</span> <span class="o">=</span> <span class="p">(</span><span class="n">samples</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">/</span> <span class="n">freq</span>
+</pre></div>
+</div>
+</dd>
+<dt><cite>desired.size</cite></dt>
+<dd>size in bytes of the audio buffer; calculated by SDL_OpenAudio.</dd>
+<dt><cite>desired.silence</cite></dt>
+<dd>value used to set the buffer to silence; calculated by
+SDL_OpenAudio.</dd>
+<dt><cite>desired.callback</cite></dt>
+<dd><p class="first">a function that will be called when the audio device is ready
+for more data.  The signature of the function should be:</p>
+<div class="highlight-python"><div class="highlight"><pre>callback(userdata: any, stream: SDL_array) -&gt; None
+</pre></div>
+</div>
+<p>The function is called with the userdata you specify (see below),
+and an SDL_array of the obtained format which you must fill
+with audio data.</p>
+<p class="last">This function usually runs in a separate thread, so you should
+protect data structures that it accesses by calling
+<cite>SDL_LockAudio</cite> and <cite>SDL_UnlockAudio</cite> in your code.</p>
+</dd>
+<dt><cite>desired.userdata</cite></dt>
+<dd>passed as the first parameter to your callback function.</dd>
+</dl>
+</div></blockquote>
+<p>The audio device starts out playing silence when it&#8217;s opened, and should
+be enabled for playing by calling <code class="docutils literal"><span class="pre">SDL_PauseAudio(False)</span></code> when you are
+ready for your audio callback function to be called.  Since the audio
+driver may modify the requested size of the audio buffer, you should
+allocate any local mixing buffers after you open the audio device.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><cite>desired</cite>: <cite>SDL_AudioSpec</cite></li>
+<li><cite>obtained</cite>: <cite>SDL_AudioSpec</cite> or None</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cocos.audio.SDL.array.html"
+                        title="previous chapter">cocos.audio.SDL.array module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cocos.audio.SDL.constants.html"
+                        title="next chapter">cocos.audio.SDL.constants module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/cocos.audio.SDL.audio.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.SDL.constants.html" title="cocos.audio.SDL.constants module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.SDL.array.html" title="cocos.audio.SDL.array module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &raquo;</li>
+          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" >cocos.audio.SDL package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

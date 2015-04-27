@@ -1,0 +1,7 @@
+cocos.actions.quadmoveby_actions module
+=======================================
+
+.. automodule:: cocos.actions.quadmoveby_actions
+    :members:
+    :undoc-members:
+    :show-inheritance:

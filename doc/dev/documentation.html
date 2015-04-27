@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Documentation Notes &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="up" title="Dev Notes" href="index.html" />
+    <link rel="prev" title="Dev Notes" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Dev Notes"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Dev Notes</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="documentation-notes">
+<h1>Documentation Notes<a class="headerlink" href="#documentation-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="making-the-switch-to-sphinx">
+<h2>Making the switch to sphinx<a class="headerlink" href="#making-the-switch-to-sphinx" title="Permalink to this headline">¶</a></h2>
+<p>Documentation was rendered with epydoc and some custom extensions until cocos 0.5.5. Epydoc is long time unmaintained, and needs patchs to work with newer python and docutils versions, so a change to a well maintained doc library was needed.</p>
+<p>Sphinx is the current de facto standard, so documentation will use sphinx.</p>
+</div>
+<div class="section" id="guidelines-for-sphinx-customization">
+<h2>Guidelines for sphinx customization<a class="headerlink" href="#guidelines-for-sphinx-customization" title="Permalink to this headline">¶</a></h2>
+<p>Keep customization at a minimun to avoid the need of maintenace when sphinx changes.</p>
+</div>
+<div class="section" id="hints-for-some-common-markup-operations">
+<h2>Hints for some common markup operations<a class="headerlink" href="#hints-for-some-common-markup-operations" title="Permalink to this headline">¶</a></h2>
+<p>please use 4 spaces indentation</p>
+<p>tabs usually break things, convert them to spaces</p>
+<p>inline literal text: ``:class:`` -&gt; <code class="docutils literal"><span class="pre">:class:</span></code></p>
+<p>(in link syntax <code class="docutils literal"><span class="pre">~</span></code> is a modidier that supress the high parts in a dotted name)</p>
+<p>link to a cocos module: <code class="docutils literal"><span class="pre">:mod:`~cocos.cocosnode`</span> <span class="pre">-&gt;</span></code> <a class="reference internal" href="../api/cocos.cocosnode.html#module-cocos.cocosnode" title="cocos.cocosnode"><code class="xref py py-mod docutils literal"><span class="pre">cocosnode</span></code></a></p>
+<p>link to a cocos module: <code class="docutils literal"><span class="pre">:mod:`cocos.cocosnode`</span> <span class="pre">-&gt;</span></code> <a class="reference internal" href="../api/cocos.cocosnode.html#module-cocos.cocosnode" title="cocos.cocosnode"><code class="xref py py-mod docutils literal"><span class="pre">cocos.cocosnode</span></code></a></p>
+<p>link to a class: <code class="docutils literal"><span class="pre">:class:`~cocos.cocosnode.CocosNode`</span> <span class="pre">-&gt;</span></code> <a class="reference internal" href="../api/cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal"><span class="pre">CocosNode</span></code></a></p>
+<p>link to a method: <code class="docutils literal"><span class="pre">:meth:`~cocos.cocosnode.CocosNode.add`</span> <span class="pre">-&gt;</span></code>  <a class="reference internal" href="../api/cocos.cocosnode.html#cocos.cocosnode.CocosNode.add" title="cocos.cocosnode.CocosNode.add"><code class="xref py py-meth docutils literal"><span class="pre">add()</span></code></a></p>
+<p>link to a method:</p>
+<p><code class="docutils literal"><span class="pre">:meth:`CocosNode.add&lt;cocos.cocosnode.CocosNode.add&gt;`</span> <span class="pre">-&gt;</span></code>  <a class="reference internal" href="../api/cocos.cocosnode.html#cocos.cocosnode.CocosNode.add" title="cocos.cocosnode.CocosNode.add"><code class="xref py py-meth docutils literal"><span class="pre">CocosNode.add()</span></code></a></p>
+<p>link to a function: <code class="docutils literal"><span class="pre">:func:`cocos.tiles.load`</span> <span class="pre">-&gt;</span></code> <a class="reference internal" href="../api/cocos.tiles.html#cocos.tiles.load" title="cocos.tiles.load"><code class="xref py py-func docutils literal"><span class="pre">cocos.tiles.load()</span></code></a></p>
+<p>There are other roles like</p>
+<p><code class="docutils literal"><span class="pre">:data:</span></code> -&gt; Reference a module-level variable.</p>
+<p><code class="docutils literal"><span class="pre">:const:</span></code> -&gt; Reference a defined constant. This may be a Python variable that is not intended to be changed.</p>
+<p><code class="docutils literal"><span class="pre">:attr:</span></code> -&gt; Reference a data attribute of an object.</p>
+<p><code class="docutils literal"><span class="pre">:exc:</span></code>  -&gt; Reference an exception. A dotted name may be used.</p>
+<p><code class="docutils literal"><span class="pre">:obj:</span></code>  -&gt; Reference an object of unspecified type. Useful e.g. as the default_role.</p>
+<p>Link to a section or some arbitrary point in any document:</p>
+<blockquote>
+<div><ul class="simple">
+<li>declare a label at the target location with <code class="docutils literal"><span class="pre">..</span> <span class="pre">_labelname:</span></code> (the &#8216;_&#8217; is not part of labelname)</li>
+<li>write the link as <code class="docutils literal"><span class="pre">:ref:`TextToShowInLink&lt;labelname&gt;`</span></code> (brackets included)</li>
+<li>if TextToShowInLink is ommited the ref should be just before a section and the section title will be used as the text to show in the link</li>
+<li>labelname must be unique across all documents</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>Link to another document in the current sphinx build:</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal"><span class="pre">:doc:`TextToShowInLink&lt;documentName&gt;`</span></code> (brackets included)</li>
+<li><code class="docutils literal"><span class="pre">:doc:`documentName`</span></code> (will show the document title in the link)</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Documentation Notes</a><ul>
+<li><a class="reference internal" href="#making-the-switch-to-sphinx">Making the switch to sphinx</a></li>
+<li><a class="reference internal" href="#guidelines-for-sphinx-customization">Guidelines for sphinx customization</a></li>
+<li><a class="reference internal" href="#hints-for-some-common-markup-operations">Hints for some common markup operations</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Dev Notes</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/dev/documentation.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Dev Notes"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Dev Notes</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

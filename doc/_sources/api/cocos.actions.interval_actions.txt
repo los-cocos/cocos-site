@@ -1,0 +1,7 @@
+cocos.actions.interval_actions module
+=====================================
+
+.. automodule:: cocos.actions.interval_actions
+    :members:
+    :undoc-members:
+    :show-inheritance:

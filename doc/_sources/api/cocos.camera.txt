@@ -1,0 +1,7 @@
+cocos.camera module
+===================
+
+.. automodule:: cocos.camera
+    :members:
+    :undoc-members:
+    :show-inheritance:

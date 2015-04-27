@@ -1,0 +1,7 @@
+cocos.audio.SDL.constants module
+================================
+
+.. automodule:: cocos.audio.SDL.constants
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,7 @@
+cocos.actions.base_actions module
+=================================
+
+.. automodule:: cocos.actions.base_actions
+    :members:
+    :undoc-members:
+    :show-inheritance:

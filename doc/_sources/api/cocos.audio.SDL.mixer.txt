@@ -1,0 +1,7 @@
+cocos.audio.SDL.mixer module
+============================
+
+.. automodule:: cocos.audio.SDL.mixer
+    :members:
+    :undoc-members:
+    :show-inheritance:

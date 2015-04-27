@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos package &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="next" title="cocos.actions package" href="cocos.actions.html" />
+    <link rel="prev" title="Skeletal Animations" href="../programming_guide/skeleton/skeleton.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.actions.html" title="cocos.actions package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../programming_guide/skeleton/skeleton.html" title="Skeletal Animations"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="cocos-package">
+<h1>cocos package<a class="headerlink" href="#cocos-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cocos.actions.html">cocos.actions package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cocos.actions.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cocos.actions.base_actions.html">cocos.actions.base_actions module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cocos.actions.base_actions.html#actions">Actions</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="cocos.actions.base_actions.html#action-instance-roles">Action instance roles</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="cocos.actions.base_actions.html#template-role">Template Role</a></li>
+<li class="toctree-l6"><a class="reference internal" href="cocos.actions.base_actions.html#worker-role">Worker role</a></li>
+<li class="toctree-l6"><a class="reference internal" href="cocos.actions.base_actions.html#component-role">Component role</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="cocos.actions.base_actions.html#restrictions-and-capabilities-for-the-current-design-and-implementation">Restrictions and Capabilities for the current design and implementation</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="cocos.actions.base_actions.html#worker-independence">Worker Independence</a></li>
+<li class="toctree-l6"><a class="reference internal" href="cocos.actions.base_actions.html#a-worker-action-instance-should-not-be-used-as-a-template">A worker action instance should not be used as a template</a></li>
+<li class="toctree-l6"><a class="reference internal" href="cocos.actions.base_actions.html#posible-fights-between-worker-actions-over-a-target-member">Posible fights between worker actions over a target member</a></li>
+<li class="toctree-l6"><a class="reference internal" href="cocos.actions.base_actions.html#action-s-instances-in-the-template-role-must-be-really-deepcopyiable">Action&#8217;s instances in the template role must be (really) deepcopyiable</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="cocos.actions.base_actions.html#overview-main-subclasses">Overview main subclasses</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="cocos.actions.base_actions.html#instantaction">InstantAction</a></li>
+<li class="toctree-l6"><a class="reference internal" href="cocos.actions.base_actions.html#intervalaction">IntervalAction</a></li>
+<li class="toctree-l6"><a class="reference internal" href="cocos.actions.base_actions.html#action">Action</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cocos.actions.basegrid_actions.html">cocos.actions.basegrid_actions module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cocos.actions.basegrid_actions.html#grid-actions">Grid Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cocos.actions.camera_actions.html">cocos.actions.camera_actions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocos.actions.grid3d_actions.html">cocos.actions.grid3d_actions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocos.actions.instant_actions.html">cocos.actions.instant_actions module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cocos.actions.instant_actions.html#instant-actions">Instant Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cocos.actions.interval_actions.html">cocos.actions.interval_actions module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cocos.actions.interval_actions.html#interval-actions">Interval Actions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cocos.actions.interval_actions.html#available-intervalactions">Available IntervalActions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="cocos.actions.interval_actions.html#modifier-actions">Modifier actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cocos.actions.move_actions.html">cocos.actions.move_actions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocos.actions.quadmoveby_actions.html">cocos.actions.quadmoveby_actions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocos.actions.tiledgrid_actions.html">cocos.actions.tiledgrid_actions module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cocos.actions.html#module-cocos.actions">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.audio.html">cocos.audio package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cocos.audio.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cocos.audio.SDL.html">cocos.audio.SDL package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cocos.audio.SDL.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="cocos.audio.SDL.array.html">cocos.audio.SDL.array module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="cocos.audio.SDL.audio.html">cocos.audio.SDL.audio module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="cocos.audio.SDL.constants.html">cocos.audio.SDL.constants module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="cocos.audio.SDL.darwin.html">cocos.audio.SDL.darwin module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="cocos.audio.SDL.dll.html">cocos.audio.SDL.dll module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="cocos.audio.SDL.endian.html">cocos.audio.SDL.endian module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="cocos.audio.SDL.error.html">cocos.audio.SDL.error module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="cocos.audio.SDL.mixer.html">cocos.audio.SDL.mixer module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="cocos.audio.SDL.rwops.html">cocos.audio.SDL.rwops module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="cocos.audio.SDL.sound.html">cocos.audio.SDL.sound module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="cocos.audio.SDL.timer.html">cocos.audio.SDL.timer module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="cocos.audio.SDL.version.html">cocos.audio.SDL.version module</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="cocos.audio.SDL.html#module-cocos.audio.SDL">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cocos.audio.pygame.html">cocos.audio.pygame package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cocos.audio.pygame.html#submodules">Submodules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="cocos.audio.pygame.base.html">cocos.audio.pygame.base module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="cocos.audio.pygame.mixer.html">cocos.audio.pygame.mixer module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="cocos.audio.pygame.music.html">cocos.audio.pygame.music module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="cocos.audio.pygame.version.html">cocos.audio.pygame.version module</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="cocos.audio.pygame.html#module-cocos.audio.pygame">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cocos.audio.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cocos.audio.actions.html">cocos.audio.actions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocos.audio.effect.html">cocos.audio.effect module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocos.audio.exceptions.html">cocos.audio.exceptions module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocos.audio.music.html">cocos.audio.music module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cocos.audio.html#module-cocos.audio">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.layer.html">cocos.layer package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cocos.layer.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cocos.layer.base_layers.html">cocos.layer.base_layers module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocos.layer.python_interpreter.html">cocos.layer.python_interpreter module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocos.layer.scrolling.html">cocos.layer.scrolling module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="cocos.layer.scrolling.html#controlling-scrolling">Controlling Scrolling</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="cocos.layer.util_layers.html">cocos.layer.util_layers module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cocos.layer.html#module-cocos.layer">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.scenes.html">cocos.scenes package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cocos.scenes.html#submodules">Submodules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cocos.scenes.pause.html">cocos.scenes.pause module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocos.scenes.transitions.html">cocos.scenes.transitions module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cocos.scenes.html#module-cocos.scenes">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cocos.batch.html">cocos.batch module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cocos.batch.html#batches">Batches</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.camera.html">cocos.camera module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.cocosnode.html">cocos.cocosnode module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.collision_model.html">cocos.collision_model module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.compat.html">cocos.compat module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.custom_clocks.html">cocos.custom_clocks module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.director.html">cocos.director module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cocos.director.html#initializing">Initializing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cocos.director.html#running-a-scene">Running a Scene</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.draw.html">cocos.draw module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.euclid.html">cocos.euclid module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.framegrabber.html">cocos.framegrabber module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.gl_framebuffer_object.html">cocos.gl_framebuffer_object module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.grid.html">cocos.grid module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.menu.html">cocos.menu module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cocos.menu.html#menu">Menu</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.particle.html">cocos.particle module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.particle_systems.html">cocos.particle_systems module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.path.html">cocos.path module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.rect.html">cocos.rect module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.scene.html">cocos.scene module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.shader.html">cocos.shader module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.skeleton.html">cocos.skeleton module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.sprite.html">cocos.sprite module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cocos.sprite.html#animating-a-sprite">Animating a sprite</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cocos.sprite.html#changing-a-sprite-by-way-of-actions">Changing a sprite by way of actions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.text.html">cocos.text module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.tiles.html">cocos.tiles module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.utils.html">cocos.utils module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cocos.utils.html#utils">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.wired.html">cocos.wired module</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="module-cocos">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cocos" title="Permalink to this headline">¶</a></h2>
+<p>a framework for building 2D games, demos, and other graphical/interactive applications.</p>
+<div class="section" id="main-features">
+<h3>Main Features<a class="headerlink" href="#main-features" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>Flow control: Manage the flow control between different scenes in an easy way</li>
+<li>Sprites: Fast and easy sprites</li>
+<li>Actions: Just tell sprites what you want them to do. Composable actions like move, rotate, scale and much more</li>
+<li>Effects: Effects like waves, twirl, lens and much more</li>
+<li>Tiled Maps: Support for rectangular and hexagonal tiled maps</li>
+<li>Collision: Basic pure python support for collisions</li>
+<li>Transitions: Move from scene to scene with style</li>
+<li>Menus: Built in classes to create menus</li>
+<li>Text Rendering: Label and HTMLLabel with action support</li>
+<li>Documentation: Programming Guide + API Reference + Video Tutorials + Lots of simple tests showing how to use it</li>
+<li>Built-in Python Interpreter: For debugging purposes</li>
+<li>BSD License: Just use it</li>
+<li>Pyglet Based: No external dependencies</li>
+<li>OpenGL Based: Hardware Acceleration</li>
+</ul>
+</div></blockquote>
+<p><a class="reference external" href="http://python.cocos2d.org">http://python.cocos2d.org</a></p>
+<dl class="function">
+<dt id="cocos.import_all">
+<code class="descname">import_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.import_all" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">cocos package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-cocos">Module contents</a><ul>
+<li><a class="reference internal" href="#main-features">Main Features</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../programming_guide/skeleton/skeleton.html"
+                        title="previous chapter">Skeletal Animations</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cocos.actions.html"
+                        title="next chapter">cocos.actions package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/cocos.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.actions.html" title="cocos.actions package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../programming_guide/skeleton/skeleton.html" title="Skeletal Animations"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

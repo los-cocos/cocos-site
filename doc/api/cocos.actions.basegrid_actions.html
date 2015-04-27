@@ -1,0 +1,581 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos.actions.basegrid_actions module &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="up" title="cocos.actions package" href="cocos.actions.html" />
+    <link rel="next" title="cocos.actions.camera_actions module" href="cocos.actions.camera_actions.html" />
+    <link rel="prev" title="cocos.actions.base_actions module" href="cocos.actions.base_actions.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.actions.camera_actions.html" title="cocos.actions.camera_actions module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cocos.actions.base_actions.html" title="cocos.actions.base_actions module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.actions.html" accesskey="U">cocos.actions package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cocos.actions.basegrid_actions">
+<span id="cocos-actions-basegrid-actions-module"></span><h1>cocos.actions.basegrid_actions module<a class="headerlink" href="#module-cocos.actions.basegrid_actions" title="Permalink to this headline">¶</a></h1>
+<p>Grid Actions</p>
+<div class="section" id="grid-actions">
+<h2>Grid Actions<a class="headerlink" href="#grid-actions" title="Permalink to this headline">¶</a></h2>
+<p>There are 2 kinds of grids:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><cite>Grid3D</cite> : A 3D grid with x,y and z coordinates</p>
+</li>
+<li><dl class="first docutils">
+<dt><cite>TiledGrid3D</cite> <span class="classifier-delimiter">:</span> <span class="classifier">A 3D grid with x,y and z coordinates, composed</span></dt>
+<dd><p class="first last">with independent tiles</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>Hence, there are 2 kinds of grid actions:</p>
+<blockquote>
+<div><ul class="simple">
+<li><cite>Grid3DAction</cite></li>
+<li><cite>TiledGrid3DAction</cite></li>
+</ul>
+</div></blockquote>
+<p>The <cite>Grid3DAction</cite> can modify any of vertex of the grid in any direction (x,y or z).
+The <cite>TiledGrid3DAction</cite> can modify any tile of the grid without modifying the adjacent tiles.</p>
+<p>To understand visually the difference between these 2 kinds of grids, try these examples:</p>
+<blockquote>
+<div><ul class="simple">
+<li>run <code class="docutils literal"><span class="pre">test/test_shakytiles3d.py</span></code> to see a <cite>TiledGrid3DAction</cite> example</li>
+<li>run <code class="docutils literal"><span class="pre">test/test_shaky3d.py</span></code> to see the <cite>Grid3DAction</cite> counterpart</li>
+</ul>
+</div></blockquote>
+<dl class="exception">
+<dt id="cocos.actions.basegrid_actions.GridException">
+<em class="property">exception </em><code class="descname">GridException</code><a class="headerlink" href="#cocos.actions.basegrid_actions.GridException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.actions.basegrid_actions.GridBaseAction">
+<em class="property">class </em><code class="descname">GridBaseAction</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.GridBaseAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
+<p>GridBaseAction is the base class of all Grid Actions.</p>
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.GridBaseAction.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>grid=(4</em>, <em>4)</em>, <em>duration=5</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.GridBaseAction.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the Grid Action</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>grid</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(int,int)</span></dt>
+<dd><p class="first last">Number of horizontal and vertical quads in the grid</p>
+</dd>
+<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int </span></dt>
+<dd><p class="first last">Number of seconds that the action will last</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.GridBaseAction.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.GridBaseAction.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.actions.basegrid_actions.Grid3DAction">
+<em class="property">class </em><code class="descname">Grid3DAction</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.Grid3DAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.actions.basegrid_actions.GridBaseAction" title="cocos.actions.basegrid_actions.GridBaseAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.basegrid_actions.GridBaseAction</span></code></a></p>
+<p>Action that does transformations
+to a 3D grid ( <cite>Grid3D</cite> )</p>
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.Grid3DAction.get_grid">
+<code class="descname">get_grid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.Grid3DAction.get_grid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.Grid3DAction.get_original_vertex">
+<code class="descname">get_original_vertex</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.Grid3DAction.get_original_vertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the original vertex coordinate.
+The original vertices are the ones weren&#8217;t modified by the current action.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int </span></dt>
+<dd><p class="first last">x-vertex</p>
+</dd>
+<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">y-vertex</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">(float, float, float)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.Grid3DAction.get_vertex">
+<code class="descname">get_vertex</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.Grid3DAction.get_vertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current vertex coordinate</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int </span></dt>
+<dd><p class="first last">x-vertex</p>
+</dd>
+<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">y-vertex</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">(float, float, float)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.Grid3DAction.set_vertex">
+<code class="descname">set_vertex</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.Grid3DAction.set_vertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a vertex point is a certain value</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int </span></dt>
+<dd><p class="first last">x-vertex</p>
+</dd>
+<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">y-vertex</p>
+</dd>
+<dt><cite>v</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(float, float, float)</span></dt>
+<dd><p class="first last">tuple value for the vertex</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.actions.basegrid_actions.TiledGrid3DAction">
+<em class="property">class </em><code class="descname">TiledGrid3DAction</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.TiledGrid3DAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.actions.basegrid_actions.GridBaseAction" title="cocos.actions.basegrid_actions.GridBaseAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.basegrid_actions.GridBaseAction</span></code></a></p>
+<p>Action that does transformations
+to a grid composed of tiles ( <cite>TiledGrid3D</cite> ).
+You can transform each tile individually</p>
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.TiledGrid3DAction.get_grid">
+<code class="descname">get_grid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.TiledGrid3DAction.get_grid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.TiledGrid3DAction.get_original_tile">
+<code class="descname">get_original_tile</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.TiledGrid3DAction.get_original_tile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the 4-original tile coordinates.</p>
+<p>Coordinates positions:</p>
+<div class="highlight-python"><div class="highlight"><pre>3 &lt;-- 2
+      ^
+      |
+0 --&gt; 1
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">x coordinate of the tile</p>
+</dd>
+<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">y coordinate of the tile</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">[ float, float, float, float, float, float, float, float, float, float, float, float ]</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The 4 coordinates with the following order: x0, y0, z0, x1, y1, z1,...,x3, y3, z3</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.TiledGrid3DAction.get_tile">
+<code class="descname">get_tile</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.TiledGrid3DAction.get_tile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current tile coordinates.</p>
+<p>Coordinates positions:</p>
+<div class="highlight-python"><div class="highlight"><pre>3 &lt;-- 2
+      ^
+      |
+0 --&gt; 1
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">x coordinate of the tile</p>
+</dd>
+<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">y coordinate of the tile</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">[ float, float, float, float, float, float, float, float, float, float, float, float ]</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The 4 coordinates with the following order: x0, y0, z0, x1, y1, z1,...,x3, y3, z3</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.TiledGrid3DAction.set_tile">
+<code class="descname">set_tile</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>coords</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.TiledGrid3DAction.set_tile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the 4 tile coordinates</p>
+<p>Coordinates positions:</p>
+<div class="highlight-python"><div class="highlight"><pre>3 &lt;-- 2
+      ^
+      |
+0 --&gt; 1
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int </span></dt>
+<dd><p class="first last">x coodinate of the tile</p>
+</dd>
+<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int </span></dt>
+<dd><p class="first last">y coordinate of the tile</p>
+</dd>
+<dt><cite>coords</cite> <span class="classifier-delimiter">:</span> <span class="classifier">[ float, float, float, float, float, float, float, float, float, float, float, float ]</span></dt>
+<dd><p class="first last">The 4 coordinates in the format (x0, y0, z0, x1, y1, z1,..., x3, y3, z3)</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.actions.basegrid_actions.AccelAmplitude">
+<em class="property">class </em><code class="descname">AccelAmplitude</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.AccelAmplitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
+<p>Increases the waves amplitude from 0 to self.amplitude</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># when t=0 the amplitude will be 0</span>
+<span class="c"># when t=1 the amplitude will be 40</span>
+<span class="n">action</span> <span class="o">=</span> <span class="n">AccelAmplitude</span><span class="p">(</span> <span class="n">Wave3D</span><span class="p">(</span> <span class="n">waves</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">6</span><span class="p">),</span> <span class="n">rate</span><span class="o">=</span><span class="mf">1.0</span> <span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">action</span> <span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.AccelAmplitude.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>other</em>, <em>rate=1</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.AccelAmplitude.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Init method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>other</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>IntervalAction</cite></span></dt>
+<dd><p class="first last">The action that will be affected</p>
+</dd>
+<dt><cite>rate</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The acceleration rate. 1 is linear (default value)</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.AccelAmplitude.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.AccelAmplitude.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.AccelAmplitude.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.AccelAmplitude.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.actions.basegrid_actions.DeccelAmplitude">
+<em class="property">class </em><code class="descname">DeccelAmplitude</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.DeccelAmplitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.actions.basegrid_actions.AccelAmplitude" title="cocos.actions.basegrid_actions.AccelAmplitude"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.basegrid_actions.AccelAmplitude</span></code></a></p>
+<p>Decreases the waves amplitude from self.amplitude to 0</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># when t=1 the amplitude will be 0</span>
+<span class="c"># when t=0 the amplitude will be 40</span>
+<span class="n">action</span> <span class="o">=</span> <span class="n">DeccelAmplitude</span><span class="p">(</span> <span class="n">Wave3D</span><span class="p">(</span> <span class="n">waves</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">6</span><span class="p">),</span> <span class="n">rate</span><span class="o">=</span><span class="mf">1.0</span> <span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">action</span> <span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.DeccelAmplitude.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.DeccelAmplitude.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.actions.basegrid_actions.AccelDeccelAmplitude">
+<em class="property">class </em><code class="descname">AccelDeccelAmplitude</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.AccelDeccelAmplitude" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
+<p>Increases and Decreases the amplitude of Wave</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># when t=0 and t=1 the amplitude will be 0</span>
+<span class="c"># when t=0.5 (half time), the amplitude will be 40</span>
+<span class="n">action</span> <span class="o">=</span> <span class="n">AccellDeccelAmplitude</span><span class="p">(</span> <span class="n">Wave3D</span><span class="p">(</span> <span class="n">waves</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">action</span> <span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.AccelDeccelAmplitude.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>other</em>, <em>rate=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.AccelDeccelAmplitude.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Init method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>other</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>IntervalAction</cite></span></dt>
+<dd><p class="first last">The action that will be affected</p>
+</dd>
+<dt><cite>rate</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The acceleration rate. 1 is linear (default value)</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.AccelDeccelAmplitude.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.AccelDeccelAmplitude.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.AccelDeccelAmplitude.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.AccelDeccelAmplitude.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.actions.basegrid_actions.StopGrid">
+<em class="property">class </em><code class="descname">StopGrid</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.StopGrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.InstantAction" title="cocos.actions.base_actions.InstantAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.InstantAction</span></code></a></p>
+<p>StopGrid disables the current grid.
+Every grid action, after finishing, leaves the screen with a certain grid figure.
+This figure will be displayed until StopGrid or another Grid action is executed.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">Waves3D</span><span class="p">(</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">StopGrid</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.StopGrid.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.StopGrid.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.actions.basegrid_actions.ReuseGrid">
+<em class="property">class </em><code class="descname">ReuseGrid</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.ReuseGrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.InstantAction" title="cocos.actions.base_actions.InstantAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.InstantAction</span></code></a></p>
+<p>Will reuse the current grid for the next grid action.
+The next grid action must have these properties:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Be of the same class as the current one ( <cite>Grid3D</cite> or <cite>TiledGrid3D</cite> )</li>
+<li>Have the same size</li>
+</ul>
+</div></blockquote>
+<p>If these condition are met, then the next grid action will receive as the <code class="docutils literal"><span class="pre">original</span> <span class="pre">vertex</span></code>
+or <code class="docutils literal"><span class="pre">original</span> <span class="pre">tiles</span></code> the current ones.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">Waves3D</span><span class="p">(</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">ReuseGrid</span><span class="p">()</span> <span class="o">+</span> <span class="n">Lens3D</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.ReuseGrid.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>reuse_times=1</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.ReuseGrid.init" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>reuse_times</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of times that the current grid will be reused by Grid actions. Default: 1</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.basegrid_actions.ReuseGrid.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.ReuseGrid.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">cocos.actions.basegrid_actions module</a><ul>
+<li><a class="reference internal" href="#grid-actions">Grid Actions</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cocos.actions.base_actions.html"
+                        title="previous chapter">cocos.actions.base_actions module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cocos.actions.camera_actions.html"
+                        title="next chapter">cocos.actions.camera_actions module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/cocos.actions.basegrid_actions.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.actions.camera_actions.html" title="cocos.actions.camera_actions module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cocos.actions.base_actions.html" title="cocos.actions.base_actions module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.actions.html" >cocos.actions package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

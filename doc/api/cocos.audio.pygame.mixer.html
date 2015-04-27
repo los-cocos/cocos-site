@@ -1,0 +1,826 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos.audio.pygame.mixer module &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="up" title="cocos.audio.pygame package" href="cocos.audio.pygame.html" />
+    <link rel="next" title="cocos.audio.pygame.music module" href="cocos.audio.pygame.music.html" />
+    <link rel="prev" title="cocos.audio.pygame.base module" href="cocos.audio.pygame.base.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.pygame.music.html" title="cocos.audio.pygame.music module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.pygame.base.html" title="cocos.audio.pygame.base module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &raquo;</li>
+          <li class="nav-item nav-item-3"><a href="cocos.audio.pygame.html" accesskey="U">cocos.audio.pygame package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cocos.audio.pygame.mixer">
+<span id="cocos-audio-pygame-mixer-module"></span><h1>cocos.audio.pygame.mixer module<a class="headerlink" href="#module-cocos.audio.pygame.mixer" title="Permalink to this headline">¶</a></h1>
+<p>Pygame module for loading and playing sounds.</p>
+<p>This module contains classes for loading Sound objects and controlling
+playback. The mixer module is optional and depends on SDL_mixer. Your
+program should test that pygame.mixer is available and intialized before
+using it.</p>
+<p>The mixer module has a limited number of channels for playback of sounds.
+Usually programs tell pygame to start playing audio and it selects an
+available channel automatically. The default is 8 simultaneous channels,
+but complex programs can get more precise control over the number of
+channels and their use.</p>
+<p>All sound playback is mixed in background threads. When you begin
+to play a Sound object, it will return immediately while the sound
+continues to play. A single Sound object can also be actively played
+back multiple times.</p>
+<p>The mixer also has a special streaming channel. This is for music
+playback and is accessed through the pygame.mixer.music module.</p>
+<p>The mixer module must be initialized like other pygame modules, but it has
+some extra conditions. The pygame.mixer.init() function takes several
+optional arguments to control the playback rate and sample size. Pygame
+will default to reasonable values, but pygame cannot perform Sound
+resampling, so the mixer should be initialized to match the values of
+your audio resources.</p>
+<p>NOTE: there is currently a bug on some windows machines which makes
+sound play back &#8216;scratchy&#8217;.  There is not enough cpu in the sound
+thread to feed the buffer to the sound api.
+To get around this you can increase the buffer size.  However this
+means that there is more of a delay between the time you ask to play
+the sound and when it gets played.  Try calling this before the pygame.init or
+pygame.mixer.init calls.  pygame.mixer.pre_init(44100,-16,2, 1024 * 3)</p>
+<dl class="class">
+<dt id="cocos.audio.pygame.mixer.Channel">
+<em class="property">class </em><code class="descname">Channel</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>The Channel object can be used to get fine control over the playback of
+Sounds. A channel can only playback a single Sound at time. Using channels
+is entirely optional since pygame can manage them by default.</p>
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Channel.fadeout">
+<code class="descname">fadeout</code><span class="sig-paren">(</span><em>time</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Channel.fadeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop playback after fading channel out.</p>
+<p>Stop playback of a channel after fading out the sound over the given
+time argument in milliseconds.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>time</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Time to fade out, in milliseconds.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Channel.get_busy">
+<code class="descname">get_busy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Channel.get_busy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if the channel is active.</p>
+<p>Returns true if the channel is activily mixing sound. If the channel
+is idle this returns False.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Channel.get_endevent">
+<code class="descname">get_endevent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Channel.get_endevent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the event a channel sends when playback stops.</p>
+<p>Returns the event type to be sent every time the Channel finishes
+playback of a Sound. If there is no endevent the function returns
+pygame.NOEVENT.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Channel.get_queue">
+<code class="descname">get_queue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Channel.get_queue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return any Sound that is queued.</p>
+<p>If a Sound is already queued on this channel it will be returned. Once
+the queued sound begins playback it will no longer be on the queue.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><cite>Sound</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Channel.get_sound">
+<code class="descname">get_sound</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Channel.get_sound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the currently playing Sound.</p>
+<p>Return the actual Sound object currently playing on this channel. If
+the channel is idle None is returned.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><cite>Sound</cite></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Channel.get_volume">
+<code class="descname">get_volume</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Channel.get_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the volume of the playing channel.</p>
+<p>Return the volume of the channel for the current playing sound. This
+does not take into account stereo separation used by
+Channel.set_volume.  The Sound object also has its own volume which is
+mixed with the channel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Channel.pause">
+<code class="descname">pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Channel.pause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Temporarily stop playback of a channel.</p>
+<p>Temporarily stop the playback of sound on a channel. It can be resumed
+at a later time with Channel.unpause()</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Channel.play">
+<code class="descname">play</code><span class="sig-paren">(</span><em>sound</em>, <em>loops=0</em>, <em>time=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Channel.play" title="Permalink to this definition">¶</a></dt>
+<dd><p>Play a Sound on a specific Channel.</p>
+<p>This will begin playback of a Sound on a specific Channel. If the
+Channel is currently playing any other Sound it will be stopped.</p>
+<p>The loops argument has the same meaning as in Sound.play(): it is the
+number of times to repeat the sound after the first time. If it is 3,
+the sound will be played 4 times (the first time, then three more).
+If loops is -1 then the playback will repeat indefinitely.</p>
+<p>As in Sound.play(), the time argument can be used to
+stop playback of the Sound after a given number of milliseconds.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>sound</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Sound</cite></span></dt>
+<dd><p class="first last">Sound data to play.</p>
+</dd>
+<dt><cite>loops</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of times to repeat the sound after the first play.</p>
+</dd>
+<dt><cite>time</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Maximum number of milliseconds to play for.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Channel.queue">
+<code class="descname">queue</code><span class="sig-paren">(</span><em>sound</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Channel.queue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queue a Sound object to follow the current.</p>
+<p>When a Sound is queued on a Channel, it will begin playing immediately
+after the current Sound is finished. Each channel can only have a
+single Sound queued at a time. The queued Sound will only play if the
+current playback finished automatically. It is cleared on any other
+call to Channel.stop() or Channel.play().</p>
+<p>If there is no sound actively playing on the Channel then the Sound
+will begin playing immediately.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>sound</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Sound</cite></span></dt>
+<dd><p class="first last">Sound data to queue.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Channel.set_endevent">
+<code class="descname">set_endevent</code><span class="sig-paren">(</span><em>id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Channel.set_endevent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Have the channel send an event when playback stops.</p>
+<p>When an endevent is set for a channel, it will send an event to the
+pygame queue every time a sound finishes playing on that channel (not
+just the first time). Use pygame.event.get() to retrieve the endevent
+once it&#8217;s sent.</p>
+<p>Note that if you called Sound.play(n) or Channel.play(sound,n), the
+end event is sent only once: after the sound has been played &#8220;n+1&#8221;
+times (see the documentation of Sound.play).</p>
+<p>If Channel.stop() or Channel.play() is called while the sound was
+still playing, the event will be posted immediately.</p>
+<p>The <cite>id</cite> argument will be the event id sent to the queue. This can be
+any valid event type, but a good choice would be a value between
+pygame.locals.USEREVENT and pygame.locals.NUMEVENTS.  If no type
+argument is given then the Channel will stop sending endevents.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>id</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Event ID to send.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Channel.set_volume">
+<code class="descname">set_volume</code><span class="sig-paren">(</span><em>left</em>, <em>right=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Channel.set_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the volume of a playing channel.</p>
+<p>Set the volume (loudness) of a playing sound. When a channel starts to
+play its volume value is reset. This only affects the current sound.
+Each argument is between 0.0 and 1.0.</p>
+<p>If one argument is passed, it will be the volume of both speakers.
+If two arguments are passed and the mixer is in stereo mode, the
+first argument will be the volume of the left speaker and the second
+will be the volume of the right speaker. (If the second argument is
+None, the first argument will be the volume of both speakers.)</p>
+<p>If the channel is playing a Sound on which set_volume() has also
+been called, both calls are taken into account. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">sound</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">Sound</span><span class="p">(</span><span class="s">&quot;s.wav&quot;</span><span class="p">)</span>
+<span class="n">channel</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>      <span class="c"># Sound plays at full volume by default</span>
+<span class="n">sound</span><span class="o">.</span><span class="n">set_volume</span><span class="p">(</span><span class="mf">0.9</span><span class="p">)</span>   <span class="c"># Now plays at 90% of full volume.</span>
+<span class="n">sound</span><span class="o">.</span><span class="n">set_volume</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>   <span class="c"># Now plays at 60% (previous value replaced)</span>
+<span class="n">channel</span><span class="o">.</span><span class="n">set_volume</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span> <span class="c"># Now plays at 30% (0.6 * 0.5).</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>left</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Volume of left (or mono) channel, in range [0.0, 1.0]</p>
+</dd>
+<dt><cite>right</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Volume of right channel, in range [0.0, 1.0]</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Channel.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Channel.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop playback on a Channel.</p>
+<p>Stop sound playback on a channel. After playback is stopped the
+channel becomes available for new Sounds to play on it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Channel.unpause">
+<code class="descname">unpause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Channel.unpause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resume pause playback of a channel.</p>
+<p>Resume the playback on a paused channel.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.audio.pygame.mixer.Sound">
+<em class="property">class </em><code class="descname">Sound</code><span class="sig-paren">(</span><em>file</em>, <em>_chunk=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Sound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>The Sound object represents actual sound sample data.</p>
+<p>Methods that change the state of the Sound object will the all instances
+of the Sound playback.</p>
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Sound.fadeout">
+<code class="descname">fadeout</code><span class="sig-paren">(</span><em>time</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Sound.fadeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop sound playback after fading out.</p>
+<p>This will stop playback of the sound after fading it out over the
+time argument in milliseconds. The Sound will fade and stop on all
+actively playing channels.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>time</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Time to fade out, in milliseconds.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Sound.get_length">
+<code class="descname">get_length</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Sound.get_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the length of the Sound.</p>
+<p>Return the length of this Sound in seconds.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Sound.get_num_channels">
+<code class="descname">get_num_channels</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Sound.get_num_channels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Count how many times this Sound is playing.</p>
+<p>Return the number of active channels this sound is playing on.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Sound.get_volume">
+<code class="descname">get_volume</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Sound.get_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the playback volume.</p>
+<p>Return a value from 0.0 to 1.0 representing the volume for this Sound.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Sound.play">
+<code class="descname">play</code><span class="sig-paren">(</span><em>loops=0</em>, <em>maxtime=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Sound.play" title="Permalink to this definition">¶</a></dt>
+<dd><p>Begin sound playback.</p>
+<p>Begin playback of the Sound (i.e., on the computer&#8217;s speakers) on an
+available Channel. This will forcibly select a Channel, so playback
+may cut off a currently playing sound if necessary.</p>
+<p>The loops argument controls how many times the sample will be repeated
+after being played the first time. A value of 5 means that the sound
+will be played once, then repeated five times, and so is played a
+total of six times. The default value (zero) means the Sound is not
+repeated, and so is only played once. If loops is set to -1 the Sound
+will loop indefinitely (though you can still call stop() to stop it).</p>
+<p>The maxtime argument can be used to stop playback after a given number
+of milliseconds.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><cite>loops</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of times to repeat the sound after the first play.</p>
+</dd>
+<dt><cite>maxtime</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Maximum number of milliseconds to play for.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first"><cite>Channel</cite></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The Channel object for the channel that was selected.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Sound.set_volume">
+<code class="descname">set_volume</code><span class="sig-paren">(</span><em>volume</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Sound.set_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the playback volume for this Sound.</p>
+<p>This will set the playback volume (loudness) for this Sound. This will
+immediately affect the Sound if it is playing. It will also affect any
+future playback of this Sound. The argument is a value from 0.0 to
+1.0.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>volume</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Volume of playback, in range [0.0, 1.0]</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.audio.pygame.mixer.Sound.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.Sound.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop sound playback.</p>
+<p>This will stop the playback of this Sound on any active Channels.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.pygame.mixer.fadeout">
+<code class="descname">fadeout</code><span class="sig-paren">(</span><em>time</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.fadeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fade out the volume on all sounds before stopping.</p>
+<p>This will fade out the volume on all active channels over the time
+argument in milliseconds. After the sound is muted the playback will stop.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>time</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Time to fade out, in milliseconds.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.pygame.mixer.find_channel">
+<code class="descname">find_channel</code><span class="sig-paren">(</span><em>force=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.find_channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find an unused channel.</p>
+<p>This will find and return an inactive Channel object. If there are no
+inactive Channels this function will return None. If there are no inactive
+channels and the force argument is True, this will find the Channel with
+the longest running Sound and return it.</p>
+<p>If the mixer has reserved channels from pygame.mixer.set_reserved() then
+those channels will not be returned here.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><cite>force</cite> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">If True, a playing channel will be returned if no free ones
+are available.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><cite>Channel</cite></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.pygame.mixer.get_busy">
+<code class="descname">get_busy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.get_busy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test if any sound is being mixed.</p>
+<p>Returns True if the mixer is busy mixing any channels. If the mixer is
+idle then this return False.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.pygame.mixer.get_init">
+<code class="descname">get_init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.get_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if the mixer is initialized.</p>
+<p>If the mixer is initialized, this returns the playback arguments it
+is using. If the mixer has not been initialized this returns None</p>
+<p>The value of <cite>size</cite> follows the same conventions as in <cite>init</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">(int, int, bool) or None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">(frequency, size, stereo)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.pygame.mixer.get_num_channels">
+<code class="descname">get_num_channels</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.get_num_channels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the total number of playback channels.</p>
+<p>Returns the number of currently active playback channels.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.pygame.mixer.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>frequency=None</em>, <em>size=None</em>, <em>stereo=None</em>, <em>buffer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the mixer module.</p>
+<p>Initialize the mixer module for Sound loading and playback. The default
+arguments can be overridden to provide specific audio mixing. The size
+argument represents how many bits are used for each audio sample. If the
+value is negative then signed sample values will be used. Positive values
+mean unsigned audio samples will be used. If the stereo argument is false
+the mixer will use mono sound.</p>
+<p>The buffer argument controls the number of internal samples used in the
+sound mixer. The default value should work for most cases. It can be
+lowered to reduce latency, but sound dropout may occur. It can be raised
+to larger values to ensure playback never skips, but it will impose latency
+on sound playback. The buffer size must be a power of two.</p>
+<p>Some platforms require the pygame.mixer module to be initialized after the
+display modules have initialized. The top level pygame.init() takes care
+of this automatically, but cannot pass any arguments to the mixer init. To
+solve this, mixer has a function pygame.mixer.pre_init() to set the proper
+defaults before the toplevel init is used.</p>
+<p>It is safe to call this more than once, but after the mixer is initialized
+you cannot change the playback arguments without first calling
+pygame.mixer.quit().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>frequency</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Sample rate, in Hertz; defaults to 22050</p>
+</dd>
+<dt><cite>size</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Bits per sample per channel; defaults to -16.  Positive values for
+unsigned values, negative for signed.</p>
+</dd>
+<dt><cite>stereo</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of output channels: 1 for mono, 2 for stereo; defaults to
+2.</p>
+</dd>
+<dt><cite>buffer</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Byte size of each output channel&#8217;s buffer; a power of two;
+defaults to 1024.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.pygame.mixer.pause">
+<code class="descname">pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.pause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Temporarily stop playback of all sound channels.</p>
+<p>This will temporarily stop all playback on the active mixer channels.
+The playback can later be resumed with pygame.mixer.unpause()</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.pygame.mixer.pre_init">
+<code class="descname">pre_init</code><span class="sig-paren">(</span><em>frequency=0</em>, <em>size=0</em>, <em>stereo=0</em>, <em>buffer=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.pre_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Preset the mixer init arguments.</p>
+<p>Any nonzero arguments change the default values used when the real
+pygame.mixer.init() is called. The best way to set custom mixer playback
+values is to call pygame.mixer.pre_init() before calling the top level
+pygame.init().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>frequency</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Sample rate, in Hertz</p>
+</dd>
+<dt><cite>size</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Bits per sample per channel.  Positive values for unsigned
+values, negative for signed.</p>
+</dd>
+<dt><cite>stereo</cite> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">Number of mixdown channels: False for 1, True for 2.</p>
+</dd>
+<dt><cite>buffer</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Bytes for mixdown buffer size; a power of two.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.pygame.mixer.quit">
+<code class="descname">quit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.quit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uninitialize the mixer.</p>
+<p>This will uninitialize pygame.mixer. All playback will stop and any loaded
+Sound objects may not be compatable with the mixer if it is reinitialized
+later.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.pygame.mixer.set_num_channels">
+<code class="descname">set_num_channels</code><span class="sig-paren">(</span><em>channels</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.set_num_channels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the total number of playback channels.</p>
+<p>Sets the number of available channels for the mixer. The default value is
+8. The value can be increased or decreased. If the value is decreased,
+sounds playing on the truncated channels are stopped.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>channels</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of channels</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.pygame.mixer.set_reserved">
+<code class="descname">set_reserved</code><span class="sig-paren">(</span><em>channels</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.set_reserved" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reserve channels from being automatically used.</p>
+<p>The mixer can reserve any number of channels that will not be automatically
+selected for playback by Sounds. If sounds are currently playing on the
+reserved channels they will not be stopped.</p>
+<p>This allows the application to reserve a specific number of channels for
+important sounds that must not be dropped or have a guaranteed channel to
+play on.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>channels</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of channels to reserve.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.pygame.mixer.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop playback of all sound channels.</p>
+<p>This will stop all playback of all active mixer channels.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.pygame.mixer.unpause">
+<code class="descname">unpause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.mixer.unpause" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resume paused playback of sound channels.</p>
+<p>This will resume all active sound channels after they have been paused.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cocos.audio.pygame.base.html"
+                        title="previous chapter">cocos.audio.pygame.base module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cocos.audio.pygame.music.html"
+                        title="next chapter">cocos.audio.pygame.music module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/cocos.audio.pygame.mixer.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.pygame.music.html" title="cocos.audio.pygame.music module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.pygame.base.html" title="cocos.audio.pygame.base module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &raquo;</li>
+          <li class="nav-item nav-item-3"><a href="cocos.audio.pygame.html" >cocos.audio.pygame package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

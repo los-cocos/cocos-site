@@ -1,0 +1,383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos.skeleton module &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="up" title="cocos package" href="cocos.html" />
+    <link rel="next" title="cocos.sprite module" href="cocos.sprite.html" />
+    <link rel="prev" title="cocos.shader module" href="cocos.shader.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.sprite.html" title="cocos.sprite module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cocos.shader.html" title="cocos.shader module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cocos.skeleton">
+<span id="cocos-skeleton-module"></span><h1>cocos.skeleton module<a class="headerlink" href="#module-cocos.skeleton" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="cocos.skeleton.Animate">
+<em class="property">class </em><code class="descname">Animate</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
+<dl class="method">
+<dt id="cocos.skeleton.Animate.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>animation</em>, <em>recenter=False</em>, <em>recenter_x=False</em>, <em>recenter_y=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animate.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Animate.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animate.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Animate.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animate.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.skeleton.Animation">
+<em class="property">class </em><code class="descname">Animation</code><span class="sig-paren">(</span><em>skeleton</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="cocos.skeleton.Animation.delete_time">
+<code class="descname">delete_time</code><span class="sig-paren">(</span><em>delta</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animation.delete_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Animation.flipped">
+<code class="descname">flipped</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animation.flipped" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Animation.get_duration">
+<code class="descname">get_duration</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animation.get_duration" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Animation.get_keyframe">
+<code class="descname">get_keyframe</code><span class="sig-paren">(</span><em>offset=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animation.get_keyframe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Animation.get_markers">
+<code class="descname">get_markers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animation.get_markers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Animation.get_position">
+<code class="descname">get_position</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animation.get_position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Animation.insert_keyframe">
+<code class="descname">insert_keyframe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animation.insert_keyframe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Animation.insert_time">
+<code class="descname">insert_time</code><span class="sig-paren">(</span><em>delta</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animation.insert_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Animation.move_end">
+<code class="descname">move_end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animation.move_end" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Animation.move_position">
+<code class="descname">move_position</code><span class="sig-paren">(</span><em>delta</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animation.move_position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Animation.move_start">
+<code class="descname">move_start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animation.move_start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Animation.next_keyframe">
+<code class="descname">next_keyframe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animation.next_keyframe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Animation.pose">
+<code class="descname">pose</code><span class="sig-paren">(</span><em>who</em>, <em>t</em>, <em>start</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animation.pose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Animation.prev_keyframe">
+<code class="descname">prev_keyframe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animation.prev_keyframe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Animation.remove_keyframe">
+<code class="descname">remove_keyframe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Animation.remove_keyframe" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.skeleton.BitmapSkin">
+<em class="property">class </em><code class="descname">BitmapSkin</code><span class="sig-paren">(</span><em>skeleton</em>, <em>skin_def</em>, <em>alpha=255</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.BitmapSkin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.skeleton.Skin" title="cocos.skeleton.Skin"><code class="xref py py-class docutils literal"><span class="pre">cocos.skeleton.Skin</span></code></a></p>
+<dl class="method">
+<dt id="cocos.skeleton.BitmapSkin.blit_image">
+<code class="descname">blit_image</code><span class="sig-paren">(</span><em>matrix</em>, <em>position</em>, <em>scale</em>, <em>image</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.BitmapSkin.blit_image" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.BitmapSkin.draw">
+<code class="descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.BitmapSkin.draw" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.BitmapSkin.flip">
+<code class="descname">flip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.BitmapSkin.flip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.BitmapSkin.get_control_points">
+<code class="descname">get_control_points</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.BitmapSkin.get_control_points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.BitmapSkin.move">
+<code class="descname">move</code><span class="sig-paren">(</span><em>idx</em>, <em>dx</em>, <em>dy</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.BitmapSkin.move" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.BitmapSkin.regenerate">
+<code class="descname">regenerate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.BitmapSkin.regenerate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.skeleton.BitmapSkin.skin_parts">
+<code class="descname">skin_parts</code><em class="property"> = []</em><a class="headerlink" href="#cocos.skeleton.BitmapSkin.skin_parts" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.skeleton.Bone">
+<em class="property">class </em><code class="descname">Bone</code><span class="sig-paren">(</span><em>label</em>, <em>size</em>, <em>rotation</em>, <em>translation</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Bone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="cocos.skeleton.Bone.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>bone</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Bone.add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Bone.dump">
+<code class="descname">dump</code><span class="sig-paren">(</span><em>depth=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Bone.dump" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Bone.flipped">
+<code class="descname">flipped</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Bone.flipped" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Bone.get_end">
+<code class="descname">get_end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Bone.get_end" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Bone.get_start">
+<code class="descname">get_start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Bone.get_start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Bone.interpolated_to">
+<code class="descname">interpolated_to</code><span class="sig-paren">(</span><em>next</em>, <em>delta</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Bone.interpolated_to" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Bone.move">
+<code class="descname">move</code><span class="sig-paren">(</span><em>dx</em>, <em>dy</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Bone.move" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Bone.repr">
+<code class="descname">repr</code><span class="sig-paren">(</span><em>depth=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Bone.repr" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Bone.rotate">
+<code class="descname">rotate</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Bone.rotate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.skeleton.ColorSkin">
+<em class="property">class </em><code class="descname">ColorSkin</code><span class="sig-paren">(</span><em>skeleton</em>, <em>color</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.ColorSkin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.skeleton.Skin" title="cocos.skeleton.Skin"><code class="xref py py-class docutils literal"><span class="pre">cocos.skeleton.Skin</span></code></a></p>
+<dl class="method">
+<dt id="cocos.skeleton.ColorSkin.draw">
+<code class="descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.ColorSkin.draw" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.ColorSkin.draw_bone">
+<code class="descname">draw_bone</code><span class="sig-paren">(</span><em>bone</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.ColorSkin.draw_bone" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.skeleton.Skeleton">
+<em class="property">class </em><code class="descname">Skeleton</code><span class="sig-paren">(</span><em>bone</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Skeleton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="cocos.skeleton.Skeleton.flipped">
+<code class="descname">flipped</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Skeleton.flipped" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Skeleton.get_control_points">
+<code class="descname">get_control_points</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Skeleton.get_control_points" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Skeleton.interpolated_to">
+<code class="descname">interpolated_to</code><span class="sig-paren">(</span><em>next</em>, <em>delta</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Skeleton.interpolated_to" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Skeleton.move">
+<code class="descname">move</code><span class="sig-paren">(</span><em>dx</em>, <em>dy</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Skeleton.move" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Skeleton.pose_from">
+<code class="descname">pose_from</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Skeleton.pose_from" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Skeleton.propagate_matrix">
+<code class="descname">propagate_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Skeleton.propagate_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Skeleton.save">
+<code class="descname">save</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Skeleton.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.skeleton.Skeleton.visit_children">
+<code class="descname">visit_children</code><span class="sig-paren">(</span><em>func</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Skeleton.visit_children" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.skeleton.Skin">
+<em class="property">class </em><code class="descname">Skin</code><span class="sig-paren">(</span><em>skeleton</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.skeleton.Skin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal"><span class="pre">cocos.cocosnode.CocosNode</span></code></a></p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cocos.shader.html"
+                        title="previous chapter">cocos.shader module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cocos.sprite.html"
+                        title="next chapter">cocos.sprite module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/cocos.skeleton.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.sprite.html" title="cocos.sprite module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cocos.shader.html" title="cocos.shader module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

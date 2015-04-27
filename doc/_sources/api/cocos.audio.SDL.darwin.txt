@@ -1,0 +1,7 @@
+cocos.audio.SDL.darwin module
+=============================
+
+.. automodule:: cocos.audio.SDL.darwin
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos.text module &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="up" title="cocos package" href="cocos.html" />
+    <link rel="next" title="cocos.tiles module" href="cocos.tiles.html" />
+    <link rel="prev" title="cocos.sprite module" href="cocos.sprite.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.tiles.html" title="cocos.tiles module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cocos.sprite.html" title="cocos.sprite module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cocos.text">
+<span id="cocos-text-module"></span><h1>cocos.text module<a class="headerlink" href="#module-cocos.text" title="Permalink to this headline">¶</a></h1>
+<p>Text support</p>
+<p>CocosNodes subclasses supporting text.
+They use a suitable pyglet text object to do the work.
+Functionality other that the one common to all cococsnodes, except &#8216;opacity&#8217;, is
+provided by the member &#8216;element&#8217; , which is the underlying pyglet object.</p>
+<dl class="class">
+<dt id="cocos.text.HTMLLabel">
+<em class="property">class </em><code class="descname">HTMLLabel</code><span class="sig-paren">(</span><em>text=u''</em>, <em>position=(0</em>, <em>0)</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.text.HTMLLabel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.text.TextElement" title="cocos.text.TextElement"><code class="xref py py-class docutils literal"><span class="pre">cocos.text.TextElement</span></code></a></p>
+<p>HTML formatted text label (supports a subset of HTML 4.01)</p>
+<p>Functionality other that the one common to all cococsnodes, except &#8216;opacity&#8217;, is
+provided by the member &#8216;element&#8217; , which is the underlying pyglet object.
+The undelying pyglet object is pyglet.text.HTMLLabel.</p>
+<dl class="docutils">
+<dt>For pyglet 1.1.4 the available init keyword arguments are</dt>
+<dd><ul class="first last simple">
+<li>location: Location object for loading images referred to in the document. By default, the working directory is used.</li>
+<li>width: Width of the label in pixels, or None</li>
+<li>height: Height of the label in pixels, or None</li>
+<li>anchor_x: &#8220;left&#8221;, &#8220;center&#8221; or &#8220;right&#8221;.</li>
+<li>anchor_y: one of &#8220;bottom&#8221;, &#8220;baseline&#8221;, &#8220;center&#8221; or &#8220;top&#8221;.</li>
+<li>multiline : bool</li>
+<li>dpi : float, defaults to 96</li>
+</ul>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="cocos.text.HTMLLabel.klass">
+<code class="descname">klass</code><a class="headerlink" href="#cocos.text.HTMLLabel.klass" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#cocos.text.HTMLLabel" title="cocos.text.HTMLLabel"><code class="xref py py-class docutils literal"><span class="pre">HTMLLabel</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.text.Label">
+<em class="property">class </em><code class="descname">Label</code><span class="sig-paren">(</span><em>text=u''</em>, <em>position=(0</em>, <em>0)</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.text.Label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.text.TextElement" title="cocos.text.TextElement"><code class="xref py py-class docutils literal"><span class="pre">cocos.text.TextElement</span></code></a></p>
+<p>Plain text support</p>
+<p>Functionality other that the one common to all cococsnodes, except &#8216;opacity&#8217;, is
+provided by the member &#8216;element&#8217; , which is the underlying pyglet object.
+The undelying pyglet object is pyglet.text.Label</p>
+<dl class="docutils">
+<dt>For pyglet 1.1.4 the available init keyword arguments are</dt>
+<dd><ul class="first last simple">
+<li>font_name: Font family name(s); the first matching name is used</li>
+<li>font_size: Font size, in points</li>
+<li>bold: bool</li>
+<li>italic: bool</li>
+<li>color: (int, int, int, int) Font colour, as RGBA</li>
+<li>width: Width of the label in pixels, or None</li>
+<li>height: Height of the label in pixels, or None</li>
+<li>anchor_x: one of &#8220;left&#8221;, &#8220;center&#8221; or &#8220;right&#8221;</li>
+<li>anchor_y : one of &#8220;bottom&#8221;, &#8220;baseline&#8221;, &#8220;center&#8221; or &#8220;top&#8221;</li>
+<li>halign : applies when width is supplied. One of &#8220;left&#8221;, &#8220;center&#8221; or &#8220;right&#8221;.</li>
+<li>multiline: bool</li>
+<li>dpi: Resolution of the fonts in this layout. Defaults to 96.</li>
+</ul>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="cocos.text.Label.klass">
+<code class="descname">klass</code><a class="headerlink" href="#cocos.text.Label.klass" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#cocos.text.Label" title="cocos.text.Label"><code class="xref py py-class docutils literal"><span class="pre">Label</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.text.PygletRichLabel">
+<em class="property">class </em><code class="descname">PygletRichLabel</code><span class="sig-paren">(</span><em>text=u''</em>, <em>font_name=None</em>, <em>font_size=None</em>, <em>bold=False</em>, <em>italic=False</em>, <em>color=None</em>, <em>x=0</em>, <em>y=0</em>, <em>width=None</em>, <em>height=None</em>, <em>anchor_x=u'left'</em>, <em>anchor_y=u'baseline'</em>, <em>halign=u'left'</em>, <em>multiline=False</em>, <em>dpi=None</em>, <em>batch=None</em>, <em>group=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.text.PygletRichLabel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">pyglet.text.DocumentLabel</span></code></p>
+<p>This is not a CocosNode - let instantiation be handled by RichLabel</p>
+<p>Helper class for RichLabel</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.text.RichLabel">
+<em class="property">class </em><code class="descname">RichLabel</code><span class="sig-paren">(</span><em>text=u''</em>, <em>position=(0</em>, <em>0)</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.text.RichLabel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.text.TextElement" title="cocos.text.TextElement"><code class="xref py py-class docutils literal"><span class="pre">cocos.text.TextElement</span></code></a></p>
+<p>displays pyglet attributed (rich) text</p>
+<p>The undelying pyglet object is a custom, cocos provided PygletRichLabel
+element, subclass of pyglet.text.DocumentLabel.</p>
+<dl class="docutils">
+<dt>For pyglet 1.1.4 the available init keyword arguments are</dt>
+<dd><ul class="first last simple">
+<li>font_name: Font family name(s); first matching is used</li>
+<li>font_size: Font size, in points.</li>
+<li>bold: bool</li>
+<li>italic: bool</li>
+<li>color : (int, int, int, int) or None</li>
+<li>width: Width of the label in pixels, or None</li>
+<li>height: Height of the label in pixels, or None</li>
+<li>anchor_x: &#8220;left&#8221;, &#8220;center&#8221; or &#8220;right&#8221;</li>
+<li>anchor_y: one of &#8220;bottom&#8221;, &#8220;baseline&#8221;, &#8220;center&#8221; or &#8220;top&#8221;</li>
+<li>halign :  only when a width is supplied. One of &#8220;left&#8221;, &#8220;center&#8221;, &#8220;right&#8221;.</li>
+<li>multiline : bool</li>
+<li>dpi : Resolution of the fonts in this layout.  Defaults to 96.</li>
+</ul>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="cocos.text.RichLabel.klass">
+<code class="descname">klass</code><a class="headerlink" href="#cocos.text.RichLabel.klass" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#cocos.text.PygletRichLabel" title="cocos.text.PygletRichLabel"><code class="xref py py-class docutils literal"><span class="pre">PygletRichLabel</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.text.TextElement">
+<em class="property">class </em><code class="descname">TextElement</code><span class="sig-paren">(</span><em>text=u''</em>, <em>position=(0</em>, <em>0)</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.text.TextElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal"><span class="pre">cocos.cocosnode.CocosNode</span></code></a></p>
+<p>Base class for all cocos text</p>
+<p>Provides the CocosNode interfase and a pyglet Batch to store parts
+Functionality other that the one common to all cococsnodes, except &#8216;opacity&#8217;, is
+provided by the member &#8216;element&#8217; , which is the underlying pyglet object.</p>
+<dl class="method">
+<dt id="cocos.text.TextElement.create_element">
+<code class="descname">create_element</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.text.TextElement.create_element" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.text.TextElement.draw">
+<code class="descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.text.TextElement.draw" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.text.TextElement.opacity">
+<code class="descname">opacity</code><a class="headerlink" href="#cocos.text.TextElement.opacity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cocos.sprite.html"
+                        title="previous chapter">cocos.sprite module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cocos.tiles.html"
+                        title="next chapter">cocos.tiles module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/cocos.text.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.tiles.html" title="cocos.tiles module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cocos.sprite.html" title="cocos.sprite module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

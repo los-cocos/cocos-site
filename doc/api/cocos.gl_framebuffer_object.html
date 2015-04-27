@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos.gl_framebuffer_object module &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="up" title="cocos package" href="cocos.html" />
+    <link rel="next" title="cocos.grid module" href="cocos.grid.html" />
+    <link rel="prev" title="cocos.framegrabber module" href="cocos.framegrabber.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.grid.html" title="cocos.grid module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cocos.framegrabber.html" title="cocos.framegrabber module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cocos.gl_framebuffer_object">
+<span id="cocos-gl-framebuffer-object-module"></span><h1>cocos.gl_framebuffer_object module<a class="headerlink" href="#module-cocos.gl_framebuffer_object" title="Permalink to this headline">¶</a></h1>
+<p>A thin wrapper for OpenGL framebuffer objets. For implementation use only</p>
+<dl class="class">
+<dt id="cocos.gl_framebuffer_object.FramebufferObject">
+<em class="property">class </em><code class="descname">FramebufferObject</code><a class="headerlink" href="#cocos.gl_framebuffer_object.FramebufferObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Wrapper for framebuffer objects. See</p>
+<p><a class="reference external" href="http://oss.sgi.com/projects/ogl-sample/registry/EXT/framebuffer_object.txt">http://oss.sgi.com/projects/ogl-sample/registry/EXT/framebuffer_object.txt</a></p>
+<p>API is not very OO, should be improved.</p>
+<dl class="method">
+<dt id="cocos.gl_framebuffer_object.FramebufferObject.bind">
+<code class="descname">bind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.gl_framebuffer_object.FramebufferObject.bind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set FBO as current rendering target</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.gl_framebuffer_object.FramebufferObject.check_status">
+<code class="descname">check_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.gl_framebuffer_object.FramebufferObject.check_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check that currently set framebuffer is ready for rendering</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.gl_framebuffer_object.FramebufferObject.texture2d">
+<code class="descname">texture2d</code><span class="sig-paren">(</span><em>texture</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.gl_framebuffer_object.FramebufferObject.texture2d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map currently bound framebuffer (not necessarily self) to texture</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.gl_framebuffer_object.FramebufferObject.unbind">
+<code class="descname">unbind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.gl_framebuffer_object.FramebufferObject.unbind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set default framebuffer as current rendering target</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cocos.framegrabber.html"
+                        title="previous chapter">cocos.framegrabber module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cocos.grid.html"
+                        title="next chapter">cocos.grid module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/cocos.gl_framebuffer_object.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.grid.html" title="cocos.grid module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cocos.framegrabber.html" title="cocos.framegrabber module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

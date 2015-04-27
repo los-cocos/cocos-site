@@ -1,0 +1,7 @@
+cocos.gl_framebuffer_object module
+==================================
+
+.. automodule:: cocos.gl_framebuffer_object
+    :members:
+    :undoc-members:
+    :show-inheritance:

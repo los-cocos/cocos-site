@@ -1,0 +1,7 @@
+cocos.compat module
+===================
+
+.. automodule:: cocos.compat
+    :members:
+    :undoc-members:
+    :show-inheritance:

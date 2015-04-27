@@ -1,0 +1,7 @@
+cocos.audio.pygame.base module
+==============================
+
+.. automodule:: cocos.audio.pygame.base
+    :members:
+    :undoc-members:
+    :show-inheritance:

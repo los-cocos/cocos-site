@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Collision &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="up" title="cocos2d Programming Guide" href="index.html" />
+    <link rel="next" title="Skeletal Animations" href="skeleton/skeleton.html" />
+    <link rel="prev" title="Default Handlers" href="default_handlers.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="skeleton/skeleton.html" title="Skeletal Animations"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="default_handlers.html" title="Default Handlers"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">cocos2d Programming Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="collision">
+<h1>Collision<a class="headerlink" href="#collision" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#collision-model" id="id1">Collision Model</a><ul>
+<li><a class="reference internal" href="#use-cases" id="id2">Use cases</a></li>
+<li><a class="reference internal" href="#simplified-shapes" id="id3">Simplified shapes</a></li>
+<li><a class="reference internal" href="#what-an-object-must-comply-to-be-collidable" id="id4">What an object must comply to be collidable ?</a></li>
+<li><a class="reference internal" href="#the-role-of-collision-manager" id="id5">The role of collision manager</a></li>
+<li><a class="reference internal" href="#limitations-and-weaknesees" id="id6">Limitations and weaknesees</a></li>
+<li><a class="reference internal" href="#more-details" id="id7">More details</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#performance-numbers" id="id8">Performance numbers</a><ul>
+<li><a class="reference internal" href="#the-benchmark" id="id9">The benchmark</a></li>
+<li><a class="reference internal" href="#comparing-with-brute-force" id="id10">Comparing with brute force</a></li>
+<li><a class="reference internal" href="#shape-comparisson" id="id11">Shape comparisson</a></li>
+<li><a class="reference internal" href="#ballpark-fps" id="id12">Ballpark fps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="collision-model">
+<h2><a class="toc-backref" href="#id1">Collision Model</a><a class="headerlink" href="#collision-model" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="use-cases">
+<h3><a class="toc-backref" href="#id2">Use cases</a><a class="headerlink" href="#use-cases" title="Permalink to this headline">¶</a></h3>
+<p>It is common to ask about one or another spatial relation between actors, by example</p>
+<blockquote>
+<div><ul class="simple">
+<li>any enemy is touching player ?</li>
+<li>is player near to certain enemy or trigger ?</li>
+<li>which enemy is nearest the player ?</li>
+<li>any actor under the mouse cursor ?</li>
+</ul>
+</div></blockquote>
+<p>The collision_model module has functionality to address these questions, lets see how it works.</p>
+</div>
+<div class="section" id="simplified-shapes">
+<h3><a class="toc-backref" href="#id3">Simplified shapes</a><a class="headerlink" href="#simplified-shapes" title="Permalink to this headline">¶</a></h3>
+<p>Actors generally have an irregular shape, thus to answer &#8216;actor A is touching actor B ?&#8217; ideally the rendered pixels for both actors should be considered. That would be too slow, so each actor specifies a simple geometrical shape to be used for collision calculations, and the question is translated to &#8216;shape for actor A overlaps shape for actor B ?&#8217;</p>
+<p>The available shapes at the moment are circles (discs) and rectangles with sides parallel to the axis x=0 and y=0.</p>
+</div>
+<div class="section" id="what-an-object-must-comply-to-be-collidable">
+<h3><a class="toc-backref" href="#id4">What an object must comply to be collidable ?</a><a class="headerlink" href="#what-an-object-must-comply-to-be-collidable" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>must have a member .cshape</li>
+<li>the .cshape value is an instance of <a class="reference internal" href="../api/cocos.collision_model.html#cocos.collision_model.CircleShape" title="cocos.collision_model.CircleShape"><code class="xref py py-class docutils literal"><span class="pre">CircleShape</span></code></a> or <a class="reference internal" href="../api/cocos.collision_model.html#cocos.collision_model.AARectShape" title="cocos.collision_model.AARectShape"><code class="xref py py-class docutils literal"><span class="pre">AARectShape</span></code></a></li>
+</ul>
+</div></blockquote>
+<p>Examples:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cocos.euclid</span> <span class="kn">as</span> <span class="nn">eu</span>
+<span class="kn">import</span> <span class="nn">cocos.collision_model</span> <span class="kn">as</span> <span class="nn">cm</span>
+
+<span class="k">class</span> <span class="nc">CollidableSprite</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">sprite</span><span class="o">.</span><span class="n">Sprite</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">center_x</span><span class="p">,</span> <span class="n">center_y</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+                <span class="nb">super</span><span class="p">(</span><span class="n">ActorSprite</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="n">center_x</span><span class="p">,</span> <span class="n">center_y</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cshape</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">CircleShape</span><span class="p">(</span><span class="n">eu</span><span class="o">.</span><span class="n">Vector2</span><span class="p">(</span><span class="n">center_x</span><span class="p">,</span> <span class="n">center_y</span><span class="p">),</span> <span class="n">radius</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">ActorModel</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">cshape</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">CircleShape</span><span class="p">(</span><span class="n">eu</span><span class="o">.</span><span class="n">Vector2</span><span class="p">(</span><span class="n">center_x</span><span class="p">,</span> <span class="n">center_y</span><span class="p">),</span> <span class="n">radius</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-role-of-collision-manager">
+<h3><a class="toc-backref" href="#id5">The role of collision manager</a><a class="headerlink" href="#the-role-of-collision-manager" title="Permalink to this headline">¶</a></h3>
+<p>Questions like &#8216;which actors are near actor A ?&#8217; implicitly assumes a set of candidates to try is known. Thats when a CollisionManager instance kicks in: it holds a record of which collidables consider as candidates for proximity or collision. Being the entity that knows the candidates, it is the one to answer questions about spatial relations between a collidable and the known collidables.</p>
+<p>To mantain the set of know candidates you have the methods</p>
+<blockquote>
+<div><ul class="simple">
+<li>add(obj) : makes obj a collidable known to the CollisionManager instance</li>
+<li>remove_tricky(obj) : makes the collisionManager instance forget about obj; to perform correctly obj.cshape must have the same value as when .add(obj) was called</li>
+<li>clear() : the CollisionManager instance will forget all known objects</li>
+</ul>
+</div></blockquote>
+<p>For testing and debug purposes the methods ´knows(obj)´ and ´known_objs()´ are available.</p>
+<p>Correct answers requires that the known objects have the same cshape value at the asking time than at the &#8216;add&#8217; time.
+To satisfy that restriction there are two common strategies</p>
+<blockquote>
+<div><ul>
+<li><p class="first">do collision_manager.remove_tricky(obj); obj.update_cshape(); collision_manager.add(obj) whenever obj need to update his cshape value. This is relatively slow, but acceptable if few collidables need to update his cshape at each frame.</p>
+</li>
+<li><p class="first">at each frame do:</p>
+<div class="highlight-python"><div class="highlight"><pre>collision_manager.clear()
+update cshape for all collidables
+add all collidables to collision_manager
+do the game logic related to actor collision
+</pre></div>
+</div>
+</li>
+</ul>
+<p>This pattern is adequate when most of actors change cshape at each frame.</p>
+</div></blockquote>
+<p>Sometimes it can be worth to use two collision manager instances: one for actors that rarely change it&#8217;s cshape (rocks, food,...) and other entities that update cshape at each frame (player, monsters,...)</p>
+</div>
+<div class="section" id="limitations-and-weaknesees">
+<h3><a class="toc-backref" href="#id6">Limitations and weaknesees</a><a class="headerlink" href="#limitations-and-weaknesees" title="Permalink to this headline">¶</a></h3>
+<p>This is probably the simplest schema to deal with collisions and proximity.
+The code and API are simple and easy to modify.
+The drawbacks are well known</p>
+<blockquote>
+<div><ul class="simple">
+<li>collisions for too fast or too tiny objects can go undetected</li>
+<li>ill suited to do realistic bounces</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="more-details">
+<h3><a class="toc-backref" href="#id7">More details</a><a class="headerlink" href="#more-details" title="Permalink to this headline">¶</a></h3>
+<p>Look at <a class="reference internal" href="../api/cocos.collision_model.html#cocos.collision_model.CollisionManager" title="cocos.collision_model.CollisionManager"><code class="xref py py-class docutils literal"><span class="pre">CollisionManager</span></code></a> and <a class="reference internal" href="../api/cocos.collision_model.html#cocos.collision_model.Cshape" title="cocos.collision_model.Cshape"><code class="xref py py-class docutils literal"><span class="pre">Cshape</span></code></a> for details; for __init__parameters look at the respective implementation.</p>
+</div>
+</div>
+<div class="section" id="performance-numbers">
+<h2><a class="toc-backref" href="#id8">Performance numbers</a><a class="headerlink" href="#performance-numbers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-benchmark">
+<h3><a class="toc-backref" href="#id9">The benchmark</a><a class="headerlink" href="#the-benchmark" title="Permalink to this headline">¶</a></h3>
+<p>The benchmark moves a number of balls in a rectangular area, with soft bounce in the ball-ball and ball-border interactions. We measure the time to calculate a fixed number of frames without drawing; this gives the time per physic frame.
+The initial positions are randomly chosen in the rectangle, and the initial velocity has random uniform angle.
+Most of the time the balls will have a uniform distribution over the rectangle.</p>
+<p>The model for the world is coded in  benchmarks/collision/a0_bouncing_balls_Model.py, and the runner in benchmarks/collision/a0_benchmark_time_per_frame.py</p>
+<p>Directly running the model script renders on screen and shows the fps.</p>
+<p>Testbed: windows xp sp3 32 bits, python 2.6.5,
+AMD athlon dual core 5200+, memory DDR2 800 single channel</p>
+</div>
+<div class="section" id="comparing-with-brute-force">
+<h3><a class="toc-backref" href="#id10">Comparing with brute force</a><a class="headerlink" href="#comparing-with-brute-force" title="Permalink to this headline">¶</a></h3>
+<p>A benchmark was writen to compare brute force versus other implementations.
+Currently the only CollisionManager implementation is CollisionManagerGrid, which has parameters defining the cell size; the figure compares time per frame for brute force and CollisionManagerGrid with diferent cell sizes.</p>
+<a class="reference internal image-reference" href="../_images/comparing_collision_managers.png"><img alt="../_images/comparing_collision_managers.png" class="align-center" src="../_images/comparing_collision_managers.png" style="width: 500px; height: 600px;" /></a>
+</div>
+<div class="section" id="shape-comparisson">
+<h3><a class="toc-backref" href="#id11">Shape comparisson</a><a class="headerlink" href="#shape-comparisson" title="Permalink to this headline">¶</a></h3>
+<p>The benchmark is parametrizable in the Cshape implementation to use; here we compare circle vs AABB</p>
+<a class="reference internal image-reference" href="../_images/comparing_shapes.png"><img alt="../_images/comparing_shapes.png" class="align-center" src="../_images/comparing_shapes.png" style="width: 500px; height: 600px;" /></a>
+</div>
+<div class="section" id="ballpark-fps">
+<h3><a class="toc-backref" href="#id12">Ballpark fps</a><a class="headerlink" href="#ballpark-fps" title="Permalink to this headline">¶</a></h3>
+<p>The visualization provided by a0_bouncing_balls_Model.py, which shows all balls and a colored rectangle runs at 60 fps with 165 balls, and 30fps with 300 balls (gpu ati radeon 4650)</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Collision</a><ul>
+<li><a class="reference internal" href="#collision-model">Collision Model</a><ul>
+<li><a class="reference internal" href="#use-cases">Use cases</a></li>
+<li><a class="reference internal" href="#simplified-shapes">Simplified shapes</a></li>
+<li><a class="reference internal" href="#what-an-object-must-comply-to-be-collidable">What an object must comply to be collidable ?</a></li>
+<li><a class="reference internal" href="#the-role-of-collision-manager">The role of collision manager</a></li>
+<li><a class="reference internal" href="#limitations-and-weaknesees">Limitations and weaknesees</a></li>
+<li><a class="reference internal" href="#more-details">More details</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#performance-numbers">Performance numbers</a><ul>
+<li><a class="reference internal" href="#the-benchmark">The benchmark</a></li>
+<li><a class="reference internal" href="#comparing-with-brute-force">Comparing with brute force</a></li>
+<li><a class="reference internal" href="#shape-comparisson">Shape comparisson</a></li>
+<li><a class="reference internal" href="#ballpark-fps">Ballpark fps</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="default_handlers.html"
+                        title="previous chapter">Default Handlers</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="skeleton/skeleton.html"
+                        title="next chapter">Skeletal Animations</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/programming_guide/collision.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="skeleton/skeleton.html" title="Skeletal Animations"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="default_handlers.html" title="Default Handlers"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >cocos2d Programming Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

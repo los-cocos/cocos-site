@@ -1,0 +1,7 @@
+cocos.euclid module
+===================
+
+.. automodule:: cocos.euclid
+    :members:
+    :undoc-members:
+    :show-inheritance:

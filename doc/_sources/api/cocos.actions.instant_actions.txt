@@ -1,0 +1,7 @@
+cocos.actions.instant_actions module
+====================================
+
+.. automodule:: cocos.actions.instant_actions
+    :members:
+    :undoc-members:
+    :show-inheritance:

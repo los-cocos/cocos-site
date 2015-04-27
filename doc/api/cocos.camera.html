@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos.camera module &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="up" title="cocos package" href="cocos.html" />
+    <link rel="next" title="cocos.cocosnode module" href="cocos.cocosnode.html" />
+    <link rel="prev" title="cocos.batch module" href="cocos.batch.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.cocosnode.html" title="cocos.cocosnode module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cocos.batch.html" title="cocos.batch module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cocos.camera">
+<span id="cocos-camera-module"></span><h1>cocos.camera module<a class="headerlink" href="#module-cocos.camera" title="Permalink to this headline">¶</a></h1>
+<p>Camera object</p>
+<dl class="class">
+<dt id="cocos.camera.Camera">
+<em class="property">class </em><code class="descname">Camera</code><a class="headerlink" href="#cocos.camera.Camera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Camera used in every <cite>CocosNode</cite>.
+Useful to look at the object from different views.
+The OpenGL gluLookAt() function is used to locate the
+camera.</p>
+<p>If the object is transformed by any of the scale, rotation or
+position attributes, then they will override the camera.</p>
+<dl class="classmethod">
+<dt id="cocos.camera.Camera.get_z_eye">
+<em class="property">classmethod </em><code class="descname">get_z_eye</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.camera.Camera.get_z_eye" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the best distance for the camera for the current window size</p>
+<p>cocos2d uses a Filed Of View (fov) of 60</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.camera.Camera.locate">
+<code class="descname">locate</code><span class="sig-paren">(</span><em>force=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.camera.Camera.locate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the camera using gluLookAt using its eye, center and up_vector</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>force</cite> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">whether or not the camera will be located even if it is not dirty</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.camera.Camera.restore">
+<code class="descname">restore</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.camera.Camera.restore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restore the camera to the initial position
+and sets it&#8217;s <code class="docutils literal"><span class="pre">dirty</span></code> attribute in False and <code class="docutils literal"><span class="pre">once</span></code> in true.</p>
+<p>If you use the camera, for a while and you want to stop using it
+call this method.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.camera.Camera.center">
+<code class="descname">center</code><a class="headerlink" href="#cocos.camera.Camera.center" title="Permalink to this definition">¶</a></dt>
+<dd><p>Center of the camera in x,y,z coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">flaat,float,float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.camera.Camera.eye">
+<code class="descname">eye</code><a class="headerlink" href="#cocos.camera.Camera.eye" title="Permalink to this definition">¶</a></dt>
+<dd><p>Eye of the camera in x,y,z coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">flaat,float,float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.camera.Camera.up_vector">
+<code class="descname">up_vector</code><a class="headerlink" href="#cocos.camera.Camera.up_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Up vector of the camera in x,y,z coordinates</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">flaat,float,float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cocos.batch.html"
+                        title="previous chapter">cocos.batch module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cocos.cocosnode.html"
+                        title="next chapter">cocos.cocosnode module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/cocos.camera.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.cocosnode.html" title="cocos.cocosnode module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cocos.batch.html" title="cocos.batch module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

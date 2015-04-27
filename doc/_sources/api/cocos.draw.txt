@@ -1,0 +1,7 @@
+cocos.draw module
+=================
+
+.. automodule:: cocos.draw
+    :members:
+    :undoc-members:
+    :show-inheritance:

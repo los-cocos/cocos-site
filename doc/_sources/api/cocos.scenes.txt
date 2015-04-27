@@ -1,0 +1,18 @@
+cocos.scenes package
+====================
+
+Submodules
+----------
+
+.. toctree::
+
+   cocos.scenes.pause
+   cocos.scenes.transitions
+
+Module contents
+---------------
+
+.. automodule:: cocos.scenes
+    :members:
+    :undoc-members:
+    :show-inheritance:

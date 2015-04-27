@@ -1,0 +1,7 @@
+cocos.menu module
+=================
+
+.. automodule:: cocos.menu
+    :members:
+    :undoc-members:
+    :show-inheritance:

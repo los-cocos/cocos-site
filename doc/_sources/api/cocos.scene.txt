@@ -1,0 +1,7 @@
+cocos.scene module
+==================
+
+.. automodule:: cocos.scene
+    :members:
+    :undoc-members:
+    :show-inheritance:

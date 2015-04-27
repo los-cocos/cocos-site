@@ -1,0 +1,7 @@
+cocos.framegrabber module
+=========================
+
+.. automodule:: cocos.framegrabber
+    :members:
+    :undoc-members:
+    :show-inheritance:

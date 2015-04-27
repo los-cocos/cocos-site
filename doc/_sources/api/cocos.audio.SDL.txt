@@ -1,0 +1,28 @@
+cocos.audio.SDL package
+=======================
+
+Submodules
+----------
+
+.. toctree::
+
+   cocos.audio.SDL.array
+   cocos.audio.SDL.audio
+   cocos.audio.SDL.constants
+   cocos.audio.SDL.darwin
+   cocos.audio.SDL.dll
+   cocos.audio.SDL.endian
+   cocos.audio.SDL.error
+   cocos.audio.SDL.mixer
+   cocos.audio.SDL.rwops
+   cocos.audio.SDL.sound
+   cocos.audio.SDL.timer
+   cocos.audio.SDL.version
+
+Module contents
+---------------
+
+.. automodule:: cocos.audio.SDL
+    :members:
+    :undoc-members:
+    :show-inheritance:

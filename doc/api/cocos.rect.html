@@ -1,0 +1,503 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos.rect module &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="up" title="cocos package" href="cocos.html" />
+    <link rel="next" title="cocos.scene module" href="cocos.scene.html" />
+    <link rel="prev" title="cocos.path module" href="cocos.path.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.scene.html" title="cocos.scene module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cocos.path.html" title="cocos.path module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cocos.rect">
+<span id="cocos-rect-module"></span><h1>cocos.rect module<a class="headerlink" href="#module-cocos.rect" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="cocos.rect.Rect">
+<em class="property">class </em><code class="descname">Rect</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>width</em>, <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Define a rectangular area.</p>
+<p>Many convenience handles and other properties are also defined - all of
+which may be assigned to which will result in altering the position
+and sometimes dimensions of the Rect:</p>
+<blockquote>
+<div><ul class="simple">
+<li>top         &#8211; y pixel extent</li>
+<li>bottom      &#8211; y pixel extent</li>
+<li>left        &#8211; x pixel extent</li>
+<li>right       &#8211; x pixel extent</li>
+<li>position    &#8211; (x, y) of bottom-left corner pixel</li>
+<li>origin      &#8211; (x, y) of bottom-left corner pixel</li>
+<li>center      &#8211; (x, y) of center pixel</li>
+<li>topleft     &#8211; (x, y) of top-left corner pixel</li>
+<li>topright    &#8211; (x, y) of top-right corner pixel</li>
+<li>bottomleft  &#8211; (x, y) of bottom-left corner pixel</li>
+<li>bottomright &#8211; (x, y) of bottom-right corner pixel</li>
+<li>midtop      &#8211; (x, y) of middle of top side pixel</li>
+<li>midbottom   &#8211; (x, y) of middle of bottom side pixel</li>
+<li>midleft     &#8211; (x, y) of middle of left side pixel</li>
+<li>midright    &#8211; (x, y) of middle of right side pixel</li>
+<li>size        &#8211; (width, height) of rect</li>
+</ul>
+</div></blockquote>
+<p>The Rect area includes the bottom and left borders but not the top and
+right borders.</p>
+<dl class="method">
+<dt id="cocos.rect.Rect.clippedBy">
+<code class="descname">clippedBy</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.clippedBy" title="Permalink to this definition">¶</a></dt>
+<dd><p>bool. True iif intersection with other is smaller than self.</p>
+<p>Equivalent: True if self doesn&#8217;t fit entirely into other</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r2</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r2</span><span class="o">.</span><span class="n">clippedBy</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>    <span class="c"># r2 fits inside r1</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span><span class="o">.</span><span class="n">clippedBy</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span>    <span class="c"># r1 is clipped by r2</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r2</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span>
+<span class="go">Rect(xy=1,1; wh=9,9)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span><span class="o">.</span><span class="n">clippedBy</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r2</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
+<span class="go">Rect(xy=1,1; wh=9,9)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r2</span><span class="o">.</span><span class="n">clippedBy</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r2</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span><span class="o">.</span><span class="n">clippedBy</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.contains">
+<code class="descname">contains</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.contains" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return boolean whether the point defined by x, y is inside the
+rect area.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.get_bottom">
+<code class="descname">get_bottom</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.get_bottom" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.get_bottomleft">
+<code class="descname">get_bottomleft</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.get_bottomleft" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.get_bottomright">
+<code class="descname">get_bottomright</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.get_bottomright" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.get_center">
+<code class="descname">get_center</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.get_center" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.get_left">
+<code class="descname">get_left</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.get_left" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.get_midbottom">
+<code class="descname">get_midbottom</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.get_midbottom" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.get_midleft">
+<code class="descname">get_midleft</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.get_midleft" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.get_midright">
+<code class="descname">get_midright</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.get_midright" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.get_midtop">
+<code class="descname">get_midtop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.get_midtop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.get_origin">
+<code class="descname">get_origin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.get_origin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.get_right">
+<code class="descname">get_right</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.get_right" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.get_top">
+<code class="descname">get_top</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.get_top" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.get_topleft">
+<code class="descname">get_topleft</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.get_topleft" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.get_topright">
+<code class="descname">get_topright</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.get_topright" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.intersect">
+<code class="descname">intersect</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.intersect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the intersection of two Rect s.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r2</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span>
+<span class="go">Rect(xy=0,64; wh=200,4)</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">55</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r2</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">17</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">r1</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r2</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">r1</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">r2</span><span class="p">)</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">bool</span><span class="p">(</span><span class="n">Rect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">bool</span><span class="p">(</span><span class="n">Rect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">bool</span><span class="p">(</span><span class="n">Rect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">bool</span><span class="p">(</span><span class="n">Rect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.intersects">
+<code class="descname">intersects</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.intersects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return boolean whether the &#8220;other&#8221; rect (an object with .x, .y,
+.width and .height attributes) overlaps this Rect in any way.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_bottom">
+<code class="descname">set_bottom</code><span class="sig-paren">(</span><em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_bottom" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_bottomleft">
+<code class="descname">set_bottomleft</code><span class="sig-paren">(</span><em>position</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_bottomleft" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_bottomright">
+<code class="descname">set_bottomright</code><span class="sig-paren">(</span><em>position</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_bottomright" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_center">
+<code class="descname">set_center</code><span class="sig-paren">(</span><em>center</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_center" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_height">
+<code class="descname">set_height</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_left">
+<code class="descname">set_left</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_left" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_midbottom">
+<code class="descname">set_midbottom</code><span class="sig-paren">(</span><em>midbottom</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_midbottom" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_midleft">
+<code class="descname">set_midleft</code><span class="sig-paren">(</span><em>midleft</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_midleft" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_midright">
+<code class="descname">set_midright</code><span class="sig-paren">(</span><em>midright</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_midright" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_midtop">
+<code class="descname">set_midtop</code><span class="sig-paren">(</span><em>midtop</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_midtop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_origin">
+<code class="descname">set_origin</code><span class="sig-paren">(</span><em>origin</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_origin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_position">
+<code class="descname">set_position</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_right">
+<code class="descname">set_right</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_right" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_size">
+<code class="descname">set_size</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_top">
+<code class="descname">set_top</code><span class="sig-paren">(</span><em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_top" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_topleft">
+<code class="descname">set_topleft</code><span class="sig-paren">(</span><em>position</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_topleft" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_topright">
+<code class="descname">set_topright</code><span class="sig-paren">(</span><em>position</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_topright" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_width">
+<code class="descname">set_width</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_x">
+<code class="descname">set_x</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.rect.Rect.set_y">
+<code class="descname">set_y</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.set_y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.bottom">
+<code class="descname">bottom</code><a class="headerlink" href="#cocos.rect.Rect.bottom" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.bottomleft">
+<code class="descname">bottomleft</code><a class="headerlink" href="#cocos.rect.Rect.bottomleft" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.bottomright">
+<code class="descname">bottomright</code><a class="headerlink" href="#cocos.rect.Rect.bottomright" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.center">
+<code class="descname">center</code><a class="headerlink" href="#cocos.rect.Rect.center" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.height">
+<code class="descname">height</code><a class="headerlink" href="#cocos.rect.Rect.height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.left">
+<code class="descname">left</code><a class="headerlink" href="#cocos.rect.Rect.left" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.midbottom">
+<code class="descname">midbottom</code><a class="headerlink" href="#cocos.rect.Rect.midbottom" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.midleft">
+<code class="descname">midleft</code><a class="headerlink" href="#cocos.rect.Rect.midleft" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.midright">
+<code class="descname">midright</code><a class="headerlink" href="#cocos.rect.Rect.midright" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.midtop">
+<code class="descname">midtop</code><a class="headerlink" href="#cocos.rect.Rect.midtop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.origin">
+<code class="descname">origin</code><a class="headerlink" href="#cocos.rect.Rect.origin" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.position">
+<code class="descname">position</code><a class="headerlink" href="#cocos.rect.Rect.position" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.right">
+<code class="descname">right</code><a class="headerlink" href="#cocos.rect.Rect.right" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.size">
+<code class="descname">size</code><a class="headerlink" href="#cocos.rect.Rect.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.top">
+<code class="descname">top</code><a class="headerlink" href="#cocos.rect.Rect.top" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.topleft">
+<code class="descname">topleft</code><a class="headerlink" href="#cocos.rect.Rect.topleft" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.topright">
+<code class="descname">topright</code><a class="headerlink" href="#cocos.rect.Rect.topright" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.width">
+<code class="descname">width</code><a class="headerlink" href="#cocos.rect.Rect.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.x">
+<code class="descname">x</code><a class="headerlink" href="#cocos.rect.Rect.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.rect.Rect.y">
+<code class="descname">y</code><a class="headerlink" href="#cocos.rect.Rect.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cocos.path.html"
+                        title="previous chapter">cocos.path module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cocos.scene.html"
+                        title="next chapter">cocos.scene module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/cocos.rect.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.scene.html" title="cocos.scene module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cocos.path.html" title="cocos.path module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos.menu module &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="up" title="cocos package" href="cocos.html" />
+    <link rel="next" title="cocos.particle module" href="cocos.particle.html" />
+    <link rel="prev" title="cocos.grid module" href="cocos.grid.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.particle.html" title="cocos.particle module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cocos.grid.html" title="cocos.grid module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cocos.menu">
+<span id="cocos-menu-module"></span><h1>cocos.menu module<a class="headerlink" href="#module-cocos.menu" title="Permalink to this headline">¶</a></h1>
+<p>A <cite>Layer</cite> that implements a simple menu</p>
+<div class="section" id="menu">
+<h2>Menu<a class="headerlink" href="#menu" title="Permalink to this headline">¶</a></h2>
+<p>This module provides a Menu class. Menus can contain regular items
+(which trigger a function when selected), toggle items (which toggle a flag when selected),
+or entry items (which lets you enter alphanumeric data).</p>
+<p>To use a menu in your code, just subclass <cite>Menu</cite> and add the menu to an <cite>Scene</cite> or
+another <cite>Layer</cite>.</p>
+<dl class="class">
+<dt id="cocos.menu.Menu">
+<em class="property">class </em><code class="descname">Menu</code><span class="sig-paren">(</span><em>title=u''</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.Menu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.layer.base_layers.html#cocos.layer.base_layers.Layer" title="cocos.layer.base_layers.Layer"><code class="xref py py-class docutils literal"><span class="pre">cocos.layer.base_layers.Layer</span></code></a></p>
+<p>Abstract base class for menu layers.</p>
+<p>Normal usage is:</p>
+<blockquote>
+<div><ul class="simple">
+<li>create a subclass</li>
+<li>override __init__ to set all style attributes,
+and then call <cite>create_menu()</cite></li>
+<li>Finally you shall add the menu to an <cite>Scene</cite> or another <cite>Layer</cite></li>
+</ul>
+</div></blockquote>
+<dl class="method">
+<dt id="cocos.menu.Menu.create_menu">
+<code class="descname">create_menu</code><span class="sig-paren">(</span><em>items</em>, <em>selected_effect=None</em>, <em>unselected_effect=None</em>, <em>activated_effect=None</em>, <em>layout_strategy=&lt;function verticalMenuLayout at 0x05F2DDF0&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.Menu.create_menu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the menu</p>
+<p>The order of the list important since the
+first one will be shown first.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">MenuItem</span><span class="p">(</span><span class="s">&#39;Options&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_new_game</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">MenuItem</span><span class="p">(</span><span class="s">&#39;Quit&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_quit</span> <span class="p">)</span> <span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">create_menu</span><span class="p">(</span> <span class="n">l</span><span class="p">,</span> <span class="n">zoom_in</span><span class="p">(),</span> <span class="n">zoom_out</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>items</cite> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">list of <cite>BaseMenuItem</cite> that will be part of the <cite>Menu</cite></p>
+</dd>
+<dt><cite>selected_effect</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
+<dd><p class="first last">This action will be executed when the <cite>BaseMenuItem</cite> is selected</p>
+</dd>
+<dt><cite>unselected_effect</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
+<dd><p class="first last">This action will be executed when the <cite>BaseMenuItem</cite> is unselected</p>
+</dd>
+<dt><cite>activated_effect</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
+<dd><p class="first last">this action will executed when the <cite>BaseMenuItem</cite> is activated (pressing Enter or by clicking on it)</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.menu.Menu.draw">
+<code class="descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.Menu.draw" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.menu.Menu.on_key_press">
+<code class="descname">on_key_press</code><span class="sig-paren">(</span><em>symbol</em>, <em>modifiers</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.Menu.on_key_press" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.menu.Menu.on_mouse_motion">
+<code class="descname">on_mouse_motion</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>dx</em>, <em>dy</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.Menu.on_mouse_motion" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.menu.Menu.on_mouse_release">
+<code class="descname">on_mouse_release</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>buttons</em>, <em>modifiers</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.Menu.on_mouse_release" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.menu.Menu.on_text">
+<code class="descname">on_text</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.Menu.on_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.menu.Menu.activate_sound">
+<code class="descname">activate_sound</code><em class="property"> = None</em><a class="headerlink" href="#cocos.menu.Menu.activate_sound" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.menu.Menu.is_event_handler">
+<code class="descname">is_event_handler</code><em class="property"> = True</em><a class="headerlink" href="#cocos.menu.Menu.is_event_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receives pyglet events</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.menu.Menu.select_sound">
+<code class="descname">select_sound</code><em class="property"> = None</em><a class="headerlink" href="#cocos.menu.Menu.select_sound" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.menu.MenuItem">
+<em class="property">class </em><code class="descname">MenuItem</code><span class="sig-paren">(</span><em>label</em>, <em>callback_func</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.MenuItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">cocos.menu.BaseMenuItem</span></code></p>
+<p>A menu item that shows a label.</p>
+<dl class="method">
+<dt id="cocos.menu.MenuItem.draw">
+<code class="descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.MenuItem.draw" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.menu.MenuItem.generateWidgets">
+<code class="descname">generateWidgets</code><span class="sig-paren">(</span><em>pos_x</em>, <em>pos_y</em>, <em>font_item</em>, <em>font_item_selected</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.MenuItem.generateWidgets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.menu.MenuItem.get_item_height">
+<code class="descname">get_item_height</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.MenuItem.get_item_height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.menu.MenuItem.get_item_width">
+<code class="descname">get_item_width</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.MenuItem.get_item_width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.menu.ToggleMenuItem">
+<em class="property">class </em><code class="descname">ToggleMenuItem</code><span class="sig-paren">(</span><em>label</em>, <em>callback_func</em>, <em>value=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.ToggleMenuItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.menu.MultipleMenuItem" title="cocos.menu.MultipleMenuItem"><code class="xref py py-class docutils literal"><span class="pre">cocos.menu.MultipleMenuItem</span></code></a></p>
+<p>A menu item for a boolean toggle option.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">ToggleMenuItem</span><span class="p">(</span><span class="s">&#39;Show FPS:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_show_fps</span><span class="p">,</span> <span class="n">director</span><span class="o">.</span><span class="n">show_FPS</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cocos.menu.ToggleMenuItem.on_key_press">
+<code class="descname">on_key_press</code><span class="sig-paren">(</span><em>symbol</em>, <em>mod</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.ToggleMenuItem.on_key_press" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.menu.MultipleMenuItem">
+<em class="property">class </em><code class="descname">MultipleMenuItem</code><span class="sig-paren">(</span><em>label</em>, <em>callback_func</em>, <em>items</em>, <em>default_item=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.MultipleMenuItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.menu.MenuItem" title="cocos.menu.MenuItem"><code class="xref py py-class docutils literal"><span class="pre">cocos.menu.MenuItem</span></code></a></p>
+<p>A menu item for switching between multiple values.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">volumes</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Mute&#39;</span><span class="p">,</span><span class="s">&#39;10&#39;</span><span class="p">,</span><span class="s">&#39;20&#39;</span><span class="p">,</span><span class="s">&#39;30&#39;</span><span class="p">,</span><span class="s">&#39;40&#39;</span><span class="p">,</span><span class="s">&#39;50&#39;</span><span class="p">,</span><span class="s">&#39;60&#39;</span><span class="p">,</span><span class="s">&#39;70&#39;</span><span class="p">,</span><span class="s">&#39;80&#39;</span><span class="p">,</span><span class="s">&#39;90&#39;</span><span class="p">,</span><span class="s">&#39;100&#39;</span><span class="p">]</span>
+
+<span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">MultipleMenuItem</span><span class="p">(</span>
+                <span class="s">&#39;SFX volume: &#39;</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">on_sfx_volume</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">volumes</span><span class="p">,</span>
+                <span class="mi">8</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cocos.menu.MultipleMenuItem.on_key_press">
+<code class="descname">on_key_press</code><span class="sig-paren">(</span><em>symbol</em>, <em>modifiers</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.MultipleMenuItem.on_key_press" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.menu.EntryMenuItem">
+<em class="property">class </em><code class="descname">EntryMenuItem</code><span class="sig-paren">(</span><em>label</em>, <em>callback_func</em>, <em>value</em>, <em>max_length=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.EntryMenuItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.menu.MenuItem" title="cocos.menu.MenuItem"><code class="xref py py-class docutils literal"><span class="pre">cocos.menu.MenuItem</span></code></a></p>
+<p>A menu item for entering a value.</p>
+<p>When selected, <code class="docutils literal"><span class="pre">self.value</span></code> is toggled, the callback function is
+called with <code class="docutils literal"><span class="pre">self.value</span></code> as argument.</p>
+<dl class="method">
+<dt id="cocos.menu.EntryMenuItem.on_key_press">
+<code class="descname">on_key_press</code><span class="sig-paren">(</span><em>symbol</em>, <em>modifiers</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.EntryMenuItem.on_key_press" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.menu.EntryMenuItem.on_text">
+<code class="descname">on_text</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.EntryMenuItem.on_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.menu.EntryMenuItem.value">
+<code class="descname">value</code><a class="headerlink" href="#cocos.menu.EntryMenuItem.value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.menu.ImageMenuItem">
+<em class="property">class </em><code class="descname">ImageMenuItem</code><span class="sig-paren">(</span><em>image</em>, <em>callback_func</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.ImageMenuItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">cocos.menu.BaseMenuItem</span></code></p>
+<p>A menu item that shows a selectable Image</p>
+<dl class="method">
+<dt id="cocos.menu.ImageMenuItem.draw">
+<code class="descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.ImageMenuItem.draw" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.menu.ImageMenuItem.generateWidgets">
+<code class="descname">generateWidgets</code><span class="sig-paren">(</span><em>pos_x</em>, <em>pos_y</em>, <em>font_item</em>, <em>font_item_selected</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.ImageMenuItem.generateWidgets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.menu.ColorMenuItem">
+<em class="property">class </em><code class="descname">ColorMenuItem</code><span class="sig-paren">(</span><em>label</em>, <em>callback_func</em>, <em>items</em>, <em>default_item=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.ColorMenuItem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.menu.MenuItem" title="cocos.menu.MenuItem"><code class="xref py py-class docutils literal"><span class="pre">cocos.menu.MenuItem</span></code></a></p>
+<p>A menu item for selecting a color.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">colors</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">)]</span>
+
+<span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">ColorMenuItem</span><span class="p">(</span>
+                <span class="s">&#39;Jacket:&#39;</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">on_jacket_color</span><span class="p">,</span>
+                <span class="n">colors</span> <span class="p">))</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cocos.menu.ColorMenuItem.draw">
+<code class="descname">draw</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.ColorMenuItem.draw" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.menu.ColorMenuItem.generateWidgets">
+<code class="descname">generateWidgets</code><span class="sig-paren">(</span><em>pos_x</em>, <em>pos_y</em>, <em>font_item</em>, <em>font_item_selected</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.ColorMenuItem.generateWidgets" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.menu.ColorMenuItem.on_key_press">
+<code class="descname">on_key_press</code><span class="sig-paren">(</span><em>symbol</em>, <em>modifiers</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.ColorMenuItem.on_key_press" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.menu.verticalMenuLayout">
+<code class="descname">verticalMenuLayout</code><span class="sig-paren">(</span><em>menu</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.verticalMenuLayout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="cocos.menu.fixedPositionMenuLayout">
+<code class="descname">fixedPositionMenuLayout</code><span class="sig-paren">(</span><em>positions</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.fixedPositionMenuLayout" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="cocos.menu.shake">
+<code class="descname">shake</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.shake" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predefined action that performs a slight rotation and then goes back to the original rotation
+position.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.menu.shake_back">
+<code class="descname">shake_back</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.shake_back" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predefined action that rotates to 0 degrees in 0.1 seconds</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.menu.zoom_in">
+<code class="descname">zoom_in</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.zoom_in" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predefined action that scales to 1.5 factor in 0.2 seconds</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.menu.zoom_out">
+<code class="descname">zoom_out</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.zoom_out" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predefined action that scales to 1.0 factor in 0.2 seconds</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">cocos.menu module</a><ul>
+<li><a class="reference internal" href="#menu">Menu</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cocos.grid.html"
+                        title="previous chapter">cocos.grid module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cocos.particle.html"
+                        title="next chapter">cocos.particle module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/cocos.menu.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.particle.html" title="cocos.particle module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cocos.grid.html" title="cocos.grid module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

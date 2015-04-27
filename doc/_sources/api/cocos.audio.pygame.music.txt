@@ -1,0 +1,7 @@
+cocos.audio.pygame.music module
+===============================
+
+.. automodule:: cocos.audio.pygame.music
+    :members:
+    :undoc-members:
+    :show-inheritance:

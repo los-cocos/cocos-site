@@ -1,0 +1,7 @@
+cocos.layer.base_layers module
+==============================
+
+.. automodule:: cocos.layer.base_layers
+    :members:
+    :undoc-members:
+    :show-inheritance:

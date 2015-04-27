@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos.actions.grid3d_actions module &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="up" title="cocos.actions package" href="cocos.actions.html" />
+    <link rel="next" title="cocos.actions.instant_actions module" href="cocos.actions.instant_actions.html" />
+    <link rel="prev" title="cocos.actions.camera_actions module" href="cocos.actions.camera_actions.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.actions.instant_actions.html" title="cocos.actions.instant_actions module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cocos.actions.camera_actions.html" title="cocos.actions.camera_actions module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.actions.html" accesskey="U">cocos.actions package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cocos.actions.grid3d_actions">
+<span id="cocos-actions-grid3d-actions-module"></span><h1>cocos.actions.grid3d_actions module<a class="headerlink" href="#module-cocos.actions.grid3d_actions" title="Permalink to this headline">¶</a></h1>
+<p>Implementation of Grid3DAction actions</p>
+<dl class="class">
+<dt id="cocos.actions.grid3d_actions.Waves3D">
+<em class="property">class </em><code class="descname">Waves3D</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Waves3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.Grid3DAction" title="cocos.actions.basegrid_actions.Grid3DAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.basegrid_actions.Grid3DAction</span></code></a></p>
+<p>Simulates waves using the math.sin() function in the z-axis
+The x and y coordinates remains unmodified.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Waves3D</span><span class="p">(</span><span class="n">waves</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cocos.actions.grid3d_actions.Waves3D.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>waves=4</em>, <em>amplitude=20</em>, <em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Waves3D.init" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>waves</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of waves (2 * pi) that the action will perform. Default is 4</p>
+</dd>
+<dt><cite>amplitude</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Wave amplitude (height). Default is 20</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.grid3d_actions.Waves3D.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Waves3D.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.actions.grid3d_actions.FlipX3D">
+<em class="property">class </em><code class="descname">FlipX3D</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.FlipX3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.Grid3DAction" title="cocos.actions.basegrid_actions.Grid3DAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.basegrid_actions.Grid3DAction</span></code></a></p>
+<p>FlipX3D flips the screen using the Y-axis as a pivot.</p>
+<dl class="method">
+<dt id="cocos.actions.grid3d_actions.FlipX3D.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>grid=(1</em>, <em>1)</em>, <em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.FlipX3D.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.grid3d_actions.FlipX3D.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.FlipX3D.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.actions.grid3d_actions.FlipY3D">
+<em class="property">class </em><code class="descname">FlipY3D</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.FlipY3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.Grid3DAction" title="cocos.actions.basegrid_actions.Grid3DAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.basegrid_actions.Grid3DAction</span></code></a></p>
+<p>FlipY3D flips the screen using the X-axis as a pivot.</p>
+<dl class="method">
+<dt id="cocos.actions.grid3d_actions.FlipY3D.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>grid=(1</em>, <em>1)</em>, <em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.FlipY3D.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.grid3d_actions.FlipY3D.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.FlipY3D.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.actions.grid3d_actions.Lens3D">
+<em class="property">class </em><code class="descname">Lens3D</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Lens3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.Grid3DAction" title="cocos.actions.basegrid_actions.Grid3DAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.basegrid_actions.Grid3DAction</span></code></a></p>
+<p>Lens simulates a Lens / Magnifying glass effect.
+It modifies the z-coordinate while the x and y remains unmodified.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Lens3D</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span><span class="mi">240</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cocos.actions.grid3d_actions.Lens3D.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>center=(-1</em>, <em>-1)</em>, <em>radius=160</em>, <em>lens_effect=0.7</em>, <em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Lens3D.init" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>center</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(int,int)</span></dt>
+<dd><p class="first last">Center of the lens. Default: (win_size_width /2, win_size_height /2 )</p>
+</dd>
+<dt><cite>radius</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Radius of the lens.</p>
+</dd>
+<dt><cite>lens_effect</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">How strong is the lens effect. Default: 0.7. 0 is no effect at all, 1 is a very strong lens effect.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.grid3d_actions.Lens3D.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Lens3D.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.actions.grid3d_actions.Shaky3D">
+<em class="property">class </em><code class="descname">Shaky3D</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Shaky3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.Grid3DAction" title="cocos.actions.basegrid_actions.Grid3DAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.basegrid_actions.Grid3DAction</span></code></a></p>
+<p>Shaky simulates an earthquake by modifying randomly the x, y and z coordinates of each vertex.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Shaky3D</span><span class="p">(</span><span class="n">randrange</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cocos.actions.grid3d_actions.Shaky3D.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>randrange=6</em>, <em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Shaky3D.init" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>randrange</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number that will be used in random.randrange(-randrange, randrange) to do the effect</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.grid3d_actions.Shaky3D.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Shaky3D.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.actions.grid3d_actions.Ripple3D">
+<em class="property">class </em><code class="descname">Ripple3D</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Ripple3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.Grid3DAction" title="cocos.actions.basegrid_actions.Grid3DAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.basegrid_actions.Grid3DAction</span></code></a></p>
+<p>Simulates a ripple (radial wave) effect.
+The amplitude of the wave will decrease when it goes away from the center of the ripple.
+It modifies the z-coordinate while the x and y remains unmodified.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Ripple3D</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span><span class="mi">240</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mi">240</span><span class="p">,</span> <span class="n">waves</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span><span class="mi">24</span><span class="p">)))</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cocos.actions.grid3d_actions.Ripple3D.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>center=(-1</em>, <em>-1)</em>, <em>radius=240</em>, <em>waves=15</em>, <em>amplitude=60</em>, <em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Ripple3D.init" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>center</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(int,int)</span></dt>
+<dd><p class="first last">Center of the ripple. Default: (win_size_width /2, win_size_height /2)</p>
+</dd>
+<dt><cite>radius</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Radius of the ripple. Default: 240</p>
+</dd>
+<dt><cite>waves</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of waves (2 * pi) that the action will perform. Default: 15</p>
+</dd>
+<dt><cite>amplitude</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Wave amplitude (height). Default is 60</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.grid3d_actions.Ripple3D.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Ripple3D.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.actions.grid3d_actions.Liquid">
+<em class="property">class </em><code class="descname">Liquid</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Liquid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.Grid3DAction" title="cocos.actions.basegrid_actions.Grid3DAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.basegrid_actions.Grid3DAction</span></code></a></p>
+<p>Simulates a liquid effect using the math.sin() function modifying the x and y coordinates.
+The z coordinate remains unmodified.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Liquid</span><span class="p">(</span><span class="n">waves</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cocos.actions.grid3d_actions.Liquid.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>waves=4</em>, <em>amplitude=20</em>, <em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Liquid.init" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>waves</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of waves (2 * pi) that the action will perform. Default is 4</p>
+</dd>
+<dt><cite>amplitude</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Wave amplitude (height). Default is 20</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.grid3d_actions.Liquid.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Liquid.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.actions.grid3d_actions.Waves">
+<em class="property">class </em><code class="descname">Waves</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Waves" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.Grid3DAction" title="cocos.actions.basegrid_actions.Grid3DAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.basegrid_actions.Grid3DAction</span></code></a></p>
+<p>Simulates waves using the math.sin() function both in the vertical and horizontal axis.
+The z coordinate is not modified.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Waves</span><span class="p">(</span><span class="n">waves</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">hsin</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">vsin</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cocos.actions.grid3d_actions.Waves.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>waves=4</em>, <em>amplitude=20</em>, <em>hsin=True</em>, <em>vsin=True</em>, <em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Waves.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the Waves actions</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>waves</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of waves (2 * pi) that the action will perform. Default is 4</p>
+</dd>
+<dt><cite>amplitude</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Wave amplitude (height). Default is 20</p>
+</dd>
+<dt><cite>hsin</cite> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">whether or not in will perform horizontal waves. Default is True</p>
+</dd>
+<dt><cite>vsin</cite> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
+<dd><p class="first last">whether or not in will perform vertical waves. Default is True</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.grid3d_actions.Waves.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Waves.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.actions.grid3d_actions.Twirl">
+<em class="property">class </em><code class="descname">Twirl</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Twirl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.Grid3DAction" title="cocos.actions.basegrid_actions.Grid3DAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.basegrid_actions.Grid3DAction</span></code></a></p>
+<p>Simulates a twirl effect modifying the x and y coordinates.
+The z coordinate is not modified.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Twirl</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span><span class="mi">240</span><span class="p">),</span> <span class="n">twirls</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cocos.actions.grid3d_actions.Twirl.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>center=(-1</em>, <em>-1)</em>, <em>twirls=4</em>, <em>amplitude=1</em>, <em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Twirl.init" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>twirls</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of twirls (2 * pi) that the action will perform. Default is 4</p>
+</dd>
+<dt><cite>amplitude</cite> <span class="classifier-delimiter">:</span> <span class="classifier">flaot</span></dt>
+<dd><p class="first last">Twirl amplitude. Default is 1</p>
+</dd>
+<dt><cite>center</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(int,int)</span></dt>
+<dd><p class="first last">Center of the twirl in x,y coordinates. Default: center of the screen</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.grid3d_actions.Twirl.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.grid3d_actions.Twirl.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cocos.actions.camera_actions.html"
+                        title="previous chapter">cocos.actions.camera_actions module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cocos.actions.instant_actions.html"
+                        title="next chapter">cocos.actions.instant_actions module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/cocos.actions.grid3d_actions.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.actions.instant_actions.html" title="cocos.actions.instant_actions module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cocos.actions.camera_actions.html" title="cocos.actions.camera_actions module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.actions.html" >cocos.actions package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

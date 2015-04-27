@@ -1,0 +1,51 @@
+cocos package
+=============
+
+Subpackages
+-----------
+
+.. toctree::
+
+    cocos.actions
+    cocos.audio
+    cocos.layer
+    cocos.scenes
+
+Submodules
+----------
+
+.. toctree::
+
+   cocos.batch
+   cocos.camera
+   cocos.cocosnode
+   cocos.collision_model
+   cocos.compat
+   cocos.custom_clocks
+   cocos.director
+   cocos.draw
+   cocos.euclid
+   cocos.framegrabber
+   cocos.gl_framebuffer_object
+   cocos.grid
+   cocos.menu
+   cocos.particle
+   cocos.particle_systems
+   cocos.path
+   cocos.rect
+   cocos.scene
+   cocos.shader
+   cocos.skeleton
+   cocos.sprite
+   cocos.text
+   cocos.tiles
+   cocos.utils
+   cocos.wired
+
+Module contents
+---------------
+
+.. automodule:: cocos
+    :members:
+    :undoc-members:
+    :show-inheritance:

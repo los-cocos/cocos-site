@@ -1,0 +1,7 @@
+cocos.actions.move_actions module
+=================================
+
+.. automodule:: cocos.actions.move_actions
+    :members:
+    :undoc-members:
+    :show-inheritance:

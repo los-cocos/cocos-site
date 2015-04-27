@@ -1,0 +1,7 @@
+cocos.audio.SDL.rwops module
+============================
+
+.. automodule:: cocos.audio.SDL.rwops
+    :members:
+    :undoc-members:
+    :show-inheritance:

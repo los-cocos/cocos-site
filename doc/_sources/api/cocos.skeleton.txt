@@ -1,0 +1,7 @@
+cocos.skeleton module
+=====================
+
+.. automodule:: cocos.skeleton
+    :members:
+    :undoc-members:
+    :show-inheritance:

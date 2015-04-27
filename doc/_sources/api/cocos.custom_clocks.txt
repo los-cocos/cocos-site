@@ -1,0 +1,7 @@
+cocos.custom_clocks module
+==========================
+
+.. automodule:: cocos.custom_clocks
+    :members:
+    :undoc-members:
+    :show-inheritance:

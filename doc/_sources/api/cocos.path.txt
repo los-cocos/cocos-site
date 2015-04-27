@@ -1,0 +1,7 @@
+cocos.path module
+=================
+
+.. automodule:: cocos.path
+    :members:
+    :undoc-members:
+    :show-inheritance:

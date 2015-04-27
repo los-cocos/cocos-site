@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos.actions.move_actions module &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="up" title="cocos.actions package" href="cocos.actions.html" />
+    <link rel="next" title="cocos.actions.quadmoveby_actions module" href="cocos.actions.quadmoveby_actions.html" />
+    <link rel="prev" title="cocos.actions.interval_actions module" href="cocos.actions.interval_actions.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.actions.quadmoveby_actions.html" title="cocos.actions.quadmoveby_actions module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cocos.actions.interval_actions.html" title="cocos.actions.interval_actions module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.actions.html" accesskey="U">cocos.actions package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cocos.actions.move_actions">
+<span id="cocos-actions-move-actions-module"></span><h1>cocos.actions.move_actions module<a class="headerlink" href="#module-cocos.actions.move_actions" title="Permalink to this headline">¶</a></h1>
+<p>Actions for moving things around based on their velocity and
+acceleration.</p>
+<p>The simplest usage:</p>
+<blockquote>
+<div>sprite = cocos.sprite.Sprite(&#8216;ship.png&#8217;)
+sprite.velocity = (100, 100)
+sprite.do(Move())</div></blockquote>
+<p>This will move the sprite (100, 100) pixels per second indefinitely.</p>
+<p>Typically the sprite would be controlled by the user, so something like:</p>
+<div class="highlight-python"><div class="highlight"><pre>keys = &lt;standard pyglet keyboard state handler&gt;
+
+class MoveShip(Move):
+   def step(self, dt):
+       super(MoveShip, self).step(dt)
+       self.target.dr = (keys[key.RIGHT] - keys[key.LEFT]) * 360
+       rotation = math.pi * self.target.rotation / 180.0
+       rotation_x = math.cos(-rotation)
+       rotation_y = math.sin(-rotation)
+       if keys[key.UP]:
+           self.target.acceleration = (200 * rotation_x, 200 * rotation_y)
+
+ship.do(MoveShip())
+</pre></div>
+</div>
+<dl class="class">
+<dt id="cocos.actions.move_actions.Move">
+<em class="property">class </em><code class="descname">Move</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.move_actions.Move" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.Action</span></code></a></p>
+<p>Move the target based on parameters on the target.</p>
+<p>For movement the parameters are:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">target</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">target</span><span class="o">.</span><span class="n">velocity</span> <span class="o">=</span> <span class="p">(</span><span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+<span class="n">target</span><span class="o">.</span><span class="n">acceleration</span> <span class="o">=</span> <span class="p">(</span><span class="n">ddx</span><span class="p">,</span> <span class="n">ddy</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">target</span><span class="o">.</span><span class="n">gravity</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>And rotation:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">target</span><span class="o">.</span><span class="n">rotation</span>
+<span class="n">target</span><span class="o">.</span><span class="n">dr</span>
+<span class="n">target</span><span class="o">.</span><span class="n">ddr</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="cocos.actions.move_actions.Move.step">
+<code class="descname">step</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.move_actions.Move.step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.actions.move_actions.WrappedMove">
+<em class="property">class </em><code class="descname">WrappedMove</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.move_actions.WrappedMove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.actions.move_actions.Move" title="cocos.actions.move_actions.Move"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.move_actions.Move</span></code></a></p>
+<p>Move the target but wrap position when it hits certain bounds.</p>
+<p>Wrap occurs outside of 0 &lt; x &lt; width and 0 &lt; y &lt; height taking into
+account the dimenstions of the target.</p>
+<dl class="method">
+<dt id="cocos.actions.move_actions.WrappedMove.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>width</em>, <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.move_actions.WrappedMove.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Init method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>width</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">The width to wrap position at.</p>
+</dd>
+<dt><cite>height</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">The height to wrap position at.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.move_actions.WrappedMove.step">
+<code class="descname">step</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.move_actions.WrappedMove.step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.actions.move_actions.BoundedMove">
+<em class="property">class </em><code class="descname">BoundedMove</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.move_actions.BoundedMove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.actions.move_actions.Move" title="cocos.actions.move_actions.Move"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.move_actions.Move</span></code></a></p>
+<p>Move the target but limit position when it hits certain bounds.</p>
+<p>Position is bounded to 0 &lt; x &lt; width and 0 &lt; y &lt; height taking into
+account the dimenstions of the target.</p>
+<dl class="method">
+<dt id="cocos.actions.move_actions.BoundedMove.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>width</em>, <em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.move_actions.BoundedMove.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Init method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>width</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">The width to bound position at.</p>
+</dd>
+<dt><cite>height</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">The height to bound position at.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.actions.move_actions.BoundedMove.step">
+<code class="descname">step</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.move_actions.BoundedMove.step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.actions.move_actions.Driver">
+<em class="property">class </em><code class="descname">Driver</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.move_actions.Driver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.Action</span></code></a></p>
+<p>Drive a <cite>CocosNode</cite> object around like a car in x, y according to
+a direction and speed.</p>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># control the movement of the given sprite</span>
+<span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Driver</span><span class="p">())</span>
+
+<span class="o">...</span>
+<span class="n">sprite</span><span class="o">.</span><span class="n">rotation</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="n">sprite</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>The sprite MAY have these parameters (beyond the standard position
+and rotation):</p>
+<blockquote>
+<div><dl class="docutils">
+<dt><cite>speed</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Speed to move at in pixels per second in the direction of
+the target&#8217;s rotation.</dd>
+<dt><cite>acceleration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>If specified will automatically be added to speed.
+Specified in pixels per second per second.</dd>
+<dt><cite>max_forward_speed</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float (default None)</span></dt>
+<dd>Limits to apply to speed when updating with acceleration.</dd>
+<dt><cite>max_reverse_speed</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float (default None)</span></dt>
+<dd>Limits to apply to speed when updating with acceleration.</dd>
+</dl>
+</div></blockquote>
+<dl class="method">
+<dt id="cocos.actions.move_actions.Driver.step">
+<code class="descname">step</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.move_actions.Driver.step" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cocos.actions.interval_actions.html"
+                        title="previous chapter">cocos.actions.interval_actions module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cocos.actions.quadmoveby_actions.html"
+                        title="next chapter">cocos.actions.quadmoveby_actions module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/cocos.actions.move_actions.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.actions.quadmoveby_actions.html" title="cocos.actions.quadmoveby_actions module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cocos.actions.interval_actions.html" title="cocos.actions.interval_actions module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.actions.html" >cocos.actions package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

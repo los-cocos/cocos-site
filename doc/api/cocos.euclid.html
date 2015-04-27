@@ -1,0 +1,1076 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos.euclid module &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="up" title="cocos package" href="cocos.html" />
+    <link rel="next" title="cocos.framegrabber module" href="cocos.framegrabber.html" />
+    <link rel="prev" title="cocos.draw module" href="cocos.draw.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.framegrabber.html" title="cocos.framegrabber module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cocos.draw.html" title="cocos.draw module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cocos.euclid">
+<span id="cocos-euclid-module"></span><h1>cocos.euclid module<a class="headerlink" href="#module-cocos.euclid" title="Permalink to this headline">¶</a></h1>
+<p>euclid graphics maths module</p>
+<p>Documentation and tests are included in the file &#8220;euclid.txt&#8221;, or online
+at <a class="reference external" href="http://code.google.com/p/pyeuclid">http://code.google.com/p/pyeuclid</a></p>
+<dl class="class">
+<dt id="cocos.euclid.Circle">
+<em class="property">class </em><code class="descname">Circle</code><span class="sig-paren">(</span><em>center</em>, <em>radius</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.euclid.Geometry" title="cocos.euclid.Geometry"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Geometry</span></code></a>, <a class="reference internal" href="#cocos.euclid.Slotted" title="cocos.euclid.Slotted"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Slotted</span></code></a></p>
+<dl class="method">
+<dt id="cocos.euclid.Circle.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Circle.connect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Circle.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Circle.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Circle.intersect">
+<code class="descname">intersect</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Circle.intersect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Circle.c">
+<code class="descname">c</code><a class="headerlink" href="#cocos.euclid.Circle.c" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Circle.r">
+<code class="descname">r</code><a class="headerlink" href="#cocos.euclid.Circle.r" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.euclid.Geometry">
+<em class="property">class </em><code class="descname">Geometry</code><a class="headerlink" href="#cocos.euclid.Geometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="cocos.euclid.Geometry.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Geometry.connect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Geometry.distance">
+<code class="descname">distance</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Geometry.distance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Geometry.intersect">
+<code class="descname">intersect</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Geometry.intersect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.euclid.Line2">
+<em class="property">class </em><code class="descname">Line2</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Line2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.euclid.Geometry" title="cocos.euclid.Geometry"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Geometry</span></code></a>, <a class="reference internal" href="#cocos.euclid.Slotted" title="cocos.euclid.Slotted"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Slotted</span></code></a></p>
+<dl class="method">
+<dt id="cocos.euclid.Line2.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Line2.connect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Line2.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Line2.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Line2.intersect">
+<code class="descname">intersect</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Line2.intersect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Line2.p">
+<code class="descname">p</code><a class="headerlink" href="#cocos.euclid.Line2.p" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Line2.p1">
+<code class="descname">p1</code><a class="headerlink" href="#cocos.euclid.Line2.p1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Line2.p2">
+<code class="descname">p2</code><a class="headerlink" href="#cocos.euclid.Line2.p2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Line2.v">
+<code class="descname">v</code><a class="headerlink" href="#cocos.euclid.Line2.v" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.euclid.Line3">
+<em class="property">class </em><code class="descname">Line3</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Line3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.euclid.Slotted" title="cocos.euclid.Slotted"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Slotted</span></code></a></p>
+<dl class="method">
+<dt id="cocos.euclid.Line3.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Line3.connect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Line3.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Line3.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Line3.intersect">
+<code class="descname">intersect</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Line3.intersect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Line3.p">
+<code class="descname">p</code><a class="headerlink" href="#cocos.euclid.Line3.p" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Line3.p1">
+<code class="descname">p1</code><a class="headerlink" href="#cocos.euclid.Line3.p1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Line3.p2">
+<code class="descname">p2</code><a class="headerlink" href="#cocos.euclid.Line3.p2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Line3.v">
+<code class="descname">v</code><a class="headerlink" href="#cocos.euclid.Line3.v" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.euclid.LineSegment2">
+<em class="property">class </em><code class="descname">LineSegment2</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.LineSegment2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.euclid.Line2" title="cocos.euclid.Line2"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Line2</span></code></a></p>
+<dl class="method">
+<dt id="cocos.euclid.LineSegment2.magnitude_squared">
+<code class="descname">magnitude_squared</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.LineSegment2.magnitude_squared" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.LineSegment2.length">
+<code class="descname">length</code><a class="headerlink" href="#cocos.euclid.LineSegment2.length" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.euclid.LineSegment3">
+<em class="property">class </em><code class="descname">LineSegment3</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.LineSegment3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.euclid.Line3" title="cocos.euclid.Line3"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Line3</span></code></a></p>
+<dl class="method">
+<dt id="cocos.euclid.LineSegment3.magnitude_squared">
+<code class="descname">magnitude_squared</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.LineSegment3.magnitude_squared" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.LineSegment3.length">
+<code class="descname">length</code><a class="headerlink" href="#cocos.euclid.LineSegment3.length" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.euclid.Matrix3">
+<em class="property">class </em><code class="descname">Matrix3</code><a class="headerlink" href="#cocos.euclid.Matrix3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.euclid.Slotted" title="cocos.euclid.Slotted"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Slotted</span></code></a></p>
+<dl class="method">
+<dt id="cocos.euclid.Matrix3.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix3.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix3.determinant">
+<code class="descname">determinant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix3.determinant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix3.identity">
+<code class="descname">identity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix3.identity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix3.inverse">
+<code class="descname">inverse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix3.inverse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Matrix3.new_identity">
+<em class="property">classmethod </em><code class="descname">new_identity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix3.new_identity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Matrix3.new_rotate">
+<em class="property">classmethod </em><code class="descname">new_rotate</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix3.new_rotate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Matrix3.new_scale">
+<em class="property">classmethod </em><code class="descname">new_scale</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix3.new_scale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Matrix3.new_translate">
+<em class="property">classmethod </em><code class="descname">new_translate</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix3.new_translate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix3.rotate">
+<code class="descname">rotate</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix3.rotate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix3.scale">
+<code class="descname">scale</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix3.scale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix3.translate">
+<code class="descname">translate</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix3.translate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix3.a">
+<code class="descname">a</code><a class="headerlink" href="#cocos.euclid.Matrix3.a" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix3.b">
+<code class="descname">b</code><a class="headerlink" href="#cocos.euclid.Matrix3.b" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix3.c">
+<code class="descname">c</code><a class="headerlink" href="#cocos.euclid.Matrix3.c" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix3.e">
+<code class="descname">e</code><a class="headerlink" href="#cocos.euclid.Matrix3.e" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix3.f">
+<code class="descname">f</code><a class="headerlink" href="#cocos.euclid.Matrix3.f" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix3.g">
+<code class="descname">g</code><a class="headerlink" href="#cocos.euclid.Matrix3.g" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix3.i">
+<code class="descname">i</code><a class="headerlink" href="#cocos.euclid.Matrix3.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix3.j">
+<code class="descname">j</code><a class="headerlink" href="#cocos.euclid.Matrix3.j" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix3.k">
+<code class="descname">k</code><a class="headerlink" href="#cocos.euclid.Matrix3.k" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.euclid.Matrix4">
+<em class="property">class </em><code class="descname">Matrix4</code><a class="headerlink" href="#cocos.euclid.Matrix4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.euclid.Slotted" title="cocos.euclid.Slotted"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Slotted</span></code></a></p>
+<dl class="method">
+<dt id="cocos.euclid.Matrix4.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix4.determinant">
+<code class="descname">determinant</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.determinant" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix4.identity">
+<code class="descname">identity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.identity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix4.inverse">
+<code class="descname">inverse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.inverse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Matrix4.new">
+<em class="property">classmethod </em><code class="descname">new</code><span class="sig-paren">(</span><em>*values</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.new" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Matrix4.new_identity">
+<em class="property">classmethod </em><code class="descname">new_identity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.new_identity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Matrix4.new_look_at">
+<em class="property">classmethod </em><code class="descname">new_look_at</code><span class="sig-paren">(</span><em>eye</em>, <em>at</em>, <em>up</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.new_look_at" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Matrix4.new_perspective">
+<em class="property">classmethod </em><code class="descname">new_perspective</code><span class="sig-paren">(</span><em>fov_y</em>, <em>aspect</em>, <em>near</em>, <em>far</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.new_perspective" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Matrix4.new_rotate_axis">
+<em class="property">classmethod </em><code class="descname">new_rotate_axis</code><span class="sig-paren">(</span><em>angle</em>, <em>axis</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.new_rotate_axis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Matrix4.new_rotate_euler">
+<em class="property">classmethod </em><code class="descname">new_rotate_euler</code><span class="sig-paren">(</span><em>heading</em>, <em>attitude</em>, <em>bank</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.new_rotate_euler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Matrix4.new_rotate_triple_axis">
+<em class="property">classmethod </em><code class="descname">new_rotate_triple_axis</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.new_rotate_triple_axis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Matrix4.new_rotatex">
+<em class="property">classmethod </em><code class="descname">new_rotatex</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.new_rotatex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Matrix4.new_rotatey">
+<em class="property">classmethod </em><code class="descname">new_rotatey</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.new_rotatey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Matrix4.new_rotatez">
+<em class="property">classmethod </em><code class="descname">new_rotatez</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.new_rotatez" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Matrix4.new_scale">
+<em class="property">classmethod </em><code class="descname">new_scale</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.new_scale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Matrix4.new_translate">
+<em class="property">classmethod </em><code class="descname">new_translate</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.new_translate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix4.rotate_axis">
+<code class="descname">rotate_axis</code><span class="sig-paren">(</span><em>angle</em>, <em>axis</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.rotate_axis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix4.rotate_euler">
+<code class="descname">rotate_euler</code><span class="sig-paren">(</span><em>heading</em>, <em>attitude</em>, <em>bank</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.rotate_euler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix4.rotate_triple_axis">
+<code class="descname">rotate_triple_axis</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.rotate_triple_axis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix4.rotatex">
+<code class="descname">rotatex</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.rotatex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix4.rotatey">
+<code class="descname">rotatey</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.rotatey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix4.rotatez">
+<code class="descname">rotatez</code><span class="sig-paren">(</span><em>angle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.rotatez" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix4.scale">
+<code class="descname">scale</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.scale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix4.transform">
+<code class="descname">transform</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.transform" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix4.translate">
+<code class="descname">translate</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.translate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix4.transpose">
+<code class="descname">transpose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.transpose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Matrix4.transposed">
+<code class="descname">transposed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Matrix4.transposed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix4.a">
+<code class="descname">a</code><a class="headerlink" href="#cocos.euclid.Matrix4.a" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix4.b">
+<code class="descname">b</code><a class="headerlink" href="#cocos.euclid.Matrix4.b" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix4.c">
+<code class="descname">c</code><a class="headerlink" href="#cocos.euclid.Matrix4.c" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix4.d">
+<code class="descname">d</code><a class="headerlink" href="#cocos.euclid.Matrix4.d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix4.e">
+<code class="descname">e</code><a class="headerlink" href="#cocos.euclid.Matrix4.e" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix4.f">
+<code class="descname">f</code><a class="headerlink" href="#cocos.euclid.Matrix4.f" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix4.g">
+<code class="descname">g</code><a class="headerlink" href="#cocos.euclid.Matrix4.g" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix4.h">
+<code class="descname">h</code><a class="headerlink" href="#cocos.euclid.Matrix4.h" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix4.i">
+<code class="descname">i</code><a class="headerlink" href="#cocos.euclid.Matrix4.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix4.j">
+<code class="descname">j</code><a class="headerlink" href="#cocos.euclid.Matrix4.j" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix4.k">
+<code class="descname">k</code><a class="headerlink" href="#cocos.euclid.Matrix4.k" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix4.l">
+<code class="descname">l</code><a class="headerlink" href="#cocos.euclid.Matrix4.l" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix4.m">
+<code class="descname">m</code><a class="headerlink" href="#cocos.euclid.Matrix4.m" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix4.n">
+<code class="descname">n</code><a class="headerlink" href="#cocos.euclid.Matrix4.n" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix4.o">
+<code class="descname">o</code><a class="headerlink" href="#cocos.euclid.Matrix4.o" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Matrix4.p">
+<code class="descname">p</code><a class="headerlink" href="#cocos.euclid.Matrix4.p" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.euclid.Plane">
+<em class="property">class </em><code class="descname">Plane</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Plane" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.euclid.Slotted" title="cocos.euclid.Slotted"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Slotted</span></code></a></p>
+<dl class="method">
+<dt id="cocos.euclid.Plane.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Plane.connect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Plane.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Plane.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Plane.intersect">
+<code class="descname">intersect</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Plane.intersect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Plane.k">
+<code class="descname">k</code><a class="headerlink" href="#cocos.euclid.Plane.k" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Plane.n">
+<code class="descname">n</code><a class="headerlink" href="#cocos.euclid.Plane.n" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.euclid.Point2">
+<em class="property">class </em><code class="descname">Point2</code><span class="sig-paren">(</span><em>x=0</em>, <em>y=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Point2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.euclid.Vector2" title="cocos.euclid.Vector2"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Vector2</span></code></a>, <a class="reference internal" href="#cocos.euclid.Geometry" title="cocos.euclid.Geometry"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Geometry</span></code></a></p>
+<dl class="method">
+<dt id="cocos.euclid.Point2.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Point2.connect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Point2.intersect">
+<code class="descname">intersect</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Point2.intersect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.euclid.Point3">
+<em class="property">class </em><code class="descname">Point3</code><span class="sig-paren">(</span><em>x=0</em>, <em>y=0</em>, <em>z=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Point3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.euclid.Vector3" title="cocos.euclid.Vector3"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Vector3</span></code></a>, <a class="reference internal" href="#cocos.euclid.Geometry" title="cocos.euclid.Geometry"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Geometry</span></code></a></p>
+<dl class="method">
+<dt id="cocos.euclid.Point3.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Point3.connect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Point3.intersect">
+<code class="descname">intersect</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Point3.intersect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.euclid.Quaternion">
+<em class="property">class </em><code class="descname">Quaternion</code><span class="sig-paren">(</span><em>w=1</em>, <em>x=0</em>, <em>y=0</em>, <em>z=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Quaternion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.euclid.Slotted" title="cocos.euclid.Slotted"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Slotted</span></code></a></p>
+<dl class="method">
+<dt id="cocos.euclid.Quaternion.conjugated">
+<code class="descname">conjugated</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Quaternion.conjugated" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Quaternion.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Quaternion.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Quaternion.get_angle_axis">
+<code class="descname">get_angle_axis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Quaternion.get_angle_axis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Quaternion.get_euler">
+<code class="descname">get_euler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Quaternion.get_euler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Quaternion.get_matrix">
+<code class="descname">get_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Quaternion.get_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Quaternion.identity">
+<code class="descname">identity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Quaternion.identity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Quaternion.magnitude">
+<code class="descname">magnitude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Quaternion.magnitude" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Quaternion.magnitude_squared">
+<code class="descname">magnitude_squared</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Quaternion.magnitude_squared" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Quaternion.new_identity">
+<em class="property">classmethod </em><code class="descname">new_identity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Quaternion.new_identity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Quaternion.new_interpolate">
+<em class="property">classmethod </em><code class="descname">new_interpolate</code><span class="sig-paren">(</span><em>q1</em>, <em>q2</em>, <em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Quaternion.new_interpolate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Quaternion.new_rotate_axis">
+<em class="property">classmethod </em><code class="descname">new_rotate_axis</code><span class="sig-paren">(</span><em>angle</em>, <em>axis</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Quaternion.new_rotate_axis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Quaternion.new_rotate_euler">
+<em class="property">classmethod </em><code class="descname">new_rotate_euler</code><span class="sig-paren">(</span><em>heading</em>, <em>attitude</em>, <em>bank</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Quaternion.new_rotate_euler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cocos.euclid.Quaternion.new_rotate_matrix">
+<em class="property">classmethod </em><code class="descname">new_rotate_matrix</code><span class="sig-paren">(</span><em>m</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Quaternion.new_rotate_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Quaternion.normalize">
+<code class="descname">normalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Quaternion.normalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Quaternion.normalized">
+<code class="descname">normalized</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Quaternion.normalized" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Quaternion.rotate_axis">
+<code class="descname">rotate_axis</code><span class="sig-paren">(</span><em>angle</em>, <em>axis</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Quaternion.rotate_axis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Quaternion.rotate_euler">
+<code class="descname">rotate_euler</code><span class="sig-paren">(</span><em>heading</em>, <em>attitude</em>, <em>bank</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Quaternion.rotate_euler" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Quaternion.rotate_matrix">
+<code class="descname">rotate_matrix</code><span class="sig-paren">(</span><em>m</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Quaternion.rotate_matrix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Quaternion.w">
+<code class="descname">w</code><a class="headerlink" href="#cocos.euclid.Quaternion.w" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Quaternion.x">
+<code class="descname">x</code><a class="headerlink" href="#cocos.euclid.Quaternion.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Quaternion.y">
+<code class="descname">y</code><a class="headerlink" href="#cocos.euclid.Quaternion.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Quaternion.z">
+<code class="descname">z</code><a class="headerlink" href="#cocos.euclid.Quaternion.z" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.euclid.Ray2">
+<em class="property">class </em><code class="descname">Ray2</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Ray2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.euclid.Line2" title="cocos.euclid.Line2"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Line2</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.euclid.Ray3">
+<em class="property">class </em><code class="descname">Ray3</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Ray3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.euclid.Line3" title="cocos.euclid.Line3"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Line3</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.euclid.Slotted">
+<em class="property">class </em><code class="descname">Slotted</code><a class="headerlink" href="#cocos.euclid.Slotted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.euclid.Sphere">
+<em class="property">class </em><code class="descname">Sphere</code><span class="sig-paren">(</span><em>center</em>, <em>radius</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Sphere" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.euclid.Slotted" title="cocos.euclid.Slotted"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Slotted</span></code></a></p>
+<dl class="method">
+<dt id="cocos.euclid.Sphere.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Sphere.connect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Sphere.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Sphere.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Sphere.intersect">
+<code class="descname">intersect</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Sphere.intersect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Sphere.c">
+<code class="descname">c</code><a class="headerlink" href="#cocos.euclid.Sphere.c" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Sphere.r">
+<code class="descname">r</code><a class="headerlink" href="#cocos.euclid.Sphere.r" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.euclid.Vector2">
+<em class="property">class </em><code class="descname">Vector2</code><span class="sig-paren">(</span><em>x=0</em>, <em>y=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.euclid.Slotted" title="cocos.euclid.Slotted"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Slotted</span></code></a></p>
+<dl class="method">
+<dt id="cocos.euclid.Vector2.angle">
+<code class="descname">angle</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector2.angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the angle to the vector other</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Vector2.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector2.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Vector2.cross">
+<code class="descname">cross</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector2.cross" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Vector2.dot">
+<code class="descname">dot</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector2.dot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Vector2.magnitude">
+<code class="descname">magnitude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector2.magnitude" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Vector2.magnitude_squared">
+<code class="descname">magnitude_squared</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector2.magnitude_squared" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Vector2.normalize">
+<code class="descname">normalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector2.normalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Vector2.normalized">
+<code class="descname">normalized</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector2.normalized" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Vector2.project">
+<code class="descname">project</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector2.project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return one vector projected on the vector other</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Vector2.reflect">
+<code class="descname">reflect</code><span class="sig-paren">(</span><em>normal</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector2.reflect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Vector2.x">
+<code class="descname">x</code><a class="headerlink" href="#cocos.euclid.Vector2.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Vector2.xy">
+<code class="descname">xy</code><a class="headerlink" href="#cocos.euclid.Vector2.xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>(x, y)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Vector2.y">
+<code class="descname">y</code><a class="headerlink" href="#cocos.euclid.Vector2.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Vector2.yx">
+<code class="descname">yx</code><a class="headerlink" href="#cocos.euclid.Vector2.yx" title="Permalink to this definition">¶</a></dt>
+<dd><p>(y, x)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.euclid.Vector3">
+<em class="property">class </em><code class="descname">Vector3</code><span class="sig-paren">(</span><em>x=0</em>, <em>y=0</em>, <em>z=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.euclid.Slotted" title="cocos.euclid.Slotted"><code class="xref py py-class docutils literal"><span class="pre">cocos.euclid.Slotted</span></code></a></p>
+<dl class="method">
+<dt id="cocos.euclid.Vector3.angle">
+<code class="descname">angle</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector3.angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the angle to the vector other</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Vector3.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector3.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Vector3.cross">
+<code class="descname">cross</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector3.cross" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Vector3.dot">
+<code class="descname">dot</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector3.dot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Vector3.magnitude">
+<code class="descname">magnitude</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector3.magnitude" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Vector3.magnitude_squared">
+<code class="descname">magnitude_squared</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector3.magnitude_squared" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Vector3.normalize">
+<code class="descname">normalize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector3.normalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Vector3.normalized">
+<code class="descname">normalized</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector3.normalized" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Vector3.project">
+<code class="descname">project</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector3.project" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return one vector projected on the vector other</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Vector3.reflect">
+<code class="descname">reflect</code><span class="sig-paren">(</span><em>normal</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector3.reflect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.euclid.Vector3.rotate_around">
+<code class="descname">rotate_around</code><span class="sig-paren">(</span><em>axis</em>, <em>theta</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.euclid.Vector3.rotate_around" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the vector rotated around axis through angle theta. Right hand rule applies</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Vector3.x">
+<code class="descname">x</code><a class="headerlink" href="#cocos.euclid.Vector3.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Vector3.xy">
+<code class="descname">xy</code><a class="headerlink" href="#cocos.euclid.Vector3.xy" title="Permalink to this definition">¶</a></dt>
+<dd><p>(x, y)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Vector3.xyz">
+<code class="descname">xyz</code><a class="headerlink" href="#cocos.euclid.Vector3.xyz" title="Permalink to this definition">¶</a></dt>
+<dd><p>(x, y, z)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Vector3.xz">
+<code class="descname">xz</code><a class="headerlink" href="#cocos.euclid.Vector3.xz" title="Permalink to this definition">¶</a></dt>
+<dd><p>(x, z)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Vector3.xzy">
+<code class="descname">xzy</code><a class="headerlink" href="#cocos.euclid.Vector3.xzy" title="Permalink to this definition">¶</a></dt>
+<dd><p>(x, z, y)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Vector3.y">
+<code class="descname">y</code><a class="headerlink" href="#cocos.euclid.Vector3.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Vector3.yx">
+<code class="descname">yx</code><a class="headerlink" href="#cocos.euclid.Vector3.yx" title="Permalink to this definition">¶</a></dt>
+<dd><p>(y, x)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Vector3.yxz">
+<code class="descname">yxz</code><a class="headerlink" href="#cocos.euclid.Vector3.yxz" title="Permalink to this definition">¶</a></dt>
+<dd><p>(y, x, z)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Vector3.yz">
+<code class="descname">yz</code><a class="headerlink" href="#cocos.euclid.Vector3.yz" title="Permalink to this definition">¶</a></dt>
+<dd><p>(y, z)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Vector3.yzx">
+<code class="descname">yzx</code><a class="headerlink" href="#cocos.euclid.Vector3.yzx" title="Permalink to this definition">¶</a></dt>
+<dd><p>(y, z, x)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Vector3.z">
+<code class="descname">z</code><a class="headerlink" href="#cocos.euclid.Vector3.z" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Vector3.zx">
+<code class="descname">zx</code><a class="headerlink" href="#cocos.euclid.Vector3.zx" title="Permalink to this definition">¶</a></dt>
+<dd><p>(z, x)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Vector3.zxy">
+<code class="descname">zxy</code><a class="headerlink" href="#cocos.euclid.Vector3.zxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>(z, x, y)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Vector3.zy">
+<code class="descname">zy</code><a class="headerlink" href="#cocos.euclid.Vector3.zy" title="Permalink to this definition">¶</a></dt>
+<dd><p>(z, y)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.euclid.Vector3.zyx">
+<code class="descname">zyx</code><a class="headerlink" href="#cocos.euclid.Vector3.zyx" title="Permalink to this definition">¶</a></dt>
+<dd><p>(z, y, x)</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cocos.draw.html"
+                        title="previous chapter">cocos.draw module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cocos.framegrabber.html"
+                        title="next chapter">cocos.framegrabber module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/cocos.euclid.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.framegrabber.html" title="cocos.framegrabber module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cocos.draw.html" title="cocos.draw module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

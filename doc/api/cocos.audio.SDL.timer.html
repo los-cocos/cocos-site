@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos.audio.SDL.timer module &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="up" title="cocos.audio.SDL package" href="cocos.audio.SDL.html" />
+    <link rel="next" title="cocos.audio.SDL.version module" href="cocos.audio.SDL.version.html" />
+    <link rel="prev" title="cocos.audio.SDL.sound module" href="cocos.audio.SDL.sound.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.SDL.version.html" title="cocos.audio.SDL.version module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.SDL.sound.html" title="cocos.audio.SDL.sound module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &raquo;</li>
+          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" accesskey="U">cocos.audio.SDL package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cocos.audio.SDL.timer">
+<span id="cocos-audio-sdl-timer-module"></span><h1>cocos.audio.SDL.timer module<a class="headerlink" href="#module-cocos.audio.SDL.timer" title="Permalink to this headline">¶</a></h1>
+<p>Time management routines.</p>
+<dl class="function">
+<dt id="cocos.audio.SDL.timer.SDL_AddTimer">
+<code class="descname">SDL_AddTimer</code><span class="sig-paren">(</span><em>interval</em>, <em>callback</em>, <em>param</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.timer.SDL_AddTimer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a new timer to the pool of timers already running.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><cite>interval</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The interval before calling the callback, in milliseconds.</p>
+</dd>
+<dt><cite>callback</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
+<dd><p class="first">The callback function.  It is passed the current timer
+interval, in millseconds, and returns the next timer interval,
+in milliseconds.  If the returned value is the same as the one
+passed in, the periodic alarm continues, otherwise a new alarm
+is scheduled.  If the callback returns 0, the periodic alarm is
+cancelled.  An example callback function is:</p>
+<div class="last highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">timer_callback</span><span class="p">(</span><span class="n">interval</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">&#39;timer called after </span><span class="si">%d</span><span class="s"> ms.&#39;</span> <span class="o">%</span> <span class="n">interval</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">1000</span>     <span class="c"># call again in 1 second</span>
+</pre></div>
+</div>
+</dd>
+<dt><cite>param</cite> <span class="classifier-delimiter">:</span> <span class="classifier">any</span></dt>
+<dd><p class="first last">A value passed to the callback function.</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">int</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">the timer ID</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.SDL.timer.SDL_RemoveTimer">
+<code class="descname">SDL_RemoveTimer</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.timer.SDL_RemoveTimer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove one of the multiple timers knowing its ID.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>t</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">The timer ID, as returned by <cite>SDL_AddTimer</cite>.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.SDL.timer.SDL_SetTimer">
+<code class="descname">SDL_SetTimer</code><span class="sig-paren">(</span><em>interval</em>, <em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.timer.SDL_SetTimer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a callback to run after the specified number of milliseconds has
+elapsed.</p>
+<p>The callback function is passed the current timer interval
+and returns the next timer interval.  If the returned value is the
+same as the one passed in, the periodic alarm continues, otherwise a
+new alarm is scheduled.  If the callback returns 0, the periodic alarm
+is cancelled.</p>
+<p>To cancel a currently running timer, call <code class="docutils literal"><span class="pre">SDL_SetTimer(0,</span> <span class="pre">None)</span></code>.</p>
+<p>The timer callback function may run in a different thread than your
+main code, and so shouldn&#8217;t call any functions from within itself.</p>
+<p>The maximum resolution of this timer is 10 ms, which means that if
+you request a 16 ms timer, your callback will run approximately 20 ms
+later on an unloaded system.  If you wanted to set a flag signaling
+a frame update at 30 frames per second (every 33 ms), you might set a
+timer for 30 ms:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">SDL_SetTimer</span><span class="p">((</span><span class="mi">33</span><span class="o">/</span><span class="mi">10</span><span class="p">)</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span> <span class="n">flag_update</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you use this function, you need to pass <cite>SDL_INIT_TIMER</cite> to
+<cite>SDL_Init</cite>.</p>
+<p>Under UNIX, you should not use raise or use SIGALRM and this function
+in the same program, as it is implemented using <code class="docutils literal"><span class="pre">setitimer</span></code>.  You
+also should not use this function in multi-threaded applications as
+signals to multi-threaded apps have undefined behavior in some
+implementations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
+<dt><cite>interval</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Interval before callback, in milliseconds.</p>
+</dd>
+<dt><cite>callback</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
+<dd><p class="first last">Callback function should accept one argument, the number of
+milliseconds elapsed, and return the next timer interval,
+in milliseconds.</p>
+</dd>
+</dl>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cocos.audio.SDL.sound.html"
+                        title="previous chapter">cocos.audio.SDL.sound module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cocos.audio.SDL.version.html"
+                        title="next chapter">cocos.audio.SDL.version module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/cocos.audio.SDL.timer.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.SDL.version.html" title="cocos.audio.SDL.version module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cocos.audio.SDL.sound.html" title="cocos.audio.SDL.sound module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &raquo;</li>
+          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" >cocos.audio.SDL package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

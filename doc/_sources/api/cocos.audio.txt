@@ -1,0 +1,28 @@
+cocos.audio package
+===================
+
+Subpackages
+-----------
+
+.. toctree::
+
+    cocos.audio.SDL
+    cocos.audio.pygame
+
+Submodules
+----------
+
+.. toctree::
+
+   cocos.audio.actions
+   cocos.audio.effect
+   cocos.audio.exceptions
+   cocos.audio.music
+
+Module contents
+---------------
+
+.. automodule:: cocos.audio
+    :members:
+    :undoc-members:
+    :show-inheritance:

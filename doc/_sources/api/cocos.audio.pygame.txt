@@ -1,0 +1,20 @@
+cocos.audio.pygame package
+==========================
+
+Submodules
+----------
+
+.. toctree::
+
+   cocos.audio.pygame.base
+   cocos.audio.pygame.mixer
+   cocos.audio.pygame.music
+   cocos.audio.pygame.version
+
+Module contents
+---------------
+
+.. automodule:: cocos.audio.pygame
+    :members:
+    :undoc-members:
+    :show-inheritance:

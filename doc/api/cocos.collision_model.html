@@ -1,0 +1,778 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos.collision_model module &mdash; cocos v0.6.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="up" title="cocos package" href="cocos.html" />
+    <link rel="next" title="cocos.compat module" href="cocos.compat.html" />
+    <link rel="prev" title="cocos.cocosnode module" href="cocos.cocosnode.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.compat.html" title="cocos.compat module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cocos.cocosnode.html" title="cocos.cocosnode module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cocos.collision_model">
+<span id="cocos-collision-model-module"></span><h1>cocos.collision_model module<a class="headerlink" href="#module-cocos.collision_model" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="cocos.collision_model.AARectShape">
+<em class="property">class </em><code class="descname">AARectShape</code><span class="sig-paren">(</span><em>center</em>, <em>half_width</em>, <em>half_height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Implements the Cshape interface that uses rectangles with sides
+parallel to the coordinate axis as geometric shape.</p>
+<p>Distance is not the euclidean distance but the rectangular or max-min
+distance, max( min(x0 - x1), min(y0 - y1) : (xi, yi) in recti )</p>
+<p>Good if actors don&#8217;t rotate.</p>
+<p>Look at Cshape for other class and methods documentation.</p>
+<dl class="method">
+<dt id="cocos.collision_model.AARectShape.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.AARectShape.distance">
+<code class="descname">distance</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape.distance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.AARectShape.fits_in_box">
+<code class="descname">fits_in_box</code><span class="sig-paren">(</span><em>packed_box</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape.fits_in_box" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.AARectShape.minmax">
+<code class="descname">minmax</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape.minmax" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.AARectShape.near_than">
+<code class="descname">near_than</code><span class="sig-paren">(</span><em>other</em>, <em>near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape.near_than" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.AARectShape.overlaps">
+<code class="descname">overlaps</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape.overlaps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.AARectShape.touches_point">
+<code class="descname">touches_point</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape.touches_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.collision_model.CircleShape">
+<em class="property">class </em><code class="descname">CircleShape</code><span class="sig-paren">(</span><em>center</em>, <em>r</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Implements the Cshape interface that uses discs as geometric shape.</p>
+<p>Distance is the euclidean distance.</p>
+<p>Look at Cshape for other class and methods documentation.</p>
+<dl class="method">
+<dt id="cocos.collision_model.CircleShape.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape.copy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CircleShape.distance">
+<code class="descname">distance</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape.distance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CircleShape.fits_in_box">
+<code class="descname">fits_in_box</code><span class="sig-paren">(</span><em>packed_box</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape.fits_in_box" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CircleShape.minmax">
+<code class="descname">minmax</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape.minmax" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CircleShape.near_than">
+<code class="descname">near_than</code><span class="sig-paren">(</span><em>other</em>, <em>near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape.near_than" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CircleShape.overlaps">
+<code class="descname">overlaps</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape.overlaps" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CircleShape.touches_point">
+<code class="descname">touches_point</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape.touches_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.collision_model.CollisionManager">
+<em class="property">class </em><code class="descname">CollisionManager</code><a class="headerlink" href="#cocos.collision_model.CollisionManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Answers questions about proximity or collision with known objects.</p>
+<p>After instantiation or after calling its &#8216;clear&#8217; method the instance
+don&#8217;t knows any object.</p>
+<p>An object is made known to the CollisionManager instance by calling its
+&#8216;add&#8217; method with the object instance.</p>
+<p>Example questions are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>which known objects collides with &lt;this object&gt; ?</li>
+<li>which known objects are near than 6.0 from &lt;this object&gt; ?</li>
+</ul>
+</div></blockquote>
+<p>Note that explicit objects in the question (call) don&#8217;t need to be known to
+the collision manager answering the question.
+If the explicit object indeed is known, then it is omitted in the answer as a
+trivial case.</p>
+<p>There can be multiple CollisionManager instances in the same scope, and
+an object can be known to many collision managers at the same time.</p>
+<p>Objects that can be known or can be presented to a Collision Manager in
+a question must comply with:</p>
+<blockquote>
+<div><ul class="simple">
+<li>obj has a member called cshape</li>
+<li>obj.cshape supports the interface Cshape</li>
+</ul>
+</div></blockquote>
+<p>Such an object can be called &#8216;a collidable&#8217; in the documentation, and when
+&#8216;obj&#8217; or &#8216;other&#8217; is seen in the code you can assume it means collidable.</p>
+<p>While usually all collidables in a collision manager are of the same class
+(CircleShape or AARectShape) it is allowed to use both types into the same
+collision manager.</p>
+<p>The known objects collective for each CollisionManager instance is
+manipulated by calling the methods</p>
+<blockquote>
+<div><ul class="simple">
+<li>clean() : forgets all objects and empties internal data structures</li>
+<li>add(obj) : remember obj as a known object</li>
+<li>remove_tricky(obj) : forgets obj</li>
+</ul>
+</div></blockquote>
+<p>When objects are made known to a collision manager, internal data structures
+are updated based on the obj.cshape value at the &#8216;add&#8217; moment.
+In particular, the obj.cshape indirectly tells where in the internal
+structures certain info will be stored.
+Later, the internal data structures are used to accelerate answers.</p>
+<p>This  means that modifying obj.cshape after an &#8216;add&#8217; can produce a memory
+leak in the next &#8216;remove_tricky&#8217;, and that in the same situation some
+answers can be partially wrong.
+What type of wrong ? It can sometimes miss a collision with a know
+object that changed it cshape.</p>
+<p>It is user code responsibility to drive the know objects update when
+obj.cshape values changes.</p>
+<p>Common use patterns that are safe and efficient:</p>
+<p>When most of the known objects update cshape each frame</p>
+<p>You do:</p>
+<div class="highlight-python"><div class="highlight"><pre># updating collision info
+collision_manager.clear() # fast, no leaks even if changed cshapes
+for actor in moving_actors:
+    collision_manager.add(actor)
+
+# game logic
+# do what you need, but defer changes in cshape to next block
+# by example
+for actor in moving_actors:
+    actor.new_pos = actor.cshape.center + dt * vel
+    #other logic that potentially needs collision info;
+    #it will be accurate because you have not changed cshapes
+    ...
+
+# update cshapes for next frame
+for actor in moving actors:
+    actor.cshape.center = actor.new_pos
+</pre></div>
+</div>
+<p>Example actors for this case are player, enemies, soldiers.</p>
+<p>All of the known objects don&#8217;t change Cshapes</p>
+<blockquote>
+<div><ul class="simple">
+<li>At level start you add all objects</li>
+<li>When an actor reaches end of life use &#8216;remove_tricky&#8217; to make it not known, no problem because his cshape has not changed</li>
+</ul>
+</div></blockquote>
+<p>Examples actors for this case are food, coins, trees, rocks.</p>
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManager.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes obj a know entity</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManager.any_near">
+<code class="descname">any_near</code><span class="sig-paren">(</span><em>obj</em>, <em>near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.any_near" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns None if no know object (except itself) is near than
+near_distance, else an arbitrary known object with distance
+less than near_distance
+obj is not required to be a known object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManager.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Empties the known set</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManager.iter_all_collisions">
+<code class="descname">iter_all_collisions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.iter_all_collisions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterator that exposes all collisions between known objects.
+At each step it will yield a pair (obj, other).
+If (obj1, obj2) is seen when consuming the iterator, then (obj2, obj1)
+will not be seen.
+In other worlds, &#8216;obj1 collides with obj2&#8217; means (obj1, obj2) or
+(obj2, obj1) will appear in the iterator output but not both.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManager.iter_colliding">
+<code class="descname">iter_colliding</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.iter_colliding" title="Permalink to this definition">¶</a></dt>
+<dd><p>A lazy iterator over objects colliding with obj, allows to spare some
+CPU when the loop processing the collisions breaks before exhausting
+the collisions.
+obj is not required to be a known object</p>
+<p>Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre>for other in collision_manager.iter_colliding(obj):
+    # process event &#39;obj touches other&#39;
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManager.known_objs">
+<code class="descname">known_objs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.known_objs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a set with all the objects known by the CollisionManager
+Used for debug and testing.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManager.knows">
+<code class="descname">knows</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.knows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if obj was added to the collision manager, false otherwise
+Used for debug and testing.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManager.objs_colliding">
+<code class="descname">objs_colliding</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.objs_colliding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a container with known objects that overlaps obj,
+excluding obj itself
+obj is not required to be a known object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManager.objs_into_box">
+<code class="descname">objs_into_box</code><span class="sig-paren">(</span><em>minx</em>, <em>maxx</em>, <em>miny</em>, <em>maxy</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.objs_into_box" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a container with know objects that fully fits into the axis
+aligned rectangle defined by params</p>
+<p>Useful for elastic box selection</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManager.objs_near">
+<code class="descname">objs_near</code><span class="sig-paren">(</span><em>obj</em>, <em>near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.objs_near" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a container with the objects known by collision manager that
+are at distance to obj less or equal than near_distance, excluding
+itself.
+Notice that it includes the ones colliding with obj.
+obj is not required to be a known object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManager.objs_near_wdistance">
+<code class="descname">objs_near_wdistance</code><span class="sig-paren">(</span><em>obj</em>, <em>near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.objs_near_wdistance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list with the (other, distance) pairs that with all the
+known objects at distance less or equal than near_distance to obj,
+except obj itself.
+Notice that it includes the ones colliding with obj.
+obj is not required to be a known object
+If the game logic wants the list ordered by ascending distances, use
+ranked_objs_near instead.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManager.objs_touching_point">
+<code class="descname">objs_touching_point</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.objs_touching_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a container with known objects touching point (x, y)</p>
+<p>Useful for mouse pick</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManager.ranked_objs_near">
+<code class="descname">ranked_objs_near</code><span class="sig-paren">(</span><em>obj</em>, <em>near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.ranked_objs_near" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as objs_near_wdistance but the list is ordered in increasing distance
+obj is not required to be a known object</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManager.remove_tricky">
+<code class="descname">remove_tricky</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.remove_tricky" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>(obj should have the same .cshape value that when added)</em>
+Makes collision manager forget about obj, thus no further query will
+return obj.
+obj is required to be a known object.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManager.they_collide">
+<code class="descname">they_collide</code><span class="sig-paren">(</span><em>obj1</em>, <em>obj2</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.they_collide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a boolean, True if obj1 overlaps objs2
+obj1, obj2 are not required to be known objects</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.collision_model.CollisionManagerBruteForce">
+<em class="property">class </em><code class="descname">CollisionManagerBruteForce</code><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Implements the CollisionManager interface with with the simpler code possible.</p>
+<p>Intended for reference and debugging, it has very bad performance.</p>
+<p>Look at CollisionManager for other class and methods documentation.</p>
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerBruteForce.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerBruteForce.any_near">
+<code class="descname">any_near</code><span class="sig-paren">(</span><em>obj</em>, <em>near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.any_near" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerBruteForce.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerBruteForce.iter_all_collisions">
+<code class="descname">iter_all_collisions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.iter_all_collisions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerBruteForce.iter_colliding">
+<code class="descname">iter_colliding</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.iter_colliding" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerBruteForce.known_objs">
+<code class="descname">known_objs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.known_objs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerBruteForce.knows">
+<code class="descname">knows</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.knows" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerBruteForce.objs_colliding">
+<code class="descname">objs_colliding</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.objs_colliding" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerBruteForce.objs_into_box">
+<code class="descname">objs_into_box</code><span class="sig-paren">(</span><em>minx</em>, <em>maxx</em>, <em>miny</em>, <em>maxy</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.objs_into_box" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerBruteForce.objs_near">
+<code class="descname">objs_near</code><span class="sig-paren">(</span><em>obj</em>, <em>near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.objs_near" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerBruteForce.objs_near_wdistance">
+<code class="descname">objs_near_wdistance</code><span class="sig-paren">(</span><em>obj</em>, <em>near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.objs_near_wdistance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerBruteForce.objs_touching_point">
+<code class="descname">objs_touching_point</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.objs_touching_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerBruteForce.ranked_objs_near">
+<code class="descname">ranked_objs_near</code><span class="sig-paren">(</span><em>obj</em>, <em>near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.ranked_objs_near" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerBruteForce.remove_tricky">
+<code class="descname">remove_tricky</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.remove_tricky" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerBruteForce.they_collide">
+<code class="descname">they_collide</code><span class="sig-paren">(</span><em>obj1</em>, <em>obj2</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.they_collide" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.collision_model.CollisionManagerGrid">
+<em class="property">class </em><code class="descname">CollisionManagerGrid</code><span class="sig-paren">(</span><em>xmin</em>, <em>xmax</em>, <em>ymin</em>, <em>ymax</em>, <em>cell_width</em>, <em>cell_height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Implements the CollisionManager interface based on the scheme
+known as spatial hashing.</p>
+<p>The idea behind is to divide the space in rectangles with a given width and
+height, and have a table telling which objects overlaps each rectangle.</p>
+<p>Later, when the question &#8216;which know objects has such and such spatial
+relation with &lt;some object&gt;&#8217; arrives, only the objects in rectangles
+overlapping &lt;some object&gt; (or nearby ones) needs to be examined for the
+condition.</p>
+<p>Look at CollisionManager for other class and methods documentation.</p>
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerGrid.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerGrid.any_near">
+<code class="descname">any_near</code><span class="sig-paren">(</span><em>obj</em>, <em>near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.any_near" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerGrid.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerGrid.iter_all_collisions">
+<code class="descname">iter_all_collisions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.iter_all_collisions" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerGrid.iter_colliding">
+<code class="descname">iter_colliding</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.iter_colliding" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerGrid.known_objs">
+<code class="descname">known_objs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.known_objs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerGrid.knows">
+<code class="descname">knows</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.knows" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerGrid.objs_colliding">
+<code class="descname">objs_colliding</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.objs_colliding" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerGrid.objs_into_box">
+<code class="descname">objs_into_box</code><span class="sig-paren">(</span><em>minx</em>, <em>maxx</em>, <em>miny</em>, <em>maxy</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.objs_into_box" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerGrid.objs_near">
+<code class="descname">objs_near</code><span class="sig-paren">(</span><em>obj</em>, <em>near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.objs_near" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerGrid.objs_near_wdistance">
+<code class="descname">objs_near_wdistance</code><span class="sig-paren">(</span><em>obj</em>, <em>near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.objs_near_wdistance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerGrid.objs_touching_point">
+<code class="descname">objs_touching_point</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.objs_touching_point" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerGrid.ranked_objs_near">
+<code class="descname">ranked_objs_near</code><span class="sig-paren">(</span><em>obj</em>, <em>near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.ranked_objs_near" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerGrid.remove_tricky">
+<code class="descname">remove_tricky</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.remove_tricky" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.CollisionManagerGrid.they_collide">
+<code class="descname">they_collide</code><span class="sig-paren">(</span><em>obj1</em>, <em>obj2</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.they_collide" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.collision_model.Cshape">
+<em class="property">class </em><code class="descname">Cshape</code><a class="headerlink" href="#cocos.collision_model.Cshape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Represents an abstract geometric shape in the 2D space, and can
+answer questions about proximity or intersection with other shapes.</p>
+<p>Implementations are free to restrict the type of geometrical shapes
+that will accept, by example circles or axis aligned rectangles.</p>
+<dl class="method">
+<dt id="cocos.collision_model.Cshape.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.Cshape.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a copy of itself</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#cocos.collision_model.Cshape" title="cocos.collision_model.Cshape">Cshape</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.Cshape.distance">
+<code class="descname">distance</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.Cshape.distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a float, distance from itself to other;</p>
+<p>Not necessarily  euclidean distance.
+It is distances between boundaries.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.Cshape.fits_in_box">
+<code class="descname">fits_in_box</code><span class="sig-paren">(</span><em>packed_box</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.Cshape.fits_in_box" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a boolean, True if the shape fully fits into the axis aligned
+rectangle defined by packed_box, False otherwise.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
+<dt><cite>packed_box</cite> <span class="classifier-delimiter">:</span> <span class="classifier">4-tuple floats</span></dt>
+<dd><p class="first last">An axis aligned rectangle expressed as (minx, maxx, miny, maxy)</p>
+</dd>
+</dl>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.Cshape.minmax">
+<code class="descname">minmax</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.Cshape.minmax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the smallest axis aligned rectangle that contains all shape points.</p>
+<p>The rectangle is expressed as a 4-tuple of floats (minx, maxx, miny, maxy)
+Such a rectangle is also know as the Axis Aligned Bounding Box for shape;
+AABB for short.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">4-tuple of floats</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.Cshape.near_than">
+<code class="descname">near_than</code><span class="sig-paren">(</span><em>other</em>, <em>near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.Cshape.near_than" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a boolean, True if distance(self, other)&lt;=near_distance</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.Cshape.overlaps">
+<code class="descname">overlaps</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.Cshape.overlaps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if overlapping other, False otherwise</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.collision_model.Cshape.touches_point">
+<code class="descname">touches_point</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.Cshape.touches_point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if the point (x,y) overlaps the shape, False otherwise</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.collision_model.aa_rect_distance_aa_rect">
+<code class="descname">aa_rect_distance_aa_rect</code><span class="sig-paren">(</span><em>aa_rect</em>, <em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.aa_rect_distance_aa_rect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Give the distance between two axis-aligned rectangles.</p>
+<p>The rect must have members &#8216;center&#8217;, &#8216;rx&#8217;, &#8216;ry&#8217; where the latest two are
+the rect half_width and half_height.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.collision_model.aa_rect_distance_circle">
+<code class="descname">aa_rect_distance_circle</code><span class="sig-paren">(</span><em>aa_rect</em>, <em>circle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.aa_rect_distance_circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Give the distance between an axis-aligned rectangle and a circle.</p>
+<p>The rect must have members &#8216;center&#8217;, &#8216;rx&#8217;, &#8216;ry&#8217; where the latest two are
+the rect half_width and half_height.
+The circle must have members &#8216;center&#8217;, &#8216;r&#8217;, where the latest is the radius.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.collision_model.aa_rect_overlaps_aa_rect">
+<code class="descname">aa_rect_overlaps_aa_rect</code><span class="sig-paren">(</span><em>aa_rect</em>, <em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.aa_rect_overlaps_aa_rect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tells if two axis aligned rectangles overlap.</p>
+<p>The rects must have members &#8216;center&#8217;, &#8216;rx&#8217;, &#8216;ry&#8217; where the latest two are
+the rect half_width and half_height.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.collision_model.aa_rect_overlaps_circle">
+<code class="descname">aa_rect_overlaps_circle</code><span class="sig-paren">(</span><em>aa_rect</em>, <em>circle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.aa_rect_overlaps_circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tells if an axis aligned rectangle and a circle overlap.</p>
+<p>The rect must have members &#8216;center&#8217;, &#8216;rx&#8217;, &#8216;ry&#8217; where the latest two are
+the rect half_width and half_height.
+The circle must have members &#8216;center&#8217;, &#8216;r&#8217;, where the latest is the radius.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.collision_model.circle_distance_circle">
+<code class="descname">circle_distance_circle</code><span class="sig-paren">(</span><em>circle</em>, <em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.circle_distance_circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Give the distance between two circles.</p>
+<p>The circles must have members &#8216;center&#8217;, &#8216;r&#8217;, where the latest is the radius.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.collision_model.circle_overlaps_circle">
+<code class="descname">circle_overlaps_circle</code><span class="sig-paren">(</span><em>circle</em>, <em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.circle_overlaps_circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tells if two circles overlap.</p>
+<p>The circles must have members &#8216;center&#8217;, &#8216;r&#8217;, where the latest is the radius.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.collision_model.clamp">
+<code class="descname">clamp</code><span class="sig-paren">(</span><em>value</em>, <em>minimum</em>, <em>maximum</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.clamp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cocos.cocosnode.html"
+                        title="previous chapter">cocos.cocosnode module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cocos.compat.html"
+                        title="next chapter">cocos.compat module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/cocos.collision_model.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.compat.html" title="cocos.compat module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cocos.cocosnode.html" title="cocos.cocosnode module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2015, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>

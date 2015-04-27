@@ -1,0 +1,7 @@
+cocos.scenes.transitions module
+===============================
+
+.. automodule:: cocos.scenes.transitions
+    :members:
+    :undoc-members:
+    :show-inheritance:

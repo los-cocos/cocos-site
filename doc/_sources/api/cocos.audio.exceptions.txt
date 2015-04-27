@@ -1,0 +1,7 @@
+cocos.audio.exceptions module
+=============================
+
+.. automodule:: cocos.audio.exceptions
+    :members:
+    :undoc-members:
+    :show-inheritance:

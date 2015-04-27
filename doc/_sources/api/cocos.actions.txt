@@ -1,0 +1,25 @@
+cocos.actions package
+=====================
+
+Submodules
+----------
+
+.. toctree::
+
+   cocos.actions.base_actions
+   cocos.actions.basegrid_actions
+   cocos.actions.camera_actions
+   cocos.actions.grid3d_actions
+   cocos.actions.instant_actions
+   cocos.actions.interval_actions
+   cocos.actions.move_actions
+   cocos.actions.quadmoveby_actions
+   cocos.actions.tiledgrid_actions
+
+Module contents
+---------------
+
+.. automodule:: cocos.actions
+    :members:
+    :undoc-members:
+    :show-inheritance:
