@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>cocos.actions.basegrid_actions module &mdash; cocos v0.6.3 documentation</title>
+    <title>cocos.actions.basegrid_actions module &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="up" title="cocos.actions package" href="cocos.actions.html" />
     <link rel="next" title="cocos.actions.camera_actions module" href="cocos.actions.camera_actions.html" />
     <link rel="prev" title="cocos.actions.base_actions module" href="cocos.actions.base_actions.html" /> 
@@ -66,8 +66,8 @@
 <li><p class="first"><cite>Grid3D</cite> : A 3D grid with x,y and z coordinates</p>
 </li>
 <li><dl class="first docutils">
-<dt><cite>TiledGrid3D</cite> <span class="classifier-delimiter">:</span> <span class="classifier">A 3D grid with x,y and z coordinates, composed</span></dt>
-<dd><p class="first last">with independent tiles</p>
+<dt><cite>TiledGrid3D</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">A 3D grid with x,y and z coordinates, composed</span><dd><p class="first last">with independent tiles</p>
 </dd>
 </dl>
 </li>
@@ -92,7 +92,7 @@ The <cite>TiledGrid3DAction</cite> can modify any tile of the grid without modif
 <dl class="exception">
 <dt id="cocos.actions.basegrid_actions.GridException">
 <em class="property">exception </em><code class="descname">GridException</code><a class="headerlink" href="#cocos.actions.basegrid_actions.GridException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
 <dl class="class">
@@ -109,11 +109,11 @@ The <cite>TiledGrid3DAction</cite> can modify any tile of the grid without modif
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>grid</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(int,int)</span></dt>
-<dd><p class="first last">Number of horizontal and vertical quads in the grid</p>
+<dt><cite>grid</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">(int,int)</span><dd><p class="first last">Number of horizontal and vertical quads in the grid</p>
 </dd>
-<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int </span></dt>
-<dd><p class="first last">Number of seconds that the action will last</p>
+<dt><cite>duration</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Number of seconds that the action will last</p>
 </dd>
 </dl>
 </td>
@@ -150,11 +150,11 @@ The original vertices are the ones weren&#8217;t modified by the current action.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int </span></dt>
-<dd><p class="first last">x-vertex</p>
+<dt><cite>x</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">x-vertex</p>
 </dd>
-<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">y-vertex</p>
+<dt><cite>y</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">y-vertex</p>
 </dd>
 </dl>
 </td>
@@ -175,11 +175,11 @@ The original vertices are the ones weren&#8217;t modified by the current action.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int </span></dt>
-<dd><p class="first last">x-vertex</p>
+<dt><cite>x</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">x-vertex</p>
 </dd>
-<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">y-vertex</p>
+<dt><cite>y</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">y-vertex</p>
 </dd>
 </dl>
 </td>
@@ -200,14 +200,14 @@ The original vertices are the ones weren&#8217;t modified by the current action.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int </span></dt>
-<dd><p class="first last">x-vertex</p>
+<dt><cite>x</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">x-vertex</p>
 </dd>
-<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">y-vertex</p>
+<dt><cite>y</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">y-vertex</p>
 </dd>
-<dt><cite>v</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(float, float, float)</span></dt>
-<dd><p class="first last">tuple value for the vertex</p>
+<dt><cite>v</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">(float, float, float)</span><dd><p class="first last">tuple value for the vertex</p>
 </dd>
 </dl>
 </td>
@@ -235,10 +235,10 @@ You can transform each tile individually</p>
 <code class="descname">get_original_tile</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.TiledGrid3DAction.get_original_tile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the 4-original tile coordinates.</p>
 <p>Coordinates positions:</p>
-<div class="highlight-python"><div class="highlight"><pre>3 &lt;-- 2
-      ^
-      |
-0 --&gt; 1
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&lt;--</span> <span class="mi">2</span>
+      <span class="o">^</span>
+      <span class="o">|</span>
+<span class="mi">0</span> <span class="o">--&gt;</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -246,11 +246,11 @@ You can transform each tile individually</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">x coordinate of the tile</p>
+<dt><cite>x</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">x coordinate of the tile</p>
 </dd>
-<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">y coordinate of the tile</p>
+<dt><cite>y</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">y coordinate of the tile</p>
 </dd>
 </dl>
 </td>
@@ -270,10 +270,10 @@ You can transform each tile individually</p>
 <code class="descname">get_tile</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.TiledGrid3DAction.get_tile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the current tile coordinates.</p>
 <p>Coordinates positions:</p>
-<div class="highlight-python"><div class="highlight"><pre>3 &lt;-- 2
-      ^
-      |
-0 --&gt; 1
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&lt;--</span> <span class="mi">2</span>
+      <span class="o">^</span>
+      <span class="o">|</span>
+<span class="mi">0</span> <span class="o">--&gt;</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -281,11 +281,11 @@ You can transform each tile individually</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">x coordinate of the tile</p>
+<dt><cite>x</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">x coordinate of the tile</p>
 </dd>
-<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">y coordinate of the tile</p>
+<dt><cite>y</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">y coordinate of the tile</p>
 </dd>
 </dl>
 </td>
@@ -305,10 +305,10 @@ You can transform each tile individually</p>
 <code class="descname">set_tile</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>coords</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.basegrid_actions.TiledGrid3DAction.set_tile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the 4 tile coordinates</p>
 <p>Coordinates positions:</p>
-<div class="highlight-python"><div class="highlight"><pre>3 &lt;-- 2
-      ^
-      |
-0 --&gt; 1
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&lt;--</span> <span class="mi">2</span>
+      <span class="o">^</span>
+      <span class="o">|</span>
+<span class="mi">0</span> <span class="o">--&gt;</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -316,14 +316,14 @@ You can transform each tile individually</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int </span></dt>
-<dd><p class="first last">x coodinate of the tile</p>
+<dt><cite>x</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">x coodinate of the tile</p>
 </dd>
-<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int </span></dt>
-<dd><p class="first last">y coordinate of the tile</p>
+<dt><cite>y</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">y coordinate of the tile</p>
 </dd>
-<dt><cite>coords</cite> <span class="classifier-delimiter">:</span> <span class="classifier">[ float, float, float, float, float, float, float, float, float, float, float, float ]</span></dt>
-<dd><p class="first last">The 4 coordinates in the format (x0, y0, z0, x1, y1, z1,..., x3, y3, z3)</p>
+<dt><cite>coords</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">[ float, float, float, float, float, float, float, float, float, float, float, float ]</span><dd><p class="first last">The 4 coordinates in the format (x0, y0, z0, x1, y1, z1,..., x3, y3, z3)</p>
 </dd>
 </dl>
 </td>
@@ -340,8 +340,8 @@ You can transform each tile individually</p>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
 <p>Increases the waves amplitude from 0 to self.amplitude</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># when t=0 the amplitude will be 0</span>
-<span class="c"># when t=1 the amplitude will be 40</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># when t=0 the amplitude will be 0</span>
+<span class="c1"># when t=1 the amplitude will be 40</span>
 <span class="n">action</span> <span class="o">=</span> <span class="n">AccelAmplitude</span><span class="p">(</span> <span class="n">Wave3D</span><span class="p">(</span> <span class="n">waves</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">6</span><span class="p">),</span> <span class="n">rate</span><span class="o">=</span><span class="mf">1.0</span> <span class="p">)</span>
 <span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">action</span> <span class="p">)</span>
 </pre></div>
@@ -355,11 +355,11 @@ You can transform each tile individually</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>other</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>IntervalAction</cite></span></dt>
-<dd><p class="first last">The action that will be affected</p>
+<dt><cite>other</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier"><cite>IntervalAction</cite></span><dd><p class="first last">The action that will be affected</p>
 </dd>
-<dt><cite>rate</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The acceleration rate. 1 is linear (default value)</p>
+<dt><cite>rate</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">The acceleration rate. 1 is linear (default value)</p>
 </dd>
 </dl>
 </td>
@@ -386,8 +386,8 @@ You can transform each tile individually</p>
 <dd><p>Bases: <a class="reference internal" href="#cocos.actions.basegrid_actions.AccelAmplitude" title="cocos.actions.basegrid_actions.AccelAmplitude"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.basegrid_actions.AccelAmplitude</span></code></a></p>
 <p>Decreases the waves amplitude from self.amplitude to 0</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># when t=1 the amplitude will be 0</span>
-<span class="c"># when t=0 the amplitude will be 40</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># when t=1 the amplitude will be 0</span>
+<span class="c1"># when t=0 the amplitude will be 40</span>
 <span class="n">action</span> <span class="o">=</span> <span class="n">DeccelAmplitude</span><span class="p">(</span> <span class="n">Wave3D</span><span class="p">(</span> <span class="n">waves</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">6</span><span class="p">),</span> <span class="n">rate</span><span class="o">=</span><span class="mf">1.0</span> <span class="p">)</span>
 <span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">action</span> <span class="p">)</span>
 </pre></div>
@@ -405,8 +405,8 @@ You can transform each tile individually</p>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
 <p>Increases and Decreases the amplitude of Wave</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># when t=0 and t=1 the amplitude will be 0</span>
-<span class="c"># when t=0.5 (half time), the amplitude will be 40</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># when t=0 and t=1 the amplitude will be 0</span>
+<span class="c1"># when t=0.5 (half time), the amplitude will be 40</span>
 <span class="n">action</span> <span class="o">=</span> <span class="n">AccellDeccelAmplitude</span><span class="p">(</span> <span class="n">Wave3D</span><span class="p">(</span> <span class="n">waves</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span> <span class="p">)</span>
 <span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">action</span> <span class="p">)</span>
 </pre></div>
@@ -420,11 +420,11 @@ You can transform each tile individually</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>other</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>IntervalAction</cite></span></dt>
-<dd><p class="first last">The action that will be affected</p>
+<dt><cite>other</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier"><cite>IntervalAction</cite></span><dd><p class="first last">The action that will be affected</p>
 </dd>
-<dt><cite>rate</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The acceleration rate. 1 is linear (default value)</p>
+<dt><cite>rate</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">The acceleration rate. 1 is linear (default value)</p>
 </dd>
 </dl>
 </td>
@@ -453,7 +453,7 @@ You can transform each tile individually</p>
 Every grid action, after finishing, leaves the screen with a certain grid figure.
 This figure will be displayed until StopGrid or another Grid action is executed.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">Waves3D</span><span class="p">(</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">StopGrid</span><span class="p">()</span> <span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">Waves3D</span><span class="p">(</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">StopGrid</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -478,7 +478,7 @@ The next grid action must have these properties:</p>
 <p>If these condition are met, then the next grid action will receive as the <code class="docutils literal"><span class="pre">original</span> <span class="pre">vertex</span></code>
 or <code class="docutils literal"><span class="pre">original</span> <span class="pre">tiles</span></code> the current ones.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">Waves3D</span><span class="p">(</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">ReuseGrid</span><span class="p">()</span> <span class="o">+</span> <span class="n">Lens3D</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">Waves3D</span><span class="p">(</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">ReuseGrid</span><span class="p">()</span> <span class="o">+</span> <span class="n">Lens3D</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -489,8 +489,8 @@ or <code class="docutils literal"><span class="pre">original</span> <span class=
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>reuse_times</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of times that the current grid will be reused by Grid actions. Default: 1</p>
+<dt><cite>reuse_times</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Number of times that the current grid will be reused by Grid actions. Default: 1</p>
 </dd>
 </dl>
 </td>
@@ -544,9 +544,6 @@ or <code class="docutils literal"><span class="pre">original</span> <span class=
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -574,8 +571,8 @@ or <code class="docutils literal"><span class="pre">original</span> <span class=
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

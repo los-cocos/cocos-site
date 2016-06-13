@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>cocos.menu module &mdash; cocos v0.6.3 documentation</title>
+    <title>cocos.menu module &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,10 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="up" title="cocos package" href="cocos.html" />
     <link rel="next" title="cocos.particle module" href="cocos.particle.html" />
-    <link rel="prev" title="cocos.grid module" href="cocos.grid.html" /> 
+    <link rel="prev" title="cocos.mapcolliders module" href="cocos.mapcolliders.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -42,7 +42,7 @@
           <a href="cocos.particle.html" title="cocos.particle module"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="cocos.grid.html" title="cocos.grid module"
+          <a href="cocos.mapcolliders.html" title="cocos.mapcolliders module"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
@@ -66,7 +66,7 @@ or entry items (which lets you enter alphanumeric data).</p>
 another <cite>Layer</cite>.</p>
 <dl class="class">
 <dt id="cocos.menu.Menu">
-<em class="property">class </em><code class="descname">Menu</code><span class="sig-paren">(</span><em>title=u''</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.Menu" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Menu</code><span class="sig-paren">(</span><em>title=''</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.Menu" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.layer.base_layers.html#cocos.layer.base_layers.Layer" title="cocos.layer.base_layers.Layer"><code class="xref py py-class docutils literal"><span class="pre">cocos.layer.base_layers.Layer</span></code></a></p>
 <p>Abstract base class for menu layers.</p>
 <p>Normal usage is:</p>
@@ -80,14 +80,14 @@ and then call <cite>create_menu()</cite></li>
 </div></blockquote>
 <dl class="method">
 <dt id="cocos.menu.Menu.create_menu">
-<code class="descname">create_menu</code><span class="sig-paren">(</span><em>items</em>, <em>selected_effect=None</em>, <em>unselected_effect=None</em>, <em>activated_effect=None</em>, <em>layout_strategy=&lt;function verticalMenuLayout at 0x05F2DDF0&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.Menu.create_menu" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create_menu</code><span class="sig-paren">(</span><em>items</em>, <em>selected_effect=None</em>, <em>unselected_effect=None</em>, <em>activated_effect=None</em>, <em>layout_strategy=&lt;function verticalMenuLayout at 0x00000000082E87B8&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.Menu.create_menu" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates the menu</p>
 <p>The order of the list important since the
 first one will be shown first.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">MenuItem</span><span class="p">(</span><span class="s">&#39;Options&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_new_game</span> <span class="p">)</span> <span class="p">)</span>
-<span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">MenuItem</span><span class="p">(</span><span class="s">&#39;Quit&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_quit</span> <span class="p">)</span> <span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">MenuItem</span><span class="p">(</span><span class="s1">&#39;Options&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_new_game</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">MenuItem</span><span class="p">(</span><span class="s1">&#39;Quit&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_quit</span> <span class="p">)</span> <span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">create_menu</span><span class="p">(</span> <span class="n">l</span><span class="p">,</span> <span class="n">zoom_in</span><span class="p">(),</span> <span class="n">zoom_out</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
@@ -96,17 +96,17 @@ first one will be shown first.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>items</cite> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
-<dd><p class="first last">list of <cite>BaseMenuItem</cite> that will be part of the <cite>Menu</cite></p>
+<dt><cite>items</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">list</span><dd><p class="first last">list of <cite>BaseMenuItem</cite> that will be part of the <cite>Menu</cite></p>
 </dd>
-<dt><cite>selected_effect</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
-<dd><p class="first last">This action will be executed when the <cite>BaseMenuItem</cite> is selected</p>
+<dt><cite>selected_effect</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">function</span><dd><p class="first last">This action will be executed when the <cite>BaseMenuItem</cite> is selected</p>
 </dd>
-<dt><cite>unselected_effect</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
-<dd><p class="first last">This action will be executed when the <cite>BaseMenuItem</cite> is unselected</p>
+<dt><cite>unselected_effect</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">function</span><dd><p class="first last">This action will be executed when the <cite>BaseMenuItem</cite> is unselected</p>
 </dd>
-<dt><cite>activated_effect</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
-<dd><p class="first last">this action will executed when the <cite>BaseMenuItem</cite> is activated (pressing Enter or by clicking on it)</p>
+<dt><cite>activated_effect</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">function</span><dd><p class="first last">this action will executed when the <cite>BaseMenuItem</cite> is activated (pressing Enter or by clicking on it)</p>
 </dd>
 </dl>
 </td>
@@ -191,7 +191,7 @@ first one will be shown first.</p>
 <dd><p>Bases: <a class="reference internal" href="#cocos.menu.MultipleMenuItem" title="cocos.menu.MultipleMenuItem"><code class="xref py py-class docutils literal"><span class="pre">cocos.menu.MultipleMenuItem</span></code></a></p>
 <p>A menu item for a boolean toggle option.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">ToggleMenuItem</span><span class="p">(</span><span class="s">&#39;Show FPS:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_show_fps</span><span class="p">,</span> <span class="n">director</span><span class="o">.</span><span class="n">show_FPS</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">ToggleMenuItem</span><span class="p">(</span><span class="s1">&#39;Show FPS:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_show_fps</span><span class="p">,</span> <span class="n">director</span><span class="o">.</span><span class="n">show_FPS</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -207,10 +207,10 @@ first one will be shown first.</p>
 <dd><p>Bases: <a class="reference internal" href="#cocos.menu.MenuItem" title="cocos.menu.MenuItem"><code class="xref py py-class docutils literal"><span class="pre">cocos.menu.MenuItem</span></code></a></p>
 <p>A menu item for switching between multiple values.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">volumes</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;Mute&#39;</span><span class="p">,</span><span class="s">&#39;10&#39;</span><span class="p">,</span><span class="s">&#39;20&#39;</span><span class="p">,</span><span class="s">&#39;30&#39;</span><span class="p">,</span><span class="s">&#39;40&#39;</span><span class="p">,</span><span class="s">&#39;50&#39;</span><span class="p">,</span><span class="s">&#39;60&#39;</span><span class="p">,</span><span class="s">&#39;70&#39;</span><span class="p">,</span><span class="s">&#39;80&#39;</span><span class="p">,</span><span class="s">&#39;90&#39;</span><span class="p">,</span><span class="s">&#39;100&#39;</span><span class="p">]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">volumes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Mute&#39;</span><span class="p">,</span><span class="s1">&#39;10&#39;</span><span class="p">,</span><span class="s1">&#39;20&#39;</span><span class="p">,</span><span class="s1">&#39;30&#39;</span><span class="p">,</span><span class="s1">&#39;40&#39;</span><span class="p">,</span><span class="s1">&#39;50&#39;</span><span class="p">,</span><span class="s1">&#39;60&#39;</span><span class="p">,</span><span class="s1">&#39;70&#39;</span><span class="p">,</span><span class="s1">&#39;80&#39;</span><span class="p">,</span><span class="s1">&#39;90&#39;</span><span class="p">,</span><span class="s1">&#39;100&#39;</span><span class="p">]</span>
 
 <span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">MultipleMenuItem</span><span class="p">(</span>
-                <span class="s">&#39;SFX volume: &#39;</span><span class="p">,</span>
+                <span class="s1">&#39;SFX volume: &#39;</span><span class="p">,</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">on_sfx_volume</span><span class="p">,</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">volumes</span><span class="p">,</span>
                 <span class="mi">8</span> <span class="p">)</span> <span class="p">)</span>
@@ -270,10 +270,10 @@ called with <code class="docutils literal"><span class="pre">self.value</span></
 <dd><p>Bases: <a class="reference internal" href="#cocos.menu.MenuItem" title="cocos.menu.MenuItem"><code class="xref py py-class docutils literal"><span class="pre">cocos.menu.MenuItem</span></code></a></p>
 <p>A menu item for selecting a color.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">colors</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">)]</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">colors</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">)]</span>
 
 <span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">ColorMenuItem</span><span class="p">(</span>
-                <span class="s">&#39;Jacket:&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Jacket:&#39;</span><span class="p">,</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">on_jacket_color</span><span class="p">,</span>
                 <span class="n">colors</span> <span class="p">))</span>
 </pre></div>
@@ -348,8 +348,8 @@ position.</p>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="cocos.grid.html"
-                        title="previous chapter">cocos.grid module</a></p>
+  <p class="topless"><a href="cocos.mapcolliders.html"
+                        title="previous chapter">cocos.mapcolliders module</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="cocos.particle.html"
                         title="next chapter">cocos.particle module</a></p>
@@ -368,9 +368,6 @@ position.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -390,15 +387,15 @@ position.</p>
           <a href="cocos.particle.html" title="cocos.particle module"
              >next</a> |</li>
         <li class="right" >
-          <a href="cocos.grid.html" title="cocos.grid module"
+          <a href="cocos.mapcolliders.html" title="cocos.mapcolliders module"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

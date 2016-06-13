@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Skeletal Animations &mdash; cocos v0.6.3 documentation</title>
+    <title>Skeletal Animations &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../../index.html" />
     <link rel="up" title="cocos2d Programming Guide" href="../index.html" />
     <link rel="next" title="cocos package" href="../../api/cocos.html" />
     <link rel="prev" title="Collision" href="../collision.html" /> 
@@ -100,9 +100,9 @@ using them afterwards is easy, and there are some tools to simplify the process.
 root bone for your skeleton. Here we create what is going to be the body of our
 human skeleton as follows:</p>
 <p>doc/programming_guide/skeleton/root_bone.py:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">cocos.skeleton</span> <span class="kn">import</span> <span class="n">Bone</span><span class="p">,</span> <span class="n">Skeleton</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cocos.skeleton</span> <span class="k">import</span> <span class="n">Bone</span><span class="p">,</span> <span class="n">Skeleton</span>
 
-<span class="n">root_bone</span> <span class="o">=</span> <span class="n">Bone</span><span class="p">(</span><span class="s">&#39;body&#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="o">-</span><span class="mf">180.0</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">))</span>
+<span class="n">root_bone</span> <span class="o">=</span> <span class="n">Bone</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="o">-</span><span class="mf">180.0</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">))</span>
 
 <span class="n">skeleton</span> <span class="o">=</span> <span class="n">Skeleton</span><span class="p">(</span><span class="n">root_bone</span><span class="p">)</span>
 </pre></div>
@@ -113,9 +113,9 @@ to be able to move its shoulders and not its legs, so the fixed part of the
 skeleton will be its waist, ie, the origin of the root bone.</p>
 <p>You can see the skeleton you have created using with a small piece of code.</p>
 <p>from doc/programming_guide/skeleton/show_root_bone.py:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">cocos</span> <span class="kn">import</span> <span class="n">skeleton</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cocos</span> <span class="k">import</span> <span class="n">skeleton</span>
 
-<span class="c"># import the skeleton we have created</span>
+<span class="c1"># import the skeleton we have created</span>
 <span class="kn">import</span> <span class="nn">root_bone</span>
 
 <span class="k">class</span> <span class="nc">TestLayer</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
@@ -124,10 +124,10 @@ skeleton will be its waist, ie, the origin of the root bone.</p>
 
         <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">director</span><span class="o">.</span><span class="n">get_window_size</span><span class="p">()</span>
 
-        <span class="c"># create a ColorSkin for our skeleton</span>
+        <span class="c1"># create a ColorSkin for our skeleton</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">skin</span> <span class="o">=</span> <span class="n">skeleton</span><span class="o">.</span><span class="n">ColorSkin</span><span class="p">(</span><span class="n">root_bone</span><span class="o">.</span><span class="n">skeleton</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
 
-        <span class="c"># add the skin to the scene</span>
+        <span class="c1"># add the skin to the scene</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">skin</span> <span class="p">)</span>
         <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">director</span><span class="o">.</span><span class="n">get_window_size</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">skin</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">/</span><span class="mi">2</span>
@@ -147,8 +147,8 @@ can add it to your node to place it on screen.</p>
 <p>Now, we want to skin this skeleton with some images, so we create a skin file.
 The skin file will look like this:</p>
 <p>doc/programming_guide/skeleton/root_skin.py:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">skin</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="s">&#39;body&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">91</span><span class="p">),</span> <span class="s">&#39;gil-cuerpo.png&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">skin</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">91</span><span class="p">),</span> <span class="s1">&#39;gil-cuerpo.png&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
   <span class="p">]</span>
 </pre></div>
 </div>
@@ -159,7 +159,7 @@ its y axis (remember we rotated the bone by -180), and its scaled to half its
 size.</p>
 <p>Now we can show the skeleton with the skin we have just created.</p>
 <p>from doc/programming_guide/skeleton/show_root_skin.py:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># import the skeleton we have created</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># import the skeleton we have created</span>
 <span class="kn">import</span> <span class="nn">root_bone</span>
 <span class="kn">import</span> <span class="nn">root_skin</span>
 
@@ -169,10 +169,10 @@ size.</p>
 
         <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">director</span><span class="o">.</span><span class="n">get_window_size</span><span class="p">()</span>
 
-        <span class="c"># create a ColorSkin for our skeleton</span>
+        <span class="c1"># create a ColorSkin for our skeleton</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">skin</span> <span class="o">=</span> <span class="n">skeleton</span><span class="o">.</span><span class="n">BitmapSkin</span><span class="p">(</span><span class="n">root_bone</span><span class="o">.</span><span class="n">skeleton</span><span class="p">,</span> <span class="n">root_skin</span><span class="o">.</span><span class="n">skin</span><span class="p">)</span>
 
-        <span class="c"># add the skin to the scene</span>
+        <span class="c1"># add the skin to the scene</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">skin</span> <span class="p">)</span>
         <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">director</span><span class="o">.</span><span class="n">get_window_size</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">skin</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">/</span><span class="mi">2</span>
@@ -187,7 +187,7 @@ size.</p>
 <h3><a class="toc-backref" href="#id4">The skeleton editor</a><a class="headerlink" href="#the-skeleton-editor" title="Permalink to this headline">¶</a></h3>
 <p>At this point, we can use the first tool provided, the skeleton editor. You start
 the editor like this:</p>
-<div class="highlight-python"><div class="highlight"><pre>tools$ python skeleton/skeleton_editor.py ../doc/programming_guide/skeleton/root_bone.py ../doc/programming_guide/skeleton/root_skin.py
+<div class="highlight-default"><div class="highlight"><pre><span></span>tools$ python skeleton/skeleton_editor.py ../doc/programming_guide/skeleton/root_bone.py ../doc/programming_guide/skeleton/root_skin.py
 </pre></div>
 </div>
 <p>It will look like this:</p>
@@ -212,13 +212,13 @@ visually.</p>
 bone, are attached to other bones and thei position and rotation are relative to
 its parent bone position and rotation.</p>
 <p>doc/programming_guide/skeleton/body_and_arm.py:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">cocos.skeleton</span> <span class="kn">import</span> <span class="n">Bone</span><span class="p">,</span> <span class="n">Skeleton</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cocos.skeleton</span> <span class="k">import</span> <span class="n">Bone</span><span class="p">,</span> <span class="n">Skeleton</span>
 
 <span class="k">def</span> <span class="nf">Point2</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span> <span class="k">return</span> <span class="n">args</span>
 
-<span class="n">root_bone</span> <span class="o">=</span> <span class="n">Bone</span><span class="p">(</span><span class="s">&#39;body&#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="o">-</span><span class="mf">180.0</span><span class="p">,</span> <span class="n">Point2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
-    <span class="n">Bone</span><span class="p">(</span><span class="s">&#39;upper_arm&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">70</span><span class="p">))</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
-        <span class="n">Bone</span><span class="p">(</span><span class="s">&#39;lower_arm&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">30</span><span class="p">))</span>
+<span class="n">root_bone</span> <span class="o">=</span> <span class="n">Bone</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="o">-</span><span class="mf">180.0</span><span class="p">,</span> <span class="n">Point2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+    <span class="n">Bone</span><span class="p">(</span><span class="s1">&#39;upper_arm&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">70</span><span class="p">))</span><span class="o">.</span><span class="n">add</span><span class="p">(</span>
+        <span class="n">Bone</span><span class="p">(</span><span class="s1">&#39;lower_arm&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">30</span><span class="p">))</span>
     <span class="p">)</span>
 <span class="p">)</span>
 
@@ -240,10 +240,10 @@ but it useful to see what you are creating.</p>
 <p>Now we add the skin. We wont care about the positions or flipping, as we will
 be changing that parameters when looking at it.</p>
 <p>doc/programming_guide/skeleton/body_and_arm_skin.py:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">skin</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="s">&#39;body&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">91</span><span class="p">),</span> <span class="s">&#39;gil-cuerpo.png&#39;</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
-    <span class="p">(</span><span class="s">&#39;lower_arm&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s">&#39;gil-mano2.png&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
-    <span class="p">(</span><span class="s">&#39;upper_arm&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s">&#39;gil-brazo1.png&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">skin</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">91</span><span class="p">),</span> <span class="s1">&#39;gil-cuerpo.png&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;lower_arm&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;gil-mano2.png&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;upper_arm&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;gil-brazo1.png&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
   <span class="p">]</span>
 </pre></div>
 </div>
@@ -265,7 +265,7 @@ sure that the images look good in all positions.</p>
 <p>You then press the &#8216;s&#8217; key to save.</p>
 <p>You should continue this way until you have the full skeleton and skin defined.</p>
 <p>You can see and use the sample skeleton and skin provided in the test directory:</p>
-<div class="highlight-python"><div class="highlight"><pre>tools$ python view_skeleton.py ../test/sample_skeleton.py
+<div class="highlight-default"><div class="highlight"><pre><span></span>tools$ python view_skeleton.py ../test/sample_skeleton.py
 
 tools/skeleton$ python skeleton_editor.py ../../test/sample_skeleton.py ../../test/sample_skin.py
 </pre></div>
@@ -281,7 +281,7 @@ the previous and next frame.</p>
 <div class="section" id="the-animator-editor">
 <h3><a class="toc-backref" href="#id6">The animator editor</a><a class="headerlink" href="#the-animator-editor" title="Permalink to this headline">¶</a></h3>
 <p>Start the animation editor doing:</p>
-<div class="highlight-python"><div class="highlight"><pre>tools/skeleton$ python animator.py ../../test/sample_skeleton.py --skin ../../test/sample_skin.py ../../test/SAMPLE.anim
+<div class="highlight-default"><div class="highlight"><pre><span></span>tools/skeleton$ python animator.py ../../test/sample_skeleton.py --skin ../../test/sample_skin.py ../../test/SAMPLE.anim
 </pre></div>
 </div>
 <div class="figure">
@@ -315,7 +315,7 @@ keyframe.</p>
 <h3><a class="toc-backref" href="#id7">Playing animations</a><a class="headerlink" href="#playing-animations" title="Permalink to this headline">¶</a></h3>
 <p>You can play an animation on a skin doing:</p>
 <p>from test/test_skeleton_anim.py:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">TestLayer</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestLayer</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span> <span class="n">TestLayer</span><span class="p">,</span> <span class="bp">self</span> <span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
 
@@ -324,7 +324,7 @@ keyframe.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">skin</span> <span class="p">)</span>
         <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">director</span><span class="o">.</span><span class="n">get_window_size</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">skin</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">/</span><span class="mi">2</span>
-        <span class="n">anim</span> <span class="o">=</span> <span class="n">cPickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">&quot;SAMPLE.anim&quot;</span><span class="p">))</span>
+        <span class="n">anim</span> <span class="o">=</span> <span class="n">cPickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;SAMPLE.anim&quot;</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">skin</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">cocos</span><span class="o">.</span><span class="n">actions</span><span class="o">.</span><span class="n">Repeat</span><span class="p">(</span> <span class="n">skeleton</span><span class="o">.</span><span class="n">Animate</span><span class="p">(</span><span class="n">anim</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
@@ -382,9 +382,6 @@ translation, the player will just move left twicenas far.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -411,8 +408,8 @@ translation, the player will just move left twicenas far.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

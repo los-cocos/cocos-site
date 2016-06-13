@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>CocosNodes &mdash; cocos v0.6.3 documentation</title>
+    <title>CocosNodes &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,10 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="up" title="cocos2d Programming Guide" href="index.html" />
     <link rel="next" title="Built-in Python Interpreter" href="interpreter.html" />
-    <link rel="prev" title="Tiled maps" href="tiled_map.html" /> 
+    <link rel="prev" title="Map Colliders" href="mapcoliders.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -42,7 +42,7 @@
           <a href="interpreter.html" title="Built-in Python Interpreter"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="tiled_map.html" title="Tiled maps"
+          <a href="mapcoliders.html" title="Map Colliders"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">cocos2d Programming Guide</a> &raquo;</li> 
@@ -186,7 +186,7 @@ Also the test directory has many samples like test_accel*.py, test_blink.py, tes
 <h3><a class="toc-backref" href="#id9">Scene</a><a class="headerlink" href="#scene" title="Permalink to this headline">¶</a></h3>
 <p>The root of the tree depicting the full content to be displayed.
 To change between scenes you use director.</p>
-<p>References: <a class="reference internal" href="basic_concepts.html#guide-scene"><span>guide Scene</span></a> , <a class="reference internal" href="../api/cocos.scene.html#cocos.scene.Scene" title="cocos.scene.Scene"><code class="xref py py-class docutils literal"><span class="pre">api</span> <span class="pre">Scene</span></code></a></p>
+<p>References: <a class="reference internal" href="basic_concepts.html#guide-scene"><span class="std std-ref">guide Scene</span></a> , <a class="reference internal" href="../api/cocos.scene.html#cocos.scene.Scene" title="cocos.scene.Scene"><code class="xref py py-class docutils literal"><span class="pre">api</span> <span class="pre">Scene</span></code></a></p>
 </div>
 <div class="section" id="transitionscene">
 <h3><a class="toc-backref" href="#id10">TransitionScene</a><a class="headerlink" href="#transitionscene" title="Permalink to this headline">¶</a></h3>
@@ -198,7 +198,7 @@ To change between scenes you use director.</p>
 <h3><a class="toc-backref" href="#id11">Layer</a><a class="headerlink" href="#layer" title="Permalink to this headline">¶</a></h3>
 <p>Helps to organize the view in the depth axis.
 Subclasses often offer specialized services to the childs (like ScrollingManager), and can be used to build higher order functionality (like Menu)</p>
-<p>References: <a class="reference internal" href="basic_concepts.html#guide-layer"><span>guide Layer</span></a> , <a class="reference internal" href="../api/cocos.layer.base_layers.html#cocos.layer.base_layers.Layer" title="cocos.layer.base_layers.Layer"><code class="xref py py-class docutils literal"><span class="pre">api</span> <span class="pre">Layer</span></code></a></p>
+<p>References: <a class="reference internal" href="basic_concepts.html#guide-layer"><span class="std std-ref">guide Layer</span></a> , <a class="reference internal" href="../api/cocos.layer.base_layers.html#cocos.layer.base_layers.Layer" title="cocos.layer.base_layers.Layer"><code class="xref py py-class docutils literal"><span class="pre">api</span> <span class="pre">Layer</span></code></a></p>
 </div>
 <div class="section" id="colorlayer">
 <h3><a class="toc-backref" href="#id12">ColorLayer</a><a class="headerlink" href="#colorlayer" title="Permalink to this headline">¶</a></h3>
@@ -241,7 +241,7 @@ If using parallax, it must be provided in the constructor.</p>
 <h3><a class="toc-backref" href="#id17">PythonInterpreterLayer</a><a class="headerlink" href="#pythoninterpreterlayer" title="Permalink to this headline">¶</a></h3>
 <p>Used by director to show a python console that allows to inspect and modify the objects in the application using director.
 You don&#8217;t instantiate manually an PythonInterpreterLayer, simply press ctrl + i (cmd + i on mac) to toggle the layer&#8217;s visibility.</p>
-<p>References: <a class="reference internal" href="interpreter.html"><em>guide PythonInterpreterLayer</em></a> , <a class="reference internal" href="../api/cocos.layer.python_interpreter.html#cocos.layer.python_interpreter.PythonInterpreterLayer" title="cocos.layer.python_interpreter.PythonInterpreterLayer"><code class="xref py py-class docutils literal"><span class="pre">api</span> <span class="pre">PythonInterpreterLayer</span></code></a></p>
+<p>References: <a class="reference internal" href="interpreter.html"><span class="doc">guide PythonInterpreterLayer</span></a> , <a class="reference internal" href="../api/cocos.layer.python_interpreter.html#cocos.layer.python_interpreter.PythonInterpreterLayer" title="cocos.layer.python_interpreter.PythonInterpreterLayer"><code class="xref py py-class docutils literal"><span class="pre">api</span> <span class="pre">PythonInterpreterLayer</span></code></a></p>
 </div>
 <div class="section" id="sprite">
 <h3><a class="toc-backref" href="#id18">Sprite</a><a class="headerlink" href="#sprite" title="Permalink to this headline">¶</a></h3>
@@ -265,8 +265,8 @@ to render things like smoke or poisoning fog. Use particle systems or custom
 CocosNode s managing vertex lists for that.</p>
 <p>If your scene has less than 25 sprites, you can add directly to the
 scene, like:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">TLayer</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
-    <span class="n">is_event_handler</span> <span class="o">=</span> <span class="bp">True</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TLayer</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
+    <span class="n">is_event_handler</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">world_width</span><span class="p">,</span> <span class="n">world_height</span> <span class="o">=</span> <span class="n">director</span><span class="o">.</span><span class="n">get_window_size</span><span class="p">()</span>
@@ -284,23 +284,23 @@ scene, like:</p>
 <p>When you have between 25 and 100 visible sprites, moving at each frame, you
 should add one or more BatchNode s at some level in the scene and add the
 sprites to them. Even only one batch can give you 4x fps:</p>
-<div class="highlight-python"><div class="highlight"><pre>class TLayer(cocos.layer.Layer):
-    is_event_handler = True
-        def __init__(self):
-            cocos.layer.Layer.__init__(self)
-            batch = cocos.batch.BatchNode()
-            self.add(batch) # we add a batch to the layer ...
-            world_width, world_height = director.get_window_size()
-            rand_color = [255, 0, 0]
-            icolor = 0
-            for i in range(100):
-                ball = Ball((world_width*random.random(), world_height*random.random()), color=rand_color)
-                rand_color[icolor] = random.randint(50, 255)
-                icolor = (icolor + 1)%len(rand_color)
-                batch.add(ball) # see ? we add sprites to the batch, not the layer
-            self.batch = batch
-            self.time = 0.0
-            self.schedule(self.update)
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TLayer</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
+    <span class="n">is_event_handler</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="n">batch</span> <span class="o">=</span> <span class="n">cocos</span><span class="o">.</span><span class="n">batch</span><span class="o">.</span><span class="n">BatchNode</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span> <span class="c1"># we add a batch to the layer ...</span>
+            <span class="n">world_width</span><span class="p">,</span> <span class="n">world_height</span> <span class="o">=</span> <span class="n">director</span><span class="o">.</span><span class="n">get_window_size</span><span class="p">()</span>
+            <span class="n">rand_color</span> <span class="o">=</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+            <span class="n">icolor</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+                <span class="n">ball</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">((</span><span class="n">world_width</span><span class="o">*</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(),</span> <span class="n">world_height</span><span class="o">*</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()),</span> <span class="n">color</span><span class="o">=</span><span class="n">rand_color</span><span class="p">)</span>
+                <span class="n">rand_color</span><span class="p">[</span><span class="n">icolor</span><span class="p">]</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+                <span class="n">icolor</span> <span class="o">=</span> <span class="p">(</span><span class="n">icolor</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="nb">len</span><span class="p">(</span><span class="n">rand_color</span><span class="p">)</span>
+                <span class="n">batch</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ball</span><span class="p">)</span> <span class="c1"># see ? we add sprites to the batch, not the layer</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">batch</span> <span class="o">=</span> <span class="n">batch</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">update</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>With more than 100 visible, moving at each frame sprites, you will need to
@@ -309,10 +309,10 @@ cheap new desktops.
 You can look at cocos particle systems and the section graphics in pyglet
 programing guide for ideas.</p>
 <p>For a ballpark data point, a 2008 low gamming spec machine (athon 5200, radeon 4650) gives:</p>
-<div class="highlight-python"><div class="highlight"><pre>numballs    fps
-    250     98
-    500     54
-    750     36
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">numballs</span>    <span class="n">fps</span>
+    <span class="mi">250</span>     <span class="mi">98</span>
+    <span class="mi">500</span>     <span class="mi">54</span>
+    <span class="mi">750</span>     <span class="mi">36</span>
 </pre></div>
 </div>
 <p>Notice that sprites out of view has a fraction of the cost that visible sprites: they are discarded at the openGL geometry stage (in most of openGL implementations)</p>
@@ -368,54 +368,54 @@ how to use <cite>transform</cite> , etc.</p>
 <div class="section" id="parent-child-examples">
 <h3><a class="toc-backref" href="#id27">Parent-Child examples</a><a class="headerlink" href="#parent-child-examples" title="Permalink to this headline">¶</a></h3>
 <p>Building a scene, object instantiation omitted</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># a scene with 2 layers; the background would be seen behind the game layer because of z values</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># a scene with 2 layers; the background would be seen behind the game layer because of z values</span>
 <span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">background_layer</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span> <span class="p">)</span>
 <span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">game_layer</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
 
-<span class="c"># the layer with 1 bloody pacman sprite</span>
+<span class="c1"># the layer with 1 bloody pacman sprite</span>
 <span class="n">blody_pacman_sprite</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">game_layer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">bloody_pacman_sprite</span> <span class="p">)</span>
 
-<span class="c"># the bloody pacman has two daggers !!!</span>
+<span class="c1"># the bloody pacman has two daggers !!!</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">dagger_far_sprite</span><span class="p">,</span> <span class="n">z</span><span class="o">=-</span><span class="mi">1</span> <span class="p">)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">dagger_near_sprite</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">1</span>  <span class="p">)</span>
-<span class="c"># the draw order is dagger_far, bloody_pacman, dagger_near</span>
+<span class="c1"># the draw order is dagger_far, bloody_pacman, dagger_near</span>
 
-<span class="c"># also they are zombie alien cowboys in the game,</span>
-<span class="c"># so we add a bunch of them to the game_layer</span>
+<span class="c1"># also they are zombie alien cowboys in the game,</span>
+<span class="c1"># so we add a bunch of them to the game_layer</span>
 <span class="o">...</span>
 </pre></div>
 </div>
 <p>A dagger has touched a zombie alien cowboy so it wants to spawn a nasty blotch of green blood.
 We could add the blotch_sprite to the zac_sprite, an then the blotch will follow the zombie:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">zac_zprite</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">blotch_sprite</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">zac_zprite</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">blotch_sprite</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or we could add to the game_layer, and the blotch will not follow the zombie:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">layer</span> <span class="o">=</span> <span class="n">zac_sprite</span><span class="o">.</span><span class="n">parent</span> <span class="c"># should be game_layer, because our staggering</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">layer</span> <span class="o">=</span> <span class="n">zac_sprite</span><span class="o">.</span><span class="n">parent</span> <span class="c1"># should be game_layer, because our staggering</span>
 <span class="n">layer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">blotch_sprite</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If for some ridiculous reason a dagger needs to grab a reference to the game_layer we could use &#8216;get_ancestor&#8217;.
 Due to to way we staged the scene, we know game_layer is parent of bloody_pacman_sprite which is parent of the dagger. So:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">layer</span> <span class="o">=</span> <span class="n">dagger_near</span><span class="o">.</span><span class="n">get_ancestor</span><span class="p">(</span><span class="n">Layer</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">layer</span> <span class="o">=</span> <span class="n">dagger_near</span><span class="o">.</span><span class="n">get_ancestor</span><span class="p">(</span><span class="n">Layer</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>should produce game_layer.</p>
 <p>A zombie is killed, we can retire from the scene with:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">zac_sprite</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">zac_sprite</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>or with:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">game_layer</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">zac_sprite</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">game_layer</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">zac_sprite</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or if we named it &#8220;T&#8217;chkss&#8221; when we added to the game_layer, like in:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">game_layer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">zac_sprite</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;T&#39;chkss&quot;</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">game_layer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">zac_sprite</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;T&#39;chkss&quot;</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>then we can retire it with:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">game_layer</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s">&quot;T&#39;chkss&quot;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">game_layer</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;T&#39;chkss&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Note that in current cocos if you add with name then you should remove by name,
@@ -424,14 +424,14 @@ else the name will become unusable for new additions.</p>
 <div class="section" id="spatial-placement-snippets">
 <h3><a class="toc-backref" href="#id28">Spatial Placement snippets</a><a class="headerlink" href="#spatial-placement-snippets" title="Permalink to this headline">¶</a></h3>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># place the sprite in 320,240</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># place the sprite in 320,240</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">320</span><span class="p">,</span><span class="mi">240</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or by using actions.
 Example:</p>
-<div class="highlight-python"><div class="highlight"><pre># move the sprite to 320,240 in 5 seconds
-sprite.do( MoveTo( (320,240, duration=2 ) )
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># move the sprite to 320,240 in 5 seconds</span>
+<span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">MoveTo</span><span class="p">(</span> <span class="p">(</span><span class="mi">320</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -439,7 +439,7 @@ sprite.do( MoveTo( (320,240, duration=2 ) )
 <h3><a class="toc-backref" href="#id29">Automated changes along the time snippets</a><a class="headerlink" href="#automated-changes-along-the-time-snippets" title="Permalink to this headline">¶</a></h3>
 <p>You can modify attributes to any <cite>CocosNode</cite> object.
 By example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">ScaleTo</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">ScaleTo</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
 
 <span class="n">layer</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="p">)</span>
 
@@ -503,8 +503,8 @@ By example:</p>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="tiled_map.html"
-                        title="previous chapter">Tiled maps</a></p>
+  <p class="topless"><a href="mapcoliders.html"
+                        title="previous chapter">Map Colliders</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="interpreter.html"
                         title="next chapter">Built-in Python Interpreter</a></p>
@@ -523,9 +523,6 @@ By example:</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -545,15 +542,15 @@ By example:</p>
           <a href="interpreter.html" title="Built-in Python Interpreter"
              >next</a> |</li>
         <li class="right" >
-          <a href="tiled_map.html" title="Tiled maps"
+          <a href="mapcoliders.html" title="Map Colliders"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="index.html" >cocos2d Programming Guide</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

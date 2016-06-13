@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>cocos.collision_model module &mdash; cocos v0.6.3 documentation</title>
+    <title>cocos.collision_model module &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="up" title="cocos package" href="cocos.html" />
     <link rel="next" title="cocos.compat module" href="cocos.compat.html" />
     <link rel="prev" title="cocos.cocosnode module" href="cocos.cocosnode.html" /> 
@@ -206,23 +206,23 @@ obj.cshape values changes.</p>
 <p>Common use patterns that are safe and efficient:</p>
 <p>When most of the known objects update cshape each frame</p>
 <p>You do:</p>
-<div class="highlight-python"><div class="highlight"><pre># updating collision info
-collision_manager.clear() # fast, no leaks even if changed cshapes
-for actor in moving_actors:
-    collision_manager.add(actor)
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># updating collision info</span>
+<span class="n">collision_manager</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span> <span class="c1"># fast, no leaks even if changed cshapes</span>
+<span class="k">for</span> <span class="n">actor</span> <span class="ow">in</span> <span class="n">moving_actors</span><span class="p">:</span>
+    <span class="n">collision_manager</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">actor</span><span class="p">)</span>
 
-# game logic
-# do what you need, but defer changes in cshape to next block
-# by example
-for actor in moving_actors:
-    actor.new_pos = actor.cshape.center + dt * vel
-    #other logic that potentially needs collision info;
-    #it will be accurate because you have not changed cshapes
-    ...
+<span class="c1"># game logic</span>
+<span class="c1"># do what you need, but defer changes in cshape to next block</span>
+<span class="c1"># by example</span>
+<span class="k">for</span> <span class="n">actor</span> <span class="ow">in</span> <span class="n">moving_actors</span><span class="p">:</span>
+    <span class="n">actor</span><span class="o">.</span><span class="n">new_pos</span> <span class="o">=</span> <span class="n">actor</span><span class="o">.</span><span class="n">cshape</span><span class="o">.</span><span class="n">center</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">vel</span>
+    <span class="c1">#other logic that potentially needs collision info;</span>
+    <span class="c1">#it will be accurate because you have not changed cshapes</span>
+    <span class="o">...</span>
 
-# update cshapes for next frame
-for actor in moving actors:
-    actor.cshape.center = actor.new_pos
+<span class="c1"># update cshapes for next frame</span>
+<span class="k">for</span> <span class="n">actor</span> <span class="ow">in</span> <span class="n">moving</span> <span class="n">actors</span><span class="p">:</span>
+    <span class="n">actor</span><span class="o">.</span><span class="n">cshape</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="n">actor</span><span class="o">.</span><span class="n">new_pos</span>
 </pre></div>
 </div>
 <p>Example actors for this case are player, enemies, soldiers.</p>
@@ -274,8 +274,8 @@ CPU when the loop processing the collisions breaks before exhausting
 the collisions.
 obj is not required to be a known object</p>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre>for other in collision_manager.iter_colliding(obj):
-    # process event &#39;obj touches other&#39;
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">other</span> <span class="ow">in</span> <span class="n">collision_manager</span><span class="o">.</span><span class="n">iter_colliding</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+    <span class="c1"># process event &#39;obj touches other&#39;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -586,8 +586,8 @@ rectangle defined by packed_box, False otherwise.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>packed_box</cite> <span class="classifier-delimiter">:</span> <span class="classifier">4-tuple floats</span></dt>
-<dd><p class="first last">An axis aligned rectangle expressed as (minx, maxx, miny, maxy)</p>
+<dt><cite>packed_box</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">4-tuple floats</span><dd><p class="first last">An axis aligned rectangle expressed as (minx, maxx, miny, maxy)</p>
 </dd>
 </dl>
 </td>
@@ -742,9 +742,6 @@ The circle must have members &#8216;center&#8217;, &#8216;r&#8217;, where the la
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -771,8 +768,8 @@ The circle must have members &#8216;center&#8217;, &#8216;r&#8217;, where the la
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

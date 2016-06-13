@@ -1,0 +1,7 @@
+cocos.mapcolliders module
+=========================
+
+.. automodule:: cocos.mapcolliders
+    :members:
+    :undoc-members:
+    :show-inheritance:

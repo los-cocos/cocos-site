@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Actions, Transformations and Effects &mdash; cocos v0.6.3 documentation</title>
+    <title>Actions, Transformations and Effects &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="up" title="cocos2d Programming Guide" href="index.html" />
     <link rel="next" title="Scenes &amp; Transitions" href="transitions.html" />
     <link rel="prev" title="Basic Concepts" href="basic_concepts.html" /> 
@@ -85,7 +85,7 @@
 <cite>rotation</cite>, <cite>scale</cite>, etc.</p>
 <p>For example, the <code class="xref py py-class docutils literal"><span class="pre">MoveBy</span></code> action modifies the <cite>position</cite> attribute along a period of time</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># Move a sprite 50 pixels to the right, and 100 pixel to the top in 2 seconds.</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Move a sprite 50 pixels to the right, and 100 pixel to the top in 2 seconds.</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">MoveBy</span><span class="p">(</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
@@ -93,7 +93,7 @@
 <blockquote>
 <div><p><a class="reference internal" href="../api/cocos.actions.base_actions.html#cocos.actions.base_actions.InstantAction" title="cocos.actions.base_actions.InstantAction"><code class="xref py py-class docutils literal"><span class="pre">InstantAction</span></code></a> : the change is applied in one step
 Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># instantly move the sprite to the position (120, 330)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># instantly move the sprite to the position (120, 330)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">Place</span><span class="p">(</span> <span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">330</span><span class="p">)</span> <span class="p">))</span>
 </pre></div>
 </div>
@@ -211,7 +211,7 @@ more important being listed below. Runnable examples are named as <code class="d
 <p>where action_result performs by first doing all that action_1 would do and
 then perform all that action_2 would do</p>
 <p>Example use:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">move_2</span> <span class="o">=</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="mi">15</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">move_2</span> <span class="o">=</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="mi">15</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>When activated, move_2 will move the target first to (100, 100), it will
@@ -221,7 +221,7 @@ and will arrive there 10 seconds after having arrived to (100, 100)</p>
 <p>where action_result performs by doing what would do action_1 in parallel with
 what would perform action_2</p>
 <p>Example use:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">move_rotate</span> <span class="o">=</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span> <span class="o">|</span> <span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">move_rotate</span> <span class="o">=</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span> <span class="o">|</span> <span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>When activated, move_rotate will move the target from the position at the
@@ -231,7 +231,7 @@ be rotated 360 degrees</p>
 <p>Where n non negative integer, action_result would repeat n times in a
 row the same that action_1 would perform.</p>
 <p>Example use:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">rotate_3</span> <span class="o">=</span> <span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rotate_3</span> <span class="o">=</span> <span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>
 </pre></div>
 </div>
 <p>When activated, rotate_3 will rotate target 3 times, spending 5 sec in each
@@ -239,7 +239,7 @@ turn.</p>
 <p><strong>repeat forever:</strong>  Repeat(action_1) -&gt; action_result</p>
 <p>where action_result plays action_1, then repeats action_1 each time that action_1 terminates</p>
 <p>Example use:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">rotate_forever</span> <span class="o">=</span> <span class="n">Repeat</span><span class="p">(</span><span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rotate_forever</span> <span class="o">=</span> <span class="n">Repeat</span><span class="p">(</span><span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>When activated, the target will rotate forever, doing a revolution each 3 seconds</p>
@@ -335,14 +335,14 @@ the Director&#8217;s <cite>set_depth_test</cite> method.</p>
 <div class="section" id="examples">
 <h3><a class="toc-backref" href="#id9">Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
 <p>Some examples:</p>
-<div class="highlight-python"><div class="highlight"><pre># effect applied on a Scene
-scene.do( Twirl( grid=(16,12), duration=4) )
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># effect applied on a Scene</span>
+<span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">Twirl</span><span class="p">(</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="p">)</span>
 
-# effect applied on a Layer
-layer1.do( Lens3D( grid=(32,24), duration=5 )
+<span class="c1"># effect applied on a Layer</span>
+<span class="n">layer1</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">Lens3D</span><span class="p">(</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span><span class="mi">24</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">5</span> <span class="p">)</span>
 
-# effect applied on a different Layer
-layer2.do( Waves( grid=(16,12), duration=4) + Liquid( grid=(16,12), duration=5 ) )
+<span class="c1"># effect applied on a different Layer</span>
+<span class="n">layer2</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">Waves</span><span class="p">(</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">Liquid</span><span class="p">(</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">5</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p>Working samples can be found as <code class="docutils literal"><span class="pre">test/test_&lt;action</span> <span class="pre">name&gt;.py</span></code> , like <code class="docutils literal"><span class="pre">test/test_lens_3d.py</span></code></p>
@@ -354,7 +354,7 @@ layer2.do( Waves( grid=(16,12), duration=4) + Liquid( grid=(16,12), duration=5 )
 because actions are very powerful and can be combined with another actions to create more actions.</p>
 <p>For example, there is the Blink action. It is implemented by subclassing <cite>IntervalAction</cite>,
 but you could actually do something like:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">Blink</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">duration</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Blink</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">duration</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span>
         <span class="n">Hide</span><span class="p">()</span> <span class="o">+</span> <span class="n">Delay</span><span class="p">(</span><span class="n">duration</span><span class="o">/</span><span class="p">(</span><span class="n">times</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span>
         <span class="n">Show</span><span class="p">()</span> <span class="o">+</span> <span class="n">Delay</span><span class="p">(</span><span class="n">duration</span><span class="o">/</span><span class="p">(</span><span class="n">times</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
@@ -378,8 +378,8 @@ you are making an action that takes more actions as parameters, it is your respo
 <p>You can also override the <cite>__reversed__</cite> method. In this method you have to construct and return an action
 that would be the reversed version of the action you are doing. For example,
 in <cite>Show()</cite> we return <cite>Hide()</cite> as its reverse:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Show</span><span class="p">(</span> <span class="n">InstantAction</span> <span class="p">):</span>
-    <span class="s">&quot;&lt;snip&gt;&quot;</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Show</span><span class="p">(</span> <span class="n">InstantAction</span> <span class="p">):</span>
+    <span class="s2">&quot;&lt;snip&gt;&quot;</span>
     <span class="k">def</span> <span class="nf">__reversed__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">Hide</span><span class="p">()</span>
 </pre></div>
@@ -390,10 +390,10 @@ in <cite>Show()</cite> we return <cite>Hide()</cite> as its reverse:</p>
 <p>Instant actions are actions that will take no time to execute. For example, <cite>Hide()</cite>
 sets the target visibility to False.</p>
 <p>It is very easy to create an action using the CallFuncS action as a decorator:</p>
-<div class="highlight-python"><div class="highlight"><pre>@CallFuncS
-    def make_visible( sp ):
-        sp.do( Show() )
-    self.sprite.do( make_visible )
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nd">@CallFuncS</span>
+    <span class="k">def</span> <span class="nf">make_visible</span><span class="p">(</span> <span class="n">sp</span> <span class="p">):</span>
+        <span class="n">sp</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">Show</span><span class="p">()</span> <span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">make_visible</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p>please note that make_visible will not be a regular function that you can call,
@@ -408,7 +408,7 @@ it will be an action. So you can compose it like any other action.</p>
 </dl>
 <p>Thats it.</p>
 <p>For example, this is a minimal implementation of SetOpacity:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">SetOpacity</span><span class="p">(</span> <span class="n">InstantAction</span> <span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SetOpacity</span><span class="p">(</span> <span class="n">InstantAction</span> <span class="p">):</span>
     <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">opacity</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">opacity</span> <span class="o">=</span> <span class="n">opacity</span>
     <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -434,7 +434,7 @@ transformations that take a finite time. For example, <cite>MoveBy(how_much, dur
 </dl>
 <p>So its in update that you do your magic. For example, if you want to fade something out,
 you can write something like:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">FadeOut</span><span class="p">(</span> <span class="n">IntervalAction</span> <span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FadeOut</span><span class="p">(</span> <span class="n">IntervalAction</span> <span class="p">):</span>
     <span class="k">def</span> <span class="nf">init</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">duration</span> <span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">duration</span> <span class="o">=</span> <span class="n">duration</span>
 
@@ -458,12 +458,12 @@ but <cite>AccelDeccel</cite>, for example, uses a sigmoid function so that is go
 <em>normal</em> attributes like <em>rotation</em>, <em>position</em>, <em>scale</em>, they modify the <em>grid</em>
 attribute.</p>
 <p>Let&#8217;s see in detail how to build a basic <em>non-tiled-grid</em> action:</p>
-<div class="highlight-python"><div class="highlight"><pre>class Shaky3D( Grid3DAction):
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Shaky3D</span><span class="p">(</span> <span class="n">Grid3DAction</span><span class="p">):</span>
 </pre></div>
 </div>
 <p><em>Shaky3D</em> is a subclass of <cite>Grid3DAction</cite>, so we are building a <em>non-tiled</em> action. If we want to
 create a <em>tiled</em> action, we need to subclass from the <cite>TiledGrid3DAction</cite> class:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">init</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">randrange</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span> <span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">init</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">randrange</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span> <span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    :Parameters:</span>
 <span class="sd">        `randrange` : int</span>
@@ -471,15 +471,15 @@ create a <em>tiled</em> action, we need to subclass from the <cite>TiledGrid3DAc
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="nb">super</span><span class="p">(</span><span class="n">Shaky3D</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kw</span><span class="p">)</span>
 
-    <span class="c">#: random range of the shaky effect</span>
+    <span class="c1">#: random range of the shaky effect</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">randrange</span> <span class="o">=</span> <span class="n">randrange</span>
 </pre></div>
 </div>
 <p>Our class receives the <code class="docutils literal"><span class="pre">randrange</span></code> parameter, so we save it, and we call <code class="docutils literal"><span class="pre">init</span></code> of our
 super class:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">update</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">update</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
             <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_original_vertex</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
             <span class="n">x</span> <span class="o">+=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">randrange</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">randrange</span><span class="o">+</span><span class="mi">1</span> <span class="p">)</span>
             <span class="n">y</span> <span class="o">+=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">randrange</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">randrange</span><span class="o">+</span><span class="mi">1</span> <span class="p">)</span>
@@ -553,9 +553,6 @@ XXX: How to use: <cite>get_original_tile</cite> and <cite>get_tile</cite></p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -582,8 +579,8 @@ XXX: How to use: <cite>get_original_tile</cite> and <cite>get_tile</cite></p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

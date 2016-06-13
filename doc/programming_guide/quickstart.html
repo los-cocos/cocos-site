@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Writing a cocos2d application &mdash; cocos v0.6.3 documentation</title>
+    <title>Writing a cocos2d application &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="up" title="cocos2d Programming Guide" href="index.html" />
     <link rel="next" title="Basic Concepts" href="basic_concepts.html" />
     <link rel="prev" title="Installation, Dependencies and Compatibility" href="installation.html" /> 
@@ -75,56 +75,58 @@ open a window with some text in it and wait to be closed.  You can find the
 entire program in the <cite>samples/hello_world.py</cite> file.</p>
 <img alt="../_images/hello_world.py.png" src="../_images/hello_world.py.png" />
 <p>Begin by importing the cocos package:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cocos</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cocos</span>
 </pre></div>
 </div>
 <p>Subclass a <cite>Layer</cite>  and define the logic of you program here:</p>
-<div class="highlight-python"><div class="highlight"><pre>class HelloWorld(cocos.layer.Layer):
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">HelloWorld</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
 </pre></div>
 </div>
 <p>Always call <code class="docutils literal"><span class="pre">super</span></code> in the constructor:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="nb">super</span><span class="p">(</span> <span class="n">HelloWorld</span><span class="p">,</span> <span class="bp">self</span> <span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">(</span><span class="n">HelloWorld</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>To display the text, we&#8217;ll create a <cite>Label</cite>.  Keyword arguments are used
 to set the font, position and alignment of the label:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">label</span> <span class="o">=</span> <span class="n">cocos</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="s">&#39;Hello, world&#39;</span><span class="p">,</span>
-                          <span class="n">font_name</span><span class="o">=</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span>
-                          <span class="n">font_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
-                          <span class="n">anchor_x</span><span class="o">=</span><span class="s">&#39;center&#39;</span><span class="p">,</span> <span class="n">anchor_y</span><span class="o">=</span><span class="s">&#39;center&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">label</span> <span class="o">=</span> <span class="n">cocos</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span>
+    <span class="s1">&#39;Hello, world&#39;</span><span class="p">,</span>
+    <span class="n">font_name</span><span class="o">=</span><span class="s1">&#39;Times New Roman&#39;</span><span class="p">,</span>
+    <span class="n">font_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+    <span class="n">anchor_x</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">anchor_y</span><span class="o">=</span><span class="s1">&#39;center&#39;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <p>The label position will be the center of the screen:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">label</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="mi">320</span><span class="p">,</span><span class="mi">240</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">label</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="mi">320</span><span class="p">,</span> <span class="mi">240</span>
 </pre></div>
 </div>
 <p>Since <cite>Label</cite> is a subclass of <cite>CocosNode</cite> it can be added
 as a child. All <cite>CocosNode</cite> objects know how to render itself, perform actions
 and transformations.
 To add it as a layer&#8217;s child, use the <cite>CocosNode.add</cite> method:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">label</span> <span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>After defining the <code class="docutils literal"><span class="pre">HelloWorld</span></code> class, we need to initialize and create a window.
 To do this, we initialize the <cite>Director</cite>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">cocos</span><span class="o">.</span><span class="n">director</span><span class="o">.</span><span class="n">director</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cocos</span><span class="o">.</span><span class="n">director</span><span class="o">.</span><span class="n">director</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Then we create a <code class="docutils literal"><span class="pre">HelloWorld</span></code> instance:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">hello_layer</span> <span class="o">=</span> <span class="n">HelloWorld</span> <span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">hello_layer</span> <span class="o">=</span> <span class="n">HelloWorld</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Then we create an <cite>Scene</cite> that contains the <code class="docutils literal"><span class="pre">HelloWorld</span></code> layer as a child:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">main_scene</span> <span class="o">=</span> <span class="n">cocos</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">Scene</span> <span class="p">(</span><span class="n">hello_layer</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">main_scene</span> <span class="o">=</span> <span class="n">cocos</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">Scene</span> <span class="p">(</span><span class="n">hello_layer</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>And finally we run the scene:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">cocos</span><span class="o">.</span><span class="n">director</span><span class="o">.</span><span class="n">director</span><span class="o">.</span><span class="n">run</span> <span class="p">(</span><span class="n">main_scene</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cocos</span><span class="o">.</span><span class="n">director</span><span class="o">.</span><span class="n">director</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main_scene</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>A shorter way to write the last 3 statements is this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#cocos.director.director.run( cocos.scene.Scene( HelloWorld() ) )</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1">#cocos.director.director.run(cocos.scene.Scene(HelloWorld()))</span>
 </pre></div>
 </div>
 </div>
@@ -139,54 +141,54 @@ An action is like an order. You can tell <strong>any</strong> <cite>CocosNode</c
 action.
 You can find the entire program in the <cite>samples/hello_world_actions.py</cite> file.</p>
 <p>Like in our previous example, we import the cocos package:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">cocos</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cocos</span>
 </pre></div>
 </div>
 <p>If you&#8217;re going to use several actions, you can import all
 the available actions into the namespace with this import:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">cocos.actions</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cocos.actions</span> <span class="k">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 <p>We subclass <cite>ColorLayer</cite> to have a background color, and then
 we call super() with a blueish color:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">HelloWorld</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">ColorLayer</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">HelloWorld</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">ColorLayer</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c"># blueish color</span>
+        <span class="c1"># blueish color</span>
         <span class="nb">super</span><span class="p">(</span> <span class="n">HelloWorld</span><span class="p">,</span> <span class="bp">self</span> <span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span> <span class="mi">64</span><span class="p">,</span><span class="mi">64</span><span class="p">,</span><span class="mi">224</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>As in the previous example, we create and add a label:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">label</span> <span class="o">=</span> <span class="n">cocos</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="s">&#39;Hello, World!&#39;</span><span class="p">,</span>
-    <span class="n">font_name</span><span class="o">=</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">label</span> <span class="o">=</span> <span class="n">cocos</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="s1">&#39;Hello, World!&#39;</span><span class="p">,</span>
+    <span class="n">font_name</span><span class="o">=</span><span class="s1">&#39;Times New Roman&#39;</span><span class="p">,</span>
     <span class="n">font_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
-    <span class="n">anchor_x</span><span class="o">=</span><span class="s">&#39;center&#39;</span><span class="p">,</span> <span class="n">anchor_y</span><span class="o">=</span><span class="s">&#39;center&#39;</span><span class="p">)</span>
+    <span class="n">anchor_x</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">anchor_y</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
 
-<span class="c"># set the label in the center of the screen</span>
+<span class="c1"># set the label in the center of the screen</span>
 <span class="n">label</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="mi">320</span><span class="p">,</span><span class="mi">240</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">label</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p>In this example we also create and add an sprite as a child. In cocos2d
 sprites are <cite>Sprite</cite> objects:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">sprite</span> <span class="o">=</span> <span class="n">cocos</span><span class="o">.</span><span class="n">sprite</span><span class="o">.</span><span class="n">Sprite</span><span class="p">(</span><span class="s">&#39;grossini.png&#39;</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sprite</span> <span class="o">=</span> <span class="n">cocos</span><span class="o">.</span><span class="n">sprite</span><span class="o">.</span><span class="n">Sprite</span><span class="p">(</span><span class="s1">&#39;grossini.png&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>We place the sprite in the center of the screen. Default position is (0,0):</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">sprite</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="mi">320</span><span class="p">,</span><span class="mi">240</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sprite</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="mi">320</span><span class="p">,</span><span class="mi">240</span>
 </pre></div>
 </div>
 <p>We set the scale attribute to 3. This means that our sprite will be 3 times bigger.
 The default scale attribute is 1:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">sprite</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="mi">3</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sprite</span><span class="o">.</span><span class="n">scale</span> <span class="o">=</span> <span class="mi">3</span>
 </pre></div>
 </div>
 <p>We add the sprite as a child but on top of the label by setting the z-value to 1, since
 the default z-value is 0:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">sprite</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">sprite</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p>We create a <cite>ScaleBy</cite> action. It will scale 3 times the object in 2 seconds:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">scale</span> <span class="o">=</span> <span class="n">ScaleBy</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">scale</span> <span class="o">=</span> <span class="n">ScaleBy</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="docutils">
@@ -199,28 +201,28 @@ the default z-value is 0:</p>
 </dd>
 </dl>
 <p>Notice that the &#8216;+&#8217; operator is the <cite>Sequence</cite> action:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">label</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">Repeat</span><span class="p">(</span> <span class="n">scale</span> <span class="o">+</span> <span class="n">Reverse</span><span class="p">(</span> <span class="n">scale</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">label</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">Repeat</span><span class="p">(</span> <span class="n">scale</span> <span class="o">+</span> <span class="n">Reverse</span><span class="p">(</span> <span class="n">scale</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p>And we tell the sprite to do the same actions but starting with the &#8216;scale back&#8217; action:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">Repeat</span><span class="p">(</span> <span class="n">Reverse</span><span class="p">(</span><span class="n">scale</span><span class="p">)</span> <span class="o">+</span> <span class="n">scale</span> <span class="p">)</span> <span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">Repeat</span><span class="p">(</span> <span class="n">Reverse</span><span class="p">(</span><span class="n">scale</span><span class="p">)</span> <span class="o">+</span> <span class="n">scale</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p>Then we initialize the director, like in the previous example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">cocos</span><span class="o">.</span><span class="n">director</span><span class="o">.</span><span class="n">director</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cocos</span><span class="o">.</span><span class="n">director</span><span class="o">.</span><span class="n">director</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
 <span class="n">hello_layer</span> <span class="o">=</span> <span class="n">HelloWorld</span> <span class="p">()</span>
 </pre></div>
 </div>
 <p>And... we tell the <cite>Layer</cite> (yes, all <cite>CocosNode</cite> objects can execute actions) to
 execute a <cite>RotateBy</cite> action of 360 degrees in 10 seconds:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">hello_layer</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">hello_layer</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p>Finally we start the execution:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># A scene that contains the layer hello_layer</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># A scene that contains the layer hello_layer</span>
 <span class="n">main_scene</span> <span class="o">=</span> <span class="n">cocos</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">Scene</span> <span class="p">(</span><span class="n">hello_layer</span><span class="p">)</span>
 
-<span class="c"># And now, start the application, starting with main_scene</span>
+<span class="c1"># And now, start the application, starting with main_scene</span>
 <span class="n">cocos</span><span class="o">.</span><span class="n">director</span><span class="o">.</span><span class="n">director</span><span class="o">.</span><span class="n">run</span> <span class="p">(</span><span class="n">main_scene</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -235,32 +237,32 @@ Cocos obtains inputs by listening to director.window events, and conveniently co
 </div>
 <p>This demo has a scene with two layers; one shows which keys are currently pressed (none, one, or maybe several at the same time), the other one shows text with the mouse position, and clicking moves the text.</p>
 <p>We start defining the KeyDisplay layer class. As always, we put some initialization on <code class="docutils literal"><span class="pre">__init__</span></code> and the code for displaying it in step:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">KeyDisplay</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">KeyDisplay</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
 
-    <span class="c"># If you want that your layer receives director.window events</span>
-    <span class="c"># you must set this variable to &#39;True&#39;</span>
-    <span class="n">is_event_handler</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="c1"># If you want that your layer receives director.window events</span>
+    <span class="c1"># you must set this variable to &#39;True&#39;</span>
+    <span class="n">is_event_handler</span> <span class="o">=</span> <span class="kc">True</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
         <span class="nb">super</span><span class="p">(</span> <span class="n">KeyDisplay</span><span class="p">,</span> <span class="bp">self</span> <span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">cocos</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">280</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">cocos</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">280</span> <span class="p">)</span>
 
-        <span class="c"># To keep track of which keys are pressed:</span>
+        <span class="c1"># To keep track of which keys are pressed:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">keys_pressed</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">update_text</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">update_text</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">key_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">pyglet</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">symbol_string</span> <span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys_pressed</span><span class="p">]</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="s">&#39;Keys: &#39;</span><span class="o">+</span><span class="s">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span> <span class="p">(</span><span class="n">key_names</span><span class="p">)</span>
-        <span class="c"># Update self.text</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Keys: &#39;</span><span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span> <span class="p">(</span><span class="n">key_names</span><span class="p">)</span>
+        <span class="c1"># Update self.text</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
 </pre></div>
 </div>
 <p>This class defines a key_pressed set, which should be the set of keys pressed at any time. However, this code as it is still does nothing. We need to tell this layer to update this set when a key is pressed or released. In other words, we need to add event handlers to the layer. Adding event handlers to a layer is just a matter of adding methods to it called on_&lt;event name&gt;. The two events that interest us now are <code class="docutils literal"><span class="pre">on_key_press</span></code> and <code class="docutils literal"><span class="pre">on_key_release</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">on_key_press</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">modifiers</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_key_press</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">modifiers</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;This function is called when a key is pressed.</span>
 <span class="sd">    &#39;key&#39; is a constant indicating which key was pressed.</span>
 <span class="sd">    &#39;modifiers&#39; is a bitwise or of several constants indicating which</span>
@@ -285,34 +287,34 @@ Cocos obtains inputs by listening to director.window events, and conveniently co
 
 <span class="k">def</span> <span class="nf">update_text</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="n">key_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">pyglet</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">symbol_string</span> <span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">keys_pressed</span><span class="p">]</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="s">&#39;Keys: &#39;</span><span class="o">+</span><span class="s">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span> <span class="p">(</span><span class="n">key_names</span><span class="p">)</span>
-    <span class="c"># Update self.text</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Keys: &#39;</span><span class="o">+</span><span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span> <span class="p">(</span><span class="n">key_names</span><span class="p">)</span>
+    <span class="c1"># Update self.text</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
 </pre></div>
 </div>
 <p>With that code, the layer is now fully working. You can press and release keys or key combinations, and you will se how the display is updated telling you which keys are pressed at any time.</p>
 <p>Handling mouse input is similar. You have three events of interest: on_mouse_press, on_mouse_motion and on_mouse_drag. With that, we can define our layer:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MouseDisplay</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MouseDisplay</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
 
-    <span class="n">is_event_handler</span> <span class="o">=</span> <span class="bp">True</span>     <span class="c">#: enable director.window events</span>
+    <span class="n">is_event_handler</span> <span class="o">=</span> <span class="kc">True</span>     <span class="c1">#: enable director.window events</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span> <span class="n">MouseDisplay</span><span class="p">,</span> <span class="bp">self</span> <span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">posx</span> <span class="o">=</span> <span class="mi">100</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">posy</span> <span class="o">=</span> <span class="mi">240</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">cocos</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="s">&#39;No mouse events yet&#39;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">posx</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">posy</span> <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">cocos</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="s1">&#39;No mouse events yet&#39;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">posx</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">posy</span> <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">update_text</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="s">&#39;Mouse @ </span><span class="si">%d</span><span class="s">,</span><span class="si">%d</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;Mouse @ </span><span class="si">%d</span><span class="s1">,</span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">posx</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">posy</span>
 </pre></div>
 </div>
 <p>And then add event handlers to update the text when the mouse is moved, and change the text position when any button is clicked:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">on_mouse_motion</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">):</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">on_mouse_motion</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Called when the mouse moves over the app window with no button pressed</span>
 
 <span class="sd">    (x, y) are the physical coordinates of the mouse</span>
@@ -354,8 +356,8 @@ on_mouse_leave : called when the mouse cursor goes out of the window
 on_mouse_enter : called when the mouse cursor enters the window</dd>
 </dl>
 <p>The demo does not have much more code, just creating a scene with these two layers and running it:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">director</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">resizable</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="c"># Run a scene with our event displayers:</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">director</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">resizable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Run a scene with our event displayers:</span>
 <span class="n">director</span><span class="o">.</span><span class="n">run</span><span class="p">(</span> <span class="n">cocos</span><span class="o">.</span><span class="n">scene</span><span class="o">.</span><span class="n">Scene</span><span class="p">(</span> <span class="n">KeyDisplay</span><span class="p">(),</span> <span class="n">MouseDisplay</span><span class="p">()</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
@@ -428,9 +430,6 @@ directory of the documentation and source distributions.  Keep checking
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -457,8 +456,8 @@ directory of the documentation and source distributions.  Keep checking
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

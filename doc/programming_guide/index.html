@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>cocos2d Programming Guide &mdash; cocos v0.6.3 documentation</title>
+    <title>cocos2d Programming Guide &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +23,9 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="next" title="Introduction" href="introduction.html" />
-    <link rel="prev" title="cocos2d 0.6.3 Documentation Index" href="../index.html" /> 
+    <link rel="prev" title="cocos2d 0.6.4 Documentation Index" href="../index.html" /> 
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -41,7 +41,7 @@
           <a href="introduction.html" title="Introduction"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../index.html" title="cocos2d 0.6.3 Documentation Index"
+          <a href="../index.html" title="cocos2d 0.6.4 Documentation Index"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li> 
       </ul>
@@ -60,41 +60,7 @@
 <p>The cocos2d Programming Guide provides in-depth documentation for writing
 applications that use cocos2d.  Many topics described here reference the cocos2d
 API reference, provided separately.</p>
-<p>If this is your first time reading about cocos2d, we suggest you start at <a class="reference internal" href="quickstart.html"><em>Writing a cocos2d application</em></a> .</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation, Dependencies and Compatibility</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Writing a cocos2d application</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="basic_concepts.html">Basic Concepts</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="actions.html">Actions, Transformations and Effects</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="transitions.html">Scenes &amp; Transitions</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tiled_map.html">Tiled maps</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="cocosnodes.html">CocosNodes</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="interpreter.html">Built-in Python Interpreter</a></li>
-<li class="toctree-l1"><a class="reference internal" href="default_handlers.html">Default Handlers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collision.html">Collision</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="skeleton/skeleton.html">Skeletal Animations</a><ul class="simple">
-</ul>
-</li>
-</ul>
-</div>
+<p>If this is your first time reading about cocos2d, we suggest you start at <a class="reference internal" href="quickstart.html"><span class="doc">Writing a cocos2d application</span></a> .</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
@@ -163,10 +129,26 @@ API reference, provided separately.</p>
 <li class="toctree-l2"><a class="reference internal" href="tiled_map.html#map-cell-and-tile-properties">Map, Cell and Tile Properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tiled_map.html#controlling-map-scrolling">Controlling Map Scrolling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tiled_map.html#map-queries">Map Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiled_map.html#handling-collisions-between-actors-and-tiles">Handling collisions between actors and tiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tiled_map.html#rectangular-maps">Rectangular Maps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tiled_map.html#rectangular-map-collisions">Rectangular Map Collisions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tiled_map.html#support-for-tmx-object-layers">Support for TMX object layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tiled_map.html#support-for-tmx-maps-with-hexagonal-tiles">Support for .TMX maps with hexagonal tiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tiled_map.html#support-for-tmx-object-layers">Support for TMX object layers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mapcoliders.html">Map Colliders</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mapcoliders.html#overview">Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mapcoliders.html#properly-update-the-velocity-and-the-position">Properly update the velocity and the position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mapcoliders.html#call-appropriate-methods-when-it-detects-actor-bumped-into-an-obstacle">Call appropriate methods when it detects actor bumped into an obstacle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mapcoliders.html#tell-if-any-collision-in-the-x-and-or-y-axis-happened">Tell if any collision in the x and / or y axis happened</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mapcoliders.html#variants">Variants</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mapcoliders.html#rectmapcollider">RectMapCollider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mapcoliders.html#rectmapwithpropscollider">RectMapWithPropsCollider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mapcoliders.html#tmxobjectmapcollider">TmxObjectMapCollider</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mapcoliders.html#how-to-use">How to use</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cocosnodes.html">CocosNodes</a><ul>
@@ -252,7 +234,7 @@ API reference, provided separately.</p>
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="../index.html"
-                        title="previous chapter">cocos2d 0.6.3 Documentation Index</a></p>
+                        title="previous chapter">cocos2d 0.6.4 Documentation Index</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="introduction.html"
                         title="next chapter">Introduction</a></p>
@@ -271,9 +253,6 @@ API reference, provided separately.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -293,14 +272,14 @@ API reference, provided separately.</p>
           <a href="introduction.html" title="Introduction"
              >next</a> |</li>
         <li class="right" >
-          <a href="../index.html" title="cocos2d 0.6.3 Documentation Index"
+          <a href="../index.html" title="cocos2d 0.6.4 Documentation Index"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

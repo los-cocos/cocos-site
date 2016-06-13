@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos 0.6.4 &mdash; cocos v0.6.4 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.6.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.4 documentation" href="index.html" />
+    <link rel="next" title="cocos2d FAQ" href="faq/index.html" />
+    <link rel="prev" title="cocos.wired module" href="api/cocos.wired.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="faq/index.html" title="cocos2d FAQ"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="api/cocos.wired.html" title="cocos.wired module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">cocos</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>Api changes and other compatibility notes from previous version</p>
+<div class="section" id="cocos-0-6-4">
+<h1>cocos 0.6.4<a class="headerlink" href="#cocos-0-6-4" title="Permalink to this headline">¶</a></h1>
+<p>This is the first release supporting pyglet 1.3+</p>
+<p>Imports in cocos library are more specific, so user code that were doing
+<code class="docutils literal"><span class="pre">from</span> <span class="pre">cocos.somemodule</span> <span class="pre">import</span> <span class="pre">*</span></code> may fail to find some symbols.
+To fix that user code, add explicit exports as needed.</p>
+<dl class="docutils">
+<dt>MapColliders classes changed API to be more useful and clear.</dt>
+<dd><ul class="first last simple">
+<li><a class="reference internal" href="api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapCollider" title="cocos.mapcolliders.RectMapCollider"><code class="xref py py-class docutils literal"><span class="pre">RectMapCollider</span></code></a> moved to his own module,
+<a class="reference internal" href="api/cocos.mapcolliders.html#module-cocos.mapcolliders" title="cocos.mapcolliders"><code class="xref py py-mod docutils literal"><span class="pre">mapcolliders</span></code></a>.</li>
+<li><a class="reference internal" href="api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapCollider" title="cocos.mapcolliders.RectMapCollider"><code class="xref py py-class docutils literal"><span class="pre">RectMapCollider</span></code></a> was renamed to
+<a class="reference internal" href="api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapWithPropsCollider" title="cocos.mapcolliders.RectMapWithPropsCollider"><code class="xref py py-class docutils literal"><span class="pre">RectMapWithPropsCollider</span></code></a>.</li>
+<li>The new <a class="reference internal" href="api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapCollider" title="cocos.mapcolliders.RectMapCollider"><code class="xref py py-class docutils literal"><span class="pre">RectMapCollider</span></code></a> handles a simpler
+collision case, when all tiles are solid: now no need to set cells
+properties to signal a cell border should not be walked over.</li>
+<li><a class="reference internal" href="api/cocos.mapcolliders.html#cocos.mapcolliders.TmxObjectMapCollider" title="cocos.mapcolliders.TmxObjectMapCollider"><code class="xref py py-class docutils literal"><span class="pre">TmxObjectMapCollider</span></code></a> now handles AABB collision with any
+<a class="reference internal" href="api/cocos.tiles.html#cocos.tiles.TmxObject" title="cocos.tiles.TmxObject"><code class="xref py py-class docutils literal"><span class="pre">TmxObject</span></code></a> that can be loaded.</li>
+</ul>
+</dd>
+</dl>
+<p><a class="reference internal" href="api/cocos.rect.html#cocos.rect.Rect.intersects" title="cocos.rect.Rect.intersects"><code class="xref py py-meth docutils literal"><span class="pre">Rect.intersects()</span></code></a> now it only intersects if some interior points
+overlaps.</p>
+<p>Removed <a class="reference internal" href="api/cocos.scene.html#cocos.scene.Scene" title="cocos.scene.Scene"><code class="xref py py-class docutils literal"><span class="pre">Scene</span></code></a> methods <code class="docutils literal"><span class="pre">push_all_handlers()</span></code> and
+<code class="docutils literal"><span class="pre">remove_all_handlers()</span></code>.</p>
+<p>In <a class="reference internal" href="api/cocos.layer.scrolling.html#cocos.layer.scrolling.ScrollingManager" title="cocos.layer.scrolling.ScrollingManager"><code class="xref py py-class docutils literal"><span class="pre">ScrollingManager</span></code></a> two methods have been renamed, the old name is
+still valid but will be removed in the future:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">pixel_from_screen()</span></code> -&gt; <code class="docutils literal"><span class="pre">screen_to_world()</span></code></li>
+<li><code class="docutils literal"><span class="pre">pixel_to_screen()</span></code> -&gt; <code class="docutils literal"><span class="pre">world_to_screen()</span></code></li>
+</ul>
+</div></blockquote>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="api/cocos.wired.html"
+                        title="previous chapter">cocos.wired module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="faq/index.html"
+                        title="next chapter">cocos2d FAQ</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/compatibility_notes.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="faq/index.html" title="cocos2d FAQ"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="api/cocos.wired.html" title="cocos.wired module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">cocos</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+    </div>
+  </body>
+</html>

@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>cocos.actions.move_actions module &mdash; cocos v0.6.3 documentation</title>
+    <title>cocos.actions.move_actions module &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="up" title="cocos.actions package" href="cocos.actions.html" />
     <link rel="next" title="cocos.actions.quadmoveby_actions module" href="cocos.actions.quadmoveby_actions.html" />
     <link rel="prev" title="cocos.actions.interval_actions module" href="cocos.actions.interval_actions.html" /> 
@@ -66,19 +66,19 @@ sprite.velocity = (100, 100)
 sprite.do(Move())</div></blockquote>
 <p>This will move the sprite (100, 100) pixels per second indefinitely.</p>
 <p>Typically the sprite would be controlled by the user, so something like:</p>
-<div class="highlight-python"><div class="highlight"><pre>keys = &lt;standard pyglet keyboard state handler&gt;
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">keys</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">standard</span> <span class="n">pyglet</span> <span class="n">keyboard</span> <span class="n">state</span> <span class="n">handler</span><span class="o">&gt;</span>
 
-class MoveShip(Move):
-   def step(self, dt):
-       super(MoveShip, self).step(dt)
-       self.target.dr = (keys[key.RIGHT] - keys[key.LEFT]) * 360
-       rotation = math.pi * self.target.rotation / 180.0
-       rotation_x = math.cos(-rotation)
-       rotation_y = math.sin(-rotation)
-       if keys[key.UP]:
-           self.target.acceleration = (200 * rotation_x, 200 * rotation_y)
+<span class="k">class</span> <span class="nc">MoveShip</span><span class="p">(</span><span class="n">Move</span><span class="p">):</span>
+   <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+       <span class="nb">super</span><span class="p">(</span><span class="n">MoveShip</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">dr</span> <span class="o">=</span> <span class="p">(</span><span class="n">keys</span><span class="p">[</span><span class="n">key</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">]</span> <span class="o">-</span> <span class="n">keys</span><span class="p">[</span><span class="n">key</span><span class="o">.</span><span class="n">LEFT</span><span class="p">])</span> <span class="o">*</span> <span class="mi">360</span>
+       <span class="n">rotation</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">rotation</span> <span class="o">/</span> <span class="mf">180.0</span>
+       <span class="n">rotation_x</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="o">-</span><span class="n">rotation</span><span class="p">)</span>
+       <span class="n">rotation_y</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="o">-</span><span class="n">rotation</span><span class="p">)</span>
+       <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">key</span><span class="o">.</span><span class="n">UP</span><span class="p">]:</span>
+           <span class="bp">self</span><span class="o">.</span><span class="n">target</span><span class="o">.</span><span class="n">acceleration</span> <span class="o">=</span> <span class="p">(</span><span class="mi">200</span> <span class="o">*</span> <span class="n">rotation_x</span><span class="p">,</span> <span class="mi">200</span> <span class="o">*</span> <span class="n">rotation_y</span><span class="p">)</span>
 
-ship.do(MoveShip())
+<span class="n">ship</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">MoveShip</span><span class="p">())</span>
 </pre></div>
 </div>
 <dl class="class">
@@ -87,14 +87,14 @@ ship.do(MoveShip())
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.Action</span></code></a></p>
 <p>Move the target based on parameters on the target.</p>
 <p>For movement the parameters are:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">target</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">target</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">target</span><span class="o">.</span><span class="n">velocity</span> <span class="o">=</span> <span class="p">(</span><span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
 <span class="n">target</span><span class="o">.</span><span class="n">acceleration</span> <span class="o">=</span> <span class="p">(</span><span class="n">ddx</span><span class="p">,</span> <span class="n">ddy</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="n">target</span><span class="o">.</span><span class="n">gravity</span> <span class="o">=</span> <span class="mi">0</span>
 </pre></div>
 </div>
 <p>And rotation:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">target</span><span class="o">.</span><span class="n">rotation</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">target</span><span class="o">.</span><span class="n">rotation</span>
 <span class="n">target</span><span class="o">.</span><span class="n">dr</span>
 <span class="n">target</span><span class="o">.</span><span class="n">ddr</span>
 </pre></div>
@@ -122,11 +122,11 @@ account the dimenstions of the target.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>width</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">The width to wrap position at.</p>
+<dt><cite>width</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">integer</span><dd><p class="first last">The width to wrap position at.</p>
 </dd>
-<dt><cite>height</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">The height to wrap position at.</p>
+<dt><cite>height</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">integer</span><dd><p class="first last">The height to wrap position at.</p>
 </dd>
 </dl>
 </td>
@@ -158,11 +158,11 @@ account the dimenstions of the target.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>width</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">The width to bound position at.</p>
+<dt><cite>width</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">integer</span><dd><p class="first last">The width to bound position at.</p>
 </dd>
-<dt><cite>height</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">The height to bound position at.</p>
+<dt><cite>height</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">integer</span><dd><p class="first last">The height to bound position at.</p>
 </dd>
 </dl>
 </td>
@@ -185,7 +185,7 @@ account the dimenstions of the target.</p>
 <p>Drive a <cite>CocosNode</cite> object around like a car in x, y according to
 a direction and speed.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># control the movement of the given sprite</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># control the movement of the given sprite</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Driver</span><span class="p">())</span>
 
 <span class="o">...</span>
@@ -198,16 +198,16 @@ a direction and speed.</p>
 and rotation):</p>
 <blockquote>
 <div><dl class="docutils">
-<dt><cite>speed</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd>Speed to move at in pixels per second in the direction of
+<dt><cite>speed</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd>Speed to move at in pixels per second in the direction of
 the target&#8217;s rotation.</dd>
-<dt><cite>acceleration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd>If specified will automatically be added to speed.
+<dt><cite>acceleration</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd>If specified will automatically be added to speed.
 Specified in pixels per second per second.</dd>
-<dt><cite>max_forward_speed</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float (default None)</span></dt>
-<dd>Limits to apply to speed when updating with acceleration.</dd>
-<dt><cite>max_reverse_speed</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float (default None)</span></dt>
-<dd>Limits to apply to speed when updating with acceleration.</dd>
+<dt><cite>max_forward_speed</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float (default None)</span><dd>Limits to apply to speed when updating with acceleration.</dd>
+<dt><cite>max_reverse_speed</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float (default None)</span><dd>Limits to apply to speed when updating with acceleration.</dd>
 </dl>
 </div></blockquote>
 <dl class="method">
@@ -246,9 +246,6 @@ Specified in pixels per second per second.</dd>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -276,8 +273,8 @@ Specified in pixels per second per second.</dd>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

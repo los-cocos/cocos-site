@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>cocos.draw module &mdash; cocos v0.6.3 documentation</title>
+    <title>cocos.draw module &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="up" title="cocos package" href="cocos.html" />
     <link rel="next" title="cocos.euclid module" href="cocos.euclid.html" />
     <link rel="prev" title="cocos.director module" href="cocos.director.html" /> 
@@ -159,17 +159,6 @@
 </dd></dl>
 
 <dl class="class">
-<dt id="cocos.draw.FragmentShader">
-<em class="property">class </em><code class="descname">FragmentShader</code><span class="sig-paren">(</span><em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.FragmentShader" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.draw.Shader" title="cocos.draw.Shader"><code class="xref py py-class docutils literal"><span class="pre">cocos.draw.Shader</span></code></a></p>
-<dl class="attribute">
-<dt id="cocos.draw.FragmentShader.shader_type">
-<code class="descname">shader_type</code><em class="property"> = 35632</em><a class="headerlink" href="#cocos.draw.FragmentShader.shader_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
 <dt id="cocos.draw.Line">
 <em class="property">class </em><code class="descname">Line</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>color</em>, <em>stroke_width=1</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Line" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.draw.Canvas" title="cocos.draw.Canvas"><code class="xref py py-class docutils literal"><span class="pre">cocos.draw.Canvas</span></code></a></p>
@@ -203,7 +192,8 @@
 <dl class="class">
 <dt id="cocos.draw.Segment">
 <em class="property">class </em><code class="descname">Segment</code><span class="sig-paren">(</span><em>start</em>, <em>end</em>, <em>width</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Segment" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
 <dt id="cocos.draw.Segment.reversed">
 <code class="descname">reversed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Segment.reversed" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -255,33 +245,6 @@
 
 </dd></dl>
 
-<dl class="class">
-<dt id="cocos.draw.Shader">
-<em class="property">class </em><code class="descname">Shader</code><span class="sig-paren">(</span><em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Shader" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<dl class="method">
-<dt id="cocos.draw.Shader.begin">
-<code class="descname">begin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Shader.begin" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="cocos.draw.Shader.end">
-<code class="descname">end</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Shader.end" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="cocos.draw.VertexShader">
-<em class="property">class </em><code class="descname">VertexShader</code><span class="sig-paren">(</span><em>source</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.VertexShader" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.draw.Shader" title="cocos.draw.Shader"><code class="xref py py-class docutils literal"><span class="pre">cocos.draw.Shader</span></code></a></p>
-<dl class="attribute">
-<dt id="cocos.draw.VertexShader.shader_type">
-<code class="descname">shader_type</code><em class="property"> = 35633</em><a class="headerlink" href="#cocos.draw.VertexShader.shader_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
 <dl class="function">
 <dt id="cocos.draw.flatten">
 <code class="descname">flatten</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.flatten" title="Permalink to this definition">¶</a></dt>
@@ -321,9 +284,6 @@
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -350,8 +310,8 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

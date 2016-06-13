@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Installation, Dependencies and Compatibility &mdash; cocos v0.6.3 documentation</title>
+    <title>Installation, Dependencies and Compatibility &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="up" title="cocos2d Programming Guide" href="index.html" />
     <link rel="next" title="Writing a cocos2d application" href="quickstart.html" />
     <link rel="prev" title="Introduction" href="introduction.html" /> 
@@ -125,11 +125,11 @@ The cocos codebase has direct support for 2.x and 3.x, so no need to run 2to3</l
 <h2><a class="toc-backref" href="#id7">Installing</a><a class="headerlink" href="#installing" title="Permalink to this headline">¶</a></h2>
 <p>Have a modern setuptools or pip installed.</p>
 <p>While:</p>
-<div class="highlight-python"><div class="highlight"><pre>easy_install cocos2d
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">easy_install</span> <span class="n">cocos2d</span>
 </pre></div>
 </div>
 <p>or:</p>
-<div class="highlight-python"><div class="highlight"><pre>pip install cocos2d
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">cocos2d</span>
 </pre></div>
 </div>
 <p>should work, you will miss the docs and code samples. Its is therefore recommended to</p>
@@ -137,17 +137,17 @@ The cocos codebase has direct support for 2.x and 3.x, so no need to run 2to3</l
 <div><ul>
 <li><p class="first">install six and pyglet</p>
 </li>
-<li><p class="first">download cocos2d-0.6.3.zip from <code class="docutils literal"><span class="pre">https://pypi.python.org/pypi/cocos2d</span></code></p>
+<li><p class="first">download cocos2d-0.6.4.zip from <a class="reference external" href="https://pypi.python.org/pypi/cocos2d/">https://pypi.python.org/pypi/cocos2d/</a></p>
 </li>
-<li><p class="first">decompress to a convenient location, the top dir will be cocos2d-0.6.3</p>
+<li><p class="first">decompress to a convenient location, the top dir will be cocos2d-0.6.4</p>
 </li>
-<li><p class="first">the html docs will be in cocos2d-0.6.3/doc/html</p>
+<li><p class="first">the html docs will be in cocos2d-0.6.4/doc/html</p>
 </li>
-<li><p class="first">useful code samples will be in cocos2d-0.6.3/test, cocos2d-0.6.3/samples, cocos2d-0.6.3/utest</p>
+<li><p class="first">useful code samples will be in cocos2d-0.6.4/test, cocos2d-0.6.4/samples, cocos2d-0.6.4/utest</p>
 </li>
 <li><p class="first">install by:</p>
-<div class="highlight-python"><div class="highlight"><pre>cd cocos2d-0.6.3
-setup.py install
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">cocos2d</span><span class="o">-</span><span class="mf">0.6</span><span class="o">.</span><span class="mi">4</span>
+<span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
 </pre></div>
 </div>
 <p>or alternatively by pointing that directory from a .pth or PYTHONPATH</p>
@@ -173,7 +173,8 @@ setup.py install
 </dl>
 <p>Remember that pyglet does python 3 compatibility by running 2to3 at install time, so while
 a pyglet checkout can be pointed from a .pth or PYTHONPATH in python 2.x,
-that will not work for python 3.</p>
+that will not work for python 3. (this is valid for pyglet &lt; 1.3; with pyglet 1.3+
+the 2to3 will not be neccesary)</p>
 </div>
 </div>
 
@@ -221,9 +222,6 @@ that will not work for python 3.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -250,8 +248,8 @@ that will not work for python 3.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

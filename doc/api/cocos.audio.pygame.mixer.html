@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>cocos.audio.pygame.mixer module &mdash; cocos v0.6.3 documentation</title>
+    <title>cocos.audio.pygame.mixer module &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="up" title="cocos.audio.pygame package" href="cocos.audio.pygame.html" />
     <link rel="next" title="cocos.audio.pygame.music module" href="cocos.audio.pygame.music.html" />
     <link rel="prev" title="cocos.audio.pygame.base module" href="cocos.audio.pygame.base.html" /> 
@@ -105,8 +105,8 @@ time argument in milliseconds.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>time</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Time to fade out, in milliseconds.</p>
+<dt><cite>time</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Time to fade out, in milliseconds.</p>
 </dd>
 </dl>
 </td>
@@ -223,14 +223,14 @@ stop playback of the Sound after a given number of milliseconds.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>sound</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Sound</cite></span></dt>
-<dd><p class="first last">Sound data to play.</p>
+<dt><cite>sound</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Sound</cite></span><dd><p class="first last">Sound data to play.</p>
 </dd>
-<dt><cite>loops</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of times to repeat the sound after the first play.</p>
+<dt><cite>loops</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Number of times to repeat the sound after the first play.</p>
 </dd>
-<dt><cite>time</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Maximum number of milliseconds to play for.</p>
+<dt><cite>time</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Maximum number of milliseconds to play for.</p>
 </dd>
 </dl>
 </td>
@@ -255,8 +255,8 @@ will begin playing immediately.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>sound</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Sound</cite></span></dt>
-<dd><p class="first last">Sound data to queue.</p>
+<dt><cite>sound</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Sound</cite></span><dd><p class="first last">Sound data to queue.</p>
 </dd>
 </dl>
 </td>
@@ -287,8 +287,8 @@ argument is given then the Channel will stop sending endevents.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>id</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Event ID to send.</p>
+<dt><cite>id</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Event ID to send.</p>
 </dd>
 </dl>
 </td>
@@ -311,11 +311,11 @@ will be the volume of the right speaker. (If the second argument is
 None, the first argument will be the volume of both speakers.)</p>
 <p>If the channel is playing a Sound on which set_volume() has also
 been called, both calls are taken into account. For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">sound</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">Sound</span><span class="p">(</span><span class="s">&quot;s.wav&quot;</span><span class="p">)</span>
-<span class="n">channel</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>      <span class="c"># Sound plays at full volume by default</span>
-<span class="n">sound</span><span class="o">.</span><span class="n">set_volume</span><span class="p">(</span><span class="mf">0.9</span><span class="p">)</span>   <span class="c"># Now plays at 90% of full volume.</span>
-<span class="n">sound</span><span class="o">.</span><span class="n">set_volume</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>   <span class="c"># Now plays at 60% (previous value replaced)</span>
-<span class="n">channel</span><span class="o">.</span><span class="n">set_volume</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span> <span class="c"># Now plays at 30% (0.6 * 0.5).</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sound</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">Sound</span><span class="p">(</span><span class="s2">&quot;s.wav&quot;</span><span class="p">)</span>
+<span class="n">channel</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">play</span><span class="p">()</span>      <span class="c1"># Sound plays at full volume by default</span>
+<span class="n">sound</span><span class="o">.</span><span class="n">set_volume</span><span class="p">(</span><span class="mf">0.9</span><span class="p">)</span>   <span class="c1"># Now plays at 90% of full volume.</span>
+<span class="n">sound</span><span class="o">.</span><span class="n">set_volume</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>   <span class="c1"># Now plays at 60% (previous value replaced)</span>
+<span class="n">channel</span><span class="o">.</span><span class="n">set_volume</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># Now plays at 30% (0.6 * 0.5).</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -323,11 +323,11 @@ been called, both calls are taken into account. For example:</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>left</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Volume of left (or mono) channel, in range [0.0, 1.0]</p>
+<dt><cite>left</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Volume of left (or mono) channel, in range [0.0, 1.0]</p>
 </dd>
-<dt><cite>right</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Volume of right channel, in range [0.0, 1.0]</p>
+<dt><cite>right</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Volume of right channel, in range [0.0, 1.0]</p>
 </dd>
 </dl>
 </td>
@@ -372,8 +372,8 @@ actively playing channels.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>time</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Time to fade out, in milliseconds.</p>
+<dt><cite>time</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Time to fade out, in milliseconds.</p>
 </dd>
 </dl>
 </td>
@@ -447,11 +447,11 @@ of milliseconds.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>loops</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of times to repeat the sound after the first play.</p>
+<dt><cite>loops</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Number of times to repeat the sound after the first play.</p>
 </dd>
-<dt><cite>maxtime</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Maximum number of milliseconds to play for.</p>
+<dt><cite>maxtime</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Maximum number of milliseconds to play for.</p>
 </dd>
 </dl>
 </td>
@@ -479,8 +479,8 @@ future playback of this Sound. The argument is a value from 0.0 to
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>volume</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Volume of playback, in range [0.0, 1.0]</p>
+<dt><cite>volume</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Volume of playback, in range [0.0, 1.0]</p>
 </dd>
 </dl>
 </td>
@@ -509,8 +509,8 @@ argument in milliseconds. After the sound is muted the playback will stop.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>time</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Time to fade out, in milliseconds.</p>
+<dt><cite>time</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Time to fade out, in milliseconds.</p>
 </dd>
 </dl>
 </td>
@@ -534,8 +534,8 @@ those channels will not be returned here.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>force</cite> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">If True, a playing channel will be returned if no free ones
+<dt><cite>force</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">If True, a playing channel will be returned if no free ones
 are available.</p>
 </dd>
 </dl>
@@ -626,19 +626,19 @@ pygame.mixer.quit().</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>frequency</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Sample rate, in Hertz; defaults to 22050</p>
+<dt><cite>frequency</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Sample rate, in Hertz; defaults to 22050</p>
 </dd>
-<dt><cite>size</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Bits per sample per channel; defaults to -16.  Positive values for
+<dt><cite>size</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Bits per sample per channel; defaults to -16.  Positive values for
 unsigned values, negative for signed.</p>
 </dd>
-<dt><cite>stereo</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of output channels: 1 for mono, 2 for stereo; defaults to
+<dt><cite>stereo</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Number of output channels: 1 for mono, 2 for stereo; defaults to
 2.</p>
 </dd>
-<dt><cite>buffer</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Byte size of each output channel&#8217;s buffer; a power of two;
+<dt><cite>buffer</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Byte size of each output channel&#8217;s buffer; a power of two;
 defaults to 1024.</p>
 </dd>
 </dl>
@@ -669,18 +669,18 @@ pygame.init().</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>frequency</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Sample rate, in Hertz</p>
+<dt><cite>frequency</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Sample rate, in Hertz</p>
 </dd>
-<dt><cite>size</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Bits per sample per channel.  Positive values for unsigned
+<dt><cite>size</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Bits per sample per channel.  Positive values for unsigned
 values, negative for signed.</p>
 </dd>
-<dt><cite>stereo</cite> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Number of mixdown channels: False for 1, True for 2.</p>
+<dt><cite>stereo</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Number of mixdown channels: False for 1, True for 2.</p>
 </dd>
-<dt><cite>buffer</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Bytes for mixdown buffer size; a power of two.</p>
+<dt><cite>buffer</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Bytes for mixdown buffer size; a power of two.</p>
 </dd>
 </dl>
 </td>
@@ -710,8 +710,8 @@ sounds playing on the truncated channels are stopped.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>channels</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of channels</p>
+<dt><cite>channels</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Number of channels</p>
 </dd>
 </dl>
 </td>
@@ -735,8 +735,8 @@ play on.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>channels</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of channels to reserve.</p>
+<dt><cite>channels</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Number of channels to reserve.</p>
 </dd>
 </dl>
 </td>
@@ -788,9 +788,6 @@ play on.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -819,8 +816,8 @@ play on.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

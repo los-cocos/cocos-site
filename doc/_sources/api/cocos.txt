@@ -25,9 +25,11 @@ Submodules
    cocos.director
    cocos.draw
    cocos.euclid
+   cocos.fps
    cocos.framegrabber
    cocos.gl_framebuffer_object
    cocos.grid
+   cocos.mapcolliders
    cocos.menu
    cocos.particle
    cocos.particle_systems

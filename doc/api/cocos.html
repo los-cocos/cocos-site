@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>cocos package &mdash; cocos v0.6.3 documentation</title>
+    <title>cocos package &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="next" title="cocos.actions package" href="cocos.actions.html" />
     <link rel="prev" title="Skeletal Animations" href="../programming_guide/skeleton/skeleton.html" /> 
   </head>
@@ -157,10 +157,7 @@
 <li class="toctree-l2"><a class="reference internal" href="cocos.layer.html#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="cocos.layer.base_layers.html">cocos.layer.base_layers module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cocos.layer.python_interpreter.html">cocos.layer.python_interpreter module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cocos.layer.scrolling.html">cocos.layer.scrolling module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="cocos.layer.scrolling.html#controlling-scrolling">Controlling Scrolling</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="cocos.layer.scrolling.html">cocos.layer.scrolling module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cocos.layer.util_layers.html">cocos.layer.util_layers module</a></li>
 </ul>
 </li>
@@ -170,6 +167,7 @@
 <li class="toctree-l1"><a class="reference internal" href="cocos.scenes.html">cocos.scenes package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="cocos.scenes.html#submodules">Submodules</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="cocos.scenes.pause.html">cocos.scenes.pause module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cocos.scenes.sequences.html">cocos.scenes.sequences module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="cocos.scenes.transitions.html">cocos.scenes.transitions module</a></li>
 </ul>
 </li>
@@ -199,9 +197,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cocos.draw.html">cocos.draw module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cocos.euclid.html">cocos.euclid module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.fps.html">cocos.fps module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cocos.framegrabber.html">cocos.framegrabber module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cocos.gl_framebuffer_object.html">cocos.gl_framebuffer_object module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cocos.grid.html">cocos.grid module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.mapcolliders.html">cocos.mapcolliders module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cocos.menu.html">cocos.menu module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="cocos.menu.html#menu">Menu</a></li>
 </ul>
@@ -220,10 +220,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cocos.text.html">cocos.text module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cocos.tiles.html">cocos.tiles module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cocos.utils.html">cocos.utils module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="cocos.utils.html#utils">utils</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="cocos.utils.html">cocos.utils module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cocos.wired.html">cocos.wired module</a></li>
 </ul>
 </div>
@@ -252,11 +249,6 @@
 </ul>
 </div></blockquote>
 <p><a class="reference external" href="http://python.cocos2d.org">http://python.cocos2d.org</a></p>
-<dl class="function">
-<dt id="cocos.import_all">
-<code class="descname">import_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.import_all" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 </div>
 </div>
 </div>
@@ -301,9 +293,6 @@
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -329,8 +318,8 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>cocos.layer.util_layers module &mdash; cocos v0.6.3 documentation</title>
+    <title>cocos.layer.util_layers module &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="up" title="cocos.layer package" href="cocos.layer.html" />
     <link rel="next" title="cocos.scenes package" href="cocos.scenes.html" />
     <link rel="prev" title="cocos.layer.scrolling module" href="cocos.layer.scrolling.html" /> 
@@ -57,44 +57,55 @@
             
   <div class="section" id="module-cocos.layer.util_layers">
 <span id="cocos-layer-util-layers-module"></span><h1>cocos.layer.util_layers module<a class="headerlink" href="#module-cocos.layer.util_layers" title="Permalink to this headline">¶</a></h1>
-<p>Layer class and subclasses</p>
-<p>A <cite>Layer</cite> has as size the whole drawable area (window or screen),
-and knows how to draw itself. It can be semi transparent (having holes
-and/or partial transparency in some/all places), allowing to see other layers
-behind it. Layers are the ones defining appearance and behavior, so most
-of your programming time will be spent coding Layer subclasses that do what
-you need. The layer is where you define event handlers.
-Events are propagated to layers (from front to back) until some layer catches
-the event and accepts it.</p>
+<p>Special purpose layers</p>
 <dl class="class">
 <dt id="cocos.layer.util_layers.ColorLayer">
 <em class="property">class </em><code class="descname">ColorLayer</code><span class="sig-paren">(</span><em>r</em>, <em>g</em>, <em>b</em>, <em>a</em>, <em>width=None</em>, <em>height=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.util_layers.ColorLayer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.layer.base_layers.html#cocos.layer.base_layers.Layer" title="cocos.layer.base_layers.Layer"><code class="xref py py-class docutils literal"><span class="pre">cocos.layer.base_layers.Layer</span></code></a></p>
-<p>Creates a layer of a certain color.
-The color shall be specified in the format (r,g,b,a).</p>
-<p>For example, to create green layer:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">l</span> <span class="o">=</span> <span class="n">ColorLayer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span> <span class="p">)</span>
+<p>Creates a layer of a given color.
+The color shall be specified in the format (r, g, b, a).</p>
+<p>For example, to create a green layer:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">layer</span> <span class="o">=</span> <span class="n">ColorLayer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The size and position can be changed, for example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">l</span> <span class="o">=</span> <span class="n">ColorLayer</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
-<span class="n">l</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">layer</span> <span class="o">=</span> <span class="n">ColorLayer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">layer</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
 </div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>r</strong> (<em>int</em>) &#8211; red component</li>
+<li><strong>g</strong> (<em>int</em>) &#8211; green component</li>
+<li><strong>b</strong> (<em>int</em>) &#8211; blue component</li>
+<li><strong>a</strong> (<em>int</em>) &#8211; alpha component</li>
+<li><strong>width</strong> (<em>int</em>) &#8211; width of the color layer [Optional]</li>
+<li><strong>height</strong> (<em>int</em>) &#8211; height of the color layer [Optional]</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="cocos.layer.util_layers.ColorLayer.draw">
 <code class="descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.util_layers.ColorLayer.draw" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Draws itself.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.util_layers.ColorLayer.on_enter">
 <code class="descname">on_enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.util_layers.ColorLayer.on_enter" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Called every time just before the node enters the stage.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.util_layers.ColorLayer.on_exit">
 <code class="descname">on_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.util_layers.ColorLayer.on_exit" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Called every time just before the node exits the stage.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.layer.util_layers.ColorLayer.color">
@@ -102,13 +113,13 @@ The color shall be specified in the format (r,g,b,a).</p>
 <dd><p>Blend color.</p>
 <p>This property sets the color of the layer&#8217;s vertices. This allows the
 layer to be drawn with a color tint.</p>
-<p>The color is specified as an RGB tuple of integers <code class="docutils literal"><span class="pre">(red,</span> <span class="pre">green,</span> <span class="pre">blue)</span></code>.
-Each color component must be in the range 0 (dark) to 255 (saturated).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">(int, int, int)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>color</strong> (<em>tuple[int, int, int]</em>) &#8211; The color is specified as an RGB tuple
+of integers <code class="docutils literal"><span class="pre">(red,</span> <span class="pre">green,</span> <span class="pre">blue)</span></code>.
+Each color component must be in the range 0 (dark) to 255 (saturated).</td>
 </tr>
 </tbody>
 </table>
@@ -122,12 +133,12 @@ Each color component must be in the range 0 (dark) to 255 (saturated).</p>
 vertices.  This allows the layer to be drawn with fractional opacity,
 blending with the background.</p>
 <p>An opacity of 255 (the default) has no effect.  An opacity of 128 will
-make the sprite appear translucent.</p>
+make the ColorLayer appear translucent.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">int</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>opacity</strong> (<em>int</em>) &#8211; the opacity ranging from 0 (transparent) to 255 (opaque).</td>
 </tr>
 </tbody>
 </table>
@@ -164,9 +175,6 @@ make the sprite appear translucent.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -194,8 +202,8 @@ make the sprite appear translucent.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>cocos.actions.grid3d_actions module &mdash; cocos v0.6.3 documentation</title>
+    <title>cocos.actions.grid3d_actions module &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="up" title="cocos.actions package" href="cocos.actions.html" />
     <link rel="next" title="cocos.actions.instant_actions module" href="cocos.actions.instant_actions.html" />
     <link rel="prev" title="cocos.actions.camera_actions module" href="cocos.actions.camera_actions.html" /> 
@@ -65,7 +65,7 @@
 <p>Simulates waves using the math.sin() function in the z-axis
 The x and y coordinates remains unmodified.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Waves3D</span><span class="p">(</span><span class="n">waves</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Waves3D</span><span class="p">(</span><span class="n">waves</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -76,11 +76,11 @@ The x and y coordinates remains unmodified.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>waves</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of waves (2 * pi) that the action will perform. Default is 4</p>
+<dt><cite>waves</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Number of waves (2 * pi) that the action will perform. Default is 4</p>
 </dd>
-<dt><cite>amplitude</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Wave amplitude (height). Default is 20</p>
+<dt><cite>amplitude</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Wave amplitude (height). Default is 20</p>
 </dd>
 </dl>
 </td>
@@ -137,7 +137,7 @@ The x and y coordinates remains unmodified.</p>
 <p>Lens simulates a Lens / Magnifying glass effect.
 It modifies the z-coordinate while the x and y remains unmodified.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Lens3D</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span><span class="mi">240</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Lens3D</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span><span class="mi">240</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -148,14 +148,14 @@ It modifies the z-coordinate while the x and y remains unmodified.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>center</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(int,int)</span></dt>
-<dd><p class="first last">Center of the lens. Default: (win_size_width /2, win_size_height /2 )</p>
+<dt><cite>center</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">(int,int)</span><dd><p class="first last">Center of the lens. Default: (win_size_width /2, win_size_height /2 )</p>
 </dd>
-<dt><cite>radius</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Radius of the lens.</p>
+<dt><cite>radius</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Radius of the lens.</p>
 </dd>
-<dt><cite>lens_effect</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">How strong is the lens effect. Default: 0.7. 0 is no effect at all, 1 is a very strong lens effect.</p>
+<dt><cite>lens_effect</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">How strong is the lens effect. Default: 0.7. 0 is no effect at all, 1 is a very strong lens effect.</p>
 </dd>
 </dl>
 </td>
@@ -177,7 +177,7 @@ It modifies the z-coordinate while the x and y remains unmodified.</p>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.Grid3DAction" title="cocos.actions.basegrid_actions.Grid3DAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.basegrid_actions.Grid3DAction</span></code></a></p>
 <p>Shaky simulates an earthquake by modifying randomly the x, y and z coordinates of each vertex.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Shaky3D</span><span class="p">(</span><span class="n">randrange</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Shaky3D</span><span class="p">(</span><span class="n">randrange</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -188,8 +188,8 @@ It modifies the z-coordinate while the x and y remains unmodified.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>randrange</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number that will be used in random.randrange(-randrange, randrange) to do the effect</p>
+<dt><cite>randrange</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Number that will be used in random.randrange(-randrange, randrange) to do the effect</p>
 </dd>
 </dl>
 </td>
@@ -213,7 +213,7 @@ It modifies the z-coordinate while the x and y remains unmodified.</p>
 The amplitude of the wave will decrease when it goes away from the center of the ripple.
 It modifies the z-coordinate while the x and y remains unmodified.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Ripple3D</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span><span class="mi">240</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mi">240</span><span class="p">,</span> <span class="n">waves</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span><span class="mi">24</span><span class="p">)))</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Ripple3D</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span><span class="mi">240</span><span class="p">),</span> <span class="n">radius</span><span class="o">=</span><span class="mi">240</span><span class="p">,</span> <span class="n">waves</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span><span class="mi">24</span><span class="p">)))</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -224,17 +224,17 @@ It modifies the z-coordinate while the x and y remains unmodified.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>center</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(int,int)</span></dt>
-<dd><p class="first last">Center of the ripple. Default: (win_size_width /2, win_size_height /2)</p>
+<dt><cite>center</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">(int,int)</span><dd><p class="first last">Center of the ripple. Default: (win_size_width /2, win_size_height /2)</p>
 </dd>
-<dt><cite>radius</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Radius of the ripple. Default: 240</p>
+<dt><cite>radius</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Radius of the ripple. Default: 240</p>
 </dd>
-<dt><cite>waves</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of waves (2 * pi) that the action will perform. Default: 15</p>
+<dt><cite>waves</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Number of waves (2 * pi) that the action will perform. Default: 15</p>
 </dd>
-<dt><cite>amplitude</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Wave amplitude (height). Default is 60</p>
+<dt><cite>amplitude</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Wave amplitude (height). Default is 60</p>
 </dd>
 </dl>
 </td>
@@ -257,7 +257,7 @@ It modifies the z-coordinate while the x and y remains unmodified.</p>
 <p>Simulates a liquid effect using the math.sin() function modifying the x and y coordinates.
 The z coordinate remains unmodified.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Liquid</span><span class="p">(</span><span class="n">waves</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Liquid</span><span class="p">(</span><span class="n">waves</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -268,11 +268,11 @@ The z coordinate remains unmodified.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>waves</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of waves (2 * pi) that the action will perform. Default is 4</p>
+<dt><cite>waves</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Number of waves (2 * pi) that the action will perform. Default is 4</p>
 </dd>
-<dt><cite>amplitude</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Wave amplitude (height). Default is 20</p>
+<dt><cite>amplitude</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Wave amplitude (height). Default is 20</p>
 </dd>
 </dl>
 </td>
@@ -295,7 +295,7 @@ The z coordinate remains unmodified.</p>
 <p>Simulates waves using the math.sin() function both in the vertical and horizontal axis.
 The z coordinate is not modified.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Waves</span><span class="p">(</span><span class="n">waves</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">hsin</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">vsin</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Waves</span><span class="p">(</span><span class="n">waves</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">hsin</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">vsin</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -307,17 +307,17 @@ The z coordinate is not modified.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>waves</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of waves (2 * pi) that the action will perform. Default is 4</p>
+<dt><cite>waves</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Number of waves (2 * pi) that the action will perform. Default is 4</p>
 </dd>
-<dt><cite>amplitude</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Wave amplitude (height). Default is 20</p>
+<dt><cite>amplitude</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Wave amplitude (height). Default is 20</p>
 </dd>
-<dt><cite>hsin</cite> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">whether or not in will perform horizontal waves. Default is True</p>
+<dt><cite>hsin</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">whether or not in will perform horizontal waves. Default is True</p>
 </dd>
-<dt><cite>vsin</cite> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">whether or not in will perform vertical waves. Default is True</p>
+<dt><cite>vsin</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">whether or not in will perform vertical waves. Default is True</p>
 </dd>
 </dl>
 </td>
@@ -340,7 +340,7 @@ The z coordinate is not modified.</p>
 <p>Simulates a twirl effect modifying the x and y coordinates.
 The z coordinate is not modified.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Twirl</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span><span class="mi">240</span><span class="p">),</span> <span class="n">twirls</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">Twirl</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span><span class="mi">240</span><span class="p">),</span> <span class="n">twirls</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -351,14 +351,14 @@ The z coordinate is not modified.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>twirls</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of twirls (2 * pi) that the action will perform. Default is 4</p>
+<dt><cite>twirls</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Number of twirls (2 * pi) that the action will perform. Default is 4</p>
 </dd>
-<dt><cite>amplitude</cite> <span class="classifier-delimiter">:</span> <span class="classifier">flaot</span></dt>
-<dd><p class="first last">Twirl amplitude. Default is 1</p>
+<dt><cite>amplitude</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">flaot</span><dd><p class="first last">Twirl amplitude. Default is 1</p>
 </dd>
-<dt><cite>center</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(int,int)</span></dt>
-<dd><p class="first last">Center of the twirl in x,y coordinates. Default: center of the screen</p>
+<dt><cite>center</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">(int,int)</span><dd><p class="first last">Center of the twirl in x,y coordinates. Default: center of the screen</p>
 </dd>
 </dl>
 </td>
@@ -403,9 +403,6 @@ The z coordinate is not modified.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -433,8 +430,8 @@ The z coordinate is not modified.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

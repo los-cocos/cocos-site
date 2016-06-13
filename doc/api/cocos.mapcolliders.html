@@ -1,0 +1,455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cocos.mapcolliders module &mdash; cocos v0.6.4 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.6.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
+    <link rel="up" title="cocos package" href="cocos.html" />
+    <link rel="next" title="cocos.menu module" href="cocos.menu.html" />
+    <link rel="prev" title="cocos.grid module" href="cocos.grid.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.menu.html" title="cocos.menu module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="cocos.grid.html" title="cocos.grid module"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-cocos.mapcolliders">
+<span id="cocos-mapcolliders-module"></span><h1>cocos.mapcolliders module<a class="headerlink" href="#module-cocos.mapcolliders" title="Permalink to this headline">¶</a></h1>
+<p>Support for handling collisions between an actor and a container of objects</p>
+<dl class="class">
+<dt id="cocos.mapcolliders.RectMapCollider">
+<em class="property">class </em><code class="descname">RectMapCollider</code><span class="sig-paren">(</span><em>velocity_on_bump=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.mapcolliders.RectMapCollider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Helper to handle collisions between an actor and objects in a RectMapLayer</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>velocity_on_bump</strong> (<em>str</em>) &#8211; one of <code class="docutils literal"><span class="pre">&quot;bounce&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;stick&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;slide&quot;</span></code>.
+selects which of the predefined on_bump handlers will be used</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="cocos.mapcolliders.RectMapCollider.on_bump_handler">
+<code class="descname">on_bump_handler</code><a class="headerlink" href="#cocos.mapcolliders.RectMapCollider.on_bump_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>method to change velocity when a collision was detected</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.mapcolliders.RectMapCollider.bumped_x">
+<code class="descname">bumped_x</code><a class="headerlink" href="#cocos.mapcolliders.RectMapCollider.bumped_x" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>bool</em> &#8211; True if collide_map detected collision in the x-axis</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.mapcolliders.RectMapCollider.bumped_y">
+<code class="descname">bumped_y</code><a class="headerlink" href="#cocos.mapcolliders.RectMapCollider.bumped_y" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>bool</em> &#8211; True if collide_map detected collision in the y-axis</p>
+</dd></dl>
+
+<p>The code that updates actor position and velocity would call
+method <a class="reference internal" href="#cocos.mapcolliders.RectMapCollider.collide_map" title="cocos.mapcolliders.RectMapCollider.collide_map"><code class="xref py py-meth docutils literal"><span class="pre">collide_map()</span></code></a> to account for collisions</p>
+<p>There are basically two ways to include this functionality into an
+actor class</p>
+<blockquote>
+<div><ul class="simple">
+<li>as a component, essentially passing (mapcollider, maplayer) in
+the actor&#8217;s __init__</li>
+<li>mixin style, by using RectMapCollider or a subclass as a secondary
+base class for actor.</li>
+</ul>
+</div></blockquote>
+<p>Component way is more decoupled, Mixin style is more powerful because
+the collision code will have access to the entire actor trough his &#8216;self&#8217;.</p>
+<p>To have a working instance the behavior of velocity in a collision must be
+defined, and that&#8217;s the job of method <cite>on_bump_handler</cite></p>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>if one of the stock on_bump_&lt;variant&gt; suits the requirements, suffices</dt>
+<dd><p class="first last"><cite>mapcollider.on_bump_handler = mapcollider.on_bump_&lt;desired variant&gt;</cite></p>
+</dd>
+<dt>or passing a selector at instantiation time</dt>
+<dd><p class="first last"><cite>mapcollider = MapCollider(&lt;desired variant&gt;)</cite></p>
+</dd>
+</dl>
+</li>
+<li><p class="first">for custom behavior define on_bump_handler in a subclass and instantiate it.</p>
+</li>
+</ul>
+</div></blockquote>
+<dl class="method">
+<dt id="cocos.mapcolliders.RectMapCollider.collide_bottom">
+<code class="descname">collide_bottom</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.mapcolliders.RectMapCollider.collide_bottom" title="Permalink to this definition">¶</a></dt>
+<dd><p>placeholder, called when collision with obj&#8217;s bottom side detected</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.mapcolliders.RectMapCollider.collide_left">
+<code class="descname">collide_left</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.mapcolliders.RectMapCollider.collide_left" title="Permalink to this definition">¶</a></dt>
+<dd><p>placeholder, called when collision with obj&#8217;s left side detected</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.mapcolliders.RectMapCollider.collide_map">
+<code class="descname">collide_map</code><span class="sig-paren">(</span><em>maplayer</em>, <em>last</em>, <em>new</em>, <em>vx</em>, <em>vy</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.mapcolliders.RectMapCollider.collide_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constrains a movement <code class="docutils literal"><span class="pre">last</span></code> -&gt; <code class="docutils literal"><span class="pre">new</span></code> by considering collisions</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>maplayer</strong> (<a class="reference internal" href="cocos.tiles.html#cocos.tiles.RectMapLayer" title="cocos.tiles.RectMapLayer"><em>RectMapLayer</em></a>) &#8211; layer with solid objects to collide with.</li>
+<li><strong>last</strong> (<a class="reference internal" href="cocos.rect.html#cocos.rect.Rect" title="cocos.rect.Rect"><em>Rect</em></a>) &#8211; actor rect before step.</li>
+<li><strong>new</strong> (<a class="reference internal" href="cocos.rect.html#cocos.rect.Rect" title="cocos.rect.Rect"><em>Rect</em></a>) &#8211; tentative rect after the stepm will be adjusted.</li>
+<li><strong>vx</strong> (<em>float</em>) &#8211; velocity in x-axis used to calculate &#8216;last&#8217; -&gt; &#8216;new&#8217;</li>
+<li><strong>vy</strong> (<em>float</em>) &#8211; velocity in y-axis used to calculate &#8216;last&#8217; -&gt; &#8216;new&#8217;</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>(vx, vy)</strong> (<em>float, float</em>) &#8211; the possibly modified (vx, vy).</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>Assumes:</dt>
+<dd><p class="first">&#8216;last&#8217; does not collide with any object.</p>
+<p class="last">The dt involved in &#8216;last&#8217; -&gt; &#8216;new&#8217; is small enough that no object
+can entirely fit between &#8216;last&#8217; and &#8216;new&#8217;.</p>
+</dd>
+<dt>Side effects:</dt>
+<dd><code class="docutils literal"><span class="pre">new</span></code> eventually modified to not be into forbidden area.
+For each collision with one object&#8217;s side detected, the method
+<code class="docutils literal"><span class="pre">self.collide_&lt;side&gt;(obj)</span></code> is called.</dd>
+<dt>if rect <code class="docutils literal"><span class="pre">new</span></code> does not overlap any object in maplayer, the method</dt>
+<dd><ul class="first last simple">
+<li>does not modify <code class="docutils literal"><span class="pre">new</span></code>.</li>
+<li>returns unchanged (vx, vy).</li>
+<li>no method <code class="docutils literal"><span class="pre">self.collide_&lt;side&gt;</span></code> is called.</li>
+<li><code class="docutils literal"><span class="pre">self.bumped_x</span></code> and <code class="docutils literal"><span class="pre">self.bumped_y</span></code> both will be <code class="docutils literal"><span class="pre">False</span></code>.</li>
+</ul>
+</dd>
+<dt>if rect <code class="docutils literal"><span class="pre">new</span></code> does overlaps any object in maplayer, the method:</dt>
+<dd><ul class="first last simple">
+<li>modifies <code class="docutils literal"><span class="pre">new</span></code> to be the nearest rect to the original <code class="docutils literal"><span class="pre">new</span></code>
+rect that it is still outside any maplayer object.</li>
+<li>returns a modified (vx, vy) as specified by self.on_bump_handler.</li>
+<li>after return self.bumped_x  (resp self.bumped_y) will be True if
+an horizontal (resp vertical) collision happened.</li>
+<li>if the movement from <code class="docutils literal"><span class="pre">last</span></code> to the original <code class="docutils literal"><span class="pre">new</span></code> was stopped
+by side &lt;side&gt; of object &lt;obj&gt;, then self.collide_&lt;side&gt;(obj) will be called.</li>
+</ul>
+</dd>
+</dl>
+<p>Implementation details</p>
+<p>Adjusts <code class="docutils literal"><span class="pre">new</span></code> in two passes against each object in maplayer.</p>
+<dl class="docutils">
+<dt>In pass one, <code class="docutils literal"><span class="pre">new</span></code> is collision tested against each object in maplayer:</dt>
+<dd><ul class="first last simple">
+<li>if collides only in one axis, <code class="docutils literal"><span class="pre">new</span></code> is adjusted as close as possible but not overlapping object</li>
+<li>if not overlapping, nothing is done</li>
+<li>if collision detected on both axis, let second pass handle it</li>
+</ul>
+</dd>
+<dt>In pass two, <code class="docutils literal"><span class="pre">new</span></code> is collision tested against the objects with double collisions in pass one:</dt>
+<dd><ul class="first last simple">
+<li>if a collision is detected, adjust <code class="docutils literal"><span class="pre">new</span></code> as close as possible but not overlapping object,
+ie. use the smallest displacement on either X or Y axis. If they are both equal, move on
+both axis.</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.mapcolliders.RectMapCollider.collide_right">
+<code class="descname">collide_right</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.mapcolliders.RectMapCollider.collide_right" title="Permalink to this definition">¶</a></dt>
+<dd><p>placeholder, called when collision with obj&#8217;s right side detected</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.mapcolliders.RectMapCollider.collide_top">
+<code class="descname">collide_top</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.mapcolliders.RectMapCollider.collide_top" title="Permalink to this definition">¶</a></dt>
+<dd><p>placeholder, called when collision with obj&#8217;s top side detected</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.mapcolliders.RectMapCollider.detect_collision">
+<code class="descname">detect_collision</code><span class="sig-paren">(</span><em>obj</em>, <em>last</em>, <em>new</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.mapcolliders.RectMapCollider.detect_collision" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns minimal correction in each axis to not collide with obj</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>obj</strong> &#8211; object in a MapLayer</li>
+<li><strong>last</strong> (<a class="reference internal" href="cocos.rect.html#cocos.rect.Rect" title="cocos.rect.Rect"><em>Rect</em></a>) &#8211; starting rect for the actor step</li>
+<li><strong>new</strong> (<a class="reference internal" href="cocos.rect.html#cocos.rect.Rect" title="cocos.rect.Rect"><em>Rect</em></a>) &#8211; tentative actor&#8217;s rect after step</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Decides if there is a collision with obj when moving <code class="docutils literal"><span class="pre">last</span></code> -&gt; <code class="docutils literal"><span class="pre">new</span></code>
+and then returns the minimal correctioin in each axis as to not collide.</p>
+<p>It can be overridden to be more selective about when a collision exists
+(see the matching method in <a class="reference internal" href="#cocos.mapcolliders.RectMapWithPropsCollider" title="cocos.mapcolliders.RectMapWithPropsCollider"><code class="xref py py-class docutils literal"><span class="pre">RectMapWithPropsCollider</span></code></a> for example).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.mapcolliders.RectMapCollider.on_bump_bounce">
+<code class="descname">on_bump_bounce</code><span class="sig-paren">(</span><em>vx</em>, <em>vy</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.mapcolliders.RectMapCollider.on_bump_bounce" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bounces when a wall is touched.</p>
+<p>Example use case: bouncing projectiles.</p>
+</dd></dl>
+
+<dl class="method">
+<dt>
+<code class="descname">on_bump_handler</code><span class="sig-paren">(</span><em>vx</em>, <em>vy</em><span class="sig-paren">)</span></dt>
+<dd><p>Returns velocity after all collisions considered by collide_map</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>vx</strong> (<em>float</em>) &#8211; velocity in x-axis before collision</li>
+<li><strong>vy</strong> (<em>float</em>) &#8211; velocity in y-axis before collision</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>(vx, vx)</em> &#8211; velocity after all collisions considered in collide_map</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>This is a placeholder, either define a custom one or replace with one
+of the stock on_bump_&lt;bump_style&gt; methods</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.mapcolliders.RectMapCollider.on_bump_slide">
+<code class="descname">on_bump_slide</code><span class="sig-paren">(</span><em>vx</em>, <em>vy</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.mapcolliders.RectMapCollider.on_bump_slide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Blocks movement only in the axis that touched a wall.</p>
+<p>Example use case: player in a platformer game.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.mapcolliders.RectMapCollider.on_bump_stick">
+<code class="descname">on_bump_stick</code><span class="sig-paren">(</span><em>vx</em>, <em>vy</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.mapcolliders.RectMapCollider.on_bump_stick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops all movement when any wall is touched.</p>
+<p>Example use case: sticky bomb, hook weapon projectile.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.mapcolliders.RectMapCollider.resolve_collision">
+<code class="descname">resolve_collision</code><span class="sig-paren">(</span><em>obj</em>, <em>new</em>, <em>dx_correction</em>, <em>dy_correction</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.mapcolliders.RectMapCollider.resolve_collision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Corrects <code class="docutils literal"><span class="pre">new</span></code> to just avoid collision with obj, does side effects.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>obj</strong> (<em>obj</em>) &#8211; the object colliding with <code class="docutils literal"><span class="pre">new</span></code>.</li>
+<li><strong>new</strong> (<a class="reference internal" href="cocos.rect.html#cocos.rect.Rect" title="cocos.rect.Rect"><em>Rect</em></a>) &#8211; tentative actor position before considering
+collision with <code class="docutils literal"><span class="pre">obj</span></code>.</li>
+<li><strong>dx_correction</strong> (<em>float</em>) &#8211; smallest correction needed on
+<code class="docutils literal"><span class="pre">new</span></code> x position not to collide <code class="docutils literal"><span class="pre">obj</span></code>.</li>
+<li><strong>dy_correction</strong> (<em>float</em>) &#8211; smallest correction needed on</li>
+<li><strong>y position not to collide obj.</strong> (<a class="reference internal" href="cocos.euclid.html#cocos.euclid.Matrix4.new" title="cocos.euclid.Matrix4.new"><em>new</em></a>) &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The correction is applied to <code class="docutils literal"><span class="pre">new</span></code> position.</p>
+<p>If a collision along the x-axis (respectively y-axis) was detected,
+the flag <code class="docutils literal"><span class="pre">self.bumped_x</span></code> (resp y) is set.</p>
+<p>If the movement towards the original <code class="docutils literal"><span class="pre">new</span></code> was stopped by side &lt;side&gt;
+of object &lt;obj&gt;, then <code class="docutils literal"><span class="pre">self.collide_&lt;side&gt;(obj)</span></code> will be called.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.mapcolliders.RectMapWithPropsCollider">
+<em class="property">class </em><code class="descname">RectMapWithPropsCollider</code><span class="sig-paren">(</span><em>velocity_on_bump=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.mapcolliders.RectMapWithPropsCollider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.mapcolliders.RectMapCollider" title="cocos.mapcolliders.RectMapCollider"><code class="xref py py-class docutils literal"><span class="pre">cocos.mapcolliders.RectMapCollider</span></code></a></p>
+<p>Helper to handle collisions between an actor and objects in a RectMapLayer</p>
+<p>Same as RectMapCollider except that collision detection is more fine grained.
+Collision happens only on objects sides with prop(&lt;side&gt;) set.</p>
+<p>Look at <a class="reference internal" href="#cocos.mapcolliders.RectMapCollider" title="cocos.mapcolliders.RectMapCollider"><code class="xref py py-class docutils literal"><span class="pre">RectMapCollider</span></code></a> for details</p>
+<dl class="method">
+<dt id="cocos.mapcolliders.RectMapWithPropsCollider.detect_collision">
+<code class="descname">detect_collision</code><span class="sig-paren">(</span><em>obj</em>, <em>last</em>, <em>new</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.mapcolliders.RectMapWithPropsCollider.detect_collision" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns minimal correction in each axis to not collide with obj</p>
+<p>Collision happens only on objects sides with prop &lt;side&gt; set.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cocos.mapcolliders.TmxObjectMapCollider">
+<em class="property">class </em><code class="descname">TmxObjectMapCollider</code><span class="sig-paren">(</span><em>velocity_on_bump=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.mapcolliders.TmxObjectMapCollider" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.mapcolliders.RectMapCollider" title="cocos.mapcolliders.RectMapCollider"><code class="xref py py-class docutils literal"><span class="pre">cocos.mapcolliders.RectMapCollider</span></code></a></p>
+<p>Helper to handle collisions between an actor and objects in a TmxObjectLayer</p>
+<p>Same as RectMapCollider except maplayer is expected to be a <code class="xref py py-class docutils literal"><span class="pre">TmxObjectLayer</span></code>, so
+the objects to collide are TmxObject instances.</p>
+<p>Look at <a class="reference internal" href="#cocos.mapcolliders.RectMapCollider" title="cocos.mapcolliders.RectMapCollider"><code class="xref py py-class docutils literal"><span class="pre">RectMapCollider</span></code></a> for details</p>
+<dl class="method">
+<dt id="cocos.mapcolliders.TmxObjectMapCollider.collide_map">
+<code class="descname">collide_map</code><span class="sig-paren">(</span><em>maplayer</em>, <em>last</em>, <em>new</em>, <em>vx</em>, <em>vy</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.mapcolliders.TmxObjectMapCollider.collide_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constrains a movement <code class="docutils literal"><span class="pre">last</span></code> -&gt; <code class="docutils literal"><span class="pre">new</span></code> by considering collisions</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>maplayer</strong> (<a class="reference internal" href="cocos.tiles.html#cocos.tiles.RectMapLayer" title="cocos.tiles.RectMapLayer"><em>RectMapLayer</em></a>) &#8211; layer with solid objects to collide with.</li>
+<li><strong>last</strong> (<a class="reference internal" href="cocos.rect.html#cocos.rect.Rect" title="cocos.rect.Rect"><em>Rect</em></a>) &#8211; actor rect before step.</li>
+<li><strong>new</strong> (<a class="reference internal" href="cocos.rect.html#cocos.rect.Rect" title="cocos.rect.Rect"><em>Rect</em></a>) &#8211; tentative rect after the stepm will be adjusted.</li>
+<li><strong>vx</strong> (<em>float</em>) &#8211; velocity in x-axis used to calculate &#8216;last&#8217; -&gt; &#8216;new&#8217;</li>
+<li><strong>vy</strong> (<em>float</em>) &#8211; velocity in y-axis used to calculate &#8216;last&#8217; -&gt; &#8216;new&#8217;</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>vx, vy</strong> (<em>float, float</em>) &#8211; the possibly modified (vx, vy).</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See <a class="reference internal" href="#cocos.mapcolliders.RectMapCollider.collide_map" title="cocos.mapcolliders.RectMapCollider.collide_map"><code class="xref py py-meth docutils literal"><span class="pre">RectMapCollider.collide_map()</span></code></a> for side effects and details</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.mapcolliders.make_collision_handler">
+<code class="descname">make_collision_handler</code><span class="sig-paren">(</span><em>collider</em>, <em>maplayer</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.mapcolliders.make_collision_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <code class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">collider.collide_map(maplayer,</span> <span class="pre">...)</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>f</em> &#8211; <code class="docutils literal"><span class="pre">(last,</span> <span class="pre">new,</span> <span class="pre">vx,</span> <span class="pre">vy)</span></code> -&gt; <code class="docutils literal"><span class="pre">(vx,</span> <span class="pre">vy)</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Utility function to create a collision handler by combining</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>maplayer</strong> &#8211; tells the objects to collide with.</li>
+<li><strong>collider</strong> &#8211; tells how velocity changes on collision and resolves
+actual collisions.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cocos.grid.html"
+                        title="previous chapter">cocos.grid module</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cocos.menu.html"
+                        title="next chapter">cocos.menu module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/cocos.mapcolliders.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cocos.menu.html" title="cocos.menu module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="cocos.grid.html" title="cocos.grid module"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+    </div>
+  </body>
+</html>

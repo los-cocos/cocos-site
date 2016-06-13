@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>cocos.audio.SDL.mixer module &mdash; cocos v0.6.3 documentation</title>
+    <title>cocos.audio.SDL.mixer module &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="up" title="cocos.audio.SDL package" href="cocos.audio.SDL.html" />
     <link rel="next" title="cocos.audio.SDL.rwops module" href="cocos.audio.SDL.rwops.html" />
     <link rel="prev" title="cocos.audio.SDL.error module" href="cocos.audio.SDL.error.html" /> 
@@ -88,17 +88,17 @@ must call <cite>Mix_OpenAudio</cite> with the sampling rate of your music track.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Ivariables:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>allocated</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Undocumented.</p>
+<dt><cite>allocated</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Undocumented.</p>
 </dd>
-<dt><cite>abuf</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>SDL_array</cite></span></dt>
-<dd><p class="first last">Buffer of audio data</p>
+<dt><cite>abuf</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier"><cite>SDL_array</cite></span><dd><p class="first last">Buffer of audio data</p>
 </dd>
-<dt><cite>alen</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Length of audio buffer</p>
+<dt><cite>alen</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Length of audio buffer</p>
 </dd>
-<dt><cite>volume</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Per-sample volume, in range [0, 128]</p>
+<dt><cite>volume</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Per-sample volume, in range [0, 128]</p>
 </dd>
 </dl>
 </td>
@@ -139,8 +139,8 @@ audio before calling your callback.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>channel_finished</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
-<dd><p class="first last">The function takes the channel number as its only argument,
+<dt><cite>channel_finished</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">function</span><dd><p class="first last">The function takes the channel number as its only argument,
 and returns None.  Pass None here to disable the callback.</p>
 </dd>
 </dl>
@@ -159,18 +159,18 @@ and returns None.  Pass None here to disable the callback.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>channel</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">If -1, play on the first free channel.</p>
+<dt><cite>channel</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">If -1, play on the first free channel.</p>
 </dd>
-<dt><cite>chunk</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Mix_Chunk</cite></span></dt>
-<dd><p class="first last">Chunk to play</p>
+<dt><cite>chunk</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Mix_Chunk</cite></span><dd><p class="first last">Chunk to play</p>
 </dd>
-<dt><cite>loops</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">If greater than zero, the number of times to play the sound;
+<dt><cite>loops</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">If greater than zero, the number of times to play the sound;
 if -1, loop infinitely.</p>
 </dd>
-<dt><cite>ms</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of milliseconds to fade up over.</p>
+<dt><cite>ms</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Number of milliseconds to fade up over.</p>
 </dd>
 </dl>
 </td>
@@ -187,13 +187,13 @@ if -1, loop infinitely.</p>
 <dl class="docutils">
 <dt>:Parameters</dt>
 <dd><dl class="first last docutils">
-<dt><cite>mix_func</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
-<dd>The function must have the signature
+<dt><cite>mix_func</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">function</span><dd>The function must have the signature
 (stream: <cite>SDL_array</cite>, udata: any) -&gt; None.  The first argument
 is the array of audio data that may be modified in place.
 <cite>udata</cite> is the value passed in this function.</dd>
-<dt><cite>udata</cite> <span class="classifier-delimiter">:</span> <span class="classifier">any</span></dt>
-<dd>A variable that is passed to the <cite>mix_func</cite> function each
+<dt><cite>udata</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">any</span><dd>A variable that is passed to the <cite>mix_func</cite> function each
 call.</dd>
 </dl>
 </dd>
@@ -210,8 +210,8 @@ call.</dd>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>music_finished</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
-<dd><p class="first last">The callback takes no arguments and returns no value.</p>
+<dt><cite>music_finished</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">function</span><dd><p class="first last">The callback takes no arguments and returns no value.</p>
 </dd>
 </dl>
 </td>
@@ -229,8 +229,8 @@ call.</dd>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>file</cite> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
-<dd><p class="first last">Filename to load.</p>
+<dt><cite>file</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">string</span><dd><p class="first last">Filename to load.</p>
 </dd>
 </dl>
 </td>
@@ -251,14 +251,14 @@ call.</dd>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>channel</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">If -1, play on the first free channel.</p>
+<dt><cite>channel</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">If -1, play on the first free channel.</p>
 </dd>
-<dt><cite>chunk</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Mix_Chunk</cite></span></dt>
-<dd><p class="first last">Chunk to play</p>
+<dt><cite>chunk</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Mix_Chunk</cite></span><dd><p class="first last">Chunk to play</p>
 </dd>
-<dt><cite>loops</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">If greater than zero, the number of times to play the sound;
+<dt><cite>loops</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">If greater than zero, the number of times to play the sound;
 if -1, loop infinitely.</p>
 </dd>
 </dl>
@@ -381,22 +381,22 @@ the audio device.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>chan</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Channel to set effect on, or <cite>MIX_CHANNEL_POST</cite> for postmix.</p>
+<dt><cite>chan</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Channel to set effect on, or <cite>MIX_CHANNEL_POST</cite> for postmix.</p>
 </dd>
-<dt><cite>f</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
-<dd><p class="first last">Callback function for effect.  Must have the signature
+<dt><cite>f</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">function</span><dd><p class="first last">Callback function for effect.  Must have the signature
 (channel: int, stream: <cite>SDL_array</cite>, udata: any) -&gt; None;
 where channel is the channel being affected, stream contains
 the audio data and udata is the user variable passed in to
 this function.</p>
 </dd>
-<dt><cite>d</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
-<dd><p class="first last">Callback function for when the effect is done.  The function
+<dt><cite>d</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">function</span><dd><p class="first last">Callback function for when the effect is done.  The function
 must have the signature (channel: int, udata: any) -&gt; None.</p>
 </dd>
-<dt><cite>arg</cite> <span class="classifier-delimiter">:</span> <span class="classifier">any</span></dt>
-<dd><p class="first last">User data passed to both callbacks.</p>
+<dt><cite>arg</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">any</span><dd><p class="first last">User data passed to both callbacks.</p>
 </dd>
 </dl>
 </td>
@@ -414,13 +414,13 @@ stream or add a custom mixer filter for the stream data.</p>
 <dl class="docutils">
 <dt>:Parameters</dt>
 <dd><dl class="first last docutils">
-<dt><cite>mix_func</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
-<dd>The function must have the signature
+<dt><cite>mix_func</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">function</span><dd>The function must have the signature
 (stream: <cite>SDL_array</cite>, udata: any) -&gt; None.  The first argument
 is the array of audio data that may be modified in place.
 <cite>udata</cite> is the value passed in this function.</dd>
-<dt><cite>udata</cite> <span class="classifier-delimiter">:</span> <span class="classifier">any</span></dt>
-<dd>A variable that is passed to the <cite>mix_func</cite> function each
+<dt><cite>udata</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">any</span><dd>A variable that is passed to the <cite>mix_func</cite> function each
 call.</dd>
 </dl>
 </dd>
@@ -456,9 +456,6 @@ call.</dd>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -487,8 +484,8 @@ call.</dd>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

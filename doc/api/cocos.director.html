@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>cocos.director module &mdash; cocos v0.6.3 documentation</title>
+    <title>cocos.director module &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="up" title="cocos package" href="cocos.html" />
     <link rel="next" title="cocos.draw module" href="cocos.draw.html" />
     <link rel="prev" title="cocos.custom_clocks module" href="cocos.custom_clocks.html" /> 
@@ -61,7 +61,7 @@ and manages the logic behind the <code class="docutils literal"><span class="pre
 <div class="section" id="initializing">
 <h2>Initializing<a class="headerlink" href="#initializing" title="Permalink to this headline">¶</a></h2>
 <p>The first thing to do, is to initialize the <code class="docutils literal"><span class="pre">director</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">cocos.director</span> <span class="kn">import</span> <span class="n">director</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cocos.director</span> <span class="k">import</span> <span class="n">director</span>
 <span class="n">director</span><span class="o">.</span><span class="n">init</span><span class="p">(</span> <span class="n">parameters</span> <span class="p">)</span>
 </pre></div>
 </div>
@@ -72,14 +72,14 @@ parameters that are supported by pyglet.window.Window(), plus a few
 cocos exclusive ones. They are all named parameters (kwargs).
 See <code class="docutils literal"><span class="pre">Director.init()</span></code> for details.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">director</span><span class="o">.</span><span class="n">init</span><span class="p">(</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">caption</span><span class="o">=</span><span class="s">&quot;Hello World&quot;</span><span class="p">,</span> <span class="n">fullscreen</span><span class="o">=</span><span class="bp">True</span> <span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">director</span><span class="o">.</span><span class="n">init</span><span class="p">(</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">caption</span><span class="o">=</span><span class="s2">&quot;Hello World&quot;</span><span class="p">,</span> <span class="n">fullscreen</span><span class="o">=</span><span class="kc">True</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="running-a-scene">
 <h2>Running a Scene<a class="headerlink" href="#running-a-scene" title="Permalink to this headline">¶</a></h2>
 <p>Once you have initialized the director, you can run your first <code class="docutils literal"><span class="pre">Scene</span></code>:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">director</span><span class="o">.</span><span class="n">run</span><span class="p">(</span> <span class="n">Scene</span><span class="p">(</span> <span class="n">MyLayer</span><span class="p">()</span> <span class="p">)</span> <span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">director</span><span class="o">.</span><span class="n">run</span><span class="p">(</span> <span class="n">Scene</span><span class="p">(</span> <span class="n">MyLayer</span><span class="p">()</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p>This will run a scene that has only 1 layer: <code class="docutils literal"><span class="pre">MyLayer()</span></code>. You can run a scene
@@ -153,7 +153,7 @@ the framerate indicator.</li>
 <p>Class that creates and handle the main Window and manages how
 and when to execute the Scenes</p>
 <p>You should not directly instantiate the class, instead you do:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">cocos.director</span> <span class="kn">import</span> <span class="n">director</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cocos.director</span> <span class="k">import</span> <span class="n">director</span>
 </pre></div>
 </div>
 <p>to access the only one Director instance.</p>
@@ -216,21 +216,21 @@ list is available at pyglet Window API Reference at
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>autoscale</cite> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">True: on window resizes, cocos will scale the view so that your
+<dt><cite>autoscale</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">True: on window resizes, cocos will scale the view so that your
 app don&#8217;t need to handle resizes.
 False: your app must include logic to deal with different window
 sizes along the session.
 Defaults to False</p>
 </dd>
-<dt><cite>do_not_scale</cite> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Deprecated. The logical negation of autoscale</p>
+<dt><cite>do_not_scale</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Deprecated. The logical negation of autoscale</p>
 </dd>
-<dt><cite>audio_backend</cite> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
-<dd><p class="first last">one in [&#8216;pyglet&#8217;,&#8217;sdl&#8217;]. Defaults to &#8216;pyglet&#8217; for legacy support.</p>
+<dt><cite>audio_backend</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">string</span><dd><p class="first last">one in [&#8216;pyglet&#8217;,&#8217;sdl&#8217;]. Defaults to &#8216;pyglet&#8217; for legacy support.</p>
 </dd>
-<dt><cite>audio</cite> <span class="classifier-delimiter">:</span> <span class="classifier">dict or None</span></dt>
-<dd><p class="first last">None or a dict providing parameters for the sdl audio backend.
+<dt><cite>audio</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">dict or None</span><dd><p class="first last">None or a dict providing parameters for the sdl audio backend.
 None: in this case a &#8220;null&#8221; audio system will be used, where all the
 sdl sound operations will be no-ops. This may be useful if you do not
 want to depend on SDL_mixer
@@ -241,26 +241,26 @@ The key names/values should match the positional arguments of
 The default value is {}, which means sound enabled with default
 settings</p>
 </dd>
-<dt><cite>fullscreen</cite> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Window is created in fullscreen. Default is False</p>
+<dt><cite>fullscreen</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Window is created in fullscreen. Default is False</p>
 </dd>
-<dt><cite>resizable</cite> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Window is resizable. Default is False</p>
+<dt><cite>resizable</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Window is resizable. Default is False</p>
 </dd>
-<dt><cite>vsync</cite> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Sync with the vertical retrace. Default is True</p>
+<dt><cite>vsync</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Sync with the vertical retrace. Default is True</p>
 </dd>
-<dt><cite>width</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Window width size. Default is 640</p>
+<dt><cite>width</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Window width size. Default is 640</p>
 </dd>
-<dt><cite>height</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Window height size. Default is 480</p>
+<dt><cite>height</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Window height size. Default is 480</p>
 </dd>
-<dt><cite>caption</cite> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
-<dd><p class="first last">Window title.</p>
+<dt><cite>caption</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">string</span><dd><p class="first last">Window title.</p>
 </dd>
-<dt><cite>visible</cite> <span class="classifier-delimiter">:</span> <span class="classifier">bool</span></dt>
-<dd><p class="first last">Window is visible or not. Default is True.</p>
+<dt><cite>visible</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bool</span><dd><p class="first last">Window is visible or not. Default is True.</p>
 </dd>
 </dl>
 </td>
@@ -320,8 +320,8 @@ on the stack of suspended scenes. The new scene will be executed.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>scene</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Scene</cite></span></dt>
-<dd><p class="first last">It is the scene that will be run.</p>
+<dt><cite>scene</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Scene</cite></span><dd><p class="first last">It is the scene that will be run.</p>
 </dd>
 </dl>
 </td>
@@ -339,8 +339,8 @@ on the stack of suspended scenes. The new scene will be executed.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>scene</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Scene</cite></span></dt>
-<dd><p class="first last">It is the scene that will be run.</p>
+<dt><cite>scene</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Scene</cite></span><dd><p class="first last">It is the scene that will be run.</p>
 </dd>
 </dl>
 </td>
@@ -358,8 +358,8 @@ on the stack of suspended scenes. The new scene will be executed.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>scene</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Scene</cite></span></dt>
-<dd><p class="first last">The scene that will be run.</p>
+<dt><cite>scene</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Scene</cite></span><dd><p class="first last">The scene that will be run.</p>
 </dd>
 </dl>
 </td>
@@ -383,11 +383,11 @@ largest set of Cocos transforms.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>width</cite> <span class="classifier-delimiter">:</span> <span class="classifier">Integer</span></dt>
-<dd><p class="first last">New width</p>
+<dt><cite>width</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Integer</span><dd><p class="first last">New width</p>
 </dd>
-<dt><cite>height</cite> <span class="classifier-delimiter">:</span> <span class="classifier">Integer</span></dt>
-<dd><p class="first last">New height</p>
+<dt><cite>height</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Integer</span><dd><p class="first last">New height</p>
 </dd>
 </dl>
 </td>
@@ -431,7 +431,7 @@ when director.init is called</p>
 
 <dl class="method">
 <dt id="cocos.director.Director.set_recorder">
-<code class="descname">set_recorder</code><span class="sig-paren">(</span><em>framerate</em>, <em>template=u'frame-%d.png'</em>, <em>duration=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.set_recorder" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_recorder</code><span class="sig-paren">(</span><em>framerate</em>, <em>template='frame-%d.png'</em>, <em>duration=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.set_recorder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Will replace the app clock so that now we can ensure a steady
 frame rate and save one image per frame</p>
 <dl class="docutils">
@@ -468,11 +468,11 @@ rendering.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>width</cite> <span class="classifier-delimiter">:</span> <span class="classifier">Integer</span></dt>
-<dd><p class="first last">New width</p>
+<dt><cite>width</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Integer</span><dd><p class="first last">New width</p>
 </dd>
-<dt><cite>height</cite> <span class="classifier-delimiter">:</span> <span class="classifier">Integer</span></dt>
-<dd><p class="first last">New height</p>
+<dt><cite>height</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Integer</span><dd><p class="first last">New height</p>
 </dd>
 </dl>
 </td>
@@ -483,7 +483,7 @@ rendering.</p>
 
 <dl class="attribute">
 <dt id="cocos.director.Director.event_types">
-<code class="descname">event_types</code><em class="property"> = [u'on_push', u'on_pop', u'on_resize', u'on_cocos_resize']</em><a class="headerlink" href="#cocos.director.Director.event_types" title="Permalink to this definition">¶</a></dt>
+<code class="descname">event_types</code><em class="property"> = ['on_push', 'on_pop', 'on_resize', 'on_cocos_resize']</em><a class="headerlink" href="#cocos.director.Director.event_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -493,7 +493,7 @@ rendering.</p>
 
 <dl class="attribute">
 <dt id="cocos.director.Director.interpreter_locals">
-<code class="descname">interpreter_locals</code><em class="property"> = {u'director': &lt;cocos.director.Director object at 0x02A3FAD0&gt;, u'cocos': &lt;module 'cocos' from 'C:\cocos_pristine\cocos2d-python\cocos\__init__.pyc'&gt;}</em><a class="headerlink" href="#cocos.director.Director.interpreter_locals" title="Permalink to this definition">¶</a></dt>
+<code class="descname">interpreter_locals</code><em class="property"> = {'director': &lt;cocos.director.Director object at 0x00000000043A5940&gt;, 'cocos': &lt;module 'cocos' from 'K:\\cocos_pristine\\cocos_2d_new\\cocos\\__init__.py'&gt;}</em><a class="headerlink" href="#cocos.director.Director.interpreter_locals" title="Permalink to this definition">¶</a></dt>
 <dd><p>a dict with locals for the interactive python interpreter (fill with what you need)</p>
 </dd></dl>
 
@@ -554,9 +554,6 @@ rendering.</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -583,8 +580,8 @@ rendering.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

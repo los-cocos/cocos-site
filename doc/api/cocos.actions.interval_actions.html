@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>cocos.actions.interval_actions module &mdash; cocos v0.6.3 documentation</title>
+    <title>cocos.actions.interval_actions module &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="up" title="cocos.actions package" href="cocos.actions.html" />
     <link rel="next" title="cocos.actions.move_actions module" href="cocos.actions.move_actions.html" />
     <link rel="prev" title="cocos.actions.instant_actions module" href="cocos.actions.instant_actions.html" /> 
@@ -75,7 +75,7 @@ It has an start time, and a finish time. The finish time is the parameter
 <p>For example, you can simulate a Ping Pong effect running the action normally and
 then running it again in Reverse mode.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">ping_pong_action</span> <span class="o">=</span> <span class="n">action</span> <span class="o">+</span> <span class="n">Reverse</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ping_pong_action</span> <span class="o">=</span> <span class="n">action</span> <span class="o">+</span> <span class="n">Reverse</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -111,15 +111,15 @@ then running it again in Reverse mode.</p>
 </ul>
 </div></blockquote>
 <p>Examples:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">move</span> <span class="o">=</span> <span class="n">MoveBy</span><span class="p">((</span><span class="mi">200</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>  <span class="c"># Moves 200 pixels to the right in 5 seconds.</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">move</span> <span class="o">=</span> <span class="n">MoveBy</span><span class="p">((</span><span class="mi">200</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># Moves 200 pixels to the right in 5 seconds.</span>
 
-<span class="n">move</span> <span class="o">=</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">320</span><span class="p">,</span><span class="mi">240</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="c"># Moves to the pixel (320,240) in 5 seconds</span>
+<span class="n">move</span> <span class="o">=</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">320</span><span class="p">,</span><span class="mi">240</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># Moves to the pixel (320,240) in 5 seconds</span>
 
-<span class="n">jump</span> <span class="o">=</span> <span class="n">JumpBy</span><span class="p">((</span><span class="mi">320</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="c"># Jumps to the right 320 pixels</span>
-                                            <span class="c"># doing 5 jumps of 100 pixels</span>
-                                            <span class="c"># of height in 5 seconds</span>
+<span class="n">jump</span> <span class="o">=</span> <span class="n">JumpBy</span><span class="p">((</span><span class="mi">320</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># Jumps to the right 320 pixels</span>
+                                            <span class="c1"># doing 5 jumps of 100 pixels</span>
+                                            <span class="c1"># of height in 5 seconds</span>
 
-<span class="n">accel_move</span> <span class="o">=</span> <span class="n">Accelerate</span><span class="p">(</span><span class="n">move</span><span class="p">)</span>               <span class="c"># accelerates action move</span>
+<span class="n">accel_move</span> <span class="o">=</span> <span class="n">Accelerate</span><span class="p">(</span><span class="n">move</span><span class="p">)</span>               <span class="c1"># accelerates action move</span>
 </pre></div>
 </div>
 <dl class="class">
@@ -136,17 +136,17 @@ then running it again in Reverse mode.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>attrib</cite> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
-<dd><p class="first last">The name of the attrbiute where the value is stored</p>
+<dt><cite>attrib</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">string</span><dd><p class="first last">The name of the attrbiute where the value is stored</p>
 </dd>
-<dt><cite>start</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The start value</p>
+<dt><cite>start</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">The start value</p>
 </dd>
-<dt><cite>end</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The end value</p>
+<dt><cite>end</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">The end value</p>
 </dd>
-<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -169,7 +169,7 @@ then running it again in Reverse mode.</p>
 <p>Moves a <cite>CocosNode</cite> object to the position x,y. x and y are absolute coordinates
 by modifying it&#8217;s position attribute.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># Move the sprite to coords x=50, y=10 in 8 seconds</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Move the sprite to coords x=50, y=10 in 8 seconds</span>
 
 <span class="n">action</span> <span class="o">=</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">50</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="mi">8</span><span class="p">)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
@@ -184,11 +184,11 @@ by modifying it&#8217;s position attribute.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>dst_coords</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(x,y)</span></dt>
-<dd><p class="first last">Coordinates where the sprite will be placed at the end of the action</p>
+<dt><cite>dst_coords</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">(x,y)</span><dd><p class="first last">Coordinates where the sprite will be placed at the end of the action</p>
 </dd>
-<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -218,7 +218,7 @@ position attribute.
 x and y are relative to the position of the object.
 Duration is is seconds.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># Move the sprite 50 pixels to the left in 8 seconds</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Move the sprite 50 pixels to the left in 8 seconds</span>
 <span class="n">action</span> <span class="o">=</span> <span class="n">MoveBy</span><span class="p">((</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">8</span><span class="p">)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 </pre></div>
@@ -232,11 +232,11 @@ Duration is is seconds.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>delta</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(x,y)</span></dt>
-<dd><p class="first last">Delta coordinates</p>
+<dt><cite>delta</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">(x,y)</span><dd><p class="first last">Delta coordinates</p>
 </dd>
-<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -258,9 +258,9 @@ Duration is is seconds.</p>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
 <p>Moves a <cite>CocosNode</cite> object simulating a jump movement by modifying it&#8217;s position attribute.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">action</span> <span class="o">=</span> <span class="n">Jump</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>    <span class="c"># Move the sprite 200 pixels to the right</span>
-<span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>            <span class="c"># in 6 seconds, doing 5 jumps</span>
-                               <span class="c"># of 50 pixels of height</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">Jump</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>    <span class="c1"># Move the sprite 200 pixels to the right</span>
+<span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>            <span class="c1"># in 6 seconds, doing 5 jumps</span>
+                               <span class="c1"># of 50 pixels of height</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -272,17 +272,17 @@ Duration is is seconds.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">Height of jumps</p>
+<dt><cite>y</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">integer</span><dd><p class="first last">Height of jumps</p>
 </dd>
-<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">horizontal movement relative to the startin position</p>
+<dt><cite>x</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">integer</span><dd><p class="first last">horizontal movement relative to the startin position</p>
 </dd>
-<dt><cite>jumps</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">quantity of jumps</p>
+<dt><cite>jumps</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">integer</span><dd><p class="first last">quantity of jumps</p>
 </dd>
-<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -310,9 +310,9 @@ Duration is is seconds.</p>
 <p>Moves a <cite>CocosNode</cite> object to a position simulating a jump movement by modifying
 it&#8217;s position attribute.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">action</span> <span class="o">=</span> <span class="n">JumpTo</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c"># Move the sprite 200 pixels to the right</span>
-<span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>            <span class="c"># in 6 seconds, doing 5 jumps</span>
-                               <span class="c"># of 50 pixels of height</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">JumpTo</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># Move the sprite 200 pixels to the right</span>
+<span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>            <span class="c1"># in 6 seconds, doing 5 jumps</span>
+                               <span class="c1"># of 50 pixels of height</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -328,10 +328,10 @@ it&#8217;s position attribute.</p>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
 <p>Moves a <cite>CocosNode</cite> object simulating a jump movement by modifying it&#8217;s position attribute.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># Move the sprite 200 pixels to the right and up</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Move the sprite 200 pixels to the right and up</span>
 <span class="n">action</span> <span class="o">=</span> <span class="n">JumpBy</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="mi">200</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-<span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>            <span class="c"># in 6 seconds, doing 5 jumps</span>
-                               <span class="c"># of 200 pixels of height</span>
+<span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>            <span class="c1"># in 6 seconds, doing 5 jumps</span>
+                               <span class="c1"># of 200 pixels of height</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -343,18 +343,18 @@ it&#8217;s position attribute.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>position</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer x integer tuple</span></dt>
-<dd><p class="first last">horizontal and vertical movement relative to the
+<dt><cite>position</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">integer x integer tuple</span><dd><p class="first last">horizontal and vertical movement relative to the
 starting position</p>
 </dd>
-<dt><cite>height</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">Height of jumps</p>
+<dt><cite>height</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">integer</span><dd><p class="first last">Height of jumps</p>
 </dd>
-<dt><cite>jumps</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">quantity of jumps</p>
+<dt><cite>jumps</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">integer</span><dd><p class="first last">quantity of jumps</p>
 </dd>
-<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -381,9 +381,9 @@ starting position</p>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
 <p>Moves a <cite>CocosNode</cite> object through a bezier path by modifying it&#8217;s position attribute.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">action</span> <span class="o">=</span> <span class="n">Bezier</span><span class="p">(</span><span class="n">bezier_conf</span><span class="o">.</span><span class="n">path1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>   <span class="c"># Moves the sprite using the</span>
-<span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>                       <span class="c"># bezier path &#39;bezier_conf.path1&#39;</span>
-                                          <span class="c"># in 5 seconds</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">Bezier</span><span class="p">(</span><span class="n">bezier_conf</span><span class="o">.</span><span class="n">path1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>   <span class="c1"># Moves the sprite using the</span>
+<span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>                       <span class="c1"># bezier path &#39;bezier_conf.path1&#39;</span>
+                                          <span class="c1"># in 5 seconds</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -395,11 +395,11 @@ starting position</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>bezier</cite> <span class="classifier-delimiter">:</span> <span class="classifier">bezier_configuration instance</span></dt>
-<dd><p class="first last">A bezier configuration</p>
+<dt><cite>bezier</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">bezier_configuration instance</span><dd><p class="first last">A bezier configuration</p>
 </dd>
-<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -434,7 +434,7 @@ starting position</p>
 rotation attribute.
 The direction will be decided by the shortest angle.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># rotates the sprite to angle 180 in 2 seconds</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># rotates the sprite to angle 180 in 2 seconds</span>
 <span class="n">action</span> <span class="o">=</span> <span class="n">RotateTo</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 </pre></div>
@@ -448,11 +448,11 @@ The direction will be decided by the shortest angle.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>angle</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Destination angle in degrees.</p>
+<dt><cite>angle</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Destination angle in degrees.</p>
 </dd>
-<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -480,7 +480,7 @@ The direction will be decided by the shortest angle.</p>
 <p>Rotates a <cite>CocosNode</cite> object clockwise a number of degrees
 by modiying it&#8217;s rotation attribute.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># rotates the sprite 180 degrees in 2 seconds</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># rotates the sprite 180 degrees in 2 seconds</span>
 <span class="n">action</span> <span class="o">=</span> <span class="n">RotateBy</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 </pre></div>
@@ -494,12 +494,12 @@ by modiying it&#8217;s rotation attribute.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>angle</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Degrees that the sprite will be rotated.
+<dt><cite>angle</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Degrees that the sprite will be rotated.
 Positive degrees rotates the sprite clockwise.</p>
 </dd>
-<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -526,7 +526,7 @@ Positive degrees rotates the sprite clockwise.</p>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
 <p>Scales a <cite>CocosNode</cite> object to a zoom factor by modifying it&#8217;s scale attribute.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># scales the sprite to 5x in 2 seconds</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># scales the sprite to 5x in 2 seconds</span>
 <span class="n">action</span> <span class="o">=</span> <span class="n">ScaleTo</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 </pre></div>
@@ -540,11 +540,11 @@ Positive degrees rotates the sprite clockwise.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>scale</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">scale factor</p>
+<dt><cite>scale</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">scale factor</p>
 </dd>
-<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -571,7 +571,7 @@ Positive degrees rotates the sprite clockwise.</p>
 <dd><p>Bases: <a class="reference internal" href="#cocos.actions.interval_actions.ScaleTo" title="cocos.actions.interval_actions.ScaleTo"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.interval_actions.ScaleTo</span></code></a></p>
 <p>Scales a <cite>CocosNode</cite> object a zoom factor by modifying it&#8217;s scale attribute.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># scales the sprite by 5x in 2 seconds</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># scales the sprite by 5x in 2 seconds</span>
 <span class="n">action</span> <span class="o">=</span> <span class="n">ScaleBy</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 </pre></div>
@@ -589,7 +589,7 @@ Positive degrees rotates the sprite clockwise.</p>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
 <p>Delays the action a certain amount of seconds</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">action</span> <span class="o">=</span> <span class="n">Delay</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">Delay</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -602,8 +602,8 @@ Positive degrees rotates the sprite clockwise.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>delay</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Seconds of delay</p>
+<dt><cite>delay</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Seconds of delay</p>
 </dd>
 </dl>
 </td>
@@ -620,7 +620,7 @@ Positive degrees rotates the sprite clockwise.</p>
 <dd><p>Bases: <a class="reference internal" href="#cocos.actions.interval_actions.Delay" title="cocos.actions.interval_actions.Delay"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.interval_actions.Delay</span></code></a></p>
 <p>Delays the actions between <em>min</em> and <em>max</em> seconds</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">action</span> <span class="o">=</span> <span class="n">RandomDelay</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)</span>      <span class="c"># delays the action between 2.5 and 4.5 seconds</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">RandomDelay</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)</span>      <span class="c1"># delays the action between 2.5 and 4.5 seconds</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -633,11 +633,11 @@ Positive degrees rotates the sprite clockwise.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>low</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Minimun seconds of delay</p>
+<dt><cite>low</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Minimun seconds of delay</p>
 </dd>
-<dt><cite>hi</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Maximun seconds of delay</p>
+<dt><cite>hi</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Maximun seconds of delay</p>
 </dd>
 </dl>
 </td>
@@ -654,7 +654,7 @@ Positive degrees rotates the sprite clockwise.</p>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
 <p>Fades out a <cite>CocosNode</cite> object by modifying it&#8217;s opacity attribute.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">action</span> <span class="o">=</span> <span class="n">FadeOut</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">FadeOut</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -667,8 +667,8 @@ Positive degrees rotates the sprite clockwise.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Seconds that it will take to fade</p>
+<dt><cite>duration</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Seconds that it will take to fade</p>
 </dd>
 </dl>
 </td>
@@ -690,7 +690,7 @@ Positive degrees rotates the sprite clockwise.</p>
 <dd><p>Bases: <a class="reference internal" href="#cocos.actions.interval_actions.FadeOut" title="cocos.actions.interval_actions.FadeOut"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.interval_actions.FadeOut</span></code></a></p>
 <p>Fades in a <cite>CocosNode</cite> object by modifying it&#8217;s opacity attribute.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">action</span> <span class="o">=</span> <span class="n">FadeIn</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">FadeIn</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -707,7 +707,7 @@ Positive degrees rotates the sprite clockwise.</p>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
 <p>Fades a <cite>CocosNode</cite> object to a specific alpha value by modifying it&#8217;s opacity attribute.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">action</span> <span class="o">=</span> <span class="n">FadeTo</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">FadeTo</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -720,11 +720,11 @@ Positive degrees rotates the sprite clockwise.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>alpha</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">0-255 value of opacity</p>
+<dt><cite>alpha</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">0-255 value of opacity</p>
 </dd>
-<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Seconds that it will take to fade</p>
+<dt><cite>duration</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Seconds that it will take to fade</p>
 </dd>
 </dl>
 </td>
@@ -752,7 +752,7 @@ Positive degrees rotates the sprite clockwise.</p>
 <p>Blinks a <cite>CocosNode</cite> object by modifying it&#8217;s visible attribute</p>
 <p>The action ends with the same visible state than at the start time.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># Blinks 10 times in 2 seconds</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Blinks 10 times in 2 seconds</span>
 <span class="n">action</span> <span class="o">=</span> <span class="n">Blink</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 </pre></div>
@@ -766,11 +766,11 @@ Positive degrees rotates the sprite clockwise.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>times</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
-<dd><p class="first last">Number of times to blink</p>
+<dt><cite>times</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">integer</span><dd><p class="first last">Number of times to blink</p>
 </dd>
-<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -797,8 +797,8 @@ Positive degrees rotates the sprite clockwise.</p>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
 <p>Changes the acceleration of an action</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># rotates the sprite 180 degrees in 2 seconds clockwise</span>
-<span class="c"># it starts slow and ends fast</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># rotates the sprite 180 degrees in 2 seconds clockwise</span>
+<span class="c1"># it starts slow and ends fast</span>
 <span class="n">action</span> <span class="o">=</span> <span class="n">Accelerate</span><span class="p">(</span><span class="n">Rotate</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 </pre></div>
@@ -812,11 +812,11 @@ Positive degrees rotates the sprite clockwise.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>other</cite> <span class="classifier-delimiter">:</span> <span class="classifier">IntervalAction</span></dt>
-<dd><p class="first last">The action that will be affected</p>
+<dt><cite>other</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">IntervalAction</span><dd><p class="first last">The action that will be affected</p>
 </dd>
-<dt><cite>rate</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The acceleration rate. 1 is linear.
+<dt><cite>rate</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">The acceleration rate. 1 is linear.
 the new t is t**rate</p>
 </dd>
 </dl>
@@ -845,8 +845,8 @@ the new t is t**rate</p>
 <p>Makes an action change the travel speed but retain near normal
 speed at the beginning and ending.</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># rotates the sprite 180 degrees in 2 seconds clockwise</span>
-<span class="c"># it starts slow, gets fast and ends slow</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># rotates the sprite 180 degrees in 2 seconds clockwise</span>
+<span class="c1"># it starts slow, gets fast and ends slow</span>
 <span class="n">action</span> <span class="o">=</span> <span class="n">AccelDeccel</span><span class="p">(</span><span class="n">RotateBy</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 </pre></div>
@@ -860,8 +860,8 @@ speed at the beginning and ending.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>other</cite> <span class="classifier-delimiter">:</span> <span class="classifier">IntervalAction</span></dt>
-<dd><p class="first last">The action that will be affected</p>
+<dt><cite>other</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">IntervalAction</span><dd><p class="first last">The action that will be affected</p>
 </dd>
 </dl>
 </td>
@@ -889,7 +889,7 @@ speed at the beginning and ending.</p>
 <p>Changes the speed of an action, making it take longer (speed&gt;1)
 or less (speed&lt;1)</p>
 <p>Example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># rotates the sprite 180 degrees in 1 secondclockwise</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># rotates the sprite 180 degrees in 1 secondclockwise</span>
 <span class="n">action</span> <span class="o">=</span> <span class="n">Speed</span><span class="p">(</span><span class="n">Rotate</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
 </pre></div>
@@ -903,11 +903,11 @@ or less (speed&lt;1)</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>other</cite> <span class="classifier-delimiter">:</span> <span class="classifier">IntervalAction</span></dt>
-<dd><p class="first last">The action that will be affected</p>
+<dt><cite>other</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">IntervalAction</span><dd><p class="first last">The action that will be affected</p>
 </dd>
-<dt><cite>speed</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The speed change. 1 is no change.
+<dt><cite>speed</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">The speed change. 1 is no change.
 2 means twice as fast, takes half the time
 0.5 means half as fast, takes double the time</p>
 </dd>
@@ -970,9 +970,6 @@ or less (speed&lt;1)</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -1000,8 +997,8 @@ or less (speed&lt;1)</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

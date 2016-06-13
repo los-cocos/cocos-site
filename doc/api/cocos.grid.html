@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>cocos.grid module &mdash; cocos v0.6.3 documentation</title>
+    <title>cocos.grid module &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,9 +23,9 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="up" title="cocos package" href="cocos.html" />
-    <link rel="next" title="cocos.menu module" href="cocos.menu.html" />
+    <link rel="next" title="cocos.mapcolliders module" href="cocos.mapcolliders.html" />
     <link rel="prev" title="cocos.gl_framebuffer_object module" href="cocos.gl_framebuffer_object.html" /> 
   </head>
   <body role="document">
@@ -39,7 +39,7 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="cocos.menu.html" title="cocos.menu module"
+          <a href="cocos.mapcolliders.html" title="cocos.mapcolliders module"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="cocos.gl_framebuffer_object.html" title="cocos.gl_framebuffer_object module"
@@ -72,8 +72,8 @@ The FrameBuffer will be unbound and the texture will be drawn</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>camera</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Camera</cite></span></dt>
-<dd><p class="first last">The target&#8217;s camera object.</p>
+<dt><cite>camera</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Camera</cite></span><dd><p class="first last">The target&#8217;s camera object.</p>
 </dd>
 </dl>
 </td>
@@ -100,8 +100,8 @@ and creating also a vertex_list_indexed for a &#8220;united&#8221; (non independ
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>grid</cite> <span class="classifier-delimiter">:</span> <span class="classifier">euclid.Point2</span></dt>
-<dd><p class="first last">size of a 2D grid</p>
+<dt><cite>grid</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">euclid.Point2</span><dd><p class="first last">size of a 2D grid</p>
 </dd>
 </dl>
 </td>
@@ -130,9 +130,9 @@ and creating also a vertex_list_indexed for a &#8220;united&#8221; (non independ
 <dd><p>Bases: <a class="reference internal" href="#cocos.grid.GridBase" title="cocos.grid.GridBase"><code class="xref py py-class docutils literal"><span class="pre">cocos.grid.GridBase</span></code></a></p>
 <p><cite>Grid3D</cite> is a 3D grid implementation. Each vertex has 3 dimensions: x,y,z</p>
 <p>The indexed vertex array will be built with:</p>
-<div class="highlight-python"><div class="highlight"><pre>self.vertex_list.vertices: x,y,z (floats)
-self.vertex_list.tex_coords: x,y,z (floats)
-self.vertex_list.colors: RGBA, with values from 0 - 255
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">vertex_list</span><span class="o">.</span><span class="n">vertices</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="p">(</span><span class="n">floats</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">vertex_list</span><span class="o">.</span><span class="n">tex_coords</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="p">(</span><span class="n">floats</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">vertex_list</span><span class="o">.</span><span class="n">colors</span><span class="p">:</span> <span class="n">RGBA</span><span class="p">,</span> <span class="k">with</span> <span class="n">values</span> <span class="kn">from</span> <span class="mi">0</span> <span class="o">-</span> <span class="mi">255</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -145,11 +145,11 @@ The original vertices are the ones weren&#8217;t modified by the current action.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">x-vertex</p>
+<dt><cite>x</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">x-vertex</p>
 </dd>
-<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">y-vertex</p>
+<dt><cite>y</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">y-vertex</p>
 </dd>
 </dl>
 </td>
@@ -170,11 +170,11 @@ The original vertices are the ones weren&#8217;t modified by the current action.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">x-vertex</p>
+<dt><cite>x</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">x-vertex</p>
 </dd>
-<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">y-vertex</p>
+<dt><cite>y</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">y-vertex</p>
 </dd>
 </dl>
 </td>
@@ -195,14 +195,14 @@ The original vertices are the ones weren&#8217;t modified by the current action.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">x-vertex</p>
+<dt><cite>x</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">x-vertex</p>
 </dd>
-<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">y-vertex</p>
+<dt><cite>y</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">y-vertex</p>
 </dd>
-<dt><cite>v</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(float, float, float)</span></dt>
-<dd><p class="first last">tuple value for the vertex</p>
+<dt><cite>v</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">(float, float, float)</span><dd><p class="first last">tuple value for the vertex</p>
 </dd>
 </dl>
 </td>
@@ -220,9 +220,9 @@ The original vertices are the ones weren&#8217;t modified by the current action.
 <p><cite>TiledGrid3D</cite> is a 3D grid implementation. It differs from <cite>Grid3D</cite> in that
 the tiles can be separated from the grid.</p>
 <p>The vertex array will be built with:</p>
-<div class="highlight-python"><div class="highlight"><pre>self.vertex_list.vertices: x,y,z (floats)
-self.vertex_list.tex_coords: x,y (floats)
-self.vertex_list.colors: RGBA, with values from 0 - 255
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">vertex_list</span><span class="o">.</span><span class="n">vertices</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="p">(</span><span class="n">floats</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">vertex_list</span><span class="o">.</span><span class="n">tex_coords</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="p">(</span><span class="n">floats</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">vertex_list</span><span class="o">.</span><span class="n">colors</span><span class="p">:</span> <span class="n">RGBA</span><span class="p">,</span> <span class="k">with</span> <span class="n">values</span> <span class="kn">from</span> <span class="mi">0</span> <span class="o">-</span> <span class="mi">255</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -230,10 +230,10 @@ self.vertex_list.colors: RGBA, with values from 0 - 255
 <code class="descname">get_original_tile</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.TiledGrid3D.get_original_tile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the 4-original tile coordinates.</p>
 <p>Coordinates positions:</p>
-<div class="highlight-python"><div class="highlight"><pre>3 &lt;-- 2
-      ^
-      |
-0 --&gt; 1
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&lt;--</span> <span class="mi">2</span>
+      <span class="o">^</span>
+      <span class="o">|</span>
+<span class="mi">0</span> <span class="o">--&gt;</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -241,11 +241,11 @@ self.vertex_list.colors: RGBA, with values from 0 - 255
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">x coordinate of the tile</p>
+<dt><cite>x</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">x coordinate of the tile</p>
 </dd>
-<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">y coordinate of the tile</p>
+<dt><cite>y</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">y coordinate of the tile</p>
 </dd>
 </dl>
 </td>
@@ -265,10 +265,10 @@ self.vertex_list.colors: RGBA, with values from 0 - 255
 <code class="descname">get_tile</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.TiledGrid3D.get_tile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the current tile coordinates.</p>
 <p>Coordinates positions:</p>
-<div class="highlight-python"><div class="highlight"><pre>3 &lt;-- 2
-      ^
-      |
-0 --&gt; 1
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&lt;--</span> <span class="mi">2</span>
+      <span class="o">^</span>
+      <span class="o">|</span>
+<span class="mi">0</span> <span class="o">--&gt;</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -276,11 +276,11 @@ self.vertex_list.colors: RGBA, with values from 0 - 255
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">x coordinate of the tile</p>
+<dt><cite>x</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">x coordinate of the tile</p>
 </dd>
-<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">y coordinate of the tile</p>
+<dt><cite>y</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">y coordinate of the tile</p>
 </dd>
 </dl>
 </td>
@@ -300,10 +300,10 @@ self.vertex_list.colors: RGBA, with values from 0 - 255
 <code class="descname">set_tile</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>coords</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.TiledGrid3D.set_tile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the 4 tile coordinates</p>
 <p>Coordinates positions:</p>
-<div class="highlight-python"><div class="highlight"><pre>3 &lt;-- 2
-      ^
-      |
-0 --&gt; 1
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&lt;--</span> <span class="mi">2</span>
+      <span class="o">^</span>
+      <span class="o">|</span>
+<span class="mi">0</span> <span class="o">--&gt;</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
@@ -311,14 +311,14 @@ self.vertex_list.colors: RGBA, with values from 0 - 255
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">x coodinate of the tile</p>
+<dt><cite>x</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">x coodinate of the tile</p>
 </dd>
-<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">y coordinate of the tile</p>
+<dt><cite>y</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">y coordinate of the tile</p>
 </dd>
-<dt><cite>coords</cite> <span class="classifier-delimiter">:</span> <span class="classifier">[ float, float, float, float, float, float, float, float, float, float, float, float ]</span></dt>
-<dd><p class="first last">The 4 coordinates in the format (x0, y0, z0, x1, y1, z1,..., x3, y3, z3)</p>
+<dt><cite>coords</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">[ float, float, float, float, float, float, float, float, float, float, float, float ]</span><dd><p class="first last">The 4 coordinates in the format (x0, y0, z0, x1, y1, z1,..., x3, y3, z3)</p>
 </dd>
 </dl>
 </td>
@@ -341,8 +341,8 @@ self.vertex_list.colors: RGBA, with values from 0 - 255
   <p class="topless"><a href="cocos.gl_framebuffer_object.html"
                         title="previous chapter">cocos.gl_framebuffer_object module</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="cocos.menu.html"
-                        title="next chapter">cocos.menu module</a></p>
+  <p class="topless"><a href="cocos.mapcolliders.html"
+                        title="next chapter">cocos.mapcolliders module</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -358,9 +358,6 @@ self.vertex_list.colors: RGBA, with values from 0 - 255
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -377,7 +374,7 @@ self.vertex_list.colors: RGBA, with values from 0 - 255
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="cocos.menu.html" title="cocos.menu module"
+          <a href="cocos.mapcolliders.html" title="cocos.mapcolliders module"
              >next</a> |</li>
         <li class="right" >
           <a href="cocos.gl_framebuffer_object.html" title="cocos.gl_framebuffer_object module"
@@ -387,8 +384,8 @@ self.vertex_list.colors: RGBA, with values from 0 - 255
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

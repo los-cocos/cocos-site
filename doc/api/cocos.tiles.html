@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>cocos.tiles module &mdash; cocos v0.6.3 documentation</title>
+    <title>cocos.tiles module &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="up" title="cocos package" href="cocos.html" />
     <link rel="next" title="cocos.utils module" href="cocos.utils.html" />
     <link rel="prev" title="cocos.text module" href="cocos.text.html" /> 
@@ -62,19 +62,25 @@ constructed of image tiles.</p>
 <dl class="exception">
 <dt id="cocos.tiles.ResourceError">
 <em class="property">exception </em><code class="descname">ResourceError</code><a class="headerlink" href="#cocos.tiles.ResourceError" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
 <dl class="exception">
 <dt id="cocos.tiles.TilesPropertyWithoutName">
 <em class="property">exception </em><code class="descname">TilesPropertyWithoutName</code><a class="headerlink" href="#cocos.tiles.TilesPropertyWithoutName" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
 <dl class="exception">
 <dt id="cocos.tiles.TilesPropertyWithoutValue">
 <em class="property">exception </em><code class="descname">TilesPropertyWithoutValue</code><a class="headerlink" href="#cocos.tiles.TilesPropertyWithoutValue" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="cocos.tiles.TmxUnsupportedVariant">
+<em class="property">exception </em><code class="descname">TmxUnsupportedVariant</code><a class="headerlink" href="#cocos.tiles.TmxUnsupportedVariant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
 <dl class="class">
@@ -83,11 +89,11 @@ constructed of image tiles.</p>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Base class for cells from rect and hex maps.</p>
 <p>Common attributes:</p>
-<div class="highlight-python"><div class="highlight"><pre>i, j            -- index of this cell in the map
-position        -- the above as a tuple
-width, height   -- dimensions
-properties      -- arbitrary properties
-cell            -- cell from the MapLayer&#39;s cells
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">i</span><span class="p">,</span> <span class="n">j</span>            <span class="o">--</span> <span class="n">index</span> <span class="n">of</span> <span class="n">this</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">map</span>
+<span class="n">position</span>        <span class="o">--</span> <span class="n">the</span> <span class="n">above</span> <span class="k">as</span> <span class="n">a</span> <span class="nb">tuple</span>
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span>   <span class="o">--</span> <span class="n">dimensions</span>
+<span class="n">properties</span>      <span class="o">--</span> <span class="n">arbitrary</span> <span class="n">properties</span>
+<span class="n">cell</span>            <span class="o">--</span> <span class="n">cell</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">MapLayer</span><span class="s1">&#39;s cells</span>
 </pre></div>
 </div>
 <p>Properties are available through the dictionary interface, ie. if the
@@ -116,30 +122,30 @@ on the cell&#8217;s tile.</p>
 <dd><p>Bases: <a class="reference internal" href="#cocos.tiles.Cell" title="cocos.tiles.Cell"><code class="xref py py-class docutils literal"><span class="pre">cocos.tiles.Cell</span></code></a></p>
 <p>A flat-top, regular hexagon cell from a HexMap.</p>
 <p>Cell attributes:</p>
-<div class="highlight-python"><div class="highlight"><pre>i, j            -- index of this cell in the map
-width, height   -- dimensions
-properties      -- arbitrary properties
-cell            -- cell from the MapLayer&#39;s cells
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">i</span><span class="p">,</span> <span class="n">j</span>            <span class="o">--</span> <span class="n">index</span> <span class="n">of</span> <span class="n">this</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">map</span>
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span>   <span class="o">--</span> <span class="n">dimensions</span>
+<span class="n">properties</span>      <span class="o">--</span> <span class="n">arbitrary</span> <span class="n">properties</span>
+<span class="n">cell</span>            <span class="o">--</span> <span class="n">cell</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">MapLayer</span><span class="s1">&#39;s cells</span>
 </pre></div>
 </div>
 <p>Read-only attributes:</p>
-<div class="highlight-python"><div class="highlight"><pre>x, y            -- bottom-left pixel
-top             -- y pixel extent
-bottom          -- y pixel extent
-left            -- (x, y) of left corner pixel
-right           -- (x, y) of right corner pixel
-center          -- (x, y)
-origin          -- (x, y) of bottom-left corner of bounding rect
-topleft         -- (x, y) of top-left corner pixel
-topright        -- (x, y) of top-right corner pixel
-bottomleft      -- (x, y) of bottom-left corner pixel
-bottomright     -- (x, y) of bottom-right corner pixel
-midtop          -- (x, y) of middle of top side pixel
-midbottom       -- (x, y) of middle of bottom side pixel
-midtopleft      -- (x, y) of middle of left side pixel
-midtopright     -- (x, y) of middle of right side pixel
-midbottomleft   -- (x, y) of middle of left side pixel
-midbottomright  -- (x, y) of middle of right side pixel
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span>            <span class="o">--</span> <span class="n">bottom</span><span class="o">-</span><span class="n">left</span> <span class="n">pixel</span>
+<span class="n">top</span>             <span class="o">--</span> <span class="n">y</span> <span class="n">pixel</span> <span class="n">extent</span>
+<span class="n">bottom</span>          <span class="o">--</span> <span class="n">y</span> <span class="n">pixel</span> <span class="n">extent</span>
+<span class="n">left</span>            <span class="o">--</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="n">of</span> <span class="n">left</span> <span class="n">corner</span> <span class="n">pixel</span>
+<span class="n">right</span>           <span class="o">--</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="n">of</span> <span class="n">right</span> <span class="n">corner</span> <span class="n">pixel</span>
+<span class="n">center</span>          <span class="o">--</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">origin</span>          <span class="o">--</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="n">of</span> <span class="n">bottom</span><span class="o">-</span><span class="n">left</span> <span class="n">corner</span> <span class="n">of</span> <span class="n">bounding</span> <span class="n">rect</span>
+<span class="n">topleft</span>         <span class="o">--</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="n">of</span> <span class="n">top</span><span class="o">-</span><span class="n">left</span> <span class="n">corner</span> <span class="n">pixel</span>
+<span class="n">topright</span>        <span class="o">--</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="n">of</span> <span class="n">top</span><span class="o">-</span><span class="n">right</span> <span class="n">corner</span> <span class="n">pixel</span>
+<span class="n">bottomleft</span>      <span class="o">--</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="n">of</span> <span class="n">bottom</span><span class="o">-</span><span class="n">left</span> <span class="n">corner</span> <span class="n">pixel</span>
+<span class="n">bottomright</span>     <span class="o">--</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="n">of</span> <span class="n">bottom</span><span class="o">-</span><span class="n">right</span> <span class="n">corner</span> <span class="n">pixel</span>
+<span class="n">midtop</span>          <span class="o">--</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="n">of</span> <span class="n">middle</span> <span class="n">of</span> <span class="n">top</span> <span class="n">side</span> <span class="n">pixel</span>
+<span class="n">midbottom</span>       <span class="o">--</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="n">of</span> <span class="n">middle</span> <span class="n">of</span> <span class="n">bottom</span> <span class="n">side</span> <span class="n">pixel</span>
+<span class="n">midtopleft</span>      <span class="o">--</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="n">of</span> <span class="n">middle</span> <span class="n">of</span> <span class="n">left</span> <span class="n">side</span> <span class="n">pixel</span>
+<span class="n">midtopright</span>     <span class="o">--</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="n">of</span> <span class="n">middle</span> <span class="n">of</span> <span class="n">right</span> <span class="n">side</span> <span class="n">pixel</span>
+<span class="n">midbottomleft</span>   <span class="o">--</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="n">of</span> <span class="n">middle</span> <span class="n">of</span> <span class="n">left</span> <span class="n">side</span> <span class="n">pixel</span>
+<span class="n">midbottomright</span>  <span class="o">--</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="n">of</span> <span class="n">middle</span> <span class="n">of</span> <span class="n">right</span> <span class="n">side</span> <span class="n">pixel</span>
 </pre></div>
 </div>
 <p>Note that all pixel attributes are <em>not</em> adjusted for screen,
@@ -312,17 +318,17 @@ view or layer transformations.</p>
 <dd><p>Bases: <a class="reference internal" href="#cocos.tiles.RegularTesselationMap" title="cocos.tiles.RegularTesselationMap"><code class="xref py py-class docutils literal"><span class="pre">cocos.tiles.RegularTesselationMap</span></code></a></p>
 <p>MapLayer with flat-top, regular hexagonal cells.</p>
 <p>Calculated attributes:</p>
-<div class="highlight-python"><div class="highlight"><pre>edge_length -- length of an edge in pixels = int(th / sqrt(3))
-tw          -- with of a &quot;tile&quot; in pixels = edge_length * 2
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">edge_length</span> <span class="o">--</span> <span class="n">length</span> <span class="n">of</span> <span class="n">an</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">pixels</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">th</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">tw</span>          <span class="o">--</span> <span class="k">with</span> <span class="n">of</span> <span class="n">a</span> <span class="s2">&quot;tile&quot;</span> <span class="ow">in</span> <span class="n">pixels</span> <span class="o">=</span> <span class="n">edge_length</span> <span class="o">*</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <p>Hexmaps store their cells in an offset array, column-major with y
 increasing up, such that a map:</p>
-<div class="highlight-python"><div class="highlight"><pre>  /d\ /h\          .
-/b\_/f\_/          .
-\_/c\_/g\          .
-/a\_/e\_/          .
-\_/ \_/            .
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="o">/</span><span class="n">d</span>\ <span class="o">/</span><span class="n">h</span>\          <span class="o">.</span>
+<span class="o">/</span><span class="n">b</span>\<span class="n">_</span><span class="o">/</span><span class="n">f</span>\<span class="n">_</span><span class="o">/</span>          <span class="o">.</span>
+\<span class="n">_</span><span class="o">/</span><span class="n">c</span>\<span class="n">_</span><span class="o">/</span><span class="n">g</span>\          <span class="o">.</span>
+<span class="o">/</span><span class="n">a</span>\<span class="n">_</span><span class="o">/</span><span class="n">e</span>\<span class="n">_</span><span class="o">/</span>          <span class="o">.</span>
+\<span class="n">_</span><span class="o">/</span> \<span class="n">_</span><span class="o">/</span>            <span class="o">.</span>
 </pre></div>
 </div>
 <p>has cells = [[&#8216;a&#8217;, &#8216;b&#8217;], [&#8216;c&#8217;, &#8216;d&#8217;], [&#8216;e&#8217;, &#8216;f&#8217;], [&#8216;g&#8217;, &#8216;h&#8217;]]</p>
@@ -371,32 +377,32 @@ and neighbor cells as values.</p>
 
 <dl class="attribute">
 <dt id="cocos.tiles.HexMap.DOWN">
-<code class="descname">DOWN</code><em class="property"> = u'down'</em><a class="headerlink" href="#cocos.tiles.HexMap.DOWN" title="Permalink to this definition">¶</a></dt>
+<code class="descname">DOWN</code><em class="property"> = 'down'</em><a class="headerlink" href="#cocos.tiles.HexMap.DOWN" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.tiles.HexMap.DOWN_LEFT">
-<code class="descname">DOWN_LEFT</code><em class="property"> = u'down left'</em><a class="headerlink" href="#cocos.tiles.HexMap.DOWN_LEFT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">DOWN_LEFT</code><em class="property"> = 'down left'</em><a class="headerlink" href="#cocos.tiles.HexMap.DOWN_LEFT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.tiles.HexMap.DOWN_RIGHT">
-<code class="descname">DOWN_RIGHT</code><em class="property"> = u'down right'</em><a class="headerlink" href="#cocos.tiles.HexMap.DOWN_RIGHT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">DOWN_RIGHT</code><em class="property"> = 'down right'</em><a class="headerlink" href="#cocos.tiles.HexMap.DOWN_RIGHT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.tiles.HexMap.UP">
-<code class="descname">UP</code><em class="property"> = u'up'</em><a class="headerlink" href="#cocos.tiles.HexMap.UP" title="Permalink to this definition">¶</a></dt>
+<code class="descname">UP</code><em class="property"> = 'up'</em><a class="headerlink" href="#cocos.tiles.HexMap.UP" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.tiles.HexMap.UP_LEFT">
-<code class="descname">UP_LEFT</code><em class="property"> = u'up left'</em><a class="headerlink" href="#cocos.tiles.HexMap.UP_LEFT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">UP_LEFT</code><em class="property"> = 'up left'</em><a class="headerlink" href="#cocos.tiles.HexMap.UP_LEFT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.tiles.HexMap.UP_RIGHT">
-<code class="descname">UP_RIGHT</code><em class="property"> = u'up right'</em><a class="headerlink" href="#cocos.tiles.HexMap.UP_RIGHT" title="Permalink to this definition">¶</a></dt>
+<code class="descname">UP_RIGHT</code><em class="property"> = 'up right'</em><a class="headerlink" href="#cocos.tiles.HexMap.UP_RIGHT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -419,17 +425,17 @@ tile is rectangular and should comply:</p>
 proportions or the pointy orientation ( left and right sides paralel to
 the y-axis) ; neither will work with HexMapLayer</p>
 <p>The Layer has a calculated attribute:</p>
-<div class="highlight-python"><div class="highlight"><pre>edge_length -- length of an edge in pixels = int(th / sqrt(3))
-tw          -- with of a &quot;tile&quot; in pixels = edge_length * 2
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">edge_length</span> <span class="o">--</span> <span class="n">length</span> <span class="n">of</span> <span class="n">an</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">pixels</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">th</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">tw</span>          <span class="o">--</span> <span class="k">with</span> <span class="n">of</span> <span class="n">a</span> <span class="s2">&quot;tile&quot;</span> <span class="ow">in</span> <span class="n">pixels</span> <span class="o">=</span> <span class="n">edge_length</span> <span class="o">*</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <p>Hexmaps store their cells in an offset array, column-major with y
 increasing up, such that a map:</p>
-<div class="highlight-python"><div class="highlight"><pre>  /d\ /h\        .
-/b\_/f\_/        .
-\_/c\_/g\        .
-/a\_/e\_/        .
-\_/ \_/          .
+<div class="highlight-default"><div class="highlight"><pre><span></span>  <span class="o">/</span><span class="n">d</span>\ <span class="o">/</span><span class="n">h</span>\        <span class="o">.</span>
+<span class="o">/</span><span class="n">b</span>\<span class="n">_</span><span class="o">/</span><span class="n">f</span>\<span class="n">_</span><span class="o">/</span>        <span class="o">.</span>
+\<span class="n">_</span><span class="o">/</span><span class="n">c</span>\<span class="n">_</span><span class="o">/</span><span class="n">g</span>\        <span class="o">.</span>
+<span class="o">/</span><span class="n">a</span>\<span class="n">_</span><span class="o">/</span><span class="n">e</span>\<span class="n">_</span><span class="o">/</span>        <span class="o">.</span>
+\<span class="n">_</span><span class="o">/</span> \<span class="n">_</span><span class="o">/</span>          <span class="o">.</span>
 </pre></div>
 </div>
 <p>has cells = [[&#8216;a&#8217;, &#8216;b&#8217;], [&#8216;c&#8217;, &#8216;d&#8217;], [&#8216;e&#8217;, &#8216;f&#8217;], [&#8216;g&#8217;, &#8216;h&#8217;]]</p>
@@ -443,14 +449,14 @@ increasing up, such that a map:</p>
 <p>Maps are comprised of tiles and can figure out which tiles are required to
 be rendered on screen.</p>
 <p>Both rect and hex maps have the following attributes:</p>
-<div class="highlight-python"><div class="highlight"><pre>id              -- identifies the map in XML and Resources
-(width, height) -- size of map in cells
-(px_width, px_height)      -- size of map in pixels
-(tw, th)        -- size of each cell in pixels
-(origin_x, origin_y, origin_z)  -- offset of map top left from origin in pixels
-cells           -- array [i][j] of Cell instances
-debug           -- display debugging information on cells
-properties      -- arbitrary properties
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nb">id</span>              <span class="o">--</span> <span class="n">identifies</span> <span class="n">the</span> <span class="nb">map</span> <span class="ow">in</span> <span class="n">XML</span> <span class="ow">and</span> <span class="n">Resources</span>
+<span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">)</span> <span class="o">--</span> <span class="n">size</span> <span class="n">of</span> <span class="nb">map</span> <span class="ow">in</span> <span class="n">cells</span>
+<span class="p">(</span><span class="n">px_width</span><span class="p">,</span> <span class="n">px_height</span><span class="p">)</span>      <span class="o">--</span> <span class="n">size</span> <span class="n">of</span> <span class="nb">map</span> <span class="ow">in</span> <span class="n">pixels</span>
+<span class="p">(</span><span class="n">tw</span><span class="p">,</span> <span class="n">th</span><span class="p">)</span>        <span class="o">--</span> <span class="n">size</span> <span class="n">of</span> <span class="n">each</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">pixels</span>
+<span class="p">(</span><span class="n">origin_x</span><span class="p">,</span> <span class="n">origin_y</span><span class="p">,</span> <span class="n">origin_z</span><span class="p">)</span>  <span class="o">--</span> <span class="n">offset</span> <span class="n">of</span> <span class="nb">map</span> <span class="n">top</span> <span class="n">left</span> <span class="kn">from</span> <span class="nn">origin</span> <span class="ow">in</span> <span class="n">pixels</span>
+<span class="n">cells</span>           <span class="o">--</span> <span class="n">array</span> <span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="n">of</span> <span class="n">Cell</span> <span class="n">instances</span>
+<span class="n">debug</span>           <span class="o">--</span> <span class="n">display</span> <span class="n">debugging</span> <span class="n">information</span> <span class="n">on</span> <span class="n">cells</span>
+<span class="n">properties</span>      <span class="o">--</span> <span class="n">arbitrary</span> <span class="n">properties</span>
 </pre></div>
 </div>
 <p>The debug flag turns on textual display of data about each visible cell
@@ -524,11 +530,11 @@ map-space pixels currently visible.</p>
 <dd><p>Bases: <a class="reference internal" href="cocos.rect.html#cocos.rect.Rect" title="cocos.rect.Rect"><code class="xref py py-class docutils literal"><span class="pre">cocos.rect.Rect</span></code></a>, <a class="reference internal" href="#cocos.tiles.Cell" title="cocos.tiles.Cell"><code class="xref py py-class docutils literal"><span class="pre">cocos.tiles.Cell</span></code></a></p>
 <p>A rectangular cell from a MapLayer.</p>
 <p>Cell attributes:</p>
-<div class="highlight-python"><div class="highlight"><pre>i, j            -- index of this cell in the map
-x, y            -- bottom-left pixel
-width, height   -- dimensions
-properties      -- arbitrary properties
-cell            -- cell from the MapLayer&#39;s cells
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">i</span><span class="p">,</span> <span class="n">j</span>            <span class="o">--</span> <span class="n">index</span> <span class="n">of</span> <span class="n">this</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">map</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span>            <span class="o">--</span> <span class="n">bottom</span><span class="o">-</span><span class="n">left</span> <span class="n">pixel</span>
+<span class="n">width</span><span class="p">,</span> <span class="n">height</span>   <span class="o">--</span> <span class="n">dimensions</span>
+<span class="n">properties</span>      <span class="o">--</span> <span class="n">arbitrary</span> <span class="n">properties</span>
+<span class="n">cell</span>            <span class="o">--</span> <span class="n">cell</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">MapLayer</span><span class="s1">&#39;s cells</span>
 </pre></div>
 </div>
 <p>The cell may have the standard properties &#8220;top&#8221;, &#8220;left&#8221;, &#8220;bottom&#8221; and
@@ -615,11 +621,11 @@ view or layer transformations.</p>
 <p>Rectangular map.</p>
 <p>Cells are stored in column-major order with y increasing up,
 allowing [i][j] addressing:</p>
-<div class="highlight-python"><div class="highlight"><pre>+---+---+---+
-| d | e | f |
-+---+---+---+
-| a | b | c |
-+---+---+---+
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">+---+---+---+</span>
+<span class="o">|</span> <span class="n">d</span> <span class="o">|</span> <span class="n">e</span> <span class="o">|</span> <span class="n">f</span> <span class="o">|</span>
+<span class="o">+---+---+---+</span>
+<span class="o">|</span> <span class="n">a</span> <span class="o">|</span> <span class="n">b</span> <span class="o">|</span> <span class="n">c</span> <span class="o">|</span>
+<span class="o">+---+---+---+</span>
 </pre></div>
 </div>
 <p>Thus cells = [[&#8216;a&#8217;, &#8216;d&#8217;], [&#8216;b&#8217;, &#8216;e&#8217;], [&#8216;c&#8217;, &#8216;f&#8217;]]</p>
@@ -703,66 +709,7 @@ and neighbor cells as values.</p>
 <dt id="cocos.tiles.RectMapCollider">
 <em class="property">class </em><code class="descname">RectMapCollider</code><a class="headerlink" href="#cocos.tiles.RectMapCollider" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
-<p>This class implements collisions between a moving rect object and a
-tilemap.</p>
-<dl class="method">
-<dt id="cocos.tiles.RectMapCollider.collide_bottom">
-<code class="descname">collide_bottom</code><span class="sig-paren">(</span><em>dy</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMapCollider.collide_bottom" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="cocos.tiles.RectMapCollider.collide_left">
-<code class="descname">collide_left</code><span class="sig-paren">(</span><em>dx</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMapCollider.collide_left" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="cocos.tiles.RectMapCollider.collide_map">
-<code class="descname">collide_map</code><span class="sig-paren">(</span><em>map</em>, <em>last</em>, <em>new</em>, <em>dy</em>, <em>dx</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMapCollider.collide_map" title="Permalink to this definition">¶</a></dt>
-<dd><p>Collide a rect with the given RectMap map.</p>
-<p>Apart from &#8220;map&#8221; the arguments are as per <cite>do_collision</cite>.</p>
-<p>Mutates the new rect to conform with the map.</p>
-<p>Returns the (possibly modified) (dx, dy)</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cocos.tiles.RectMapCollider.collide_right">
-<code class="descname">collide_right</code><span class="sig-paren">(</span><em>dx</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMapCollider.collide_right" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="cocos.tiles.RectMapCollider.collide_top">
-<code class="descname">collide_top</code><span class="sig-paren">(</span><em>dy</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMapCollider.collide_top" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="cocos.tiles.RectMapCollider.do_collision">
-<code class="descname">do_collision</code><span class="sig-paren">(</span><em>cell</em>, <em>last</em>, <em>new</em>, <em>dy</em>, <em>dx</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMapCollider.do_collision" title="Permalink to this definition">¶</a></dt>
-<dd><p>Collide a Rect moving from &#8220;last&#8221; to &#8220;new&#8221; with the given map
-RectCell &#8220;cell&#8221;. The &#8220;dx&#8221; and &#8220;dy&#8221; values may indicate the velocity
-of the moving rect.</p>
-<p>The RectCell must have the boolean properties &#8220;top&#8221;, &#8220;left&#8221;,
-&#8220;bottom&#8221; and &#8220;right&#8221; for those sides which the rect should collide.</p>
-<p>If there is no collision then nothing is done.</p>
-<p>If there is a collision:</p>
-<ol class="arabic simple">
-<li>The &#8220;new&#8221; rect&#8217;s position will be modified to its closest position
-to the side of the cell that the collision is on, and</li>
-<li>If the &#8220;dx&#8221; and &#8220;dy&#8221; values are passed in the methods
-collide_&lt;side&gt; will be called to indicate that the rect has
-collided with the cell on the rect&#8217;s side indicated. The value
-passed to the collide method will be a <em>modified</em> distance based
-on the position of the rect after collision (according to step
-#1).</li>
-</ol>
-<p>Mutates the new rect to conform with the map.</p>
-<p>Returns the (possibly modified) (dx, dy)</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="cocos.tiles.RectMapCollider.resting">
-<code class="descname">resting</code><em class="property"> = False</em><a class="headerlink" href="#cocos.tiles.RectMapCollider.resting" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<p>moved to cocos.mapcolliders</p>
 </dd></dl>
 
 <dl class="class">
@@ -810,7 +757,7 @@ on the position of the rect after collision (according to step
 
 <dl class="method">
 <dt id="cocos.tiles.Resource.findall">
-<code class="descname">findall</code><span class="sig-paren">(</span><em>cls</em>, <em>ns=u''</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.findall" title="Permalink to this definition">¶</a></dt>
+<code class="descname">findall</code><span class="sig-paren">(</span><em>cls</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.findall" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find all elements of the given class in this resource and all
 &lt;requires&gt;&#8217;ed resources.</p>
 </dd></dl>
@@ -853,7 +800,7 @@ on the position of the rect after collision (according to step
 
 <dl class="attribute">
 <dt id="cocos.tiles.Resource.factories">
-<code class="descname">factories</code><em class="property"> = {u'tileset': &lt;function tileset_factory at 0x06377630&gt;, u'resource': &lt;function resource_factory at 0x06377270&gt;, u'imageatlas': &lt;function imageatlas_factory at 0x063775F0&gt;, u'image': &lt;function image_factory at 0x063775B0&gt;, u'rectmap': &lt;function rectmap_factory at 0x063777F0&gt;, u'hexmap': &lt;function hexmap_factory at 0x06377830&gt;, u'requires': &lt;function requires_factory at 0x063772B0&gt;}</em><a class="headerlink" href="#cocos.tiles.Resource.factories" title="Permalink to this definition">¶</a></dt>
+<code class="descname">factories</code><em class="property"> = {'rectmap': &lt;function rectmap_factory at 0x00000000083919D8&gt;, 'requires': &lt;function Resource.requires_factory at 0x000000000835FE18&gt;, 'hexmap': &lt;function hexmap_factory at 0x0000000008391A60&gt;, 'resource': &lt;function Resource.resource_factory at 0x000000000835FD90&gt;, 'image': &lt;function image_factory at 0x0000000008391510&gt;, 'tileset': &lt;function tileset_factory at 0x0000000008391620&gt;, 'imageatlas': &lt;function imageatlas_factory at 0x0000000008391598&gt;}</em><a class="headerlink" href="#cocos.tiles.Resource.factories" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -903,17 +850,17 @@ necessary.</p>
 <p>Instances of this class are ussually constructed by calling
 TmxObject.fromxml</p>
 <p>Theres no validation of data pased to __init__:</p>
-<div class="highlight-python"><div class="highlight"><pre>tmxtype: one of &#39;ellipse&#39;, &#39;polygon&#39;, &#39;polyline&#39;, &#39;rect&#39;, &#39;tile&#39;
-name: An arbitrary string. The object&#39;s &#39;name&#39; field in Tiled Editor.
-usertype: An arbitrary string. The object&#39;s &#39;type&#39; field in Tiled Editor.
-x: The x coordinate of the bottomleft object&#39;s Axis Aligned Bounding Box.
-y: The y coordinate of the bottomleft object&#39;s Axis Aligned Bounding Box.
-width: The width of the object in pixels (defaults to 0).
-height: The height of the object in pixels (defaults to 0).
-gid: An reference to a tile (optional).
-visible: Whether the object is shown (1) or hidden (0). Defaults to 1.
-points: a sequence of coords (x, y) relative to bottomleft  thas enumerates
-the vertices in a &#39;polygon&#39; or &#39;polyline&#39;.
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">tmxtype</span><span class="p">:</span> <span class="n">one</span> <span class="n">of</span> <span class="s1">&#39;ellipse&#39;</span><span class="p">,</span> <span class="s1">&#39;polygon&#39;</span><span class="p">,</span> <span class="s1">&#39;polyline&#39;</span><span class="p">,</span> <span class="s1">&#39;rect&#39;</span><span class="p">,</span> <span class="s1">&#39;tile&#39;</span>
+<span class="n">name</span><span class="p">:</span> <span class="n">An</span> <span class="n">arbitrary</span> <span class="n">string</span><span class="o">.</span> <span class="n">The</span> <span class="nb">object</span><span class="s1">&#39;s &#39;</span><span class="n">name</span><span class="s1">&#39; field in Tiled Editor.</span>
+<span class="n">usertype</span><span class="p">:</span> <span class="n">An</span> <span class="n">arbitrary</span> <span class="n">string</span><span class="o">.</span> <span class="n">The</span> <span class="nb">object</span><span class="s1">&#39;s &#39;</span><span class="nb">type</span><span class="s1">&#39; field in Tiled Editor.</span>
+<span class="n">x</span><span class="p">:</span> <span class="n">The</span> <span class="n">x</span> <span class="n">coordinate</span> <span class="n">of</span> <span class="n">the</span> <span class="n">bottomleft</span> <span class="nb">object</span><span class="s1">&#39;s Axis Aligned Bounding Box.</span>
+<span class="n">y</span><span class="p">:</span> <span class="n">The</span> <span class="n">y</span> <span class="n">coordinate</span> <span class="n">of</span> <span class="n">the</span> <span class="n">bottomleft</span> <span class="nb">object</span><span class="s1">&#39;s Axis Aligned Bounding Box.</span>
+<span class="n">width</span><span class="p">:</span> <span class="n">The</span> <span class="n">width</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">object</span> <span class="ow">in</span> <span class="n">pixels</span> <span class="p">(</span><span class="n">defaults</span> <span class="n">to</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span>
+<span class="n">height</span><span class="p">:</span> <span class="n">The</span> <span class="n">height</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">object</span> <span class="ow">in</span> <span class="n">pixels</span> <span class="p">(</span><span class="n">defaults</span> <span class="n">to</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span>
+<span class="n">gid</span><span class="p">:</span> <span class="n">An</span> <span class="n">reference</span> <span class="n">to</span> <span class="n">a</span> <span class="n">tile</span> <span class="p">(</span><span class="n">optional</span><span class="p">)</span><span class="o">.</span>
+<span class="n">visible</span><span class="p">:</span> <span class="n">Whether</span> <span class="n">the</span> <span class="nb">object</span> <span class="ow">is</span> <span class="n">shown</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="n">hidden</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span> <span class="n">Defaults</span> <span class="n">to</span> <span class="mf">1.</span>
+<span class="n">points</span><span class="p">:</span> <span class="n">a</span> <span class="n">sequence</span> <span class="n">of</span> <span class="n">coords</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="n">relative</span> <span class="n">to</span> <span class="n">bottomleft</span>  <span class="n">thas</span> <span class="n">enumerates</span>
+<span class="n">the</span> <span class="n">vertices</span> <span class="ow">in</span> <span class="n">a</span> <span class="s1">&#39;polygon&#39;</span> <span class="ow">or</span> <span class="s1">&#39;polyline&#39;</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>A &#8216;rect&#8217; AABB is itself, so x,y is it&#8217;s bottomleft corner.</p>
@@ -925,14 +872,14 @@ the vertices in a &#39;polygon&#39; or &#39;polyline&#39;.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>tag</cite> <span class="classifier-delimiter">:</span> <span class="classifier">xml tag</span></dt>
-<dd><p class="first last">assumed an object tag</p>
+<dt><cite>tag</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">xml tag</span><dd><p class="first last">assumed an object tag</p>
 </dd>
-<dt><cite>tileset</cite> <span class="classifier-delimiter">:</span> <span class="classifier">enumerable giving tilesets</span></dt>
-<dd><p class="first last">only the tilesets used used by an object tile are needed, can be []</p>
+<dt><cite>tileset</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">enumerable giving tilesets</span><dd><p class="first last">only the tilesets used used by an object tile are needed, can be []</p>
 </dd>
-<dt><cite>map_height</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">map height in pixels, needed to change coords from tmx to gl</p>
+<dt><cite>map_height</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">map height in pixels, needed to change coords from tmx to gl</p>
 </dd>
 </dl>
 </td>
@@ -950,11 +897,6 @@ attributes in the instance will store the info parsed from the class</p>
 <code class="descname">get</code><span class="sig-paren">(</span><em>key</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObject.get" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
-<dt id="cocos.tiles.TmxObject.intersects">
-<code class="descname">intersects</code><span class="sig-paren">(</span><em>x1</em>, <em>y1</em>, <em>x2</em>, <em>y2</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObject.intersects" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
 </dd></dl>
 
 <dl class="class">
@@ -965,12 +907,12 @@ attributes in the instance will store the info parsed from the class</p>
 <p>Actually encompasses a TMX &lt;objectgroup&gt; but even the TMX documentation
 refers to them as object layers, so I will.</p>
 <p>TmxObjectLayers have some basic properties:</p>
-<div class="highlight-python"><div class="highlight"><pre>position - ignored (cannot be edited in the current Tiled editor)
-name - the name of the object group.
-color - the color used to display the objects in this group.
-opacity - the opacity of the layer as a value from 0 to 1.
-visible - whether the layer is shown (1) or hidden (0).
-objects - the objects in this Layer (TmxObject instances)
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">position</span> <span class="o">-</span> <span class="n">ignored</span> <span class="p">(</span><span class="n">cannot</span> <span class="n">be</span> <span class="n">edited</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">current</span> <span class="n">Tiled</span> <span class="n">editor</span><span class="p">)</span>
+<span class="n">name</span> <span class="o">-</span> <span class="n">the</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">object</span> <span class="n">group</span><span class="o">.</span>
+<span class="n">color</span> <span class="o">-</span> <span class="n">the</span> <span class="n">color</span> <span class="n">used</span> <span class="n">to</span> <span class="n">display</span> <span class="n">the</span> <span class="n">objects</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">group</span><span class="o">.</span>
+<span class="n">opacity</span> <span class="o">-</span> <span class="n">the</span> <span class="n">opacity</span> <span class="n">of</span> <span class="n">the</span> <span class="n">layer</span> <span class="k">as</span> <span class="n">a</span> <span class="n">value</span> <span class="kn">from</span> <span class="mi">0</span> <span class="n">to</span> <span class="mf">1.</span>
+<span class="n">visible</span> <span class="o">-</span> <span class="n">whether</span> <span class="n">the</span> <span class="n">layer</span> <span class="ow">is</span> <span class="n">shown</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="ow">or</span> <span class="n">hidden</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span>
+<span class="n">objects</span> <span class="o">-</span> <span class="n">the</span> <span class="n">objects</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">Layer</span> <span class="p">(</span><span class="n">TmxObject</span> <span class="n">instances</span><span class="p">)</span>
 </pre></div>
 </div>
 <dl class="method">
@@ -1002,9 +944,8 @@ property name set.</p>
 <dl class="method">
 <dt id="cocos.tiles.TmxObjectLayer.get_in_region">
 <code class="descname">get_in_region</code><span class="sig-paren">(</span><em>left</em>, <em>bottom</em>, <em>right</em>, <em>top</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectLayer.get_in_region" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return objects that are within the map-space
-pixel bounds specified by the bottom-left (x1, y1) and top-right
-(x2, y2) corners.</p>
+<dd><p>Return objects that overlaps any interior point of the rect with
+bottom-left (left, bottom) and top-right (right, top) corners.</p>
 <p>Return a list of TmxObject instances.</p>
 </dd></dl>
 
@@ -1018,21 +959,6 @@ pixel bounds specified by the bottom-left (x1, y1) and top-right
 <dt id="cocos.tiles.TmxObjectLayer.update">
 <code class="descname">update</code><span class="sig-paren">(</span><em>dt</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectLayer.update" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="cocos.tiles.TmxObjectMapCollider">
-<em class="property">class </em><code class="descname">TmxObjectMapCollider</code><a class="headerlink" href="#cocos.tiles.TmxObjectMapCollider" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.tiles.RectMapCollider" title="cocos.tiles.RectMapCollider"><code class="xref py py-class docutils literal"><span class="pre">cocos.tiles.RectMapCollider</span></code></a></p>
-<dl class="method">
-<dt id="cocos.tiles.TmxObjectMapCollider.collide_map">
-<code class="descname">collide_map</code><span class="sig-paren">(</span><em>map</em>, <em>last</em>, <em>new</em>, <em>dy</em>, <em>dx</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectMapCollider.collide_map" title="Permalink to this definition">¶</a></dt>
-<dd><p>Collide a rect with the given TmxObjectLayer map.</p>
-<p>Apart from &#8220;map&#8221; the arguments are as per <cite>do_collision</cite>.</p>
-<p>Mutates the new rect to conform with the map.</p>
-<p>Returns the (possibly modified) (dx, dy)</p>
-</dd></dl>
 
 </dd></dl>
 
@@ -1107,8 +1033,8 @@ pixel bounds specified by the bottom-left (x1, y1) and top-right
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>tag</cite> <span class="classifier-delimiter">:</span> <span class="classifier">xml tag</span></dt>
-<dd><p class="first last">assumed an object tag</p>
+<dt><cite>tag</cite></dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">xml tag</span><dd><p class="first last">assumed an object tag</p>
 </dd>
 <dt><cite>obj_x</cite> :</dt>
 <dd><p class="first last">object x position in gl coordinates</p>
@@ -1180,9 +1106,6 @@ points: list of points in a gl coordinates system relative to (left, bottom)</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -1209,8 +1132,8 @@ points: list of points in a gl coordinates system relative to (left, bottom)</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

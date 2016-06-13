@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>cocos.particle module &mdash; cocos v0.6.3 documentation</title>
+    <title>cocos.particle module &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="up" title="cocos package" href="cocos.html" />
     <link rel="next" title="cocos.particle_systems module" href="cocos.particle_systems.html" />
     <link rel="prev" title="cocos.menu module" href="cocos.menu.html" /> 
@@ -60,109 +60,221 @@
 <dl class="exception">
 <dt id="cocos.particle.ExceptionNoEmptyParticle">
 <em class="property">exception </em><code class="descname">ExceptionNoEmptyParticle</code><a class="headerlink" href="#cocos.particle.ExceptionNoEmptyParticle" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
-<p>particle system have no room for another particle</p>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<p>Particle system has no room for another particle.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.particle.Color">
 <em class="property">class </em><code class="descname">Color</code><span class="sig-paren">(</span><em>r</em>, <em>g</em>, <em>b</em>, <em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.Color" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Representation of a rgba color</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>r</strong> (<em>float</em>) &#8211; red component</li>
+<li><strong>g</strong> (<em>float</em>) &#8211; green component</li>
+<li><strong>b</strong> (<em>float</em>) &#8211; blue component</li>
+<li><strong>a</strong> (<em>float</em>) &#8211; alpha component</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="cocos.particle.Color.to_array">
 <code class="descname">to_array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.Color.to_array" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Convert <a class="reference internal" href="#cocos.particle.Color" title="cocos.particle.Color"><code class="xref py py-class docutils literal"><span class="pre">Color</span></code></a> to a tuple.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>tuple</em> &#8211; r, g, b and a components.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.particle.ParticleSystem">
-<em class="property">class </em><code class="descname">ParticleSystem</code><span class="sig-paren">(</span><em>fallback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.ParticleSystem" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">ParticleSystem</code><span class="sig-paren">(</span><em>fallback=None</em>, <em>texture=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.ParticleSystem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal"><span class="pre">cocos.cocosnode.CocosNode</span></code></a></p>
-<p>Base class for many flawors of cocos particle systems</p>
-<p>The most easy way to customize is subclass and redefine some class members;
-see particle_systems by example.</p>
-<p>If you want to use a custom texture remember it should hold only one image,
-so don&#8217;t use texture = pyglet.resource.image(...) (it would produce an atlas,
-ie multiple images in a texture); using texture = pyglet.image.load(...) is fine</p>
+<p>Base class for many flavors of cocos particle systems.</p>
+<p>The easiest way to customize is to subclass and redefine some class attributes;
+see <a class="reference internal" href="cocos.particle_systems.html#module-cocos.particle_systems" title="cocos.particle_systems"><code class="xref py py-mod docutils literal"><span class="pre">cocos.particle_systems</span></code></a> for examples.</p>
+<p>To define a per-class custom texture, override <a class="reference internal" href="#cocos.particle.ParticleSystem.load_texture" title="cocos.particle.ParticleSystem.load_texture"><code class="xref py py-meth docutils literal"><span class="pre">load_texture()</span></code></a>.
+To use a per-instance custom texture, pass it in the __init__ texture kw-param</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fallback</strong> (<em>Optional[None, True, False]</em>) &#8211; <p>Defaults to None.</p>
+<ul>
+<li>False: use point sprites, faster, not always available</li>
+<li>True: use quads, slower but always available</li>
+<li>None: autodetect, use the fastest available</li>
+</ul>
+</li>
+<li><strong>texture</strong> (<em>Optional[pyglet.image.Texture]</em>) &#8211; The texture image to be used for
+the particles.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="cocos.particle.ParticleSystem.add_particle">
 <code class="descname">add_particle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.ParticleSystem.add_particle" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
-<dt>Code calling add_particle must be either:</dt>
-<dd>be sure there is room for the particle
-or
-be prepared to catch the exception ExceptionNoEmptyParticle
-It is acceptable to try: ... except...: pass</dd>
+<dt>Code calling add_particle must either:</dt>
+<dd><ul class="first last simple">
+<li>be sure there is room for the particle</li>
+<li>be prepared to catch the exception <a class="reference internal" href="#cocos.particle.ExceptionNoEmptyParticle" title="cocos.particle.ExceptionNoEmptyParticle"><code class="xref py py-class docutils literal"><span class="pre">ExceptionNoEmptyParticle</span></code></a></li>
+</ul>
+</dd>
 </dl>
+<p>It is acceptable to <code class="docutils literal"><span class="pre">try:</span> <span class="pre">...</span> <span class="pre">except...:</span> <span class="pre">pass</span></code></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.particle.ParticleSystem.draw">
 <code class="descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.ParticleSystem.draw" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Draw the particles system</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.particle.ParticleSystem.draw_fallback">
 <code class="descname">draw_fallback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.ParticleSystem.draw_fallback" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="cocos.particle.ParticleSystem.get_scaled_particle_size">
-<code class="descname">get_scaled_particle_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.ParticleSystem.get_scaled_particle_size" title="Permalink to this definition">¶</a></dt>
-<dd><p>calculates the value to pass in glPointSize to respect node scaling
-and window resize; only used when rendering with point sprites.</p>
+<dd><p>Called instead of <a class="reference internal" href="#cocos.particle.ParticleSystem.draw" title="cocos.particle.ParticleSystem.draw"><code class="xref py py-meth docutils literal"><span class="pre">draw()</span></code></a> when quads are used instead of
+Point Sprite.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.particle.ParticleSystem.init_particle">
 <code class="descname">init_particle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.ParticleSystem.init_particle" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Set initial particles state.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.particle.ParticleSystem.load_texture">
 <code class="descname">load_texture</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.ParticleSystem.load_texture" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Sets the default texture used by all instances of this particles system.</p>
+<p>Override this method to change the default texture.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>By <a class="reference external" href="https://github.com/los-cocos/cocos/issues/168">issue #168</a>
+the texture should hold only one image, so don&#8217;t use:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">texture</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">resource</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="s1">&#39;z.png&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">texture</span> <span class="c1"># (produces an atlas, ie multiple images in a texture)</span>
+</pre></div>
+</div>
+<p>You can use instead:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">texture</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="o">...</span><span class="p">)</span><span class="o">.</span><span class="n">get_texture</span><span class="p">()</span>
+<span class="c1"># Or using pyglet resource mechanism</span>
+<span class="n">texture</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;filename.png&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">pyglet</span><span class="o">.</span><span class="n">resource</span><span class="o">.</span><span class="n">file</span><span class="p">(</span><span class="s1">&#39;filename.png&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">get_texture</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.particle.ParticleSystem.make_delta_pos_to_vertex">
 <code class="descname">make_delta_pos_to_vertex</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.ParticleSystem.make_delta_pos_to_vertex" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Helper function creating quad vertices based on particles
+position.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.particle.ParticleSystem.on_cocos_resize">
+<code class="descname">on_cocos_resize</code><span class="sig-paren">(</span><em>usable_width</em>, <em>usable_height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.ParticleSystem.on_cocos_resize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handler for windows resize.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>usable_width</strong> (<em>int</em>) &#8211; New window width.</li>
+<li><strong>usable_height</strong> (<em>int</em>) &#8211; New window height.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.particle.ParticleSystem.on_enter">
 <code class="descname">on_enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.ParticleSystem.on_enter" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Called everytime the Particle system enters the stage.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cocos.particle.ParticleSystem.on_exit">
+<code class="descname">on_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.ParticleSystem.on_exit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called everytime the Particle system exits the stage.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.particle.ParticleSystem.reset_system">
 <code class="descname">reset_system</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.ParticleSystem.reset_system" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Resets the particle system.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.particle.ParticleSystem.step">
 <code class="descname">step</code><span class="sig-paren">(</span><em>delta</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.ParticleSystem.step" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Called every frame to create new particles if needed and
+update the particles position.</p>
+<p>If a duration was given to this particle system, the method will check
+if it needs to remove itself from its parent node when its time has
+arrived.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>delta</strong> (<em>float</em>) &#8211; time in seconds since last frame.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.particle.ParticleSystem.stop_system">
 <code class="descname">stop_system</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.ParticleSystem.stop_system" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Stop the particle system.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.particle.ParticleSystem.update_particles">
 <code class="descname">update_particles</code><span class="sig-paren">(</span><em>delta</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.ParticleSystem.update_particles" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Updates particles position.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>delta</strong> (<em>float</em>) &#8211; time in seconds since last frame.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.particle.ParticleSystem.update_per_vertex_colors">
 <code class="descname">update_per_vertex_colors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.ParticleSystem.update_per_vertex_colors" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Helper function to update particle quad colors based
+on particle color.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.particle.ParticleSystem.update_vertexs_from_pos">
 <code class="descname">update_vertexs_from_pos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.ParticleSystem.update_vertexs_from_pos" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Helper function to update particle quad vertices based
+on particle position.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle.ParticleSystem.POSITION_FREE">
@@ -189,13 +301,7 @@ and window resize; only used when rendering with point sprites.</p>
 <dl class="attribute">
 <dt id="cocos.particle.ParticleSystem.angle_var">
 <code class="descname">angle_var</code><em class="property"> = 0.0</em><a class="headerlink" href="#cocos.particle.ParticleSystem.angle_var" title="Permalink to this definition">¶</a></dt>
-<dd><p>Angle variance measured in degrees;</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="cocos.particle.ParticleSystem.auto_remove_on_finish">
-<code class="descname">auto_remove_on_finish</code><em class="property"> = None</em><a class="headerlink" href="#cocos.particle.ParticleSystem.auto_remove_on_finish" title="Permalink to this definition">¶</a></dt>
-<dd><p>auto remove when particle finishes</p>
+<dd><p>Angle variance measured in degrees</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -230,13 +336,13 @@ and window resize; only used when rendering with point sprites.</p>
 
 <dl class="attribute">
 <dt id="cocos.particle.ParticleSystem.end_color">
-<code class="descname">end_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x07C2E690&gt;</em><a class="headerlink" href="#cocos.particle.ParticleSystem.end_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color</code><em class="property"> = Color(0.00, 0.00, 0.00, 0.00)</em><a class="headerlink" href="#cocos.particle.ParticleSystem.end_color" title="Permalink to this definition">¶</a></dt>
 <dd><p>End color of the particles</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle.ParticleSystem.end_color_var">
-<code class="descname">end_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x07C2E1B0&gt;</em><a class="headerlink" href="#cocos.particle.ParticleSystem.end_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color_var</code><em class="property"> = Color(0.00, 0.00, 0.00, 0.00)</em><a class="headerlink" href="#cocos.particle.ParticleSystem.end_color_var" title="Permalink to this definition">¶</a></dt>
 <dd><p>End color variance</p>
 </dd></dl>
 
@@ -267,25 +373,39 @@ and window resize; only used when rendering with point sprites.</p>
 <dl class="attribute">
 <dt id="cocos.particle.ParticleSystem.pos_var">
 <code class="descname">pos_var</code><em class="property"> = Point2(0.00, 0.00)</em><a class="headerlink" href="#cocos.particle.ParticleSystem.pos_var" title="Permalink to this definition">¶</a></dt>
-<dd><p>position is from &#8220;superclass&#8221; CocosNode
-Position variance</p>
+<dd><p>Position variance</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle.ParticleSystem.position_type">
 <code class="descname">position_type</code><em class="property"> = 1</em><a class="headerlink" href="#cocos.particle.ParticleSystem.position_type" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>position type. Defaults to <a class="reference internal" href="#cocos.particle.ParticleSystem.POSITION_GROUPED" title="cocos.particle.ParticleSystem.POSITION_GROUPED"><code class="xref py py-class docutils literal"><span class="pre">POSITION_GROUPED</span></code></a></p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle.ParticleSystem.radial_accel">
 <code class="descname">radial_accel</code><em class="property"> = 0.0</em><a class="headerlink" href="#cocos.particle.ParticleSystem.radial_accel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Radial acceleration</p>
+<dd><p>Radial acceleration in degrees per second</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle.ParticleSystem.radial_accel_var">
 <code class="descname">radial_accel_var</code><em class="property"> = 0.0</em><a class="headerlink" href="#cocos.particle.ParticleSystem.radial_accel_var" title="Permalink to this definition">¶</a></dt>
 <dd><p>Radial acceleration variance</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cocos.particle.ParticleSystem.scale">
+<code class="descname">scale</code><a class="headerlink" href="#cocos.particle.ParticleSystem.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>The scaling factor of the object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -314,13 +434,13 @@ Position variance</p>
 
 <dl class="attribute">
 <dt id="cocos.particle.ParticleSystem.start_color">
-<code class="descname">start_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x07F9EE30&gt;</em><a class="headerlink" href="#cocos.particle.ParticleSystem.start_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color</code><em class="property"> = Color(0.00, 0.00, 0.00, 0.00)</em><a class="headerlink" href="#cocos.particle.ParticleSystem.start_color" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start color of the particles</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle.ParticleSystem.start_color_var">
-<code class="descname">start_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x07D5E7D0&gt;</em><a class="headerlink" href="#cocos.particle.ParticleSystem.start_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color_var</code><em class="property"> = Color(0.00, 0.00, 0.00, 0.00)</em><a class="headerlink" href="#cocos.particle.ParticleSystem.start_color_var" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start color variance</p>
 </dd></dl>
 
@@ -339,7 +459,11 @@ Position variance</p>
 <dl class="attribute">
 <dt id="cocos.particle.ParticleSystem.texture">
 <code class="descname">texture</code><em class="property"> = None</em><a class="headerlink" href="#cocos.particle.ParticleSystem.texture" title="Permalink to this definition">¶</a></dt>
-<dd><p>texture for the particles. Lazy loaded because Intel weakness, #235</p>
+<dd><p>texture for the particles, will be loaded in __init__ because Intel weakness,
+<a class="reference external" href="https://github.com/los-cocos/cocos/issues/235">#235</a>.
+Either override the <a class="reference internal" href="#cocos.particle.ParticleSystem.load_texture" title="cocos.particle.ParticleSystem.load_texture"><code class="xref py py-meth docutils literal"><span class="pre">load_texture()</span></code></a> method in a subclass to define a common
+texture for all particles system of this class, or provide a <code class="docutils literal"><span class="pre">texture</span></code> argument
+to the <code class="docutils literal"><span class="pre">__init__</span></code> method to define a custom texture for that instance.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -352,21 +476,45 @@ Position variance</p>
 
 <dl class="function">
 <dt id="cocos.particle.PointerToNumpy">
-<code class="descname">PointerToNumpy</code><span class="sig-paren">(</span><em>a</em>, <em>ptype=&lt;class 'ctypes.c_float'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.PointerToNumpy" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">PointerToNumpy</code><span class="sig-paren">(</span><em>a</em>, <em>ptype=ctypes.c_float</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.PointerToNumpy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides a ctype pointer to a Numpy array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>a</strong> (<em>numpy.array</em>) &#8211; The Numpy array.</li>
+<li><strong>ptype</strong> (<em>ctypes</em>) &#8211; The ctypes type contained in the array.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Pointer to the Numpy array.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
 <dl class="function">
 <dt id="cocos.particle.point_sprites_available">
 <code class="descname">point_sprites_available</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.point_sprites_available" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns a bool telling if point sprites are available</p>
-<p>For development and diagonostic cocos.particle.forced_point_sprites could
-be set to force the desired return value</p>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>bool</em> &#8211; tells if <code class="docutils literal"><span class="pre">point</span> <span class="pre">sprites</span></code> are available.</td>
+</tr>
+</tbody>
+</table>
+<p>For development and diagonostic <code class="xref py py-class docutils literal"><span class="pre">cocos.particle.forced_point_sprites</span></code>
+could be set to force the desired return value.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="cocos.particle.rand">
 <code class="descname">rand</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle.rand" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Function generating a random float beween -1.0 and 1.0.</p>
+</dd></dl>
 
 </div>
 
@@ -397,9 +545,6 @@ be set to force the desired return value</p>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -426,8 +571,8 @@ be set to force the desired return value</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>

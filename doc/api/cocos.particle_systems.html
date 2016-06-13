@@ -6,15 +6,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>cocos.particle_systems module &mdash; cocos v0.6.3 documentation</title>
+    <title>cocos.particle_systems module &mdash; cocos v0.6.4 documentation</title>
     
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.3',
+        VERSION:     '0.6.4',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.3 documentation" href="../index.html" />
+    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
     <link rel="up" title="cocos package" href="cocos.html" />
     <link rel="next" title="cocos.path module" href="cocos.path.html" />
     <link rel="prev" title="cocos.particle module" href="cocos.particle.html" /> 
@@ -56,10 +56,13 @@
             
   <div class="section" id="module-cocos.particle_systems">
 <span id="cocos-particle-systems-module"></span><h1>cocos.particle_systems module<a class="headerlink" href="#module-cocos.particle_systems" title="Permalink to this headline">¶</a></h1>
-<p>Pre-defined Particle Systems</p>
+<p>Pre-defined Particle Systems.</p>
+<p>Here are some concrete implementations of Particle Systems. They
+are built by subclassing <code class="xref py py-class docutils literal"><span class="pre">ParticleSystem</span></code> and overriding
+the desired class attributes.</p>
 <dl class="class">
 <dt id="cocos.particle_systems.Fireworks">
-<em class="property">class </em><code class="descname">Fireworks</code><span class="sig-paren">(</span><em>fallback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle_systems.Fireworks" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Fireworks</code><span class="sig-paren">(</span><em>fallback=None</em>, <em>texture=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle_systems.Fireworks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.particle.html#cocos.particle.ParticleSystem" title="cocos.particle.ParticleSystem"><code class="xref py py-class docutils literal"><span class="pre">cocos.particle.ParticleSystem</span></code></a></p>
 <dl class="attribute">
 <dt id="cocos.particle_systems.Fireworks.angle">
@@ -93,12 +96,12 @@
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Fireworks.end_color">
-<code class="descname">end_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B090&gt;</em><a class="headerlink" href="#cocos.particle_systems.Fireworks.end_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color</code><em class="property"> = Color(0.10, 0.10, 0.10, 0.20)</em><a class="headerlink" href="#cocos.particle_systems.Fireworks.end_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Fireworks.end_color_var">
-<code class="descname">end_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B370&gt;</em><a class="headerlink" href="#cocos.particle_systems.Fireworks.end_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color_var</code><em class="property"> = Color(0.10, 0.10, 0.10, 0.20)</em><a class="headerlink" href="#cocos.particle_systems.Fireworks.end_color_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -153,12 +156,12 @@
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Fireworks.start_color">
-<code class="descname">start_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x07D5E370&gt;</em><a class="headerlink" href="#cocos.particle_systems.Fireworks.start_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color</code><em class="property"> = Color(0.50, 0.50, 0.50, 1.00)</em><a class="headerlink" href="#cocos.particle_systems.Fireworks.start_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Fireworks.start_color_var">
-<code class="descname">start_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B030&gt;</em><a class="headerlink" href="#cocos.particle_systems.Fireworks.start_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color_var</code><em class="property"> = Color(0.50, 0.50, 0.50, 1.00)</em><a class="headerlink" href="#cocos.particle_systems.Fireworks.start_color_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -170,7 +173,7 @@
 
 <dl class="class">
 <dt id="cocos.particle_systems.Spiral">
-<em class="property">class </em><code class="descname">Spiral</code><span class="sig-paren">(</span><em>fallback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle_systems.Spiral" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Spiral</code><span class="sig-paren">(</span><em>fallback=None</em>, <em>texture=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle_systems.Spiral" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.particle.html#cocos.particle.ParticleSystem" title="cocos.particle.ParticleSystem"><code class="xref py py-class docutils literal"><span class="pre">cocos.particle.ParticleSystem</span></code></a></p>
 <dl class="attribute">
 <dt id="cocos.particle_systems.Spiral.angle">
@@ -204,12 +207,12 @@
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Spiral.end_color">
-<code class="descname">end_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B5D0&gt;</em><a class="headerlink" href="#cocos.particle_systems.Spiral.end_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color</code><em class="property"> = Color(0.50, 0.50, 0.50, 1.00)</em><a class="headerlink" href="#cocos.particle_systems.Spiral.end_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Spiral.end_color_var">
-<code class="descname">end_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B5F0&gt;</em><a class="headerlink" href="#cocos.particle_systems.Spiral.end_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color_var</code><em class="property"> = Color(0.50, 0.50, 0.50, 0.00)</em><a class="headerlink" href="#cocos.particle_systems.Spiral.end_color_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -264,12 +267,12 @@
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Spiral.start_color">
-<code class="descname">start_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B590&gt;</em><a class="headerlink" href="#cocos.particle_systems.Spiral.start_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color</code><em class="property"> = Color(0.50, 0.50, 0.50, 1.00)</em><a class="headerlink" href="#cocos.particle_systems.Spiral.start_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Spiral.start_color_var">
-<code class="descname">start_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B5B0&gt;</em><a class="headerlink" href="#cocos.particle_systems.Spiral.start_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color_var</code><em class="property"> = Color(0.50, 0.50, 0.50, 0.00)</em><a class="headerlink" href="#cocos.particle_systems.Spiral.start_color_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -291,7 +294,7 @@
 
 <dl class="class">
 <dt id="cocos.particle_systems.Meteor">
-<em class="property">class </em><code class="descname">Meteor</code><span class="sig-paren">(</span><em>fallback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle_systems.Meteor" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Meteor</code><span class="sig-paren">(</span><em>fallback=None</em>, <em>texture=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle_systems.Meteor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.particle.html#cocos.particle.ParticleSystem" title="cocos.particle.ParticleSystem"><code class="xref py py-class docutils literal"><span class="pre">cocos.particle.ParticleSystem</span></code></a></p>
 <dl class="attribute">
 <dt id="cocos.particle_systems.Meteor.angle">
@@ -325,12 +328,12 @@
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Meteor.end_color">
-<code class="descname">end_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B650&gt;</em><a class="headerlink" href="#cocos.particle_systems.Meteor.end_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color</code><em class="property"> = Color(0.00, 0.00, 0.00, 1.00)</em><a class="headerlink" href="#cocos.particle_systems.Meteor.end_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Meteor.end_color_var">
-<code class="descname">end_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B670&gt;</em><a class="headerlink" href="#cocos.particle_systems.Meteor.end_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color_var</code><em class="property"> = Color(0.00, 0.00, 0.00, 0.00)</em><a class="headerlink" href="#cocos.particle_systems.Meteor.end_color_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -385,12 +388,12 @@
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Meteor.start_color">
-<code class="descname">start_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B610&gt;</em><a class="headerlink" href="#cocos.particle_systems.Meteor.start_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color</code><em class="property"> = Color(0.20, 0.70, 0.70, 1.00)</em><a class="headerlink" href="#cocos.particle_systems.Meteor.start_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Meteor.start_color_var">
-<code class="descname">start_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B630&gt;</em><a class="headerlink" href="#cocos.particle_systems.Meteor.start_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color_var</code><em class="property"> = Color(0.00, 0.00, 0.00, 0.20)</em><a class="headerlink" href="#cocos.particle_systems.Meteor.start_color_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -412,7 +415,7 @@
 
 <dl class="class">
 <dt id="cocos.particle_systems.Sun">
-<em class="property">class </em><code class="descname">Sun</code><span class="sig-paren">(</span><em>fallback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle_systems.Sun" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Sun</code><span class="sig-paren">(</span><em>fallback=None</em>, <em>texture=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle_systems.Sun" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.particle.html#cocos.particle.ParticleSystem" title="cocos.particle.ParticleSystem"><code class="xref py py-class docutils literal"><span class="pre">cocos.particle.ParticleSystem</span></code></a></p>
 <dl class="attribute">
 <dt id="cocos.particle_systems.Sun.angle">
@@ -446,12 +449,12 @@
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Sun.end_color">
-<code class="descname">end_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B550&gt;</em><a class="headerlink" href="#cocos.particle_systems.Sun.end_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color</code><em class="property"> = Color(0.00, 0.00, 0.00, 0.00)</em><a class="headerlink" href="#cocos.particle_systems.Sun.end_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Sun.end_color_var">
-<code class="descname">end_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B570&gt;</em><a class="headerlink" href="#cocos.particle_systems.Sun.end_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color_var</code><em class="property"> = Color(0.00, 0.00, 0.00, 0.00)</em><a class="headerlink" href="#cocos.particle_systems.Sun.end_color_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -506,12 +509,12 @@
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Sun.start_color">
-<code class="descname">start_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B510&gt;</em><a class="headerlink" href="#cocos.particle_systems.Sun.start_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color</code><em class="property"> = Color(0.75, 0.25, 0.12, 1.00)</em><a class="headerlink" href="#cocos.particle_systems.Sun.start_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Sun.start_color_var">
-<code class="descname">start_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B530&gt;</em><a class="headerlink" href="#cocos.particle_systems.Sun.start_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color_var</code><em class="property"> = Color(0.00, 0.00, 0.00, 0.00)</em><a class="headerlink" href="#cocos.particle_systems.Sun.start_color_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -533,7 +536,7 @@
 
 <dl class="class">
 <dt id="cocos.particle_systems.Fire">
-<em class="property">class </em><code class="descname">Fire</code><span class="sig-paren">(</span><em>fallback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle_systems.Fire" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Fire</code><span class="sig-paren">(</span><em>fallback=None</em>, <em>texture=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle_systems.Fire" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.particle.html#cocos.particle.ParticleSystem" title="cocos.particle.ParticleSystem"><code class="xref py py-class docutils literal"><span class="pre">cocos.particle.ParticleSystem</span></code></a></p>
 <dl class="attribute">
 <dt id="cocos.particle_systems.Fire.angle">
@@ -567,12 +570,12 @@
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Fire.end_color">
-<code class="descname">end_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B450&gt;</em><a class="headerlink" href="#cocos.particle_systems.Fire.end_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color</code><em class="property"> = Color(0.00, 0.00, 0.00, 1.00)</em><a class="headerlink" href="#cocos.particle_systems.Fire.end_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Fire.end_color_var">
-<code class="descname">end_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B470&gt;</em><a class="headerlink" href="#cocos.particle_systems.Fire.end_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color_var</code><em class="property"> = Color(0.00, 0.00, 0.00, 0.00)</em><a class="headerlink" href="#cocos.particle_systems.Fire.end_color_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -627,12 +630,12 @@
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Fire.start_color">
-<code class="descname">start_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B410&gt;</em><a class="headerlink" href="#cocos.particle_systems.Fire.start_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color</code><em class="property"> = Color(0.76, 0.25, 0.12, 1.00)</em><a class="headerlink" href="#cocos.particle_systems.Fire.start_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Fire.start_color_var">
-<code class="descname">start_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B430&gt;</em><a class="headerlink" href="#cocos.particle_systems.Fire.start_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color_var</code><em class="property"> = Color(0.00, 0.00, 0.00, 0.00)</em><a class="headerlink" href="#cocos.particle_systems.Fire.start_color_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -644,7 +647,7 @@
 
 <dl class="class">
 <dt id="cocos.particle_systems.Galaxy">
-<em class="property">class </em><code class="descname">Galaxy</code><span class="sig-paren">(</span><em>fallback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle_systems.Galaxy" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Galaxy</code><span class="sig-paren">(</span><em>fallback=None</em>, <em>texture=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle_systems.Galaxy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.particle.html#cocos.particle.ParticleSystem" title="cocos.particle.ParticleSystem"><code class="xref py py-class docutils literal"><span class="pre">cocos.particle.ParticleSystem</span></code></a></p>
 <dl class="attribute">
 <dt id="cocos.particle_systems.Galaxy.angle">
@@ -678,12 +681,12 @@
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Galaxy.end_color">
-<code class="descname">end_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B6D0&gt;</em><a class="headerlink" href="#cocos.particle_systems.Galaxy.end_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color</code><em class="property"> = Color(0.00, 0.00, 0.00, 0.00)</em><a class="headerlink" href="#cocos.particle_systems.Galaxy.end_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Galaxy.end_color_var">
-<code class="descname">end_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B6F0&gt;</em><a class="headerlink" href="#cocos.particle_systems.Galaxy.end_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color_var</code><em class="property"> = Color(0.00, 0.00, 0.00, 0.00)</em><a class="headerlink" href="#cocos.particle_systems.Galaxy.end_color_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -738,12 +741,12 @@
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Galaxy.start_color">
-<code class="descname">start_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B690&gt;</em><a class="headerlink" href="#cocos.particle_systems.Galaxy.start_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color</code><em class="property"> = Color(0.12, 0.25, 0.76, 1.00)</em><a class="headerlink" href="#cocos.particle_systems.Galaxy.start_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Galaxy.start_color_var">
-<code class="descname">start_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B6B0&gt;</em><a class="headerlink" href="#cocos.particle_systems.Galaxy.start_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color_var</code><em class="property"> = Color(0.00, 0.00, 0.00, 0.00)</em><a class="headerlink" href="#cocos.particle_systems.Galaxy.start_color_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -765,7 +768,7 @@
 
 <dl class="class">
 <dt id="cocos.particle_systems.Flower">
-<em class="property">class </em><code class="descname">Flower</code><span class="sig-paren">(</span><em>fallback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle_systems.Flower" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Flower</code><span class="sig-paren">(</span><em>fallback=None</em>, <em>texture=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle_systems.Flower" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.particle.html#cocos.particle.ParticleSystem" title="cocos.particle.ParticleSystem"><code class="xref py py-class docutils literal"><span class="pre">cocos.particle.ParticleSystem</span></code></a></p>
 <dl class="attribute">
 <dt id="cocos.particle_systems.Flower.angle">
@@ -799,12 +802,12 @@
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Flower.end_color">
-<code class="descname">end_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B4D0&gt;</em><a class="headerlink" href="#cocos.particle_systems.Flower.end_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color</code><em class="property"> = Color(0.00, 0.00, 0.00, 1.00)</em><a class="headerlink" href="#cocos.particle_systems.Flower.end_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Flower.end_color_var">
-<code class="descname">end_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B4F0&gt;</em><a class="headerlink" href="#cocos.particle_systems.Flower.end_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color_var</code><em class="property"> = Color(0.00, 0.00, 0.00, 0.00)</em><a class="headerlink" href="#cocos.particle_systems.Flower.end_color_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -859,12 +862,12 @@
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Flower.start_color">
-<code class="descname">start_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B490&gt;</em><a class="headerlink" href="#cocos.particle_systems.Flower.start_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color</code><em class="property"> = Color(0.50, 0.50, 0.50, 1.00)</em><a class="headerlink" href="#cocos.particle_systems.Flower.start_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Flower.start_color_var">
-<code class="descname">start_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B4B0&gt;</em><a class="headerlink" href="#cocos.particle_systems.Flower.start_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color_var</code><em class="property"> = Color(0.50, 0.50, 0.50, 0.00)</em><a class="headerlink" href="#cocos.particle_systems.Flower.start_color_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -886,7 +889,7 @@
 
 <dl class="class">
 <dt id="cocos.particle_systems.Explosion">
-<em class="property">class </em><code class="descname">Explosion</code><span class="sig-paren">(</span><em>fallback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle_systems.Explosion" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Explosion</code><span class="sig-paren">(</span><em>fallback=None</em>, <em>texture=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle_systems.Explosion" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.particle.html#cocos.particle.ParticleSystem" title="cocos.particle.ParticleSystem"><code class="xref py py-class docutils literal"><span class="pre">cocos.particle.ParticleSystem</span></code></a></p>
 <dl class="attribute">
 <dt id="cocos.particle_systems.Explosion.angle">
@@ -920,12 +923,12 @@
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Explosion.end_color">
-<code class="descname">end_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B3D0&gt;</em><a class="headerlink" href="#cocos.particle_systems.Explosion.end_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color</code><em class="property"> = Color(0.50, 0.50, 0.50, 0.00)</em><a class="headerlink" href="#cocos.particle_systems.Explosion.end_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Explosion.end_color_var">
-<code class="descname">end_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B3F0&gt;</em><a class="headerlink" href="#cocos.particle_systems.Explosion.end_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color_var</code><em class="property"> = Color(0.50, 0.50, 0.50, 0.00)</em><a class="headerlink" href="#cocos.particle_systems.Explosion.end_color_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -980,12 +983,12 @@
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Explosion.start_color">
-<code class="descname">start_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B390&gt;</em><a class="headerlink" href="#cocos.particle_systems.Explosion.start_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color</code><em class="property"> = Color(0.70, 0.20, 0.10, 1.00)</em><a class="headerlink" href="#cocos.particle_systems.Explosion.start_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Explosion.start_color_var">
-<code class="descname">start_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B3B0&gt;</em><a class="headerlink" href="#cocos.particle_systems.Explosion.start_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color_var</code><em class="property"> = Color(0.50, 0.50, 0.50, 0.00)</em><a class="headerlink" href="#cocos.particle_systems.Explosion.start_color_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -997,7 +1000,7 @@
 
 <dl class="class">
 <dt id="cocos.particle_systems.Smoke">
-<em class="property">class </em><code class="descname">Smoke</code><span class="sig-paren">(</span><em>fallback=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle_systems.Smoke" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Smoke</code><span class="sig-paren">(</span><em>fallback=None</em>, <em>texture=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.particle_systems.Smoke" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.particle.html#cocos.particle.ParticleSystem" title="cocos.particle.ParticleSystem"><code class="xref py py-class docutils literal"><span class="pre">cocos.particle.ParticleSystem</span></code></a></p>
 <dl class="attribute">
 <dt id="cocos.particle_systems.Smoke.angle">
@@ -1031,12 +1034,12 @@
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Smoke.end_color">
-<code class="descname">end_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B750&gt;</em><a class="headerlink" href="#cocos.particle_systems.Smoke.end_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color</code><em class="property"> = Color(0.50, 0.50, 0.50, 0.10)</em><a class="headerlink" href="#cocos.particle_systems.Smoke.end_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Smoke.end_color_var">
-<code class="descname">end_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B770&gt;</em><a class="headerlink" href="#cocos.particle_systems.Smoke.end_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">end_color_var</code><em class="property"> = Color(0.00, 0.00, 0.00, 0.10)</em><a class="headerlink" href="#cocos.particle_systems.Smoke.end_color_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -1091,12 +1094,12 @@
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Smoke.start_color">
-<code class="descname">start_color</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B710&gt;</em><a class="headerlink" href="#cocos.particle_systems.Smoke.start_color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color</code><em class="property"> = Color(0.50, 0.50, 0.50, 0.10)</em><a class="headerlink" href="#cocos.particle_systems.Smoke.start_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.particle_systems.Smoke.start_color_var">
-<code class="descname">start_color_var</code><em class="property"> = &lt;cocos.particle.Color object at 0x0806B730&gt;</em><a class="headerlink" href="#cocos.particle_systems.Smoke.start_color_var" title="Permalink to this definition">¶</a></dt>
+<code class="descname">start_color_var</code><em class="property"> = Color(0.00, 0.00, 0.00, 0.10)</em><a class="headerlink" href="#cocos.particle_systems.Smoke.start_color_var" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
@@ -1145,9 +1148,6 @@
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -1174,8 +1174,8 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2015, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+        &copy; Copyright 2008-2016, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
   </body>
 </html>
