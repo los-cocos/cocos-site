@@ -1,5 +1,5 @@
-cocos.audio.pygame.version module
-=================================
+cocos\.audio\.pygame\.version module
+====================================
 
 .. automodule:: cocos.audio.pygame.version
     :members:

@@ -1,34 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>cocos.audio.SDL.audio module &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>cocos.audio.SDL.audio module &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
-    <link rel="up" title="cocos.audio.SDL package" href="cocos.audio.SDL.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.audio.SDL.constants module" href="cocos.audio.SDL.constants.html" />
     <link rel="prev" title="cocos.audio.SDL.array module" href="cocos.audio.SDL.array.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,10 +42,10 @@
         <li class="right" >
           <a href="cocos.audio.SDL.array.html" title="cocos.audio.SDL.array module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &raquo;</li>
-          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" accesskey="U">cocos.audio.SDL package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" accesskey="U">cocos.audio.SDL package</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -69,32 +67,32 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Ivariables:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>needed</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">1 if conversion is possible</p>
+<dt><cite>needed</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">1 if conversion is possible</p>
 </dd>
-<dt><cite>src_format</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Source audio format.  See <cite>SDL_AudioSpec.format</cite></p>
+<dt><cite>src_format</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Source audio format.  See <cite>SDL_AudioSpec.format</cite></p>
 </dd>
-<dt><cite>dst_format</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Destination audio format.  See <cite>SDL_AudioSpec.format</cite></p>
+<dt><cite>dst_format</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Destination audio format.  See <cite>SDL_AudioSpec.format</cite></p>
 </dd>
-<dt><cite>rate_incr</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Rate conversion increment</p>
+<dt><cite>rate_incr</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Rate conversion increment</p>
 </dd>
-<dt><cite>len</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Length of original audio buffer</p>
+<dt><cite>len</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Length of original audio buffer</p>
 </dd>
-<dt><cite>len_cvt</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Length of converted audio buffer</p>
+<dt><cite>len_cvt</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Length of converted audio buffer</p>
 </dd>
-<dt><cite>len_mult</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Buffer must be len * len_mult big</p>
+<dt><cite>len_mult</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Buffer must be len * len_mult big</p>
 </dd>
-<dt><cite>len_ratio</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Given len, final size is len * len_ratio</p>
+<dt><cite>len_ratio</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Given len, final size is len * len_ratio</p>
 </dd>
-<dt><cite>filter_index</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Current audio conversion function</p>
+<dt><cite>filter_index</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Current audio conversion function</p>
 </dd>
 </dl>
 </td>
@@ -180,24 +178,24 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Ivariables:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>freq</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">DSP frequency, in samples per second</p>
+<dt><cite>freq</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">DSP frequency, in samples per second</p>
 </dd>
-<dt><cite>format</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Audio data format. One of AUDIO_U8, AUDIO_S8, AUDIO_U16LSB,
+<dt><cite>format</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Audio data format. One of AUDIO_U8, AUDIO_S8, AUDIO_U16LSB,
 AUDIO_S16LSB, AUDIO_U16MSB or AUDIO_S16MSB</p>
 </dd>
-<dt><cite>channels</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Number of channels; 1 for mono or 2 for stereo.</p>
+<dt><cite>channels</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Number of channels; 1 for mono or 2 for stereo.</p>
 </dd>
-<dt><cite>silence</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Audio buffer silence value (calculated)</p>
+<dt><cite>silence</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Audio buffer silence value (calculated)</p>
 </dd>
-<dt><cite>samples</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Audio buffer size in samples (power of 2)</p>
+<dt><cite>samples</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Audio buffer size in samples (power of 2)</p>
 </dd>
-<dt><cite>size</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">Audio buffer size in bytes (calculated)</p>
+<dt><cite>size</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">Audio buffer size in bytes (calculated)</p>
 </dd>
 </dl>
 </td>
@@ -374,12 +372,12 @@ format and <cite>audio_buf</cite> is the buffer containing audio data.</p>
 them, performing addition, volume adjustment, and overflow clipping.
 The volume ranges from 0 - 128, and should be set to SDL_MIX_MAXVOLUME
 for full audio volume.  Note this does not change hardware volume.
-This is provided for convenience &#8211; you can mix your own audio data.</p>
+This is provided for convenience – you can mix your own audio data.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Note:</th><td class="field-body"><p class="first">SDL-ctypes doesn&#8217;t know the current play format, so you must
+<tr class="field-odd field"><th class="field-name">Note:</th><td class="field-body"><p class="first">SDL-ctypes doesn’t know the current play format, so you must
 always pass in byte buffers (SDL_array or sequence) to this function,
 rather than of the native data type.</p>
 </td>
@@ -405,7 +403,7 @@ instance passed into <cite>obtained</cite>.  If <cite>obtained</cite> is None, t
 data passed to the callback function will be guaranteed to be in
 the requested format, and will be automatically converted to the
 hardware audio format if necessary.</p>
-<p>An exception will be raised if the audio device couldn&#8217;t be opened,
+<p>An exception will be raised if the audio device couldn’t be opened,
 or the audio thread could not be set up.</p>
 <p>The fields of <cite>desired</cite> are interpreted as follows:</p>
 <blockquote>
@@ -452,7 +450,7 @@ protect data structures that it accesses by calling
 <dd>passed as the first parameter to your callback function.</dd>
 </dl>
 </div></blockquote>
-<p>The audio device starts out playing silence when it&#8217;s opened, and should
+<p>The audio device starts out playing silence when it’s opened, and should
 be enabled for playing by calling <code class="docutils literal"><span class="pre">SDL_PauseAudio(False)</span></code> when you are
 ready for your audio callback function to be called.  Since the audio
 driver may modify the requested size of the audio buffer, you should
@@ -495,8 +493,8 @@ allocate any local mixing buffers after you open the audio device.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -521,15 +519,15 @@ allocate any local mixing buffers after you open the audio device.</p>
         <li class="right" >
           <a href="cocos.audio.SDL.array.html" title="cocos.audio.SDL.array module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &raquo;</li>
-          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" >cocos.audio.SDL package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" >cocos.audio.SDL package</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

@@ -1,34 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Skeletal Animations &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>Skeletal Animations &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="../../index.html" />
-    <link rel="up" title="cocos2d Programming Guide" href="../index.html" />
-    <link rel="next" title="cocos package" href="../../api/cocos.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="A few tips on threading and multiprocessing" href="../threading_and_multiprocessing.html" />
     <link rel="prev" title="Collision" href="../collision.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -39,13 +37,13 @@
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../../api/cocos.html" title="cocos package"
+          <a href="../threading_and_multiprocessing.html" title="A few tips on threading and multiprocessing"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="../collision.html" title="Collision"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">cocos2d Programming Guide</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">cocos2d Programming Guide</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -107,7 +105,7 @@ human skeleton as follows:</p>
 <span class="n">skeleton</span> <span class="o">=</span> <span class="n">Skeleton</span><span class="p">(</span><span class="n">root_bone</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>This reads like: Create a bone labeled &#8216;body&#8217; that is 70 pixels long, is
+<p>This reads like: Create a bone labeled ‘body’ that is 70 pixels long, is
 rotated by -180 degrees and starts on (0,0). We rotate the bone because we want
 to be able to move its shoulders and not its legs, so the fixed part of the
 skeleton will be its waist, ie, the origin of the root bone.</p>
@@ -120,7 +118,7 @@ skeleton will be its waist, ie, the origin of the root bone.</p>
 
 <span class="k">class</span> <span class="nc">TestLayer</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span> <span class="n">TestLayer</span><span class="p">,</span> <span class="bp">self</span> <span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">(</span> <span class="n">TestLayer</span><span class="p">,</span> <span class="bp">self</span> <span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
         <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">director</span><span class="o">.</span><span class="n">get_window_size</span><span class="p">()</span>
 
@@ -152,9 +150,9 @@ The skin file will look like this:</p>
   <span class="p">]</span>
 </pre></div>
 </div>
-<p>This reads like: This skin ha an image for the bone labeled &#8216;body&#8217;, this image
+<p>This reads like: This skin ha an image for the bone labeled ‘body’, this image
 has an offset of (25, 91) from the bone origin, the image file is
-&#8216;gil-cuerpo.png&#8217; (provided by cocos), its flipped on its x axis, its flipped on
+‘gil-cuerpo.png’ (provided by cocos), its flipped on its x axis, its flipped on
 its y axis (remember we rotated the bone by -180), and its scaled to half its
 size.</p>
 <p>Now we can show the skeleton with the skin we have just created.</p>
@@ -165,7 +163,7 @@ size.</p>
 
 <span class="k">class</span> <span class="nc">TestLayer</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span> <span class="n">TestLayer</span><span class="p">,</span> <span class="bp">self</span> <span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">(</span> <span class="n">TestLayer</span><span class="p">,</span> <span class="bp">self</span> <span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
         <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">director</span><span class="o">.</span><span class="n">get_window_size</span><span class="p">()</span>
 
@@ -202,7 +200,7 @@ point has a small halo.</p>
 of the bone, the two blue control points, which control the position of the
 bone and skin part, and the green control point (behind one of the blue ones)
 which controls the skeleton position.</p>
-<p>Pressing &#8216;s&#8217; will save the changes you have made to the skeleton and skin file. This
+<p>Pressing ‘s’ will save the changes you have made to the skeleton and skin file. This
 will overwrite the .py files, so b carefull to just pur the data of the skeleton
 and skin in this files.</p>
 <p>This is a helpfull tool in creating your skins, as the only way to know the real
@@ -225,7 +223,7 @@ its parent bone position and rotation.</p>
 <span class="n">skeleton</span> <span class="o">=</span> <span class="n">Skeleton</span><span class="p">(</span><span class="n">root_bone</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Here we abuse the fact that the function &#8216;add&#8217; returns the parent bone, so
+<p>Here we abuse the fact that the function ‘add’ returns the parent bone, so
 you can chain call to add and have and indentation that resembles the
 hierarchical structure of the skeleton.</p>
 <p>The upper arm is 30 pixels long and is placed at the end of the body by offsetting
@@ -262,7 +260,7 @@ with it for a while. And if you dont, you can just submit a patch.</p>
 <p>It is important to move the bones, not just the skin, so the shoulder and elbow
 move at the right locations. You can test that rotating the bones and making
 sure that the images look good in all positions.</p>
-<p>You then press the &#8216;s&#8217; key to save.</p>
+<p>You then press the ‘s’ key to save.</p>
 <p>You should continue this way until you have the full skeleton and skin defined.</p>
 <p>You can see and use the sample skeleton and skin provided in the test directory:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>tools$ python view_skeleton.py ../test/sample_skeleton.py
@@ -317,7 +315,7 @@ keyframe.</p>
 <p>from test/test_skeleton_anim.py:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestLayer</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">super</span><span class="p">(</span> <span class="n">TestLayer</span><span class="p">,</span> <span class="bp">self</span> <span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="nb">super</span><span class="p">(</span> <span class="n">TestLayer</span><span class="p">,</span> <span class="bp">self</span> <span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
         <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">director</span><span class="o">.</span><span class="n">get_window_size</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">skin</span> <span class="o">=</span> <span class="n">skeleton</span><span class="o">.</span><span class="n">BitmapSkin</span><span class="p">(</span><span class="n">sample_skeleton</span><span class="o">.</span><span class="n">skeleton</span><span class="p">,</span> <span class="n">sample_skin</span><span class="o">.</span><span class="n">skin</span><span class="p">)</span>
@@ -365,8 +363,8 @@ translation, the player will just move left twicenas far.</p>
   <p class="topless"><a href="../collision.html"
                         title="previous chapter">Collision</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../../api/cocos.html"
-                        title="next chapter">cocos package</a></p>
+  <p class="topless"><a href="../threading_and_multiprocessing.html"
+                        title="next chapter">A few tips on threading and multiprocessing</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -377,8 +375,8 @@ translation, the player will just move left twicenas far.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -398,18 +396,18 @@ translation, the player will just move left twicenas far.</p>
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="../../api/cocos.html" title="cocos package"
+          <a href="../threading_and_multiprocessing.html" title="A few tips on threading and multiprocessing"
              >next</a> |</li>
         <li class="right" >
           <a href="../collision.html" title="Collision"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="../index.html" >cocos2d Programming Guide</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >cocos2d Programming Guide</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

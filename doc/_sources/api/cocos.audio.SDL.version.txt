@@ -1,5 +1,5 @@
-cocos.audio.SDL.version module
-==============================
+cocos\.audio\.SDL\.version module
+=================================
 
 .. automodule:: cocos.audio.SDL.version
     :members:

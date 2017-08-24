@@ -1,5 +1,5 @@
-cocos.layer.python_interpreter module
-=====================================
+cocos\.layer\.python\_interpreter module
+========================================
 
 .. automodule:: cocos.layer.python_interpreter
     :members:

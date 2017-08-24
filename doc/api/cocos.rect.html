@@ -1,34 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>cocos.rect module &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>cocos.rect module &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
-    <link rel="up" title="cocos package" href="cocos.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.scene module" href="cocos.scene.html" />
     <link rel="prev" title="cocos.path module" href="cocos.path.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,8 +42,8 @@
         <li class="right" >
           <a href="cocos.path.html" title="cocos.path module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -66,22 +64,22 @@ which may be assigned to which will result in altering the position
 and sometimes dimensions of the Rect:</p>
 <blockquote>
 <div><ul class="simple">
-<li>top         &#8211; y pixel extent</li>
-<li>bottom      &#8211; y pixel extent</li>
-<li>left        &#8211; x pixel extent</li>
-<li>right       &#8211; x pixel extent</li>
-<li>position    &#8211; (x, y) of bottom-left corner pixel</li>
-<li>origin      &#8211; (x, y) of bottom-left corner pixel</li>
-<li>center      &#8211; (x, y) of center pixel</li>
-<li>topleft     &#8211; (x, y) of top-left corner pixel</li>
-<li>topright    &#8211; (x, y) of top-right corner pixel</li>
-<li>bottomleft  &#8211; (x, y) of bottom-left corner pixel</li>
-<li>bottomright &#8211; (x, y) of bottom-right corner pixel</li>
-<li>midtop      &#8211; (x, y) of middle of top side pixel</li>
-<li>midbottom   &#8211; (x, y) of middle of bottom side pixel</li>
-<li>midleft     &#8211; (x, y) of middle of left side pixel</li>
-<li>midright    &#8211; (x, y) of middle of right side pixel</li>
-<li>size        &#8211; (width, height) of rect</li>
+<li>top         – y pixel extent</li>
+<li>bottom      – y pixel extent</li>
+<li>left        – x pixel extent</li>
+<li>right       – x pixel extent</li>
+<li>position    – (x, y) of bottom-left corner pixel</li>
+<li>origin      – (x, y) of bottom-left corner pixel</li>
+<li>center      – (x, y) of center pixel</li>
+<li>topleft     – (x, y) of top-left corner pixel</li>
+<li>topright    – (x, y) of top-right corner pixel</li>
+<li>bottomleft  – (x, y) of bottom-left corner pixel</li>
+<li>bottomright – (x, y) of bottom-right corner pixel</li>
+<li>midtop      – (x, y) of middle of top side pixel</li>
+<li>midbottom   – (x, y) of middle of bottom side pixel</li>
+<li>midleft     – (x, y) of middle of left side pixel</li>
+<li>midright    – (x, y) of middle of right side pixel</li>
+<li>size        – (width, height) of rect</li>
 </ul>
 </div></blockquote>
 <p>The Rect area includes the bottom and left borders but not the top and
@@ -90,7 +88,7 @@ right borders.</p>
 <dt id="cocos.rect.Rect.clippedBy">
 <code class="descname">clippedBy</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.clippedBy" title="Permalink to this definition">¶</a></dt>
 <dd><p>bool. True iif intersection with other is smaller than self.</p>
-<p>Equivalent: True if self doesn&#8217;t fit entirely into other</p>
+<p>Equivalent: True if self doesn’t fit entirely into other</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r2</span> <span class="o">=</span> <span class="n">Rect</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r2</span><span class="o">.</span><span class="n">clippedBy</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>    <span class="c1"># r2 fits inside r1</span>
@@ -232,7 +230,7 @@ rect area.</p>
 <dl class="method">
 <dt id="cocos.rect.Rect.intersects">
 <code class="descname">intersects</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.rect.Rect.intersects" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return boolean whether the interior of &#8220;other&#8221; rect (an object
+<dd><p>Return boolean whether the interior of “other” rect (an object
 with .x, .y, .width and .height attributes) overlaps the interior
 of this Rect in any way.</p>
 </dd></dl>
@@ -463,8 +461,8 @@ of this Rect in any way.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -489,13 +487,13 @@ of this Rect in any way.</p>
         <li class="right" >
           <a href="cocos.path.html" title="cocos.path module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

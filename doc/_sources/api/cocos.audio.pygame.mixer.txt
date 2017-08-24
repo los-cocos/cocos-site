@@ -1,5 +1,5 @@
-cocos.audio.pygame.mixer module
-===============================
+cocos\.audio\.pygame\.mixer module
+==================================
 
 .. automodule:: cocos.audio.pygame.mixer
     :members:

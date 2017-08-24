@@ -1,5 +1,5 @@
-cocos.grid module
-=================
+cocos\.grid module
+==================
 
 .. automodule:: cocos.grid
     :members:

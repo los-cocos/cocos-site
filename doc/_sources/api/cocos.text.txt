@@ -1,5 +1,5 @@
-cocos.text module
-=================
+cocos\.text module
+==================
 
 .. automodule:: cocos.text
     :members:

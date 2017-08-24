@@ -1,5 +1,5 @@
-cocos.audio.music module
-========================
+cocos\.audio\.music module
+==========================
 
 .. automodule:: cocos.audio.music
     :members:

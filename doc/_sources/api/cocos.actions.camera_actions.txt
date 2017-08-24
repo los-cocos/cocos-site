@@ -1,5 +1,5 @@
-cocos.actions.camera_actions module
-===================================
+cocos\.actions\.camera\_actions module
+======================================
 
 .. automodule:: cocos.actions.camera_actions
     :members:

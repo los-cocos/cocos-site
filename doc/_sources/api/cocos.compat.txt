@@ -1,5 +1,5 @@
-cocos.compat module
-===================
+cocos\.compat module
+====================
 
 .. automodule:: cocos.compat
     :members:

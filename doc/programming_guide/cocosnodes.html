@@ -1,34 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>CocosNodes &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>CocosNodes &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
-    <link rel="up" title="cocos2d Programming Guide" href="index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Built-in Python Interpreter" href="interpreter.html" />
     <link rel="prev" title="Map Colliders" href="mapcoliders.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,8 +42,8 @@
         <li class="right" >
           <a href="mapcoliders.html" title="Map Colliders"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">cocos2d Programming Guide</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">cocos2d Programming Guide</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -112,7 +110,7 @@
 <li>.get_ancestor(self, klass): Returns the first ancestor that isinstance of klass, or None</li>
 <li>.get_children(self): Returns a list with the node children, order is back to front (ascending z)</li>
 <li>.get(self, name): Gets a child given its name, raises exception Child not found if not present</li>
-<li>operator in , as &#8216;in node1 in node2&#8217;: returns True if and only if node1 is child of node 2</li>
+<li>operator in , as ‘in node1 in node2’: returns True if and only if node1 is child of node 2</li>
 </ul>
 </div></blockquote>
 <p><a class="reference internal" href="#parent-child-examples">Parent-Child examples</a></p>
@@ -213,7 +211,7 @@ An use case is when you want to show one of a number of menus.</p>
 </div>
 <div class="section" id="scrollingmanager">
 <h3><a class="toc-backref" href="#id14">ScrollingManager</a><a class="headerlink" href="#scrollingmanager" title="Permalink to this headline">¶</a></h3>
-<p>Coordinates a number of ScrollableLayer to do scroll and parallax so that the scroll don&#8217;t goes out of the the world.</p>
+<p>Coordinates a number of ScrollableLayer to do scroll and parallax so that the scroll don’t goes out of the the world.</p>
 <p>References: <a class="reference internal" href="../api/cocos.layer.scrolling.html#cocos.layer.scrolling.ScrollingManager" title="cocos.layer.scrolling.ScrollingManager"><code class="xref py py-class docutils literal"><span class="pre">api</span> <span class="pre">ScrollingManager</span></code></a></p>
 </div>
 <div class="section" id="scrollablelayer">
@@ -240,7 +238,7 @@ If using parallax, it must be provided in the constructor.</p>
 <div class="section" id="pythoninterpreterlayer">
 <h3><a class="toc-backref" href="#id17">PythonInterpreterLayer</a><a class="headerlink" href="#pythoninterpreterlayer" title="Permalink to this headline">¶</a></h3>
 <p>Used by director to show a python console that allows to inspect and modify the objects in the application using director.
-You don&#8217;t instantiate manually an PythonInterpreterLayer, simply press ctrl + i (cmd + i on mac) to toggle the layer&#8217;s visibility.</p>
+You don’t instantiate manually an PythonInterpreterLayer, simply press ctrl + i (cmd + i on mac) to toggle the layer’s visibility.</p>
 <p>References: <a class="reference internal" href="interpreter.html"><span class="doc">guide PythonInterpreterLayer</span></a> , <a class="reference internal" href="../api/cocos.layer.python_interpreter.html#cocos.layer.python_interpreter.PythonInterpreterLayer" title="cocos.layer.python_interpreter.PythonInterpreterLayer"><code class="xref py py-class docutils literal"><span class="pre">api</span> <span class="pre">PythonInterpreterLayer</span></code></a></p>
 </div>
 <div class="section" id="sprite">
@@ -268,7 +266,7 @@ scene, like:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TLayer</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
     <span class="n">is_event_handler</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="n">world_width</span><span class="p">,</span> <span class="n">world_height</span> <span class="o">=</span> <span class="n">director</span><span class="o">.</span><span class="n">get_window_size</span><span class="p">()</span>
         <span class="n">rand_color</span> <span class="o">=</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
         <span class="n">icolor</span> <span class="o">=</span> <span class="mi">0</span>
@@ -287,7 +285,7 @@ sprites to them. Even only one batch can give you 4x fps:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TLayer</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
     <span class="n">is_event_handler</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-            <span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
             <span class="n">batch</span> <span class="o">=</span> <span class="n">cocos</span><span class="o">.</span><span class="n">batch</span><span class="o">.</span><span class="n">BatchNode</span><span class="p">()</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span> <span class="c1"># we add a batch to the layer ...</span>
             <span class="n">world_width</span><span class="p">,</span> <span class="n">world_height</span> <span class="o">=</span> <span class="n">director</span><span class="o">.</span><span class="n">get_window_size</span><span class="p">()</span>
@@ -330,7 +328,7 @@ Of course, deeper customization can be achieved with subclassing and code custom
 <div class="section" id="textelement-label-htmllabel-richlabel">
 <h3><a class="toc-backref" href="#id22">TextElement, Label, HTMLLabel, RichLabel</a><a class="headerlink" href="#textelement-label-htmllabel-richlabel" title="Permalink to this headline">¶</a></h3>
 <p>Overall opacity, Family and Font size can be specified for all.</p>
-<p><a class="reference internal" href="../api/cocos.text.html#cocos.text.TextElement" title="cocos.text.TextElement"><code class="xref py py-class docutils literal"><span class="pre">TextElement</span></code></a>: base class for all cocos text. Holds internally (member &#8216;element&#8217;) a suitable pyglet text object, providing the CocosNode interface and pyglet Batch to store parts.
+<p><a class="reference internal" href="../api/cocos.text.html#cocos.text.TextElement" title="cocos.text.TextElement"><code class="xref py py-class docutils literal"><span class="pre">TextElement</span></code></a>: base class for all cocos text. Holds internally (member ‘element’) a suitable pyglet text object, providing the CocosNode interface and pyglet Batch to store parts.
 Features other than opacity and the common cocosnode ones should be accessed trough the instance.element.</p>
 <p><a class="reference internal" href="../api/cocos.text.html#cocos.text.Label" title="cocos.text.Label"><code class="xref py py-class docutils literal"><span class="pre">Label</span></code></a>: provide the most simple text display; color can also be set.</p>
 <p><a class="reference internal" href="../api/cocos.text.html#cocos.text.HTMLLabel" title="cocos.text.HTMLLabel"><code class="xref py py-class docutils literal"><span class="pre">HTMLLabel</span></code></a>: a slightly more powerful label, it can use mixed styles. Uses HTML syntax for text and styles; opacity as a whole can be set.</p>
@@ -396,7 +394,7 @@ We could add the blotch_sprite to the zac_sprite, an then the blotch will follow
 <span class="n">layer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">blotch_sprite</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>If for some ridiculous reason a dagger needs to grab a reference to the game_layer we could use &#8216;get_ancestor&#8217;.
+<p>If for some ridiculous reason a dagger needs to grab a reference to the game_layer we could use ‘get_ancestor’.
 Due to to way we staged the scene, we know game_layer is parent of bloody_pacman_sprite which is parent of the dagger. So:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">layer</span> <span class="o">=</span> <span class="n">dagger_near</span><span class="o">.</span><span class="n">get_ancestor</span><span class="p">(</span><span class="n">Layer</span><span class="p">)</span>
 </pre></div>
@@ -410,7 +408,7 @@ Due to to way we staged the scene, we know game_layer is parent of bloody_pacman
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">game_layer</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">zac_sprite</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>or if we named it &#8220;T&#8217;chkss&#8221; when we added to the game_layer, like in:</p>
+<p>or if we named it “T’chkss” when we added to the game_layer, like in:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">game_layer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">zac_sprite</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;T&#39;chkss&quot;</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -518,8 +516,8 @@ By example:</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -544,13 +542,13 @@ By example:</p>
         <li class="right" >
           <a href="mapcoliders.html" title="Map Colliders"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >cocos2d Programming Guide</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >cocos2d Programming Guide</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

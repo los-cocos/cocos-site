@@ -1,5 +1,5 @@
-cocos.actions.grid3d_actions module
-===================================
+cocos\.actions\.grid3d\_actions module
+======================================
 
 .. automodule:: cocos.actions.grid3d_actions
     :members:

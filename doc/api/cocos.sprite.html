@@ -1,34 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>cocos.sprite module &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>cocos.sprite module &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
-    <link rel="up" title="cocos package" href="cocos.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.text module" href="cocos.text.html" />
     <link rel="prev" title="cocos.skeleton module" href="cocos.skeleton.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,8 +42,8 @@
         <li class="right" >
           <a href="cocos.skeleton.html" title="cocos.skeleton module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -87,7 +85,7 @@ in 5 seconds.</p>
 </div>
 <dl class="class">
 <dt id="cocos.sprite.Sprite">
-<em class="property">class </em><code class="descname">Sprite</code><span class="sig-paren">(</span><em>image</em>, <em>position=(0</em>, <em>0)</em>, <em>rotation=0</em>, <em>scale=1</em>, <em>opacity=255</em>, <em>color=(255</em>, <em>255</em>, <em>255)</em>, <em>anchor=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.sprite.Sprite" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descname">Sprite</code><span class="sig-paren">(</span><em>image</em>, <em>position=(0</em>, <em>0)</em>, <em>rotation=0</em>, <em>scale=1</em>, <em>opacity=255</em>, <em>color=(255</em>, <em>255</em>, <em>255)</em>, <em>anchor=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.sprite.Sprite" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.batch.html#cocos.batch.BatchableNode" title="cocos.batch.BatchableNode"><code class="xref py py-class docutils literal"><span class="pre">cocos.batch.BatchableNode</span></code></a>, <code class="xref py py-class docutils literal"><span class="pre">pyglet.sprite.Sprite</span></code></p>
 <p>A CocosNode that displays a rectangular image.</p>
 <p>Example:</p>
@@ -99,16 +97,16 @@ in 5 seconds.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>image</strong> (<em>str or pyglet.image.AbstractImage</em>) &#8211; name of the image resource or a pyglet image.</li>
-<li><strong>position</strong> (<em>tuple[float]</em>) &#8211; position of the anchor. Defaults to (0,0)</li>
-<li><strong>rotation</strong> (<em>float</em>) &#8211; the rotation (in degrees). Defaults to 0.</li>
-<li><strong>scale</strong> (<em>float</em>) &#8211; the zoom factor. Defaults to 1.</li>
-<li><strong>scale_x</strong> (<em>float</em>) &#8211; additional horizontal-only zoom factor. Defaults to 1.</li>
-<li><strong>scale_y</strong> (<em>float</em>) &#8211; additional vertical-only zoom factor. Defaults to 1.</li>
-<li><strong>opacity</strong> (<em>int</em>) &#8211; the opacity (0=transparent, 255=opaque). Defaults to 255.</li>
-<li><strong>color</strong> (<em>tuple[int]</em>) &#8211; the color to colorize the child (RGB 3-tuple). Defaults to
+<li><strong>image</strong> (<em>str</em><em>,  </em><em>pyglet.image.AbstractImage</em><em> or </em><em>pyglet.image.Animation</em>) – name of the image resource, a pyglet image or a pyglet animation</li>
+<li><strong>position</strong> (<em>tuple</em><em>[</em><em>float</em><em>]</em>) – position of the anchor. Defaults to (0,0)</li>
+<li><strong>rotation</strong> (<em>float</em>) – the rotation (in degrees). Defaults to 0.</li>
+<li><strong>scale</strong> (<em>float</em>) – the zoom factor. Defaults to 1.</li>
+<li><strong>scale_x</strong> (<em>float</em>) – additional horizontal-only zoom factor. Defaults to 1.</li>
+<li><strong>scale_y</strong> (<em>float</em>) – additional vertical-only zoom factor. Defaults to 1.</li>
+<li><strong>opacity</strong> (<em>int</em>) – the opacity (0=transparent, 255=opaque). Defaults to 255.</li>
+<li><strong>color</strong> (<em>tuple</em><em>[</em><em>int</em><em>]</em>) – the color to colorize the child (RGB 3-tuple). Defaults to
 (255,255,255).</li>
-<li><strong>anchor</strong> (<em>tuple[float]</em>) &#8211; (x, y) - point from where the image will be positioned,
+<li><strong>anchor</strong> (<em>tuple</em><em>[</em><em>float</em><em>]</em>) – (x, y) - point from where the image will be positioned,
 rotated and scaled in pixels. For example
 <code class="docutils literal"><span class="pre">(image.width/2,</span> <span class="pre">image.height/2)</span></code> is the center (default).</li>
 </ul>
@@ -152,7 +150,7 @@ the batch.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="cocos.rect.html#cocos.rect.Rect" title="cocos.rect.Rect"><code class="xref py py-class docutils literal"><span class="pre">cocos.rect.Rect</span></code></a> &#8211; Local-coordinates Axis Aligned Bounding Box.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="cocos.rect.html#cocos.rect.Rect" title="cocos.rect.Rect"><code class="xref py py-class docutils literal"><span class="pre">cocos.rect.Rect</span></code></a> – Local-coordinates Axis Aligned Bounding Box.</td>
 </tr>
 </tbody>
 </table>
@@ -162,9 +160,9 @@ the batch.</p>
 <dt id="cocos.sprite.Sprite.get_rect">
 <code class="descname">get_rect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.sprite.Sprite.get_rect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a <a class="reference internal" href="cocos.rect.html#cocos.rect.Rect" title="cocos.rect.Rect"><code class="xref py py-class docutils literal"><span class="pre">cocos.rect.Rect</span></code></a> for this sprite.</p>
-<p>Note that this rect&#8217;s position is most likely NOT the same
-as the Sprite&#8217;s position - in fact by default the rect&#8217;s
-center is the Sprite&#8217;s position. If you move the rect around
+<p>Note that this rect’s position is most likely NOT the same
+as the Sprite’s position - in fact by default the rect’s
+center is the Sprite’s position. If you move the rect around
 and wish to reflect this change in the Sprite, you will probably
 have to do something like (again with the default image anchor
 in the center):</p>
@@ -177,7 +175,7 @@ in the center):</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="cocos.rect.html#cocos.rect.Rect" title="cocos.rect.Rect"><code class="xref py py-class docutils literal"><span class="pre">cocos.rect.Rect</span></code></a> &#8211; The bounding box for this sprite.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference internal" href="cocos.rect.html#cocos.rect.Rect" title="cocos.rect.Rect"><code class="xref py py-class docutils literal"><span class="pre">cocos.rect.Rect</span></code></a> – The bounding box for this sprite.</td>
 </tr>
 </tbody>
 </table>
@@ -208,21 +206,21 @@ in the center):</p>
 <dl class="attribute">
 <dt id="cocos.sprite.Sprite.image_anchor">
 <code class="descname">image_anchor</code><a class="headerlink" href="#cocos.sprite.Sprite.image_anchor" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>tuple[float]</em> &#8211; Point from where the image will be positioned,
+<dd><p><em>tuple[float]</em> – Point from where the image will be positioned,
 rotated and scaled in pixels.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.sprite.Sprite.image_anchor_x">
 <code class="descname">image_anchor_x</code><a class="headerlink" href="#cocos.sprite.Sprite.image_anchor_x" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>float</em> &#8211; x coordinate from where the image will be positioned,
+<dd><p><em>float</em> – x coordinate from where the image will be positioned,
 rotated and scaled in pixels.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.sprite.Sprite.image_anchor_y">
 <code class="descname">image_anchor_y</code><a class="headerlink" href="#cocos.sprite.Sprite.image_anchor_y" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>float</em> &#8211; y coordinate from where the image will be positioned,
+<dd><p><em>float</em> – y coordinate from where the image will be positioned,
 rotated and scaled in pixels.</p>
 </dd></dl>
 
@@ -241,7 +239,7 @@ rotated and scaled in pixels.</p>
 <dl class="attribute">
 <dt id="cocos.sprite.Sprite.rotation">
 <code class="descname">rotation</code><a class="headerlink" href="#cocos.sprite.Sprite.rotation" title="Permalink to this definition">¶</a></dt>
-<dd><p><em>rotation in degrees of the sprite. Default</em> &#8211; 0 degrees</p>
+<dd><p><em>rotation in degrees of the sprite. Default</em> – 0 degrees</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -325,8 +323,8 @@ rotated and scaled in pixels.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -351,13 +349,13 @@ rotated and scaled in pixels.</p>
         <li class="right" >
           <a href="cocos.skeleton.html" title="cocos.skeleton module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

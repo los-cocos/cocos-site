@@ -1,5 +1,5 @@
-cocos.audio.pygame package
-==========================
+cocos\.audio\.pygame package
+============================
 
 Submodules
 ----------

@@ -1,33 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>cocos 0.6.4 &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>cocos 0.6.5 &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="cocos2d FAQ" href="faq/index.html" />
     <link rel="prev" title="cocos.wired module" href="api/cocos.wired.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -43,7 +42,7 @@
         <li class="right" >
           <a href="api/cocos.wired.html" title="cocos.wired module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">cocos</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">cocos</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -52,10 +51,20 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <p>Api changes and other compatibility notes from previous version</p>
+  <p>Api changes and other compatibility notes</p>
+<div class="section" id="cocos-0-6-5">
+<h1>cocos 0.6.5<a class="headerlink" href="#cocos-0-6-5" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><ul class="simple">
+<li>First cocos version to support pyglet 1.3 , tested against pyglet 1.3.rc1</li>
+<li>This cocos version can also run with pyglet 1.2.x</li>
+<li>Next cocos version will drop support for python 2.6</li>
+<li>Python 2.7 support can end at any future cocos release, without further advice: if pyglet drops it or a cocos new feature requires more than trivial compatibility code, then cocos will be py3 only</li>
+</ul>
+</div></blockquote>
+</div>
 <div class="section" id="cocos-0-6-4">
 <h1>cocos 0.6.4<a class="headerlink" href="#cocos-0-6-4" title="Permalink to this headline">¶</a></h1>
-<p>This is the first release supporting pyglet 1.3+</p>
 <p>Imports in cocos library are more specific, so user code that were doing
 <code class="docutils literal"><span class="pre">from</span> <span class="pre">cocos.somemodule</span> <span class="pre">import</span> <span class="pre">*</span></code> may fail to find some symbols.
 To fix that user code, add explicit exports as needed.</p>
@@ -94,6 +103,12 @@ still valid but will be removed in the future:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">cocos 0.6.5</a></li>
+<li><a class="reference internal" href="#cocos-0-6-4">cocos 0.6.4</a></li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="api/cocos.wired.html"
                         title="previous chapter">cocos.wired module</a></p>
@@ -110,8 +125,8 @@ still valid but will be removed in the future:</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -136,12 +151,12 @@ still valid but will be removed in the future:</p>
         <li class="right" >
           <a href="api/cocos.wired.html" title="cocos.wired module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">cocos</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">cocos</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

@@ -1,33 +1,31 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Documentation Notes &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>Documentation Notes &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
-    <link rel="up" title="Dev Notes" href="index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Dev Notes" href="index.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -40,8 +38,8 @@
         <li class="right" >
           <a href="index.html" title="Dev Notes"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Dev Notes</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Dev Notes</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -94,7 +92,7 @@ argument types</p>
 <p>Link to a section or some arbitrary point in any document:</p>
 <blockquote>
 <div><ul class="simple">
-<li>declare a label at the target location with <code class="docutils literal"><span class="pre">..</span> <span class="pre">_labelname:</span></code> (the &#8216;_&#8217; is not part of labelname)</li>
+<li>declare a label at the target location with <code class="docutils literal"><span class="pre">..</span> <span class="pre">_labelname:</span></code> (the ‘_’ is not part of labelname)</li>
 <li>write the link as <code class="docutils literal"><span class="pre">:ref:`TextToShowInLink&lt;labelname&gt;`</span></code> (brackets included)</li>
 <li>if TextToShowInLink is ommited the ref should be just before a section and the section title will be used as the text to show in the link</li>
 <li>labelname must be unique across all documents</li>
@@ -142,10 +140,10 @@ The docstring should contain a section for Arguments (if they are present in the
 <p>Here are some guidelines when writing documentation</p>
 <ul class="simple">
 <li>The content should be precise enough so that anyone can understand what the class, method or function does.</li>
-<li>No markup in docstring&#8217;s first line. That line is presented raw by editors in autocomplete tooltips, so the markup looks weird.</li>
-<li>Don&#8217;t linkify class A or function f mentions in their own docstring(s). The reader is already in the class / function doc, so the link adds nothing except visual noise. It is fine to link to some specific subppart, like :method:...</li>
+<li>No markup in docstring’s first line. That line is presented raw by editors in autocomplete tooltips, so the markup looks weird.</li>
+<li>Don’t linkify class A or function f mentions in their own docstring(s). The reader is already in the class / function doc, so the link adds nothing except visual noise. It is fine to link to some specific subppart, like :method:…</li>
 <li>Use triple double quotes to delimit docstrings.</li>
-<li>When a subclass changes a bit some baseclass methods, and the baseclass method&#8217;s docstring is large, it is better to signal only the differences with the baseclass method and to point to the base for extra explanations.</li>
+<li>When a subclass changes a bit some baseclass methods, and the baseclass method’s docstring is large, it is better to signal only the differences with the baseclass method and to point to the base for extra explanations.</li>
 </ul>
 </div>
 </div>
@@ -180,8 +178,8 @@ The docstring should contain a section for Arguments (if they are present in the
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -203,13 +201,13 @@ The docstring should contain a section for Arguments (if they are present in the
         <li class="right" >
           <a href="index.html" title="Dev Notes"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >Dev Notes</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Dev Notes</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

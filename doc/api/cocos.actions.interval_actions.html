@@ -1,34 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>cocos.actions.interval_actions module &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>cocos.actions.interval_actions module &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
-    <link rel="up" title="cocos.actions package" href="cocos.actions.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.actions.move_actions module" href="cocos.actions.move_actions.html" />
     <link rel="prev" title="cocos.actions.instant_actions module" href="cocos.actions.instant_actions.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,9 +42,9 @@
         <li class="right" >
           <a href="cocos.actions.instant_actions.html" title="cocos.actions.instant_actions module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.actions.html" accesskey="U">cocos.actions package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.actions.html" accesskey="U">cocos.actions package</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -136,17 +134,17 @@ then running it again in Reverse mode.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>attrib</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">string</span><dd><p class="first last">The name of the attrbiute where the value is stored</p>
+<dt><cite>attrib</cite> <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">The name of the attrbiute where the value is stored</p>
 </dd>
-<dt><cite>start</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">The start value</p>
+<dt><cite>start</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The start value</p>
 </dd>
-<dt><cite>end</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">The end value</p>
+<dt><cite>end</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The end value</p>
 </dd>
-<dt><cite>duration</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -167,7 +165,7 @@ then running it again in Reverse mode.</p>
 <em class="property">class </em><code class="descname">MoveTo</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.interval_actions.MoveTo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
 <p>Moves a <cite>CocosNode</cite> object to the position x,y. x and y are absolute coordinates
-by modifying it&#8217;s position attribute.</p>
+by modifying it’s position attribute.</p>
 <p>Example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Move the sprite to coords x=50, y=10 in 8 seconds</span>
 
@@ -184,11 +182,11 @@ by modifying it&#8217;s position attribute.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>dst_coords</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">(x,y)</span><dd><p class="first last">Coordinates where the sprite will be placed at the end of the action</p>
+<dt><cite>dst_coords</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(x,y)</span></dt>
+<dd><p class="first last">Coordinates where the sprite will be placed at the end of the action</p>
 </dd>
-<dt><cite>duration</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -213,7 +211,7 @@ by modifying it&#8217;s position attribute.</p>
 <dt id="cocos.actions.interval_actions.MoveBy">
 <em class="property">class </em><code class="descname">MoveBy</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.interval_actions.MoveBy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.actions.interval_actions.MoveTo" title="cocos.actions.interval_actions.MoveTo"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.interval_actions.MoveTo</span></code></a></p>
-<p>Moves a <cite>CocosNode</cite> object x,y pixels by modifying it&#8217;s
+<p>Moves a <cite>CocosNode</cite> object x,y pixels by modifying it’s
 position attribute.
 x and y are relative to the position of the object.
 Duration is is seconds.</p>
@@ -232,11 +230,11 @@ Duration is is seconds.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>delta</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">(x,y)</span><dd><p class="first last">Delta coordinates</p>
+<dt><cite>delta</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(x,y)</span></dt>
+<dd><p class="first last">Delta coordinates</p>
 </dd>
-<dt><cite>duration</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -256,7 +254,7 @@ Duration is is seconds.</p>
 <dt id="cocos.actions.interval_actions.Jump">
 <em class="property">class </em><code class="descname">Jump</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.interval_actions.Jump" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
-<p>Moves a <cite>CocosNode</cite> object simulating a jump movement by modifying it&#8217;s position attribute.</p>
+<p>Moves a <cite>CocosNode</cite> object simulating a jump movement by modifying it’s position attribute.</p>
 <p>Example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">Jump</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>    <span class="c1"># Move the sprite 200 pixels to the right</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>            <span class="c1"># in 6 seconds, doing 5 jumps</span>
@@ -272,17 +270,17 @@ Duration is is seconds.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>y</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">integer</span><dd><p class="first last">Height of jumps</p>
+<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">Height of jumps</p>
 </dd>
-<dt><cite>x</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">integer</span><dd><p class="first last">horizontal movement relative to the startin position</p>
+<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">horizontal movement relative to the startin position</p>
 </dd>
-<dt><cite>jumps</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">integer</span><dd><p class="first last">quantity of jumps</p>
+<dt><cite>jumps</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">quantity of jumps</p>
 </dd>
-<dt><cite>duration</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -308,7 +306,7 @@ Duration is is seconds.</p>
 <em class="property">class </em><code class="descname">JumpTo</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.interval_actions.JumpTo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.actions.interval_actions.JumpBy" title="cocos.actions.interval_actions.JumpBy"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.interval_actions.JumpBy</span></code></a></p>
 <p>Moves a <cite>CocosNode</cite> object to a position simulating a jump movement by modifying
-it&#8217;s position attribute.</p>
+it’s position attribute.</p>
 <p>Example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">JumpTo</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># Move the sprite 200 pixels to the right</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>            <span class="c1"># in 6 seconds, doing 5 jumps</span>
@@ -326,7 +324,7 @@ it&#8217;s position attribute.</p>
 <dt id="cocos.actions.interval_actions.JumpBy">
 <em class="property">class </em><code class="descname">JumpBy</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.interval_actions.JumpBy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
-<p>Moves a <cite>CocosNode</cite> object simulating a jump movement by modifying it&#8217;s position attribute.</p>
+<p>Moves a <cite>CocosNode</cite> object simulating a jump movement by modifying it’s position attribute.</p>
 <p>Example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Move the sprite 200 pixels to the right and up</span>
 <span class="n">action</span> <span class="o">=</span> <span class="n">JumpBy</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="mi">200</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
@@ -343,18 +341,18 @@ it&#8217;s position attribute.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>position</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">integer x integer tuple</span><dd><p class="first last">horizontal and vertical movement relative to the
+<dt><cite>position</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer x integer tuple</span></dt>
+<dd><p class="first last">horizontal and vertical movement relative to the
 starting position</p>
 </dd>
-<dt><cite>height</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">integer</span><dd><p class="first last">Height of jumps</p>
+<dt><cite>height</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">Height of jumps</p>
 </dd>
-<dt><cite>jumps</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">integer</span><dd><p class="first last">quantity of jumps</p>
+<dt><cite>jumps</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">quantity of jumps</p>
 </dd>
-<dt><cite>duration</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -379,7 +377,7 @@ starting position</p>
 <dt id="cocos.actions.interval_actions.Bezier">
 <em class="property">class </em><code class="descname">Bezier</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.interval_actions.Bezier" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
-<p>Moves a <cite>CocosNode</cite> object through a bezier path by modifying it&#8217;s position attribute.</p>
+<p>Moves a <cite>CocosNode</cite> object through a bezier path by modifying it’s position attribute.</p>
 <p>Example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">Bezier</span><span class="p">(</span><span class="n">bezier_conf</span><span class="o">.</span><span class="n">path1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>   <span class="c1"># Moves the sprite using the</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>                       <span class="c1"># bezier path &#39;bezier_conf.path1&#39;</span>
@@ -395,11 +393,11 @@ starting position</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>bezier</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">bezier_configuration instance</span><dd><p class="first last">A bezier configuration</p>
+<dt><cite>bezier</cite> <span class="classifier-delimiter">:</span> <span class="classifier">bezier_configuration instance</span></dt>
+<dd><p class="first last">A bezier configuration</p>
 </dd>
-<dt><cite>duration</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -430,7 +428,7 @@ starting position</p>
 <dt id="cocos.actions.interval_actions.RotateTo">
 <em class="property">class </em><code class="descname">RotateTo</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.interval_actions.RotateTo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
-<p>Rotates a <cite>CocosNode</cite> object to a certain angle by modifying it&#8217;s
+<p>Rotates a <cite>CocosNode</cite> object to a certain angle by modifying it’s
 rotation attribute.
 The direction will be decided by the shortest angle.</p>
 <p>Example:</p>
@@ -448,11 +446,11 @@ The direction will be decided by the shortest angle.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>angle</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Destination angle in degrees.</p>
+<dt><cite>angle</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Destination angle in degrees.</p>
 </dd>
-<dt><cite>duration</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -478,7 +476,7 @@ The direction will be decided by the shortest angle.</p>
 <em class="property">class </em><code class="descname">RotateBy</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.interval_actions.RotateBy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
 <p>Rotates a <cite>CocosNode</cite> object clockwise a number of degrees
-by modiying it&#8217;s rotation attribute.</p>
+by modiying it’s rotation attribute.</p>
 <p>Example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># rotates the sprite 180 degrees in 2 seconds</span>
 <span class="n">action</span> <span class="o">=</span> <span class="n">RotateBy</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -494,12 +492,12 @@ by modiying it&#8217;s rotation attribute.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>angle</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Degrees that the sprite will be rotated.
+<dt><cite>angle</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Degrees that the sprite will be rotated.
 Positive degrees rotates the sprite clockwise.</p>
 </dd>
-<dt><cite>duration</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -524,7 +522,7 @@ Positive degrees rotates the sprite clockwise.</p>
 <dt id="cocos.actions.interval_actions.ScaleTo">
 <em class="property">class </em><code class="descname">ScaleTo</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.interval_actions.ScaleTo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
-<p>Scales a <cite>CocosNode</cite> object to a zoom factor by modifying it&#8217;s scale attribute.</p>
+<p>Scales a <cite>CocosNode</cite> object to a zoom factor by modifying it’s scale attribute.</p>
 <p>Example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># scales the sprite to 5x in 2 seconds</span>
 <span class="n">action</span> <span class="o">=</span> <span class="n">ScaleTo</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -540,11 +538,11 @@ Positive degrees rotates the sprite clockwise.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>scale</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">scale factor</p>
+<dt><cite>scale</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">scale factor</p>
 </dd>
-<dt><cite>duration</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -569,7 +567,7 @@ Positive degrees rotates the sprite clockwise.</p>
 <dt id="cocos.actions.interval_actions.ScaleBy">
 <em class="property">class </em><code class="descname">ScaleBy</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.interval_actions.ScaleBy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.actions.interval_actions.ScaleTo" title="cocos.actions.interval_actions.ScaleTo"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.interval_actions.ScaleTo</span></code></a></p>
-<p>Scales a <cite>CocosNode</cite> object a zoom factor by modifying it&#8217;s scale attribute.</p>
+<p>Scales a <cite>CocosNode</cite> object a zoom factor by modifying it’s scale attribute.</p>
 <p>Example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># scales the sprite by 5x in 2 seconds</span>
 <span class="n">action</span> <span class="o">=</span> <span class="n">ScaleBy</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -602,8 +600,8 @@ Positive degrees rotates the sprite clockwise.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>delay</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Seconds of delay</p>
+<dt><cite>delay</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Seconds of delay</p>
 </dd>
 </dl>
 </td>
@@ -633,11 +631,11 @@ Positive degrees rotates the sprite clockwise.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>low</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Minimun seconds of delay</p>
+<dt><cite>low</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Minimun seconds of delay</p>
 </dd>
-<dt><cite>hi</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Maximun seconds of delay</p>
+<dt><cite>hi</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Maximun seconds of delay</p>
 </dd>
 </dl>
 </td>
@@ -652,7 +650,7 @@ Positive degrees rotates the sprite clockwise.</p>
 <dt id="cocos.actions.interval_actions.FadeOut">
 <em class="property">class </em><code class="descname">FadeOut</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.interval_actions.FadeOut" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
-<p>Fades out a <cite>CocosNode</cite> object by modifying it&#8217;s opacity attribute.</p>
+<p>Fades out a <cite>CocosNode</cite> object by modifying it’s opacity attribute.</p>
 <p>Example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">FadeOut</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
@@ -667,8 +665,8 @@ Positive degrees rotates the sprite clockwise.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>duration</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Seconds that it will take to fade</p>
+<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Seconds that it will take to fade</p>
 </dd>
 </dl>
 </td>
@@ -688,7 +686,7 @@ Positive degrees rotates the sprite clockwise.</p>
 <dt id="cocos.actions.interval_actions.FadeIn">
 <em class="property">class </em><code class="descname">FadeIn</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.interval_actions.FadeIn" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.actions.interval_actions.FadeOut" title="cocos.actions.interval_actions.FadeOut"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.interval_actions.FadeOut</span></code></a></p>
-<p>Fades in a <cite>CocosNode</cite> object by modifying it&#8217;s opacity attribute.</p>
+<p>Fades in a <cite>CocosNode</cite> object by modifying it’s opacity attribute.</p>
 <p>Example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">FadeIn</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
@@ -705,7 +703,7 @@ Positive degrees rotates the sprite clockwise.</p>
 <dt id="cocos.actions.interval_actions.FadeTo">
 <em class="property">class </em><code class="descname">FadeTo</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.interval_actions.FadeTo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
-<p>Fades a <cite>CocosNode</cite> object to a specific alpha value by modifying it&#8217;s opacity attribute.</p>
+<p>Fades a <cite>CocosNode</cite> object to a specific alpha value by modifying it’s opacity attribute.</p>
 <p>Example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">FadeTo</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
@@ -720,11 +718,11 @@ Positive degrees rotates the sprite clockwise.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>alpha</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">0-255 value of opacity</p>
+<dt><cite>alpha</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">0-255 value of opacity</p>
 </dd>
-<dt><cite>duration</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Seconds that it will take to fade</p>
+<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Seconds that it will take to fade</p>
 </dd>
 </dl>
 </td>
@@ -749,7 +747,7 @@ Positive degrees rotates the sprite clockwise.</p>
 <dt id="cocos.actions.interval_actions.Blink">
 <em class="property">class </em><code class="descname">Blink</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.interval_actions.Blink" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
-<p>Blinks a <cite>CocosNode</cite> object by modifying it&#8217;s visible attribute</p>
+<p>Blinks a <cite>CocosNode</cite> object by modifying it’s visible attribute</p>
 <p>The action ends with the same visible state than at the start time.</p>
 <p>Example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Blinks 10 times in 2 seconds</span>
@@ -766,11 +764,11 @@ Positive degrees rotates the sprite clockwise.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>times</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">integer</span><dd><p class="first last">Number of times to blink</p>
+<dt><cite>times</cite> <span class="classifier-delimiter">:</span> <span class="classifier">integer</span></dt>
+<dd><p class="first last">Number of times to blink</p>
 </dd>
-<dt><cite>duration</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">Duration time in seconds</p>
+<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">Duration time in seconds</p>
 </dd>
 </dl>
 </td>
@@ -812,11 +810,11 @@ Positive degrees rotates the sprite clockwise.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>other</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">IntervalAction</span><dd><p class="first last">The action that will be affected</p>
+<dt><cite>other</cite> <span class="classifier-delimiter">:</span> <span class="classifier">IntervalAction</span></dt>
+<dd><p class="first last">The action that will be affected</p>
 </dd>
-<dt><cite>rate</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">The acceleration rate. 1 is linear.
+<dt><cite>rate</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The acceleration rate. 1 is linear.
 the new t is t**rate</p>
 </dd>
 </dl>
@@ -860,8 +858,8 @@ speed at the beginning and ending.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>other</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">IntervalAction</span><dd><p class="first last">The action that will be affected</p>
+<dt><cite>other</cite> <span class="classifier-delimiter">:</span> <span class="classifier">IntervalAction</span></dt>
+<dd><p class="first last">The action that will be affected</p>
 </dd>
 </dl>
 </td>
@@ -903,11 +901,11 @@ or less (speed&lt;1)</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>other</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">IntervalAction</span><dd><p class="first last">The action that will be affected</p>
+<dt><cite>other</cite> <span class="classifier-delimiter">:</span> <span class="classifier">IntervalAction</span></dt>
+<dd><p class="first last">The action that will be affected</p>
 </dd>
-<dt><cite>speed</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">float</span><dd><p class="first last">The speed change. 1 is no change.
+<dt><cite>speed</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd><p class="first last">The speed change. 1 is no change.
 2 means twice as fast, takes half the time
 0.5 means half as fast, takes double the time</p>
 </dd>
@@ -965,8 +963,8 @@ or less (speed&lt;1)</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -991,14 +989,14 @@ or less (speed&lt;1)</p>
         <li class="right" >
           <a href="cocos.actions.instant_actions.html" title="cocos.actions.instant_actions module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.actions.html" >cocos.actions package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.actions.html" >cocos.actions package</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

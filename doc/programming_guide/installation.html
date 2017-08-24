@@ -1,34 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Installation, Dependencies and Compatibility &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>Installation, Dependencies and Compatibility &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
-    <link rel="up" title="cocos2d Programming Guide" href="index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Writing a cocos2d application" href="quickstart.html" />
     <link rel="prev" title="Introduction" href="introduction.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,8 +42,8 @@
         <li class="right" >
           <a href="introduction.html" title="Introduction"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">cocos2d Programming Guide</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">cocos2d Programming Guide</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -112,12 +110,12 @@ six and pyglet</p>
 </div>
 <div class="section" id="compatibility">
 <h2><a class="toc-backref" href="#id6">Compatibility</a><a class="headerlink" href="#compatibility" title="Permalink to this headline">¶</a></h2>
-<p>Compatibility notes at the time of writing, April 2015</p>
+<p>Compatibility notes at the time of writing, August 2017</p>
 <blockquote>
 <div><ul class="simple">
 <li>python : cocos needs python 2.6, 2.7 or 3.3+
 The cocos codebase has direct support for 2.x and 3.x, so no need to run 2to3</li>
-<li>pyglet : pyglet 1.2 or better</li>
+<li>pyglet : pyglet 1.2 or better (1.3+ recomended)</li>
 </ul>
 </div></blockquote>
 </div>
@@ -137,16 +135,16 @@ The cocos codebase has direct support for 2.x and 3.x, so no need to run 2to3</l
 <div><ul>
 <li><p class="first">install six and pyglet</p>
 </li>
-<li><p class="first">download cocos2d-0.6.4.zip from <a class="reference external" href="https://pypi.python.org/pypi/cocos2d/">https://pypi.python.org/pypi/cocos2d/</a></p>
+<li><p class="first">download cocos2d-0.6.5.zip from <a class="reference external" href="https://pypi.python.org/pypi/cocos2d/">https://pypi.python.org/pypi/cocos2d/</a></p>
 </li>
-<li><p class="first">decompress to a convenient location, the top dir will be cocos2d-0.6.4</p>
+<li><p class="first">decompress to a convenient location, the top dir will be cocos2d-0.6.5</p>
 </li>
-<li><p class="first">the html docs will be in cocos2d-0.6.4/doc/html</p>
+<li><p class="first">the html docs will be in cocos2d-0.6.5/doc/html</p>
 </li>
-<li><p class="first">useful code samples will be in cocos2d-0.6.4/test, cocos2d-0.6.4/samples, cocos2d-0.6.4/utest</p>
+<li><p class="first">useful code samples will be in cocos2d-0.6.5/test, cocos2d-0.6.5/samples, cocos2d-0.6.5/utest</p>
 </li>
 <li><p class="first">install by:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">cocos2d</span><span class="o">-</span><span class="mf">0.6</span><span class="o">.</span><span class="mi">4</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">cocos2d</span><span class="o">-</span><span class="mf">0.6</span><span class="o">.</span><span class="mi">5</span>
 <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
 </pre></div>
 </div>
@@ -167,14 +165,13 @@ The cocos codebase has direct support for 2.x and 3.x, so no need to run 2to3</l
 </div>
 <div class="section" id="using-pythonpath-or-pth">
 <h2><a class="toc-backref" href="#id8">Using PYTHONPATH or .pth</a><a class="headerlink" href="#using-pythonpath-or-pth" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt>It is safe to point a checkout of cocos from a .pth or PYTHONPATH both</dt>
-<dd>in python 2.x and 3.x; the same checkout can be pointed at the same time from both pythons.</dd>
-</dl>
-<p>Remember that pyglet does python 3 compatibility by running 2to3 at install time, so while
+<p>It is safe to point a checkout of cocos from a .pth or PYTHONPATH both
+in python 2.x and 3.x; the same checkout can be pointed at the same time from both pythons.</p>
+<p>The same is valid for pyglet vs 1.3+ (but note that at pyglet 1.3.0rc1 you will need to also
+install the pakage ‘future’)</p>
+<p>Pyglet with version &lt; 1.3 does python 3 compatibility by running 2to3 at install time, so while
 a pyglet checkout can be pointed from a .pth or PYTHONPATH in python 2.x,
-that will not work for python 3. (this is valid for pyglet &lt; 1.3; with pyglet 1.3+
-the 2to3 will not be neccesary)</p>
+that will not work for python 3.</p>
 </div>
 </div>
 
@@ -217,8 +214,8 @@ the 2to3 will not be neccesary)</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -243,13 +240,13 @@ the 2to3 will not be neccesary)</p>
         <li class="right" >
           <a href="introduction.html" title="Introduction"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >cocos2d Programming Guide</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >cocos2d Programming Guide</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

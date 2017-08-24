@@ -1,5 +1,5 @@
-cocos.menu module
-=================
+cocos\.menu module
+==================
 
 .. automodule:: cocos.menu
     :members:

@@ -1,5 +1,5 @@
-cocos.layer.scrolling module
-============================
+cocos\.layer\.scrolling module
+==============================
 
 .. automodule:: cocos.layer.scrolling
     :members:

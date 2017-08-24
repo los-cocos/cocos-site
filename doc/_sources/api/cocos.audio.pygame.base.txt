@@ -1,5 +1,5 @@
-cocos.audio.pygame.base module
-==============================
+cocos\.audio\.pygame\.base module
+=================================
 
 .. automodule:: cocos.audio.pygame.base
     :members:

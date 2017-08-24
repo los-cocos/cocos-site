@@ -1,5 +1,5 @@
-cocos.collision_model module
-============================
+cocos\.collision\_model module
+==============================
 
 .. automodule:: cocos.collision_model
     :members:

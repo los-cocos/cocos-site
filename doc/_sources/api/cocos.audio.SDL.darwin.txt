@@ -1,5 +1,5 @@
-cocos.audio.SDL.darwin module
-=============================
+cocos\.audio\.SDL\.darwin module
+================================
 
 .. automodule:: cocos.audio.SDL.darwin
     :members:

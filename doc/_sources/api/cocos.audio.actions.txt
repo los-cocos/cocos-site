@@ -1,5 +1,5 @@
-cocos.audio.actions module
-==========================
+cocos\.audio\.actions module
+============================
 
 .. automodule:: cocos.audio.actions
     :members:

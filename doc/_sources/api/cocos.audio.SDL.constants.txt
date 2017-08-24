@@ -1,5 +1,5 @@
-cocos.audio.SDL.constants module
-================================
+cocos\.audio\.SDL\.constants module
+===================================
 
 .. automodule:: cocos.audio.SDL.constants
     :members:

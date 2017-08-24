@@ -1,5 +1,5 @@
-cocos.euclid module
-===================
+cocos\.euclid module
+====================
 
 .. automodule:: cocos.euclid
     :members:

@@ -1,34 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>cocos.layer.scrolling module &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>cocos.layer.scrolling module &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
-    <link rel="up" title="cocos.layer package" href="cocos.layer.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.layer.util_layers module" href="cocos.layer.util_layers.html" />
     <link rel="prev" title="cocos.layer.python_interpreter module" href="cocos.layer.python_interpreter.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,9 +42,9 @@
         <li class="right" >
           <a href="cocos.layer.python_interpreter.html" title="cocos.layer.python_interpreter module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.layer.html" accesskey="U">cocos.layer package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.layer.html" accesskey="U">cocos.layer package</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -64,15 +62,15 @@ does not fit in the window area.</p>
 <p>It models this concept: the game world is a big volume. We have a camera
 that follows the actor moving parallel to one of the volume faces, without
 rotations. What the camera sees is what  will be seen on the app window. Also,
-the camera&#8217;s movements can be restricted in order not to show parts outside
-of the world. This technique is usually named <em>&#8216;scrolling&#8217;</em>.</p>
+the camera’s movements can be restricted in order not to show parts outside
+of the world. This technique is usually named <em>‘scrolling’</em>.</p>
 <p>It has support for parallax rendering, that is, faking perspective by using
 layers that slide slower the farther they are.</p>
 <dl class="docutils">
 <dt>The important concepts are:</dt>
 <dd><ul class="first simple">
 <li>The coordinator, implemented as <a class="reference internal" href="#cocos.layer.scrolling.ScrollingManager" title="cocos.layer.scrolling.ScrollingManager"><code class="xref py py-class docutils literal"><span class="pre">ScrollingManager</span></code></a> which enforces the
-view limits imposed by the managed layers, accounts for layer&#8217;s parallax.</li>
+view limits imposed by the managed layers, accounts for layer’s parallax.</li>
 <li>The managed layers, implemented each by a <a class="reference internal" href="#cocos.layer.scrolling.ScrollableLayer" title="cocos.layer.scrolling.ScrollableLayer"><code class="xref py py-class docutils literal"><span class="pre">ScrollableLayer</span></code></a>, which as
 a group holds all the entities in the world and each one can define what
 area of the x-y plane should be shown on camera.</li>
@@ -95,7 +93,7 @@ will be limited to only show areas with origin_x &lt;= x &lt; = px_width and
 origin_y &lt;= y &lt;= px_height).</p>
 <p>If <code class="docutils literal"><span class="pre">px_width</span></code> is not defined, then the layer will not limit the scrolling.</p>
 <p>A layer may have a <code class="docutils literal"><span class="pre">parallax</span></code> value which is used to scale the position
-(and not the dimensions) of the view for the layer - the layer&#8217;s view
+(and not the dimensions) of the view for the layer - the layer’s view
 (x, y) coordinates are calculated as:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">my_view_x</span> <span class="o">=</span> <span class="n">parallax</span> <span class="o">*</span> <span class="n">passed_view_x</span>
 <span class="n">my_view_y</span> <span class="o">=</span> <span class="n">parallax</span> <span class="o">*</span> <span class="n">passed_view_y</span>
@@ -105,14 +103,14 @@ origin_y &lt;= y &lt;= px_height).</p>
 class.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">Don&#8217;t change <code class="docutils literal"><span class="pre">scale_x</span></code> , <code class="docutils literal"><span class="pre">scale_y</span></code> from the default 1.0 or scrolling and
+<p class="last">Don’t change <code class="docutils literal"><span class="pre">scale_x</span></code> , <code class="docutils literal"><span class="pre">scale_y</span></code> from the default 1.0 or scrolling and
 coordinate changes will fail.</p>
 </div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parallax</strong> (<em>float</em>) &#8211; the parallax for this layer. Defaults to 1.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parallax</strong> (<em>float</em>) – the parallax for this layer. Defaults to 1.</td>
 </tr>
 </tbody>
 </table>
@@ -155,12 +153,12 @@ coordinate changes will fail.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> (<em>float</em>) &#8211; The view x position</li>
-<li><strong>y</strong> (<em>float</em>) &#8211; The view y position</li>
-<li><strong>w</strong> (<em>float</em>) &#8211; The width of the view</li>
-<li><strong>h</strong> (<em>float</em>) &#8211; The height of the view</li>
-<li><strong>viewport_ox</strong> (<em>float</em>) &#8211; The viewport x origin</li>
-<li><strong>viewport_oy</strong> (<em>float</em>) &#8211; The viewport y origin</li>
+<li><strong>x</strong> (<em>float</em>) – The view x position</li>
+<li><strong>y</strong> (<em>float</em>) – The view y position</li>
+<li><strong>w</strong> (<em>float</em>) – The width of the view</li>
+<li><strong>h</strong> (<em>float</em>) – The height of the view</li>
+<li><strong>viewport_ox</strong> (<em>float</em>) – The viewport x origin</li>
+<li><strong>viewport_oy</strong> (<em>float</em>) – The viewport y origin</li>
 </ul>
 </td>
 </tr>
@@ -179,7 +177,7 @@ instances.</p>
 <p>Restricts the scrolling so that all the visibility restriction imposed by
 the children are honored; at least one child should define a constraint for
 the scrolling to be limited.</p>
-<p>The drawing can be limited to a specific window&#8217;s rectangle by passing the
+<p>The drawing can be limited to a specific window’s rectangle by passing the
 <code class="docutils literal"><span class="pre">viewport</span></code> parameter.</p>
 <p>The scrolling manager also provides coordinate changes between screen coords
 and world coords.</p>
@@ -188,8 +186,8 @@ and world coords.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>viewport</strong> (<a class="reference internal" href="cocos.rect.html#cocos.rect.Rect" title="cocos.rect.Rect"><em>Rect</em></a>) &#8211; A rectangle defining the viewport. [Optional]</li>
-<li><strong>do_not_scale</strong> (<em>bool</em>) &#8211; Whether the <a class="reference internal" href="#cocos.layer.scrolling.ScrollingManager" title="cocos.layer.scrolling.ScrollingManager"><code class="xref py py-class docutils literal"><span class="pre">ScrollingManager</span></code></a> should scale
+<li><strong>viewport</strong> (<a class="reference internal" href="cocos.rect.html#cocos.rect.Rect" title="cocos.rect.Rect"><em>Rect</em></a>) – A rectangle defining the viewport. [Optional]</li>
+<li><strong>do_not_scale</strong> (<em>bool</em>) – Whether the <a class="reference internal" href="#cocos.layer.scrolling.ScrollingManager" title="cocos.layer.scrolling.ScrollingManager"><code class="xref py py-class docutils literal"><span class="pre">ScrollingManager</span></code></a> should scale
 the view during Window resizes. (Defaults to None, meaning it takes
 the same value as <code class="docutils literal"><span class="pre">director.autoscale</span></code>)</li>
 </ul>
@@ -200,16 +198,16 @@ the same value as <code class="docutils literal"><span class="pre">director.auto
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollingManager.add">
 <code class="descname">add</code><span class="sig-paren">(</span><em>child</em>, <em>z=0</em>, <em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.add" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add the child and then update the manager&#8217;s focus / viewport.</p>
+<dd><p>Add the child and then update the manager’s focus / viewport.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>child</strong> (<a class="reference internal" href="cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><em>CocosNode</em></a>) &#8211; The node to add. Normally it&#8217;s a
+<li><strong>child</strong> (<a class="reference internal" href="cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><em>CocosNode</em></a>) – The node to add. Normally it’s a
 <a class="reference internal" href="#cocos.layer.scrolling.ScrollableLayer" title="cocos.layer.scrolling.ScrollableLayer"><code class="xref py py-class docutils literal"><span class="pre">ScrollableLayer</span></code></a>.</li>
-<li><strong>z</strong> (<em>int</em>) &#8211; z-order for this child.</li>
-<li><strong>name</strong> (<em>str</em>) &#8211; The name of this child. [Optional]</li>
+<li><strong>z</strong> (<em>int</em>) – z-order for this child.</li>
+<li><strong>name</strong> (<em>str</em>) – The name of this child. [Optional]</li>
 </ul>
 </td>
 </tr>
@@ -227,8 +225,8 @@ visible boundaries.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>fx</strong> (<em>int</em>) &#8211; the focus point x coordinate</li>
-<li><strong>fy</strong> (<em>int</em>) &#8211; the focus point y coordinate</li>
+<li><strong>fx</strong> (<em>int</em>) – the focus point x coordinate</li>
+<li><strong>fy</strong> (<em>int</em>) – the focus point y coordinate</li>
 </ul>
 </td>
 </tr>
@@ -245,7 +243,7 @@ visible boundaries.</p>
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollingManager.on_enter">
 <code class="descname">on_enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.on_enter" title="Permalink to this definition">¶</a></dt>
-<dd><p>&#8220;Called every time just before the node enters the stage.</p>
+<dd><p>“Called every time just before the node enters the stage.</p>
 </dd></dl>
 
 <dl class="method">
@@ -282,12 +280,12 @@ visible boundaries.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> (<em>int</em>) &#8211; x coordinate in screen space</li>
-<li><strong>y</strong> (<em>int</em>) &#8211; y coordinate in screen space</li>
+<li><strong>x</strong> (<em>int</em>) – x coordinate in screen space</li>
+<li><strong>y</strong> (<em>int</em>) – y coordinate in screen space</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>tuple[int, int]</em> &#8211; coordinates in world-space</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>tuple[int, int]</em> – coordinates in world-space</p>
 </td>
 </tr>
 </tbody>
@@ -297,7 +295,7 @@ visible boundaries.</p>
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollingManager.set_focus">
 <code class="descname">set_focus</code><span class="sig-paren">(</span><em>fx</em>, <em>fy</em>, <em>force=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.set_focus" title="Permalink to this definition">¶</a></dt>
-<dd><p>Makes the point (fx, fy) show as near the view&#8217;s center as possible.</p>
+<dd><p>Makes the point (fx, fy) show as near the view’s center as possible.</p>
 <p>Changes his children so that the point (fx, fy) in world coordinates
 will be seen as near the view center as possible, while at the
 same time not displaying out-of-bounds areas in the children.</p>
@@ -306,9 +304,9 @@ same time not displaying out-of-bounds areas in the children.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>fx</strong> (<em>int</em>) &#8211; the focus point x coordinate</li>
-<li><strong>fy</strong> (<em>int</em>) &#8211; the focus point y coordinate</li>
-<li><strong>force</strong> (<em>bool</em>) &#8211; If True, forces the update of the focus, eventhough the
+<li><strong>fx</strong> (<em>int</em>) – the focus point x coordinate</li>
+<li><strong>fy</strong> (<em>int</em>) – the focus point y coordinate</li>
+<li><strong>force</strong> (<em>bool</em>) – If True, forces the update of the focus, eventhough the
 focus point or the scale did not change. Defaults to False.</li>
 </ul>
 </td>
@@ -354,12 +352,12 @@ to the rect viewport.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> (<em>int</em>) &#8211; x coordinate in world space</li>
-<li><strong>y</strong> (<em>int</em>) &#8211; y coordinate in world space</li>
+<li><strong>x</strong> (<em>int</em>) – x coordinate in world space</li>
+<li><strong>y</strong> (<em>int</em>) – y coordinate in world space</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>tuple[int, int]</em> &#8211; coordinates in screen space</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>tuple[int, int]</em> – coordinates in screen space</p>
 </td>
 </tr>
 </tbody>
@@ -406,8 +404,8 @@ to the rect viewport.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -432,14 +430,14 @@ to the rect viewport.</p>
         <li class="right" >
           <a href="cocos.layer.python_interpreter.html" title="cocos.layer.python_interpreter module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.layer.html" >cocos.layer package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.layer.html" >cocos.layer package</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

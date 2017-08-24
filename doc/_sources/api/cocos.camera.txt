@@ -1,5 +1,5 @@
-cocos.camera module
-===================
+cocos\.camera module
+====================
 
 .. automodule:: cocos.camera
     :members:

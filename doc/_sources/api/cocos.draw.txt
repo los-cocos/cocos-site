@@ -1,5 +1,5 @@
-cocos.draw module
-=================
+cocos\.draw module
+==================
 
 .. automodule:: cocos.draw
     :members:

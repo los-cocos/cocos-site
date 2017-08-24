@@ -1,5 +1,5 @@
-cocos.actions.interval_actions module
-=====================================
+cocos\.actions\.interval\_actions module
+========================================
 
 .. automodule:: cocos.actions.interval_actions
     :members:

@@ -1,5 +1,5 @@
-cocos.actions.base_actions module
-=================================
+cocos\.actions\.base\_actions module
+====================================
 
 .. automodule:: cocos.actions.base_actions
     :members:

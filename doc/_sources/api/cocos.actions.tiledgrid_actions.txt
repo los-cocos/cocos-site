@@ -1,5 +1,5 @@
-cocos.actions.tiledgrid_actions module
-======================================
+cocos\.actions\.tiledgrid\_actions module
+=========================================
 
 .. automodule:: cocos.actions.tiledgrid_actions
     :members:

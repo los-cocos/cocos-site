@@ -1,5 +1,5 @@
-cocos.layer.base_layers module
-==============================
+cocos\.layer\.base\_layers module
+=================================
 
 .. automodule:: cocos.layer.base_layers
     :members:

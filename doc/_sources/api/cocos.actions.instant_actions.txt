@@ -1,5 +1,5 @@
-cocos.actions.instant_actions module
-====================================
+cocos\.actions\.instant\_actions module
+=======================================
 
 .. automodule:: cocos.actions.instant_actions
     :members:

@@ -1,34 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>cocos.layer.util_layers module &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>cocos.layer.util_layers module &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
-    <link rel="up" title="cocos.layer package" href="cocos.layer.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.scenes package" href="cocos.scenes.html" />
     <link rel="prev" title="cocos.layer.scrolling module" href="cocos.layer.scrolling.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,9 +42,9 @@
         <li class="right" >
           <a href="cocos.layer.scrolling.html" title="cocos.layer.scrolling module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.layer.html" accesskey="U">cocos.layer package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.layer.html" accesskey="U">cocos.layer package</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -78,12 +76,12 @@ The color shall be specified in the format (r, g, b, a).</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>r</strong> (<em>int</em>) &#8211; red component</li>
-<li><strong>g</strong> (<em>int</em>) &#8211; green component</li>
-<li><strong>b</strong> (<em>int</em>) &#8211; blue component</li>
-<li><strong>a</strong> (<em>int</em>) &#8211; alpha component</li>
-<li><strong>width</strong> (<em>int</em>) &#8211; width of the color layer [Optional]</li>
-<li><strong>height</strong> (<em>int</em>) &#8211; height of the color layer [Optional]</li>
+<li><strong>r</strong> (<em>int</em>) – red component</li>
+<li><strong>g</strong> (<em>int</em>) – green component</li>
+<li><strong>b</strong> (<em>int</em>) – blue component</li>
+<li><strong>a</strong> (<em>int</em>) – alpha component</li>
+<li><strong>width</strong> (<em>int</em>) – width of the color layer [Optional]</li>
+<li><strong>height</strong> (<em>int</em>) – height of the color layer [Optional]</li>
 </ul>
 </td>
 </tr>
@@ -111,13 +109,13 @@ The color shall be specified in the format (r, g, b, a).</p>
 <dt id="cocos.layer.util_layers.ColorLayer.color">
 <code class="descname">color</code><a class="headerlink" href="#cocos.layer.util_layers.ColorLayer.color" title="Permalink to this definition">¶</a></dt>
 <dd><p>Blend color.</p>
-<p>This property sets the color of the layer&#8217;s vertices. This allows the
+<p>This property sets the color of the layer’s vertices. This allows the
 layer to be drawn with a color tint.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>color</strong> (<em>tuple[int, int, int]</em>) &#8211; The color is specified as an RGB tuple
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>color</strong> (<em>tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>, </em><em>int</em><em>]</em>) – The color is specified as an RGB tuple
 of integers <code class="docutils literal"><span class="pre">(red,</span> <span class="pre">green,</span> <span class="pre">blue)</span></code>.
 Each color component must be in the range 0 (dark) to 255 (saturated).</td>
 </tr>
@@ -129,7 +127,7 @@ Each color component must be in the range 0 (dark) to 255 (saturated).</td>
 <dt id="cocos.layer.util_layers.ColorLayer.opacity">
 <code class="descname">opacity</code><a class="headerlink" href="#cocos.layer.util_layers.ColorLayer.opacity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Blend opacity.</p>
-<p>This property sets the alpha component of the colour of the layer&#8217;s
+<p>This property sets the alpha component of the colour of the layer’s
 vertices.  This allows the layer to be drawn with fractional opacity,
 blending with the background.</p>
 <p>An opacity of 255 (the default) has no effect.  An opacity of 128 will
@@ -138,7 +136,7 @@ make the ColorLayer appear translucent.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>opacity</strong> (<em>int</em>) &#8211; the opacity ranging from 0 (transparent) to 255 (opaque).</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>opacity</strong> (<em>int</em>) – the opacity ranging from 0 (transparent) to 255 (opaque).</td>
 </tr>
 </tbody>
 </table>
@@ -170,8 +168,8 @@ make the ColorLayer appear translucent.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -196,14 +194,14 @@ make the ColorLayer appear translucent.</p>
         <li class="right" >
           <a href="cocos.layer.scrolling.html" title="cocos.layer.scrolling module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.layer.html" >cocos.layer package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.layer.html" >cocos.layer package</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

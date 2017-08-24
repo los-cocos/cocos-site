@@ -1,5 +1,5 @@
-cocos.batch module
-==================
+cocos\.batch module
+===================
 
 .. automodule:: cocos.batch
     :members:

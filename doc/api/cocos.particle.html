@@ -1,34 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>cocos.particle module &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>cocos.particle module &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
-    <link rel="up" title="cocos package" href="cocos.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.particle_systems module" href="cocos.particle_systems.html" />
     <link rel="prev" title="cocos.menu module" href="cocos.menu.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,8 +42,8 @@
         <li class="right" >
           <a href="cocos.menu.html" title="cocos.menu module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -74,10 +72,10 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>r</strong> (<em>float</em>) &#8211; red component</li>
-<li><strong>g</strong> (<em>float</em>) &#8211; green component</li>
-<li><strong>b</strong> (<em>float</em>) &#8211; blue component</li>
-<li><strong>a</strong> (<em>float</em>) &#8211; alpha component</li>
+<li><strong>r</strong> (<em>float</em>) – red component</li>
+<li><strong>g</strong> (<em>float</em>) – green component</li>
+<li><strong>b</strong> (<em>float</em>) – blue component</li>
+<li><strong>a</strong> (<em>float</em>) – alpha component</li>
 </ul>
 </td>
 </tr>
@@ -91,7 +89,7 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>tuple</em> &#8211; r, g, b and a components.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>tuple</em> – r, g, b and a components.</td>
 </tr>
 </tbody>
 </table>
@@ -113,14 +111,14 @@ To use a per-instance custom texture, pass it in the __init__ texture kw-param</
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>fallback</strong> (<em>Optional[None, True, False]</em>) &#8211; <p>Defaults to None.</p>
+<li><strong>fallback</strong> (<em>Optional</em><em>[</em><em>None</em><em>, </em><em>True</em><em>, </em><em>False</em><em>]</em>) – <p>Defaults to None.</p>
 <ul>
 <li>False: use point sprites, faster, not always available</li>
 <li>True: use quads, slower but always available</li>
 <li>None: autodetect, use the fastest available</li>
 </ul>
 </li>
-<li><strong>texture</strong> (<em>Optional[pyglet.image.Texture]</em>) &#8211; The texture image to be used for
+<li><strong>texture</strong> (<em>Optional</em><em>[</em><em>pyglet.image.Texture</em><em>]</em>) – The texture image to be used for
 the particles.</li>
 </ul>
 </td>
@@ -168,7 +166,7 @@ Point Sprite.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p>By <a class="reference external" href="https://github.com/los-cocos/cocos/issues/168">issue #168</a>
-the texture should hold only one image, so don&#8217;t use:</p>
+the texture should hold only one image, so don’t use:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">texture</span> <span class="o">=</span> <span class="n">pyglet</span><span class="o">.</span><span class="n">resource</span><span class="o">.</span><span class="n">image</span><span class="p">(</span><span class="s1">&#39;z.png&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">texture</span> <span class="c1"># (produces an atlas, ie multiple images in a texture)</span>
 </pre></div>
 </div>
@@ -197,8 +195,8 @@ position.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>usable_width</strong> (<em>int</em>) &#8211; New window width.</li>
-<li><strong>usable_height</strong> (<em>int</em>) &#8211; New window height.</li>
+<li><strong>usable_width</strong> (<em>int</em>) – New window width.</li>
+<li><strong>usable_height</strong> (<em>int</em>) – New window height.</li>
 </ul>
 </td>
 </tr>
@@ -236,7 +234,7 @@ arrived.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>delta</strong> (<em>float</em>) &#8211; time in seconds since last frame.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>delta</strong> (<em>float</em>) – time in seconds since last frame.</td>
 </tr>
 </tbody>
 </table>
@@ -256,7 +254,7 @@ arrived.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>delta</strong> (<em>float</em>) &#8211; time in seconds since last frame.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>delta</strong> (<em>float</em>) – time in seconds since last frame.</td>
 </tr>
 </tbody>
 </table>
@@ -483,8 +481,8 @@ to the <code class="docutils literal"><span class="pre">__init__</span></code> m
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>a</strong> (<em>numpy.array</em>) &#8211; The Numpy array.</li>
-<li><strong>ptype</strong> (<em>ctypes</em>) &#8211; The ctypes type contained in the array.</li>
+<li><strong>a</strong> (<em>numpy.array</em>) – The Numpy array.</li>
+<li><strong>ptype</strong> (<em>ctypes</em>) – The ctypes type contained in the array.</li>
 </ul>
 </td>
 </tr>
@@ -502,7 +500,7 @@ to the <code class="docutils literal"><span class="pre">__init__</span></code> m
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>bool</em> &#8211; tells if <code class="docutils literal"><span class="pre">point</span> <span class="pre">sprites</span></code> are available.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>bool</em> – tells if <code class="docutils literal"><span class="pre">point</span> <span class="pre">sprites</span></code> are available.</td>
 </tr>
 </tbody>
 </table>
@@ -540,8 +538,8 @@ could be set to force the desired return value.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -566,13 +564,13 @@ could be set to force the desired return value.</p>
         <li class="right" >
           <a href="cocos.menu.html" title="cocos.menu module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

@@ -1,5 +1,5 @@
-cocos.scenes.sequences module
-=============================
+cocos\.scenes\.sequences module
+===============================
 
 .. automodule:: cocos.scenes.sequences
     :members:

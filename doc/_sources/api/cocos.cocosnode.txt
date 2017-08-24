@@ -1,5 +1,5 @@
-cocos.cocosnode module
-======================
+cocos\.cocosnode module
+=======================
 
 .. automodule:: cocos.cocosnode
     :members:

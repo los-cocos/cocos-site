@@ -1,5 +1,5 @@
-cocos.audio.SDL.mixer module
-============================
+cocos\.audio\.SDL\.mixer module
+===============================
 
 .. automodule:: cocos.audio.SDL.mixer
     :members:

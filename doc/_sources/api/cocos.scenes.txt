@@ -1,5 +1,5 @@
-cocos.scenes package
-====================
+cocos\.scenes package
+=====================
 
 Submodules
 ----------

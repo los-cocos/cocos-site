@@ -1,34 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>cocos.actions.base_actions module &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>cocos.actions.base_actions module &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
-    <link rel="up" title="cocos.actions package" href="cocos.actions.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.actions.basegrid_actions module" href="cocos.actions.basegrid_actions.html" />
     <link rel="prev" title="cocos.actions package" href="cocos.actions.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,9 +42,9 @@
         <li class="right" >
           <a href="cocos.actions.html" title="cocos.actions package"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.actions.html" accesskey="U">cocos.actions package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.actions.html" accesskey="U">cocos.actions package</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -61,7 +59,7 @@
 <div class="section" id="actions">
 <h2>Actions<a class="headerlink" href="#actions" title="Permalink to this headline">¶</a></h2>
 <p>Actions purpose is to modify along the time some trait of an object.
-The object that the action will modify is the action&#8217;s target.
+The object that the action will modify is the action’s target.
 Usually the target will be an instance of some CocosNode subclass.</p>
 <p>Example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">MoveTo</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
@@ -217,7 +215,7 @@ have a corrupt workspace, that will produce unexpected behavior.</p>
 <div class="section" id="posible-fights-between-worker-actions-over-a-target-member">
 <h4>Posible fights between worker actions over a target member<a class="headerlink" href="#posible-fights-between-worker-actions-over-a-target-member" title="Permalink to this headline">¶</a></h4>
 <p>If two actions that are active at the same time try to change the same
-target&#8217;s member(s), the resulting change is computationally well defined, but
+target’s member(s), the resulting change is computationally well defined, but
 can be somewhat unexpected by the programmer.</p>
 <p>Example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">guy</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="s2">&quot;grossini.png&quot;</span><span class="p">)</span>
@@ -238,7 +236,7 @@ combination of both movements.</p>
 member. If the actions were changing diferent members, like position and
 rotation, then no unexpected can happen.</p>
 <p>The fighting can result in a behavior that is a combination of both workers, not one
-a &#8216;winning&#8217; one. It entirely depends on the implementation from each action.
+a ‘winning’ one. It entirely depends on the implementation from each action.
 It is possible to write actions than in a fight will show additive behavoir,
 by example:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cocos.euclid</span> <span class="k">as</span> <span class="nn">eu</span>
@@ -275,11 +273,11 @@ by example:</p>
 actions have combined.</p>
 </div>
 <div class="section" id="action-s-instances-in-the-template-role-must-be-really-deepcopyiable">
-<h4>Action&#8217;s instances in the template role must be (really) deepcopyiable<a class="headerlink" href="#action-s-instances-in-the-template-role-must-be-really-deepcopyiable" title="Permalink to this headline">¶</a></h4>
+<h4>Action’s instances in the template role must be (really) deepcopyiable<a class="headerlink" href="#action-s-instances-in-the-template-role-must-be-really-deepcopyiable" title="Permalink to this headline">¶</a></h4>
 <p>Beginers note: if you pass in init only floats, ints, strings, dicts or tuples
 of the former you can skip this section and revisit later.</p>
 <p>If the action template is not deepcopyiable, you will get a deepcopy exception,
-complaining it can&#8217;t copy something</p>
+complaining it can’t copy something</p>
 <p>If you cheat deepcopy by overriding __deepcopy__ in your class like:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">__deepcopy__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">self</span>
@@ -297,7 +295,7 @@ action member</li>
 it shoud be called when some condition is meet, and init stores it in an
 action member</li>
 <li>You want the action access some big decision table, static in the sense it
-will not change over program execution. Even if is deepcopyable, there&#8217;s
+will not change over program execution. Even if is deepcopyable, there’s
 no need to deepcopy.</li>
 </ul>
 </div></blockquote>
@@ -453,7 +451,7 @@ are guaranted to call .update(1.0)
 Note that when a premature termination happens stop will be called but
 update(1.0) is not called.</p>
 <p>Examples: <cite>MoveTo</cite> , <cite>MoveBy</cite> , <cite>RotateBy</cite> are strictly Interval Actions,
-while <cite>Place</cite>, <cite>Show</cite> and <cite>CallFunc</cite> aren&#8217;t.</p>
+while <cite>Place</cite>, <cite>Show</cite> and <cite>CallFunc</cite> aren’t.</p>
 <p>While
 RotateBy(angle, duration) will usually receive a positive duration, it
 will accept duration = 0, to ease on cases like
@@ -482,7 +480,7 @@ You customize the action stepping by overriding .update</p>
 <dt id="cocos.actions.base_actions.IntervalAction.update">
 <code class="descname">update</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.IntervalAction.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets called on every frame
-&#8216;t&#8217; is the time elapsed normalized to [0, 1]
+‘t’ is the time elapsed normalized to [0, 1]
 If this action takes 5 seconds to execute, <cite>t</cite> will be equal to 0
 at 0 seconds. <cite>t</cite> will be 0.5 at 2.5 seconds and <cite>t</cite> will be 1 at 5sec.
 This method must not use self._elapsed, which is not guaranted to be
@@ -562,8 +560,8 @@ give an IntervalAction as a result.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>action</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Action</cite> instance</span><dd><p class="first last">The action that will be repeated</p>
+<dt><cite>action</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Action</cite> instance</span></dt>
+<dd><p class="first last">The action that will be repeated</p>
 </dd>
 </dl>
 </td>
@@ -642,7 +640,7 @@ posible in InstantAction, IntervalAction, Action</p>
 <li><a class="reference internal" href="#worker-independence">Worker Independence</a></li>
 <li><a class="reference internal" href="#a-worker-action-instance-should-not-be-used-as-a-template">A worker action instance should not be used as a template</a></li>
 <li><a class="reference internal" href="#posible-fights-between-worker-actions-over-a-target-member">Posible fights between worker actions over a target member</a></li>
-<li><a class="reference internal" href="#action-s-instances-in-the-template-role-must-be-really-deepcopyiable">Action&#8217;s instances in the template role must be (really) deepcopyiable</a></li>
+<li><a class="reference internal" href="#action-s-instances-in-the-template-role-must-be-really-deepcopyiable">Action’s instances in the template role must be (really) deepcopyiable</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#overview-main-subclasses">Overview main subclasses</a><ul>
@@ -673,8 +671,8 @@ posible in InstantAction, IntervalAction, Action</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -699,14 +697,14 @@ posible in InstantAction, IntervalAction, Action</p>
         <li class="right" >
           <a href="cocos.actions.html" title="cocos.actions package"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.actions.html" >cocos.actions package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="cocos.actions.html" >cocos.actions package</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

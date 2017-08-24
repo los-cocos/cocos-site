@@ -1,34 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>cocos.collision_model module &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>cocos.collision_model module &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
-    <link rel="up" title="cocos package" href="cocos.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.compat module" href="cocos.compat.html" />
     <link rel="prev" title="cocos.cocosnode module" href="cocos.cocosnode.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,8 +42,8 @@
         <li class="right" >
           <a href="cocos.cocosnode.html" title="cocos.cocosnode module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -59,12 +57,12 @@
 <dl class="class">
 <dt id="cocos.collision_model.AARectShape">
 <em class="property">class </em><code class="descname">AARectShape</code><span class="sig-paren">(</span><em>center</em>, <em>half_width</em>, <em>half_height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#cocos.collision_model.Cshape" title="cocos.collision_model.Cshape"><code class="xref py py-class docutils literal"><span class="pre">cocos.collision_model.Cshape</span></code></a></p>
 <p>Implements the Cshape interface that uses rectangles with sides
 parallel to the coordinate axis as geometric shape.</p>
 <p>Distance is not the euclidean distance but the rectangular or max-min
 distance, max( min(x0 - x1), min(y0 - y1) : (xi, yi) in recti )</p>
-<p>Good if actors don&#8217;t rotate.</p>
+<p>Good if actors don’t rotate.</p>
 <p>Look at Cshape for other class and methods documentation.</p>
 <dl class="method">
 <dt id="cocos.collision_model.AARectShape.copy">
@@ -106,7 +104,7 @@ distance, max( min(x0 - x1), min(y0 - y1) : (xi, yi) in recti )</p>
 <dl class="class">
 <dt id="cocos.collision_model.CircleShape">
 <em class="property">class </em><code class="descname">CircleShape</code><span class="sig-paren">(</span><em>center</em>, <em>r</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#cocos.collision_model.Cshape" title="cocos.collision_model.Cshape"><code class="xref py py-class docutils literal"><span class="pre">cocos.collision_model.Cshape</span></code></a></p>
 <p>Implements the Cshape interface that uses discs as geometric shape.</p>
 <p>Distance is the euclidean distance.</p>
 <p>Look at Cshape for other class and methods documentation.</p>
@@ -152,10 +150,10 @@ distance, max( min(x0 - x1), min(y0 - y1) : (xi, yi) in recti )</p>
 <em class="property">class </em><code class="descname">CollisionManager</code><a class="headerlink" href="#cocos.collision_model.CollisionManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>Answers questions about proximity or collision with known objects.</p>
-<p>After instantiation or after calling its &#8216;clear&#8217; method the instance
-don&#8217;t knows any object.</p>
+<p>After instantiation or after calling its ‘clear’ method the instance
+don’t knows any object.</p>
 <p>An object is made known to the CollisionManager instance by calling its
-&#8216;add&#8217; method with the object instance.</p>
+‘add’ method with the object instance.</p>
 <p>Example questions are:</p>
 <blockquote>
 <div><ul class="simple">
@@ -163,7 +161,7 @@ don&#8217;t knows any object.</p>
 <li>which known objects are near than 6.0 from &lt;this object&gt; ?</li>
 </ul>
 </div></blockquote>
-<p>Note that explicit objects in the question (call) don&#8217;t need to be known to
+<p>Note that explicit objects in the question (call) don’t need to be known to
 the collision manager answering the question.
 If the explicit object indeed is known, then it is omitted in the answer as a
 trivial case.</p>
@@ -177,8 +175,8 @@ a question must comply with:</p>
 <li>obj.cshape supports the interface Cshape</li>
 </ul>
 </div></blockquote>
-<p>Such an object can be called &#8216;a collidable&#8217; in the documentation, and when
-&#8216;obj&#8217; or &#8216;other&#8217; is seen in the code you can assume it means collidable.</p>
+<p>Such an object can be called ‘a collidable’ in the documentation, and when
+‘obj’ or ‘other’ is seen in the code you can assume it means collidable.</p>
 <p>While usually all collidables in a collision manager are of the same class
 (CircleShape or AARectShape) it is allowed to use both types into the same
 collision manager.</p>
@@ -192,12 +190,12 @@ manipulated by calling the methods</p>
 </ul>
 </div></blockquote>
 <p>When objects are made known to a collision manager, internal data structures
-are updated based on the obj.cshape value at the &#8216;add&#8217; moment.
+are updated based on the obj.cshape value at the ‘add’ moment.
 In particular, the obj.cshape indirectly tells where in the internal
 structures certain info will be stored.
 Later, the internal data structures are used to accelerate answers.</p>
-<p>This  means that modifying obj.cshape after an &#8216;add&#8217; can produce a memory
-leak in the next &#8216;remove_tricky&#8217;, and that in the same situation some
+<p>This  means that modifying obj.cshape after an ‘add’ can produce a memory
+leak in the next ‘remove_tricky’, and that in the same situation some
 answers can be partially wrong.
 What type of wrong ? It can sometimes miss a collision with a know
 object that changed it cshape.</p>
@@ -226,11 +224,11 @@ obj.cshape values changes.</p>
 </pre></div>
 </div>
 <p>Example actors for this case are player, enemies, soldiers.</p>
-<p>All of the known objects don&#8217;t change Cshapes</p>
+<p>All of the known objects don’t change Cshapes</p>
 <blockquote>
 <div><ul class="simple">
 <li>At level start you add all objects</li>
-<li>When an actor reaches end of life use &#8216;remove_tricky&#8217; to make it not known, no problem because his cshape has not changed</li>
+<li>When an actor reaches end of life use ‘remove_tricky’ to make it not known, no problem because his cshape has not changed</li>
 </ul>
 </div></blockquote>
 <p>Examples actors for this case are food, coins, trees, rocks.</p>
@@ -262,7 +260,7 @@ obj is not required to be a known object</p>
 At each step it will yield a pair (obj, other).
 If (obj1, obj2) is seen when consuming the iterator, then (obj2, obj1)
 will not be seen.
-In other worlds, &#8216;obj1 collides with obj2&#8217; means (obj1, obj2) or
+In other worlds, ‘obj1 collides with obj2’ means (obj1, obj2) or
 (obj2, obj1) will appear in the iterator output but not both.</p>
 </dd></dl>
 
@@ -367,7 +365,7 @@ obj1, obj2 are not required to be known objects</p>
 <dl class="class">
 <dt id="cocos.collision_model.CollisionManagerBruteForce">
 <em class="property">class </em><code class="descname">CollisionManagerBruteForce</code><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#cocos.collision_model.CollisionManager" title="cocos.collision_model.CollisionManager"><code class="xref py py-class docutils literal"><span class="pre">cocos.collision_model.CollisionManager</span></code></a></p>
 <p>Implements the CollisionManager interface with with the simpler code possible.</p>
 <p>Intended for reference and debugging, it has very bad performance.</p>
 <p>Look at CollisionManager for other class and methods documentation.</p>
@@ -451,13 +449,13 @@ obj1, obj2 are not required to be known objects</p>
 <dl class="class">
 <dt id="cocos.collision_model.CollisionManagerGrid">
 <em class="property">class </em><code class="descname">CollisionManagerGrid</code><span class="sig-paren">(</span><em>xmin</em>, <em>xmax</em>, <em>ymin</em>, <em>ymax</em>, <em>cell_width</em>, <em>cell_height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#cocos.collision_model.CollisionManager" title="cocos.collision_model.CollisionManager"><code class="xref py py-class docutils literal"><span class="pre">cocos.collision_model.CollisionManager</span></code></a></p>
 <p>Implements the CollisionManager interface based on the scheme
 known as spatial hashing.</p>
 <p>The idea behind is to divide the space in rectangles with a given width and
 height, and have a table telling which objects overlaps each rectangle.</p>
-<p>Later, when the question &#8216;which know objects has such and such spatial
-relation with &lt;some object&gt;&#8217; arrives, only the objects in rectangles
+<p>Later, when the question ‘which know objects has such and such spatial
+relation with &lt;some object&gt;’ arrives, only the objects in rectangles
 overlapping &lt;some object&gt; (or nearby ones) needs to be examined for the
 condition.</p>
 <p>Look at CollisionManager for other class and methods documentation.</p>
@@ -586,8 +584,8 @@ rectangle defined by packed_box, False otherwise.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>packed_box</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">4-tuple floats</span><dd><p class="first last">An axis aligned rectangle expressed as (minx, maxx, miny, maxy)</p>
+<dt><cite>packed_box</cite> <span class="classifier-delimiter">:</span> <span class="classifier">4-tuple floats</span></dt>
+<dd><p class="first last">An axis aligned rectangle expressed as (minx, maxx, miny, maxy)</p>
 </dd>
 </dl>
 </td>
@@ -664,7 +662,7 @@ AABB for short.</p>
 <dt id="cocos.collision_model.aa_rect_distance_aa_rect">
 <code class="descname">aa_rect_distance_aa_rect</code><span class="sig-paren">(</span><em>aa_rect</em>, <em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.aa_rect_distance_aa_rect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Give the distance between two axis-aligned rectangles.</p>
-<p>The rect must have members &#8216;center&#8217;, &#8216;rx&#8217;, &#8216;ry&#8217; where the latest two are
+<p>The rect must have members ‘center’, ‘rx’, ‘ry’ where the latest two are
 the rect half_width and half_height.</p>
 </dd></dl>
 
@@ -672,16 +670,16 @@ the rect half_width and half_height.</p>
 <dt id="cocos.collision_model.aa_rect_distance_circle">
 <code class="descname">aa_rect_distance_circle</code><span class="sig-paren">(</span><em>aa_rect</em>, <em>circle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.aa_rect_distance_circle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Give the distance between an axis-aligned rectangle and a circle.</p>
-<p>The rect must have members &#8216;center&#8217;, &#8216;rx&#8217;, &#8216;ry&#8217; where the latest two are
+<p>The rect must have members ‘center’, ‘rx’, ‘ry’ where the latest two are
 the rect half_width and half_height.
-The circle must have members &#8216;center&#8217;, &#8216;r&#8217;, where the latest is the radius.</p>
+The circle must have members ‘center’, ‘r’, where the latest is the radius.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="cocos.collision_model.aa_rect_overlaps_aa_rect">
 <code class="descname">aa_rect_overlaps_aa_rect</code><span class="sig-paren">(</span><em>aa_rect</em>, <em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.aa_rect_overlaps_aa_rect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tells if two axis aligned rectangles overlap.</p>
-<p>The rects must have members &#8216;center&#8217;, &#8216;rx&#8217;, &#8216;ry&#8217; where the latest two are
+<p>The rects must have members ‘center’, ‘rx’, ‘ry’ where the latest two are
 the rect half_width and half_height.</p>
 </dd></dl>
 
@@ -689,23 +687,23 @@ the rect half_width and half_height.</p>
 <dt id="cocos.collision_model.aa_rect_overlaps_circle">
 <code class="descname">aa_rect_overlaps_circle</code><span class="sig-paren">(</span><em>aa_rect</em>, <em>circle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.aa_rect_overlaps_circle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tells if an axis aligned rectangle and a circle overlap.</p>
-<p>The rect must have members &#8216;center&#8217;, &#8216;rx&#8217;, &#8216;ry&#8217; where the latest two are
+<p>The rect must have members ‘center’, ‘rx’, ‘ry’ where the latest two are
 the rect half_width and half_height.
-The circle must have members &#8216;center&#8217;, &#8216;r&#8217;, where the latest is the radius.</p>
+The circle must have members ‘center’, ‘r’, where the latest is the radius.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="cocos.collision_model.circle_distance_circle">
 <code class="descname">circle_distance_circle</code><span class="sig-paren">(</span><em>circle</em>, <em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.circle_distance_circle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Give the distance between two circles.</p>
-<p>The circles must have members &#8216;center&#8217;, &#8216;r&#8217;, where the latest is the radius.</p>
+<p>The circles must have members ‘center’, ‘r’, where the latest is the radius.</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="cocos.collision_model.circle_overlaps_circle">
 <code class="descname">circle_overlaps_circle</code><span class="sig-paren">(</span><em>circle</em>, <em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.circle_overlaps_circle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tells if two circles overlap.</p>
-<p>The circles must have members &#8216;center&#8217;, &#8216;r&#8217;, where the latest is the radius.</p>
+<p>The circles must have members ‘center’, ‘r’, where the latest is the radius.</p>
 </dd></dl>
 
 <dl class="function">
@@ -737,8 +735,8 @@ The circle must have members &#8216;center&#8217;, &#8216;r&#8217;, where the la
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -763,13 +761,13 @@ The circle must have members &#8216;center&#8217;, &#8216;r&#8217;, where the la
         <li class="right" >
           <a href="cocos.cocosnode.html" title="cocos.cocosnode module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

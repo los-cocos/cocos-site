@@ -1,5 +1,5 @@
-cocos.layer.util_layers module
-==============================
+cocos\.layer\.util\_layers module
+=================================
 
 .. automodule:: cocos.layer.util_layers
     :members:

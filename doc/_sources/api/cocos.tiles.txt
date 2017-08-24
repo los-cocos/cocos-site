@@ -1,5 +1,5 @@
-cocos.tiles module
-==================
+cocos\.tiles module
+===================
 
 .. automodule:: cocos.tiles
     :members:

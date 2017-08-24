@@ -1,5 +1,5 @@
-cocos.audio.SDL.rwops module
-============================
+cocos\.audio\.SDL\.rwops module
+===============================
 
 .. automodule:: cocos.audio.SDL.rwops
     :members:

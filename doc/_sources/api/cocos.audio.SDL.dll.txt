@@ -1,5 +1,5 @@
-cocos.audio.SDL.dll module
-==========================
+cocos\.audio\.SDL\.dll module
+=============================
 
 .. automodule:: cocos.audio.SDL.dll
     :members:

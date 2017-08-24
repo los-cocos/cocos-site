@@ -1,34 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>cocos.tiles module &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>cocos.tiles module &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
-    <link rel="up" title="cocos package" href="cocos.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.utils module" href="cocos.utils.html" />
     <link rel="prev" title="cocos.text module" href="cocos.text.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,8 +42,8 @@
         <li class="right" >
           <a href="cocos.text.html" title="cocos.text module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -97,13 +95,13 @@ constructed of image tiles.</p>
 </pre></div>
 </div>
 <p>Properties are available through the dictionary interface, ie. if the
-cell has a property &#8216;cost&#8217; then you may access it as:</p>
+cell has a property ‘cost’ then you may access it as:</p>
 <blockquote>
-<div>cell[&#8216;cost&#8217;]</div></blockquote>
+<div>cell[‘cost’]</div></blockquote>
 <p>You may also set properties in this way and use the .get() method to
 supply a default value.</p>
 <p>If the named property does not exist on the cell it will be looked up
-on the cell&#8217;s tile.</p>
+on the cell’s tile.</p>
 <dl class="method">
 <dt id="cocos.tiles.Cell.get">
 <code class="descname">get</code><span class="sig-paren">(</span><em>key</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Cell.get" title="Permalink to this definition">¶</a></dt>
@@ -331,8 +329,8 @@ increasing up, such that a map:</p>
 \<span class="n">_</span><span class="o">/</span> \<span class="n">_</span><span class="o">/</span>            <span class="o">.</span>
 </pre></div>
 </div>
-<p>has cells = [[&#8216;a&#8217;, &#8216;b&#8217;], [&#8216;c&#8217;, &#8216;d&#8217;], [&#8216;e&#8217;, &#8216;f&#8217;], [&#8216;g&#8217;, &#8216;h&#8217;]]</p>
-<p>(and this the cell at (0, 0) is &#8216;a&#8217; and (1, 1) is &#8216;d&#8217;)</p>
+<p>has cells = [[‘a’, ‘b’], [‘c’, ‘d’], [‘e’, ‘f’], [‘g’, ‘h’]]</p>
+<p>(and this the cell at (0, 0) is ‘a’ and (1, 1) is ‘d’)</p>
 <dl class="method">
 <dt id="cocos.tiles.HexMap.get_at_pixel">
 <code class="descname">get_at_pixel</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexMap.get_at_pixel" title="Permalink to this definition">¶</a></dt>
@@ -438,7 +436,7 @@ increasing up, such that a map:</p>
 \<span class="n">_</span><span class="o">/</span> \<span class="n">_</span><span class="o">/</span>          <span class="o">.</span>
 </pre></div>
 </div>
-<p>has cells = [[&#8216;a&#8217;, &#8216;b&#8217;], [&#8216;c&#8217;, &#8216;d&#8217;], [&#8216;e&#8217;, &#8216;f&#8217;], [&#8216;g&#8217;, &#8216;h&#8217;]]</p>
+<p>has cells = [[‘a’, ‘b’], [‘c’, ‘d’], [‘e’, ‘f’], [‘g’, ‘h’]]</p>
 </dd></dl>
 
 <dl class="class">
@@ -537,8 +535,8 @@ map-space pixels currently visible.</p>
 <span class="n">cell</span>            <span class="o">--</span> <span class="n">cell</span> <span class="kn">from</span> <span class="nn">the</span> <span class="n">MapLayer</span><span class="s1">&#39;s cells</span>
 </pre></div>
 </div>
-<p>The cell may have the standard properties &#8220;top&#8221;, &#8220;left&#8221;, &#8220;bottom&#8221; and
-&#8220;right&#8221; which are booleans indicating that those sides are impassable.
+<p>The cell may have the standard properties “top”, “left”, “bottom” and
+“right” which are booleans indicating that those sides are impassable.
 These are used by RectCellCollider.</p>
 <p>Note that all pixel attributes are <em>not</em> adjusted for screen,
 view or layer transformations.</p>
@@ -628,13 +626,13 @@ allowing [i][j] addressing:</p>
 <span class="o">+---+---+---+</span>
 </pre></div>
 </div>
-<p>Thus cells = [[&#8216;a&#8217;, &#8216;d&#8217;], [&#8216;b&#8217;, &#8216;e&#8217;], [&#8216;c&#8217;, &#8216;f&#8217;]]</p>
-<p>(and thus the cell at (0, 0) is &#8216;a&#8217; and (0, 1) is &#8216;d&#8217;)</p>
+<p>Thus cells = [[‘a’, ‘d’], [‘b’, ‘e’], [‘c’, ‘f’]]</p>
+<p>(and thus the cell at (0, 0) is ‘a’ and (0, 1) is ‘d’)</p>
 <dl class="method">
 <dt id="cocos.tiles.RectMap.get_at_pixel">
 <code class="descname">get_at_pixel</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMap.get_at_pixel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return Cell at pixel px=(x,y) on the map.</p>
-<p>The pixel coordinate passed in is in the map&#8217;s coordinate space,
+<p>The pixel coordinate passed in is in the map’s coordinate space,
 unmodified by screen, layer or view transformations.</p>
 <p>Return None if out of bounds.</p>
 </dd></dl>
@@ -645,7 +643,7 @@ unmodified by screen, layer or view transformations.</p>
 <dd><p>Return cells that intersects the rectangle left, bottom, right, top
 in an area greater than zero</p>
 <p>(left, bottom) and (right, top) are the lower left and upper right
-corners respectively, in map&#8217;s coordinate space, unmodified by screen,
+corners respectively, in map’s coordinate space, unmodified by screen,
 layer or view transformations</p>
 <p>Return a list of Cell instances.</p>
 <dl class="docutils">
@@ -653,7 +651,7 @@ layer or view transformations</p>
 <dd>A rectangle which is a point intersects no cell
 A rectangle which is a segment and overlaps the cell boundaries
 intersects no cells
-A rectangle which is a segment and don&#8217;t overlaps the cell
+A rectangle which is a segment and don’t overlaps the cell
 boundaries intersects some cells: the ones that the open segment
 intersects</dd>
 </dl>
@@ -677,7 +675,7 @@ is one of self.UP, self.DOWN, self.LEFT or self.RIGHT.</p>
 <dt id="cocos.tiles.RectMap.get_neighbors">
 <code class="descname">get_neighbors</code><span class="sig-paren">(</span><em>cell</em>, <em>diagonals=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMap.get_neighbors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all cells touching the sides of the nominated cell.</p>
-<p>If &#8220;diagonals&#8221; is True then return the cells touching the corners
+<p>If “diagonals” is True then return the cells touching the corners
 of this cell too.</p>
 <p>Return a dict with the directions (self.UP, self.DOWN, etc) as keys
 and neighbor cells as values.</p>
@@ -759,7 +757,7 @@ and neighbor cells as values.</p>
 <dt id="cocos.tiles.Resource.findall">
 <code class="descname">findall</code><span class="sig-paren">(</span><em>cls</em>, <em>ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.findall" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find all elements of the given class in this resource and all
-&lt;requires&gt;&#8217;ed resources.</p>
+&lt;requires&gt;’ed resources.</p>
 </dd></dl>
 
 <dl class="method">
@@ -790,7 +788,7 @@ and neighbor cells as values.</p>
 <dl class="method">
 <dt id="cocos.tiles.Resource.save_xml">
 <code class="descname">save_xml</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.save_xml" title="Permalink to this definition">¶</a></dt>
-<dd><p>Save this resource&#8217;s XML to the indicated file.</p>
+<dd><p>Save this resource’s XML to the indicated file.</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -800,7 +798,7 @@ and neighbor cells as values.</p>
 
 <dl class="attribute">
 <dt id="cocos.tiles.Resource.factories">
-<code class="descname">factories</code><em class="property"> = {'rectmap': &lt;function rectmap_factory at 0x00000000083919D8&gt;, 'requires': &lt;function Resource.requires_factory at 0x000000000835FE18&gt;, 'hexmap': &lt;function hexmap_factory at 0x0000000008391A60&gt;, 'resource': &lt;function Resource.resource_factory at 0x000000000835FD90&gt;, 'image': &lt;function image_factory at 0x0000000008391510&gt;, 'tileset': &lt;function tileset_factory at 0x0000000008391620&gt;, 'imageatlas': &lt;function imageatlas_factory at 0x0000000008391598&gt;}</em><a class="headerlink" href="#cocos.tiles.Resource.factories" title="Permalink to this definition">¶</a></dt>
+<code class="descname">factories</code><em class="property"> = {'resource': &lt;function Resource.resource_factory&gt;, 'requires': &lt;function Resource.requires_factory&gt;, 'image': &lt;function image_factory&gt;, 'imageatlas': &lt;function imageatlas_factory&gt;, 'tileset': &lt;function tileset_factory&gt;, 'rectmap': &lt;function rectmap_factory&gt;, 'hexmap': &lt;function hexmap_factory&gt;}</em><a class="headerlink" href="#cocos.tiles.Resource.factories" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -863,7 +861,7 @@ TmxObject.fromxml</p>
 <span class="n">the</span> <span class="n">vertices</span> <span class="ow">in</span> <span class="n">a</span> <span class="s1">&#39;polygon&#39;</span> <span class="ow">or</span> <span class="s1">&#39;polyline&#39;</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>A &#8216;rect&#8217; AABB is itself, so x,y is it&#8217;s bottomleft corner.</p>
+<p>A ‘rect’ AABB is itself, so x,y is it’s bottomleft corner.</p>
 <dl class="classmethod">
 <dt id="cocos.tiles.TmxObject.fromxml">
 <em class="property">classmethod </em><code class="descname">fromxml</code><span class="sig-paren">(</span><em>tag</em>, <em>tilesets</em>, <em>map_height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObject.fromxml" title="Permalink to this definition">¶</a></dt>
@@ -872,14 +870,14 @@ TmxObject.fromxml</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>tag</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">xml tag</span><dd><p class="first last">assumed an object tag</p>
+<dt><cite>tag</cite> <span class="classifier-delimiter">:</span> <span class="classifier">xml tag</span></dt>
+<dd><p class="first last">assumed an object tag</p>
 </dd>
-<dt><cite>tileset</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">enumerable giving tilesets</span><dd><p class="first last">only the tilesets used used by an object tile are needed, can be []</p>
+<dt><cite>tileset</cite> <span class="classifier-delimiter">:</span> <span class="classifier">enumerable giving tilesets</span></dt>
+<dd><p class="first last">only the tilesets used used by an object tile are needed, can be []</p>
 </dd>
-<dt><cite>map_height</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">map height in pixels, needed to change coords from tmx to gl</p>
+<dt><cite>map_height</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">map height in pixels, needed to change coords from tmx to gl</p>
 </dd>
 </dl>
 </td>
@@ -926,7 +924,7 @@ property name set.</p>
 <dt id="cocos.tiles.TmxObjectLayer.find_cells">
 <code class="descname">find_cells</code><span class="sig-paren">(</span><em>**requirements</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectLayer.find_cells" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find all objects with the given properties set.</p>
-<p>Called &#8220;find_cells&#8221; for compatibility with existing cocos tile API.</p>
+<p>Called “find_cells” for compatibility with existing cocos tile API.</p>
 </dd></dl>
 
 <dl class="classmethod">
@@ -988,7 +986,7 @@ bottom-left (left, bottom) and top-right (right, top) corners.</p>
 <dl class="function">
 <dt id="cocos.tiles.hex_width">
 <code class="descname">hex_width</code><span class="sig-paren">(</span><em>height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.hex_width" title="Permalink to this definition">¶</a></dt>
-<dd><p>Determine a regular hexagon&#8217;s width given its height.</p>
+<dd><p>Determine a regular hexagon’s width given its height.</p>
 </dd></dl>
 
 <dl class="function">
@@ -1033,8 +1031,8 @@ bottom-left (left, bottom) and top-right (right, top) corners.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>tag</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">xml tag</span><dd><p class="first last">assumed an object tag</p>
+<dt><cite>tag</cite> <span class="classifier-delimiter">:</span> <span class="classifier">xml tag</span></dt>
+<dd><p class="first last">assumed an object tag</p>
 </dd>
 <dt><cite>obj_x</cite> :</dt>
 <dd><p class="first last">object x position in gl coordinates</p>
@@ -1048,8 +1046,8 @@ bottom-left (left, bottom) and top-right (right, top) corners.</p>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">tuple (left, bottom, width, height, points)
 left: leftmost x-position in points, gl coordinates system
 bottom: bottommost y-position in points, gl coordinates system
-width: width of point&#8217;s enclosing box
-height: height of point&#8217;s enclosing box
+width: width of point’s enclosing box
+height: height of point’s enclosing box
 points: list of points in a gl coordinates system relative to (left, bottom)</p>
 </td>
 </tr>
@@ -1101,8 +1099,8 @@ points: list of points in a gl coordinates system relative to (left, bottom)</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -1127,13 +1125,13 @@ points: list of points in a gl coordinates system relative to (left, bottom)</p>
         <li class="right" >
           <a href="cocos.text.html" title="cocos.text module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

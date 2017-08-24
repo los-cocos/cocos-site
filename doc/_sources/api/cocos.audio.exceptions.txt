@@ -1,5 +1,5 @@
-cocos.audio.exceptions module
-=============================
+cocos\.audio\.exceptions module
+===============================
 
 .. automodule:: cocos.audio.exceptions
     :members:

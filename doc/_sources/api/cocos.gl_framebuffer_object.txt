@@ -1,5 +1,5 @@
-cocos.gl_framebuffer_object module
-==================================
+cocos\.gl\_framebuffer\_object module
+=====================================
 
 .. automodule:: cocos.gl_framebuffer_object
     :members:

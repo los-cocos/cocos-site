@@ -1,34 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>cocos.grid module &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>cocos.grid module &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
-    <link rel="up" title="cocos package" href="cocos.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.mapcolliders module" href="cocos.mapcolliders.html" />
     <link rel="prev" title="cocos.gl_framebuffer_object module" href="cocos.gl_framebuffer_object.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,8 +42,8 @@
         <li class="right" >
           <a href="cocos.gl_framebuffer_object.html" title="cocos.gl_framebuffer_object module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -72,8 +70,8 @@ The FrameBuffer will be unbound and the texture will be drawn</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>camera</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Camera</cite></span><dd><p class="first last">The target&#8217;s camera object.</p>
+<dt><cite>camera</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Camera</cite></span></dt>
+<dd><p class="first last">The target’s camera object.</p>
 </dd>
 </dl>
 </td>
@@ -94,14 +92,14 @@ to prevent calculating a new texture</p>
 <dt id="cocos.grid.GridBase.init">
 <code class="descname">init</code><span class="sig-paren">(</span><em>grid</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.GridBase.init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initializes the grid creating both a vertex_list for an independent-tiled grid
-and creating also a vertex_list_indexed for a &#8220;united&#8221; (non independent tile) grid.</p>
+and creating also a vertex_list_indexed for a “united” (non independent tile) grid.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>grid</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">euclid.Point2</span><dd><p class="first last">size of a 2D grid</p>
+<dt><cite>grid</cite> <span class="classifier-delimiter">:</span> <span class="classifier">euclid.Point2</span></dt>
+<dd><p class="first last">size of a 2D grid</p>
 </dd>
 </dl>
 </td>
@@ -139,17 +137,17 @@ and creating also a vertex_list_indexed for a &#8220;united&#8221; (non independ
 <dt id="cocos.grid.Grid3D.get_original_vertex">
 <code class="descname">get_original_vertex</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.Grid3D.get_original_vertex" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the original vertex coordinate.
-The original vertices are the ones weren&#8217;t modified by the current action.</p>
+The original vertices are the ones weren’t modified by the current action.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>x</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">x-vertex</p>
+<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">x-vertex</p>
 </dd>
-<dt><cite>y</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">y-vertex</p>
+<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">y-vertex</p>
 </dd>
 </dl>
 </td>
@@ -170,11 +168,11 @@ The original vertices are the ones weren&#8217;t modified by the current action.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>x</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">x-vertex</p>
+<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">x-vertex</p>
 </dd>
-<dt><cite>y</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">y-vertex</p>
+<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">y-vertex</p>
 </dd>
 </dl>
 </td>
@@ -195,14 +193,14 @@ The original vertices are the ones weren&#8217;t modified by the current action.
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>x</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">x-vertex</p>
+<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">x-vertex</p>
 </dd>
-<dt><cite>y</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">y-vertex</p>
+<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">y-vertex</p>
 </dd>
-<dt><cite>v</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">(float, float, float)</span><dd><p class="first last">tuple value for the vertex</p>
+<dt><cite>v</cite> <span class="classifier-delimiter">:</span> <span class="classifier">(float, float, float)</span></dt>
+<dd><p class="first last">tuple value for the vertex</p>
 </dd>
 </dl>
 </td>
@@ -241,11 +239,11 @@ the tiles can be separated from the grid.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>x</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">x coordinate of the tile</p>
+<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">x coordinate of the tile</p>
 </dd>
-<dt><cite>y</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">y coordinate of the tile</p>
+<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">y coordinate of the tile</p>
 </dd>
 </dl>
 </td>
@@ -253,7 +251,7 @@ the tiles can be separated from the grid.</p>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">[ float, float, float, float, float, float, float, float, float, float, float, float ]</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The 4 coordinates with the following order: x0, y0, z0, x1, y1, z1,...,x3, y3, z3</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The 4 coordinates with the following order: x0, y0, z0, x1, y1, z1,…,x3, y3, z3</p>
 </td>
 </tr>
 </tbody>
@@ -276,11 +274,11 @@ the tiles can be separated from the grid.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first docutils">
-<dt><cite>x</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">x coordinate of the tile</p>
+<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">x coordinate of the tile</p>
 </dd>
-<dt><cite>y</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">y coordinate of the tile</p>
+<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">y coordinate of the tile</p>
 </dd>
 </dl>
 </td>
@@ -288,7 +286,7 @@ the tiles can be separated from the grid.</p>
 <tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">[ float, float, float, float, float, float, float, float, float, float, float, float ]</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The 4 coordinates with the following order: x0, y0, z0, x1, y1, z1,...,x3, y3, z3</p>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">The 4 coordinates with the following order: x0, y0, z0, x1, y1, z1,…,x3, y3, z3</p>
 </td>
 </tr>
 </tbody>
@@ -311,14 +309,14 @@ the tiles can be separated from the grid.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>x</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">x coodinate of the tile</p>
+<dt><cite>x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">x coodinate of the tile</p>
 </dd>
-<dt><cite>y</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">int</span><dd><p class="first last">y coordinate of the tile</p>
+<dt><cite>y</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
+<dd><p class="first last">y coordinate of the tile</p>
 </dd>
-<dt><cite>coords</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">[ float, float, float, float, float, float, float, float, float, float, float, float ]</span><dd><p class="first last">The 4 coordinates in the format (x0, y0, z0, x1, y1, z1,..., x3, y3, z3)</p>
+<dt><cite>coords</cite> <span class="classifier-delimiter">:</span> <span class="classifier">[ float, float, float, float, float, float, float, float, float, float, float, float ]</span></dt>
+<dd><p class="first last">The 4 coordinates in the format (x0, y0, z0, x1, y1, z1,…, x3, y3, z3)</p>
 </dd>
 </dl>
 </td>
@@ -353,8 +351,8 @@ the tiles can be separated from the grid.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -379,13 +377,13 @@ the tiles can be separated from the grid.</p>
         <li class="right" >
           <a href="cocos.gl_framebuffer_object.html" title="cocos.gl_framebuffer_object module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

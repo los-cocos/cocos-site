@@ -1,34 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>cocos.cocosnode module &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>cocos.cocosnode module &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
-    <link rel="up" title="cocos package" href="cocos.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.collision_model module" href="cocos.collision_model.html" />
     <link rel="prev" title="cocos.camera module" href="cocos.camera.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,8 +42,8 @@
         <li class="right" >
           <a href="cocos.camera.html" title="cocos.camera module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -98,13 +96,13 @@ its <a class="reference internal" href="#cocos.cocosnode.CocosNode.on_enter" tit
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>child</strong> (<a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><em>CocosNode</em></a>) &#8211; object to be added</li>
-<li><strong>z</strong> (<em>Optional[float]</em>) &#8211; the child z index. Defaults to 0.</li>
-<li><strong>name</strong> (<em>Optional[str]</em>) &#8211; Name of the child. Defaults to <code class="docutils literal"><span class="pre">None</span></code></li>
+<li><strong>child</strong> (<a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><em>CocosNode</em></a>) – object to be added</li>
+<li><strong>z</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – the child z index. Defaults to 0.</li>
+<li><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Name of the child. Defaults to <code class="docutils literal"><span class="pre">None</span></code></li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>CocosNode</em> &#8211; self</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>CocosNode</em> – self</p>
 </td>
 </tr>
 </tbody>
@@ -121,7 +119,7 @@ its <a class="reference internal" href="#cocos.cocosnode.CocosNode.on_enter" tit
 <dt id="cocos.cocosnode.CocosNode.do">
 <code class="descname">do</code><span class="sig-paren">(</span><em>action</em>, <em>target=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.do" title="Permalink to this definition">¶</a></dt>
 <dd><p>Executes an <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><code class="xref py py-class docutils literal"><span class="pre">Action</span></code></a>.
-When the action is finished, it will be removed from the node&#8217;s actions
+When the action is finished, it will be removed from the node’s actions
 container.</p>
 <p>To remove an action you must use the <a class="reference internal" href="#cocos.cocosnode.CocosNode.do" title="cocos.cocosnode.CocosNode.do"><code class="xref py py-meth docutils literal"><span class="pre">do()</span></code></a> return value to
 call <a class="reference internal" href="#cocos.cocosnode.CocosNode.remove_action" title="cocos.cocosnode.CocosNode.remove_action"><code class="xref py py-meth docutils literal"><span class="pre">remove_action()</span></code></a>.</p>
@@ -129,9 +127,9 @@ call <a class="reference internal" href="#cocos.cocosnode.CocosNode.remove_actio
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>action</strong> (<a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><em>Action</em></a>) &#8211; Action that will be executed.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>action</strong> (<a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><em>Action</em></a>) – Action that will be executed.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>Action</em> &#8211; A clone of <code class="docutils literal"><span class="pre">action</span></code></td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>Action</em> – A clone of <code class="docutils literal"><span class="pre">action</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -161,9 +159,9 @@ If you want OpenGL to do the scaling for you, you can:</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) &#8211; name of the reference to retrieve.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – name of the reference to retrieve.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>CocosNode</em> &#8211; The child named &#8216;name&#8217;. Will raise an <code class="docutils literal"><span class="pre">Exception</span></code> if
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>CocosNode</em> – The child named ‘name’. Will raise an <code class="docutils literal"><span class="pre">Exception</span></code> if
 not present.</td>
 </tr>
 </tbody>
@@ -194,12 +192,12 @@ another node with this name will produce an Exception.</p>
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.get_children">
 <code class="descname">get_children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.get_children" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return a list with the node&#8217;s children, order is back to front.</p>
+<dd><p>Return a list with the node’s children, order is back to front.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>list[CocosNode]</em> &#8211; children of this node, ordered back to front.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>list[CocosNode]</em> – children of this node, ordered back to front.</td>
 </tr>
 </tbody>
 </table>
@@ -319,9 +317,9 @@ not be called, worker actions will not be called.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p</strong> (<a class="reference internal" href="cocos.euclid.html#cocos.euclid.Vector2" title="cocos.euclid.Vector2"><em>Vector2</em></a>) &#8211; Vector to convert.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p</strong> (<a class="reference internal" href="cocos.euclid.html#cocos.euclid.Vector2" title="cocos.euclid.Vector2"><em>Vector2</em></a>) – Vector to convert.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>Vector2</em> &#8211; <code class="docutils literal"><span class="pre">p</span></code> vector converted to local coordinates.</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>Vector2</em> – <code class="docutils literal"><span class="pre">p</span></code> vector converted to local coordinates.</td>
 </tr>
 </tbody>
 </table>
@@ -335,9 +333,9 @@ not be called, worker actions will not be called.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p</strong> (<a class="reference internal" href="cocos.euclid.html#cocos.euclid.Vector2" title="cocos.euclid.Vector2"><em>Vector2</em></a>) &#8211; Vector to convert</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p</strong> (<a class="reference internal" href="cocos.euclid.html#cocos.euclid.Vector2" title="cocos.euclid.Vector2"><em>Vector2</em></a>) – Vector to convert</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>Vector2</em> &#8211; <code class="docutils literal"><span class="pre">p</span></code> vector converted to world coordinates.</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>Vector2</em> – <code class="docutils literal"><span class="pre">p</span></code> vector converted to world coordinates.</td>
 </tr>
 </tbody>
 </table>
@@ -356,7 +354,7 @@ will be called.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<em>str or object</em>) &#8211; Name of the reference to be removed or object to be removed.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<em>str</em><em> or </em><em>object</em>) – Name of the reference to be removed or object to be removed.</td>
 </tr>
 </tbody>
 </table>
@@ -375,7 +373,7 @@ When skipping this there is the posibility to double call the
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>action</strong> (<a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><em>Action</em></a>) &#8211; Action to be removed.
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>action</strong> (<a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><em>Action</em></a>) – Action to be removed.
 Must be the return value for a <a class="reference internal" href="#cocos.cocosnode.CocosNode.do" title="cocos.cocosnode.CocosNode.do"><code class="xref py py-meth docutils literal"><span class="pre">do()</span></code></a> call</td>
 </tr>
 </tbody>
@@ -416,9 +414,9 @@ resumed when the node leaves or enters a scene.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>callback</strong> (<em>a function</em>) &#8211; The function to call each frame.</li>
-<li><strong>*args</strong> &#8211; Variable length argument list passed to the <code class="docutils literal"><span class="pre">callback</span></code>.</li>
-<li><strong>**kwargs</strong> &#8211; Arbitrary keyword arguments  passed to the <code class="docutils literal"><span class="pre">callback</span></code>.</li>
+<li><strong>callback</strong> (<em>a function</em>) – The function to call each frame.</li>
+<li><strong>*args</strong> – Variable length argument list passed to the <code class="docutils literal"><span class="pre">callback</span></code>.</li>
+<li><strong>**kwargs</strong> – Arbitrary keyword arguments  passed to the <code class="docutils literal"><span class="pre">callback</span></code>.</li>
 </ul>
 </td>
 </tr>
@@ -443,10 +441,10 @@ resumed when the node leaves or enters a scene.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>callback</strong> (<em>a function</em>) &#8211; The function to call when the timer elapsed.</li>
-<li><strong>interval</strong> (<em>float</em>) &#8211; The number of seconds to wait between each call.</li>
-<li><strong>*args</strong> &#8211; Variable length argument list passed to the <code class="docutils literal"><span class="pre">callback</span></code>.</li>
-<li><strong>**kwargs</strong> &#8211; Arbitrary keyword arguments  passed to the <code class="docutils literal"><span class="pre">callback</span></code>.</li>
+<li><strong>callback</strong> (<em>a function</em>) – The function to call when the timer elapsed.</li>
+<li><strong>interval</strong> (<em>float</em>) – The number of seconds to wait between each call.</li>
+<li><strong>*args</strong> – Variable length argument list passed to the <code class="docutils literal"><span class="pre">callback</span></code>.</li>
+<li><strong>**kwargs</strong> – Arbitrary keyword arguments  passed to the <code class="docutils literal"><span class="pre">callback</span></code>.</li>
 </ul>
 </td>
 </tr>
@@ -485,7 +483,7 @@ by <a class="reference internal" href="#cocos.cocosnode.CocosNode.schedule" titl
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>callback</strong> (<em>a function</em>) &#8211; The function to remove from the schedule.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>callback</strong> (<em>a function</em>) – The function to remove from the schedule.</td>
 </tr>
 </tbody>
 </table>
@@ -518,12 +516,12 @@ returns a list of all return values that are not <code class="docutils literal">
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>callback</strong> (<em>a function</em>) &#8211; Callable that takes a <a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal"><span class="pre">CocosNode</span></code></a> as an argument.</li>
-<li><strong>collect</strong> (<em>list</em>) &#8211; List of non-<cite>None</cite> returned values from visited nodes.</li>
+<li><strong>callback</strong> (<em>a function</em>) – Callable that takes a <a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal"><span class="pre">CocosNode</span></code></a> as an argument.</li>
+<li><strong>collect</strong> (<em>list</em>) – List of non-<cite>None</cite> returned values from visited nodes.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>list</em> &#8211; The list of non-<cite>None</cite> return values.</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>list</em> – The list of non-<cite>None</cite> return values.</p>
 </td>
 </tr>
 </tbody>
@@ -782,8 +780,8 @@ Default: True</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -808,13 +806,13 @@ Default: True</p>
         <li class="right" >
           <a href="cocos.camera.html" title="cocos.camera module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

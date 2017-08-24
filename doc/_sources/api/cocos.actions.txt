@@ -1,5 +1,5 @@
-cocos.actions package
-=====================
+cocos\.actions package
+======================
 
 Submodules
 ----------

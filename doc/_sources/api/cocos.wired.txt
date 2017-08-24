@@ -1,5 +1,5 @@
-cocos.wired module
-==================
+cocos\.wired module
+===================
 
 .. automodule:: cocos.wired
     :members:

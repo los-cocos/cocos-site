@@ -1,5 +1,5 @@
-cocos.mapcolliders module
-=========================
+cocos\.mapcolliders module
+==========================
 
 .. automodule:: cocos.mapcolliders
     :members:

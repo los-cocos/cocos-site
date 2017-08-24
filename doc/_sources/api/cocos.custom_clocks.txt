@@ -1,5 +1,5 @@
-cocos.custom_clocks module
-==========================
+cocos\.custom\_clocks module
+============================
 
 .. automodule:: cocos.custom_clocks
     :members:

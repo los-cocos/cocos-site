@@ -1,5 +1,5 @@
-cocos.framegrabber module
-=========================
+cocos\.framegrabber module
+==========================
 
 .. automodule:: cocos.framegrabber
     :members:

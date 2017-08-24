@@ -1,34 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>cocos.fps module &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>cocos.fps module &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
-    <link rel="up" title="cocos package" href="cocos.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.framegrabber module" href="cocos.framegrabber.html" />
     <link rel="prev" title="cocos.euclid module" href="cocos.euclid.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,8 +42,8 @@
         <li class="right" >
           <a href="cocos.euclid.html" title="cocos.euclid module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -78,14 +76,14 @@ This is enough most of the time, if more functionality is desired then</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fn_time</strong> &#8211; function
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fn_time</strong> – function
 Provides time in seconds to calculate deltas
 Assumes fn_time minimum dt &lt; dt between frames, usually time.perf_counter (needs python 3.3+)</td>
 </tr>
 </tbody>
 </table>
 <p>min fps capped at 5000, it can also be 5000 if no frame has rendered in the refresh interval</p>
-<p>Don&#8217;t use time.clock as fn_time in platforms other than windows: it will flow
+<p>Don’t use time.clock as fn_time in platforms other than windows: it will flow
 slower than wall time.</p>
 <dl class="method">
 <dt id="cocos.fps.FpsDisplay.complete_refresh">
@@ -162,11 +160,11 @@ slower than wall time.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fn_time</strong> (<a class="reference internal" href="cocos.audio.SDL.dll.html#cocos.audio.SDL.dll.SDL_DLL.function" title="cocos.audio.SDL.dll.SDL_DLL.function"><em>function</em></a>) &#8211; provide time in seconds to calculate deltas; usually time.time is used</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fn_time</strong> (<a class="reference internal" href="cocos.audio.SDL.dll.html#cocos.audio.SDL.dll.SDL_DLL.function" title="cocos.audio.SDL.dll.SDL_DLL.function"><em>function</em></a>) – provide time in seconds to calculate deltas; usually time.time is used</td>
 </tr>
 </tbody>
 </table>
-<p>Don&#8217;t use time.clock as fn_time in platforms other than windows: it will flow
+<p>Don’t use time.clock as fn_time in platforms other than windows: it will flow
 slower than wall time.</p>
 <dl class="method">
 <dt id="cocos.fps.FpsDisplaySimple.complete_refresh">
@@ -216,7 +214,7 @@ slower than wall time.</p>
 <code class="descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsStatsABC.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Opportunity to draw stats on top of the active scene, called after tick.</p>
 <p>Normally it draws itself in the window, but can be implemented with a
-&#8216;pass&#8217; if the object is designed to gather stats and not display them.</p>
+‘pass’ if the object is designed to gather stats and not display them.</p>
 </dd></dl>
 
 <dl class="method">
@@ -290,8 +288,8 @@ at the time of calling.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -316,13 +314,13 @@ at the time of calling.</p>
         <li class="right" >
           <a href="cocos.euclid.html" title="cocos.euclid module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

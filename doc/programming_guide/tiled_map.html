@@ -1,34 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Tiled maps &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>Tiled maps &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
-    <link rel="up" title="cocos2d Programming Guide" href="index.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Map Colliders" href="mapcoliders.html" />
     <link rel="prev" title="Scenes &amp; Transitions" href="transitions.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,8 +42,8 @@
         <li class="right" >
           <a href="transitions.html" title="Scenes &amp; Transitions"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">cocos2d Programming Guide</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">cocos2d Programming Guide</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -114,7 +112,7 @@ are used to store the specifications of tile sets and tile maps. A given
 resource XML file may define multiple tile sets and maps and may even
 reference other external XML resource files. This would allow a single
 tile set to be used by multiple tile maps.</p>
-<p>Assuming the following XML file called &#8220;example.xml&#8221;:</p>
+<p>Assuming the following XML file called “example.xml”:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot;?&gt;
 &lt;resource&gt;
   &lt;requires file=&quot;ground-tiles.xml&quot; namespace=&quot;ground&quot; /&gt;
@@ -168,13 +166,13 @@ tile set to be used by multiple tile maps.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">requires</span> <span class="n">file</span><span class="o">=</span><span class="s2">&quot;road-tiles.xml&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
 </div>
-<p>This will load &#8220;road-tiles.xml&#8221; into the resource&#8217;s namespace.
+<p>This will load “road-tiles.xml” into the resource’s namespace.
 If you wish to avoid id clashes you may supply a namespace:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">requires</span> <span class="n">file</span><span class="o">=</span><span class="s2">&quot;road-tiles.xml&quot;</span> <span class="n">namespace</span><span class="o">=</span><span class="s2">&quot;road&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
 </div>
-<p>If a namespace is given then the element ids from the &#8220;road-tiles.xml&#8221;
-will be prefixed by the namespace and a colon, e.g. &#8220;road:bitumen&#8221;.</p>
+<p>If a namespace is given then the element ids from the “road-tiles.xml”
+will be prefixed by the namespace and a colon, e.g. “road:bitumen”.</p>
 <p>Other tags within &lt;resource&gt; are:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">image</span> <span class="n">file</span><span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="o">&gt;</span>
 </pre></div>
@@ -229,11 +227,11 @@ and then include in the map using a:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nb">property</span> <span class="p">[</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">]</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="o">/&gt;</span>
 </pre></div>
 </div>
-<p>Where type is one of &#8220;unicode&#8221;, &#8220;int&#8221;, &#8220;float&#8221; or &#8220;bool&#8221;. The property will
+<p>Where type is one of “unicode”, “int”, “float” or “bool”. The property will
 be a unicode string by default if no type is specified.</p>
 <p>Properties are accessed on the map, cell or tile using common dict operations
 with some extensions. Accessing a property on a <strong>cell</strong> will fall back to
-look on the <strong>tile</strong> in case it&#8217;s not found on the cell.</p>
+look on the <strong>tile</strong> in case it’s not found on the cell.</p>
 <p>If a cell has a property <code class="docutils literal"><span class="pre">player-spawn</span></code> (boolean) and the tile that the cell
 uses has a property <code class="docutils literal"><span class="pre">move-cost=1</span></code> (int) then the following are true:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="s1">&#39;player-spawn&#39;</span> <span class="ow">in</span> <span class="n">cell</span> <span class="o">==</span> <span class="kc">True</span>
@@ -262,7 +260,7 @@ uses has a property <code class="docutils literal"><span class="pre">move-cost=1
 <li>Automatically scroll the map but stop at the map edges.</li>
 <li>Scroll the map an allow the edge of the map to be displayed.</li>
 </ol>
-<p>The first is possibly the easiest since you don&#8217;t need to use a
+<p>The first is possibly the easiest since you don’t need to use a
 <a class="reference internal" href="../api/cocos.layer.scrolling.html#cocos.layer.scrolling.ScrollingManager" title="cocos.layer.scrolling.ScrollingManager"><code class="xref py py-class docutils literal"><span class="pre">ScrollingManager</span></code></a> layer. You simple call <code class="docutils literal"><span class="pre">map.set_view(x,</span> <span class="pre">y,</span> <span class="pre">w,</span> <span class="pre">h)</span></code>
 on your map layer giving the bottom-left corner coordinates and the dimensions
 to display. This could be as simple as:</p>
@@ -298,7 +296,7 @@ allowing [i][j] addressing:</p>
 </div>
 <p>The cells property is list of lists: <code class="docutils literal"><span class="pre">[['a',</span> <span class="pre">'d'],</span> <span class="pre">['b',</span> <span class="pre">'e'],</span>
 <span class="pre">['c',</span> <span class="pre">'f']]</span></code></p>
-<p>Thus the cell at (0, 0) is &#8216;a&#8217; and (0, 1) is &#8216;d&#8217;.</p>
+<p>Thus the cell at (0, 0) is ‘a’ and (0, 1) is ‘d’.</p>
 </div>
 <div class="section" id="support-for-tmx-maps-with-hexagonal-tiles">
 <h2>Support for .TMX maps with hexagonal tiles<a class="headerlink" href="#support-for-tmx-maps-with-hexagonal-tiles" title="Permalink to this headline">¶</a></h2>
@@ -306,10 +304,10 @@ allowing [i][j] addressing:</p>
 in Tiled the following map properties:</p>
 <blockquote>
 <div><ul class="simple">
-<li>&#8216;orientation&#8217;: &#8216;hexagonal&#8217;.</li>
-<li>&#8216;staggeraxis&#8217;: &#8216;x&#8217; (top and bottom hexagon sides parallel to the x
+<li>‘orientation’: ‘hexagonal’.</li>
+<li>‘staggeraxis’: ‘x’ (top and bottom hexagon sides parallel to the x
 axis).</li>
-<li>&#8216;staggerindex&#8217;: &#8216;even&#8217; (lower columns are the even ones).</li>
+<li>‘staggerindex’: ‘even’ (lower columns are the even ones).</li>
 </ul>
 </div></blockquote>
 <p>Draw order is not guaranteed by cocos, so tilesets which expands outside the
@@ -317,24 +315,24 @@ hexagon will not look good.</p>
 </div>
 <div class="section" id="support-for-tmx-object-layers">
 <h2>Support for TMX object layers<a class="headerlink" href="#support-for-tmx-object-layers" title="Permalink to this headline">¶</a></h2>
-<p>The TMX map format allows to specify &#8216;object layers&#8217; also know as
-&#8216;object groups&#8217;.</p>
-<p>An &#8216;object layer&#8217; is a collection of entities freely placed in the world,
-that is, they don&#8217;t need to align with a tile map grid.</p>
-<p>Objects can represent abstract &#8216;ellipse&#8217;, &#8216;polygon&#8217;, &#8216;polyline&#8217;, &#8216;rect&#8217; or
-&#8216;tile&#8217;.</p>
-<p>When a TMX file is loaded each &#8216;object layer&#8217; produces an instance of
-<a class="reference internal" href="../api/cocos.tiles.html#cocos.tiles.TmxObjectLayer" title="cocos.tiles.TmxObjectLayer"><code class="xref py py-class docutils literal"><span class="pre">TmxObjectLayer</span></code></a>, the member &#8216;.objects&#8217; holds a list of the objects
+<p>The TMX map format allows to specify ‘object layers’ also know as
+‘object groups’.</p>
+<p>An ‘object layer’ is a collection of entities freely placed in the world,
+that is, they don’t need to align with a tile map grid.</p>
+<p>Objects can represent abstract ‘ellipse’, ‘polygon’, ‘polyline’, ‘rect’ or
+‘tile’.</p>
+<p>When a TMX file is loaded each ‘object layer’ produces an instance of
+<a class="reference internal" href="../api/cocos.tiles.html#cocos.tiles.TmxObjectLayer" title="cocos.tiles.TmxObjectLayer"><code class="xref py py-class docutils literal"><span class="pre">TmxObjectLayer</span></code></a>, the member ‘.objects’ holds a list of the objects
 in the group, each one translated as an instance of <a class="reference internal" href="../api/cocos.tiles.html#cocos.tiles.TmxObject" title="cocos.tiles.TmxObject"><code class="xref py py-class docutils literal"><span class="pre">TmxObject</span></code></a>.</p>
 <p>Cocos does not intend to provide a real visualization of the
 <a class="reference internal" href="../api/cocos.tiles.html#cocos.tiles.TmxObject" title="cocos.tiles.TmxObject"><code class="xref py py-class docutils literal"><span class="pre">TmxObject</span></code></a>, for debug purposes if you add <a class="reference internal" href="../api/cocos.tiles.html#cocos.tiles.TmxObjectLayer" title="cocos.tiles.TmxObjectLayer"><code class="xref py py-class docutils literal"><span class="pre">TmxObjectLayer</span></code></a>
 to the scene the axis aligned bounding box of each object will be drawn.</p>
-<p>Usually after loading the map, your app code iterates over &#8216;.objects&#8217; and
+<p>Usually after loading the map, your app code iterates over ‘.objects’ and
 takes appropriate actions, like:</p>
 <blockquote>
 <div><ul class="simple">
 <li>build a specific <a class="reference internal" href="../api/cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal"><span class="pre">CocosNode</span></code></a> for visualization (particle system,
-animated sprite,...) based in the <code class="docutils literal"><span class="pre">TmxObject.usertype</span></code> and other
+animated sprite,…) based in the <code class="docutils literal"><span class="pre">TmxObject.usertype</span></code> and other
 attributes, then add it to the scene.</li>
 <li>translate to some model class, like a zone trigger or a patrol path and
 store in your level info.</li>
@@ -384,8 +382,8 @@ select objects with certain properties or into a specified area.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -410,13 +408,13 @@ select objects with certain properties or into a specified area.</p>
         <li class="right" >
           <a href="transitions.html" title="Scenes &amp; Transitions"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >cocos2d Programming Guide</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >cocos2d Programming Guide</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>

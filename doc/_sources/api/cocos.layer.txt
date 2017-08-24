@@ -1,5 +1,5 @@
-cocos.layer package
-===================
+cocos\.layer package
+====================
 
 Submodules
 ----------

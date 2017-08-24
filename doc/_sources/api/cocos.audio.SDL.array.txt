@@ -1,5 +1,5 @@
-cocos.audio.SDL.array module
-============================
+cocos\.audio\.SDL\.array module
+===============================
 
 .. automodule:: cocos.audio.SDL.array
     :members:

@@ -1,34 +1,32 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>cocos.menu module &mdash; cocos v0.6.4 documentation</title>
-    
+    <title>cocos.menu module &#8212; cocos v0.6.5 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.6.4',
+        VERSION:     '0.6.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="cocos v0.6.4 documentation" href="../index.html" />
-    <link rel="up" title="cocos package" href="cocos.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.particle module" href="cocos.particle.html" />
     <link rel="prev" title="cocos.mapcolliders module" href="cocos.mapcolliders.html" /> 
   </head>
-  <body role="document">
+  <body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -44,8 +42,8 @@
         <li class="right" >
           <a href="cocos.mapcolliders.html" title="cocos.mapcolliders module"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -80,7 +78,7 @@ and then call <cite>create_menu()</cite></li>
 </div></blockquote>
 <dl class="method">
 <dt id="cocos.menu.Menu.create_menu">
-<code class="descname">create_menu</code><span class="sig-paren">(</span><em>items</em>, <em>selected_effect=None</em>, <em>unselected_effect=None</em>, <em>activated_effect=None</em>, <em>layout_strategy=&lt;function verticalMenuLayout at 0x00000000082E87B8&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.Menu.create_menu" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create_menu</code><span class="sig-paren">(</span><em>items</em>, <em>selected_effect=None</em>, <em>unselected_effect=None</em>, <em>activated_effect=None</em>, <em>layout_strategy=&lt;function verticalMenuLayout&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.menu.Menu.create_menu" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates the menu</p>
 <p>The order of the list important since the
 first one will be shown first.</p>
@@ -96,17 +94,17 @@ first one will be shown first.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>items</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">list</span><dd><p class="first last">list of <cite>BaseMenuItem</cite> that will be part of the <cite>Menu</cite></p>
+<dt><cite>items</cite> <span class="classifier-delimiter">:</span> <span class="classifier">list</span></dt>
+<dd><p class="first last">list of <cite>BaseMenuItem</cite> that will be part of the <cite>Menu</cite></p>
 </dd>
-<dt><cite>selected_effect</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">function</span><dd><p class="first last">This action will be executed when the <cite>BaseMenuItem</cite> is selected</p>
+<dt><cite>selected_effect</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
+<dd><p class="first last">This action will be executed when the <cite>BaseMenuItem</cite> is selected</p>
 </dd>
-<dt><cite>unselected_effect</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">function</span><dd><p class="first last">This action will be executed when the <cite>BaseMenuItem</cite> is unselected</p>
+<dt><cite>unselected_effect</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
+<dd><p class="first last">This action will be executed when the <cite>BaseMenuItem</cite> is unselected</p>
 </dd>
-<dt><cite>activated_effect</cite></dt>
- <span class="classifier-delimiter">:</span> <span class="classifier">function</span><dd><p class="first last">this action will executed when the <cite>BaseMenuItem</cite> is activated (pressing Enter or by clicking on it)</p>
+<dt><cite>activated_effect</cite> <span class="classifier-delimiter">:</span> <span class="classifier">function</span></dt>
+<dd><p class="first last">this action will executed when the <cite>BaseMenuItem</cite> is activated (pressing Enter or by clicking on it)</p>
 </dd>
 </dl>
 </td>
@@ -363,8 +361,8 @@ position.</p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
@@ -389,13 +387,13 @@ position.</p>
         <li class="right" >
           <a href="cocos.mapcolliders.html" title="cocos.mapcolliders module"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2008-2016, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
+        &#169; Copyright 2008-2017, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
     </div>
   </body>
 </html>
