@@ -1,7 +1,7 @@
-cocos\.layer\.python\_interpreter module
-========================================
+cocos.layer.python\_interpreter module
+======================================
 
 .. automodule:: cocos.layer.python_interpreter
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

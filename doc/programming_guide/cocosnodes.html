@@ -1,32 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>CocosNodes &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>CocosNodes &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Built-in Python Interpreter" href="interpreter.html" />
     <link rel="prev" title="Map Colliders" href="mapcoliders.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -56,41 +47,45 @@
 <h1>CocosNodes<a class="headerlink" href="#cocosnodes" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#cocosnode-functionality" id="id1">CocosNode Functionality</a><ul>
-<li><a class="reference internal" href="#parent-child" id="id2">Parent-child</a></li>
-<li><a class="reference internal" href="#spatial-placement" id="id3">Spatial Placement</a></li>
-<li><a class="reference internal" href="#going-in-or-out-of-the-active-scene" id="id4">Going in or out of the active scene</a></li>
-<li><a class="reference internal" href="#render" id="id5">Render</a></li>
-<li><a class="reference internal" href="#time-management" id="id6">Time management</a></li>
-<li><a class="reference internal" href="#automated-changes-along-the-time-actions-management" id="id7">Automated changes along the time (actions management)</a></li>
+<li><p><a class="reference internal" href="#cocosnode-functionality" id="id1">CocosNode Functionality</a></p>
+<ul>
+<li><p><a class="reference internal" href="#parent-child" id="id2">Parent-child</a></p></li>
+<li><p><a class="reference internal" href="#spatial-placement" id="id3">Spatial Placement</a></p></li>
+<li><p><a class="reference internal" href="#going-in-or-out-of-the-active-scene" id="id4">Going in or out of the active scene</a></p></li>
+<li><p><a class="reference internal" href="#render" id="id5">Render</a></p></li>
+<li><p><a class="reference internal" href="#time-management" id="id6">Time management</a></p></li>
+<li><p><a class="reference internal" href="#automated-changes-along-the-time-actions-management" id="id7">Automated changes along the time (actions management)</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#brief-tour-of-built-in-cocosnode-subclasses" id="id8">Brief tour of built-in CocosNode subclasses</a><ul>
-<li><a class="reference internal" href="#scene" id="id9">Scene</a></li>
-<li><a class="reference internal" href="#transitionscene" id="id10">TransitionScene</a></li>
-<li><a class="reference internal" href="#layer" id="id11">Layer</a></li>
-<li><a class="reference internal" href="#colorlayer" id="id12">ColorLayer</a></li>
-<li><a class="reference internal" href="#multiplexlayer" id="id13">MultiplexLayer</a></li>
-<li><a class="reference internal" href="#scrollingmanager" id="id14">ScrollingManager</a></li>
-<li><a class="reference internal" href="#scrollablelayer" id="id15">ScrollableLayer</a></li>
-<li><a class="reference internal" href="#rectmaplayer-and-hexmaplayer" id="id16">RectMapLayer and HexMapLayer</a></li>
-<li><a class="reference internal" href="#pythoninterpreterlayer" id="id17">PythonInterpreterLayer</a></li>
-<li><a class="reference internal" href="#sprite" id="id18">Sprite</a><ul>
-<li><a class="reference internal" href="#animating-a-sprite" id="id19">Animating a sprite</a></li>
-<li><a class="reference internal" href="#performance-considerations" id="id20">Performance Considerations</a></li>
+<li><p><a class="reference internal" href="#brief-tour-of-built-in-cocosnode-subclasses" id="id8">Brief tour of built-in CocosNode subclasses</a></p>
+<ul>
+<li><p><a class="reference internal" href="#scene" id="id9">Scene</a></p></li>
+<li><p><a class="reference internal" href="#transitionscene" id="id10">TransitionScene</a></p></li>
+<li><p><a class="reference internal" href="#layer" id="id11">Layer</a></p></li>
+<li><p><a class="reference internal" href="#colorlayer" id="id12">ColorLayer</a></p></li>
+<li><p><a class="reference internal" href="#multiplexlayer" id="id13">MultiplexLayer</a></p></li>
+<li><p><a class="reference internal" href="#scrollingmanager" id="id14">ScrollingManager</a></p></li>
+<li><p><a class="reference internal" href="#scrollablelayer" id="id15">ScrollableLayer</a></p></li>
+<li><p><a class="reference internal" href="#rectmaplayer-and-hexmaplayer" id="id16">RectMapLayer and HexMapLayer</a></p></li>
+<li><p><a class="reference internal" href="#pythoninterpreterlayer" id="id17">PythonInterpreterLayer</a></p></li>
+<li><p><a class="reference internal" href="#sprite" id="id18">Sprite</a></p>
+<ul>
+<li><p><a class="reference internal" href="#animating-a-sprite" id="id19">Animating a sprite</a></p></li>
+<li><p><a class="reference internal" href="#performance-considerations" id="id20">Performance Considerations</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#particle-systems" id="id21">Particle Systems</a></li>
-<li><a class="reference internal" href="#textelement-label-htmllabel-richlabel" id="id22">TextElement, Label, HTMLLabel, RichLabel</a></li>
-<li><a class="reference internal" href="#menu" id="id23">Menu</a></li>
-<li><a class="reference internal" href="#menu-items" id="id24">Menu items</a></li>
-<li><a class="reference internal" href="#creating-your-cocosnode-subclasses" id="id25">Creating your CocosNode subclasses</a></li>
+<li><p><a class="reference internal" href="#particle-systems" id="id21">Particle Systems</a></p></li>
+<li><p><a class="reference internal" href="#textelement-label-htmllabel-richlabel" id="id22">TextElement, Label, HTMLLabel, RichLabel</a></p></li>
+<li><p><a class="reference internal" href="#menu" id="id23">Menu</a></p></li>
+<li><p><a class="reference internal" href="#menu-items" id="id24">Menu items</a></p></li>
+<li><p><a class="reference internal" href="#creating-your-cocosnode-subclasses" id="id25">Creating your CocosNode subclasses</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#cocosnodes-examples" id="id26">CocosNodes Examples</a><ul>
-<li><a class="reference internal" href="#parent-child-examples" id="id27">Parent-Child examples</a></li>
-<li><a class="reference internal" href="#spatial-placement-snippets" id="id28">Spatial Placement snippets</a></li>
-<li><a class="reference internal" href="#automated-changes-along-the-time-snippets" id="id29">Automated changes along the time snippets</a></li>
+<li><p><a class="reference internal" href="#cocosnodes-examples" id="id26">CocosNodes Examples</a></p>
+<ul>
+<li><p><a class="reference internal" href="#parent-child-examples" id="id27">Parent-Child examples</a></p></li>
+<li><p><a class="reference internal" href="#spatial-placement-snippets" id="id28">Spatial Placement snippets</a></p></li>
+<li><p><a class="reference internal" href="#automated-changes-along-the-time-snippets" id="id29">Automated changes along the time snippets</a></p></li>
 </ul>
 </li>
 </ul>
@@ -103,14 +98,14 @@
 <h3><a class="toc-backref" href="#id2">Parent-child</a><a class="headerlink" href="#parent-child" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
-<li>.add(self, child, z=0, name=None ): Adds a child, raises exception Name already exists if duplicated</li>
-<li>.remove(self, name_or_obj): Removes a child given its name or object, raises exception Child not found if not present</li>
-<li>.kill(self): Remove itself from its parent</li>
-<li>.parent: property giving the parent node or None</li>
-<li>.get_ancestor(self, klass): Returns the first ancestor that isinstance of klass, or None</li>
-<li>.get_children(self): Returns a list with the node children, order is back to front (ascending z)</li>
-<li>.get(self, name): Gets a child given its name, raises exception Child not found if not present</li>
-<li>operator in , as ‘in node1 in node2’: returns True if and only if node1 is child of node 2</li>
+<li><p>.add(self, child, z=0, name=None ): Adds a child, raises exception Name already exists if duplicated</p></li>
+<li><p>.remove(self, name_or_obj): Removes a child given its name or object, raises exception Child not found if not present</p></li>
+<li><p>.kill(self): Remove itself from its parent</p></li>
+<li><p>.parent: property giving the parent node or None</p></li>
+<li><p>.get_ancestor(self, klass): Returns the first ancestor that isinstance of klass, or None</p></li>
+<li><p>.get_children(self): Returns a list with the node children, order is back to front (ascending z)</p></li>
+<li><p>.get(self, name): Gets a child given its name, raises exception Child not found if not present</p></li>
+<li><p>operator in , as ‘in node1 in node2’: returns True if and only if node1 is child of node 2</p></li>
 </ul>
 </div></blockquote>
 <p><a class="reference internal" href="#parent-child-examples">Parent-Child examples</a></p>
@@ -120,11 +115,11 @@
 <p>A node position is defined relative to the parent node, most precisely with respect the parent position.</p>
 <blockquote>
 <div><ul class="simple">
-<li>.x, .y .position: properties giving position relative to parent origin; updating x or y automatically updates position, the reverse is also true.</li>
-<li>.anchor_x, .anchor_y, anchor: properties giving the center for the scale and rotation, they automatically maintain the relation anchor == (anchor_x, anchor_y). Notice that different CocosNodes subclasses can have different default values for anchor.</li>
-<li>.scale : 1.0 is the default scale, with 2.0 the node will double its apparent size.</li>
-<li>.scale_x, .scale_y : per axis scaling factors. The total scaling in axis x is .scale * .scale_x , and analogous for axis y</li>
-<li>.rotation : in degrees</li>
+<li><p>.x, .y .position: properties giving position relative to parent origin; updating x or y automatically updates position, the reverse is also true.</p></li>
+<li><p>.anchor_x, .anchor_y, anchor: properties giving the center for the scale and rotation, they automatically maintain the relation anchor == (anchor_x, anchor_y). Notice that different CocosNodes subclasses can have different default values for anchor.</p></li>
+<li><p>.scale : 1.0 is the default scale, with 2.0 the node will double its apparent size.</p></li>
+<li><p>.scale_x, .scale_y : per axis scaling factors. The total scaling in axis x is .scale * .scale_x , and analogous for axis y</p></li>
+<li><p>.rotation : in degrees</p></li>
 </ul>
 </div></blockquote>
 <p><a class="reference internal" href="#spatial-placement-snippets">Spatial Placement snippets</a> ; also most of scripts in directory tests do explicit placement.</p>
@@ -133,8 +128,8 @@
 <h3><a class="toc-backref" href="#id4">Going in or out of the active scene</a><a class="headerlink" href="#going-in-or-out-of-the-active-scene" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
-<li>.on_enter(self): called if added to a parent while parent in the active scene or if the entire scene goes active</li>
-<li>.on_exit(self): called if removed from parent while parent in the active scene or if the entire scene</li>
+<li><p>.on_enter(self): called if added to a parent while parent in the active scene or if the entire scene goes active</p></li>
+<li><p>.on_exit(self): called if removed from parent while parent in the active scene or if the entire scene</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -142,10 +137,10 @@
 <h3><a class="toc-backref" href="#id5">Render</a><a class="headerlink" href="#render" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
-<li>.visit(self): renders itself and its children. Render order is children with z &lt;= 0, itself, children with z &gt; 0</li>
-<li>.draw(self): draws itself</li>
-<li>.transform(self): helper for draw and visit, handles the openGL coordinate changes needed to render mandated by position, anchor, scale and rotation</li>
-<li>.camera: instead of the stock position, anchor, scale and rotation uses a custom gluLookAt that also allows z. This is rarely used, usually by special effects in transitions.</li>
+<li><p>.visit(self): renders itself and its children. Render order is children with z &lt;= 0, itself, children with z &gt; 0</p></li>
+<li><p>.draw(self): draws itself</p></li>
+<li><p>.transform(self): helper for draw and visit, handles the openGL coordinate changes needed to render mandated by position, anchor, scale and rotation</p></li>
+<li><p>.camera: instead of the stock position, anchor, scale and rotation uses a custom gluLookAt that also allows z. This is rarely used, usually by special effects in transitions.</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -153,11 +148,11 @@
 <h3><a class="toc-backref" href="#id6">Time management</a><a class="headerlink" href="#time-management" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
-<li>.schedule_interval(self, callback, interval, *args, **kwargs): Schedule a function to be called every interval seconds.</li>
-<li>.schedule(self, callback, *args, **kwargs): Schedule a function to be called every frame.</li>
-<li>.unschedule(self, callback): Remove a function from the schedule.</li>
-<li>.pause_scheduler(self): Time will stop passing for this node: scheduled callbacks will not be called, worker actions will not be called</li>
-<li>.resume_scheduler(self): Time will continue/start passing for this node and callbacks will be called, worker actions will be called</li>
+<li><p>.schedule_interval(self, callback, interval, *args, **kwargs): Schedule a function to be called every interval seconds.</p></li>
+<li><p>.schedule(self, callback, *args, **kwargs): Schedule a function to be called every frame.</p></li>
+<li><p>.unschedule(self, callback): Remove a function from the schedule.</p></li>
+<li><p>.pause_scheduler(self): Time will stop passing for this node: scheduled callbacks will not be called, worker actions will not be called</p></li>
+<li><p>.resume_scheduler(self): Time will continue/start passing for this node and callbacks will be called, worker actions will be called</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -165,15 +160,15 @@
 <h3><a class="toc-backref" href="#id7">Automated changes along the time (actions management)</a><a class="headerlink" href="#automated-changes-along-the-time-actions-management" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
-<li>.do(self, template_action, target=None): most of the time it is called with target=None, which result in target being self. The action will perform a potentially gradual change in target. Returns the worker action, which is the object doing the changes. You must save a reference to the worker if you plan to call later to .action_remove</li>
-<li>.action_remove(self, worker_action): the worker action will terminate</li>
-<li>.pause(self): Suspends the execution of actions.</li>
-<li>.resume(self): Resumes the execution of actions.</li>
-<li>.stop(self): All actions scheduled in this node are removed, stop method will be called for each action.</li>
-<li>.are_actions_running(self): True or False</li>
+<li><p>.do(self, template_action, target=None): most of the time it is called with target=None, which result in target being self. The action will perform a potentially gradual change in target. Returns the worker action, which is the object doing the changes. You must save a reference to the worker if you plan to call later to .action_remove</p></li>
+<li><p>.action_remove(self, worker_action): the worker action will terminate</p></li>
+<li><p>.pause(self): Suspends the execution of actions.</p></li>
+<li><p>.resume(self): Resumes the execution of actions.</p></li>
+<li><p>.stop(self): All actions scheduled in this node are removed, stop method will be called for each action.</p></li>
+<li><p>.are_actions_running(self): True or False</p></li>
 </ul>
 </div></blockquote>
-<p>The automated changes are performed by a collaboration between <a class="reference internal" href="../api/cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal"><span class="pre">CocosNode</span></code></a> instances and <code class="xref py py-class docutils literal"><span class="pre">Action</span></code> instances.</p>
+<p>The automated changes are performed by a collaboration between <a class="reference internal" href="../api/cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">CocosNode</span></code></a> instances and <code class="xref py py-class docutils literal notranslate"><span class="pre">Action</span></code> instances.</p>
 <p><a class="reference internal" href="#automated-changes-along-the-time-snippets">Automated changes along the time snippets</a>
 Also the test directory has many samples like test_accel*.py, test_blink.py, test_callfunc*.py and others.</p>
 </div>
@@ -184,76 +179,75 @@ Also the test directory has many samples like test_accel*.py, test_blink.py, tes
 <h3><a class="toc-backref" href="#id9">Scene</a><a class="headerlink" href="#scene" title="Permalink to this headline">¶</a></h3>
 <p>The root of the tree depicting the full content to be displayed.
 To change between scenes you use director.</p>
-<p>References: <a class="reference internal" href="basic_concepts.html#guide-scene"><span class="std std-ref">guide Scene</span></a> , <a class="reference internal" href="../api/cocos.scene.html#cocos.scene.Scene" title="cocos.scene.Scene"><code class="xref py py-class docutils literal"><span class="pre">api</span> <span class="pre">Scene</span></code></a></p>
+<p>References: <a class="reference internal" href="basic_concepts.html#guide-scene"><span class="std std-ref">guide Scene</span></a> , <a class="reference internal" href="../api/cocos.scene.html#cocos.scene.Scene" title="cocos.scene.Scene"><code class="xref py py-class docutils literal notranslate"><span class="pre">api</span> <span class="pre">Scene</span></code></a></p>
 </div>
 <div class="section" id="transitionscene">
 <h3><a class="toc-backref" href="#id10">TransitionScene</a><a class="headerlink" href="#transitionscene" title="Permalink to this headline">¶</a></h3>
 <p>Base class to implement a gradual change from one screen (scene) to other. Typical examples are fade in and fade out.</p>
 <p>Cocos provides a bunch of ready made scene transitions (sample code in test/test_transition_*.py)</p>
-<p>References: <a class="reference internal" href="../api/cocos.scenes.transitions.html#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal"><span class="pre">api</span> <span class="pre">Scene</span></code></a></p>
+<p>References: <a class="reference internal" href="../api/cocos.scenes.transitions.html#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal notranslate"><span class="pre">api</span> <span class="pre">Scene</span></code></a></p>
 </div>
 <div class="section" id="layer">
 <h3><a class="toc-backref" href="#id11">Layer</a><a class="headerlink" href="#layer" title="Permalink to this headline">¶</a></h3>
 <p>Helps to organize the view in the depth axis.
 Subclasses often offer specialized services to the childs (like ScrollingManager), and can be used to build higher order functionality (like Menu)</p>
-<p>References: <a class="reference internal" href="basic_concepts.html#guide-layer"><span class="std std-ref">guide Layer</span></a> , <a class="reference internal" href="../api/cocos.layer.base_layers.html#cocos.layer.base_layers.Layer" title="cocos.layer.base_layers.Layer"><code class="xref py py-class docutils literal"><span class="pre">api</span> <span class="pre">Layer</span></code></a></p>
+<p>References: <a class="reference internal" href="basic_concepts.html#guide-layer"><span class="std std-ref">guide Layer</span></a> , <a class="reference internal" href="../api/cocos.layer.base_layers.html#cocos.layer.base_layers.Layer" title="cocos.layer.base_layers.Layer"><code class="xref py py-class docutils literal notranslate"><span class="pre">api</span> <span class="pre">Layer</span></code></a></p>
 </div>
 <div class="section" id="colorlayer">
 <h3><a class="toc-backref" href="#id12">ColorLayer</a><a class="headerlink" href="#colorlayer" title="Permalink to this headline">¶</a></h3>
 <p>The primary use is to provide a solid color background to a scene, also used to draw solid color rectangles.</p>
-<p>References: <a class="reference internal" href="../api/cocos.layer.util_layers.html#cocos.layer.util_layers.ColorLayer" title="cocos.layer.util_layers.ColorLayer"><code class="xref py py-class docutils literal"><span class="pre">api</span> <span class="pre">ColorLayer</span></code></a></p>
+<p>References: <a class="reference internal" href="../api/cocos.layer.util_layers.html#cocos.layer.util_layers.ColorLayer" title="cocos.layer.util_layers.ColorLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">api</span> <span class="pre">ColorLayer</span></code></a></p>
 </div>
 <div class="section" id="multiplexlayer">
 <h3><a class="toc-backref" href="#id13">MultiplexLayer</a><a class="headerlink" href="#multiplexlayer" title="Permalink to this headline">¶</a></h3>
 <p>Allows to show only one of his childs, and to select which one.
 An use case is when you want to show one of a number of menus.</p>
-<p>References: <a class="reference internal" href="../api/cocos.layer.base_layers.html#cocos.layer.base_layers.MultiplexLayer" title="cocos.layer.base_layers.MultiplexLayer"><code class="xref py py-class docutils literal"><span class="pre">api</span> <span class="pre">MultiplexLayer</span></code></a></p>
+<p>References: <a class="reference internal" href="../api/cocos.layer.base_layers.html#cocos.layer.base_layers.MultiplexLayer" title="cocos.layer.base_layers.MultiplexLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">api</span> <span class="pre">MultiplexLayer</span></code></a></p>
 </div>
 <div class="section" id="scrollingmanager">
 <h3><a class="toc-backref" href="#id14">ScrollingManager</a><a class="headerlink" href="#scrollingmanager" title="Permalink to this headline">¶</a></h3>
 <p>Coordinates a number of ScrollableLayer to do scroll and parallax so that the scroll don’t goes out of the the world.</p>
-<p>References: <a class="reference internal" href="../api/cocos.layer.scrolling.html#cocos.layer.scrolling.ScrollingManager" title="cocos.layer.scrolling.ScrollingManager"><code class="xref py py-class docutils literal"><span class="pre">api</span> <span class="pre">ScrollingManager</span></code></a></p>
+<p>References: <a class="reference internal" href="../api/cocos.layer.scrolling.html#cocos.layer.scrolling.ScrollingManager" title="cocos.layer.scrolling.ScrollingManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">api</span> <span class="pre">ScrollingManager</span></code></a></p>
 </div>
 <div class="section" id="scrollablelayer">
 <h3><a class="toc-backref" href="#id15">ScrollableLayer</a><a class="headerlink" href="#scrollablelayer" title="Permalink to this headline">¶</a></h3>
 <p>Used as childs of ScrollingManager, helps to manage scroll limits and parallax.
 You must set attributes px_with and px_height in a <cite>ScrollableLayer</cite> instance so restrictions in the scroll are enforced.
 If using parallax, it must be provided in the constructor.</p>
-<p>References: <a class="reference internal" href="../api/cocos.layer.scrolling.html#cocos.layer.scrolling.ScrollableLayer" title="cocos.layer.scrolling.ScrollableLayer"><code class="xref py py-class docutils literal"><span class="pre">api</span> <span class="pre">ScrollableLayer</span></code></a></p>
+<p>References: <a class="reference internal" href="../api/cocos.layer.scrolling.html#cocos.layer.scrolling.ScrollableLayer" title="cocos.layer.scrolling.ScrollableLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">api</span> <span class="pre">ScrollableLayer</span></code></a></p>
 </div>
 <div class="section" id="rectmaplayer-and-hexmaplayer">
 <h3><a class="toc-backref" href="#id16">RectMapLayer and HexMapLayer</a><a class="headerlink" href="#rectmaplayer-and-hexmaplayer" title="Permalink to this headline">¶</a></h3>
-<dl class="docutils">
-<dt>A tilemap is a world description where</dt>
-<dd><ul class="first last simple">
-<li>the space is partitioned in a regular grid (rectangular or hexagonal in cocos)</li>
-<li>it is known which associated image and game properties has each cell in the grid.</li>
+<dl class="simple">
+<dt>A tilemap is a world description where</dt><dd><ul class="simple">
+<li><p>the space is partitioned in a regular grid (rectangular or hexagonal in cocos)</p></li>
+<li><p>it is known which associated image and game properties has each cell in the grid.</p></li>
 </ul>
 </dd>
 </dl>
 <p><cite>RectMapLayer</cite> and <cite>HexMapLayer</cite> are usually created by tiles.load, and they care to display the world and give access to the cells properties.</p>
 <p>Examples are test/test_tiles.py and test/test_platformer.py</p>
-<p>References: <a class="reference internal" href="../api/cocos.tiles.html#cocos.tiles.RectMapLayer" title="cocos.tiles.RectMapLayer"><code class="xref py py-class docutils literal"><span class="pre">api</span> <span class="pre">RectMapLayer</span></code></a> , <a class="reference internal" href="../api/cocos.tiles.html#cocos.tiles.HexMapLayer" title="cocos.tiles.HexMapLayer"><code class="xref py py-class docutils literal"><span class="pre">api</span> <span class="pre">HexMapLayer</span></code></a></p>
+<p>References: <a class="reference internal" href="../api/cocos.tiles.html#cocos.tiles.RectMapLayer" title="cocos.tiles.RectMapLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">api</span> <span class="pre">RectMapLayer</span></code></a> , <a class="reference internal" href="../api/cocos.tiles.html#cocos.tiles.HexMapLayer" title="cocos.tiles.HexMapLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">api</span> <span class="pre">HexMapLayer</span></code></a></p>
 </div>
 <div class="section" id="pythoninterpreterlayer">
 <h3><a class="toc-backref" href="#id17">PythonInterpreterLayer</a><a class="headerlink" href="#pythoninterpreterlayer" title="Permalink to this headline">¶</a></h3>
 <p>Used by director to show a python console that allows to inspect and modify the objects in the application using director.
 You don’t instantiate manually an PythonInterpreterLayer, simply press ctrl + i (cmd + i on mac) to toggle the layer’s visibility.</p>
-<p>References: <a class="reference internal" href="interpreter.html"><span class="doc">guide PythonInterpreterLayer</span></a> , <a class="reference internal" href="../api/cocos.layer.python_interpreter.html#cocos.layer.python_interpreter.PythonInterpreterLayer" title="cocos.layer.python_interpreter.PythonInterpreterLayer"><code class="xref py py-class docutils literal"><span class="pre">api</span> <span class="pre">PythonInterpreterLayer</span></code></a></p>
+<p>References: <a class="reference internal" href="interpreter.html"><span class="doc">guide PythonInterpreterLayer</span></a> , <a class="reference internal" href="../api/cocos.layer.python_interpreter.html#cocos.layer.python_interpreter.PythonInterpreterLayer" title="cocos.layer.python_interpreter.PythonInterpreterLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">api</span> <span class="pre">PythonInterpreterLayer</span></code></a></p>
 </div>
 <div class="section" id="sprite">
 <h3><a class="toc-backref" href="#id18">Sprite</a><a class="headerlink" href="#sprite" title="Permalink to this headline">¶</a></h3>
 <p>Sprites allows to display an image in a rectangular area, which can be rotated,
 scaled and moved.</p>
-<p>References: <a class="reference internal" href="../api/cocos.sprite.html#cocos.sprite.Sprite" title="cocos.sprite.Sprite"><code class="xref py py-class docutils literal"><span class="pre">api</span> <span class="pre">Sprite</span></code></a></p>
+<p>References: <a class="reference internal" href="../api/cocos.sprite.html#cocos.sprite.Sprite" title="cocos.sprite.Sprite"><code class="xref py py-class docutils literal notranslate"><span class="pre">api</span> <span class="pre">Sprite</span></code></a></p>
 <div class="section" id="animating-a-sprite">
 <h4><a class="toc-backref" href="#id19">Animating a sprite</a><a class="headerlink" href="#animating-a-sprite" title="Permalink to this headline">¶</a></h4>
 <p>Animation as in cartoon style animation, that is, replacing the image fast
 enough to give the illusion of movement, can be accomplished by:</p>
 <ul class="simple">
-<li>using an animated .gif file as source for the image</li>
-<li>passing a pyglet.image.Animation as image, which collects a number of images</li>
-<li>have an array of images and let your code assign to the sprite image member</li>
+<li><p>using an animated .gif file as source for the image</p></li>
+<li><p>passing a pyglet.image.Animation as image, which collects a number of images</p></li>
+<li><p>have an array of images and let your code assign to the sprite image member</p></li>
 </ul>
 </div>
 <div class="section" id="performance-considerations">
@@ -263,7 +257,7 @@ to render things like smoke or poisoning fog. Use particle systems or custom
 CocosNode s managing vertex lists for that.</p>
 <p>If your scene has less than 25 sprites, you can add directly to the
 scene, like:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TLayer</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TLayer</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
     <span class="n">is_event_handler</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
@@ -282,7 +276,7 @@ scene, like:</p>
 <p>When you have between 25 and 100 visible sprites, moving at each frame, you
 should add one or more BatchNode s at some level in the scene and add the
 sprites to them. Even only one batch can give you 4x fps:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TLayer</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TLayer</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
     <span class="n">is_event_handler</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
@@ -307,7 +301,7 @@ cheap new desktops.
 You can look at cocos particle systems and the section graphics in pyglet
 programing guide for ideas.</p>
 <p>For a ballpark data point, a 2008 low gamming spec machine (athon 5200, radeon 4650) gives:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">numballs</span>    <span class="n">fps</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numballs</span>    <span class="n">fps</span>
     <span class="mi">250</span>     <span class="mi">98</span>
     <span class="mi">500</span>     <span class="mi">54</span>
     <span class="mi">750</span>     <span class="mi">36</span>
@@ -319,7 +313,7 @@ programing guide for ideas.</p>
 <div class="section" id="particle-systems">
 <h3><a class="toc-backref" href="#id21">Particle Systems</a><a class="headerlink" href="#particle-systems" title="Permalink to this headline">¶</a></h3>
 <p>Certain effects are best rendered as a big number of translucent, colored images, by example explosions and smoke.
-Cocos provides the base class <a class="reference internal" href="../api/cocos.particle.html#cocos.particle.ParticleSystem" title="cocos.particle.ParticleSystem"><code class="xref py py-class docutils literal"><span class="pre">ParticleSystem</span></code></a> to efficiently render those entities, and some specialized subclasses in module <a class="reference internal" href="../api/cocos.particle_systems.html#module-cocos.particle_systems" title="cocos.particle_systems"><code class="xref py py-mod docutils literal"><span class="pre">cocos.particle_systems</span></code></a> like <cite>Fireworks</cite>, <cite>Spiral</cite>, <cite>Meteor</cite>, <cite>Sun</cite>, <cite>Fire</cite>, <cite>Galaxy</cite>, <cite>Flower</cite>, <cite>Explosion</cite>, <cite>Smoke</cite>.</p>
+Cocos provides the base class <a class="reference internal" href="../api/cocos.particle.html#cocos.particle.ParticleSystem" title="cocos.particle.ParticleSystem"><code class="xref py py-class docutils literal notranslate"><span class="pre">ParticleSystem</span></code></a> to efficiently render those entities, and some specialized subclasses in module <a class="reference internal" href="../api/cocos.particle_systems.html#module-cocos.particle_systems" title="cocos.particle_systems"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cocos.particle_systems</span></code></a> like <cite>Fireworks</cite>, <cite>Spiral</cite>, <cite>Meteor</cite>, <cite>Sun</cite>, <cite>Fire</cite>, <cite>Galaxy</cite>, <cite>Flower</cite>, <cite>Explosion</cite>, <cite>Smoke</cite>.</p>
 <p>The most common method to customize particle systems is to subclass one of the cocos particle systems and modify some of the class members defining its behavior.
 If you change the particle texture remember to load it with pyglet.image.load, not pyglet.resource.image
 Of course, deeper customization can be achieved with subclassing and code customization.</p>
@@ -328,31 +322,31 @@ Of course, deeper customization can be achieved with subclassing and code custom
 <div class="section" id="textelement-label-htmllabel-richlabel">
 <h3><a class="toc-backref" href="#id22">TextElement, Label, HTMLLabel, RichLabel</a><a class="headerlink" href="#textelement-label-htmllabel-richlabel" title="Permalink to this headline">¶</a></h3>
 <p>Overall opacity, Family and Font size can be specified for all.</p>
-<p><a class="reference internal" href="../api/cocos.text.html#cocos.text.TextElement" title="cocos.text.TextElement"><code class="xref py py-class docutils literal"><span class="pre">TextElement</span></code></a>: base class for all cocos text. Holds internally (member ‘element’) a suitable pyglet text object, providing the CocosNode interface and pyglet Batch to store parts.
+<p><a class="reference internal" href="../api/cocos.text.html#cocos.text.TextElement" title="cocos.text.TextElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextElement</span></code></a>: base class for all cocos text. Holds internally (member ‘element’) a suitable pyglet text object, providing the CocosNode interface and pyglet Batch to store parts.
 Features other than opacity and the common cocosnode ones should be accessed trough the instance.element.</p>
-<p><a class="reference internal" href="../api/cocos.text.html#cocos.text.Label" title="cocos.text.Label"><code class="xref py py-class docutils literal"><span class="pre">Label</span></code></a>: provide the most simple text display; color can also be set.</p>
-<p><a class="reference internal" href="../api/cocos.text.html#cocos.text.HTMLLabel" title="cocos.text.HTMLLabel"><code class="xref py py-class docutils literal"><span class="pre">HTMLLabel</span></code></a>: a slightly more powerful label, it can use mixed styles. Uses HTML syntax for text and styles; opacity as a whole can be set.</p>
-<p><a class="reference internal" href="../api/cocos.text.html#cocos.text.RichLabel" title="cocos.text.RichLabel"><code class="xref py py-class docutils literal"><span class="pre">RichLabel</span></code></a>: Allows rich text attributes.</p>
+<p><a class="reference internal" href="../api/cocos.text.html#cocos.text.Label" title="cocos.text.Label"><code class="xref py py-class docutils literal notranslate"><span class="pre">Label</span></code></a>: provide the most simple text display; color can also be set.</p>
+<p><a class="reference internal" href="../api/cocos.text.html#cocos.text.HTMLLabel" title="cocos.text.HTMLLabel"><code class="xref py py-class docutils literal notranslate"><span class="pre">HTMLLabel</span></code></a>: a slightly more powerful label, it can use mixed styles. Uses HTML syntax for text and styles; opacity as a whole can be set.</p>
+<p><a class="reference internal" href="../api/cocos.text.html#cocos.text.RichLabel" title="cocos.text.RichLabel"><code class="xref py py-class docutils literal notranslate"><span class="pre">RichLabel</span></code></a>: Allows rich text attributes.</p>
 <p>Look for examples at test/test_label_*.py, test/test_htmllabel_*.py, test/test_rich_label.py</p>
 </div>
 <div class="section" id="menu">
 <h3><a class="toc-backref" href="#id23">Menu</a><a class="headerlink" href="#menu" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Does the layout of menu items</li>
-<li>Handles navigation between menu items</li>
-<li>Passes to the items the desired animation to play when the focus changes from one to another item</li>
+<li><p>Does the layout of menu items</p></li>
+<li><p>Handles navigation between menu items</p></li>
+<li><p>Passes to the items the desired animation to play when the focus changes from one to another item</p></li>
 </ul>
 <p>Look for examples at test/test_menu_*.py</p>
-<p>References: <a class="reference internal" href="../api/cocos.menu.html#cocos.menu.Menu" title="cocos.menu.Menu"><code class="xref py py-class docutils literal"><span class="pre">Menu</span></code></a></p>
+<p>References: <a class="reference internal" href="../api/cocos.menu.html#cocos.menu.Menu" title="cocos.menu.Menu"><code class="xref py py-class docutils literal notranslate"><span class="pre">Menu</span></code></a></p>
 </div>
 <div class="section" id="menu-items">
 <h3><a class="toc-backref" href="#id24">Menu items</a><a class="headerlink" href="#menu-items" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference internal" href="../api/cocos.menu.html#cocos.menu.MenuItem" title="cocos.menu.MenuItem"><code class="xref py py-class docutils literal"><span class="pre">MenuItem</span></code></a>: A menu item that shows text</p>
-<p><a class="reference internal" href="../api/cocos.menu.html#cocos.menu.ImageMenuItem" title="cocos.menu.ImageMenuItem"><code class="xref py py-class docutils literal"><span class="pre">ImageMenuItem</span></code></a>: A menu item that shows a image and optionally text</p>
-<p><a class="reference internal" href="../api/cocos.menu.html#cocos.menu.MultipleMenuItem" title="cocos.menu.MultipleMenuItem"><code class="xref py py-class docutils literal"><span class="pre">MultipleMenuItem</span></code></a>: Allows to cycle trough a customizable list of options</p>
-<p><a class="reference internal" href="../api/cocos.menu.html#cocos.menu.ToggleMenuItem" title="cocos.menu.ToggleMenuItem"><code class="xref py py-class docutils literal"><span class="pre">ToggleMenuItem</span></code></a>: Exposes a on/off selection</p>
-<p><a class="reference internal" href="../api/cocos.menu.html#cocos.menu.EntryMenuItem" title="cocos.menu.EntryMenuItem"><code class="xref py py-class docutils literal"><span class="pre">EntryMenuItem</span></code></a>: Exposes a label and a text entry field</p>
-<p><a class="reference internal" href="../api/cocos.menu.html#cocos.menu.ColorMenuItem" title="cocos.menu.ColorMenuItem"><code class="xref py py-class docutils literal"><span class="pre">ColorMenuItem</span></code></a>: Allows to select a color</p>
+<p><a class="reference internal" href="../api/cocos.menu.html#cocos.menu.MenuItem" title="cocos.menu.MenuItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">MenuItem</span></code></a>: A menu item that shows text</p>
+<p><a class="reference internal" href="../api/cocos.menu.html#cocos.menu.ImageMenuItem" title="cocos.menu.ImageMenuItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">ImageMenuItem</span></code></a>: A menu item that shows a image and optionally text</p>
+<p><a class="reference internal" href="../api/cocos.menu.html#cocos.menu.MultipleMenuItem" title="cocos.menu.MultipleMenuItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleMenuItem</span></code></a>: Allows to cycle trough a customizable list of options</p>
+<p><a class="reference internal" href="../api/cocos.menu.html#cocos.menu.ToggleMenuItem" title="cocos.menu.ToggleMenuItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">ToggleMenuItem</span></code></a>: Exposes a on/off selection</p>
+<p><a class="reference internal" href="../api/cocos.menu.html#cocos.menu.EntryMenuItem" title="cocos.menu.EntryMenuItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">EntryMenuItem</span></code></a>: Exposes a label and a text entry field</p>
+<p><a class="reference internal" href="../api/cocos.menu.html#cocos.menu.ColorMenuItem" title="cocos.menu.ColorMenuItem"><code class="xref py py-class docutils literal notranslate"><span class="pre">ColorMenuItem</span></code></a>: Allows to select a color</p>
 <p>Look at test/test_menu_items.py for sample code.</p>
 </div>
 <div class="section" id="creating-your-cocosnode-subclasses">
@@ -366,7 +360,7 @@ how to use <cite>transform</cite> , etc.</p>
 <div class="section" id="parent-child-examples">
 <h3><a class="toc-backref" href="#id27">Parent-Child examples</a><a class="headerlink" href="#parent-child-examples" title="Permalink to this headline">¶</a></h3>
 <p>Building a scene, object instantiation omitted</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># a scene with 2 layers; the background would be seen behind the game layer because of z values</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a scene with 2 layers; the background would be seen behind the game layer because of z values</span>
 <span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">background_layer</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span> <span class="p">)</span>
 <span class="n">scene</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">game_layer</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">1</span> <span class="p">)</span>
 
@@ -386,34 +380,34 @@ how to use <cite>transform</cite> , etc.</p>
 </div>
 <p>A dagger has touched a zombie alien cowboy so it wants to spawn a nasty blotch of green blood.
 We could add the blotch_sprite to the zac_sprite, an then the blotch will follow the zombie:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">zac_zprite</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">blotch_sprite</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zac_zprite</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">blotch_sprite</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or we could add to the game_layer, and the blotch will not follow the zombie:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">layer</span> <span class="o">=</span> <span class="n">zac_sprite</span><span class="o">.</span><span class="n">parent</span> <span class="c1"># should be game_layer, because our staggering</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">layer</span> <span class="o">=</span> <span class="n">zac_sprite</span><span class="o">.</span><span class="n">parent</span> <span class="c1"># should be game_layer, because our staggering</span>
 <span class="n">layer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">blotch_sprite</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>If for some ridiculous reason a dagger needs to grab a reference to the game_layer we could use ‘get_ancestor’.
 Due to to way we staged the scene, we know game_layer is parent of bloody_pacman_sprite which is parent of the dagger. So:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">layer</span> <span class="o">=</span> <span class="n">dagger_near</span><span class="o">.</span><span class="n">get_ancestor</span><span class="p">(</span><span class="n">Layer</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">layer</span> <span class="o">=</span> <span class="n">dagger_near</span><span class="o">.</span><span class="n">get_ancestor</span><span class="p">(</span><span class="n">Layer</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>should produce game_layer.</p>
 <p>A zombie is killed, we can retire from the scene with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">zac_sprite</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zac_sprite</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>or with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">game_layer</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">zac_sprite</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">game_layer</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">zac_sprite</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or if we named it “T’chkss” when we added to the game_layer, like in:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">game_layer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">zac_sprite</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;T&#39;chkss&quot;</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">game_layer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">zac_sprite</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;T&#39;chkss&quot;</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>then we can retire it with:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">game_layer</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;T&#39;chkss&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">game_layer</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;T&#39;chkss&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Note that in current cocos if you add with name then you should remove by name,
@@ -422,13 +416,13 @@ else the name will become unusable for new additions.</p>
 <div class="section" id="spatial-placement-snippets">
 <h3><a class="toc-backref" href="#id28">Spatial Placement snippets</a><a class="headerlink" href="#spatial-placement-snippets" title="Permalink to this headline">¶</a></h3>
 <p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># place the sprite in 320,240</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># place the sprite in 320,240</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">320</span><span class="p">,</span><span class="mi">240</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>or by using actions.
 Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># move the sprite to 320,240 in 5 seconds</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># move the sprite to 320,240 in 5 seconds</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">MoveTo</span><span class="p">(</span> <span class="p">(</span><span class="mi">320</span><span class="p">,</span><span class="mi">240</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
@@ -437,7 +431,7 @@ Example:</p>
 <h3><a class="toc-backref" href="#id29">Automated changes along the time snippets</a><a class="headerlink" href="#automated-changes-along-the-time-snippets" title="Permalink to this headline">¶</a></h3>
 <p>You can modify attributes to any <cite>CocosNode</cite> object.
 By example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">ScaleTo</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">ScaleTo</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span>
 
 <span class="n">layer</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="p">)</span>
 
@@ -456,7 +450,7 @@ By example:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">CocosNodes</a><ul>
 <li><a class="reference internal" href="#cocosnode-functionality">CocosNode Functionality</a><ul>
@@ -514,13 +508,13 @@ By example:</p>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -547,8 +541,8 @@ By example:</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

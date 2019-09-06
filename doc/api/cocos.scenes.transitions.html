@@ -1,32 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>cocos.scenes.transitions module &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>cocos.scenes.transitions module &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.batch module" href="cocos.batch.html" />
     <link rel="prev" title="cocos.scenes.sequences module" href="cocos.scenes.sequences.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -58,8 +49,8 @@
 <p>Transitions between Scenes</p>
 <dl class="class">
 <dt id="cocos.scenes.transitions.TransitionScene">
-<em class="property">class </em><code class="descname">TransitionScene</code><span class="sig-paren">(</span><em>dst</em>, <em>duration=1.25</em>, <em>src=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.TransitionScene" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="cocos.scene.html#cocos.scene.Scene" title="cocos.scene.Scene"><code class="xref py py-class docutils literal"><span class="pre">cocos.scene.Scene</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">TransitionScene</code><span class="sig-paren">(</span><em class="sig-param">dst</em>, <em class="sig-param">duration=1.25</em>, <em class="sig-param">src=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.TransitionScene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.scene.html#cocos.scene.Scene" title="cocos.scene.Scene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scene.Scene</span></code></a></p>
 <p>A Scene that takes two scenes and makes a transition between them.</p>
 <p>The input scenes are put into envelopes (Scenes) that are made childs to
 the transition scene.
@@ -68,49 +59,61 @@ but must not modify directly the input scenes; that would corrupt the input
 scenes in the general case.</p>
 <dl class="method">
 <dt id="cocos.scenes.transitions.TransitionScene.finish">
-<code class="descname">finish</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.TransitionScene.finish" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">finish</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.TransitionScene.finish" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called when the time is over.
 Envelopes are discarded and the dst scene will be the one runned by director.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.scenes.transitions.TransitionScene.hide_all">
-<code class="descname">hide_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.TransitionScene.hide_all" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">hide_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.TransitionScene.hide_all" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hides both the incoming and outgoing scenes</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.scenes.transitions.TransitionScene.hide_out_show_in">
-<code class="descname">hide_out_show_in</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.TransitionScene.hide_out_show_in" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">hide_out_show_in</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.TransitionScene.hide_out_show_in" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hides the outgoing scene and shows the incoming scene</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.scenes.transitions.TransitionScene.start">
-<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.TransitionScene.start" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.TransitionScene.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds the incoming scene with z=1 and the outgoing scene with z=0</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.scenes.transitions.TransitionScene.visit">
-<code class="descname">visit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.TransitionScene.visit" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">visit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.TransitionScene.visit" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function <em>visits</em> its children in a recursive
+way.</p>
+<p>It will first <em>visit</em> the children that
+that have a z-order value less than 0.</p>
+<p>Then it will call the <code class="xref py py-meth docutils literal notranslate"><span class="pre">draw()</span></code> method to
+draw itself.</p>
+<p>And finally it will <em>visit</em> the rest of the
+children (the ones with a z-value bigger
+or equal than 0)</p>
+<p>Before <em>visiting</em> any children it will call
+the <code class="xref py py-meth docutils literal notranslate"><span class="pre">transform()</span></code> method to apply any possible
+transformations.</p>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.scenes.transitions.TransitionScene.duration">
-<code class="descname">duration</code><em class="property"> = None</em><a class="headerlink" href="#cocos.scenes.transitions.TransitionScene.duration" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">duration</code><em class="property"> = None</em><a class="headerlink" href="#cocos.scenes.transitions.TransitionScene.duration" title="Permalink to this definition">¶</a></dt>
 <dd><p>duration in seconds of the transition</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.scenes.transitions.TransitionScene.in_scene">
-<code class="descname">in_scene</code><em class="property"> = None</em><a class="headerlink" href="#cocos.scenes.transitions.TransitionScene.in_scene" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">in_scene</code><em class="property"> = None</em><a class="headerlink" href="#cocos.scenes.transitions.TransitionScene.in_scene" title="Permalink to this definition">¶</a></dt>
 <dd><p>envelope with scene that will replace the old one</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.scenes.transitions.TransitionScene.out_scene">
-<code class="descname">out_scene</code><em class="property"> = None</em><a class="headerlink" href="#cocos.scenes.transitions.TransitionScene.out_scene" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">out_scene</code><em class="property"> = None</em><a class="headerlink" href="#cocos.scenes.transitions.TransitionScene.out_scene" title="Permalink to this definition">¶</a></dt>
 <dd><p>envelope with scene that will be replaced</p>
 </dd></dl>
 
@@ -118,283 +121,284 @@ Envelopes are discarded and the dst scene will be the one runned by director.</p
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.RotoZoomTransition">
-<em class="property">class </em><code class="descname">RotoZoomTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.RotoZoomTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">RotoZoomTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.RotoZoomTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
 <p>Rotate and zoom out the outgoing scene, and then rotate and zoom in the incoming</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.JumpZoomTransition">
-<em class="property">class </em><code class="descname">JumpZoomTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.JumpZoomTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">JumpZoomTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.JumpZoomTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
 <p>Zoom out and jump the outgoing scene, and then jump and zoom in the incoming</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.MoveInLTransition">
-<em class="property">class </em><code class="descname">MoveInLTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInLTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">MoveInLTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInLTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
 <p>Move in from to the left the incoming scene.</p>
 <dl class="method">
 <dt id="cocos.scenes.transitions.MoveInLTransition.get_action">
-<code class="descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInLTransition.get_action" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInLTransition.get_action" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.scenes.transitions.MoveInLTransition.init">
-<code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInLTransition.init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInLTransition.init" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.MoveInRTransition">
-<em class="property">class </em><code class="descname">MoveInRTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInRTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.MoveInLTransition" title="cocos.scenes.transitions.MoveInLTransition"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.MoveInLTransition</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">MoveInRTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInRTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.MoveInLTransition" title="cocos.scenes.transitions.MoveInLTransition"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.MoveInLTransition</span></code></a></p>
 <p>Move in from to the right the incoming scene.</p>
 <dl class="method">
 <dt id="cocos.scenes.transitions.MoveInRTransition.get_action">
-<code class="descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInRTransition.get_action" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInRTransition.get_action" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.scenes.transitions.MoveInRTransition.init">
-<code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInRTransition.init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInRTransition.init" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.MoveInBTransition">
-<em class="property">class </em><code class="descname">MoveInBTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInBTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.MoveInLTransition" title="cocos.scenes.transitions.MoveInLTransition"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.MoveInLTransition</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">MoveInBTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInBTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.MoveInLTransition" title="cocos.scenes.transitions.MoveInLTransition"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.MoveInLTransition</span></code></a></p>
 <p>Move in from to the bottom the incoming scene.</p>
 <dl class="method">
 <dt id="cocos.scenes.transitions.MoveInBTransition.get_action">
-<code class="descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInBTransition.get_action" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInBTransition.get_action" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.scenes.transitions.MoveInBTransition.init">
-<code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInBTransition.init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInBTransition.init" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.MoveInTTransition">
-<em class="property">class </em><code class="descname">MoveInTTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInTTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.MoveInLTransition" title="cocos.scenes.transitions.MoveInLTransition"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.MoveInLTransition</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">MoveInTTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInTTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.MoveInLTransition" title="cocos.scenes.transitions.MoveInLTransition"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.MoveInLTransition</span></code></a></p>
 <p>Move in from to the top the incoming scene.</p>
 <dl class="method">
 <dt id="cocos.scenes.transitions.MoveInTTransition.get_action">
-<code class="descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInTTransition.get_action" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInTTransition.get_action" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.scenes.transitions.MoveInTTransition.init">
-<code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInTTransition.init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.MoveInTTransition.init" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.SlideInLTransition">
-<em class="property">class </em><code class="descname">SlideInLTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInLTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">SlideInLTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInLTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
 <p>Slide in the incoming scene from the left border.</p>
 <dl class="method">
 <dt id="cocos.scenes.transitions.SlideInLTransition.get_action">
-<code class="descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInLTransition.get_action" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInLTransition.get_action" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.scenes.transitions.SlideInLTransition.init">
-<code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInLTransition.init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInLTransition.init" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.SlideInRTransition">
-<em class="property">class </em><code class="descname">SlideInRTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInRTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.SlideInLTransition" title="cocos.scenes.transitions.SlideInLTransition"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.SlideInLTransition</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">SlideInRTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInRTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.SlideInLTransition" title="cocos.scenes.transitions.SlideInLTransition"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.SlideInLTransition</span></code></a></p>
 <p>Slide in the incoming scene from the right border.</p>
 <dl class="method">
 <dt id="cocos.scenes.transitions.SlideInRTransition.get_action">
-<code class="descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInRTransition.get_action" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInRTransition.get_action" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.scenes.transitions.SlideInRTransition.init">
-<code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInRTransition.init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInRTransition.init" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.SlideInBTransition">
-<em class="property">class </em><code class="descname">SlideInBTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInBTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.SlideInLTransition" title="cocos.scenes.transitions.SlideInLTransition"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.SlideInLTransition</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">SlideInBTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInBTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.SlideInLTransition" title="cocos.scenes.transitions.SlideInLTransition"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.SlideInLTransition</span></code></a></p>
 <p>Slide in the incoming scene from the bottom border.</p>
 <dl class="method">
 <dt id="cocos.scenes.transitions.SlideInBTransition.get_action">
-<code class="descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInBTransition.get_action" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInBTransition.get_action" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.scenes.transitions.SlideInBTransition.init">
-<code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInBTransition.init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInBTransition.init" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.SlideInTTransition">
-<em class="property">class </em><code class="descname">SlideInTTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInTTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.SlideInLTransition" title="cocos.scenes.transitions.SlideInLTransition"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.SlideInLTransition</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">SlideInTTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInTTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.SlideInLTransition" title="cocos.scenes.transitions.SlideInLTransition"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.SlideInLTransition</span></code></a></p>
 <p>Slide in the incoming scene from the top border.</p>
 <dl class="method">
 <dt id="cocos.scenes.transitions.SlideInTTransition.get_action">
-<code class="descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInTTransition.get_action" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInTTransition.get_action" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.scenes.transitions.SlideInTTransition.init">
-<code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInTTransition.init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SlideInTTransition.init" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.FlipX3DTransition">
-<em class="property">class </em><code class="descname">FlipX3DTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FlipX3DTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">FlipX3DTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FlipX3DTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
 <p>Flips the screen horizontally.
 The front face is the outgoing scene and the back face is the incoming scene.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.FlipY3DTransition">
-<em class="property">class </em><code class="descname">FlipY3DTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FlipY3DTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">FlipY3DTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FlipY3DTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
 <p>Flips the screen vertically.
 The front face is the outgoing scene and the back face is the incoming scene.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.FlipAngular3DTransition">
-<em class="property">class </em><code class="descname">FlipAngular3DTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FlipAngular3DTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">FlipAngular3DTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FlipAngular3DTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
 <p>Flips the screen half horizontally and half vertically.
 The front face is the outgoing scene and the back face is the incoming scene.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.ShuffleTransition">
-<em class="property">class </em><code class="descname">ShuffleTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.ShuffleTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">ShuffleTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.ShuffleTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
 <p>Shuffle the outgoing scene, and then reorder the tiles with the incoming scene.</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.TurnOffTilesTransition">
-<em class="property">class </em><code class="descname">TurnOffTilesTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.TurnOffTilesTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">TurnOffTilesTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.TurnOffTilesTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
 <p>Turn off the tiles of the outgoing scene in random order</p>
 <dl class="method">
 <dt id="cocos.scenes.transitions.TurnOffTilesTransition.start">
-<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.TurnOffTilesTransition.start" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.TurnOffTilesTransition.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the incoming scene with z=1 and the outgoing scene with z=0</p>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.FadeTRTransition">
-<em class="property">class </em><code class="descname">FadeTRTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeTRTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">FadeTRTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeTRTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
 <p>Fade the tiles of the outgoing scene from the left-bottom corner the to top-right corner.</p>
 <dl class="method">
 <dt id="cocos.scenes.transitions.FadeTRTransition.get_action">
-<code class="descname">get_action</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeTRTransition.get_action" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_action</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeTRTransition.get_action" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.scenes.transitions.FadeTRTransition.start">
-<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeTRTransition.start" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeTRTransition.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the incoming scene with z=1 and the outgoing scene with z=0</p>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.FadeBLTransition">
-<em class="property">class </em><code class="descname">FadeBLTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeBLTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.FadeTRTransition" title="cocos.scenes.transitions.FadeTRTransition"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.FadeTRTransition</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">FadeBLTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeBLTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.FadeTRTransition" title="cocos.scenes.transitions.FadeTRTransition"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.FadeTRTransition</span></code></a></p>
 <p>Fade the tiles of the outgoing scene from the top-right corner to the bottom-left corner.</p>
 <dl class="method">
 <dt id="cocos.scenes.transitions.FadeBLTransition.get_action">
-<code class="descname">get_action</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeBLTransition.get_action" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_action</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeBLTransition.get_action" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.FadeUpTransition">
-<em class="property">class </em><code class="descname">FadeUpTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeUpTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.FadeTRTransition" title="cocos.scenes.transitions.FadeTRTransition"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.FadeTRTransition</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">FadeUpTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeUpTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.FadeTRTransition" title="cocos.scenes.transitions.FadeTRTransition"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.FadeTRTransition</span></code></a></p>
 <p>Fade the tiles of the outgoing scene from the bottom to the top.</p>
 <dl class="method">
 <dt id="cocos.scenes.transitions.FadeUpTransition.get_action">
-<code class="descname">get_action</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeUpTransition.get_action" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_action</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeUpTransition.get_action" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.FadeDownTransition">
-<em class="property">class </em><code class="descname">FadeDownTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeDownTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.FadeTRTransition" title="cocos.scenes.transitions.FadeTRTransition"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.FadeTRTransition</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">FadeDownTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeDownTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.FadeTRTransition" title="cocos.scenes.transitions.FadeTRTransition"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.FadeTRTransition</span></code></a></p>
 <p>Fade the tiles of the outgoing scene from the top to the bottom.</p>
 <dl class="method">
 <dt id="cocos.scenes.transitions.FadeDownTransition.get_action">
-<code class="descname">get_action</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeDownTransition.get_action" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_action</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeDownTransition.get_action" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.ShrinkGrowTransition">
-<em class="property">class </em><code class="descname">ShrinkGrowTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.ShrinkGrowTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">ShrinkGrowTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.ShrinkGrowTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
 <p>Shrink the outgoing scene while grow the incoming scene</p>
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.CornerMoveTransition">
-<em class="property">class </em><code class="descname">CornerMoveTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.CornerMoveTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">CornerMoveTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.CornerMoveTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
 <p>Moves the bottom-right corner of the incoming scene to the top-left corner</p>
 <dl class="method">
 <dt id="cocos.scenes.transitions.CornerMoveTransition.start">
-<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.CornerMoveTransition.start" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.CornerMoveTransition.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the incoming scene with z=1 and the outgoing scene with z=0</p>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.EnvelopeTransition">
-<em class="property">class </em><code class="descname">EnvelopeTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.EnvelopeTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
-<dl class="docutils">
-<dt>From the outgoing scene:</dt>
-<dd><ul class="first last simple">
-<li>moves the top-right corner to the center</li>
-<li>moves the bottom-left corner to the center</li>
+<em class="property">class </em><code class="sig-name descname">EnvelopeTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.EnvelopeTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
+<dl class="simple">
+<dt>From the outgoing scene:</dt><dd><ul class="simple">
+<li><p>moves the top-right corner to the center</p></li>
+<li><p>moves the bottom-left corner to the center</p></li>
 </ul>
 </dd>
-<dt>From the incoming scene:</dt>
-<dd><ul class="first last simple">
-<li>performs the reverse action of the outgoing scene</li>
+<dt>From the incoming scene:</dt><dd><ul class="simple">
+<li><p>performs the reverse action of the outgoing scene</p></li>
 </ul>
 </dd>
 </dl>
@@ -402,62 +406,67 @@ The front face is the outgoing scene and the back face is the incoming scene.</p
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.SplitRowsTransition">
-<em class="property">class </em><code class="descname">SplitRowsTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SplitRowsTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.SplitColsTransition" title="cocos.scenes.transitions.SplitColsTransition"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.SplitColsTransition</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">SplitRowsTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SplitRowsTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.SplitColsTransition" title="cocos.scenes.transitions.SplitColsTransition"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.SplitColsTransition</span></code></a></p>
 <p>Splits the screen in rows.
 The odd rows goes to the left while the even rows goes to the right.</p>
 <dl class="method">
 <dt id="cocos.scenes.transitions.SplitRowsTransition.get_action">
-<code class="descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SplitRowsTransition.get_action" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SplitRowsTransition.get_action" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.SplitColsTransition">
-<em class="property">class </em><code class="descname">SplitColsTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SplitColsTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">SplitColsTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SplitColsTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
 <p>Splits the screen in columns.
 The odd columns goes upwards while the even columns goes downwards.</p>
 <dl class="method">
 <dt id="cocos.scenes.transitions.SplitColsTransition.get_action">
-<code class="descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SplitColsTransition.get_action" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.SplitColsTransition.get_action" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.FadeTransition">
-<em class="property">class </em><code class="descname">FadeTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">FadeTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
 <p>Fade out the outgoing scene and then fade in the incoming scene.</p>
 <p>Optionally supply the color to fade to in-between as an RGB color tuple.</p>
 <dl class="method">
 <dt id="cocos.scenes.transitions.FadeTransition.on_enter">
-<code class="descname">on_enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeTransition.on_enter" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">on_enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeTransition.on_enter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called every time the Scene enters the stage.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.scenes.transitions.FadeTransition.on_exit">
-<code class="descname">on_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeTransition.on_exit" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">on_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.FadeTransition.on_exit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called every time the <code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code> exits the stage.</p>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.scenes.transitions.ZoomTransition">
-<em class="property">class </em><code class="descname">ZoomTransition</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.ZoomTransition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">ZoomTransition</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.ZoomTransition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.scenes.transitions.TransitionScene" title="cocos.scenes.transitions.TransitionScene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scenes.transitions.TransitionScene</span></code></a></p>
 <p>Zoom and FadeOut the outgoing scene.</p>
 <dl class="method">
 <dt id="cocos.scenes.transitions.ZoomTransition.finish">
-<code class="descname">finish</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.ZoomTransition.finish" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">finish</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.ZoomTransition.finish" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called when the time is over.
+Envelopes are discarded and the dst scene will be the one runned by director.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.scenes.transitions.ZoomTransition.start">
-<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.ZoomTransition.start" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.transitions.ZoomTransition.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the incoming scene with z=1 and the outgoing scene with z=0</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -483,13 +492,13 @@ The odd columns goes upwards while the even columns goes downwards.</p>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -517,8 +526,8 @@ The odd columns goes upwards while the even columns goes downwards.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

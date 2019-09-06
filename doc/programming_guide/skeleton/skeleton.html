@@ -1,32 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Skeletal Animations &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>Skeletal Animations &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="A few tips on threading and multiprocessing" href="../threading_and_multiprocessing.html" />
     <link rel="prev" title="Collision" href="../collision.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -56,15 +47,17 @@
 <h1>Skeletal Animations<a class="headerlink" href="#skeletal-animations" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#creating-skeletons-and-skins" id="id1">Creating Skeletons and skins</a><ul>
-<li><a class="reference internal" href="#the-skeleton-file" id="id2">The skeleton file</a></li>
-<li><a class="reference internal" href="#the-skin-file" id="id3">The skin file</a></li>
-<li><a class="reference internal" href="#the-skeleton-editor" id="id4">The skeleton editor</a></li>
+<li><p><a class="reference internal" href="#creating-skeletons-and-skins" id="id1">Creating Skeletons and skins</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-skeleton-file" id="id2">The skeleton file</a></p></li>
+<li><p><a class="reference internal" href="#the-skin-file" id="id3">The skin file</a></p></li>
+<li><p><a class="reference internal" href="#the-skeleton-editor" id="id4">The skeleton editor</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#animations" id="id5">Animations</a><ul>
-<li><a class="reference internal" href="#the-animator-editor" id="id6">The animator editor</a></li>
-<li><a class="reference internal" href="#playing-animations" id="id7">Playing animations</a></li>
+<li><p><a class="reference internal" href="#animations" id="id5">Animations</a></p>
+<ul>
+<li><p><a class="reference internal" href="#the-animator-editor" id="id6">The animator editor</a></p></li>
+<li><p><a class="reference internal" href="#playing-animations" id="id7">Playing animations</a></p></li>
 </ul>
 </li>
 </ul>
@@ -75,19 +68,19 @@ using them afterwards is easy, and there are some tools to simplify the process.
 <p>To do skeletal animations in cocos you will have to:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Create a skeleton</li>
-<li>Create one or many skins</li>
-<li>Create all the animations you want</li>
+<li><p>Create a skeleton</p></li>
+<li><p>Create one or many skins</p></li>
+<li><p>Create all the animations you want</p></li>
 </ul>
 </div></blockquote>
 <p>Then, to use them you will have to:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Load the skeleton</li>
-<li>Load the skin</li>
-<li>Add a Skin cocos node to your scene</li>
-<li>Load the animations</li>
-<li>Use the Anim action on the skin node to play animations.</li>
+<li><p>Load the skeleton</p></li>
+<li><p>Load the skin</p></li>
+<li><p>Add a Skin cocos node to your scene</p></li>
+<li><p>Load the animations</p></li>
+<li><p>Use the Anim action on the skin node to play animations.</p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="creating-skeletons-and-skins">
@@ -98,7 +91,7 @@ using them afterwards is easy, and there are some tools to simplify the process.
 root bone for your skeleton. Here we create what is going to be the body of our
 human skeleton as follows:</p>
 <p>doc/programming_guide/skeleton/root_bone.py:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cocos.skeleton</span> <span class="k">import</span> <span class="n">Bone</span><span class="p">,</span> <span class="n">Skeleton</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cocos.skeleton</span> <span class="k">import</span> <span class="n">Bone</span><span class="p">,</span> <span class="n">Skeleton</span>
 
 <span class="n">root_bone</span> <span class="o">=</span> <span class="n">Bone</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="o">-</span><span class="mf">180.0</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">))</span>
 
@@ -111,7 +104,7 @@ to be able to move its shoulders and not its legs, so the fixed part of the
 skeleton will be its waist, ie, the origin of the root bone.</p>
 <p>You can see the skeleton you have created using with a small piece of code.</p>
 <p>from doc/programming_guide/skeleton/show_root_bone.py:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cocos</span> <span class="k">import</span> <span class="n">skeleton</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cocos</span> <span class="k">import</span> <span class="n">skeleton</span>
 
 <span class="c1"># import the skeleton we have created</span>
 <span class="kn">import</span> <span class="nn">root_bone</span>
@@ -132,7 +125,7 @@ skeleton will be its waist, ie, the origin of the root bone.</p>
 </pre></div>
 </div>
 <p>It will look like this:</p>
-<div class="figure">
+<div class="figure align-default">
 <img alt="../../_images/show_root_bone.png" src="../../_images/show_root_bone.png" />
 </div>
 <p>The important new concept here is the skin. Skins are responsible for drawing
@@ -145,7 +138,7 @@ can add it to your node to place it on screen.</p>
 <p>Now, we want to skin this skeleton with some images, so we create a skin file.
 The skin file will look like this:</p>
 <p>doc/programming_guide/skeleton/root_skin.py:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">skin</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">skin</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">91</span><span class="p">),</span> <span class="s1">&#39;gil-cuerpo.png&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
   <span class="p">]</span>
 </pre></div>
@@ -157,7 +150,7 @@ its y axis (remember we rotated the bone by -180), and its scaled to half its
 size.</p>
 <p>Now we can show the skeleton with the skin we have just created.</p>
 <p>from doc/programming_guide/skeleton/show_root_skin.py:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># import the skeleton we have created</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the skeleton we have created</span>
 <span class="kn">import</span> <span class="nn">root_bone</span>
 <span class="kn">import</span> <span class="nn">root_skin</span>
 
@@ -177,7 +170,7 @@ size.</p>
 </pre></div>
 </div>
 <p>It will look like this:</p>
-<div class="figure">
+<div class="figure align-default">
 <img alt="../../_images/show_root_skin.png" src="../../_images/show_root_skin.png" />
 </div>
 </div>
@@ -185,11 +178,11 @@ size.</p>
 <h3><a class="toc-backref" href="#id4">The skeleton editor</a><a class="headerlink" href="#the-skeleton-editor" title="Permalink to this headline">¶</a></h3>
 <p>At this point, we can use the first tool provided, the skeleton editor. You start
 the editor like this:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>tools$ python skeleton/skeleton_editor.py ../doc/programming_guide/skeleton/root_bone.py ../doc/programming_guide/skeleton/root_skin.py
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>tools$ python skeleton/skeleton_editor.py ../doc/programming_guide/skeleton/root_bone.py ../doc/programming_guide/skeleton/root_skin.py
 </pre></div>
 </div>
 <p>It will look like this:</p>
-<div class="figure">
+<div class="figure align-default">
 <img alt="../../_images/root_editor.png" src="../../_images/root_editor.png" />
 </div>
 <p>There you can see the skin part of your skeleton and several control points.
@@ -210,7 +203,7 @@ visually.</p>
 bone, are attached to other bones and thei position and rotation are relative to
 its parent bone position and rotation.</p>
 <p>doc/programming_guide/skeleton/body_and_arm.py:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cocos.skeleton</span> <span class="k">import</span> <span class="n">Bone</span><span class="p">,</span> <span class="n">Skeleton</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cocos.skeleton</span> <span class="k">import</span> <span class="n">Bone</span><span class="p">,</span> <span class="n">Skeleton</span>
 
 <span class="k">def</span> <span class="nf">Point2</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span> <span class="k">return</span> <span class="n">args</span>
 
@@ -232,13 +225,13 @@ arm is also 30 pixels long and is also placed at the end of its parent, the uppe
 arm. Bone length doesnt affect the transofrmations or placement of other bones,
 but it useful to see what you are creating.</p>
 <p>The skeleton we have just created looks like this:</p>
-<div class="figure">
+<div class="figure align-default">
 <img alt="../../_images/body_and_arm.png" src="../../_images/body_and_arm.png" />
 </div>
 <p>Now we add the skin. We wont care about the positions or flipping, as we will
 be changing that parameters when looking at it.</p>
 <p>doc/programming_guide/skeleton/body_and_arm_skin.py:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">skin</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">skin</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">91</span><span class="p">),</span> <span class="s1">&#39;gil-cuerpo.png&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
     <span class="p">(</span><span class="s1">&#39;lower_arm&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;gil-mano2.png&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
     <span class="p">(</span><span class="s1">&#39;upper_arm&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;gil-brazo1.png&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
@@ -246,11 +239,11 @@ be changing that parameters when looking at it.</p>
 </pre></div>
 </div>
 <p>The mess we have just created will look like this:</p>
-<div class="figure">
+<div class="figure align-default">
 <img alt="../../_images/body_and_arm_skin_pre.png" src="../../_images/body_and_arm_skin_pre.png" />
 </div>
 <p>We now have to use the editor to drag the parts until it looks like this:</p>
-<div class="figure">
+<div class="figure align-default">
 <img alt="../../_images/body_and_arm_skin_final.png" src="../../_images/body_and_arm_skin_final.png" />
 </div>
 <p>NOTE: When moving the control points, things look weird. Its because you are actually
@@ -263,7 +256,7 @@ sure that the images look good in all positions.</p>
 <p>You then press the ‘s’ key to save.</p>
 <p>You should continue this way until you have the full skeleton and skin defined.</p>
 <p>You can see and use the sample skeleton and skin provided in the test directory:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>tools$ python view_skeleton.py ../test/sample_skeleton.py
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>tools$ python view_skeleton.py ../test/sample_skeleton.py
 
 tools/skeleton$ python skeleton_editor.py ../../test/sample_skeleton.py ../../test/sample_skin.py
 </pre></div>
@@ -279,10 +272,10 @@ the previous and next frame.</p>
 <div class="section" id="the-animator-editor">
 <h3><a class="toc-backref" href="#id6">The animator editor</a><a class="headerlink" href="#the-animator-editor" title="Permalink to this headline">¶</a></h3>
 <p>Start the animation editor doing:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span>tools/skeleton$ python animator.py ../../test/sample_skeleton.py --skin ../../test/sample_skin.py ../../test/SAMPLE.anim
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>tools/skeleton$ python animator.py ../../test/sample_skeleton.py --skin ../../test/sample_skin.py ../../test/SAMPLE.anim
 </pre></div>
 </div>
-<div class="figure">
+<div class="figure align-default">
 <img alt="../../_images/animator.png" src="../../_images/animator.png" />
 </div>
 <p>On the top you can see the timeline with the keyframes in blue and the
@@ -291,18 +284,18 @@ current position marked in yellow.</p>
 <p>You can control the animator with the following keys:</p>
 <blockquote>
 <div><ul class="simple">
-<li><em>S</em>: Save the current animator</li>
-<li><em>LEFT</em>: move $TICK_DELTA time to the left</li>
-<li><em>RIGHT</em>: move $TICK_DELTA time to the right</li>
-<li><em>PLUS</em>: add a keyframe in the current position</li>
-<li><em>MINUS</em>: remove the keyframe in the current position</li>
-<li><em>PAGE UP</em>: Move to the previous keyframe</li>
-<li><em>PAGE DOWN</em>: Move to the next keyframe</li>
-<li><em>INSERT</em>: insert $TICK_DELTA time at the current position</li>
-<li><em>DELETE</em>: delete $TICK_DELTA time at the current position</li>
-<li><em>HOME</em>: Go to the start of the animation</li>
-<li><em>END</em>: Go to the end of the animation</li>
-<li><em>SPACE</em>: Play the animation</li>
+<li><p><em>S</em>: Save the current animator</p></li>
+<li><p><em>LEFT</em>: move $TICK_DELTA time to the left</p></li>
+<li><p><em>RIGHT</em>: move $TICK_DELTA time to the right</p></li>
+<li><p><em>PLUS</em>: add a keyframe in the current position</p></li>
+<li><p><em>MINUS</em>: remove the keyframe in the current position</p></li>
+<li><p><em>PAGE UP</em>: Move to the previous keyframe</p></li>
+<li><p><em>PAGE DOWN</em>: Move to the next keyframe</p></li>
+<li><p><em>INSERT</em>: insert $TICK_DELTA time at the current position</p></li>
+<li><p><em>DELETE</em>: delete $TICK_DELTA time at the current position</p></li>
+<li><p><em>HOME</em>: Go to the start of the animation</p></li>
+<li><p><em>END</em>: Go to the end of the animation</p></li>
+<li><p><em>SPACE</em>: Play the animation</p></li>
 </ul>
 </div></blockquote>
 <p>When standing on a keyframe you will see some control points, that you can move to edit the
@@ -313,7 +306,7 @@ keyframe.</p>
 <h3><a class="toc-backref" href="#id7">Playing animations</a><a class="headerlink" href="#playing-animations" title="Permalink to this headline">¶</a></h3>
 <p>You can play an animation on a skin doing:</p>
 <p>from test/test_skeleton_anim.py:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestLayer</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestLayer</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">Layer</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span> <span class="n">TestLayer</span><span class="p">,</span> <span class="bp">self</span> <span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
@@ -341,7 +334,7 @@ translation, the player will just move left twicenas far.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <h3><a href="../../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Skeletal Animations</a><ul>
 <li><a class="reference internal" href="#creating-skeletons-and-skins">Creating Skeletons and skins</a><ul>
@@ -373,13 +366,13 @@ translation, the player will just move left twicenas far.</p>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -406,8 +399,8 @@ translation, the player will just move left twicenas far.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

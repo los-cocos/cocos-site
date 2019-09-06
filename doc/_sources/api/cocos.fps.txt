@@ -1,7 +1,7 @@
-cocos\.fps module
-=================
+cocos.fps module
+================
 
 .. automodule:: cocos.fps
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

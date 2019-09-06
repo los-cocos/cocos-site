@@ -1,7 +1,7 @@
-cocos\.actions\.grid3d\_actions module
-======================================
+cocos.actions.grid3d\_actions module
+====================================
 
 .. automodule:: cocos.actions.grid3d_actions
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

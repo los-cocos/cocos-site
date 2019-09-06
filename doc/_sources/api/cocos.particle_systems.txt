@@ -1,7 +1,7 @@
-cocos\.particle\_systems module
-===============================
+cocos.particle\_systems module
+==============================
 
 .. automodule:: cocos.particle_systems
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

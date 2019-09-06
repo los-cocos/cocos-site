@@ -1,7 +1,7 @@
-cocos\.text module
-==================
+cocos.text module
+=================
 
 .. automodule:: cocos.text
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

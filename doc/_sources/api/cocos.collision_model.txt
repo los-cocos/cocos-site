@@ -1,7 +1,7 @@
-cocos\.collision\_model module
-==============================
+cocos.collision\_model module
+=============================
 
 .. automodule:: cocos.collision_model
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

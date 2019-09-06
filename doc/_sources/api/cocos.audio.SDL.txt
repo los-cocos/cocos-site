@@ -1,5 +1,5 @@
-cocos\.audio\.SDL package
-=========================
+cocos.audio.SDL package
+=======================
 
 Submodules
 ----------
@@ -23,6 +23,6 @@ Module contents
 ---------------
 
 .. automodule:: cocos.audio.SDL
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

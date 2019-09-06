@@ -1,5 +1,5 @@
-cocos\.audio\.pygame package
-============================
+cocos.audio.pygame package
+==========================
 
 Submodules
 ----------
@@ -15,6 +15,6 @@ Module contents
 ---------------
 
 .. automodule:: cocos.audio.pygame
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

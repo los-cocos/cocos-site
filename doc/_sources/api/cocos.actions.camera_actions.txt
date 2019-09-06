@@ -1,7 +1,7 @@
-cocos\.actions\.camera\_actions module
-======================================
+cocos.actions.camera\_actions module
+====================================
 
 .. automodule:: cocos.actions.camera_actions
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

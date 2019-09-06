@@ -1,7 +1,7 @@
-cocos\.actions\.tiledgrid\_actions module
-=========================================
+cocos.actions.tiledgrid\_actions module
+=======================================
 
 .. automodule:: cocos.actions.tiledgrid_actions
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

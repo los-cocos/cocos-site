@@ -1,32 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>cocos.audio.SDL package &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>cocos.audio.SDL package &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.audio.SDL.array module" href="cocos.audio.SDL.array.html" />
     <link rel="prev" title="cocos.audio package" href="cocos.audio.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -77,37 +68,32 @@
 <div class="section" id="module-cocos.audio.SDL">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cocos.audio.SDL" title="Permalink to this headline">¶</a></h2>
 <p>Main module for importing SDL-ctypes.</p>
-<dl class="docutils">
-<dt>This module defines the intialization and cleanup functions:</dt>
-<dd><ul class="first last simple">
-<li><cite>SDL_Init</cite></li>
-<li><cite>SDL_InitSubSystem</cite></li>
-<li><cite>SDL_WasInit</cite></li>
-<li><cite>SDL_QuitSubSystem</cite></li>
-<li><cite>SDL_Quit</cite></li>
+<dl class="simple">
+<dt>This module defines the intialization and cleanup functions:</dt><dd><ul class="simple">
+<li><p><cite>SDL_Init</cite></p></li>
+<li><p><cite>SDL_InitSubSystem</cite></p></li>
+<li><p><cite>SDL_WasInit</cite></p></li>
+<li><p><cite>SDL_QuitSubSystem</cite></p></li>
+<li><p><cite>SDL_Quit</cite></p></li>
 </ul>
 </dd>
 </dl>
 <p>It also imports all functions, constants and classes from the package
 submodules.  Typical usage, then, is to just import this module directly
 into your namespace:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">SDL</span> <span class="k">import</span> <span class="o">*</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">SDL</span> <span class="k">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 <p>This gives you access to all SDL names exactly as they appear in the C
 header files.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name" colspan="2">group Non-core modules:</th></tr>
-<tr class="field-odd field"><td>&#160;</td><td class="field-body">ttf, mixer, image, sound</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">group Non-core modules</dt>
+<dd class="field-odd"><p>ttf, mixer, image, sound</p>
+</dd>
+</dl>
 <dl class="function">
 <dt id="cocos.audio.SDL.SDL_Init">
-<code class="descname">SDL_Init</code><span class="sig-paren">(</span><em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.SDL_Init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SDL_Init</code><span class="sig-paren">(</span><em class="sig-param">flags</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.SDL_Init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialise the SDL library.</p>
 <p>This function loads the SDL dynamically linked library and initializes
 the subsystems specified by <cite>flags</cite> (and those satisfying dependencies)
@@ -116,62 +102,54 @@ signal handlers for some commonly ignored fatal signals (like SIGSEGV).</p>
 <p>The following flags are recognised:</p>
 <blockquote>
 <div><ul class="simple">
-<li><cite>SDL_INIT_TIMER</cite></li>
-<li><cite>SDL_INIT_AUDIO</cite></li>
-<li><cite>SDL_INIT_VIDEO</cite></li>
-<li><cite>SDL_INIT_CDROM</cite></li>
-<li><cite>SDL_INIT_JOYSTICK</cite></li>
-<li><cite>SDL_INIT_NOPARACHUTE</cite></li>
-<li><cite>SDL_INIT_EVENTTHREAD</cite></li>
-<li><cite>SDL_INIT_EVERYTHING</cite></li>
+<li><p><cite>SDL_INIT_TIMER</cite></p></li>
+<li><p><cite>SDL_INIT_AUDIO</cite></p></li>
+<li><p><cite>SDL_INIT_VIDEO</cite></p></li>
+<li><p><cite>SDL_INIT_CDROM</cite></p></li>
+<li><p><cite>SDL_INIT_JOYSTICK</cite></p></li>
+<li><p><cite>SDL_INIT_NOPARACHUTE</cite></p></li>
+<li><p><cite>SDL_INIT_EVENTTHREAD</cite></p></li>
+<li><p><cite>SDL_INIT_EVERYTHING</cite></p></li>
 </ul>
 </div></blockquote>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><cite>flags</cite>: int</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><cite>flags</cite>: int</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">int</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">undocumented (FIXME)</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">See:</th><td class="field-body"><p class="first last"><cite>SDL_Quit</cite></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>undocumented (FIXME)</p>
+</dd>
+<dt class="field-even">See</dt>
+<dd class="field-even"><p><cite>SDL_Quit</cite></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="cocos.audio.SDL.SDL_InitSubSystem">
-<code class="descname">SDL_InitSubSystem</code><span class="sig-paren">(</span><em>flags</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.SDL_InitSubSystem" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SDL_InitSubSystem</code><span class="sig-paren">(</span><em class="sig-param">flags</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.SDL_InitSubSystem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize specific SDL subsystems.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><cite>flags</cite>: int</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><cite>flags</cite>: int</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">int</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">undocumented (FIXME)</p>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">See:</th><td class="field-body"><p class="first last"><cite>SDL_Init</cite>, <cite>SDL_QuitSubSystem</cite></p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>undocumented (FIXME)</p>
+</dd>
+<dt class="field-even">See</dt>
+<dd class="field-even"><p><cite>SDL_Init</cite>, <cite>SDL_QuitSubSystem</cite></p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -183,7 +161,7 @@ signal handlers for some commonly ignored fatal signals (like SIGSEGV).</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">cocos.audio.SDL package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
@@ -206,13 +184,13 @@ signal handlers for some commonly ignored fatal signals (like SIGSEGV).</p>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -240,8 +218,8 @@ signal handlers for some commonly ignored fatal signals (like SIGSEGV).</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

@@ -1,7 +1,7 @@
-cocos\.shader module
-====================
+cocos.shader module
+===================
 
 .. automodule:: cocos.shader
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

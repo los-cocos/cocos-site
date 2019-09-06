@@ -1,7 +1,7 @@
-cocos\.director module
-======================
+cocos.director module
+=====================
 
 .. automodule:: cocos.director
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

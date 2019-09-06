@@ -1,32 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>cocos.audio.SDL.sound module &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>cocos.audio.SDL.sound module &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.audio.SDL.timer module" href="cocos.audio.SDL.timer.html" />
     <link rel="prev" title="cocos.audio.SDL.rwops module" href="cocos.audio.SDL.rwops.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -56,31 +47,6 @@
             
   <div class="section" id="cocos-audio-sdl-sound-module">
 <h1>cocos.audio.SDL.sound module<a class="headerlink" href="#cocos-audio-sdl-sound-module" title="Permalink to this headline">¶</a></h1>
-<div class="system-message">
-<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">F:\dev\cocos2017\docgen\api\cocos.audio.SDL.sound.txt</tt>, line 4)</p>
-autodoc: failed to import module ‘cocos.audio.SDL.sound’; the following exception was raised:
-Traceback (most recent call last):
-  File “F:\dev\cocos2017\cocos\audio\SDL\dll.py”, line 60, in __init__
-    self._load_library_win()
-  File “F:\dev\cocos2017\cocos\audio\SDL\dll.py”, line 92, in _load_library_win
-    self._dll = getattr(cdll, self.library_name)
-  File “c:\python36\lib\ctypes\__init__.py”, line 418, in __getattr__
-    dll = self._dlltype(name)
-  File “c:\python36\lib\ctypes\__init__.py”, line 348, in __init__
-    self._handle = _dlopen(self._name, mode)
-OSError: [WinError 126] No se puede encontrar el módulo especificado
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File “c:\python36\lib\site-packages\sphinx\ext\autodoc.py”, line 657, in import_object
-    __import__(self.modname)
-  File “F:\dev\cocos2017\cocos\audio\SDL\sound.py”, line 47, in &lt;module&gt;
-    _dll = SDL.dll.SDL_DLL(‘SDL_sound’, None, ‘1.2’)
-  File “F:\dev\cocos2017\cocos\audio\SDL\dll.py”, line 63, in __init__
-    library_name))
-ImportError: Dynamic library “SDL_sound” was not found
-</div>
 </div>
 
 
@@ -103,13 +69,13 @@ ImportError: Dynamic library “SDL_sound” was not found
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -138,8 +104,8 @@ ImportError: Dynamic library “SDL_sound” was not found
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

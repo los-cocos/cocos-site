@@ -1,7 +1,7 @@
-cocos\.rect module
-==================
+cocos.rect module
+=================
 
 .. automodule:: cocos.rect
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

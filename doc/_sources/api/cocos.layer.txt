@@ -1,5 +1,5 @@
-cocos\.layer package
-====================
+cocos.layer package
+===================
 
 Submodules
 ----------
@@ -15,6 +15,6 @@ Module contents
 ---------------
 
 .. automodule:: cocos.layer
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

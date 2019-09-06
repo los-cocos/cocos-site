@@ -1,32 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>cocos.shader module &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>cocos.shader module &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.skeleton module" href="cocos.skeleton.html" />
     <link rel="prev" title="cocos.scene module" href="cocos.scene.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -56,64 +47,64 @@
 <span id="cocos-shader-module"></span><h1>cocos.shader module<a class="headerlink" href="#module-cocos.shader" title="Permalink to this headline">¶</a></h1>
 <dl class="exception">
 <dt id="cocos.shader.GLSLException">
-<em class="property">exception </em><code class="descname">GLSLException</code><a class="headerlink" href="#cocos.shader.GLSLException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<em class="property">exception </em><code class="sig-name descname">GLSLException</code><a class="headerlink" href="#cocos.shader.GLSLException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.shader.VertexShader">
-<em class="property">class </em><code class="descname">VertexShader</code><span class="sig-paren">(</span><em>name</em>, <em>prog</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.VertexShader" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">cocos.shader.Shader</span></code></p>
+<em class="property">class </em><code class="sig-name descname">VertexShader</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">prog</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.VertexShader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.shader.Shader</span></code></p>
 <dl class="method">
 <dt id="cocos.shader.VertexShader.shaderType">
-<code class="descname">shaderType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.VertexShader.shaderType" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">shaderType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.VertexShader.shaderType" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.shader.FragmentShader">
-<em class="property">class </em><code class="descname">FragmentShader</code><span class="sig-paren">(</span><em>name</em>, <em>prog</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.FragmentShader" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">cocos.shader.Shader</span></code></p>
+<em class="property">class </em><code class="sig-name descname">FragmentShader</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">prog</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.FragmentShader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.shader.Shader</span></code></p>
 <dl class="method">
 <dt id="cocos.shader.FragmentShader.shaderType">
-<code class="descname">shaderType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.FragmentShader.shaderType" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">shaderType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.FragmentShader.shaderType" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.shader.ShaderProgram">
-<em class="property">class </em><code class="descname">ShaderProgram</code><span class="sig-paren">(</span><em>vertex_shader=None</em>, <em>fragment_shader=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<em class="property">class </em><code class="sig-name descname">ShaderProgram</code><span class="sig-paren">(</span><em class="sig-param">vertex_shader=None</em>, <em class="sig-param">fragment_shader=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="method">
 <dt id="cocos.shader.ShaderProgram.destroy">
-<code class="descname">destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.destroy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">destroy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.destroy" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.shader.ShaderProgram.install">
-<code class="descname">install</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.install" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">install</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.install" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.shader.ShaderProgram.link">
-<code class="descname">link</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.link" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">link</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.link" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.shader.ShaderProgram.prog">
-<code class="descname">prog</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.prog" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">prog</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.prog" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.shader.ShaderProgram.setShader">
-<code class="descname">setShader</code><span class="sig-paren">(</span><em>shader</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.setShader" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">setShader</code><span class="sig-paren">(</span><em class="sig-param">shader</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.setShader" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="classmethod">
+<dl class="method">
 <dt id="cocos.shader.ShaderProgram.simple_program">
-<em class="property">classmethod </em><code class="descname">simple_program</code><span class="sig-paren">(</span><em>name</em>, <em>vertex_code</em>, <em>fragment_code</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.simple_program" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">simple_program</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">vertex_code</em>, <em class="sig-param">fragment_code</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.simple_program" title="Permalink to this definition">¶</a></dt>
 <dd><p>Intended to cut boilerplate when doing simple shaders</p>
 <p>name : string with program name
 vertex_code : None or string with the vertex shader code
@@ -122,57 +113,57 @@ fragment_code : None or string with the fragment shader code</p>
 
 <dl class="method">
 <dt id="cocos.shader.ShaderProgram.uniformLoc">
-<code class="descname">uniformLoc</code><span class="sig-paren">(</span><em>var</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.uniformLoc" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">uniformLoc</code><span class="sig-paren">(</span><em class="sig-param">var</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.uniformLoc" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.shader.ShaderProgram.uninstall">
-<code class="descname">uninstall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.uninstall" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">uninstall</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.uninstall" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.shader.ShaderProgram.uset1F">
-<code class="descname">uset1F</code><span class="sig-paren">(</span><em>var</em>, <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.uset1F" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">uset1F</code><span class="sig-paren">(</span><em class="sig-param">var</em>, <em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.uset1F" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.shader.ShaderProgram.uset1I">
-<code class="descname">uset1I</code><span class="sig-paren">(</span><em>var</em>, <em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.uset1I" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">uset1I</code><span class="sig-paren">(</span><em class="sig-param">var</em>, <em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.uset1I" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.shader.ShaderProgram.uset2F">
-<code class="descname">uset2F</code><span class="sig-paren">(</span><em>var</em>, <em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.uset2F" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">uset2F</code><span class="sig-paren">(</span><em class="sig-param">var</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.uset2F" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.shader.ShaderProgram.uset2I">
-<code class="descname">uset2I</code><span class="sig-paren">(</span><em>var</em>, <em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.uset2I" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">uset2I</code><span class="sig-paren">(</span><em class="sig-param">var</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.uset2I" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.shader.ShaderProgram.uset3F">
-<code class="descname">uset3F</code><span class="sig-paren">(</span><em>var</em>, <em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.uset3F" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">uset3F</code><span class="sig-paren">(</span><em class="sig-param">var</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">z</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.uset3F" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.shader.ShaderProgram.uset3I">
-<code class="descname">uset3I</code><span class="sig-paren">(</span><em>var</em>, <em>x</em>, <em>y</em>, <em>z</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.uset3I" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">uset3I</code><span class="sig-paren">(</span><em class="sig-param">var</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">z</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.uset3I" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.shader.ShaderProgram.uset4F">
-<code class="descname">uset4F</code><span class="sig-paren">(</span><em>var</em>, <em>x</em>, <em>y</em>, <em>z</em>, <em>w</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.uset4F" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">uset4F</code><span class="sig-paren">(</span><em class="sig-param">var</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">z</em>, <em class="sig-param">w</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.uset4F" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.shader.ShaderProgram.usetM4F">
-<code class="descname">usetM4F</code><span class="sig-paren">(</span><em>var</em>, <em>matrix</em>, <em>transpose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.usetM4F" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">usetM4F</code><span class="sig-paren">(</span><em class="sig-param">var</em>, <em class="sig-param">matrix</em>, <em class="sig-param">transpose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.usetM4F" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.shader.ShaderProgram.usetTex">
-<code class="descname">usetTex</code><span class="sig-paren">(</span><em>var</em>, <em>unit</em>, <em>target</em>, <em>tx</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.usetTex" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">usetTex</code><span class="sig-paren">(</span><em class="sig-param">var</em>, <em class="sig-param">unit</em>, <em class="sig-param">target</em>, <em class="sig-param">tx</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.shader.ShaderProgram.usetTex" title="Permalink to this definition">¶</a></dt>
 <dd><p>var : name of variable to write
 unit : texture unit
 target : target for glBindTexture
@@ -203,13 +194,13 @@ tx : texture ID</p>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -236,8 +227,8 @@ tx : texture ID</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

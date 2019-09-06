@@ -1,7 +1,7 @@
-cocos\.audio\.effect module
-===========================
+cocos.audio.effect module
+=========================
 
 .. automodule:: cocos.audio.effect
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

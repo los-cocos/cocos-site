@@ -1,32 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>cocos.layer.util_layers module &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>cocos.layer.util_layers module &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.scenes package" href="cocos.scenes.html" />
     <link rel="prev" title="cocos.layer.scrolling module" href="cocos.layer.scrolling.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -58,88 +49,78 @@
 <p>Special purpose layers</p>
 <dl class="class">
 <dt id="cocos.layer.util_layers.ColorLayer">
-<em class="property">class </em><code class="descname">ColorLayer</code><span class="sig-paren">(</span><em>r</em>, <em>g</em>, <em>b</em>, <em>a</em>, <em>width=None</em>, <em>height=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.util_layers.ColorLayer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="cocos.layer.base_layers.html#cocos.layer.base_layers.Layer" title="cocos.layer.base_layers.Layer"><code class="xref py py-class docutils literal"><span class="pre">cocos.layer.base_layers.Layer</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">ColorLayer</code><span class="sig-paren">(</span><em class="sig-param">r</em>, <em class="sig-param">g</em>, <em class="sig-param">b</em>, <em class="sig-param">a</em>, <em class="sig-param">width=None</em>, <em class="sig-param">height=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.util_layers.ColorLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.layer.base_layers.html#cocos.layer.base_layers.Layer" title="cocos.layer.base_layers.Layer"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.layer.base_layers.Layer</span></code></a></p>
 <p>Creates a layer of a given color.
 The color shall be specified in the format (r, g, b, a).</p>
 <p>For example, to create a green layer:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">layer</span> <span class="o">=</span> <span class="n">ColorLayer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">layer</span> <span class="o">=</span> <span class="n">ColorLayer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The size and position can be changed, for example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">layer</span> <span class="o">=</span> <span class="n">ColorLayer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">layer</span> <span class="o">=</span> <span class="n">ColorLayer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
 <span class="n">layer</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>r</strong> (<em>int</em>) – red component</li>
-<li><strong>g</strong> (<em>int</em>) – green component</li>
-<li><strong>b</strong> (<em>int</em>) – blue component</li>
-<li><strong>a</strong> (<em>int</em>) – alpha component</li>
-<li><strong>width</strong> (<em>int</em>) – width of the color layer [Optional]</li>
-<li><strong>height</strong> (<em>int</em>) – height of the color layer [Optional]</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>r</strong> (<em>int</em>) – red component</p></li>
+<li><p><strong>g</strong> (<em>int</em>) – green component</p></li>
+<li><p><strong>b</strong> (<em>int</em>) – blue component</p></li>
+<li><p><strong>a</strong> (<em>int</em>) – alpha component</p></li>
+<li><p><strong>width</strong> (<em>int</em>) – width of the color layer [Optional]</p></li>
+<li><p><strong>height</strong> (<em>int</em>) – height of the color layer [Optional]</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <dl class="method">
 <dt id="cocos.layer.util_layers.ColorLayer.draw">
-<code class="descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.util_layers.ColorLayer.draw" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.util_layers.ColorLayer.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draws itself.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.util_layers.ColorLayer.on_enter">
-<code class="descname">on_enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.util_layers.ColorLayer.on_enter" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">on_enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.util_layers.ColorLayer.on_enter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called every time just before the node enters the stage.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.util_layers.ColorLayer.on_exit">
-<code class="descname">on_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.util_layers.ColorLayer.on_exit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">on_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.util_layers.ColorLayer.on_exit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called every time just before the node exits the stage.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="cocos.layer.util_layers.ColorLayer.color">
-<code class="descname">color</code><a class="headerlink" href="#cocos.layer.util_layers.ColorLayer.color" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">color</code><a class="headerlink" href="#cocos.layer.util_layers.ColorLayer.color" title="Permalink to this definition">¶</a></dt>
 <dd><p>Blend color.</p>
 <p>This property sets the color of the layer’s vertices. This allows the
 layer to be drawn with a color tint.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>color</strong> (<em>tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>, </em><em>int</em><em>]</em>) – The color is specified as an RGB tuple
-of integers <code class="docutils literal"><span class="pre">(red,</span> <span class="pre">green,</span> <span class="pre">blue)</span></code>.
-Each color component must be in the range 0 (dark) to 255 (saturated).</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>color</strong> (<em>tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>, </em><em>int</em><em>]</em>) – The color is specified as an RGB tuple
+of integers <code class="docutils literal notranslate"><span class="pre">(red,</span> <span class="pre">green,</span> <span class="pre">blue)</span></code>.
+Each color component must be in the range 0 (dark) to 255 (saturated).</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="cocos.layer.util_layers.ColorLayer.opacity">
-<code class="descname">opacity</code><a class="headerlink" href="#cocos.layer.util_layers.ColorLayer.opacity" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">opacity</code><a class="headerlink" href="#cocos.layer.util_layers.ColorLayer.opacity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Blend opacity.</p>
 <p>This property sets the alpha component of the colour of the layer’s
 vertices.  This allows the layer to be drawn with fractional opacity,
 blending with the background.</p>
 <p>An opacity of 255 (the default) has no effect.  An opacity of 128 will
 make the ColorLayer appear translucent.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>opacity</strong> (<em>int</em>) – the opacity ranging from 0 (transparent) to 255 (opaque).</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>opacity</strong> (<em>int</em>) – the opacity ranging from 0 (transparent) to 255 (opaque).</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -166,13 +147,13 @@ make the ColorLayer appear translucent.</p>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -200,8 +181,8 @@ make the ColorLayer appear translucent.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

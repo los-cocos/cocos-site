@@ -1,32 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Map Colliders &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>Map Colliders &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="CocosNodes" href="cocosnodes.html" />
     <link rel="prev" title="Tiled maps" href="tiled_map.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -58,46 +49,43 @@
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>If a scene has an actor moving, we may update its position from frame to frame
 using the discrete approximation:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">velocity</span> <span class="o">=</span> <span class="n">velocity</span> <span class="o">+</span> <span class="n">acceleration</span> <span class="o">*</span> <span class="n">dt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">velocity</span> <span class="o">=</span> <span class="n">velocity</span> <span class="o">+</span> <span class="n">acceleration</span> <span class="o">*</span> <span class="n">dt</span>
 <span class="n">position</span> <span class="o">=</span> <span class="n">position</span> <span class="o">+</span> <span class="n">velocity</span> <span class="o">*</span> <span class="n">dt</span>
 </pre></div>
 </div>
 <p>That’s fine when the actor does not find an obstacle, like a wall.</p>
-<dl class="docutils">
-<dt>If there is an obstacle, we usually want to</dt>
-<dd><ul class="first last simple">
-<li>stop the position change so the actor touches the obstacle but does
-not overlap it.</li>
-<li>do something sensible with the velocity (stop ?, bounce ?).</li>
-<li>maybe do some action based on which obstacle (spikes ?, glass ?).</li>
+<dl class="simple">
+<dt>If there is an obstacle, we usually want to</dt><dd><ul class="simple">
+<li><p>stop the position change so the actor touches the obstacle but does
+not overlap it.</p></li>
+<li><p>do something sensible with the velocity (stop ?, bounce ?).</p></li>
+<li><p>maybe do some action based on which obstacle (spikes ?, glass ?).</p></li>
 </ul>
 </dd>
 </dl>
 <p>To do this we can represent the actor and the obstacles as rects with sides
 parallel to the axis, and do the calculations.</p>
-<dl class="docutils">
-<dt>This is what <cite>map colliders</cite> do given:</dt>
-<dd><ul class="first last simple">
-<li>the actor velocity, rect before and tentative rect after</li>
-<li>a <cite>map layer</cite> that contains a number of obstacles</li>
+<dl class="simple">
+<dt>This is what <cite>map colliders</cite> do given:</dt><dd><ul class="simple">
+<li><p>the actor velocity, rect before and tentative rect after</p></li>
+<li><p>a <cite>map layer</cite> that contains a number of obstacles</p></li>
 </ul>
 </dd>
-<dt>it will</dt>
-<dd><ul class="first last simple">
-<li>Properly update the velocity and the position.</li>
-<li>Call appropriate methods when it detects the actor bumped into an
-obstacle.</li>
-<li>Tell if any collision in the x and / or y axis happened.</li>
+<dt>it will</dt><dd><ul class="simple">
+<li><p>Properly update the velocity and the position.</p></li>
+<li><p>Call appropriate methods when it detects the actor bumped into an
+obstacle.</p></li>
+<li><p>Tell if any collision in the x and / or y axis happened.</p></li>
 </ul>
 </dd>
 </dl>
 <p>While some <cite>mapcolliders</cite> are meant to be used in tiled maps (
-<a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapCollider" title="cocos.mapcolliders.RectMapCollider"><code class="xref py py-class docutils literal"><span class="pre">RectMapCollider</span></code></a>, <a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapWithPropsCollider" title="cocos.mapcolliders.RectMapWithPropsCollider"><code class="xref py py-class docutils literal"><span class="pre">RectMapWithPropsCollider</span></code></a>),
-others (<a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.TmxObjectMapCollider" title="cocos.mapcolliders.TmxObjectMapCollider"><code class="xref py py-class docutils literal"><span class="pre">TmxObjectMapCollider</span></code></a>) can be used with no tiles at all.</p>
+<a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapCollider" title="cocos.mapcolliders.RectMapCollider"><code class="xref py py-class docutils literal notranslate"><span class="pre">RectMapCollider</span></code></a>, <a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapWithPropsCollider" title="cocos.mapcolliders.RectMapWithPropsCollider"><code class="xref py py-class docutils literal notranslate"><span class="pre">RectMapWithPropsCollider</span></code></a>),
+others (<a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.TmxObjectMapCollider" title="cocos.mapcolliders.TmxObjectMapCollider"><code class="xref py py-class docutils literal notranslate"><span class="pre">TmxObjectMapCollider</span></code></a>) can be used with no tiles at all.</p>
 <div class="section" id="properly-update-the-velocity-and-the-position">
 <h3>Properly update the velocity and the position<a class="headerlink" href="#properly-update-the-velocity-and-the-position" title="Permalink to this headline">¶</a></h3>
 <p>The position and the velocity update can be written as:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">vx</span><span class="p">,</span> <span class="n">vy</span> <span class="o">=</span> <span class="n">actor</span><span class="o">.</span><span class="n">velocity</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vx</span><span class="p">,</span> <span class="n">vy</span> <span class="o">=</span> <span class="n">actor</span><span class="o">.</span><span class="n">velocity</span>
 
 <span class="c1"># using the player controls, gravity and other acceleration influences</span>
 <span class="c1"># update the velocity</span>
@@ -129,36 +117,36 @@ others (<a class="reference internal" href="../api/cocos.mapcolliders.html#cocos
 </pre></div>
 </div>
 <p>How velocity changes in a collision is handled by method
-<a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapCollider.on_bump_handler" title="cocos.mapcolliders.RectMapCollider.on_bump_handler"><code class="xref py py-attr docutils literal"><span class="pre">on_bump_handler()</span></code></a>; it can be set to
+<a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapCollider.on_bump_handler" title="cocos.mapcolliders.RectMapCollider.on_bump_handler"><code class="xref py py-attr docutils literal notranslate"><span class="pre">on_bump_handler()</span></code></a>; it can be set to
 custom code or to one of the stock handlers:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapCollider.on_bump_bounce" title="cocos.mapcolliders.RectMapCollider.on_bump_bounce"><code class="xref py py-meth docutils literal"><span class="pre">on_bump_bounce()</span></code></a>: Bounces when
-a wall is touched.</li>
-<li><a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapCollider.on_bump_stick" title="cocos.mapcolliders.RectMapCollider.on_bump_stick"><code class="xref py py-meth docutils literal"><span class="pre">on_bump_stick()</span></code></a>: Stops all
-movement when any wall is touched. (sticky bomb…).</li>
-<li><a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapCollider.on_bump_slide" title="cocos.mapcolliders.RectMapCollider.on_bump_slide"><code class="xref py py-meth docutils literal"><span class="pre">on_bump_slide()</span></code></a>: Blocks movement
-only in the axis that touched a wall. (player…).</li>
+<li><p><a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapCollider.on_bump_bounce" title="cocos.mapcolliders.RectMapCollider.on_bump_bounce"><code class="xref py py-meth docutils literal notranslate"><span class="pre">on_bump_bounce()</span></code></a>: Bounces when
+a wall is touched.</p></li>
+<li><p><a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapCollider.on_bump_stick" title="cocos.mapcolliders.RectMapCollider.on_bump_stick"><code class="xref py py-meth docutils literal notranslate"><span class="pre">on_bump_stick()</span></code></a>: Stops all
+movement when any wall is touched. (sticky bomb…).</p></li>
+<li><p><a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapCollider.on_bump_slide" title="cocos.mapcolliders.RectMapCollider.on_bump_slide"><code class="xref py py-meth docutils literal notranslate"><span class="pre">on_bump_slide()</span></code></a>: Blocks movement
+only in the axis that touched a wall. (player…).</p></li>
 </ul>
 </div></blockquote>
 <p>For convenience, a stock handler can be specified at instantiation time with
-the <code class="docutils literal"><span class="pre">velocity_on_bump</span></code> parameter.</p>
+the <code class="docutils literal notranslate"><span class="pre">velocity_on_bump</span></code> parameter.</p>
 </div>
 <div class="section" id="call-appropriate-methods-when-it-detects-actor-bumped-into-an-obstacle">
 <h3>Call appropriate methods when it detects actor bumped into an obstacle<a class="headerlink" href="#call-appropriate-methods-when-it-detects-actor-bumped-into-an-obstacle" title="Permalink to this headline">¶</a></h3>
-<p>When <code class="docutils literal"><span class="pre">mapcollider.collide_map</span></code> detects that actor collides with obj
+<p>When <code class="docutils literal notranslate"><span class="pre">mapcollider.collide_map</span></code> detects that actor collides with obj
 ‘someobj’ from side ‘someside’, it will call
-<code class="docutils literal"><span class="pre">mapcollider.collide_&lt;someside&gt;(someobj)</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">mapcollider.collide_&lt;someside&gt;(someobj)</span></code>.</p>
 <p>There ‘someside’ is one of ‘left’, ‘right’, ‘top’ and ‘bottom’.</p>
 <p>This provides an opportunity to do things based on which object the actor
 touched, like ‘spike’ ? -&gt; init the spikes animation and kill the actor.</p>
-<p>Note that each <code class="docutils literal"><span class="pre">mapcollider.collide_*</span></code> can receive multiple calls in the
-same <code class="docutils literal"><span class="pre">mapcollider.collide_map</span></code> call.</p>
+<p>Note that each <code class="docutils literal notranslate"><span class="pre">mapcollider.collide_*</span></code> can receive multiple calls in the
+same <code class="docutils literal notranslate"><span class="pre">mapcollider.collide_map</span></code> call.</p>
 </div>
 <div class="section" id="tell-if-any-collision-in-the-x-and-or-y-axis-happened">
 <h3>Tell if any collision in the x and / or y axis happened<a class="headerlink" href="#tell-if-any-collision-in-the-x-and-or-y-axis-happened" title="Permalink to this headline">¶</a></h3>
-<p>After <code class="docutils literal"><span class="pre">collide_map</span></code> returns, the flags <code class="docutils literal"><span class="pre">mapcollider.bumped_x</span></code> and
-<code class="docutils literal"><span class="pre">mapcollider.bumped_y</span></code> tells if there has been any collisions along the
+<p>After <code class="docutils literal notranslate"><span class="pre">collide_map</span></code> returns, the flags <code class="docutils literal notranslate"><span class="pre">mapcollider.bumped_x</span></code> and
+<code class="docutils literal notranslate"><span class="pre">mapcollider.bumped_y</span></code> tells if there has been any collisions along the
 respective axis.</p>
 <p>This can be handy to flip the actor’s animation direction, by example from
 ‘walk_left’ to ‘walk_right’.</p>
@@ -169,13 +157,13 @@ respective axis.</p>
 <p>Currently they are three map colliders variants:</p>
 <div class="section" id="rectmapcollider">
 <h3>RectMapCollider<a class="headerlink" href="#rectmapcollider" title="Permalink to this headline">¶</a></h3>
-<p>Obstacles are rectangular tiles grouped into a <a class="reference internal" href="../api/cocos.tiles.html#cocos.tiles.RectMapLayer" title="cocos.tiles.RectMapLayer"><code class="xref py py-class docutils literal"><span class="pre">RectMapLayer</span></code></a>; all non
+<p>Obstacles are rectangular tiles grouped into a <a class="reference internal" href="../api/cocos.tiles.html#cocos.tiles.RectMapLayer" title="cocos.tiles.RectMapLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">RectMapLayer</span></code></a>; all non
 empty cells are deemed solid.</p>
-<p><a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapCollider" title="cocos.mapcolliders.RectMapCollider"><code class="xref py py-class docutils literal"><span class="pre">implementation</span></code></a></p>
+<p><a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapCollider" title="cocos.mapcolliders.RectMapCollider"><code class="xref py py-class docutils literal notranslate"><span class="pre">implementation</span></code></a></p>
 </div>
 <div class="section" id="rectmapwithpropscollider">
 <h3>RectMapWithPropsCollider<a class="headerlink" href="#rectmapwithpropscollider" title="Permalink to this headline">¶</a></h3>
-<p>Obstacles are rectangular tiles grouped into a <a class="reference internal" href="../api/cocos.tiles.html#cocos.tiles.RectMapLayer" title="cocos.tiles.RectMapLayer"><code class="xref py py-class docutils literal"><span class="pre">RectMapLayer</span></code></a>, cells
+<p>Obstacles are rectangular tiles grouped into a <a class="reference internal" href="../api/cocos.tiles.html#cocos.tiles.RectMapLayer" title="cocos.tiles.RectMapLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">RectMapLayer</span></code></a>, cells
 use properties “left”, “right”, “top” and “bottom” to signal which side(s)
 block movements.</p>
 <p>A solid block would probably have all four sides set; a platform can set
@@ -185,14 +173,14 @@ themselves, rather than on individual cells. Of course for the cell which
 is the entrance to a secret area you could override a wall’s properties to
 set the side to False and allow ingress.</p>
 <p>See <a class="reference internal" href="tiled_map.html#cell-properties-label"><span class="std std-ref">Map, Cell and Tile Properties</span></a> for information about properties.</p>
-<p><a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapWithPropsCollider" title="cocos.mapcolliders.RectMapWithPropsCollider"><code class="xref py py-class docutils literal"><span class="pre">implementation</span></code></a></p>
+<p><a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapWithPropsCollider" title="cocos.mapcolliders.RectMapWithPropsCollider"><code class="xref py py-class docutils literal notranslate"><span class="pre">implementation</span></code></a></p>
 </div>
 <div class="section" id="tmxobjectmapcollider">
 <h3>TmxObjectMapCollider<a class="headerlink" href="#tmxobjectmapcollider" title="Permalink to this headline">¶</a></h3>
-<p>Obstacles are <code class="xref py py-class docutils literal"><span class="pre">TmxObjects</span></code> grouped into a <a class="reference internal" href="../api/cocos.tiles.html#cocos.tiles.TmxObjectLayer" title="cocos.tiles.TmxObjectLayer"><code class="xref py py-class docutils literal"><span class="pre">TmxObjectLayer</span></code></a>,
+<p>Obstacles are <code class="xref py py-class docutils literal notranslate"><span class="pre">TmxObjects</span></code> grouped into a <a class="reference internal" href="../api/cocos.tiles.html#cocos.tiles.TmxObjectLayer" title="cocos.tiles.TmxObjectLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">TmxObjectLayer</span></code></a>,
 each object is meant to block movement.</p>
 <p>A common use case is to do moving platforms in a platform game.</p>
-<p><a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.TmxObjectMapCollider" title="cocos.mapcolliders.TmxObjectMapCollider"><code class="xref py py-class docutils literal"><span class="pre">implementation</span></code></a></p>
+<p><a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.TmxObjectMapCollider" title="cocos.mapcolliders.TmxObjectMapCollider"><code class="xref py py-class docutils literal notranslate"><span class="pre">implementation</span></code></a></p>
 </div>
 </div>
 <div class="section" id="how-to-use">
@@ -201,32 +189,31 @@ each object is meant to block movement.</p>
 actor class:</p>
 <blockquote>
 <div><ul class="simple">
-<li>as a component, essentially passing (mapcollider, maplayer) in
-the actor’s __init__ method.</li>
-<li>mixin style, by using <a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapCollider" title="cocos.mapcolliders.RectMapCollider"><code class="xref py py-class docutils literal"><span class="pre">RectMapCollider</span></code></a> or a
-subclass as a secondary base class for the actor.</li>
+<li><p>as a component, essentially passing (mapcollider, maplayer) in
+the actor’s __init__ method.</p></li>
+<li><p>mixin style, by using <a class="reference internal" href="../api/cocos.mapcolliders.html#cocos.mapcolliders.RectMapCollider" title="cocos.mapcolliders.RectMapCollider"><code class="xref py py-class docutils literal notranslate"><span class="pre">RectMapCollider</span></code></a> or a
+subclass as a secondary base class for the actor.</p></li>
 </ul>
 </div></blockquote>
 <p>The component way is more decoupled while the Mixin style is more powerful
 because the collision code will have access to the entire actor through its
-<code class="docutils literal"><span class="pre">self</span></code> attribute.</p>
+<code class="docutils literal notranslate"><span class="pre">self</span></code> attribute.</p>
 <p>To have a working instance, the behavior of the velocity in a collision must
-be defined, and that’s the job of the method <code class="docutils literal"><span class="pre">on_bump_handler</span></code></p>
+be defined, and that’s the job of the method <code class="docutils literal notranslate"><span class="pre">on_bump_handler</span></code></p>
 <blockquote>
 <div><ul>
-<li><p class="first">if one of the stock <code class="docutils literal"><span class="pre">on_bump_&lt;variant&gt;</span></code> suits the requirements,
+<li><p>if one of the stock <code class="docutils literal notranslate"><span class="pre">on_bump_&lt;variant&gt;</span></code> suits the requirements,
 suffices to write:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mapcollider</span><span class="o">.</span><span class="n">on_bump_handler</span> <span class="o">=</span> <span class="n">mapcollider</span><span class="o">.</span><span class="n">on_bump_</span><span class="o">&lt;</span><span class="n">desired</span> <span class="n">variant</span><span class="o">&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapcollider</span><span class="o">.</span><span class="n">on_bump_handler</span> <span class="o">=</span> <span class="n">mapcollider</span><span class="o">.</span><span class="n">on_bump_</span><span class="o">&lt;</span><span class="n">desired</span> <span class="n">variant</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>or passing a selector at instantiation time:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">mapcollider</span> <span class="o">=</span> <span class="n">MapCollider</span><span class="p">(</span><span class="o">&lt;</span><span class="n">desired</span> <span class="n">variant</span><span class="o">&gt;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mapcollider</span> <span class="o">=</span> <span class="n">MapCollider</span><span class="p">(</span><span class="o">&lt;</span><span class="n">desired</span> <span class="n">variant</span><span class="o">&gt;</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
-<li><p class="first">for custom behavior define <code class="docutils literal"><span class="pre">on_bump_handler</span></code> in a subclass and
-instantiate it.</p>
-</li>
+<li><p>for custom behavior define <code class="docutils literal notranslate"><span class="pre">on_bump_handler</span></code> in a subclass and
+instantiate it.</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -238,7 +225,7 @@ instantiate it.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Map Colliders</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a><ul>
@@ -272,13 +259,13 @@ instantiate it.</p>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -305,8 +292,8 @@ instantiate it.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

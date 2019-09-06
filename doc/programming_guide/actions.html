@@ -1,32 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Actions, Transformations and Effects &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>Actions, Transformations and Effects &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Scenes &amp; Transitions" href="transitions.html" />
     <link rel="prev" title="Basic Concepts" href="basic_concepts.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -56,64 +47,65 @@
 <h1>Actions, Transformations and Effects<a class="headerlink" href="#actions-transformations-and-effects" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#actions" id="id1">Actions</a></li>
-<li><a class="reference internal" href="#basic-actions" id="id2">Basic actions</a></li>
-<li><a class="reference internal" href="#special-actions" id="id3">Special Actions</a></li>
-<li><a class="reference internal" href="#composition-and-modification-of-actions" id="id4">Composition and modification of actions</a></li>
-<li><a class="reference internal" href="#effects" id="id5">Effects</a><ul>
-<li><a class="reference internal" href="#how-they-work" id="id6">How they work</a></li>
-<li><a class="reference internal" href="#d-actions" id="id7">3D actions</a></li>
-<li><a class="reference internal" href="#index-of-grid-effects" id="id8">Index of grid effects</a></li>
-<li><a class="reference internal" href="#examples" id="id9">Examples</a></li>
+<li><p><a class="reference internal" href="#actions" id="id1">Actions</a></p></li>
+<li><p><a class="reference internal" href="#basic-actions" id="id2">Basic actions</a></p></li>
+<li><p><a class="reference internal" href="#special-actions" id="id3">Special Actions</a></p></li>
+<li><p><a class="reference internal" href="#composition-and-modification-of-actions" id="id4">Composition and modification of actions</a></p></li>
+<li><p><a class="reference internal" href="#effects" id="id5">Effects</a></p>
+<ul>
+<li><p><a class="reference internal" href="#how-they-work" id="id6">How they work</a></p></li>
+<li><p><a class="reference internal" href="#d-actions" id="id7">3D actions</a></p></li>
+<li><p><a class="reference internal" href="#index-of-grid-effects" id="id8">Index of grid effects</a></p></li>
+<li><p><a class="reference internal" href="#examples" id="id9">Examples</a></p></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#creating-your-own-actions" id="id10">Creating your own actions</a><ul>
-<li><a class="reference internal" href="#basic-internals" id="id11">Basic Internals</a></li>
-<li><a class="reference internal" href="#instant-actions" id="id12">Instant Actions</a></li>
-<li><a class="reference internal" href="#interval-actions" id="id13">Interval Actions</a></li>
-<li><a class="reference internal" href="#grid-actions" id="id14">Grid Actions</a></li>
+<li><p><a class="reference internal" href="#creating-your-own-actions" id="id10">Creating your own actions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#basic-internals" id="id11">Basic Internals</a></p></li>
+<li><p><a class="reference internal" href="#instant-actions" id="id12">Instant Actions</a></p></li>
+<li><p><a class="reference internal" href="#interval-actions" id="id13">Interval Actions</a></p></li>
+<li><p><a class="reference internal" href="#grid-actions" id="id14">Grid Actions</a></p></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="actions">
 <h2><a class="toc-backref" href="#id1">Actions</a><a class="headerlink" href="#actions" title="Permalink to this headline">¶</a></h2>
-<p>Actions are like orders given to any <a class="reference internal" href="../api/cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal"><span class="pre">CocosNode</span></code></a> object.</p>
+<p>Actions are like orders given to any <a class="reference internal" href="../api/cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">CocosNode</span></code></a> object.</p>
 <p>These actions usually modify some the object’s attributes like <cite>position</cite>,
 <cite>rotation</cite>, <cite>scale</cite>, etc.</p>
-<p>For example, the <code class="xref py py-class docutils literal"><span class="pre">MoveBy</span></code> action modifies the <cite>position</cite> attribute along a period of time</p>
+<p>For example, the <code class="xref py py-class docutils literal notranslate"><span class="pre">MoveBy</span></code> action modifies the <cite>position</cite> attribute along a period of time</p>
 <p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Move a sprite 50 pixels to the right, and 100 pixel to the top in 2 seconds.</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Move a sprite 50 pixels to the right, and 100 pixel to the top in 2 seconds.</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">MoveBy</span><span class="p">(</span> <span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p>The actions behavior related to time classifies them in three groups:</p>
 <blockquote>
-<div><p><a class="reference internal" href="../api/cocos.actions.base_actions.html#cocos.actions.base_actions.InstantAction" title="cocos.actions.base_actions.InstantAction"><code class="xref py py-class docutils literal"><span class="pre">InstantAction</span></code></a> : the change is applied in one step
+<div><p><a class="reference internal" href="../api/cocos.actions.base_actions.html#cocos.actions.base_actions.InstantAction" title="cocos.actions.base_actions.InstantAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">InstantAction</span></code></a> : the change is applied in one step
 Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># instantly move the sprite to the position (120, 330)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># instantly move the sprite to the position (120, 330)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">Place</span><span class="p">(</span> <span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">330</span><span class="p">)</span> <span class="p">))</span>
 </pre></div>
 </div>
-<p><a class="reference internal" href="../api/cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">IntervalAction</span></code></a> : the change is applied in many steps along a time duration that is known at the action instantiation. Example, the above mentioned MoveBy</p>
-<p><a class="reference internal" href="../api/cocos.actions.base_actions.html#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><code class="xref py py-class docutils literal"><span class="pre">Action</span></code></a> : the change is applied in many steps along the time, but the duration is not know at instantiation time or it is ‘forever’</p>
+<p><a class="reference internal" href="../api/cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntervalAction</span></code></a> : the change is applied in many steps along a time duration that is known at the action instantiation. Example, the above mentioned MoveBy</p>
+<p><a class="reference internal" href="../api/cocos.actions.base_actions.html#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><code class="xref py py-class docutils literal notranslate"><span class="pre">Action</span></code></a> : the change is applied in many steps along the time, but the duration is not know at instantiation time or it is ‘forever’</p>
 </div></blockquote>
 <p>The IntervalAction actions have some interesting properties:</p>
 <blockquote>
 <div><ul>
-<li><p class="first">The timeflow can be modified using the time-altered actions</p>
+<li><p>The timeflow can be modified using the time-altered actions</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.Accelerate" title="cocos.actions.interval_actions.Accelerate"><code class="xref py py-class docutils literal"><span class="pre">Accelerate</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.AccelDeccel" title="cocos.actions.interval_actions.AccelDeccel"><code class="xref py py-class docutils literal"><span class="pre">AccelDeccel</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.Speed" title="cocos.actions.interval_actions.Speed"><code class="xref py py-class docutils literal"><span class="pre">Speed</span></code></a></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.Accelerate" title="cocos.actions.interval_actions.Accelerate"><code class="xref py py-class docutils literal notranslate"><span class="pre">Accelerate</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.AccelDeccel" title="cocos.actions.interval_actions.AccelDeccel"><code class="xref py py-class docutils literal notranslate"><span class="pre">AccelDeccel</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.Speed" title="cocos.actions.interval_actions.Speed"><code class="xref py py-class docutils literal notranslate"><span class="pre">Speed</span></code></a></p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">All the relative actions (the ones ending in ‘By’) and some
+<li><p>All the relative actions (the ones ending in ‘By’) and some
 absolute actions (the ones ending in ‘To’)  have a <cite>Reverse</cite> action
-that executes the action in the opposite direction.</p>
-</li>
+that executes the action in the opposite direction.</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -122,81 +114,77 @@ that executes the action in the opposite direction.</p>
 <p>Basic actions are the ones that modifies basic attributes like:</p>
 <blockquote>
 <div><ul>
-<li><p class="first">position</p>
+<li><p>position</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.MoveBy" title="cocos.actions.interval_actions.MoveBy"><code class="xref py py-class docutils literal"><span class="pre">MoveBy</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.MoveTo" title="cocos.actions.interval_actions.MoveTo"><code class="xref py py-class docutils literal"><span class="pre">MoveTo</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.JumpBy" title="cocos.actions.interval_actions.JumpBy"><code class="xref py py-class docutils literal"><span class="pre">JumpBy</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.JumpTo" title="cocos.actions.interval_actions.JumpTo"><code class="xref py py-class docutils literal"><span class="pre">JumpTo</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.Bezier" title="cocos.actions.interval_actions.Bezier"><code class="xref py py-class docutils literal"><span class="pre">Bezier</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.instant_actions.html#cocos.actions.instant_actions.Place" title="cocos.actions.instant_actions.Place"><code class="xref py py-class docutils literal"><span class="pre">Place</span></code></a></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.MoveBy" title="cocos.actions.interval_actions.MoveBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoveBy</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.MoveTo" title="cocos.actions.interval_actions.MoveTo"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoveTo</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.JumpBy" title="cocos.actions.interval_actions.JumpBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">JumpBy</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.JumpTo" title="cocos.actions.interval_actions.JumpTo"><code class="xref py py-class docutils literal notranslate"><span class="pre">JumpTo</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.Bezier" title="cocos.actions.interval_actions.Bezier"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bezier</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.instant_actions.html#cocos.actions.instant_actions.Place" title="cocos.actions.instant_actions.Place"><code class="xref py py-class docutils literal notranslate"><span class="pre">Place</span></code></a></p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">scale</p>
+<li><p>scale</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.ScaleBy" title="cocos.actions.interval_actions.ScaleBy"><code class="xref py py-class docutils literal"><span class="pre">ScaleBy</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.ScaleTo" title="cocos.actions.interval_actions.ScaleTo"><code class="xref py py-class docutils literal"><span class="pre">ScaleTo</span></code></a></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.ScaleBy" title="cocos.actions.interval_actions.ScaleBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScaleBy</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.ScaleTo" title="cocos.actions.interval_actions.ScaleTo"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScaleTo</span></code></a></p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">rotation</p>
+<li><p>rotation</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.RotateBy" title="cocos.actions.interval_actions.RotateBy"><code class="xref py py-class docutils literal"><span class="pre">RotateBy</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.RotateTo" title="cocos.actions.interval_actions.RotateTo"><code class="xref py py-class docutils literal"><span class="pre">RotateTo</span></code></a></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.RotateBy" title="cocos.actions.interval_actions.RotateBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">RotateBy</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.RotateTo" title="cocos.actions.interval_actions.RotateTo"><code class="xref py py-class docutils literal notranslate"><span class="pre">RotateTo</span></code></a></p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">visible</p>
+<li><p>visible</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="../api/cocos.actions.instant_actions.html#cocos.actions.instant_actions.Show" title="cocos.actions.instant_actions.Show"><code class="xref py py-class docutils literal"><span class="pre">Show</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.instant_actions.html#cocos.actions.instant_actions.Hide" title="cocos.actions.instant_actions.Hide"><code class="xref py py-class docutils literal"><span class="pre">Hide</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.Blink" title="cocos.actions.interval_actions.Blink"><code class="xref py py-class docutils literal"><span class="pre">Blink</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.instant_actions.html#cocos.actions.instant_actions.ToggleVisibility" title="cocos.actions.instant_actions.ToggleVisibility"><code class="xref py py-class docutils literal"><span class="pre">ToggleVisibility</span></code></a></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.instant_actions.html#cocos.actions.instant_actions.Show" title="cocos.actions.instant_actions.Show"><code class="xref py py-class docutils literal notranslate"><span class="pre">Show</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.instant_actions.html#cocos.actions.instant_actions.Hide" title="cocos.actions.instant_actions.Hide"><code class="xref py py-class docutils literal notranslate"><span class="pre">Hide</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.Blink" title="cocos.actions.interval_actions.Blink"><code class="xref py py-class docutils literal notranslate"><span class="pre">Blink</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.instant_actions.html#cocos.actions.instant_actions.ToggleVisibility" title="cocos.actions.instant_actions.ToggleVisibility"><code class="xref py py-class docutils literal notranslate"><span class="pre">ToggleVisibility</span></code></a></p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><p class="first">opacity</p>
+<li><p>opacity</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.FadeIn" title="cocos.actions.interval_actions.FadeIn"><code class="xref py py-class docutils literal"><span class="pre">FadeIn</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.FadeOut" title="cocos.actions.interval_actions.FadeOut"><code class="xref py py-class docutils literal"><span class="pre">FadeOut</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.FadeTo" title="cocos.actions.interval_actions.FadeTo"><code class="xref py py-class docutils literal"><span class="pre">FadeTo</span></code></a></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.FadeIn" title="cocos.actions.interval_actions.FadeIn"><code class="xref py py-class docutils literal notranslate"><span class="pre">FadeIn</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.FadeOut" title="cocos.actions.interval_actions.FadeOut"><code class="xref py py-class docutils literal notranslate"><span class="pre">FadeOut</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.FadeTo" title="cocos.actions.interval_actions.FadeTo"><code class="xref py py-class docutils literal notranslate"><span class="pre">FadeTo</span></code></a></p></li>
 </ul>
 </div></blockquote>
 </li>
 </ul>
 </div></blockquote>
-<p>Examples can be seen in <code class="docutils literal"><span class="pre">test/test_&lt;action</span> <span class="pre">name&gt;.py</span></code> , like <code class="docutils literal"><span class="pre">test/test_moveby.py</span></code> for MoveBy action</p>
+<p>Examples can be seen in <code class="docutils literal notranslate"><span class="pre">test/test_&lt;action</span> <span class="pre">name&gt;.py</span></code> , like <code class="docutils literal notranslate"><span class="pre">test/test_moveby.py</span></code> for MoveBy action</p>
 </div>
 <div class="section" id="special-actions">
 <h2><a class="toc-backref" href="#id3">Special Actions</a><a class="headerlink" href="#special-actions" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt><strong>time related:</strong> do nothing along a duration</dt>
-<dd><ul class="first last simple">
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.Delay" title="cocos.actions.interval_actions.Delay"><code class="xref py py-class docutils literal"><span class="pre">Delay</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.RandomDelay" title="cocos.actions.interval_actions.RandomDelay"><code class="xref py py-class docutils literal"><span class="pre">RandomDelay</span></code></a></li>
+<dl class="simple">
+<dt><strong>time related:</strong> do nothing along a duration</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.Delay" title="cocos.actions.interval_actions.Delay"><code class="xref py py-class docutils literal notranslate"><span class="pre">Delay</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.RandomDelay" title="cocos.actions.interval_actions.RandomDelay"><code class="xref py py-class docutils literal notranslate"><span class="pre">RandomDelay</span></code></a></p></li>
 </ul>
 </dd>
-<dt><strong>flow control:</strong>  call a specified function. Used usually in conjuction with the sequence operator to express the semantic ‘after action_1 call this function’</dt>
-<dd><ul class="first last simple">
-<li><a class="reference internal" href="../api/cocos.actions.instant_actions.html#cocos.actions.instant_actions.CallFunc" title="cocos.actions.instant_actions.CallFunc"><code class="xref py py-class docutils literal"><span class="pre">CallFunc</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.instant_actions.html#cocos.actions.instant_actions.CallFuncS" title="cocos.actions.instant_actions.CallFuncS"><code class="xref py py-class docutils literal"><span class="pre">CallFuncS</span></code></a></li>
+<dt><strong>flow control:</strong>  call a specified function. Used usually in conjuction with the sequence operator to express the semantic ‘after action_1 call this function’</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="../api/cocos.actions.instant_actions.html#cocos.actions.instant_actions.CallFunc" title="cocos.actions.instant_actions.CallFunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">CallFunc</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.instant_actions.html#cocos.actions.instant_actions.CallFuncS" title="cocos.actions.instant_actions.CallFuncS"><code class="xref py py-class docutils literal notranslate"><span class="pre">CallFuncS</span></code></a></p></li>
 </ul>
 </dd>
-<dt><strong>grid helpers:</strong> helpers to do grid actions</dt>
-<dd><ul class="first last simple">
-<li><a class="reference internal" href="../api/cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.StopGrid" title="cocos.actions.basegrid_actions.StopGrid"><code class="xref py py-class docutils literal"><span class="pre">StopGrid</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.ReuseGrid" title="cocos.actions.basegrid_actions.ReuseGrid"><code class="xref py py-class docutils literal"><span class="pre">ReuseGrid</span></code></a></li>
+<dt><strong>grid helpers:</strong> helpers to do grid actions</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="../api/cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.StopGrid" title="cocos.actions.basegrid_actions.StopGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">StopGrid</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.ReuseGrid" title="cocos.actions.basegrid_actions.ReuseGrid"><code class="xref py py-class docutils literal notranslate"><span class="pre">ReuseGrid</span></code></a></p></li>
 </ul>
 </dd>
-<dt><strong>camera related</strong></dt>
-<dd><ul class="first last simple">
-<li><a class="reference internal" href="../api/cocos.actions.camera_actions.html#cocos.actions.camera_actions.OrbitCamera" title="cocos.actions.camera_actions.OrbitCamera"><code class="xref py py-class docutils literal"><span class="pre">OrbitCamera</span></code></a></li>
+<dt><strong>camera related</strong></dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="../api/cocos.actions.camera_actions.html#cocos.actions.camera_actions.OrbitCamera" title="cocos.actions.camera_actions.OrbitCamera"><code class="xref py py-class docutils literal notranslate"><span class="pre">OrbitCamera</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
@@ -204,22 +192,22 @@ that executes the action in the opposite direction.</p>
 <div class="section" id="composition-and-modification-of-actions">
 <h2><a class="toc-backref" href="#id4">Composition and modification of actions</a><a class="headerlink" href="#composition-and-modification-of-actions" title="Permalink to this headline">¶</a></h2>
 <p>Cocos also provide some powerful operators to combine or modify actions, the
-more important being listed below. Runnable examples are named as <code class="docutils literal"><span class="pre">test_&lt;operator</span> <span class="pre">or</span> <span class="pre">modifier</span> <span class="pre">name&gt;.py</span></code></p>
+more important being listed below. Runnable examples are named as <code class="docutils literal notranslate"><span class="pre">test_&lt;operator</span> <span class="pre">or</span> <span class="pre">modifier</span> <span class="pre">name&gt;.py</span></code></p>
 <p><strong>sequence operator:</strong>   action_1 + action_2 -&gt; action_result</p>
 <p>where action_result performs by first doing all that action_1 would do and
 then perform all that action_2 would do</p>
 <p>Example use:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">move_2</span> <span class="o">=</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="mi">15</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">move_2</span> <span class="o">=</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="mi">15</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>When activated, move_2 will move the target first to (100, 100), it will
 arrive there 10 seconds after departure; then it will move to (200, 200),
-and will arrive there 10 seconds after having arrived to (100, 100)</p>
+and will arrive there 15 seconds after having arrived to (100, 100)</p>
 <p><strong>spawn operator:</strong>  action_1 | action_2 -&gt; action_result</p>
 <p>where action_result performs by doing what would do action_1 in parallel with
 what would perform action_2</p>
 <p>Example use:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">move_rotate</span> <span class="o">=</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span> <span class="o">|</span> <span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">move_rotate</span> <span class="o">=</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span> <span class="o">|</span> <span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>When activated, move_rotate will move the target from the position at the
@@ -229,7 +217,7 @@ be rotated 360 degrees</p>
 <p>Where n non negative integer, action_result would repeat n times in a
 row the same that action_1 would perform.</p>
 <p>Example use:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rotate_3</span> <span class="o">=</span> <span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rotate_3</span> <span class="o">=</span> <span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>
 </pre></div>
 </div>
 <p>When activated, rotate_3 will rotate target 3 times, spending 5 sec in each
@@ -237,24 +225,22 @@ turn.</p>
 <p><strong>repeat forever:</strong>  Repeat(action_1) -&gt; action_result</p>
 <p>where action_result plays action_1, then repeats action_1 each time that action_1 terminates</p>
 <p>Example use:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rotate_forever</span> <span class="o">=</span> <span class="n">Repeat</span><span class="p">(</span><span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rotate_forever</span> <span class="o">=</span> <span class="n">Repeat</span><span class="p">(</span><span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
 <p>When activated, the target will rotate forever, doing a revolution each 3 seconds</p>
-<dl class="docutils">
-<dt><strong>Time-flow modifiers</strong></dt>
-<dd><ul class="first last simple">
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.Accelerate" title="cocos.actions.interval_actions.Accelerate"><code class="xref py py-class docutils literal"><span class="pre">Accelerate</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.AccelDeccel" title="cocos.actions.interval_actions.AccelDeccel"><code class="xref py py-class docutils literal"><span class="pre">AccelDeccel</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.Speed" title="cocos.actions.interval_actions.Speed"><code class="xref py py-class docutils literal"><span class="pre">Speed</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.base_actions.html#cocos.actions.base_actions.Reverse" title="cocos.actions.base_actions.Reverse"><code class="xref py py-class docutils literal"><span class="pre">Reverse</span></code></a></li>
+<dl class="simple">
+<dt><strong>Time-flow modifiers</strong></dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.Accelerate" title="cocos.actions.interval_actions.Accelerate"><code class="xref py py-class docutils literal notranslate"><span class="pre">Accelerate</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.AccelDeccel" title="cocos.actions.interval_actions.AccelDeccel"><code class="xref py py-class docutils literal notranslate"><span class="pre">AccelDeccel</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.interval_actions.html#cocos.actions.interval_actions.Speed" title="cocos.actions.interval_actions.Speed"><code class="xref py py-class docutils literal notranslate"><span class="pre">Speed</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.base_actions.html#cocos.actions.base_actions.Reverse" title="cocos.actions.base_actions.Reverse"><code class="xref py py-class docutils literal notranslate"><span class="pre">Reverse</span></code></a></p></li>
 </ul>
 </dd>
-<dt><strong>Grid Amplitude modifiers</strong></dt>
-<dd><ul class="first last simple">
-<li><a class="reference internal" href="../api/cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.AccelAmplitude" title="cocos.actions.basegrid_actions.AccelAmplitude"><code class="xref py py-class docutils literal"><span class="pre">AccelAmplitude</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.DeccelAmplitude" title="cocos.actions.basegrid_actions.DeccelAmplitude"><code class="xref py py-class docutils literal"><span class="pre">DeccelAmplitude</span></code></a></li>
-<li><a class="reference internal" href="../api/cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.AccelDeccelAmplitude" title="cocos.actions.basegrid_actions.AccelDeccelAmplitude"><code class="xref py py-class docutils literal"><span class="pre">AccelDeccelAmplitude</span></code></a></li>
+<dt><strong>Grid Amplitude modifiers</strong></dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="../api/cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.AccelAmplitude" title="cocos.actions.basegrid_actions.AccelAmplitude"><code class="xref py py-class docutils literal notranslate"><span class="pre">AccelAmplitude</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.DeccelAmplitude" title="cocos.actions.basegrid_actions.DeccelAmplitude"><code class="xref py py-class docutils literal notranslate"><span class="pre">DeccelAmplitude</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api/cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.AccelDeccelAmplitude" title="cocos.actions.basegrid_actions.AccelDeccelAmplitude"><code class="xref py py-class docutils literal notranslate"><span class="pre">AccelDeccelAmplitude</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
@@ -268,13 +254,13 @@ of attribute: the <strong>grid</strong> attribute.</p>
 to form a series of squares or rectangles.</p>
 <p>These special actions render any <cite>CocosNode</cite> object (<cite>Layer</cite>, <cite>Scene</cite>, etc.) into the
 grid, and you can transform the grid by moving it’s vertices.</p>
-<p>There are 2 kind of grids: <code class="docutils literal"><span class="pre">tiled</span></code> grids and <code class="docutils literal"><span class="pre">non-tiled</span></code> grids. The difference is that
-the <code class="docutils literal"><span class="pre">tiled</span></code> grid is composed of individual tiles while the <code class="docutils literal"><span class="pre">non-tiled</span></code> grid is
+<p>There are 2 kind of grids: <code class="docutils literal notranslate"><span class="pre">tiled</span></code> grids and <code class="docutils literal notranslate"><span class="pre">non-tiled</span></code> grids. The difference is that
+the <code class="docutils literal notranslate"><span class="pre">tiled</span></code> grid is composed of individual tiles while the <code class="docutils literal notranslate"><span class="pre">non-tiled</span></code> grid is
 composed of vertex.</p>
 <img alt="../_images/tiled_and_nontiled_grid.png" src="../_images/tiled_and_nontiled_grid.png" />
-<p>The grids has 2 dimensions: <code class="docutils literal"><span class="pre">rows</span></code> and <code class="docutils literal"><span class="pre">columns</span></code>, but each vertex of the grid has
-3 dimension: <code class="docutils literal"><span class="pre">x</span></code>, <code class="docutils literal"><span class="pre">y</span></code> and <code class="docutils literal"><span class="pre">z</span></code>. So you can create 2d or 3d effects by transforming
-a <code class="docutils literal"><span class="pre">tiled-grid-3D</span></code> or a <code class="docutils literal"><span class="pre">grid-3D</span></code> grid.</p>
+<p>The grids has 2 dimensions: <code class="docutils literal notranslate"><span class="pre">rows</span></code> and <code class="docutils literal notranslate"><span class="pre">columns</span></code>, but each vertex of the grid has
+3 dimension: <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code>. So you can create 2d or 3d effects by transforming
+a <code class="docutils literal notranslate"><span class="pre">tiled-grid-3D</span></code> or a <code class="docutils literal notranslate"><span class="pre">grid-3D</span></code> grid.</p>
 <p>You can improve the quality of the effect by increasing the size of the
 grid, but the effect’s speed will decrease.</p>
 <p>A grid of size (16,12) will run fast in most computers but it won’t look
@@ -282,25 +268,24 @@ pretty well. And a grid of (32,24) will look pretty well, but in won’t
 run fast in some old computers.</p>
 <div class="section" id="how-they-work">
 <h3><a class="toc-backref" href="#id6">How they work</a><a class="headerlink" href="#how-they-work" title="Permalink to this headline">¶</a></h3>
-<p>Each frame the screen is rendered into a texture. This texture is transformed into a <code class="docutils literal"><span class="pre">vertex</span> <span class="pre">array</span></code>
-and this <code class="docutils literal"><span class="pre">vertex</span> <span class="pre">array</span></code> (the grid!) is transformed by the grid effects.
-Finally the <code class="docutils literal"><span class="pre">vertex</span> <span class="pre">array</span></code> is rendered into the screen.</p>
-<dl class="docutils">
-<dt>For more information about the internals refer to:</dt>
-<dd><ul class="first last simple">
-<li><a class="reference internal" href="../api/cocos.grid.html#cocos.grid.TiledGrid3D" title="cocos.grid.TiledGrid3D"><code class="xref py py-class docutils literal"><span class="pre">TiledGrid3D</span></code></a> and <a class="reference internal" href="../api/cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.TiledGrid3DAction" title="cocos.actions.basegrid_actions.TiledGrid3DAction"><code class="xref py py-class docutils literal"><span class="pre">TiledGrid3DAction</span></code></a> for <code class="docutils literal"><span class="pre">tiled</span></code> grids</li>
-<li><a class="reference internal" href="../api/cocos.grid.html#cocos.grid.Grid3D" title="cocos.grid.Grid3D"><code class="xref py py-class docutils literal"><span class="pre">Grid3D</span></code></a> and <a class="reference internal" href="../api/cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.Grid3DAction" title="cocos.actions.basegrid_actions.Grid3DAction"><code class="xref py py-class docutils literal"><span class="pre">Grid3DAction</span></code></a> for <code class="docutils literal"><span class="pre">non-tiled</span></code> grids</li>
+<p>Each frame the screen is rendered into a texture. This texture is transformed into a <code class="docutils literal notranslate"><span class="pre">vertex</span> <span class="pre">array</span></code>
+and this <code class="docutils literal notranslate"><span class="pre">vertex</span> <span class="pre">array</span></code> (the grid!) is transformed by the grid effects.
+Finally the <code class="docutils literal notranslate"><span class="pre">vertex</span> <span class="pre">array</span></code> is rendered into the screen.</p>
+<dl class="simple">
+<dt>For more information about the internals refer to:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="../api/cocos.grid.html#cocos.grid.TiledGrid3D" title="cocos.grid.TiledGrid3D"><code class="xref py py-class docutils literal notranslate"><span class="pre">TiledGrid3D</span></code></a> and <a class="reference internal" href="../api/cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.TiledGrid3DAction" title="cocos.actions.basegrid_actions.TiledGrid3DAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">TiledGrid3DAction</span></code></a> for <code class="docutils literal notranslate"><span class="pre">tiled</span></code> grids</p></li>
+<li><p><a class="reference internal" href="../api/cocos.grid.html#cocos.grid.Grid3D" title="cocos.grid.Grid3D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Grid3D</span></code></a> and <a class="reference internal" href="../api/cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.Grid3DAction" title="cocos.actions.basegrid_actions.Grid3DAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">Grid3DAction</span></code></a> for <code class="docutils literal notranslate"><span class="pre">non-tiled</span></code> grids</p></li>
 </ul>
 </dd>
 </dl>
 <p>For example, if you have an scene or layer that renders this image:</p>
 <img alt="../_images/original_image.png" src="../_images/original_image.png" />
-<p>…we can transform that image into this one using the <a class="reference internal" href="../api/cocos.actions.grid3d_actions.html#cocos.actions.grid3d_actions.Ripple3D" title="cocos.actions.grid3d_actions.Ripple3D"><code class="xref py py-class docutils literal"><span class="pre">Ripple3D</span></code></a> action.
+<p>…we can transform that image into this one using the <a class="reference internal" href="../api/cocos.actions.grid3d_actions.html#cocos.actions.grid3d_actions.Ripple3D" title="cocos.actions.grid3d_actions.Ripple3D"><code class="xref py py-class docutils literal notranslate"><span class="pre">Ripple3D</span></code></a> action.
 As you can see from the <em>wired</em> image, it is using a grid of 32x24 squares,
 and the grid is <em>non-tiled</em> (all the squares are together).</p>
 <img alt="../_images/effect_ripple3d.png" src="../_images/effect_ripple3d.png" />
 <img alt="../_images/effect_ripple3d_grid.png" src="../_images/effect_ripple3d_grid.png" />
-<p>…or we can transform it into this one using the <a class="reference internal" href="../api/cocos.actions.tiledgrid_actions.html#cocos.actions.tiledgrid_actions.FadeOutTRTiles" title="cocos.actions.tiledgrid_actions.FadeOutTRTiles"><code class="xref py py-class docutils literal"><span class="pre">FadeOutTRTiles</span></code></a> action.
+<p>…or we can transform it into this one using the <a class="reference internal" href="../api/cocos.actions.tiledgrid_actions.html#cocos.actions.tiledgrid_actions.FadeOutTRTiles" title="cocos.actions.tiledgrid_actions.FadeOutTRTiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">FadeOutTRTiles</span></code></a> action.
 As you can see from the <em>wired</em> image, it is using a grid of 16x12 squares,
 and the grid is <em>tiled</em> (all the squares/tiles can be separated).</p>
 <img alt="../_images/effect_fadeouttiles.png" src="../_images/effect_fadeouttiles.png" />
@@ -317,15 +302,13 @@ the Director’s <cite>set_depth_test</cite> method.</p>
 </div>
 <div class="section" id="index-of-grid-effects">
 <h3><a class="toc-backref" href="#id8">Index of grid effects</a><a class="headerlink" href="#index-of-grid-effects" title="Permalink to this headline">¶</a></h3>
-<dl class="docutils">
-<dt>You can find all the <cite>Grid3DAction</cite> actions here:</dt>
-<dd><ul class="first last simple">
-<li><a class="reference internal" href="../api/cocos.actions.grid3d_actions.html#module-cocos.actions.grid3d_actions" title="cocos.actions.grid3d_actions"><code class="xref py py-mod docutils literal"><span class="pre">cocos.actions.grid3d_actions</span></code></a></li>
+<dl class="simple">
+<dt>You can find all the <cite>Grid3DAction</cite> actions here:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="../api/cocos.actions.grid3d_actions.html#module-cocos.actions.grid3d_actions" title="cocos.actions.grid3d_actions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cocos.actions.grid3d_actions</span></code></a></p></li>
 </ul>
 </dd>
-<dt>And all the <cite>TiledGrid3DAction</cite> actions here:</dt>
-<dd><ul class="first last simple">
-<li><a class="reference internal" href="../api/cocos.actions.tiledgrid_actions.html#module-cocos.actions.tiledgrid_actions" title="cocos.actions.tiledgrid_actions"><code class="xref py py-mod docutils literal"><span class="pre">cocos.actions.tiledgrid_actions</span></code></a></li>
+<dt>And all the <cite>TiledGrid3DAction</cite> actions here:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="../api/cocos.actions.tiledgrid_actions.html#module-cocos.actions.tiledgrid_actions" title="cocos.actions.tiledgrid_actions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cocos.actions.tiledgrid_actions</span></code></a></p></li>
 </ul>
 </dd>
 </dl>
@@ -333,7 +316,7 @@ the Director’s <cite>set_depth_test</cite> method.</p>
 <div class="section" id="examples">
 <h3><a class="toc-backref" href="#id9">Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
 <p>Some examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># effect applied on a Scene</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># effect applied on a Scene</span>
 <span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">Twirl</span><span class="p">(</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="p">)</span>
 
 <span class="c1"># effect applied on a Layer</span>
@@ -343,7 +326,7 @@ the Director’s <cite>set_depth_test</cite> method.</p>
 <span class="n">layer2</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">Waves</span><span class="p">(</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">Liquid</span><span class="p">(</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">5</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
-<p>Working samples can be found as <code class="docutils literal"><span class="pre">test/test_&lt;action</span> <span class="pre">name&gt;.py</span></code> , like <code class="docutils literal"><span class="pre">test/test_lens_3d.py</span></code></p>
+<p>Working samples can be found as <code class="docutils literal notranslate"><span class="pre">test/test_&lt;action</span> <span class="pre">name&gt;.py</span></code> , like <code class="docutils literal notranslate"><span class="pre">test/test_lens_3d.py</span></code></p>
 </div>
 </div>
 <div class="section" id="creating-your-own-actions">
@@ -352,7 +335,7 @@ the Director’s <cite>set_depth_test</cite> method.</p>
 because actions are very powerful and can be combined with another actions to create more actions.</p>
 <p>For example, there is the Blink action. It is implemented by subclassing <cite>IntervalAction</cite>,
 but you could actually do something like:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Blink</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">duration</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Blink</span><span class="p">(</span><span class="n">times</span><span class="p">,</span> <span class="n">duration</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span>
         <span class="n">Hide</span><span class="p">()</span> <span class="o">+</span> <span class="n">Delay</span><span class="p">(</span><span class="n">duration</span><span class="o">/</span><span class="p">(</span><span class="n">times</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span>
         <span class="n">Show</span><span class="p">()</span> <span class="o">+</span> <span class="n">Delay</span><span class="p">(</span><span class="n">duration</span><span class="o">/</span><span class="p">(</span><span class="n">times</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span>
@@ -368,15 +351,15 @@ action to various different elements. All cocosnodes can be a target for an acti
 you are making an action that takes more actions as parameters, it is your responsibility to:</p>
 <blockquote>
 <div><ul class="simple">
-<li>set the target</li>
-<li>call the start method</li>
-<li>call the stop method</li>
+<li><p>set the target</p></li>
+<li><p>call the start method</p></li>
+<li><p>call the stop method</p></li>
 </ul>
 </div></blockquote>
 <p>You can also override the <cite>__reversed__</cite> method. In this method you have to construct and return an action
 that would be the reversed version of the action you are doing. For example,
 in <cite>Show()</cite> we return <cite>Hide()</cite> as its reverse:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Show</span><span class="p">(</span> <span class="n">InstantAction</span> <span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Show</span><span class="p">(</span> <span class="n">InstantAction</span> <span class="p">):</span>
     <span class="s2">&quot;&lt;snip&gt;&quot;</span>
     <span class="k">def</span> <span class="nf">__reversed__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">Hide</span><span class="p">()</span>
@@ -388,7 +371,7 @@ in <cite>Show()</cite> we return <cite>Hide()</cite> as its reverse:</p>
 <p>Instant actions are actions that will take no time to execute. For example, <cite>Hide()</cite>
 sets the target visibility to False.</p>
 <p>It is very easy to create an action using the CallFuncS action as a decorator:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="nd">@CallFuncS</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@CallFuncS</span>
     <span class="k">def</span> <span class="nf">make_visible</span><span class="p">(</span> <span class="n">sp</span> <span class="p">):</span>
         <span class="n">sp</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">Show</span><span class="p">()</span> <span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">make_visible</span> <span class="p">)</span>
@@ -396,17 +379,16 @@ sets the target visibility to False.</p>
 </div>
 <p>please note that make_visible will not be a regular function that you can call,
 it will be an action. So you can compose it like any other action.</p>
-<dl class="docutils">
-<dt>If you want to subclass InstantAction, you will have to override:</dt>
-<dd><ul class="first last simple">
-<li>the <cite>init</cite> method to take the parameters you desire</li>
-<li>the <cite>start</cite> method to do the action</li>
+<dl class="simple">
+<dt>If you want to subclass InstantAction, you will have to override:</dt><dd><ul class="simple">
+<li><p>the <cite>init</cite> method to take the parameters you desire</p></li>
+<li><p>the <cite>start</cite> method to do the action</p></li>
 </ul>
 </dd>
 </dl>
 <p>Thats it.</p>
 <p>For example, this is a minimal implementation of SetOpacity:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SetOpacity</span><span class="p">(</span> <span class="n">InstantAction</span> <span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">SetOpacity</span><span class="p">(</span> <span class="n">InstantAction</span> <span class="p">):</span>
     <span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">opacity</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">opacity</span> <span class="o">=</span> <span class="n">opacity</span>
     <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -418,21 +400,20 @@ it will be an action. So you can compose it like any other action.</p>
 <h3><a class="toc-backref" href="#id13">Interval Actions</a><a class="headerlink" href="#interval-actions" title="Permalink to this headline">¶</a></h3>
 <p>Interval actions is where the fun is. With this actions you can specify
 transformations that take a finite time. For example, <cite>MoveBy(how_much, duration)</cite>.</p>
-<dl class="docutils">
-<dt>The protocol for <cite>IntervalAction</cite> subclasses is the following:</dt>
-<dd><ul class="first last simple">
-<li><cite>init</cite> method will be called. here you have to set your <cite>duration</cite> property.</li>
-<li>a copy of the instance will be made (you don’t have to worry about this)</li>
-<li><cite>start</cite> method will be called (<cite>self.target</cite> will be set)</li>
-<li><cite>update(t)</cite> will most likely be called many time with t in [0,1) and t will monotonically rise.</li>
-<li><cite>update(1)</cite> will be called.</li>
-<li><cite>stop()</cite> will be called.</li>
+<dl class="simple">
+<dt>The protocol for <cite>IntervalAction</cite> subclasses is the following:</dt><dd><ul class="simple">
+<li><p><cite>init</cite> method will be called. here you have to set your <cite>duration</cite> property.</p></li>
+<li><p>a copy of the instance will be made (you don’t have to worry about this)</p></li>
+<li><p><cite>start</cite> method will be called (<cite>self.target</cite> will be set)</p></li>
+<li><p><cite>update(t)</cite> will most likely be called many time with t in [0,1) and t will monotonically rise.</p></li>
+<li><p><cite>update(1)</cite> will be called.</p></li>
+<li><p><cite>stop()</cite> will be called.</p></li>
 </ul>
 </dd>
 </dl>
 <p>So its in update that you do your magic. For example, if you want to fade something out,
 you can write something like:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FadeOut</span><span class="p">(</span> <span class="n">IntervalAction</span> <span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">FadeOut</span><span class="p">(</span> <span class="n">IntervalAction</span> <span class="p">):</span>
     <span class="k">def</span> <span class="nf">init</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">duration</span> <span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">duration</span> <span class="o">=</span> <span class="n">duration</span>
 
@@ -456,12 +437,12 @@ but <cite>AccelDeccel</cite>, for example, uses a sigmoid function so that is go
 <em>normal</em> attributes like <em>rotation</em>, <em>position</em>, <em>scale</em>, they modify the <em>grid</em>
 attribute.</p>
 <p>Let’s see in detail how to build a basic <em>non-tiled-grid</em> action:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Shaky3D</span><span class="p">(</span> <span class="n">Grid3DAction</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Shaky3D</span><span class="p">(</span> <span class="n">Grid3DAction</span><span class="p">):</span>
 </pre></div>
 </div>
 <p><em>Shaky3D</em> is a subclass of <cite>Grid3DAction</cite>, so we are building a <em>non-tiled</em> action. If we want to
 create a <em>tiled</em> action, we need to subclass from the <cite>TiledGrid3DAction</cite> class:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">init</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">randrange</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span> <span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">init</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">randrange</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span> <span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    :Parameters:</span>
 <span class="sd">        `randrange` : int</span>
@@ -473,9 +454,9 @@ create a <em>tiled</em> action, we need to subclass from the <cite>TiledGrid3DAc
     <span class="bp">self</span><span class="o">.</span><span class="n">randrange</span> <span class="o">=</span> <span class="n">randrange</span>
 </pre></div>
 </div>
-<p>Our class receives the <code class="docutils literal"><span class="pre">randrange</span></code> parameter, so we save it, and we call <code class="docutils literal"><span class="pre">init</span></code> of our
+<p>Our class receives the <code class="docutils literal notranslate"><span class="pre">randrange</span></code> parameter, so we save it, and we call <code class="docutils literal notranslate"><span class="pre">init</span></code> of our
 super class:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">update</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">update</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">t</span> <span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="o">.</span><span class="n">y</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
             <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_original_vertex</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
@@ -486,13 +467,13 @@ super class:</p>
             <span class="bp">self</span><span class="o">.</span><span class="n">set_vertex</span><span class="p">(</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
-<p>Like any other <cite>IntervalAction</cite> action the <code class="docutils literal"><span class="pre">update</span></code> method is going to be
-called once per frame. So, our <em>Shaky3D</em> effect will modify the <code class="docutils literal"><span class="pre">x</span></code>,``y``
-and <code class="docutils literal"><span class="pre">z</span></code> coordinate by a random number that is calculated by the
-<code class="docutils literal"><span class="pre">random.randrange</span></code> function.</p>
+<p>Like any other <cite>IntervalAction</cite> action the <code class="docutils literal notranslate"><span class="pre">update</span></code> method is going to be
+called once per frame. So, our <em>Shaky3D</em> effect will modify the <code class="docutils literal notranslate"><span class="pre">x</span></code>,``y``
+and <code class="docutils literal notranslate"><span class="pre">z</span></code> coordinate by a random number that is calculated by the
+<code class="docutils literal notranslate"><span class="pre">random.randrange</span></code> function.</p>
 <p>The <cite>get_original_vertex</cite> method returns the original coordinates of the vertex
-<code class="docutils literal"><span class="pre">x</span></code> and <code class="docutils literal"><span class="pre">y</span></code>, while the <cite>get_vertex</cite> method returns the current coordinates
-of the vertex <code class="docutils literal"><span class="pre">x</span></code> and <code class="docutils literal"><span class="pre">y</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>, while the <cite>get_vertex</cite> method returns the current coordinates
+of the vertex <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
 <p>XXX: Explain how to build a Tiled Action
 XXX: How to use: <cite>get_original_tile</cite> and <cite>get_tile</cite></p>
 </div>
@@ -505,7 +486,7 @@ XXX: How to use: <cite>get_original_tile</cite> and <cite>get_tile</cite></p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Actions, Transformations and Effects</a><ul>
 <li><a class="reference internal" href="#actions">Actions</a></li>
@@ -544,13 +525,13 @@ XXX: How to use: <cite>get_original_tile</cite> and <cite>get_tile</cite></p>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -577,8 +558,8 @@ XXX: How to use: <cite>get_original_tile</cite> and <cite>get_tile</cite></p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

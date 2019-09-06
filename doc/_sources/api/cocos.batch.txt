@@ -1,7 +1,7 @@
-cocos\.batch module
-===================
+cocos.batch module
+==================
 
 .. automodule:: cocos.batch
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

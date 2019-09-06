@@ -1,32 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>cocos.scenes.sequences module &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>cocos.scenes.sequences module &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.scenes.transitions module" href="cocos.scenes.transitions.html" />
     <link rel="prev" title="cocos.scenes.pause module" href="cocos.scenes.pause.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -57,30 +48,28 @@
 <span id="cocos-scenes-sequences-module"></span><h1>cocos.scenes.sequences module<a class="headerlink" href="#module-cocos.scenes.sequences" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="cocos.scenes.sequences.SequenceScene">
-<em class="property">class </em><code class="descname">SequenceScene</code><span class="sig-paren">(</span><em>*scenes</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.sequences.SequenceScene" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="cocos.scene.html#cocos.scene.Scene" title="cocos.scene.Scene"><code class="xref py py-class docutils literal"><span class="pre">cocos.scene.Scene</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">SequenceScene</code><span class="sig-paren">(</span><em class="sig-param">*scenes</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.sequences.SequenceScene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.scene.html#cocos.scene.Scene" title="cocos.scene.Scene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scene.Scene</span></code></a></p>
 <p>A Scene used to play a sequence of scenes one after another.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>*scenes</strong> (<a class="reference internal" href="cocos.scene.html#cocos.scene.Scene" title="cocos.scene.Scene"><em>Scene</em></a>) – argument list with the scenes to play.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>*scenes</strong> (<a class="reference internal" href="cocos.scene.html#cocos.scene.Scene" title="cocos.scene.Scene"><em>Scene</em></a>) – argument list with the scenes to play.</p>
+</dd>
+</dl>
 <p>The playing goes from first arg to last arg.</p>
 <p>For each scene, scene.on_enter is not called until it becomes active.</p>
 <p>Use director.pop to advance to the next scene.</p>
 <p>director.pop when the last scene is playing removes that scene and the
 SequenceScene from the scene stack.</p>
 <p>Example use case: running a intro scene before the main menu scene:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">director</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">SequenceScene</span><span class="p">(</span><span class="n">intro</span><span class="p">(),</span> <span class="n">menuGame</span><span class="p">()))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">director</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">SequenceScene</span><span class="p">(</span><span class="n">intro</span><span class="p">(),</span> <span class="n">menuGame</span><span class="p">()))</span>
 </pre></div>
 </div>
 <dl class="method">
 <dt id="cocos.scenes.sequences.SequenceScene.on_enter">
-<code class="descname">on_enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.sequences.SequenceScene.on_enter" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">on_enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.sequences.SequenceScene.on_enter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called every time the Scene enters the stage.</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -106,13 +95,13 @@ SequenceScene from the scene stack.</p>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -140,8 +129,8 @@ SequenceScene from the scene stack.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

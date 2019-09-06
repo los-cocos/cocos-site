@@ -1,7 +1,7 @@
-cocos\.actions\.basegrid\_actions module
-========================================
+cocos.actions.basegrid\_actions module
+======================================
 
 .. automodule:: cocos.actions.basegrid_actions
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

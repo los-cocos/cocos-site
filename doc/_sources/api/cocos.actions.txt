@@ -1,5 +1,5 @@
-cocos\.actions package
-======================
+cocos.actions package
+=====================
 
 Submodules
 ----------
@@ -20,6 +20,6 @@ Module contents
 ---------------
 
 .. automodule:: cocos.actions
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

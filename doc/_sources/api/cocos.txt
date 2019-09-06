@@ -6,10 +6,10 @@ Subpackages
 
 .. toctree::
 
-    cocos.actions
-    cocos.audio
-    cocos.layer
-    cocos.scenes
+   cocos.actions
+   cocos.audio
+   cocos.layer
+   cocos.scenes
 
 Submodules
 ----------
@@ -48,6 +48,6 @@ Module contents
 ---------------
 
 .. automodule:: cocos
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

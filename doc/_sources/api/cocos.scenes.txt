@@ -1,5 +1,5 @@
-cocos\.scenes package
-=====================
+cocos.scenes package
+====================
 
 Submodules
 ----------
@@ -14,6 +14,6 @@ Module contents
 ---------------
 
 .. automodule:: cocos.scenes
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

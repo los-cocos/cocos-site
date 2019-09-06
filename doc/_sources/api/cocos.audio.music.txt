@@ -1,7 +1,7 @@
-cocos\.audio\.music module
-==========================
+cocos.audio.music module
+========================
 
 .. automodule:: cocos.audio.music
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

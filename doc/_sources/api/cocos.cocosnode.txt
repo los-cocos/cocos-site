@@ -1,7 +1,7 @@
-cocos\.cocosnode module
-=======================
+cocos.cocosnode module
+======================
 
 .. automodule:: cocos.cocosnode
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

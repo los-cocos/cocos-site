@@ -1,7 +1,7 @@
-cocos\.tiles module
-===================
+cocos.tiles module
+==================
 
 .. automodule:: cocos.tiles
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

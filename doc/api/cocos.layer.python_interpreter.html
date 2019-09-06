@@ -1,32 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>cocos.layer.python_interpreter module &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>cocos.layer.python_interpreter module &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.layer.scrolling module" href="cocos.layer.scrolling.html" />
     <link rel="prev" title="cocos.layer.base_layers module" href="cocos.layer.base_layers.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -57,74 +48,77 @@
 <span id="cocos-layer-python-interpreter-module"></span><h1>cocos.layer.python_interpreter module<a class="headerlink" href="#module-cocos.layer.python_interpreter" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="cocos.layer.python_interpreter.PythonInterpreterLayer">
-<em class="property">class </em><code class="descname">PythonInterpreterLayer</code><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="cocos.layer.util_layers.html#cocos.layer.util_layers.ColorLayer" title="cocos.layer.util_layers.ColorLayer"><code class="xref py py-class docutils literal"><span class="pre">cocos.layer.util_layers.ColorLayer</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">PythonInterpreterLayer</code><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.layer.util_layers.html#cocos.layer.util_layers.ColorLayer" title="cocos.layer.util_layers.ColorLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.layer.util_layers.ColorLayer</span></code></a></p>
 <p>Runs an interactive Python interpreter as a child <cite>Layer</cite> of the current <cite>Scene</cite>.</p>
 <dl class="method">
 <dt id="cocos.layer.python_interpreter.PythonInterpreterLayer.draw">
-<code class="descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.draw" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draws itself.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.python_interpreter.PythonInterpreterLayer.on_enter">
-<code class="descname">on_enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.on_enter" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">on_enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.on_enter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called every time just before the node enters the stage.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.python_interpreter.PythonInterpreterLayer.on_exit">
-<code class="descname">on_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.on_exit" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">on_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.on_exit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called every time just before the node exits the stage.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.python_interpreter.PythonInterpreterLayer.on_key_press">
-<code class="descname">on_key_press</code><span class="sig-paren">(</span><em>symbol</em>, <em>modifiers</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.on_key_press" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">on_key_press</code><span class="sig-paren">(</span><em class="sig-param">symbol</em>, <em class="sig-param">modifiers</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.on_key_press" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.python_interpreter.PythonInterpreterLayer.on_resize">
-<code class="descname">on_resize</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.on_resize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">on_resize</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.on_resize" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.python_interpreter.PythonInterpreterLayer.on_text">
-<code class="descname">on_text</code><span class="sig-paren">(</span><em>symbol</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.on_text" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">on_text</code><span class="sig-paren">(</span><em class="sig-param">symbol</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.on_text" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.python_interpreter.PythonInterpreterLayer.on_text_motion">
-<code class="descname">on_text_motion</code><span class="sig-paren">(</span><em>motion</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.on_text_motion" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">on_text_motion</code><span class="sig-paren">(</span><em class="sig-param">motion</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.on_text_motion" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.layer.python_interpreter.PythonInterpreterLayer.cfg">
-<code class="descname">cfg</code><em class="property"> = {'code.font_name': 'Arial', 'code.font_size': 12, 'code.color': (255, 255, 255, 255), 'caret.color': (255, 255, 255)}</em><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.cfg" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">cfg</code><em class="property"> = {'caret.color': (255, 255, 255), 'code.color': (255, 255, 255, 255), 'code.font_name': 'Arial', 'code.font_size': 12}</em><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.cfg" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.layer.python_interpreter.PythonInterpreterLayer.doing_more">
-<code class="descname">doing_more</code><em class="property"> = False</em><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.doing_more" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">doing_more</code><em class="property"> = False</em><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.doing_more" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.layer.python_interpreter.PythonInterpreterLayer.is_event_handler">
-<code class="descname">is_event_handler</code><em class="property"> = True</em><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.is_event_handler" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_event_handler</code><em class="property"> = True</em><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.is_event_handler" title="Permalink to this definition">¶</a></dt>
 <dd><p>enable pyglet’s events</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.layer.python_interpreter.PythonInterpreterLayer.name">
-<code class="descname">name</code><em class="property"> = 'py'</em><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.name" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">name</code><em class="property"> = 'py'</em><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.layer.python_interpreter.PythonInterpreterLayer.prompt">
-<code class="descname">prompt</code><em class="property"> = '&gt;&gt;&gt; '</em><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.prompt" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">prompt</code><em class="property"> = '&gt;&gt;&gt; '</em><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.prompt" title="Permalink to this definition">¶</a></dt>
 <dd><p>python prompt</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.layer.python_interpreter.PythonInterpreterLayer.prompt_more">
-<code class="descname">prompt_more</code><em class="property"> = '... '</em><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.prompt_more" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">prompt_more</code><em class="property"> = '... '</em><a class="headerlink" href="#cocos.layer.python_interpreter.PythonInterpreterLayer.prompt_more" title="Permalink to this definition">¶</a></dt>
 <dd><p>python ‘more’ prompt</p>
 </dd></dl>
 
@@ -152,13 +146,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -186,8 +180,8 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

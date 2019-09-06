@@ -1,32 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>cocos.audio.SDL.dll module &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>cocos.audio.SDL.dll module &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.audio.SDL.endian module" href="cocos.audio.SDL.endian.html" />
     <link rel="prev" title="cocos.audio.SDL.darwin module" href="cocos.audio.SDL.darwin.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -58,88 +49,140 @@
 <span id="cocos-audio-sdl-dll-module"></span><h1>cocos.audio.SDL.dll module<a class="headerlink" href="#module-cocos.audio.SDL.dll" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="cocos.audio.SDL.dll.SDL_DLL">
-<em class="property">class </em><code class="descname">SDL_DLL</code><span class="sig-paren">(</span><em>library_name</em>, <em>version_function_name</em>, <em>version=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<em class="property">class </em><code class="sig-name descname">SDL_DLL</code><span class="sig-paren">(</span><em class="sig-param">library_name</em>, <em class="sig-param">version_function_name</em>, <em class="sig-param">version=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="method">
 <dt id="cocos.audio.SDL.dll.SDL_DLL.assert_version_compatible">
-<code class="descname">assert_version_compatible</code><span class="sig-paren">(</span><em>name</em>, <em>since</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.assert_version_compatible" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">assert_version_compatible</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">since</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.assert_version_compatible" title="Permalink to this definition">¶</a></dt>
 <dd><p>Raises an exception if <cite>since</cite> is later than the loaded library.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.audio.SDL.dll.SDL_DLL.function">
-<code class="descname">function</code><span class="sig-paren">(</span><em>name</em>, <em>doc</em>, <em>args=[]</em>, <em>arg_types=[]</em>, <em>return_type=None</em>, <em>dereference_return=False</em>, <em>require_return=False</em>, <em>success_return=None</em>, <em>error_return=None</em>, <em>since=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.function" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">function</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">doc</em>, <em class="sig-param">args=[]</em>, <em class="sig-param">arg_types=[]</em>, <em class="sig-param">return_type=None</em>, <em class="sig-param">dereference_return=False</em>, <em class="sig-param">require_return=False</em>, <em class="sig-param">success_return=None</em>, <em class="sig-param">error_return=None</em>, <em class="sig-param">since=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a wrapper function for ctypes.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>name</cite></dt>
-<dd><p class="first last">The name of the function as it appears in the shared library.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>name</cite></dt><dd><p>The name of the function as it appears in the shared library.</p>
 </dd>
-<dt><cite>doc</cite></dt>
-<dd><p class="first last">Docstring to associate with the wrapper function.</p>
+<dt><cite>doc</cite></dt><dd><p>Docstring to associate with the wrapper function.</p>
 </dd>
-<dt><cite>args</cite></dt>
-<dd><p class="first last">List of strings giving the argument names.</p>
+<dt><cite>args</cite></dt><dd><p>List of strings giving the argument names.</p>
 </dd>
-<dt><cite>arg_types</cite></dt>
-<dd><p class="first last">List of ctypes classes giving the argument types.</p>
+<dt><cite>arg_types</cite></dt><dd><p>List of ctypes classes giving the argument types.</p>
 </dd>
-<dt><cite>return_type</cite></dt>
-<dd><p class="first last">The ctypes class giving the wrapped function’s native
+<dt><cite>return_type</cite></dt><dd><p>The ctypes class giving the wrapped function’s native
 return type.</p>
 </dd>
-<dt><cite>dereference_return</cite></dt>
-<dd><p class="first last">If True, the return value is assumed to be a pointer and
-will be dereferenced via <code class="docutils literal"><span class="pre">.contents</span></code> before being
+<dt><cite>dereference_return</cite></dt><dd><p>If True, the return value is assumed to be a pointer and
+will be dereferenced via <code class="docutils literal notranslate"><span class="pre">.contents</span></code> before being
 returned to the user application.</p>
 </dd>
-<dt><cite>require_return</cite></dt>
-<dd><p class="first last">Used in conjunction with <cite>dereference_return</cite>; if True, an
+<dt><cite>require_return</cite></dt><dd><p>Used in conjunction with <cite>dereference_return</cite>; if True, an
 exception will be raised if the result is NULL; if False
 None will be returned when the result is NULL.</p>
 </dd>
-<dt><cite>success_return</cite></dt>
-<dd><p class="first last">If not None, the expected result of the wrapped function.
+<dt><cite>success_return</cite></dt><dd><p>If not None, the expected result of the wrapped function.
 If the return value does not equal success_return, an
 exception will be raised.</p>
 </dd>
-<dt><cite>error_return</cite></dt>
-<dd><p class="first last">If not None, the error result of the wrapped function.  If
+<dt><cite>error_return</cite></dt><dd><p>If not None, the error result of the wrapped function.  If
 the return value equals error_return, an exception will be
 raised.  Cannot be used in conjunction with
 <cite>success_return</cite>.</p>
 </dd>
-<dt><cite>since</cite></dt>
-<dd><p class="first last">Tuple (major, minor, patch) or string ‘x.y.z’ of the first
+<dt><cite>since</cite></dt><dd><p>Tuple (major, minor, patch) or string ‘x.y.z’ of the first
 version of SDL in which this function appears.  If the
 loaded version predates it, a placeholder function that
 raises <cite>SDL_NotImplementedError</cite> will be returned instead.
 Set to None if the function is in all versions of SDL.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.audio.SDL.dll.SDL_DLL.private_function">
-<code class="descname">private_function</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.private_function" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">private_function</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.private_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a wrapper function for ctypes with internal documentation
 and no argument names.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.audio.SDL.dll.SDL_DLL.version_compatible">
-<code class="descname">version_compatible</code><span class="sig-paren">(</span><em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.version_compatible" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">version_compatible</code><span class="sig-paren">(</span><em class="sig-param">v</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.version_compatible" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True iff <cite>v</cite> is equal to or later than the loaded library
 version.</p>
 </dd></dl>
 
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.SDL.dll.assert_version_compatible">
+<code class="sig-name descname">assert_version_compatible</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">since</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.assert_version_compatible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raises an exception if <cite>since</cite> is later than the loaded library.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.SDL.dll.function">
+<code class="sig-name descname">function</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">doc</em>, <em class="sig-param">args=[]</em>, <em class="sig-param">arg_types=[]</em>, <em class="sig-param">return_type=None</em>, <em class="sig-param">dereference_return=False</em>, <em class="sig-param">require_return=False</em>, <em class="sig-param">success_return=None</em>, <em class="sig-param">error_return=None</em>, <em class="sig-param">since=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a wrapper function for ctypes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>name</cite></dt><dd><p>The name of the function as it appears in the shared library.</p>
+</dd>
+<dt><cite>doc</cite></dt><dd><p>Docstring to associate with the wrapper function.</p>
+</dd>
+<dt><cite>args</cite></dt><dd><p>List of strings giving the argument names.</p>
+</dd>
+<dt><cite>arg_types</cite></dt><dd><p>List of ctypes classes giving the argument types.</p>
+</dd>
+<dt><cite>return_type</cite></dt><dd><p>The ctypes class giving the wrapped function’s native
+return type.</p>
+</dd>
+<dt><cite>dereference_return</cite></dt><dd><p>If True, the return value is assumed to be a pointer and
+will be dereferenced via <code class="docutils literal notranslate"><span class="pre">.contents</span></code> before being
+returned to the user application.</p>
+</dd>
+<dt><cite>require_return</cite></dt><dd><p>Used in conjunction with <cite>dereference_return</cite>; if True, an
+exception will be raised if the result is NULL; if False
+None will be returned when the result is NULL.</p>
+</dd>
+<dt><cite>success_return</cite></dt><dd><p>If not None, the expected result of the wrapped function.
+If the return value does not equal success_return, an
+exception will be raised.</p>
+</dd>
+<dt><cite>error_return</cite></dt><dd><p>If not None, the error result of the wrapped function.  If
+the return value equals error_return, an exception will be
+raised.  Cannot be used in conjunction with
+<cite>success_return</cite>.</p>
+</dd>
+<dt><cite>since</cite></dt><dd><p>Tuple (major, minor, patch) or string ‘x.y.z’ of the first
+version of SDL in which this function appears.  If the
+loaded version predates it, a placeholder function that
+raises <cite>SDL_NotImplementedError</cite> will be returned instead.
+Set to None if the function is in all versions of SDL.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.SDL.dll.private_function">
+<code class="sig-name descname">private_function</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.private_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a wrapper function for ctypes with internal documentation
+and no argument names.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="cocos.audio.SDL.dll.version_compatible">
+<code class="sig-name descname">version_compatible</code><span class="sig-paren">(</span><em class="sig-param">v</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.version_compatible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True iff <cite>v</cite> is equal to or later than the loaded library
+version.</p>
 </dd></dl>
 
 </div>
@@ -164,13 +207,13 @@ version.</p>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -199,8 +242,8 @@ version.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

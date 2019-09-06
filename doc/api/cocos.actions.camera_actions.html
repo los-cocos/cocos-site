@@ -1,32 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>cocos.actions.camera_actions module &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>cocos.actions.camera_actions module &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.actions.grid3d_actions module" href="cocos.actions.grid3d_actions.html" />
     <link rel="prev" title="cocos.actions.basegrid_actions module" href="cocos.actions.basegrid_actions.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -59,112 +50,104 @@
 <p>Actions that moves the OpenGL camera.</p>
 <dl class="exception">
 <dt id="cocos.actions.camera_actions.CameraException">
-<em class="property">exception </em><code class="descname">CameraException</code><a class="headerlink" href="#cocos.actions.camera_actions.CameraException" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<em class="property">exception </em><code class="sig-name descname">CameraException</code><a class="headerlink" href="#cocos.actions.camera_actions.CameraException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.actions.camera_actions.Camera3DAction">
-<em class="property">class </em><code class="descname">Camera3DAction</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.camera_actions.Camera3DAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">Camera3DAction</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.camera_actions.Camera3DAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
 <dl class="method">
 <dt id="cocos.actions.camera_actions.Camera3DAction.init">
-<code class="descname">init</code><span class="sig-paren">(</span><em>duration=2</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.camera_actions.Camera3DAction.init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">duration=2</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.camera_actions.Camera3DAction.init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize the Camera Action</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Number of seconds that the action will last</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>duration</cite><span class="classifier">int</span></dt><dd><p>Number of seconds that the action will last</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.actions.camera_actions.Camera3DAction.start">
-<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.camera_actions.Camera3DAction.start" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.camera_actions.Camera3DAction.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>External code sets self.target and then calls this method.
+Perform here any extra initialization needed.</p>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.actions.camera_actions.OrbitCamera">
-<em class="property">class </em><code class="descname">OrbitCamera</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.camera_actions.OrbitCamera" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.actions.camera_actions.Camera3DAction" title="cocos.actions.camera_actions.Camera3DAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.camera_actions.Camera3DAction</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">OrbitCamera</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.camera_actions.OrbitCamera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.actions.camera_actions.Camera3DAction" title="cocos.actions.camera_actions.Camera3DAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.camera_actions.Camera3DAction</span></code></a></p>
 <p>Orbits the camera around the center of the screen using spherical coordinates</p>
 <dl class="method">
 <dt id="cocos.actions.camera_actions.OrbitCamera.get_spherical_coords">
-<code class="descname">get_spherical_coords</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.camera_actions.OrbitCamera.get_spherical_coords" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_spherical_coords</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.camera_actions.OrbitCamera.get_spherical_coords" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the spherical coordinates from a cartesian coordinates</p>
 <p>using this formula:</p>
 <blockquote>
 <div><ul class="simple">
-<li><a class="reference external" href="http://www.math.montana.edu/frankw/ccp/multiworld/multipleIVP/spherical/body.htm#converting">http://www.math.montana.edu/frankw/ccp/multiworld/multipleIVP/spherical/body.htm#converting</a></li>
+<li><p><a class="reference external" href="http://www.math.montana.edu/frankw/ccp/multiworld/multipleIVP/spherical/body.htm#converting">http://www.math.montana.edu/frankw/ccp/multiworld/multipleIVP/spherical/body.htm#converting</a></p></li>
 </ul>
 </div></blockquote>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">(radius, zenith, azimuth)</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(radius, zenith, azimuth)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.actions.camera_actions.OrbitCamera.init">
-<code class="descname">init</code><span class="sig-paren">(</span><em>radius=None</em>, <em>delta_radius=0</em>, <em>angle_z=None</em>, <em>delta_z=0</em>, <em>angle_x=None</em>, <em>delta_x=0</em>, <em>*args</em>, <em>**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.camera_actions.OrbitCamera.init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">radius=None</em>, <em class="sig-param">delta_radius=0</em>, <em class="sig-param">angle_z=None</em>, <em class="sig-param">delta_z=0</em>, <em class="sig-param">angle_x=None</em>, <em class="sig-param">delta_x=0</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.camera_actions.OrbitCamera.init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize the camera with spherical coordinates</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>radius</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Radius of the orbit. Default: current radius</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>radius</cite><span class="classifier">float</span></dt><dd><p>Radius of the orbit. Default: current radius</p>
 </dd>
-<dt><cite>delta_radius</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Delta movement of the radius. Default: 0</p>
+<dt><cite>delta_radius</cite><span class="classifier">float</span></dt><dd><p>Delta movement of the radius. Default: 0</p>
 </dd>
-<dt><cite>angle_z</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The zenith angle of the spherical coordinate in degrees. Default: current</p>
+<dt><cite>angle_z</cite><span class="classifier">float</span></dt><dd><p>The zenith angle of the spherical coordinate in degrees. Default: current</p>
 </dd>
-<dt><cite>delta_z</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Relative movement of the zenith angle. Default: 0</p>
+<dt><cite>delta_z</cite><span class="classifier">float</span></dt><dd><p>Relative movement of the zenith angle. Default: 0</p>
 </dd>
-<dt><cite>angle_x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">The azimuth angle of the spherical coordinate in degrees. Default: 0</p>
+<dt><cite>angle_x</cite><span class="classifier">float</span></dt><dd><p>The azimuth angle of the spherical coordinate in degrees. Default: 0</p>
 </dd>
-<dt><cite>delta_x</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">Relative movement of the azimuth angle. Default: 0</p>
+<dt><cite>delta_x</cite><span class="classifier">float</span></dt><dd><p>Relative movement of the azimuth angle. Default: 0</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
-<dl class="docutils">
-<dt>For more information regarding spherical coordinates, read this:</dt>
-<dd><a class="reference external" href="http://en.wikipedia.org/wiki/Spherical_coordinates">http://en.wikipedia.org/wiki/Spherical_coordinates</a></dd>
+</dd>
+</dl>
+<dl class="simple">
+<dt>For more information regarding spherical coordinates, read this:</dt><dd><p><a class="reference external" href="http://en.wikipedia.org/wiki/Spherical_coordinates">http://en.wikipedia.org/wiki/Spherical_coordinates</a></p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.actions.camera_actions.OrbitCamera.start">
-<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.camera_actions.OrbitCamera.start" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.camera_actions.OrbitCamera.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>External code sets self.target and then calls this method.
+Perform here any extra initialization needed.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.actions.camera_actions.OrbitCamera.update">
-<code class="descname">update</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.camera_actions.OrbitCamera.update" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.camera_actions.OrbitCamera.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets called on every frame
+‘t’ is the time elapsed normalized to [0, 1]
+If this action takes 5 seconds to execute, <cite>t</cite> will be equal to 0
+at 0 seconds. <cite>t</cite> will be 0.5 at 2.5 seconds and <cite>t</cite> will be 1 at 5sec.
+This method must not use self._elapsed, which is not guaranted to be
+updated.</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -190,13 +173,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -224,8 +207,8 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

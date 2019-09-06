@@ -1,32 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>cocos.actions.base_actions module &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>cocos.actions.base_actions module &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.actions.basegrid_actions module" href="cocos.actions.basegrid_actions.html" />
     <link rel="prev" title="cocos.actions package" href="cocos.actions.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -62,7 +53,7 @@
 The object that the action will modify is the action’s target.
 Usually the target will be an instance of some CocosNode subclass.</p>
 <p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">MoveTo</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MoveTo</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>the target will move smoothly over the segment
@@ -74,7 +65,7 @@ more important s being:</p>
 <p>where action_result performs by first doing all that action_1 would do and
 then perform all that action_2 would do</p>
 <p>Example use:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">move_2</span> <span class="o">=</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="mi">15</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">move_2</span> <span class="o">=</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="mi">15</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>When activated, move_2 will move the target first to (100, 100), it will
@@ -84,7 +75,7 @@ and will arrive there 10 seconds after having arrived to (100, 100)</p>
 <p>where action_result performs by doing what would do action_1 in parallel with
 what would perform action_2</p>
 <p>Example use:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">move_rotate</span> <span class="o">=</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span> <span class="o">|</span> <span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">move_rotate</span> <span class="o">=</span> <span class="n">MoveTo</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span> <span class="o">|</span> <span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>When activated, move_rotate will move the target from the position at the
@@ -94,7 +85,7 @@ be rotated 360 degrees</p>
 <p>Where n non negative integer, and action result would repeat n times in a
 row the same that action_1 would perform.</p>
 <p>Example use:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">rotate_3</span> <span class="o">=</span> <span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rotate_3</span> <span class="o">=</span> <span class="n">RotateBy</span><span class="p">(</span><span class="mi">360</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">3</span>
 </pre></div>
 </div>
 <p>When activated, rotate_3 will rotate target 3 times, spending 5 sec in each
@@ -112,7 +103,7 @@ It has no access to the concrete action target.
 The most usual way to obtain an action in the template mode is
 by calling the constructor of some Action subclass.</p>
 <p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span> <span class="n">duration</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span> <span class="n">duration</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">move</span> <span class="o">=</span> <span class="n">MoveTo</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
 <span class="n">move</span> <span class="ow">is</span> <span class="n">playing</span> <span class="n">here</span> <span class="n">the</span> <span class="n">template</span> <span class="n">role</span><span class="o">.</span>
 </pre></div>
@@ -123,7 +114,7 @@ by calling the constructor of some Action subclass.</p>
 <p>Carry on with the changes desired when the action is initiated.
 You obtain an action in the worker role by calling the method
 do in a cocosnode instance, like:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">worker_action</span> <span class="o">=</span> <span class="n">cocosnode</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">template_action</span><span class="p">,</span> <span class="n">target</span><span class="o">=...</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">worker_action</span> <span class="o">=</span> <span class="n">cocosnode</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">template_action</span><span class="p">,</span> <span class="n">target</span><span class="o">=...</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The most usual is to call without the target kw-param, thus by default
@@ -133,14 +124,14 @@ with the desired modifications to target in subsequent frames.
 If you want the capabilty to stop the changes midway, then you must
 retain the worker_action returned by the do and then, when you want stop
 the changes, call:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cocosnode</span><span class="o">.</span><span class="n">remove_action</span><span class="p">(</span><span class="n">worker_action</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cocosnode</span><span class="o">.</span><span class="n">remove_action</span><span class="p">(</span><span class="n">worker_action</span><span class="p">)</span>
 <span class="p">(</span> <span class="n">the</span> <span class="n">cocosnode</span> <span class="n">must</span> <span class="n">be</span> <span class="n">the</span> <span class="n">same</span> <span class="k">as</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">do</span> <span class="n">call</span> <span class="p">)</span>
 </pre></div>
 </div>
 <p>Also, if your code need access to the action that performs the changes,
 have in mind that you want the worker_action (but this is discouraged,</p>
 <p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span> <span class="n">duration</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span> <span class="n">duration</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">move</span> <span class="o">=</span> <span class="n">MoveTo</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
 <span class="n">blue_bird</span> <span class="o">=</span> <span class="n">Bird_CocosNode_subclass</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
 <span class="n">blue_move</span> <span class="o">=</span> <span class="n">blue_bird</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">move</span><span class="p">)</span>
@@ -154,7 +145,7 @@ In subsequents frames after this call, the blue_bird will move to the position
 (100, 100), arriving there 10 seconds after the do was executed.</p>
 <p>From the point of view of a worker role action, the actions life
 can be mimicked by:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">worker_action</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">template_action</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">worker_action</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">template_action</span><span class="p">)</span>
 <span class="n">worker_action</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="n">some_obj</span>
 <span class="n">worker_action</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">dt</span> <span class="ow">in</span> <span class="n">frame</span><span class="o">.</span><span class="n">next</span><span class="p">():</span>
@@ -184,7 +175,7 @@ Sequence_Action or Sequence_IntervalAction.</p>
 <p>Multiple worker actions can be obtained from a single template action, and
 they wont interfere between them when applied to different targets.</p>
 <p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span> <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="n">duration</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="n">duration</span> <span class="o">=</span> <span class="mi">10</span>
  <span class="n">move</span> <span class="o">=</span> <span class="n">MoveBy</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
 
  <span class="n">blue_bird</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="s2">&quot;blue_bird.png&quot;</span><span class="p">)</span>
@@ -218,7 +209,7 @@ have a corrupt workspace, that will produce unexpected behavior.</p>
 target’s member(s), the resulting change is computationally well defined, but
 can be somewhat unexpected by the programmer.</p>
 <p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">guy</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="s2">&quot;grossini.png&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">guy</span> <span class="o">=</span> <span class="n">Sprite</span><span class="p">(</span><span class="s2">&quot;grossini.png&quot;</span><span class="p">)</span>
 <span class="n">guy</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">worker1</span> <span class="o">=</span> <span class="n">guy</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">MoveTo</span><span class="p">((</span><span class="mi">400</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
 <span class="n">worker2</span> <span class="o">=</span> <span class="n">guy</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">MoveBy</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
@@ -239,7 +230,7 @@ rotation, then no unexpected can happen.</p>
 a ‘winning’ one. It entirely depends on the implementation from each action.
 It is possible to write actions than in a fight will show additive behavoir,
 by example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cocos.euclid</span> <span class="k">as</span> <span class="nn">eu</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cocos.euclid</span> <span class="k">as</span> <span class="nn">eu</span>
 <span class="k">class</span> <span class="nc">MoveByAdditive</span><span class="p">(</span><span class="n">ac</span><span class="o">.</span><span class="n">Action</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">init</span><span class="p">(</span> <span class="bp">self</span><span class="p">,</span> <span class="n">delta_pos</span><span class="p">,</span> <span class="n">duration</span> <span class="p">):</span>
         <span class="k">try</span><span class="p">:</span>
@@ -279,7 +270,7 @@ of the former you can skip this section and revisit later.</p>
 <p>If the action template is not deepcopyiable, you will get a deepcopy exception,
 complaining it can’t copy something</p>
 <p>If you cheat deepcopy by overriding __deepcopy__ in your class like:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">__deepcopy__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">__deepcopy__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">return</span> <span class="bp">self</span>
 </pre></div>
 </div>
@@ -289,24 +280,23 @@ and Repeat operators will broke, and maybe some more.</p>
 some common situations where you can be in trouble and how to manage them.</p>
 <blockquote>
 <div><ul class="simple">
-<li>you try to pass a CocosNode instance in init, and init stores that in an
-action member</li>
-<li>you try to pass a callback f = some_cocosnode.a_method, with the idea that
+<li><p>you try to pass a CocosNode instance in init, and init stores that in an
+action member</p></li>
+<li><p>you try to pass a callback f = some_cocosnode.a_method, with the idea that
 it shoud be called when some condition is meet, and init stores it in an
-action member</li>
-<li>You want the action access some big decision table, static in the sense it
+action member</p></li>
+<li><p>You want the action access some big decision table, static in the sense it
 will not change over program execution. Even if is deepcopyable, there’s
-no need to deepcopy.</li>
+no need to deepcopy.</p></li>
 </ul>
 </div></blockquote>
 <p>Workarounds:</p>
 <blockquote>
 <div><ul>
-<li><p class="first">store the data that you do not want to deepcopy in some member in the
-cocosnode</p>
-</li>
-<li><p class="first">use an init2 fuction to pass the params you want to not deepcopy:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">worker</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">template</span><span class="p">)</span>
+<li><p>store the data that you do not want to deepcopy in some member in the
+cocosnode</p></li>
+<li><p>use an init2 fuction to pass the params you want to not deepcopy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">worker</span> <span class="o">=</span> <span class="n">node</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">template</span><span class="p">)</span>
 <span class="n">worker</span><span class="o">.</span><span class="n">init2</span><span class="p">(</span><span class="n">another_cocosnode</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -324,9 +314,9 @@ parameters as references.</p>
 <p>All action classes in cocos must be subclass of one off the following:</p>
 <blockquote>
 <div><ul class="simple">
-<li>Action</li>
-<li>IntervalAction (is itself subclass of Action)</li>
-<li>InstantAction  (is itself subclass of IntervalAction)</li>
+<li><p>Action</p></li>
+<li><p>IntervalAction (is itself subclass of Action)</p></li>
+<li><p>InstantAction  (is itself subclass of IntervalAction)</p></li>
 </ul>
 </div></blockquote>
 <div class="section" id="instantaction">
@@ -334,7 +324,7 @@ parameters as references.</p>
 <p>The task that must perform happens in only one call, the start method.
 The duration member has the value zero.
 Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Place</span><span class="p">(</span><span class="n">position</span><span class="p">)</span> <span class="p">:</span> <span class="n">does</span> <span class="n">target</span><span class="o">.</span><span class="n">position</span> <span class="o">&lt;-</span> <span class="n">position</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Place</span><span class="p">(</span><span class="n">position</span><span class="p">)</span> <span class="p">:</span> <span class="n">does</span> <span class="n">target</span><span class="o">.</span><span class="n">position</span> <span class="o">&lt;-</span> <span class="n">position</span>
 <span class="n">CallFunc</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="p">:</span> <span class="n">performs</span> <span class="n">the</span> <span class="n">call</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -347,7 +337,7 @@ The action will cease to perform when the time elapsed from the start call
 reachs duration.
 A proper IntervalAction must adhere to extra rules, look in the details section
 Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">MoveTo</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MoveTo</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
 <span class="n">RotateBy</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -359,46 +349,46 @@ The task that must perform is spanned over a number of frames.
 The time that the action would perfom is undefined, and member duration has
 value None.
 Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">RandomWalk</span><span class="p">(</span><span class="n">fastness</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">RandomWalk</span><span class="p">(</span><span class="n">fastness</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Performs:</p>
 <blockquote>
 <div><ul class="simple">
-<li>selects a random point in the screen</li>
-<li>moves to it with the required fastness</li>
-<li>repeat</li>
+<li><p>selects a random point in the screen</p></li>
+<li><p>moves to it with the required fastness</p></li>
+<li><p>repeat</p></li>
 </ul>
 </div></blockquote>
 <p>This action will last forever.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Chase</span><span class="p">(</span><span class="n">fastness</span><span class="p">,</span> <span class="n">chasee</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Chase</span><span class="p">(</span><span class="n">fastness</span><span class="p">,</span> <span class="n">chasee</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Performs:</p>
 <blockquote>
 <div><ul class="simple">
-<li>at each frame, move the target toward the chasee with the specified
-fastness.</li>
-<li>Declare the action as done when the distance from target to
-chasee is less than 10.</li>
+<li><p>at each frame, move the target toward the chasee with the specified
+fastness.</p></li>
+<li><p>Declare the action as done when the distance from target to
+chasee is less than 10.</p></li>
 </ul>
 </div></blockquote>
 <p>If fastness is greather than the chasee fastness this action will certainly
 terminate, but we dont know how much time when the action starts.</p>
 <dl class="class">
 <dt id="cocos.actions.base_actions.Action">
-<em class="property">class </em><code class="descname">Action</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<em class="property">class </em><code class="sig-name descname">Action</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The most general action</p>
 <dl class="method">
 <dt id="cocos.actions.base_actions.Action.done">
-<code class="descname">done</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action.done" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">done</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action.done" title="Permalink to this definition">¶</a></dt>
 <dd><p>False while the step method must be called.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.actions.base_actions.Action.init">
-<code class="descname">init</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action.init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action.init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets called by __init__ with all the parameteres received,
 At this time the target for the action is unknown.
 Typical use is store parameters needed by the action.</p>
@@ -406,28 +396,28 @@ Typical use is store parameters needed by the action.</p>
 
 <dl class="method">
 <dt id="cocos.actions.base_actions.Action.start">
-<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action.start" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>External code sets self.target and then calls this method.
 Perform here any extra initialization needed.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.actions.base_actions.Action.step">
-<code class="descname">step</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action.step" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">step</code><span class="sig-paren">(</span><em class="sig-param">dt</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action.step" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets called every frame. <cite>dt</cite> is the number of seconds that elapsed
 since the last call.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.actions.base_actions.Action.stop">
-<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action.stop" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>When the action must cease to perform this function is called by
 external code; after this call no other method should be called.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.actions.base_actions.Action.target">
-<code class="descname">target</code><em class="property"> = None</em><a class="headerlink" href="#cocos.actions.base_actions.Action.target" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">target</code><em class="property"> = None</em><a class="headerlink" href="#cocos.actions.base_actions.Action.target" title="Permalink to this definition">¶</a></dt>
 <dd><p><cite>CocosNode</cite> object that is the target of the action</p>
 </dd></dl>
 
@@ -435,8 +425,8 @@ external code; after this call no other method should be called.</p>
 
 <dl class="class">
 <dt id="cocos.actions.base_actions.IntervalAction">
-<em class="property">class </em><code class="descname">IntervalAction</code><a class="headerlink" href="#cocos.actions.base_actions.IntervalAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.Action</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">IntervalAction</code><a class="headerlink" href="#cocos.actions.base_actions.IntervalAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.base_actions.Action</span></code></a></p>
 <p>Interval Actions are the ones that have fixed duration, known when the
 worker instance is created, and, conceptually, the expected duration must
 be positive.
@@ -458,7 +448,7 @@ will accept duration = 0, to ease on cases like
 action = RotateBy( angle, a-b )</p>
 <dl class="method">
 <dt id="cocos.actions.base_actions.IntervalAction.done">
-<code class="descname">done</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.IntervalAction.done" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">done</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.IntervalAction.done" title="Permalink to this definition">¶</a></dt>
 <dd><p>When in the worker role, this method is reliable.
 When in the component role, if the composite spares the call to
 step this method cannot be relied (an then the composite must decide
@@ -468,7 +458,7 @@ Example of later situation is Sequence_IntervalAction.</p>
 
 <dl class="method">
 <dt id="cocos.actions.base_actions.IntervalAction.step">
-<code class="descname">step</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.IntervalAction.step" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">step</code><span class="sig-paren">(</span><em class="sig-param">dt</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.IntervalAction.step" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dont customize this method: it will not be called when in the component
 role for certain composite actions (like Sequence_IntervalAction).
 In such situation the composite will calculate the suitable t and
@@ -478,7 +468,7 @@ You customize the action stepping by overriding .update</p>
 
 <dl class="method">
 <dt id="cocos.actions.base_actions.IntervalAction.update">
-<code class="descname">update</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.IntervalAction.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.IntervalAction.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets called on every frame
 ‘t’ is the time elapsed normalized to [0, 1]
 If this action takes 5 seconds to execute, <cite>t</cite> will be equal to 0
@@ -491,8 +481,8 @@ updated.</p>
 
 <dl class="class">
 <dt id="cocos.actions.base_actions.InstantAction">
-<em class="property">class </em><code class="descname">InstantAction</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">InstantAction</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
 <p>Instant actions are actions that promises to do nothing when the
 methods step, update, and stop are called.
 Any changes that the action must perform on his target will be done in the
@@ -502,30 +492,35 @@ basic operators to combine an InstantAction with an IntervalAction and
 give an IntervalAction as a result.</p>
 <dl class="method">
 <dt id="cocos.actions.base_actions.InstantAction.done">
-<code class="descname">done</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.done" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">done</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.done" title="Permalink to this definition">¶</a></dt>
+<dd><p>When in the worker role, this method is reliable.
+When in the component role, if the composite spares the call to
+step this method cannot be relied (an then the composite must decide
+by itself when the action is done).
+Example of later situation is Sequence_IntervalAction.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.actions.base_actions.InstantAction.start">
-<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.start" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>Here we must do out stuff</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.actions.base_actions.InstantAction.step">
-<code class="descname">step</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.step" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">step</code><span class="sig-paren">(</span><em class="sig-param">dt</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.step" title="Permalink to this definition">¶</a></dt>
 <dd><p>does nothing - dont override</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.actions.base_actions.InstantAction.stop">
-<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.stop" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>does nothing - dont override</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.actions.base_actions.InstantAction.update">
-<code class="descname">update</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>does nothing - dont override</p>
 </dd></dl>
 
@@ -533,14 +528,14 @@ give an IntervalAction as a result.</p>
 
 <dl class="class">
 <dt id="cocos.actions.base_actions.Repeat">
-<em class="property">class </em><code class="descname">Repeat</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Repeat" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><code class="xref py py-class docutils literal"><span class="pre">cocos.actions.base_actions.Action</span></code></a></p>
-<dl class="docutils">
-<dt>Repeats an action forever.</dt>
-<dd>Applied to InstantAction s means once per frame.</dd>
+<em class="property">class </em><code class="sig-name descname">Repeat</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Repeat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.base_actions.Action</span></code></a></p>
+<dl class="simple">
+<dt>Repeats an action forever.</dt><dd><p>Applied to InstantAction s means once per frame.</p>
+</dd>
 </dl>
 <p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">JumpBy</span><span class="p">(</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">50</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">action</span> <span class="o">=</span> <span class="n">JumpBy</span><span class="p">(</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">50</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">repeat</span> <span class="o">=</span> <span class="n">Repeat</span><span class="p">(</span> <span class="n">action</span> <span class="p">)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">repeat</span> <span class="p">)</span>
 </pre></div>
@@ -548,43 +543,43 @@ give an IntervalAction as a result.</p>
 <p>Note: To repeat just a finite amount of time, just do action * times.</p>
 <dl class="method">
 <dt id="cocos.actions.base_actions.Repeat.done">
-<code class="descname">done</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Repeat.done" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">done</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Repeat.done" title="Permalink to this definition">¶</a></dt>
+<dd><p>False while the step method must be called.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.actions.base_actions.Repeat.init">
-<code class="descname">init</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Repeat.init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">action</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Repeat.init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Init method.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>action</cite> <span class="classifier-delimiter">:</span> <span class="classifier"><cite>Action</cite> instance</span></dt>
-<dd><p class="first last">The action that will be repeated</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><cite>action</cite><span class="classifier"><cite>Action</cite> instance</span></dt><dd><p>The action that will be repeated</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.actions.base_actions.Repeat.start">
-<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Repeat.start" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Repeat.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>External code sets self.target and then calls this method.
+Perform here any extra initialization needed.</p>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.actions.base_actions.Repeat.step">
-<code class="descname">step</code><span class="sig-paren">(</span><em>dt</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Repeat.step" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">step</code><span class="sig-paren">(</span><em class="sig-param">dt</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Repeat.step" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets called every frame. <cite>dt</cite> is the number of seconds that elapsed
+since the last call.</p>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="function">
 <dt id="cocos.actions.base_actions.sequence">
-<code class="descname">sequence</code><span class="sig-paren">(</span><em>action_1</em>, <em>action_2</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.sequence" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">sequence</code><span class="sig-paren">(</span><em class="sig-param">action_1</em>, <em class="sig-param">action_2</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.sequence" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an action that runs first action_1 and then action_2
 The returned action will be instance of the most narrow class
 posible in InstantAction, IntervalAction, Action</p>
@@ -592,7 +587,7 @@ posible in InstantAction, IntervalAction, Action</p>
 
 <dl class="function">
 <dt id="cocos.actions.base_actions.spawn">
-<code class="descname">spawn</code><span class="sig-paren">(</span><em>action_1</em>, <em>action_2</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.spawn" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">spawn</code><span class="sig-paren">(</span><em class="sig-param">action_1</em>, <em class="sig-param">action_2</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.spawn" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an action that runs action_1 and action_2 in paralel.
 The returned action will be instance of the most narrow class
 posible in InstantAction, IntervalAction, Action</p>
@@ -600,15 +595,15 @@ posible in InstantAction, IntervalAction, Action</p>
 
 <dl class="function">
 <dt id="cocos.actions.base_actions.loop">
-<code class="descname">loop</code><span class="sig-paren">(</span><em>action</em>, <em>times</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.loop" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">loop</code><span class="sig-paren">(</span><em class="sig-param">action</em>, <em class="sig-param">times</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.loop" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="cocos.actions.base_actions.Reverse">
-<code class="descname">Reverse</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Reverse" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Reverse</code><span class="sig-paren">(</span><em class="sig-param">action</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Reverse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverses the behavior of the action</p>
 <p>Example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># rotates the sprite 180 degrees in 2 seconds counter clockwise</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># rotates the sprite 180 degrees in 2 seconds counter clockwise</span>
 <span class="n">action</span> <span class="o">=</span> <span class="n">Reverse</span><span class="p">(</span> <span class="n">RotateBy</span><span class="p">(</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">2</span> <span class="p">)</span> <span class="p">)</span>
 <span class="n">sprite</span><span class="o">.</span><span class="n">do</span><span class="p">(</span> <span class="n">action</span> <span class="p">)</span>
 </pre></div>
@@ -626,7 +621,7 @@ posible in InstantAction, IntervalAction, Action</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">cocos.actions.base_actions module</a><ul>
 <li><a class="reference internal" href="#actions">Actions</a><ul>
@@ -669,13 +664,13 @@ posible in InstantAction, IntervalAction, Action</p>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -703,8 +698,8 @@ posible in InstantAction, IntervalAction, Action</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

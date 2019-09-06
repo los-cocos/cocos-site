@@ -1,31 +1,22 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Documentation Notes &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>Documentation Notes &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Dev Notes" href="index.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -63,46 +54,45 @@
 <h2>Hints for some common markup operations in docstrings<a class="headerlink" href="#hints-for-some-common-markup-operations-in-docstrings" title="Permalink to this headline">¶</a></h2>
 <p>Please use 4 spaces indentation.</p>
 <p>Tabs usually break things, convert them to spaces.</p>
-<p>Inline literal text: ``my_literal_text`` -&gt; <code class="docutils literal"><span class="pre">my_literal_text</span></code>.
-(in link syntax <code class="docutils literal"><span class="pre">~</span></code> is a modidier that supress the high parts in a dotted name).</p>
-<p>Link to a cocos module: <code class="docutils literal"><span class="pre">:mod:`~cocos.cocosnode`</span> <span class="pre">-&gt;</span></code> <a class="reference internal" href="../api/cocos.cocosnode.html#module-cocos.cocosnode" title="cocos.cocosnode"><code class="xref py py-mod docutils literal"><span class="pre">cocosnode</span></code></a></p>
-<p>Link to a cocos module: <code class="docutils literal"><span class="pre">:mod:`cocos.cocosnode`</span> <span class="pre">-&gt;</span></code> <a class="reference internal" href="../api/cocos.cocosnode.html#module-cocos.cocosnode" title="cocos.cocosnode"><code class="xref py py-mod docutils literal"><span class="pre">cocos.cocosnode</span></code></a></p>
-<p>Link to a class: <code class="docutils literal"><span class="pre">:class:`~cocos.cocosnode.CocosNode`</span> <span class="pre">-&gt;</span></code> <a class="reference internal" href="../api/cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal"><span class="pre">CocosNode</span></code></a></p>
-<p>Link to a method: <code class="docutils literal"><span class="pre">:meth:`~cocos.cocosnode.CocosNode.add`</span> <span class="pre">-&gt;</span></code>  <a class="reference internal" href="../api/cocos.cocosnode.html#cocos.cocosnode.CocosNode.add" title="cocos.cocosnode.CocosNode.add"><code class="xref py py-meth docutils literal"><span class="pre">add()</span></code></a></p>
+<p>Inline literal text: ``my_literal_text`` -&gt; <code class="docutils literal notranslate"><span class="pre">my_literal_text</span></code>.
+(in link syntax <code class="docutils literal notranslate"><span class="pre">~</span></code> is a modidier that supress the high parts in a dotted name).</p>
+<p>Link to a cocos module: <code class="docutils literal notranslate"><span class="pre">:mod:`~cocos.cocosnode`</span> <span class="pre">-&gt;</span></code> <a class="reference internal" href="../api/cocos.cocosnode.html#module-cocos.cocosnode" title="cocos.cocosnode"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cocosnode</span></code></a></p>
+<p>Link to a cocos module: <code class="docutils literal notranslate"><span class="pre">:mod:`cocos.cocosnode`</span> <span class="pre">-&gt;</span></code> <a class="reference internal" href="../api/cocos.cocosnode.html#module-cocos.cocosnode" title="cocos.cocosnode"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cocos.cocosnode</span></code></a></p>
+<p>Link to a class: <code class="docutils literal notranslate"><span class="pre">:class:`~cocos.cocosnode.CocosNode`</span> <span class="pre">-&gt;</span></code> <a class="reference internal" href="../api/cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">CocosNode</span></code></a></p>
+<p>Link to a method: <code class="docutils literal notranslate"><span class="pre">:meth:`~cocos.cocosnode.CocosNode.add`</span> <span class="pre">-&gt;</span></code>  <a class="reference internal" href="../api/cocos.cocosnode.html#cocos.cocosnode.CocosNode.add" title="cocos.cocosnode.CocosNode.add"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add()</span></code></a></p>
 <p>Link to a method:
-<code class="docutils literal"><span class="pre">:meth:`CocosNode.add&lt;cocos.cocosnode.CocosNode.add&gt;`</span> <span class="pre">-&gt;</span></code>  <a class="reference internal" href="../api/cocos.cocosnode.html#cocos.cocosnode.CocosNode.add" title="cocos.cocosnode.CocosNode.add"><code class="xref py py-meth docutils literal"><span class="pre">CocosNode.add()</span></code></a></p>
-<p>Link to a function: <code class="docutils literal"><span class="pre">:func:`cocos.tiles.load`</span> <span class="pre">-&gt;</span></code> <a class="reference internal" href="../api/cocos.tiles.html#cocos.tiles.load" title="cocos.tiles.load"><code class="xref py py-func docutils literal"><span class="pre">cocos.tiles.load()</span></code></a></p>
+<code class="docutils literal notranslate"><span class="pre">:meth:`CocosNode.add&lt;cocos.cocosnode.CocosNode.add&gt;`</span> <span class="pre">-&gt;</span></code>  <a class="reference internal" href="../api/cocos.cocosnode.html#cocos.cocosnode.CocosNode.add" title="cocos.cocosnode.CocosNode.add"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CocosNode.add()</span></code></a></p>
+<p>Link to a function: <code class="docutils literal notranslate"><span class="pre">:func:`cocos.tiles.load`</span> <span class="pre">-&gt;</span></code> <a class="reference internal" href="../api/cocos.tiles.html#cocos.tiles.load" title="cocos.tiles.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">cocos.tiles.load()</span></code></a></p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>If the class, method, attribute or function exists in the cocos project,
 prepending the name with a dot is normally sufficient. This works as well for
 argument types</p>
-<ul class="last simple">
-<li>link to a class <code class="docutils literal"><span class="pre">:class:`.CocosNode`</span> <span class="pre">-&gt;</span></code> <a class="reference internal" href="../api/cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal"><span class="pre">CocosNode</span></code></a></li>
+<ul class="simple">
+<li><p>link to a class <code class="docutils literal notranslate"><span class="pre">:class:`.CocosNode`</span> <span class="pre">-&gt;</span></code> <a class="reference internal" href="../api/cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">CocosNode</span></code></a></p></li>
 </ul>
 </div>
 <p>There are other roles like:</p>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">:data:</span></code> -&gt; Reference a module-level variable.</li>
-<li><code class="docutils literal"><span class="pre">:const:</span></code> -&gt; Reference a defined constant. This may be a Python variable that is not intended to be changed.</li>
-<li><code class="docutils literal"><span class="pre">:attr:</span></code> -&gt; Reference a data attribute of an object.</li>
-<li><code class="docutils literal"><span class="pre">:exc:</span></code>  -&gt; Reference an exception. A dotted name may be used.</li>
-<li><code class="docutils literal"><span class="pre">:obj:</span></code>  -&gt; Reference an object of unspecified type. Useful e.g. as the default_role.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:data:</span></code> -&gt; Reference a module-level variable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:const:</span></code> -&gt; Reference a defined constant. This may be a Python variable that is not intended to be changed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:attr:</span></code> -&gt; Reference a data attribute of an object.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:exc:</span></code>  -&gt; Reference an exception. A dotted name may be used.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:obj:</span></code>  -&gt; Reference an object of unspecified type. Useful e.g. as the default_role.</p></li>
 </ul>
 <p>Link to a section or some arbitrary point in any document:</p>
 <blockquote>
 <div><ul class="simple">
-<li>declare a label at the target location with <code class="docutils literal"><span class="pre">..</span> <span class="pre">_labelname:</span></code> (the ‘_’ is not part of labelname)</li>
-<li>write the link as <code class="docutils literal"><span class="pre">:ref:`TextToShowInLink&lt;labelname&gt;`</span></code> (brackets included)</li>
-<li>if TextToShowInLink is ommited the ref should be just before a section and the section title will be used as the text to show in the link</li>
-<li>labelname must be unique across all documents</li>
+<li><p>declare a label at the target location with <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">_labelname:</span></code> (the ‘_’ is not part of labelname)</p></li>
+<li><p>write the link as <code class="docutils literal notranslate"><span class="pre">:ref:`TextToShowInLink&lt;labelname&gt;`</span></code> (brackets included)</p></li>
+<li><p>if TextToShowInLink is ommited the ref should be just before a section and the section title will be used as the text to show in the link</p></li>
+<li><p>labelname must be unique across all documents</p></li>
 </ul>
 </div></blockquote>
-<dl class="docutils">
-<dt>Link to another document in the current sphinx build:</dt>
-<dd><ul class="first last simple">
-<li><code class="docutils literal"><span class="pre">:doc:`TextToShowInLink&lt;documentName&gt;`</span></code> (brackets included)</li>
-<li><code class="docutils literal"><span class="pre">:doc:`documentName`</span></code> (will show the document title in the link)</li>
+<dl class="simple">
+<dt>Link to another document in the current sphinx build:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:doc:`TextToShowInLink&lt;documentName&gt;`</span></code> (brackets included)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">:doc:`documentName`</span></code> (will show the document title in the link)</p></li>
 </ul>
 </dd>
 </dl>
@@ -110,9 +100,9 @@ argument types</p>
 <div class="section" id="functions-and-methods-docstring">
 <h2>Functions and Methods docstring<a class="headerlink" href="#functions-and-methods-docstring" title="Permalink to this headline">¶</a></h2>
 <p>We use <a class="reference external" href="http://www.sphinx-doc.org/en/stable/ext/napoleon.html">Napoleon</a> extension from Sphinx. Docstrings are laid out using the <a class="reference external" href="http://google.github.io/styleguide/pyguide.html#Comments">Google style</a>.
-The docstring should contain a section for Arguments (if they are present in the signature) and for the Return type if different from <code class="docutils literal"><span class="pre">None</span></code>.</p>
+The docstring should contain a section for Arguments (if they are present in the signature) and for the Return type if different from <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <p>Examples:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">child</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">child</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Add the child and then update the manager&#39;s focus / viewport.</span>
 
 <span class="sd">    Args:</span>
@@ -123,7 +113,7 @@ The docstring should contain a section for Arguments (if they are present in the
 <span class="sd">    &quot;&quot;&quot;</span>
 </pre></div>
 </div>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pixel_to_screen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pixel_to_screen</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Look up the screen-space pixel matching the Layer-space pixel.</span>
 
 <span class="sd">    Account for viewport, layer and screen transformations.</span>
@@ -139,11 +129,11 @@ The docstring should contain a section for Arguments (if they are present in the
 </div>
 <p>Here are some guidelines when writing documentation</p>
 <ul class="simple">
-<li>The content should be precise enough so that anyone can understand what the class, method or function does.</li>
-<li>No markup in docstring’s first line. That line is presented raw by editors in autocomplete tooltips, so the markup looks weird.</li>
-<li>Don’t linkify class A or function f mentions in their own docstring(s). The reader is already in the class / function doc, so the link adds nothing except visual noise. It is fine to link to some specific subppart, like :method:…</li>
-<li>Use triple double quotes to delimit docstrings.</li>
-<li>When a subclass changes a bit some baseclass methods, and the baseclass method’s docstring is large, it is better to signal only the differences with the baseclass method and to point to the base for extra explanations.</li>
+<li><p>The content should be precise enough so that anyone can understand what the class, method or function does.</p></li>
+<li><p>No markup in docstring’s first line. That line is presented raw by editors in autocomplete tooltips, so the markup looks weird.</p></li>
+<li><p>Don’t linkify class A or function f mentions in their own docstring(s). The reader is already in the class / function doc, so the link adds nothing except visual noise. It is fine to link to some specific subppart, like :method:…</p></li>
+<li><p>Use triple double quotes to delimit docstrings.</p></li>
+<li><p>When a subclass changes a bit some baseclass methods, and the baseclass method’s docstring is large, it is better to signal only the differences with the baseclass method and to point to the base for extra explanations.</p></li>
 </ul>
 </div>
 </div>
@@ -154,7 +144,7 @@ The docstring should contain a section for Arguments (if they are present in the
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Documentation Notes</a><ul>
 <li><a class="reference internal" href="#making-the-switch-to-sphinx">Making the switch to sphinx</a></li>
@@ -176,13 +166,13 @@ The docstring should contain a section for Arguments (if they are present in the
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -206,8 +196,8 @@ The docstring should contain a section for Arguments (if they are present in the
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

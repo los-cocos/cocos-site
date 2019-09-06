@@ -1,32 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>cocos.custom_clocks module &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>cocos.custom_clocks module &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.director module" href="cocos.director.html" />
     <link rel="prev" title="cocos.compat module" href="cocos.compat.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -54,11 +45,10 @@
             
   <div class="section" id="module-cocos.custom_clocks">
 <span id="cocos-custom-clocks-module"></span><h1>cocos.custom_clocks module<a class="headerlink" href="#module-cocos.custom_clocks" title="Permalink to this headline">¶</a></h1>
-<dl class="docutils">
-<dt>Custom clocks used by cocos to perform special tasks, like:</dt>
-<dd><ul class="first last simple">
-<li>recording a cocos app as a sequence of snapshots with an exact, fixed framerate</li>
-<li>jump in a predefined sequence of timestamps taking snapshots</li>
+<dl class="simple">
+<dt>Custom clocks used by cocos to perform special tasks, like:</dt><dd><ul class="simple">
+<li><p>recording a cocos app as a sequence of snapshots with an exact, fixed framerate</p></li>
+<li><p>jump in a predefined sequence of timestamps taking snapshots</p></li>
 </ul>
 </dd>
 </dl>
@@ -68,78 +58,125 @@ follow changes in pyglet 1.2dev. When released, we could refactor this with
 some confidence.</p>
 <p>References to the classes defined here are discouraged in code outside this
 module because of possible changes.</p>
-<dl class="docutils">
-<dt>The public interface should be</dt>
-<dd><ul class="first last simple">
-<li>get_recorder_clock</li>
-<li>set_app_clock</li>
+<dl class="simple">
+<dt>The public interface should be</dt><dd><ul class="simple">
+<li><p>get_recorder_clock</p></li>
+<li><p>set_app_clock</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="class">
 <dt id="cocos.custom_clocks.AutotestClock">
-<em class="property">class </em><code class="descname">AutotestClock</code><span class="sig-paren">(</span><em>screen_sampler</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.AutotestClock" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">pyglet.clock.Clock</span></code></p>
+<em class="property">class </em><code class="sig-name descname">AutotestClock</code><span class="sig-paren">(</span><em class="sig-param">screen_sampler</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.AutotestClock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pyglet.clock.Clock</span></code></p>
 <p>Make frames follow a test plan</p>
 <p>This class is compatible with pyglet 1.1.4release, it is not compatible
 with pyglet 1.2dev</p>
 <dl class="method">
 <dt id="cocos.custom_clocks.AutotestClock.get_sleep_time">
-<code class="descname">get_sleep_time</code><span class="sig-paren">(</span><em>sleep_idle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.AutotestClock.get_sleep_time" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">get_sleep_time</code><span class="sig-paren">(</span><em class="sig-param">sleep_idle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.AutotestClock.get_sleep_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the time until the next item is scheduled.</p>
+<p>Applications can choose to continue receiving updates at the
+maximum framerate during idle time (when no functions are scheduled),
+or they can sleep through their idle time and allow the CPU to
+switch to other processes or run in low-power mode.</p>
+<p>If <cite>sleep_idle</cite> is <code class="docutils literal notranslate"><span class="pre">True</span></code> the latter behaviour is selected, and
+<code class="docutils literal notranslate"><span class="pre">None</span></code> will be returned if there are no scheduled items.</p>
+<p>Otherwise, if <cite>sleep_idle</cite> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, or if any scheduled items
+exist, a value of 0 is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>sleep_idle</cite><span class="classifier">bool</span></dt><dd><p>If True, the application intends to sleep through its idle
+time; otherwise it will continue ticking at the maximum
+frame rate allowed.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Time until the next scheduled event in seconds, or <code class="docutils literal notranslate"><span class="pre">None</span></code>
+if there is no event scheduled.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.</span></p>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="cocos.custom_clocks.AutotestClock.tick">
-<code class="descname">tick</code><span class="sig-paren">(</span><em>poll=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.AutotestClock.tick" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">tick</code><span class="sig-paren">(</span><em class="sig-param">poll=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.AutotestClock.tick" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signify that one frame has passed.</p>
+<p>This will call any scheduled functions that have elapsed.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><cite>poll</cite><span class="classifier">bool</span></dt><dd><p>If True, the function will call any scheduled functions
+but will not sleep or busy-wait for any reason.  Recommended
+for advanced applications managing their own sleep timers
+only.</p>
+<p>Since pyglet 1.1.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The number of seconds since the last “tick”, or 0 if this was
+the first frame.</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.custom_clocks.AutotestClock_12dev">
-<em class="property">class </em><code class="descname">AutotestClock_12dev</code><span class="sig-paren">(</span><em>screen_sampler</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.AutotestClock_12dev" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">pyglet.clock.Clock</span></code></p>
+<em class="property">class </em><code class="sig-name descname">AutotestClock_12dev</code><span class="sig-paren">(</span><em class="sig-param">screen_sampler</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.AutotestClock_12dev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pyglet.clock.Clock</span></code></p>
 <p>Make frames follow a test plan</p>
 <p>This class is compatible with pyglet 1.2dev, it is not compatible
 with pyglet 1.1.4release</p>
 <dl class="method">
 <dt id="cocos.custom_clocks.AutotestClock_12dev.get_sleep_time">
-<code class="descname">get_sleep_time</code><span class="sig-paren">(</span><em>sleep_idle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.AutotestClock_12dev.get_sleep_time" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_sleep_time</code><span class="sig-paren">(</span><em class="sig-param">sleep_idle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.AutotestClock_12dev.get_sleep_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>sleep time between frames; 0.0 as as we want to run as fast as possible</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.custom_clocks.AutotestClock_12dev.update_time">
-<code class="descname">update_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.AutotestClock_12dev.update_time" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Get the (fake) elapsed time since the last call to <cite>update_time</cite></dt>
-<dd>Additionally, take snapshots.</dd>
+<code class="sig-name descname">update_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.AutotestClock_12dev.update_time" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Get the (fake) elapsed time since the last call to <cite>update_time</cite></dt><dd><p>Additionally, take snapshots.</p>
+</dd>
 </dl>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The number of seconds since the last <cite>update_time</cite>, or 0
-if this was the first time it was called.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The number of seconds since the last <cite>update_time</cite>, or 0
+if this was the first time it was called.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.custom_clocks.ScreenReaderClock">
-<em class="property">class </em><code class="descname">ScreenReaderClock</code><span class="sig-paren">(</span><em>framerate</em>, <em>template</em>, <em>duration</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.ScreenReaderClock" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">pyglet.clock.Clock</span></code></p>
+<em class="property">class </em><code class="sig-name descname">ScreenReaderClock</code><span class="sig-paren">(</span><em class="sig-param">framerate</em>, <em class="sig-param">template</em>, <em class="sig-param">duration</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.ScreenReaderClock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pyglet.clock.Clock</span></code></p>
 <p>Make frames happen every 1/framerate and takes screenshots</p>
 <p>This class is compatible with pyglet 1.1.4release, it is not compatible
 with pyglet 1.2dev</p>
 <dl class="method">
 <dt id="cocos.custom_clocks.ScreenReaderClock.tick">
-<code class="descname">tick</code><span class="sig-paren">(</span><em>poll=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.ScreenReaderClock.tick" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">tick</code><span class="sig-paren">(</span><em class="sig-param">poll=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.ScreenReaderClock.tick" title="Permalink to this definition">¶</a></dt>
 <dd><p>Signify that one frame has passed.</p>
 </dd></dl>
 
@@ -147,93 +184,79 @@ with pyglet 1.2dev</p>
 
 <dl class="class">
 <dt id="cocos.custom_clocks.ScreenReaderClock_12dev">
-<em class="property">class </em><code class="descname">ScreenReaderClock_12dev</code><span class="sig-paren">(</span><em>framerate</em>, <em>template</em>, <em>duration</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.ScreenReaderClock_12dev" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">pyglet.clock.Clock</span></code></p>
+<em class="property">class </em><code class="sig-name descname">ScreenReaderClock_12dev</code><span class="sig-paren">(</span><em class="sig-param">framerate</em>, <em class="sig-param">template</em>, <em class="sig-param">duration</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.ScreenReaderClock_12dev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pyglet.clock.Clock</span></code></p>
 <p>Make frames happen every 1/framerate and takes screenshots</p>
 <p>This class is compatible with pyglet 1.2dev, it is not compatible
 with pyglet 1.1.4release</p>
 <dl class="method">
 <dt id="cocos.custom_clocks.ScreenReaderClock_12dev.get_sleep_time">
-<code class="descname">get_sleep_time</code><span class="sig-paren">(</span><em>sleep_idle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.ScreenReaderClock_12dev.get_sleep_time" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_sleep_time</code><span class="sig-paren">(</span><em class="sig-param">sleep_idle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.ScreenReaderClock_12dev.get_sleep_time" title="Permalink to this definition">¶</a></dt>
 <dd><p>sleep time between frames; 0.0 as as we want to run as fast as possible</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.custom_clocks.ScreenReaderClock_12dev.update_time">
-<code class="descname">update_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.ScreenReaderClock_12dev.update_time" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Get the (fake) elapsed time since the last call to <cite>update_time</cite></dt>
-<dd>Additionally, take snapshots.</dd>
+<code class="sig-name descname">update_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.ScreenReaderClock_12dev.update_time" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Get the (fake) elapsed time since the last call to <cite>update_time</cite></dt><dd><p>Additionally, take snapshots.</p>
+</dd>
 </dl>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The number of seconds since the last <cite>update_time</cite>, or 0
-if this was the first time it was called.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>The number of seconds since the last <cite>update_time</cite>, or 0
+if this was the first time it was called.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="function">
 <dt id="cocos.custom_clocks.get_autotest_clock">
-<code class="descname">get_autotest_clock</code><span class="sig-paren">(</span><em>sampler</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.get_autotest_clock" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_autotest_clock</code><span class="sig-paren">(</span><em class="sig-param">sampler</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.get_autotest_clock" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a clock object suitable to be used as a pyglet app clock, which
 will follow a test plan to advance time and take snapshots.</p>
 <p>The clock object class depends on the pyglet version, and is determined automatically.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>sampler</cite> <span class="classifier-delimiter">:</span> <span class="classifier">obj</span></dt>
-<dd><p class="first last">obj with interface sampler.next(last_app_time) -&gt; next_app_time
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>sampler</cite><span class="classifier">obj</span></dt><dd><p>obj with interface sampler.next(last_app_time) -&gt; next_app_time
 Drives the app trough the desired states, take snapshots and handles
 the app termination conditions.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="cocos.custom_clocks.get_recorder_clock">
-<code class="descname">get_recorder_clock</code><span class="sig-paren">(</span><em>framerate</em>, <em>template</em>, <em>duration=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.get_recorder_clock" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_recorder_clock</code><span class="sig-paren">(</span><em class="sig-param">framerate</em>, <em class="sig-param">template</em>, <em class="sig-param">duration=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.get_recorder_clock" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a clock object suitable to be used as a pyglet app clock, which
 will provide a steady framerate, and saves a snapshot for each frame from
 time=0 to time=duration</p>
 <p>The clock object class depends on the pyglet version, and is set automatically</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>framerate</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">the number of frames per second</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>framerate</cite><span class="classifier">int</span></dt><dd><p>the number of frames per second</p>
 </dd>
-<dt><cite>template</cite> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">snapshot filenames will be template%frame_number (ex: “s%d.png” -&gt; s0.png, s1.png…)</p>
+<dt><cite>template</cite><span class="classifier">str</span></dt><dd><p>snapshot filenames will be template%frame_number (ex: “s%d.png” -&gt; s0.png, s1.png…)</p>
 </dd>
-<dt><cite>duration</cite> <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
-<dd><p class="first last">the amount of seconds to record, or 0 for infinite</p>
+<dt><cite>duration</cite><span class="classifier">float</span></dt><dd><p>the amount of seconds to record, or 0 for infinite</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="cocos.custom_clocks.set_app_clock">
-<code class="descname">set_app_clock</code><span class="sig-paren">(</span><em>clock</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.set_app_clock" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_app_clock</code><span class="sig-paren">(</span><em class="sig-param">clock</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.custom_clocks.set_app_clock" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the cocos (or pyglet) app clock to a custom one</p>
 </dd></dl>
 
@@ -259,13 +282,13 @@ time=0 to time=duration</p>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -292,8 +315,8 @@ time=0 to time=duration</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

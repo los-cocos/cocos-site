@@ -1,32 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>cocos.layer.scrolling module &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>cocos.layer.scrolling module &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.layer.util_layers module" href="cocos.layer.util_layers.html" />
     <link rel="prev" title="cocos.layer.python_interpreter module" href="cocos.layer.python_interpreter.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -55,8 +46,8 @@
             
   <div class="section" id="module-cocos.layer.scrolling">
 <span id="cocos-layer-scrolling-module"></span><h1>cocos.layer.scrolling module<a class="headerlink" href="#module-cocos.layer.scrolling" title="Permalink to this headline">¶</a></h1>
-<p>This module defines the <a class="reference internal" href="#cocos.layer.scrolling.ScrollableLayer" title="cocos.layer.scrolling.ScrollableLayer"><code class="xref py py-class docutils literal"><span class="pre">ScrollableLayer</span></code></a> and
-<a class="reference internal" href="#cocos.layer.scrolling.ScrollingManager" title="cocos.layer.scrolling.ScrollingManager"><code class="xref py py-class docutils literal"><span class="pre">ScrollingManager</span></code></a> classes.</p>
+<p>This module defines the <a class="reference internal" href="#cocos.layer.scrolling.ScrollableLayer" title="cocos.layer.scrolling.ScrollableLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScrollableLayer</span></code></a> and
+<a class="reference internal" href="#cocos.layer.scrolling.ScrollingManager" title="cocos.layer.scrolling.ScrollingManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScrollingManager</span></code></a> classes.</p>
 <p>This module helps to handle what will be visible on screen when the game world
 does not fit in the window area.</p>
 <p>It models this concept: the game world is a big volume. We have a camera
@@ -66,316 +57,281 @@ the camera’s movements can be restricted in order not to show parts outside
 of the world. This technique is usually named <em>‘scrolling’</em>.</p>
 <p>It has support for parallax rendering, that is, faking perspective by using
 layers that slide slower the farther they are.</p>
-<dl class="docutils">
-<dt>The important concepts are:</dt>
-<dd><ul class="first simple">
-<li>The coordinator, implemented as <a class="reference internal" href="#cocos.layer.scrolling.ScrollingManager" title="cocos.layer.scrolling.ScrollingManager"><code class="xref py py-class docutils literal"><span class="pre">ScrollingManager</span></code></a> which enforces the
-view limits imposed by the managed layers, accounts for layer’s parallax.</li>
-<li>The managed layers, implemented each by a <a class="reference internal" href="#cocos.layer.scrolling.ScrollableLayer" title="cocos.layer.scrolling.ScrollableLayer"><code class="xref py py-class docutils literal"><span class="pre">ScrollableLayer</span></code></a>, which as
+<dl>
+<dt>The important concepts are:</dt><dd><ul class="simple">
+<li><p>The coordinator, implemented as <a class="reference internal" href="#cocos.layer.scrolling.ScrollingManager" title="cocos.layer.scrolling.ScrollingManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScrollingManager</span></code></a> which enforces the
+view limits imposed by the managed layers, accounts for layer’s parallax.</p></li>
+<li><p>The managed layers, implemented each by a <a class="reference internal" href="#cocos.layer.scrolling.ScrollableLayer" title="cocos.layer.scrolling.ScrollableLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScrollableLayer</span></code></a>, which as
 a group holds all the entities in the world and each one can define what
-area of the x-y plane should be shown on camera.</li>
+area of the x-y plane should be shown on camera.</p></li>
 </ul>
-<dl class="last docutils">
-<dt>-The focus, tied to ScrollingManager <code class="docutils literal"><span class="pre">fx</span></code> and <code class="docutils literal"><span class="pre">fy</span></code> attributes, which</dt>
-<dd>indicates that point (fx, fy) in world coordinates is the point of interest,
+<dl class="simple">
+<dt>-The focus, tied to ScrollingManager <code class="docutils literal notranslate"><span class="pre">fx</span></code> and <code class="docutils literal notranslate"><span class="pre">fy</span></code> attributes, which</dt><dd><p>indicates that point (fx, fy) in world coordinates is the point of interest,
 and should show at the center of the <em>screen view</em> if no restriction is
-violated.</dd>
+violated.</p>
+</dd>
 </dl>
 </dd>
 </dl>
 <dl class="class">
 <dt id="cocos.layer.scrolling.ScrollableLayer">
-<em class="property">class </em><code class="descname">ScrollableLayer</code><span class="sig-paren">(</span><em>parallax=1</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollableLayer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="cocos.layer.base_layers.html#cocos.layer.base_layers.Layer" title="cocos.layer.base_layers.Layer"><code class="xref py py-class docutils literal"><span class="pre">cocos.layer.base_layers.Layer</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">ScrollableLayer</code><span class="sig-paren">(</span><em class="sig-param">parallax=1</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollableLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.layer.base_layers.html#cocos.layer.base_layers.Layer" title="cocos.layer.base_layers.Layer"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.layer.base_layers.Layer</span></code></a></p>
 <p>Layer that supports scrolling.</p>
-<p>If <code class="docutils literal"><span class="pre">px_width</span></code> is defined, then <code class="docutils literal"><span class="pre">px_height</span></code> must also be defined; scrolling
+<p>If <code class="docutils literal notranslate"><span class="pre">px_width</span></code> is defined, then <code class="docutils literal notranslate"><span class="pre">px_height</span></code> must also be defined; scrolling
 will be limited to only show areas with origin_x &lt;= x &lt; = px_width and
 origin_y &lt;= y &lt;= px_height).</p>
-<p>If <code class="docutils literal"><span class="pre">px_width</span></code> is not defined, then the layer will not limit the scrolling.</p>
-<p>A layer may have a <code class="docutils literal"><span class="pre">parallax</span></code> value which is used to scale the position
+<p>If <code class="docutils literal notranslate"><span class="pre">px_width</span></code> is not defined, then the layer will not limit the scrolling.</p>
+<p>A layer may have a <code class="docutils literal notranslate"><span class="pre">parallax</span></code> value which is used to scale the position
 (and not the dimensions) of the view for the layer - the layer’s view
 (x, y) coordinates are calculated as:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">my_view_x</span> <span class="o">=</span> <span class="n">parallax</span> <span class="o">*</span> <span class="n">passed_view_x</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_view_x</span> <span class="o">=</span> <span class="n">parallax</span> <span class="o">*</span> <span class="n">passed_view_x</span>
 <span class="n">my_view_y</span> <span class="o">=</span> <span class="n">parallax</span> <span class="o">*</span> <span class="n">passed_view_y</span>
 </pre></div>
 </div>
-<p>The scrolling is managed by the parent node of <a class="reference internal" href="#cocos.layer.scrolling.ScrollingManager" title="cocos.layer.scrolling.ScrollingManager"><code class="xref py py-class docutils literal"><span class="pre">ScrollingManager</span></code></a>
+<p>The scrolling is managed by the parent node of <a class="reference internal" href="#cocos.layer.scrolling.ScrollingManager" title="cocos.layer.scrolling.ScrollingManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScrollingManager</span></code></a>
 class.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Don’t change <code class="docutils literal"><span class="pre">scale_x</span></code> , <code class="docutils literal"><span class="pre">scale_y</span></code> from the default 1.0 or scrolling and
+<p class="admonition-title">Warning</p>
+<p>Don’t change <code class="docutils literal notranslate"><span class="pre">scale_x</span></code> , <code class="docutils literal notranslate"><span class="pre">scale_y</span></code> from the default 1.0 or scrolling and
 coordinate changes will fail.</p>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parallax</strong> (<em>float</em>) – the parallax for this layer. Defaults to 1.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>parallax</strong> (<em>float</em>) – the parallax for this layer. Defaults to 1.</p>
+</dd>
+</dl>
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollableLayer.draw">
-<code class="descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollableLayer.draw" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollableLayer.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draws itself</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollableLayer.on_cocos_resize">
-<code class="descname">on_cocos_resize</code><span class="sig-paren">(</span><em>usable_width</em>, <em>usable_height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollableLayer.on_cocos_resize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">on_cocos_resize</code><span class="sig-paren">(</span><em class="sig-param">usable_width</em>, <em class="sig-param">usable_height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollableLayer.on_cocos_resize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Event handler for window resizing.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollableLayer.on_enter">
-<code class="descname">on_enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollableLayer.on_enter" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">on_enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollableLayer.on_enter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called every time just before the node enters the stage.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollableLayer.on_exit">
-<code class="descname">on_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollableLayer.on_exit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">on_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollableLayer.on_exit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called every time just before the node exits the stage.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollableLayer.set_dirty">
-<code class="descname">set_dirty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollableLayer.set_dirty" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_dirty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollableLayer.set_dirty" title="Permalink to this definition">¶</a></dt>
 <dd><p>The viewport has changed in some way.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollableLayer.set_view">
-<code class="descname">set_view</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>w</em>, <em>h</em>, <em>viewport_ox=0</em>, <em>viewport_oy=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollableLayer.set_view" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_view</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">w</em>, <em class="sig-param">h</em>, <em class="sig-param">viewport_ox=0</em>, <em class="sig-param">viewport_oy=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollableLayer.set_view" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the position of the viewport for this layer.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>x</strong> (<em>float</em>) – The view x position</li>
-<li><strong>y</strong> (<em>float</em>) – The view y position</li>
-<li><strong>w</strong> (<em>float</em>) – The width of the view</li>
-<li><strong>h</strong> (<em>float</em>) – The height of the view</li>
-<li><strong>viewport_ox</strong> (<em>float</em>) – The viewport x origin</li>
-<li><strong>viewport_oy</strong> (<em>float</em>) – The viewport y origin</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – The view x position</p></li>
+<li><p><strong>y</strong> (<em>float</em>) – The view y position</p></li>
+<li><p><strong>w</strong> (<em>float</em>) – The width of the view</p></li>
+<li><p><strong>h</strong> (<em>float</em>) – The height of the view</p></li>
+<li><p><strong>viewport_ox</strong> (<em>float</em>) – The viewport x origin</p></li>
+<li><p><strong>viewport_oy</strong> (<em>float</em>) – The viewport y origin</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="class">
 <dt id="cocos.layer.scrolling.ScrollingManager">
-<em class="property">class </em><code class="descname">ScrollingManager</code><span class="sig-paren">(</span><em>viewport=None</em>, <em>do_not_scale=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="cocos.layer.base_layers.html#cocos.layer.base_layers.Layer" title="cocos.layer.base_layers.Layer"><code class="xref py py-class docutils literal"><span class="pre">cocos.layer.base_layers.Layer</span></code></a></p>
+<em class="property">class </em><code class="sig-name descname">ScrollingManager</code><span class="sig-paren">(</span><em class="sig-param">viewport=None</em>, <em class="sig-param">do_not_scale=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.layer.base_layers.html#cocos.layer.base_layers.Layer" title="cocos.layer.base_layers.Layer"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.layer.base_layers.Layer</span></code></a></p>
 <p>Handles scrolling for his children, which should be ScrollableLayer
 instances.</p>
 <p>Restricts the scrolling so that all the visibility restriction imposed by
 the children are honored; at least one child should define a constraint for
 the scrolling to be limited.</p>
 <p>The drawing can be limited to a specific window’s rectangle by passing the
-<code class="docutils literal"><span class="pre">viewport</span></code> parameter.</p>
+<code class="docutils literal notranslate"><span class="pre">viewport</span></code> parameter.</p>
 <p>The scrolling manager also provides coordinate changes between screen coords
 and world coords.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>viewport</strong> (<a class="reference internal" href="cocos.rect.html#cocos.rect.Rect" title="cocos.rect.Rect"><em>Rect</em></a>) – A rectangle defining the viewport. [Optional]</li>
-<li><strong>do_not_scale</strong> (<em>bool</em>) – Whether the <a class="reference internal" href="#cocos.layer.scrolling.ScrollingManager" title="cocos.layer.scrolling.ScrollingManager"><code class="xref py py-class docutils literal"><span class="pre">ScrollingManager</span></code></a> should scale
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>viewport</strong> (<a class="reference internal" href="cocos.rect.html#cocos.rect.Rect" title="cocos.rect.Rect"><em>Rect</em></a>) – A rectangle defining the viewport. [Optional]</p></li>
+<li><p><strong>do_not_scale</strong> (<em>bool</em>) – Whether the <a class="reference internal" href="#cocos.layer.scrolling.ScrollingManager" title="cocos.layer.scrolling.ScrollingManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScrollingManager</span></code></a> should scale
 the view during Window resizes. (Defaults to None, meaning it takes
-the same value as <code class="docutils literal"><span class="pre">director.autoscale</span></code>)</li>
+the same value as <code class="docutils literal notranslate"><span class="pre">director.autoscale</span></code>)</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollingManager.add">
-<code class="descname">add</code><span class="sig-paren">(</span><em>child</em>, <em>z=0</em>, <em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.add" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param">child</em>, <em class="sig-param">z=0</em>, <em class="sig-param">name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add the child and then update the manager’s focus / viewport.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>child</strong> (<a class="reference internal" href="cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><em>CocosNode</em></a>) – The node to add. Normally it’s a
-<a class="reference internal" href="#cocos.layer.scrolling.ScrollableLayer" title="cocos.layer.scrolling.ScrollableLayer"><code class="xref py py-class docutils literal"><span class="pre">ScrollableLayer</span></code></a>.</li>
-<li><strong>z</strong> (<em>int</em>) – z-order for this child.</li>
-<li><strong>name</strong> (<em>str</em>) – The name of this child. [Optional]</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>child</strong> (<a class="reference internal" href="cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><em>CocosNode</em></a>) – The node to add. Normally it’s a
+<a class="reference internal" href="#cocos.layer.scrolling.ScrollableLayer" title="cocos.layer.scrolling.ScrollableLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">ScrollableLayer</span></code></a>.</p></li>
+<li><p><strong>z</strong> (<em>int</em>) – z-order for this child.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – The name of this child. [Optional]</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollingManager.force_focus">
-<code class="descname">force_focus</code><span class="sig-paren">(</span><em>fx</em>, <em>fy</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.force_focus" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">force_focus</code><span class="sig-paren">(</span><em class="sig-param">fx</em>, <em class="sig-param">fy</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.force_focus" title="Permalink to this definition">¶</a></dt>
 <dd><p>Force the manager to focus on a point, regardless of any managed layer
 visible boundaries.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>fx</strong> (<em>int</em>) – the focus point x coordinate</li>
-<li><strong>fy</strong> (<em>int</em>) – the focus point y coordinate</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fx</strong> (<em>int</em>) – the focus point x coordinate</p></li>
+<li><p><strong>fy</strong> (<em>int</em>) – the focus point y coordinate</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollingManager.on_cocos_resize">
-<code class="descname">on_cocos_resize</code><span class="sig-paren">(</span><em>usable_width</em>, <em>usable_height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.on_cocos_resize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">on_cocos_resize</code><span class="sig-paren">(</span><em class="sig-param">usable_width</em>, <em class="sig-param">usable_height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.on_cocos_resize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Event handler for Window resize.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollingManager.on_enter">
-<code class="descname">on_enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.on_enter" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">on_enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.on_enter" title="Permalink to this definition">¶</a></dt>
 <dd><p>“Called every time just before the node enters the stage.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollingManager.on_exit">
-<code class="descname">on_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.on_exit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">on_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.on_exit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called every time just before the node exits the stage.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollingManager.pixel_from_screen">
-<code class="descname">pixel_from_screen</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.pixel_from_screen" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pixel_from_screen</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.pixel_from_screen" title="Permalink to this definition">¶</a></dt>
 <dd><p>deprecated, was renamed as screen_to_world</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollingManager.pixel_to_screen">
-<code class="descname">pixel_to_screen</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.pixel_to_screen" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pixel_to_screen</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.pixel_to_screen" title="Permalink to this definition">¶</a></dt>
 <dd><p>deprecated, was renamed as world_to_screen</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollingManager.refresh_focus">
-<code class="descname">refresh_focus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.refresh_focus" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">refresh_focus</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.refresh_focus" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resets the focus at the focus point.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollingManager.screen_to_world">
-<code class="descname">screen_to_world</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.screen_to_world" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">screen_to_world</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.screen_to_world" title="Permalink to this definition">¶</a></dt>
 <dd><p>Translates screen coordinates to world coordinates.</p>
 <p>Account for viewport, layer and screen transformations.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> (<em>int</em>) – x coordinate in screen space</li>
-<li><strong>y</strong> (<em>int</em>) – y coordinate in screen space</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – x coordinate in screen space</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – y coordinate in screen space</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>tuple[int, int]</em> – coordinates in world-space</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>tuple[int, int]</em> – coordinates in world-space</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollingManager.set_focus">
-<code class="descname">set_focus</code><span class="sig-paren">(</span><em>fx</em>, <em>fy</em>, <em>force=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.set_focus" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_focus</code><span class="sig-paren">(</span><em class="sig-param">fx</em>, <em class="sig-param">fy</em>, <em class="sig-param">force=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.set_focus" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes the point (fx, fy) show as near the view’s center as possible.</p>
 <p>Changes his children so that the point (fx, fy) in world coordinates
 will be seen as near the view center as possible, while at the
 same time not displaying out-of-bounds areas in the children.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>fx</strong> (<em>int</em>) – the focus point x coordinate</li>
-<li><strong>fy</strong> (<em>int</em>) – the focus point y coordinate</li>
-<li><strong>force</strong> (<em>bool</em>) – If True, forces the update of the focus, eventhough the
-focus point or the scale did not change. Defaults to False.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fx</strong> (<em>int</em>) – the focus point x coordinate</p></li>
+<li><p><strong>fy</strong> (<em>int</em>) – the focus point y coordinate</p></li>
+<li><p><strong>force</strong> (<em>bool</em>) – If True, forces the update of the focus, eventhough the
+focus point or the scale did not change. Defaults to False.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollingManager.set_state">
-<code class="descname">set_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.set_state" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.set_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets OpenGL state for using scissor test.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollingManager.unset_state">
-<code class="descname">unset_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.unset_state" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">unset_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.unset_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unsets OpenGL state for using scissor test.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollingManager.update_view_size">
-<code class="descname">update_view_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.update_view_size" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update_view_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.update_view_size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates the view size based on the director usable width and height,
 and on the optional viewport.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollingManager.visit">
-<code class="descname">visit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.visit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">visit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.visit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draws itself and its children into the viewport area.</p>
-<p>Same as in <a class="reference internal" href="cocos.cocosnode.html#cocos.cocosnode.CocosNode.visit" title="cocos.cocosnode.CocosNode.visit"><code class="xref py py-meth docutils literal"><span class="pre">CocosNode.visit()</span></code></a>, but will restrict drawing
+<p>Same as in <a class="reference internal" href="cocos.cocosnode.html#cocos.cocosnode.CocosNode.visit" title="cocos.cocosnode.CocosNode.visit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">CocosNode.visit()</span></code></a>, but will restrict drawing
 to the rect viewport.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.layer.scrolling.ScrollingManager.world_to_screen">
-<code class="descname">world_to_screen</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.world_to_screen" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">world_to_screen</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.world_to_screen" title="Permalink to this definition">¶</a></dt>
 <dd><p>Translates world coordinates to screen coordinates.</p>
 <p>Account for viewport, layer and screen transformations.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>x</strong> (<em>int</em>) – x coordinate in world space</li>
-<li><strong>y</strong> (<em>int</em>) – y coordinate in world space</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – x coordinate in world space</p></li>
+<li><p><strong>y</strong> (<em>int</em>) – y coordinate in world space</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>tuple[int, int]</em> – coordinates in screen space</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>tuple[int, int]</em> – coordinates in screen space</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="cocos.layer.scrolling.ScrollingManager.scale">
-<code class="descname">scale</code><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.scale" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">scale</code><a class="headerlink" href="#cocos.layer.scrolling.ScrollingManager.scale" title="Permalink to this definition">¶</a></dt>
 <dd><p>The scaling factor of the object.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -402,13 +358,13 @@ to the rect viewport.</p>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -436,8 +392,8 @@ to the rect viewport.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

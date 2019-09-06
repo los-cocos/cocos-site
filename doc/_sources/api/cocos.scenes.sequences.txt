@@ -1,7 +1,7 @@
-cocos\.scenes\.sequences module
-===============================
+cocos.scenes.sequences module
+=============================
 
 .. automodule:: cocos.scenes.sequences
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

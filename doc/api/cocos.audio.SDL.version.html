@@ -1,32 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>cocos.audio.SDL.version module &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>cocos.audio.SDL.version module &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.audio.pygame package" href="cocos.audio.pygame.html" />
     <link rel="prev" title="cocos.audio.SDL.timer module" href="cocos.audio.SDL.timer.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -59,48 +50,41 @@
 <p>Functions related to the SDL shared library version.</p>
 <dl class="class">
 <dt id="cocos.audio.SDL.version.SDL_version">
-<em class="property">class </em><code class="descname">SDL_version</code><a class="headerlink" href="#cocos.audio.SDL.version.SDL_version" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">_ctypes.Structure</span></code></p>
+<em class="property">class </em><code class="sig-name descname">SDL_version</code><a class="headerlink" href="#cocos.audio.SDL.version.SDL_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes.Structure</span></code></p>
 <p>Version structure.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Ivariables:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>major</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Major version number</p>
+<dl class="field-list simple">
+<dt class="field-odd">Ivariables</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>major</cite><span class="classifier">int</span></dt><dd><p>Major version number</p>
 </dd>
-<dt><cite>minor</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Minor version number</p>
+<dt><cite>minor</cite><span class="classifier">int</span></dt><dd><p>Minor version number</p>
 </dd>
-<dt><cite>patch</cite> <span class="classifier-delimiter">:</span> <span class="classifier">int</span></dt>
-<dd><p class="first last">Patch revision number</p>
+<dt><cite>patch</cite><span class="classifier">int</span></dt><dd><p>Patch revision number</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <dl class="method">
 <dt id="cocos.audio.SDL.version.SDL_version.is_since">
-<code class="descname">is_since</code><span class="sig-paren">(</span><em>required</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.version.SDL_version.is_since" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_since</code><span class="sig-paren">(</span><em class="sig-param">required</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.version.SDL_version.is_since" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.audio.SDL.version.SDL_version.major">
-<code class="descname">major</code><a class="headerlink" href="#cocos.audio.SDL.version.SDL_version.major" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">major</code><a class="headerlink" href="#cocos.audio.SDL.version.SDL_version.major" title="Permalink to this definition">¶</a></dt>
 <dd><p>Structure/Union member</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.audio.SDL.version.SDL_version.minor">
-<code class="descname">minor</code><a class="headerlink" href="#cocos.audio.SDL.version.SDL_version.minor" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">minor</code><a class="headerlink" href="#cocos.audio.SDL.version.SDL_version.minor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Structure/Union member</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.audio.SDL.version.SDL_version.patch">
-<code class="descname">patch</code><a class="headerlink" href="#cocos.audio.SDL.version.SDL_version.patch" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">patch</code><a class="headerlink" href="#cocos.audio.SDL.version.SDL_version.patch" title="Permalink to this definition">¶</a></dt>
 <dd><p>Structure/Union member</p>
 </dd></dl>
 
@@ -108,51 +92,43 @@
 
 <dl class="function">
 <dt id="cocos.audio.SDL.version.SDL_VERSIONNUM">
-<code class="descname">SDL_VERSIONNUM</code><span class="sig-paren">(</span><em>major</em>, <em>minor</em>, <em>patch</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.version.SDL_VERSIONNUM" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SDL_VERSIONNUM</code><span class="sig-paren">(</span><em class="sig-param">major</em>, <em class="sig-param">minor</em>, <em class="sig-param">patch</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.version.SDL_VERSIONNUM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Turn the version numbers into a numeric value.</p>
 <p>For example:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">SDL_VERSIONNUM</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">SDL_VERSIONNUM</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="go">1203</span>
 </pre></div>
 </div>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><cite>major</cite>: int</li>
-<li><cite>minor</cite>: int</li>
-<li><cite>patch</cite>: int</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><cite>major</cite>: int</p></li>
+<li><p><cite>minor</cite>: int</p></li>
+<li><p><cite>patch</cite>: int</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
 <dt id="cocos.audio.SDL.version.SDL_VERSION_ATLEAST">
-<code class="descname">SDL_VERSION_ATLEAST</code><span class="sig-paren">(</span><em>major</em>, <em>minor</em>, <em>patch</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.version.SDL_VERSION_ATLEAST" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">SDL_VERSION_ATLEAST</code><span class="sig-paren">(</span><em class="sig-param">major</em>, <em class="sig-param">minor</em>, <em class="sig-param">patch</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.version.SDL_VERSION_ATLEAST" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine if the SDL library is at least the given version.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><cite>major</cite>: int</li>
-<li><cite>minor</cite>: int</li>
-<li><cite>patch</cite>: int</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><cite>major</cite>: int</p></li>
+<li><p><cite>minor</cite>: int</p></li>
+<li><p><cite>patch</cite>: int</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -177,13 +153,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -212,8 +188,8 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

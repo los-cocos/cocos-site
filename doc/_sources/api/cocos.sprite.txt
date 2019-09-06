@@ -1,7 +1,7 @@
-cocos\.sprite module
-====================
+cocos.sprite module
+===================
 
 .. automodule:: cocos.sprite
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:

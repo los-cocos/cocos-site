@@ -1,32 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>cocos.audio.SDL.array module &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>cocos.audio.SDL.array module &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.audio.SDL.audio module" href="cocos.audio.SDL.audio.html" />
     <link rel="prev" title="cocos.audio.SDL package" href="cocos.audio.SDL.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -58,165 +49,135 @@
 <span id="cocos-audio-sdl-array-module"></span><h1>cocos.audio.SDL.array module<a class="headerlink" href="#module-cocos.audio.SDL.array" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="cocos.audio.SDL.array.SDL_array">
-<em class="property">class </em><code class="descname">SDL_array</code><span class="sig-paren">(</span><em>ptr</em>, <em>count</em>, <em>ctype</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<em class="property">class </em><code class="sig-name descname">SDL_array</code><span class="sig-paren">(</span><em class="sig-param">ptr</em>, <em class="sig-param">count</em>, <em class="sig-param">ctype</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="method">
 <dt id="cocos.audio.SDL.array.SDL_array.as_bytes">
-<code class="descname">as_bytes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.as_bytes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">as_bytes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.as_bytes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Access the array as raw bytes, regardless of the underlying
 data type.</p>
 <p>This can be useful, for example, in accessing a 32-bit colour
 buffer by individual components rather than the encoded pixel.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#cocos.audio.SDL.array.SDL_array" title="cocos.audio.SDL.array.SDL_array">SDL_array</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cocos.audio.SDL.array.SDL_array" title="cocos.audio.SDL.array.SDL_array">SDL_array</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.audio.SDL.array.SDL_array.as_ctypes">
-<code class="descname">as_ctypes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.as_ctypes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">as_ctypes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.as_ctypes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Access the array as a ctypes array.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">ctypes.Array</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>ctypes.Array</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.audio.SDL.array.SDL_array.as_int16">
-<code class="descname">as_int16</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.as_int16" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">as_int16</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.as_int16" title="Permalink to this definition">¶</a></dt>
 <dd><p>Access the array as 16-bit integers, regardless of the underlying
 data type.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#cocos.audio.SDL.array.SDL_array" title="cocos.audio.SDL.array.SDL_array">SDL_array</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cocos.audio.SDL.array.SDL_array" title="cocos.audio.SDL.array.SDL_array">SDL_array</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.audio.SDL.array.SDL_array.as_int32">
-<code class="descname">as_int32</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.as_int32" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">as_int32</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.as_int32" title="Permalink to this definition">¶</a></dt>
 <dd><p>Access the array as 32-bit integers, regardless of the underlying
 data type.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#cocos.audio.SDL.array.SDL_array" title="cocos.audio.SDL.array.SDL_array">SDL_array</a></td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#cocos.audio.SDL.array.SDL_array" title="cocos.audio.SDL.array.SDL_array">SDL_array</a></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.audio.SDL.array.SDL_array.as_numpy">
-<code class="descname">as_numpy</code><span class="sig-paren">(</span><em>shape=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.as_numpy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">as_numpy</code><span class="sig-paren">(</span><em class="sig-param">shape=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.as_numpy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Access the array as a numpy array.</p>
 <p>The numpy array shares the same underlying memory buffer, so
 changes are immediate, and you can use the numpy array as you would
 normally.  To set the entire contents of the array at once, use a
-<code class="docutils literal"><span class="pre">[:]</span></code> slice.</p>
+<code class="docutils literal notranslate"><span class="pre">[:]</span></code> slice.</p>
 <p>If numpy is not installed, an ImportError will be raised.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">numpy.ndarray</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.audio.SDL.array.SDL_array.from_string">
-<code class="descname">from_string</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.from_string" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">from_string</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.from_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copy string data into this array.</p>
 <p>The string must have exactly the same length of this array (in bytes).
 No size checking is performed.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><dl class="first last docutils">
-<dt><cite>data</cite> <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
-<dd><p class="first last">String data to copy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>data</cite><span class="classifier">str</span></dt><dd><p>String data to copy.</p>
 </dd>
 </dl>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.audio.SDL.array.SDL_array.have_numpy">
-<code class="descname">have_numpy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.have_numpy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">have_numpy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.have_numpy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine if the numpy array module is available.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.audio.SDL.array.SDL_array.to_string">
-<code class="descname">to_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.to_string" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.to_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a string with the contents of this array.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="function">
 <dt id="cocos.audio.SDL.array.to_ctypes">
-<code class="descname">to_ctypes</code><span class="sig-paren">(</span><em>values</em>, <em>count</em>, <em>ctype</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.to_ctypes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_ctypes</code><span class="sig-paren">(</span><em class="sig-param">values</em>, <em class="sig-param">count</em>, <em class="sig-param">ctype</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.to_ctypes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a ctypes array of the given count and type, with the contents
 of sequence <cite>values</cite>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><cite>values</cite>: sequence of length <cite>count</cite>, or SDL_array instance, or
-ctypes.Array, or POINTER(ctypes.Array)</li>
-<li><cite>count</cite>: int</li>
-<li><cite>ctype</cite>: type</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><cite>values</cite>: sequence of length <cite>count</cite>, or SDL_array instance, or
+ctypes.Array, or POINTER(ctypes.Array)</p></li>
+<li><p><cite>count</cite>: int</p></li>
+<li><p><cite>ctype</cite>: type</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">object, ctypes.Array</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(ref, array), where ref is an object that must be retained
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>object, ctypes.Array</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(ref, array), where ref is an object that must be retained
 by the caller for as long as the array is used.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -241,13 +202,13 @@ by the caller for as long as the array is used.</p>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -276,8 +237,8 @@ by the caller for as long as the array is used.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

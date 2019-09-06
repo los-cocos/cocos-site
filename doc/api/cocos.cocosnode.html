@@ -1,32 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>cocos.cocosnode module &#8212; cocos v0.6.5 documentation</title>
+    <meta charset="utf-8" />
+    <title>cocos.cocosnode module &#8212; cocos v0.6.7 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../',
-        VERSION:     '0.6.5',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.collision_model module" href="cocos.collision_model.html" />
     <link rel="prev" title="cocos.camera module" href="cocos.camera.html" /> 
-  </head>
-  <body>
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -57,92 +48,84 @@
 <p>CocosNode: the basic element of cocos2d</p>
 <dl class="class">
 <dt id="cocos.cocosnode.CocosNode">
-<em class="property">class </em><code class="descname">CocosNode</code><a class="headerlink" href="#cocos.cocosnode.CocosNode" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<em class="property">class </em><code class="sig-name descname">CocosNode</code><a class="headerlink" href="#cocos.cocosnode.CocosNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Cocosnode is the main element. Anything that gets drawn or contains things
-that gets drawn is a <a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal"><span class="pre">CocosNode</span></code></a>.
-The most popular <a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal"><span class="pre">CocosNode</span></code></a> are <a class="reference internal" href="cocos.scene.html#cocos.scene.Scene" title="cocos.scene.Scene"><code class="xref py py-class docutils literal"><span class="pre">cocos.scene.Scene</span></code></a>,
-<a class="reference internal" href="cocos.layer.base_layers.html#cocos.layer.base_layers.Layer" title="cocos.layer.base_layers.Layer"><code class="xref py py-class docutils literal"><span class="pre">cocos.layer.base_layers.Layer</span></code></a> and <a class="reference internal" href="cocos.sprite.html#cocos.sprite.Sprite" title="cocos.sprite.Sprite"><code class="xref py py-class docutils literal"><span class="pre">cocos.sprite.Sprite</span></code></a>.</p>
-<dl class="docutils">
-<dt>The main features of a <a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal"><span class="pre">CocosNode</span></code></a> are:</dt>
-<dd><ul class="first last simple">
-<li>They can contain other <a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal"><span class="pre">CocosNode</span></code></a> (<a class="reference internal" href="#cocos.cocosnode.CocosNode.add" title="cocos.cocosnode.CocosNode.add"><code class="xref py py-meth docutils literal"><span class="pre">add()</span></code></a>, <a class="reference internal" href="#cocos.cocosnode.CocosNode.get" title="cocos.cocosnode.CocosNode.get"><code class="xref py py-meth docutils literal"><span class="pre">get()</span></code></a>,
-<a class="reference internal" href="#cocos.cocosnode.CocosNode.remove" title="cocos.cocosnode.CocosNode.remove"><code class="xref py py-meth docutils literal"><span class="pre">remove()</span></code></a>, etc)</li>
-<li>They can schedule periodic callback (<a class="reference internal" href="#cocos.cocosnode.CocosNode.schedule" title="cocos.cocosnode.CocosNode.schedule"><code class="xref py py-meth docutils literal"><span class="pre">schedule()</span></code></a>,
-<a class="reference internal" href="#cocos.cocosnode.CocosNode.schedule_interval" title="cocos.cocosnode.CocosNode.schedule_interval"><code class="xref py py-meth docutils literal"><span class="pre">schedule_interval()</span></code></a>, etc)</li>
-<li>They can execute actions (<a class="reference internal" href="#cocos.cocosnode.CocosNode.do" title="cocos.cocosnode.CocosNode.do"><code class="xref py py-meth docutils literal"><span class="pre">do()</span></code></a>, <a class="reference internal" href="#cocos.cocosnode.CocosNode.pause" title="cocos.cocosnode.CocosNode.pause"><code class="xref py py-meth docutils literal"><span class="pre">pause()</span></code></a>, <a class="reference internal" href="#cocos.cocosnode.CocosNode.stop" title="cocos.cocosnode.CocosNode.stop"><code class="xref py py-meth docutils literal"><span class="pre">stop()</span></code></a>,
-etc)</li>
+that gets drawn is a <a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">CocosNode</span></code></a>.
+The most popular <a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">CocosNode</span></code></a> are <a class="reference internal" href="cocos.scene.html#cocos.scene.Scene" title="cocos.scene.Scene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scene.Scene</span></code></a>,
+<a class="reference internal" href="cocos.layer.base_layers.html#cocos.layer.base_layers.Layer" title="cocos.layer.base_layers.Layer"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.layer.base_layers.Layer</span></code></a> and <a class="reference internal" href="cocos.sprite.html#cocos.sprite.Sprite" title="cocos.sprite.Sprite"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.sprite.Sprite</span></code></a>.</p>
+<dl class="simple">
+<dt>The main features of a <a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">CocosNode</span></code></a> are:</dt><dd><ul class="simple">
+<li><p>They can contain other <a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">CocosNode</span></code></a> (<a class="reference internal" href="#cocos.cocosnode.CocosNode.add" title="cocos.cocosnode.CocosNode.add"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add()</span></code></a>, <a class="reference internal" href="#cocos.cocosnode.CocosNode.get" title="cocos.cocosnode.CocosNode.get"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get()</span></code></a>,
+<a class="reference internal" href="#cocos.cocosnode.CocosNode.remove" title="cocos.cocosnode.CocosNode.remove"><code class="xref py py-meth docutils literal notranslate"><span class="pre">remove()</span></code></a>, etc)</p></li>
+<li><p>They can schedule periodic callback (<a class="reference internal" href="#cocos.cocosnode.CocosNode.schedule" title="cocos.cocosnode.CocosNode.schedule"><code class="xref py py-meth docutils literal notranslate"><span class="pre">schedule()</span></code></a>,
+<a class="reference internal" href="#cocos.cocosnode.CocosNode.schedule_interval" title="cocos.cocosnode.CocosNode.schedule_interval"><code class="xref py py-meth docutils literal notranslate"><span class="pre">schedule_interval()</span></code></a>, etc)</p></li>
+<li><p>They can execute actions (<a class="reference internal" href="#cocos.cocosnode.CocosNode.do" title="cocos.cocosnode.CocosNode.do"><code class="xref py py-meth docutils literal notranslate"><span class="pre">do()</span></code></a>, <a class="reference internal" href="#cocos.cocosnode.CocosNode.pause" title="cocos.cocosnode.CocosNode.pause"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pause()</span></code></a>, <a class="reference internal" href="#cocos.cocosnode.CocosNode.stop" title="cocos.cocosnode.CocosNode.stop"><code class="xref py py-meth docutils literal notranslate"><span class="pre">stop()</span></code></a>,
+etc)</p></li>
 </ul>
 </dd>
 </dl>
-<p>Some <a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal"><span class="pre">CocosNode</span></code></a> provide extra functionality for them or their
+<p>Some <a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">CocosNode</span></code></a> provide extra functionality for them or their
 children.</p>
-<dl class="docutils">
-<dt>Subclassing a <a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal"><span class="pre">CocosNode</span></code></a> usually means (one/all) of:</dt>
-<dd><ul class="first last simple">
-<li>overriding <code class="docutils literal"><span class="pre">__init__</span></code> to initialize resources and schedule callbacks</li>
-<li>create callbacks to handle the advancement of time</li>
-<li>overriding <a class="reference internal" href="#cocos.cocosnode.CocosNode.draw" title="cocos.cocosnode.CocosNode.draw"><code class="xref py py-meth docutils literal"><span class="pre">draw()</span></code></a> to render the node</li>
+<dl class="simple">
+<dt>Subclassing a <a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">CocosNode</span></code></a> usually means (one/all) of:</dt><dd><ul class="simple">
+<li><p>overriding <code class="docutils literal notranslate"><span class="pre">__init__</span></code> to initialize resources and schedule callbacks</p></li>
+<li><p>create callbacks to handle the advancement of time</p></li>
+<li><p>overriding <a class="reference internal" href="#cocos.cocosnode.CocosNode.draw" title="cocos.cocosnode.CocosNode.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">draw()</span></code></a> to render the node</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.add">
-<code class="descname">add</code><span class="sig-paren">(</span><em>child</em>, <em>z=0</em>, <em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.add" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param">child</em>, <em class="sig-param">z=0</em>, <em class="sig-param">name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a child and if it becomes part of the active scene, it calls
-its <a class="reference internal" href="#cocos.cocosnode.CocosNode.on_enter" title="cocos.cocosnode.CocosNode.on_enter"><code class="xref py py-meth docutils literal"><span class="pre">on_enter()</span></code></a> method.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>child</strong> (<a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><em>CocosNode</em></a>) – object to be added</li>
-<li><strong>z</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – the child z index. Defaults to 0.</li>
-<li><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Name of the child. Defaults to <code class="docutils literal"><span class="pre">None</span></code></li>
+its <a class="reference internal" href="#cocos.cocosnode.CocosNode.on_enter" title="cocos.cocosnode.CocosNode.on_enter"><code class="xref py py-meth docutils literal notranslate"><span class="pre">on_enter()</span></code></a> method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>child</strong> (<a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><em>CocosNode</em></a>) – object to be added</p></li>
+<li><p><strong>z</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em>) – the child z index. Defaults to 0.</p></li>
+<li><p><strong>name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Name of the child. Defaults to <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>CocosNode</em> – self</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>CocosNode</em> – self</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.are_actions_running">
-<code class="descname">are_actions_running</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.are_actions_running" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">are_actions_running</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.are_actions_running" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine whether any actions are running.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.do">
-<code class="descname">do</code><span class="sig-paren">(</span><em>action</em>, <em>target=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.do" title="Permalink to this definition">¶</a></dt>
-<dd><p>Executes an <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><code class="xref py py-class docutils literal"><span class="pre">Action</span></code></a>.
+<code class="sig-name descname">do</code><span class="sig-paren">(</span><em class="sig-param">action</em>, <em class="sig-param">target=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.do" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes an <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><code class="xref py py-class docutils literal notranslate"><span class="pre">Action</span></code></a>.
 When the action is finished, it will be removed from the node’s actions
 container.</p>
-<p>To remove an action you must use the <a class="reference internal" href="#cocos.cocosnode.CocosNode.do" title="cocos.cocosnode.CocosNode.do"><code class="xref py py-meth docutils literal"><span class="pre">do()</span></code></a> return value to
-call <a class="reference internal" href="#cocos.cocosnode.CocosNode.remove_action" title="cocos.cocosnode.CocosNode.remove_action"><code class="xref py py-meth docutils literal"><span class="pre">remove_action()</span></code></a>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>action</strong> (<a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><em>Action</em></a>) – Action that will be executed.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>Action</em> – A clone of <code class="docutils literal"><span class="pre">action</span></code></td>
-</tr>
-</tbody>
-</table>
+<p>To remove an action you must use the <a class="reference internal" href="#cocos.cocosnode.CocosNode.do" title="cocos.cocosnode.CocosNode.do"><code class="xref py py-meth docutils literal notranslate"><span class="pre">do()</span></code></a> return value to
+call <a class="reference internal" href="#cocos.cocosnode.CocosNode.remove_action" title="cocos.cocosnode.CocosNode.remove_action"><code class="xref py py-meth docutils literal notranslate"><span class="pre">remove_action()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><em>Action</em></a>) – Action that will be executed.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>Action</em> – A clone of <code class="docutils literal notranslate"><span class="pre">action</span></code></p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.draw">
-<code class="descname">draw</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.draw" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is the function you will have to override if you want your
-subclassed <a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal"><span class="pre">CocosNode</span></code></a> to draw something on screen.</p>
+subclassed <a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">CocosNode</span></code></a> to draw something on screen.</p>
 <p>You <em>must</em> respect the position, scale, rotation and anchor attributes.
 If you want OpenGL to do the scaling for you, you can:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="n">glPushMatrix</span><span class="p">()</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">()</span>
     <span class="c1"># ... draw ..</span>
@@ -153,22 +136,20 @@ If you want OpenGL to do the scaling for you, you can:</p>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.get">
-<code class="descname">get</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.get" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets a child given its name.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>str</em>) – name of the reference to retrieve.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>CocosNode</em> – The child named ‘name’. Will raise an <code class="docutils literal"><span class="pre">Exception</span></code> if
-not present.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of the reference to retrieve.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>CocosNode</em> – The child named ‘name’. Will raise an <code class="docutils literal notranslate"><span class="pre">Exception</span></code> if
+not present.</p>
+</dd>
+</dl>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">If a node is added with name, then removing it differently
+<p class="admonition-title">Warning</p>
+<p>If a node is added with name, then removing it differently
 than by name will prevent the name to be recycled: attempting to add
 another node with this name will produce an Exception.</p>
 </div>
@@ -176,108 +157,90 @@ another node with this name will produce an Exception.</p>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.get_ancestor">
-<code class="descname">get_ancestor</code><span class="sig-paren">(</span><em>klass</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.get_ancestor" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_ancestor</code><span class="sig-paren">(</span><em class="sig-param">klass</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.get_ancestor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Walks the nodes tree upwards until it finds a node of the class
-<code class="docutils literal"><span class="pre">klass</span></code> or returns None.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">CocosNode or None</td>
-</tr>
-</tbody>
-</table>
+<code class="docutils literal notranslate"><span class="pre">klass</span></code> or returns None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>CocosNode or None</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.get_children">
-<code class="descname">get_children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.get_children" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_children</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.get_children" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a list with the node’s children, order is back to front.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><em>list[CocosNode]</em> – children of this node, ordered back to front.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><em>list[CocosNode]</em> – children of this node, ordered back to front.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.get_local_inverse">
-<code class="descname">get_local_inverse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.get_local_inverse" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns an <a class="reference internal" href="cocos.euclid.html#cocos.euclid.Matrix3" title="cocos.euclid.Matrix3"><code class="xref py py-class docutils literal"><span class="pre">euclid.Matrix3</span></code></a> with the local inverse
+<code class="sig-name descname">get_local_inverse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.get_local_inverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an <a class="reference internal" href="cocos.euclid.html#cocos.euclid.Matrix3" title="cocos.euclid.Matrix3"><code class="xref py py-class docutils literal notranslate"><span class="pre">euclid.Matrix3</span></code></a> with the local inverse
 transformation matrix.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">euclid.Matrix3</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>euclid.Matrix3</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.get_local_transform">
-<code class="descname">get_local_transform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.get_local_transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns an <a class="reference internal" href="cocos.euclid.html#cocos.euclid.Matrix3" title="cocos.euclid.Matrix3"><code class="xref py py-class docutils literal"><span class="pre">euclid.Matrix3</span></code></a> with the local transformation matrix</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">euclid.Matrix3</td>
-</tr>
-</tbody>
-</table>
+<code class="sig-name descname">get_local_transform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.get_local_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an <a class="reference internal" href="cocos.euclid.html#cocos.euclid.Matrix3" title="cocos.euclid.Matrix3"><code class="xref py py-class docutils literal notranslate"><span class="pre">euclid.Matrix3</span></code></a> with the local transformation matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>euclid.Matrix3</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.get_world_inverse">
-<code class="descname">get_world_inverse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.get_world_inverse" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns an <a class="reference internal" href="cocos.euclid.html#cocos.euclid.Matrix3" title="cocos.euclid.Matrix3"><code class="xref py py-class docutils literal"><span class="pre">euclid.Matrix3</span></code></a> with the world inverse
+<code class="sig-name descname">get_world_inverse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.get_world_inverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns an <a class="reference internal" href="cocos.euclid.html#cocos.euclid.Matrix3" title="cocos.euclid.Matrix3"><code class="xref py py-class docutils literal notranslate"><span class="pre">euclid.Matrix3</span></code></a> with the world inverse
 transformation matrix.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">euclid.Matrix3</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>euclid.Matrix3</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.get_world_transform">
-<code class="descname">get_world_transform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.get_world_transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns an <a class="reference internal" href="cocos.euclid.html#cocos.euclid.Matrix3" title="cocos.euclid.Matrix3"><code class="xref py py-class docutils literal"><span class="pre">euclid.Matrix3</span></code></a> with the world transformation matrix</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">euclid.Matrix3</td>
-</tr>
-</tbody>
-</table>
+<code class="sig-name descname">get_world_transform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.get_world_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an <a class="reference internal" href="cocos.euclid.html#cocos.euclid.Matrix3" title="cocos.euclid.Matrix3"><code class="xref py py-class docutils literal notranslate"><span class="pre">euclid.Matrix3</span></code></a> with the world transformation matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>euclid.Matrix3</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.kill">
-<code class="descname">kill</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.kill" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">kill</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.kill" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove this object from its parent, and thus most likely from
 everything.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.on_enter">
-<code class="descname">on_enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.on_enter" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">on_enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.on_enter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called every time just before the node enters the stage.</p>
 <p>Scheduled calls and worker actions begin or continue to perform.</p>
-<p>Good point to do <code class="docutils literal"><span class="pre">push_handlers()</span></code> if you have custom ones</p>
+<p>Good point to do <code class="docutils literal notranslate"><span class="pre">push_handlers()</span></code> if you have custom ones</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">A handler pushed there is near certain to require a
-<code class="docutils literal"><span class="pre">pop_handlers()</span></code> in the <a class="reference internal" href="#cocos.cocosnode.CocosNode.on_exit" title="cocos.cocosnode.CocosNode.on_exit"><code class="xref py py-meth docutils literal"><span class="pre">on_exit()</span></code></a> method (else it will be
+<p class="admonition-title">Note</p>
+<p>A handler pushed there is near certain to require a
+<code class="docutils literal notranslate"><span class="pre">pop_handlers()</span></code> in the <a class="reference internal" href="#cocos.cocosnode.CocosNode.on_exit" title="cocos.cocosnode.CocosNode.on_exit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">on_exit()</span></code></a> method (else it will be
 called even after being removed from the active scene, or if going
 on stage again it will be called multiple times for each event
 ocurrences).</p>
@@ -286,175 +249,157 @@ ocurrences).</p>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.on_exit">
-<code class="descname">on_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.on_exit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">on_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.on_exit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called every time just before the node leaves the stage.</p>
 <p>Scheduled calls and worker actions are suspended, that is, they will not
-be called until an <a class="reference internal" href="#cocos.cocosnode.CocosNode.on_enter" title="cocos.cocosnode.CocosNode.on_enter"><code class="xref py py-meth docutils literal"><span class="pre">on_enter()</span></code></a> event happens.</p>
-<p>Most of the time you will want to <code class="docutils literal"><span class="pre">pop_handlers()</span></code> for all explicit
-<code class="docutils literal"><span class="pre">push_handlers()</span></code> found in meth:<cite>on_enter</cite>.</p>
+be called until an <a class="reference internal" href="#cocos.cocosnode.CocosNode.on_enter" title="cocos.cocosnode.CocosNode.on_enter"><code class="xref py py-meth docutils literal notranslate"><span class="pre">on_enter()</span></code></a> event happens.</p>
+<p>Most of the time you will want to <code class="docutils literal notranslate"><span class="pre">pop_handlers()</span></code> for all explicit
+<code class="docutils literal notranslate"><span class="pre">push_handlers()</span></code> found in meth:<cite>on_enter</cite>.</p>
 <p>Consider to release here openGL resources created by this node, like
 compiled vertex lists.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.pause">
-<code class="descname">pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.pause" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.pause" title="Permalink to this definition">¶</a></dt>
 <dd><p>Suspends the execution of actions.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.pause_scheduler">
-<code class="descname">pause_scheduler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.pause_scheduler" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pause_scheduler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.pause_scheduler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Time will stop for this node: scheduled callbacks will
 not be called, worker actions will not be called.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.point_to_local">
-<code class="descname">point_to_local</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.point_to_local" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns an <a class="reference internal" href="cocos.euclid.html#cocos.euclid.Vector2" title="cocos.euclid.Vector2"><code class="xref py py-class docutils literal"><span class="pre">euclid.Vector2</span></code></a> converted to local space.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p</strong> (<a class="reference internal" href="cocos.euclid.html#cocos.euclid.Vector2" title="cocos.euclid.Vector2"><em>Vector2</em></a>) – Vector to convert.</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>Vector2</em> – <code class="docutils literal"><span class="pre">p</span></code> vector converted to local coordinates.</td>
-</tr>
-</tbody>
-</table>
+<code class="sig-name descname">point_to_local</code><span class="sig-paren">(</span><em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.point_to_local" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns an <a class="reference internal" href="cocos.euclid.html#cocos.euclid.Vector2" title="cocos.euclid.Vector2"><code class="xref py py-class docutils literal notranslate"><span class="pre">euclid.Vector2</span></code></a> converted to local space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>p</strong> (<a class="reference internal" href="cocos.euclid.html#cocos.euclid.Vector2" title="cocos.euclid.Vector2"><em>Vector2</em></a>) – Vector to convert.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>Vector2</em> – <code class="docutils literal notranslate"><span class="pre">p</span></code> vector converted to local coordinates.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.point_to_world">
-<code class="descname">point_to_world</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.point_to_world" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns an <a class="reference internal" href="cocos.euclid.html#cocos.euclid.Vector2" title="cocos.euclid.Vector2"><code class="xref py py-class docutils literal"><span class="pre">euclid.Vector2</span></code></a> converted to world space.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p</strong> (<a class="reference internal" href="cocos.euclid.html#cocos.euclid.Vector2" title="cocos.euclid.Vector2"><em>Vector2</em></a>) – Vector to convert</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><em>Vector2</em> – <code class="docutils literal"><span class="pre">p</span></code> vector converted to world coordinates.</td>
-</tr>
-</tbody>
-</table>
+<code class="sig-name descname">point_to_world</code><span class="sig-paren">(</span><em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.point_to_world" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an <a class="reference internal" href="cocos.euclid.html#cocos.euclid.Vector2" title="cocos.euclid.Vector2"><code class="xref py py-class docutils literal notranslate"><span class="pre">euclid.Vector2</span></code></a> converted to world space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>p</strong> (<a class="reference internal" href="cocos.euclid.html#cocos.euclid.Vector2" title="cocos.euclid.Vector2"><em>Vector2</em></a>) – Vector to convert</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>Vector2</em> – <code class="docutils literal notranslate"><span class="pre">p</span></code> vector converted to world coordinates.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.remove">
-<code class="descname">remove</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.remove" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">remove</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.remove" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes a child given its name or object</p>
 <p>If the node was added with name, it is better to remove by name, else
 the name will be unavailable for further adds (and will raise an
 Exception if add with this same name is attempted)</p>
-<p>If the node was part of the active scene, its <a class="reference internal" href="#cocos.cocosnode.CocosNode.on_exit" title="cocos.cocosnode.CocosNode.on_exit"><code class="xref py py-meth docutils literal"><span class="pre">on_exit()</span></code></a> method
+<p>If the node was part of the active scene, its <a class="reference internal" href="#cocos.cocosnode.CocosNode.on_exit" title="cocos.cocosnode.CocosNode.on_exit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">on_exit()</span></code></a> method
 will be called.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<em>str</em><em> or </em><em>object</em>) – Name of the reference to be removed or object to be removed.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>obj</strong> (<em>str</em><em> or </em><em>object</em>) – Name of the reference to be removed or object to be removed.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.remove_action">
-<code class="descname">remove_action</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.remove_action" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">remove_action</code><span class="sig-paren">(</span><em class="sig-param">action</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.remove_action" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes an action from the node actions container, potentially
-calling <code class="docutils literal"><span class="pre">action.stop()</span></code>.</p>
-<p>If action was running, <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.Action.stop" title="cocos.actions.base_actions.Action.stop"><code class="xref py py-meth docutils literal"><span class="pre">Action.stop()</span></code></a> is called.
+calling <code class="docutils literal notranslate"><span class="pre">action.stop()</span></code>.</p>
+<p>If action was running, <a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.Action.stop" title="cocos.actions.base_actions.Action.stop"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Action.stop()</span></code></a> is called.
 Mandatory interface to remove actions in the node actions container.
 When skipping this there is the posibility to double call the
-<code class="docutils literal"><span class="pre">action.stop</span></code></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>action</strong> (<a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><em>Action</em></a>) – Action to be removed.
-Must be the return value for a <a class="reference internal" href="#cocos.cocosnode.CocosNode.do" title="cocos.cocosnode.CocosNode.do"><code class="xref py py-meth docutils literal"><span class="pre">do()</span></code></a> call</td>
-</tr>
-</tbody>
-</table>
+<code class="docutils literal notranslate"><span class="pre">action.stop</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>action</strong> (<a class="reference internal" href="cocos.actions.base_actions.html#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><em>Action</em></a>) – Action to be removed.
+Must be the return value for a <a class="reference internal" href="#cocos.cocosnode.CocosNode.do" title="cocos.cocosnode.CocosNode.do"><code class="xref py py-meth docutils literal notranslate"><span class="pre">do()</span></code></a> call</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.resume">
-<code class="descname">resume</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.resume" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">resume</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.resume" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resumes the execution of actions.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.resume_scheduler">
-<code class="descname">resume_scheduler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.resume_scheduler" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">resume_scheduler</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.resume_scheduler" title="Permalink to this definition">¶</a></dt>
 <dd><p>Time will continue/start passing for this node and callbacks
 will be called, worker actions will be called.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.schedule">
-<code class="descname">schedule</code><span class="sig-paren">(</span><em>callback</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.schedule" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">schedule</code><span class="sig-paren">(</span><em class="sig-param">callback</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.schedule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Schedule a function to be called every frame.</p>
-<p>The function should have a prototype that includes <code class="docutils literal"><span class="pre">dt</span></code> as the
+<p>The function should have a prototype that includes <code class="docutils literal notranslate"><span class="pre">dt</span></code> as the
 first argument, which gives the elapsed time, in seconds, since the
 last clock tick.  Any additional arguments given to this function
 are passed on to the callback:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">dt</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="k">pass</span>
 </pre></div>
 </div>
-<p>This function is a wrapper to <code class="docutils literal"><span class="pre">pyglet.clock.schedule</span></code>.
+<p>This function is a wrapper to <code class="docutils literal notranslate"><span class="pre">pyglet.clock.schedule</span></code>.
 It has the additional benefit that all calllbacks are paused and
 resumed when the node leaves or enters a scene.</p>
 <p>You should not have to schedule things using pyglet by yourself.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>callback</strong> (<em>a function</em>) – The function to call each frame.</li>
-<li><strong>*args</strong> – Variable length argument list passed to the <code class="docutils literal"><span class="pre">callback</span></code>.</li>
-<li><strong>**kwargs</strong> – Arbitrary keyword arguments  passed to the <code class="docutils literal"><span class="pre">callback</span></code>.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>a function</em>) – The function to call each frame.</p></li>
+<li><p><strong>*args</strong> – Variable length argument list passed to the <code class="docutils literal notranslate"><span class="pre">callback</span></code>.</p></li>
+<li><p><strong>**kwargs</strong> – Arbitrary keyword arguments  passed to the <code class="docutils literal notranslate"><span class="pre">callback</span></code>.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.schedule_interval">
-<code class="descname">schedule_interval</code><span class="sig-paren">(</span><em>callback</em>, <em>interval</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.schedule_interval" title="Permalink to this definition">¶</a></dt>
-<dd><p>Schedule a function to be called every <code class="docutils literal"><span class="pre">interval</span></code> seconds.</p>
+<code class="sig-name descname">schedule_interval</code><span class="sig-paren">(</span><em class="sig-param">callback</em>, <em class="sig-param">interval</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.schedule_interval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Schedule a function to be called every <code class="docutils literal notranslate"><span class="pre">interval</span></code> seconds.</p>
 <p>Specifying an interval of 0 prevents the function from being
-called again (see <a class="reference internal" href="#cocos.cocosnode.CocosNode.schedule" title="cocos.cocosnode.CocosNode.schedule"><code class="xref py py-meth docutils literal"><span class="pre">schedule()</span></code></a> to call a function as often as
+called again (see <a class="reference internal" href="#cocos.cocosnode.CocosNode.schedule" title="cocos.cocosnode.CocosNode.schedule"><code class="xref py py-meth docutils literal notranslate"><span class="pre">schedule()</span></code></a> to call a function as often as
 possible).</p>
-<p>The callback function prototype is the same as for <a class="reference internal" href="#cocos.cocosnode.CocosNode.schedule" title="cocos.cocosnode.CocosNode.schedule"><code class="xref py py-meth docutils literal"><span class="pre">schedule()</span></code></a>.</p>
-<p>This function is a wrapper to <code class="docutils literal"><span class="pre">pyglet.clock.schedule_interval</span></code>.
+<p>The callback function prototype is the same as for <a class="reference internal" href="#cocos.cocosnode.CocosNode.schedule" title="cocos.cocosnode.CocosNode.schedule"><code class="xref py py-meth docutils literal notranslate"><span class="pre">schedule()</span></code></a>.</p>
+<p>This function is a wrapper to <code class="docutils literal notranslate"><span class="pre">pyglet.clock.schedule_interval</span></code>.
 It has the additional benefit that all calllbacks are paused and
 resumed when the node leaves or enters a scene.</p>
 <p>You should not have to schedule things using pyglet by yourself.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>callback</strong> (<em>a function</em>) – The function to call when the timer elapsed.</li>
-<li><strong>interval</strong> (<em>float</em>) – The number of seconds to wait between each call.</li>
-<li><strong>*args</strong> – Variable length argument list passed to the <code class="docutils literal"><span class="pre">callback</span></code>.</li>
-<li><strong>**kwargs</strong> – Arbitrary keyword arguments  passed to the <code class="docutils literal"><span class="pre">callback</span></code>.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>a function</em>) – The function to call when the timer elapsed.</p></li>
+<li><p><strong>interval</strong> (<em>float</em>) – The number of seconds to wait between each call.</p></li>
+<li><p><strong>*args</strong> – Variable length argument list passed to the <code class="docutils literal notranslate"><span class="pre">callback</span></code>.</p></li>
+<li><p><strong>**kwargs</strong> – Arbitrary keyword arguments  passed to the <code class="docutils literal notranslate"><span class="pre">callback</span></code>.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.stop">
-<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.stop" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes all actions from the running action list.</p>
 <p>For each action running, the stop method will be called,
 and the action will be removed from the actions container.</p>
@@ -462,15 +407,15 @@ and the action will be removed from the actions container.</p>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.transform">
-<code class="descname">transform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply ModelView transformations.</p>
 <p>You will most likely want to wrap calls to this function with
-<code class="docutils literal"><span class="pre">glPushMatrix()</span></code>/<code class="docutils literal"><span class="pre">glPopMatrix()</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">glPushMatrix()</span></code>/<code class="docutils literal notranslate"><span class="pre">glPopMatrix()</span></code></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.unschedule">
-<code class="descname">unschedule</code><span class="sig-paren">(</span><em>callback</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.unschedule" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">unschedule</code><span class="sig-paren">(</span><em class="sig-param">callback</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.unschedule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Remove a function from the schedule.</p>
 <p>If the function appears in the schedule more than once, all occurances
 are removed. If the function was not scheduled, no error is raised.</p>
@@ -478,96 +423,89 @@ are removed. If the function was not scheduled, no error is raised.</p>
 It has the additional benefit that all calllbacks are paused and
 resumed when the node leaves or enters a scene.</p>
 <p>You should not unschedule things using pyglet that where scheduled
-by <a class="reference internal" href="#cocos.cocosnode.CocosNode.schedule" title="cocos.cocosnode.CocosNode.schedule"><code class="xref py py-meth docutils literal"><span class="pre">schedule()</span></code></a>/<a class="reference internal" href="#cocos.cocosnode.CocosNode.schedule_interval" title="cocos.cocosnode.CocosNode.schedule_interval"><code class="xref py py-meth docutils literal"><span class="pre">schedule_interval()</span></code></a>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>callback</strong> (<em>a function</em>) – The function to remove from the schedule.</td>
-</tr>
-</tbody>
-</table>
+by <a class="reference internal" href="#cocos.cocosnode.CocosNode.schedule" title="cocos.cocosnode.CocosNode.schedule"><code class="xref py py-meth docutils literal notranslate"><span class="pre">schedule()</span></code></a>/<a class="reference internal" href="#cocos.cocosnode.CocosNode.schedule_interval" title="cocos.cocosnode.CocosNode.schedule_interval"><code class="xref py py-meth docutils literal notranslate"><span class="pre">schedule_interval()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>callback</strong> (<em>a function</em>) – The function to remove from the schedule.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.visit">
-<code class="descname">visit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.visit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">visit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.visit" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function <em>visits</em> its children in a recursive
 way.</p>
 <p>It will first <em>visit</em> the children that
 that have a z-order value less than 0.</p>
-<p>Then it will call the <a class="reference internal" href="#cocos.cocosnode.CocosNode.draw" title="cocos.cocosnode.CocosNode.draw"><code class="xref py py-meth docutils literal"><span class="pre">draw()</span></code></a> method to
+<p>Then it will call the <a class="reference internal" href="#cocos.cocosnode.CocosNode.draw" title="cocos.cocosnode.CocosNode.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">draw()</span></code></a> method to
 draw itself.</p>
 <p>And finally it will <em>visit</em> the rest of the
 children (the ones with a z-value bigger
 or equal than 0)</p>
 <p>Before <em>visiting</em> any children it will call
-the <a class="reference internal" href="#cocos.cocosnode.CocosNode.transform" title="cocos.cocosnode.CocosNode.transform"><code class="xref py py-meth docutils literal"><span class="pre">transform()</span></code></a> method to apply any possible
+the <a class="reference internal" href="#cocos.cocosnode.CocosNode.transform" title="cocos.cocosnode.CocosNode.transform"><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform()</span></code></a> method to apply any possible
 transformations.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="cocos.cocosnode.CocosNode.walk">
-<code class="descname">walk</code><span class="sig-paren">(</span><em>callback</em>, <em>collect=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.walk" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">walk</code><span class="sig-paren">(</span><em class="sig-param">callback</em>, <em class="sig-param">collect=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.cocosnode.CocosNode.walk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Executes callback on all the subtree starting at self.
-returns a list of all return values that are not <code class="docutils literal"><span class="pre">None</span></code>.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>callback</strong> (<em>a function</em>) – Callable that takes a <a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal"><span class="pre">CocosNode</span></code></a> as an argument.</li>
-<li><strong>collect</strong> (<em>list</em>) – List of non-<cite>None</cite> returned values from visited nodes.</li>
+returns a list of all return values that are not <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>callback</strong> (<em>a function</em>) – Callable that takes a <a class="reference internal" href="#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">CocosNode</span></code></a> as an argument.</p></li>
+<li><p><strong>collect</strong> (<em>list</em>) – List of non-<cite>None</cite> returned values from visited nodes.</p></li>
 </ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><em>list</em> – The list of non-<cite>None</cite> return values.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><em>list</em> – The list of non-<cite>None</cite> return values.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.cocosnode.CocosNode.actions">
-<code class="descname">actions</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.actions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">actions</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.actions" title="Permalink to this definition">¶</a></dt>
 <dd><p>list of <cite>Action</cite> objects that are running</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="cocos.cocosnode.CocosNode.anchor">
-<code class="descname">anchor</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.anchor" title="Permalink to this definition">¶</a></dt>
-<dd><p>Anchor point of the object. Alias for <a class="reference internal" href="#cocos.cocosnode.CocosNode.transform_anchor" title="cocos.cocosnode.CocosNode.transform_anchor"><code class="xref py py-class docutils literal"><span class="pre">transform_anchor</span></code></a>
+<em class="property">property </em><code class="sig-name descname">anchor</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.anchor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Anchor point of the object. Alias for <a class="reference internal" href="#cocos.cocosnode.CocosNode.transform_anchor" title="cocos.cocosnode.CocosNode.transform_anchor"><code class="xref py py-class docutils literal notranslate"><span class="pre">transform_anchor</span></code></a>
 Children will be added at this point
 and transformations like scaling and rotation will use this point
 as the center.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="cocos.cocosnode.CocosNode.anchor_x">
-<code class="descname">anchor_x</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.anchor_x" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">anchor_x</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.anchor_x" title="Permalink to this definition">¶</a></dt>
 <dd><p>Anchor x value for transformations and adding children. Alias for
-<a class="reference internal" href="#cocos.cocosnode.CocosNode.transform_anchor_x" title="cocos.cocosnode.CocosNode.transform_anchor_x"><code class="xref py py-class docutils literal"><span class="pre">transform_anchor_x</span></code></a></p>
+<a class="reference internal" href="#cocos.cocosnode.CocosNode.transform_anchor_x" title="cocos.cocosnode.CocosNode.transform_anchor_x"><code class="xref py py-class docutils literal notranslate"><span class="pre">transform_anchor_x</span></code></a></p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="cocos.cocosnode.CocosNode.anchor_y">
-<code class="descname">anchor_y</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.anchor_y" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">anchor_y</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.anchor_y" title="Permalink to this definition">¶</a></dt>
 <dd><p>Anchor y value for transformations and adding children. Alias for
-<a class="reference internal" href="#cocos.cocosnode.CocosNode.transform_anchor_y" title="cocos.cocosnode.CocosNode.transform_anchor_y"><code class="xref py py-class docutils literal"><span class="pre">transform_anchor_y</span></code></a></p>
+<a class="reference internal" href="#cocos.cocosnode.CocosNode.transform_anchor_y" title="cocos.cocosnode.CocosNode.transform_anchor_y"><code class="xref py py-class docutils literal notranslate"><span class="pre">transform_anchor_y</span></code></a></p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.cocosnode.CocosNode.camera">
-<code class="descname">camera</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.camera" title="Permalink to this definition">¶</a></dt>
-<dd><p>eye, center and up vector for the <a class="reference internal" href="cocos.camera.html#cocos.camera.Camera" title="cocos.camera.Camera"><code class="xref py py-class docutils literal"><span class="pre">Camera</span></code></a>.
+<code class="sig-name descname">camera</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.camera" title="Permalink to this definition">¶</a></dt>
+<dd><p>eye, center and up vector for the <a class="reference internal" href="cocos.camera.html#cocos.camera.Camera" title="cocos.camera.Camera"><code class="xref py py-class docutils literal notranslate"><span class="pre">Camera</span></code></a>.
 gluLookAt() is used with these values.
 Default: FOV 60, center of the screen.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The camera can perform exactly the same
-transformation as <code class="docutils literal"><span class="pre">scale</span></code>, <code class="docutils literal"><span class="pre">rotation</span></code> and the
-<code class="docutils literal"><span class="pre">x</span></code>, <code class="docutils literal"><span class="pre">y</span></code> attributes (with the exception that the
+<p class="admonition-title">Note</p>
+<p>The camera can perform exactly the same
+transformation as <code class="docutils literal notranslate"><span class="pre">scale</span></code>, <code class="docutils literal notranslate"><span class="pre">rotation</span></code> and the
+<code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> attributes (with the exception that the
 camera can modify also the z-coordinate)
 In fact, they all transform the same matrix, so
 use either the camera or the other attributes, but not both
@@ -575,24 +513,24 @@ since the camera will be overridden by the transformations done
 by the other attributes.</p>
 </div>
 <p>You can change the camera manually or by using the
-<a class="reference internal" href="cocos.actions.camera_actions.html#cocos.actions.camera_actions.Camera3DAction" title="cocos.actions.camera_actions.Camera3DAction"><code class="xref py py-class docutils literal"><span class="pre">Camera3DAction</span></code></a> action.</p>
+<a class="reference internal" href="cocos.actions.camera_actions.html#cocos.actions.camera_actions.Camera3DAction" title="cocos.actions.camera_actions.Camera3DAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">Camera3DAction</span></code></a> action.</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.cocosnode.CocosNode.children">
-<code class="descname">children</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.children" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">children</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.children" title="Permalink to this definition">¶</a></dt>
 <dd><p>list of (int, child-reference) where int is the z-order, sorted by ascending z (back to front order)</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.cocosnode.CocosNode.children_names">
-<code class="descname">children_names</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.children_names" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">children_names</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.children_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>dictionary that maps children names with children references</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.cocosnode.CocosNode.grid">
-<code class="descname">grid</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.grid" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">grid</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.grid" title="Permalink to this definition">¶</a></dt>
 <dd><p>the grid object for the grid actions.
 This can be a <cite>Grid3D</cite> or a <cite>TiledGrid3D</cite> object depending
 on the action.</p>
@@ -600,122 +538,104 @@ on the action.</p>
 
 <dl class="attribute">
 <dt id="cocos.cocosnode.CocosNode.is_running">
-<code class="descname">is_running</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.is_running" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_running</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.is_running" title="Permalink to this definition">¶</a></dt>
 <dd><p>whether of not the object is running</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="cocos.cocosnode.CocosNode.parent">
-<code class="descname">parent</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.parent" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">parent</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.parent" title="Permalink to this definition">¶</a></dt>
 <dd><p>The parent of this object.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">CocosNode or None</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>CocosNode or None</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="cocos.cocosnode.CocosNode.position">
-<code class="descname">position</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.position" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">position</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.position" title="Permalink to this definition">¶</a></dt>
 <dd><p>The (x, y) coordinates of the object.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">tuple[int, int]</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tuple[int, int]</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="cocos.cocosnode.CocosNode.rotation">
-<code class="descname">rotation</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.rotation" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">rotation</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.rotation" title="Permalink to this definition">¶</a></dt>
 <dd><p>The rotation of this object in degrees.
 Defaults to 0.0.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="cocos.cocosnode.CocosNode.scale">
-<code class="descname">scale</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.scale" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">scale</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.scale" title="Permalink to this definition">¶</a></dt>
 <dd><p>The scaling factor of the object.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="cocos.cocosnode.CocosNode.scale_x">
-<code class="descname">scale_x</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.scale_x" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">scale_x</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.scale_x" title="Permalink to this definition">¶</a></dt>
 <dd><p>The scale x of this object.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="cocos.cocosnode.CocosNode.scale_y">
-<code class="descname">scale_y</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.scale_y" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">scale_y</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.scale_y" title="Permalink to this definition">¶</a></dt>
 <dd><p>The scale y of this object.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">float</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.cocosnode.CocosNode.scheduled_calls">
-<code class="descname">scheduled_calls</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.scheduled_calls" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">scheduled_calls</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.scheduled_calls" title="Permalink to this definition">¶</a></dt>
 <dd><p>list of scheduled callbacks</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.cocosnode.CocosNode.scheduled_interval_calls">
-<code class="descname">scheduled_interval_calls</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.scheduled_interval_calls" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">scheduled_interval_calls</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.scheduled_interval_calls" title="Permalink to this definition">¶</a></dt>
 <dd><p>list of scheduled interval callbacks</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.cocosnode.CocosNode.skip_frame">
-<code class="descname">skip_frame</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.skip_frame" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">skip_frame</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.skip_frame" title="Permalink to this definition">¶</a></dt>
 <dd><p>whether or not the next frame will be skipped</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.cocosnode.CocosNode.to_remove">
-<code class="descname">to_remove</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.to_remove" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_remove</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.to_remove" title="Permalink to this definition">¶</a></dt>
 <dd><p>list of <cite>Action</cite> objects to be removed</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="cocos.cocosnode.CocosNode.transform_anchor">
-<code class="descname">transform_anchor</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.transform_anchor" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">transform_anchor</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.transform_anchor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transformation anchor point. Children will be added at this point and
 transformations like scaling and rotation
 will use this point as its center.</p>
@@ -723,34 +643,34 @@ will use this point as its center.</p>
 
 <dl class="attribute">
 <dt id="cocos.cocosnode.CocosNode.transform_anchor_x">
-<code class="descname">transform_anchor_x</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.transform_anchor_x" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform_anchor_x</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.transform_anchor_x" title="Permalink to this definition">¶</a></dt>
 <dd><p>offset from (x,0) from where rotation and scale will be applied.
 Default: 0</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.cocosnode.CocosNode.transform_anchor_y">
-<code class="descname">transform_anchor_y</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.transform_anchor_y" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform_anchor_y</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.transform_anchor_y" title="Permalink to this definition">¶</a></dt>
 <dd><p>offset from (0,y) from where rotation and scale will be applied.
 Default: 0</p>
 </dd></dl>
 
 <dl class="attribute">
 <dt id="cocos.cocosnode.CocosNode.visible">
-<code class="descname">visible</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.visible" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">visible</code><em class="property"> = None</em><a class="headerlink" href="#cocos.cocosnode.CocosNode.visible" title="Permalink to this definition">¶</a></dt>
 <dd><p>whether of not the object and his childrens are visible.
 Default: True</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="cocos.cocosnode.CocosNode.x">
-<code class="descname">x</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.x" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">x</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.x" title="Permalink to this definition">¶</a></dt>
 <dd><p>The x coordinate of the CocosNode</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="method">
 <dt id="cocos.cocosnode.CocosNode.y">
-<code class="descname">y</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.y" title="Permalink to this definition">¶</a></dt>
+<em class="property">property </em><code class="sig-name descname">y</code><a class="headerlink" href="#cocos.cocosnode.CocosNode.y" title="Permalink to this definition">¶</a></dt>
 <dd><p>The y coordinate of the CocosNode</p>
 </dd></dl>
 
@@ -778,13 +698,13 @@ Default: True</p>
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -811,8 +731,8 @@ Default: True</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2017, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+        &#169; Copyright 2008-2019, cocos&#39;s team.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
   </body>
 </html>

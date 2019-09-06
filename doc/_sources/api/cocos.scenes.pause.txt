@@ -1,7 +1,7 @@
-cocos\.scenes\.pause module
-===========================
+cocos.scenes.pause module
+=========================
 
 .. automodule:: cocos.scenes.pause
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:
