@@ -5,10 +5,11 @@ BODY{
 }
 
 .header{
-    height:120px;
     background-color:#444444;
     color:#FFFFFF;
     margin:0px;
+	width:100%;
+
 }
 
 a:link, a:active, a:visited {
@@ -23,6 +24,7 @@ a:hover {
 	
 .navigation{
 	color:#999999;
+	background-color:#444444;
 	margin-left: 50px;
 	font-weight:bold;
 	width:100%;
