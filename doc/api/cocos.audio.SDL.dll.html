@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>cocos.audio.SDL.dll module &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocos.audio.SDL.dll module &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.audio.SDL.endian module" href="cocos.audio.SDL.endian.html" />
@@ -36,7 +37,8 @@
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" accesskey="U">cocos.audio.SDL package</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" accesskey="U">cocos.audio.SDL package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.audio.SDL.dll module</a></li> 
       </ul>
     </div>  
 
@@ -47,19 +49,19 @@
             
   <div class="section" id="module-cocos.audio.SDL.dll">
 <span id="cocos-audio-sdl-dll-module"></span><h1>cocos.audio.SDL.dll module<a class="headerlink" href="#module-cocos.audio.SDL.dll" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.audio.SDL.dll.SDL_DLL">
-<em class="property">class </em><code class="sig-name descname">SDL_DLL</code><span class="sig-paren">(</span><em class="sig-param">library_name</em>, <em class="sig-param">version_function_name</em>, <em class="sig-param">version=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">SDL_DLL</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">library_name</span></em>, <em class="sig-param"><span class="n">version_function_name</span></em>, <em class="sig-param"><span class="n">version</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.audio.SDL.dll.SDL_DLL.assert_version_compatible">
-<code class="sig-name descname">assert_version_compatible</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">since</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.assert_version_compatible" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">assert_version_compatible</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">since</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.assert_version_compatible" title="Permalink to this definition">¶</a></dt>
 <dd><p>Raises an exception if <cite>since</cite> is later than the loaded library.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.audio.SDL.dll.SDL_DLL.function">
-<code class="sig-name descname">function</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">doc</em>, <em class="sig-param">args=[]</em>, <em class="sig-param">arg_types=[]</em>, <em class="sig-param">return_type=None</em>, <em class="sig-param">dereference_return=False</em>, <em class="sig-param">require_return=False</em>, <em class="sig-param">success_return=None</em>, <em class="sig-param">error_return=None</em>, <em class="sig-param">since=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.function" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">function</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">doc</span></em>, <em class="sig-param"><span class="n">args</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">arg_types</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">return_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dereference_return</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">require_return</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">success_return</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">error_return</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">since</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a wrapper function for ctypes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -103,31 +105,31 @@ Set to None if the function is in all versions of SDL.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.audio.SDL.dll.SDL_DLL.private_function">
-<code class="sig-name descname">private_function</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.private_function" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">private_function</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.private_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a wrapper function for ctypes with internal documentation
 and no argument names.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.audio.SDL.dll.SDL_DLL.version_compatible">
-<code class="sig-name descname">version_compatible</code><span class="sig-paren">(</span><em class="sig-param">v</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.version_compatible" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">version_compatible</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.SDL_DLL.version_compatible" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True iff <cite>v</cite> is equal to or later than the loaded library
 version.</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.SDL.dll.assert_version_compatible">
-<code class="sig-name descname">assert_version_compatible</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">since</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.assert_version_compatible" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">assert_version_compatible</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">since</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.assert_version_compatible" title="Permalink to this definition">¶</a></dt>
 <dd><p>Raises an exception if <cite>since</cite> is later than the loaded library.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.SDL.dll.function">
-<code class="sig-name descname">function</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">doc</em>, <em class="sig-param">args=[]</em>, <em class="sig-param">arg_types=[]</em>, <em class="sig-param">return_type=None</em>, <em class="sig-param">dereference_return=False</em>, <em class="sig-param">require_return=False</em>, <em class="sig-param">success_return=None</em>, <em class="sig-param">error_return=None</em>, <em class="sig-param">since=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.function" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">function</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">doc</span></em>, <em class="sig-param"><span class="n">args</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">arg_types</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">return_type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dereference_return</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">require_return</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">success_return</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">error_return</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">since</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a wrapper function for ctypes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -171,16 +173,16 @@ Set to None if the function is in all versions of SDL.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.SDL.dll.private_function">
-<code class="sig-name descname">private_function</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.private_function" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">private_function</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.private_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a wrapper function for ctypes with internal documentation
 and no argument names.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.SDL.dll.version_compatible">
-<code class="sig-name descname">version_compatible</code><span class="sig-paren">(</span><em class="sig-param">v</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.version_compatible" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">version_compatible</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.dll.version_compatible" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True iff <cite>v</cite> is equal to or later than the loaded library
 version.</p>
 </dd></dl>
@@ -188,6 +190,7 @@ version.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -215,7 +218,7 @@ version.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -238,12 +241,13 @@ version.</p>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" >cocos.audio.SDL package</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" >cocos.audio.SDL package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.audio.SDL.dll module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>

@@ -1,0 +1,1064 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>euclid &#8212; cocos v0.6.9 documentation</title>
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">cocos</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">euclid</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="abstract topic">
+<p class="topic-title">Abstract</p>
+<p>A module providing vector, matrix and quaternion operations
+for use in 2D and 3D graphics applications.</p>
+</div>
+<div class="section" id="euclid">
+<h1>euclid<a class="headerlink" href="#euclid" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This document describes the <code class="docutils literal notranslate"><span class="pre">euclid</span></code> module, which provides vector,
+matrix and quaternion classes for 2D and 3D graphics applications.
+Everything is provided in the <code class="docutils literal notranslate"><span class="pre">euclid</span></code> namespace:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">cocos.euclid</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Type checking of arguments is done with assertions.  The advantage of
+this is that in a usual Python session an exception will be raised
+earlier rather than later, with a message indicating the expected type.
+When Python is run with the <code class="docutils literal notranslate"><span class="pre">-O</span></code> or <code class="docutils literal notranslate"><span class="pre">-OO</span></code> flags, assertions are
+removed and the code executes faster.</p>
+</div>
+<div class="section" id="vector-classes">
+<h2>Vector classes<a class="headerlink" href="#vector-classes" title="Permalink to this headline">¶</a></h2>
+<p>Two mutable vector types are available: <strong>Vector2</strong> and <strong>Vector3</strong>,
+for 2D and 3D vectors, respectively.  Vectors are assumed to hold
+floats, but most operations will also work if you use ints or longs
+instead.  Construct a vector in the obvious way:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Vector2</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="go">Vector2(1.50, 2.00)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Vector3</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="go">Vector3(1.00, 2.00, 3.00)</span>
+</pre></div>
+</div>
+<div class="section" id="element-access">
+<h3>Element access<a class="headerlink" href="#element-access" title="Permalink to this headline">¶</a></h3>
+<p>Components may be accessed as attributes (examples that follow use
+<strong>Vector3</strong>, but all results are similar for <strong>Vector2</strong>, using only the <em>x</em>
+and <em>y</em> components):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">x</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">y</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">z</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p>Vectors support the list interface via slicing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="p">[:]</span>
+<span class="go">(1, 2, 3)</span>
+</pre></div>
+</div>
+<p>You can also “swizzle” the components (<em>a la</em> GLSL or Cg):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">xyz</span>
+<span class="go">(1, 2, 3)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">zx</span>
+<span class="go">(3, 1)</span>
+</pre></div>
+</div>
+<p>but no component duplicates are allowed, by example v.xxz will traceback.</p>
+<p>All of the above accessors except the swizzles ones are also mutators:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span>
+<span class="go">Vector3(5.00, 2.00, 3.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span>
+<span class="go">Vector3(5.00, 10.00, 20.00)</span>
+</pre></div>
+</div>
+<p>Assignment via a swizzle (e.g., <code class="docutils literal notranslate"><span class="pre">v.xyz</span> <span class="pre">=</span> <span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code>) is not supported
+as it impacts on the performance of ordinary attribute
+setting, and is slower than setting components sequentially anyway.</p>
+</div>
+<div class="section" id="operators">
+<h3>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h3>
+<p>Addition and subtraction are supported via operator overloading (note
+that in-place operators perform faster than those that create a new object):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span>
+<span class="go">Vector3(5.00, 7.00, 9.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">-=</span> <span class="n">v2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span>
+<span class="go">Vector3(-3.00, -3.00, -3.00)</span>
+</pre></div>
+</div>
+<p>Multiplication and division can be performed with a scalar only:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="go">Vector3(2.00, 4.00, 6.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">/=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span>
+<span class="go">Vector3(0.50, 1.00, 1.50)</span>
+</pre></div>
+</div>
+<p>The magnitude of a vector can be found with <code class="docutils literal notranslate"><span class="pre">abs</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="go">3.7416573867739413</span>
+</pre></div>
+</div>
+<p>A vector can be normalized in-place (note that the in-place method also
+returns <code class="docutils literal notranslate"><span class="pre">self</span></code>, so you can chain it with further operators):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">normalize</span><span class="p">()</span>
+<span class="go">Vector3(0.27, 0.53, 0.80)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span>
+<span class="go">Vector3(0.27, 0.53, 0.80)</span>
+</pre></div>
+</div>
+<p>The following methods do <em>not</em> alter the original vector or their arguments:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">copy()</span></code></dt><dd><p>Returns a copy of the vector.  <code class="docutils literal notranslate"><span class="pre">__copy__</span></code> is also implemented.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">magnitude()</span></code></dt><dd><p>Returns the magnitude of the vector; equivalent to <code class="docutils literal notranslate"><span class="pre">abs(v)</span></code>.  Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">magnitude</span><span class="p">()</span>
+<span class="go">3.7416573867739413</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">magnitude_squared()</span></code></dt><dd><p>Returns the sum of the squares of each component.  Useful for comparing
+the length of two vectors without the expensive square root operation.
+Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">magnitude_squared</span><span class="p">()</span>
+<span class="go">14.0</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">normalized()</span></code></dt><dd><p>Return a unit length vector in the same direction.  Note that this
+method differs from <code class="docutils literal notranslate"><span class="pre">normalize</span></code> in that it does not modify the
+vector in-place.  Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">normalized</span><span class="p">()</span>
+<span class="go">Vector3(0.27, 0.53, 0.80)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span>
+<span class="go">Vector3(1.00, 2.00, 3.00)</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">dot(other)</span></code></dt><dd><p>Return the scalar “dot” product of two vectors.  Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
+<span class="go">32.0</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">determinant(other)</span></code></dt><dd><p>Return the scalar “determinant” of two 2D vectors. Example:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">Vector2</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">Vector2</span><span class="p">(</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span><span class="o">.</span><span class="n">determinant</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
+<span class="go">-2.0</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">cross()</span></code> and <code class="docutils literal notranslate"><span class="pre">cross(other)</span></code></dt><dd><p>Return the cross product of a vector (for <strong>Vector2</strong>), or the cross
+product of two vectors (for <strong>Vector3</strong>).  The return type is a
+vector.  Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>
+<span class="go">Vector3(-3.00, 6.00, -3.00)</span>
+</pre></div>
+</div>
+<p>In two dimensions there can be no argument to <code class="docutils literal notranslate"><span class="pre">cross</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">Vector2</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span><span class="o">.</span><span class="n">cross</span><span class="p">()</span>
+<span class="go">Vector2(2.00, -1.00)</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">reflect(normal)</span></code></dt><dd><p>Return the vector reflected about the given normal.  In two dimensions,
+<em>normal</em> is the normal to a line, in three dimensions it is the normal
+to a plane.  The normal must have unit length.  Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">reflect</span><span class="p">(</span><span class="n">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="go">Vector3(1.00, -2.00, 3.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">Vector2</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">reflect</span><span class="p">(</span><span class="n">Vector2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="go">Vector2(-1.00, 2.00)</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rotate(theta)</span></code></dt><dd><p>For 2D vectors, return the vector rotated around origin by the angle theta.
+Example:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">Vector2</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">Vector2(-2.00, 1.00)</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">rotate_around(axes,</span> <span class="pre">theta)</span></code></dt><dd><p>For 3D vectors, return the vector rotated around axis by the angle theta.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">axes</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">rotate_around</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="go">Vector3(2.65, 0.35, 2.62)</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">angle(other)</span></code></dt><dd><p>Return the canonical angle between two vectors, <code class="docutils literal notranslate"><span class="pre">angle(u,</span> <span class="pre">v)</span> <span class="pre">=</span> <span class="pre">u</span> <span class="pre">dot</span> <span class="pre">v</span> <span class="pre">/</span> <span class="pre">(|u|*|v|)</span></code>
+Is the angle between the lines generated by self and other.
+Range is [0, pi]
+v.angle(w) == w.angle(v)
+Example:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">Vector2</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">Vector2</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">))</span>
+<span class="go">0.7853981633974483</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">Vector2</span><span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">))</span>
+<span class="go">2.356194490192345</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">angle_oriented(other)</span></code></dt><dd><p>signed angle from self to other
+The angle to rotate self so that it points in the same direction as other
+Range is [-pi, pi]
+v.angle(w) == - w.angle(v)    Example:
+Example:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">Vector2</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span><span class="o">.</span><span class="n">angle_oriented</span><span class="p">(</span><span class="n">Vector2</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">))</span>
+<span class="go">-0.7853981633974483</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span><span class="o">.</span><span class="n">angle_oriented</span><span class="p">(</span><span class="n">Vector2</span><span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">))</span>
+<span class="go">2.356194490192345</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">project(other)</span></code></dt><dd><p>Return the projection (the component) of the vector on other.</p>
+</dd>
+</dl>
+<p>Tests for equality include comparing against other sequences:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">Vector2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">==</span> <span class="n">Vector2</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">!=</span> <span class="n">Vector2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">True</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v3</span> <span class="o">=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v3</span> <span class="o">==</span> <span class="n">Vector3</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v3</span> <span class="o">!=</span> <span class="n">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v3</span> <span class="o">==</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Vectors are not hashable, and hence cannot be put in sets nor used as
+dictionary keys:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="n">Vector2</span><span class="p">():</span> <span class="mi">0</span><span class="p">}</span>
+<span class="gt">Traceback (most recent call last):</span>
+    <span class="o">...</span>
+<span class="gr">TypeError</span>: <span class="n">unhashable type: &#39;Vector2&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="n">Vector3</span><span class="p">():</span> <span class="mi">0</span><span class="p">}</span>
+<span class="gt">Traceback (most recent call last):</span>
+    <span class="o">...</span>
+<span class="gr">TypeError</span>: <span class="n">unhashable type: &#39;Vector3&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="matrix-classes">
+<h2>Matrix classes<a class="headerlink" href="#matrix-classes" title="Permalink to this headline">¶</a></h2>
+<p>Two matrix classes are supplied, <strong>Matrix3</strong>, a 3x3 matrix for working with 2D
+affine transformations, and <strong>Matrix4</strong>, a 4x4 matrix for working with 3D
+affine transformations.</p>
+<p>The default constructor intializes the matrix to the identity:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Matrix3</span><span class="p">()</span>
+<span class="go">Matrix3([    1.00     0.00     0.00</span>
+<span class="go">             0.00     1.00     0.00</span>
+<span class="go">             0.00     0.00     1.00])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Matrix4</span><span class="p">()</span>
+<span class="go">Matrix4([    1.00     0.00     0.00     0.00</span>
+<span class="go">             0.00     1.00     0.00     0.00</span>
+<span class="go">             0.00     0.00     1.00     0.00</span>
+<span class="go">             0.00     0.00     0.00     1.00])</span>
+</pre></div>
+</div>
+<div class="section" id="id1">
+<h3>Element access<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Internally each matrix is stored as a set of attributes named <code class="docutils literal notranslate"><span class="pre">a</span></code> to <code class="docutils literal notranslate"><span class="pre">p</span></code>.
+The layout for Matrix3 is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a b c</span>
+<span class="c1"># e f g</span>
+<span class="c1"># i j k</span>
+</pre></div>
+</div>
+<p>and for Matrix4:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># a b c d</span>
+<span class="c1"># e f g h</span>
+<span class="c1"># i j k l</span>
+<span class="c1"># m n o p</span>
+</pre></div>
+</div>
+<p>If you wish to set or retrieve a number of elements at once, you can
+do so with a slice:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Matrix4</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">[:]</span>
+<span class="go">[1.0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 1.0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span>
+<span class="go">Matrix4([    1.00     0.00     0.00     5.00</span>
+<span class="go">             0.00     1.00     0.00     5.00</span>
+<span class="go">             0.00     0.00     1.00     5.00</span>
+<span class="go">             0.00     0.00     0.00     1.00])</span>
+</pre></div>
+</div>
+<p>Note that slices operate in column-major order, which makes them
+suitable for working directly with OpenGL’s <code class="docutils literal notranslate"><span class="pre">glLoadMatrix</span></code> and
+<code class="docutils literal notranslate"><span class="pre">glGetFloatv</span></code> functions.</p>
+</div>
+<div class="section" id="class-constructors">
+<h3>Class constructors<a class="headerlink" href="#class-constructors" title="Permalink to this headline">¶</a></h3>
+<p>There are class constructors for the most common types of transform.</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">new_identity</span></code></dt><dd><p>Equivalent to the default constructor.  Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Matrix4</span><span class="o">.</span><span class="n">new_identity</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span>
+<span class="go">Matrix4([    1.00     0.00     0.00     0.00</span>
+<span class="go">             0.00     1.00     0.00     0.00</span>
+<span class="go">             0.00     0.00     1.00     0.00</span>
+<span class="go">             0.00     0.00     0.00     1.00])</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">new_scale(x,</span> <span class="pre">y)</span></code> and <code class="docutils literal notranslate"><span class="pre">new_scale(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code></dt><dd><p>The former is defined on <strong>Matrix3</strong>, the latter on <strong>Matrix4</strong>.
+Equivalent to the OpenGL call <code class="docutils literal notranslate"><span class="pre">glScalef</span></code>.
+Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Matrix4</span><span class="o">.</span><span class="n">new_scale</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span>
+<span class="go">Matrix4([    2.00     0.00     0.00     0.00</span>
+<span class="go">             0.00     3.00     0.00     0.00</span>
+<span class="go">             0.00     0.00     4.00     0.00</span>
+<span class="go">             0.00     0.00     0.00     1.00])</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">new_translate(x,</span> <span class="pre">y)</span></code> and <code class="docutils literal notranslate"><span class="pre">new_translate(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code></dt><dd><p>The former is defined on <strong>Matrix3</strong>, the latter on <strong>Matrix4</strong>.
+Equivalent to the OpenGL call <code class="docutils literal notranslate"><span class="pre">glTranslatef</span></code>.
+Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Matrix4</span><span class="o">.</span><span class="n">new_translate</span><span class="p">(</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span>
+<span class="go">Matrix4([    1.00     0.00     0.00     3.00</span>
+<span class="go">             0.00     1.00     0.00     4.00</span>
+<span class="go">             0.00     0.00     1.00     5.00</span>
+<span class="go">             0.00     0.00     0.00     1.00])</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">new_rotate(angle)</span></code></dt><dd><p>Create a <strong>Matrix3</strong> for a rotation around the origin.  <em>angle</em> is
+specified in radians, anti-clockwise.  This is not implemented in
+<strong>Matrix4</strong> (see below for equivalent methods).
+Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Matrix3</span><span class="o">.</span><span class="n">new_rotate</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span>
+<span class="go">Matrix3([    0.00    -1.00     0.00</span>
+<span class="go">             1.00     0.00     0.00</span>
+<span class="go">             0.00     0.00     1.00])</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<p>The following constructors are defined for <strong>Matrix4</strong> only.</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">new</span></code></dt><dd><p>Construct a matrix with 16 values in column-major order.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">new_rotatex(angle)</span></code>, <code class="docutils literal notranslate"><span class="pre">new_rotatey(angle)</span></code>, <code class="docutils literal notranslate"><span class="pre">new_rotatez(angle)</span></code></dt><dd><p>Create a <strong>Matrix4</strong> for a rotation around the X, Y or Z axis, respectively.
+<em>angle</em> is specified in radians.  Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Matrix4</span><span class="o">.</span><span class="n">new_rotatex</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span>
+<span class="go">Matrix4([    1.00     0.00     0.00     0.00</span>
+<span class="go">             0.00     0.00    -1.00     0.00</span>
+<span class="go">             0.00     1.00     0.00     0.00</span>
+<span class="go">             0.00     0.00     0.00     1.00])</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">new_rotate_axis(angle,</span> <span class="pre">axis)</span></code></dt><dd><p>Create a <strong>Matrix4</strong> for a rotation around the given axis.  <em>angle</em>
+is specified in radians, and <em>axis</em> must be an instance of <strong>Vector3</strong>.
+It is not necessary to normalize the axis.  Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Matrix4</span><span class="o">.</span><span class="n">new_rotate_axis</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">Vector3</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span>
+<span class="go">Matrix4([    1.00     0.00     0.00     0.00</span>
+<span class="go">             0.00     0.00    -1.00     0.00</span>
+<span class="go">             0.00     1.00     0.00     0.00</span>
+<span class="go">             0.00     0.00     0.00     1.00])</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">new_rotate_euler(heading,</span> <span class="pre">attitude,</span> <span class="pre">bank)</span></code></dt><dd><p>Create a <strong>Matrix4</strong> for the given Euler rotation.  <em>heading</em> is a rotation
+around the Y axis, <em>attitude</em> around the X axis and <em>bank</em> around the Z
+axis.  All rotations are performed simultaneously, so this method avoids
+“gimbal lock” and is the usual method for implemented 3D rotations in a
+game.  Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Matrix4</span><span class="o">.</span><span class="n">new_rotate_euler</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span>
+<span class="go">Matrix4([    0.00    -0.00     1.00     0.00</span>
+<span class="go">             1.00     0.00    -0.00     0.00</span>
+<span class="go">            -0.00     1.00     0.00     0.00</span>
+<span class="go">             0.00     0.00     0.00     1.00])</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">new_perspective(fov_y,</span> <span class="pre">aspect,</span> <span class="pre">near,</span> <span class="pre">far)</span></code></dt><dd><p>Create a <strong>Matrix4</strong> for projection onto the 2D viewing plane.  This
+method is equivalent to the OpenGL call <code class="docutils literal notranslate"><span class="pre">gluPerspective</span></code>.  <em>fov_y</em> is
+the view angle in the Y direction, in radians.  <em>aspect</em> is the aspect
+ration <em>width</em> / <em>height</em> of the viewing plane.  <em>near</em> and <em>far</em> are
+the distance to the near and far clipping planes.  They must be
+positive and non-zero.  Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">Matrix4</span><span class="o">.</span><span class="n">new_perspective</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">1024.0</span> <span class="o">/</span> <span class="mi">768</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m</span>
+<span class="go">Matrix4([    0.75     0.00     0.00     0.00</span>
+<span class="go">             0.00     1.00     0.00     0.00</span>
+<span class="go">             0.00     0.00    -1.02    -2.02</span>
+<span class="go">             0.00     0.00    -1.00     0.00])</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="id2">
+<h3>Operators<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Matrices of the same dimension may be multiplied to give a new matrix.
+For example, to create a transform which translates and scales:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">=</span> <span class="n">Matrix3</span><span class="o">.</span><span class="n">new_translate</span><span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span> <span class="o">=</span> <span class="n">Matrix3</span><span class="o">.</span><span class="n">new_scale</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">*</span> <span class="n">m2</span>
+<span class="go">Matrix3([    1.00     0.00     5.00</span>
+<span class="go">             0.00     2.00     6.00</span>
+<span class="go">             0.00     0.00     1.00])</span>
+</pre></div>
+</div>
+<p>Note that multiplication is not commutative (the order that you apply
+transforms matters):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span> <span class="o">*</span> <span class="n">m1</span>
+<span class="go">Matrix3([    1.00     0.00     5.00</span>
+<span class="go">             0.00     2.00    12.00</span>
+<span class="go">             0.00     0.00     1.00])</span>
+</pre></div>
+</div>
+<p>In-place multiplication is also permitted (and optimised):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">*=</span> <span class="n">m2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span>
+<span class="go">Matrix3([    1.00     0.00     5.00</span>
+<span class="go">             0.00     2.00     6.00</span>
+<span class="go">             0.00     0.00     1.00])</span>
+</pre></div>
+</div>
+<p>Multiplying a matrix by a vector returns a vector, and is used to
+transform a vector:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">=</span> <span class="n">Matrix3</span><span class="o">.</span><span class="n">new_rotate</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">*</span> <span class="n">Vector2</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="go">Vector2(-1.00, 1.00)</span>
+</pre></div>
+</div>
+<p>Note that translations have no effect on vectors.  They do affect
+points, however:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">=</span> <span class="n">Matrix3</span><span class="o">.</span><span class="n">new_translate</span><span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">*</span> <span class="n">Vector2</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="go">Vector2(1.00, 2.00)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">*</span> <span class="n">Point2</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="go">Point2(6.00, 8.00)</span>
+</pre></div>
+</div>
+<p>Multiplication is currently incorrect between matrices and vectors – the
+projection component is ignored.  Use the <strong>Matrix4.transform</strong> method
+instead.</p>
+<p>Matrix4 also defines <strong>transpose</strong> (in-place), <strong>transposed</strong> (functional),
+<strong>determinant</strong> and <strong>inverse</strong> (functional) methods.</p>
+<p>A <strong>Matrix3</strong> can be multiplied with a <strong>Vector2</strong> or any of the 2D geometry
+objects (<strong>Point2</strong>, <strong>Line2</strong>, <strong>Circle</strong>, etc).</p>
+<p>A <strong>Matrix4</strong> can be multiplied with a <strong>Vector3</strong> or any of the 3D geometry
+objects (<strong>Point3</strong>, <strong>Line3</strong>, <strong>Sphere</strong>, etc).</p>
+<p>For convenience, each of the matrix constructors are also available as
+in-place operators.  For example, instead of writing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">=</span> <span class="n">Matrix3</span><span class="o">.</span><span class="n">new_translate</span><span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m2</span> <span class="o">=</span> <span class="n">Matrix3</span><span class="o">.</span><span class="n">new_scale</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">*=</span> <span class="n">m2</span>
+</pre></div>
+</div>
+<p>you can apply the scale directly to <em>m1</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span> <span class="o">=</span> <span class="n">Matrix3</span><span class="o">.</span><span class="n">new_translate</span><span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">6.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="go">Matrix3([    1.00     0.00     5.00</span>
+<span class="go">             0.00     2.00     6.00</span>
+<span class="go">             0.00     0.00     1.00])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">m1</span>
+<span class="go">Matrix3([    1.00     0.00     5.00</span>
+<span class="go">             0.00     2.00     6.00</span>
+<span class="go">             0.00     0.00     1.00])</span>
+</pre></div>
+</div>
+<p>Note that these methods operate in-place (they modify the original matrix),
+and they also return themselves as a result.  This allows you to chain
+transforms together directly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Matrix3</span><span class="p">()</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">scale</span><span class="p">(</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">)</span>
+<span class="go">Matrix3([    0.00    -4.00     1.00</span>
+<span class="go">             4.00     0.00     2.00</span>
+<span class="go">             0.00     0.00     1.00])</span>
+</pre></div>
+</div>
+<p>All constructors have an equivalent in-place method.  For <strong>Matrix3</strong>, they
+are <code class="docutils literal notranslate"><span class="pre">identity</span></code>, <code class="docutils literal notranslate"><span class="pre">translate</span></code>, <code class="docutils literal notranslate"><span class="pre">scale</span></code> and <code class="docutils literal notranslate"><span class="pre">rotate</span></code>.  For <strong>Matrix4</strong>,
+they are <code class="docutils literal notranslate"><span class="pre">identity</span></code>, <code class="docutils literal notranslate"><span class="pre">translate</span></code>, <code class="docutils literal notranslate"><span class="pre">scale</span></code>, <code class="docutils literal notranslate"><span class="pre">rotatex</span></code>, <code class="docutils literal notranslate"><span class="pre">rotatey</span></code>,
+<code class="docutils literal notranslate"><span class="pre">rotatez</span></code>, <code class="docutils literal notranslate"><span class="pre">rotate_axis</span></code> and <code class="docutils literal notranslate"><span class="pre">rotate_euler</span></code>.  Both <strong>Matrix3</strong> and
+<strong>Matrix4</strong> also have an in-place <code class="docutils literal notranslate"><span class="pre">transpose</span></code> method.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">copy</span></code> method is also implemented in both matrix classes and
+behaves in the obvious way.</p>
+</div>
+</div>
+<div class="section" id="quaternions">
+<h2>Quaternions<a class="headerlink" href="#quaternions" title="Permalink to this headline">¶</a></h2>
+<p>A quaternion represents a three-dimensional rotation or reflection
+transformation.  They are the preferred way to store and manipulate
+rotations in 3D applications, as they do not suffer the same numerical
+degredation that matrices do.</p>
+<p>The quaternion constructor initializes to the identity transform:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">Quaternion</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="go">Quaternion(real=1.00, imag=&lt;0.00, 0.00, 0.00&gt;)</span>
+</pre></div>
+</div>
+<div class="section" id="id3">
+<h3>Element access<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Internally, the quaternion is stored as four attributes: <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and
+<code class="docutils literal notranslate"><span class="pre">z</span></code> forming the imaginary vector, and <code class="docutils literal notranslate"><span class="pre">w</span></code> the real component.</p>
+</div>
+<div class="section" id="constructors">
+<h3>Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h3>
+<p>Rotations can be formed using the constructors:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">new_identity()</span></code></dt><dd><p>Equivalent to the default constructor.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">new_rotate_axis(angle,</span> <span class="pre">axis)</span></code></dt><dd><p>Equivalent to the Matrix4 constructor of the same name.  <em>angle</em> is
+specified in radians, <em>axis</em> is an instance of <strong>Vector3</strong>.  It is
+not necessary to normalize the axis.  Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">Quaternion</span><span class="o">.</span><span class="n">new_rotate_axis</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="go">Quaternion(real=0.71, imag=&lt;0.71, 0.00, 0.00&gt;)</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">new_rotate_euler(heading,</span> <span class="pre">attitude,</span> <span class="pre">bank)</span></code></dt><dd><p>Equivalent to the Matrix4 constructor of the same name.  <em>heading</em>
+is a rotation around the Y axis, <em>attitude</em> around the X axis and
+<em>bank</em> around the Z axis.  All angles are given in radians.  Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">Quaternion</span><span class="o">.</span><span class="n">new_rotate_euler</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="go">Quaternion(real=0.50, imag=&lt;0.50, 0.50, 0.50&gt;)</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">new_interpolate(q1,</span> <span class="pre">q2,</span> <span class="pre">t)</span></code></dt><dd><p>Create a quaternion which gives a (SLERP) interpolated rotation
+between <em>q1</em> and <em>q2</em>.  <em>q1</em> and <em>q2</em> are instances of <strong>Quaternion</strong>,
+and <em>t</em> is a value between 0.0 and 1.0.  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span> <span class="o">=</span> <span class="n">Quaternion</span><span class="o">.</span><span class="n">new_rotate_axis</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q2</span> <span class="o">=</span> <span class="n">Quaternion</span><span class="o">.</span><span class="n">new_rotate_axis</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">Quaternion</span><span class="o">.</span><span class="n">new_interpolate</span><span class="p">(</span><span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="p">,</span> <span class="n">i</span> <span class="o">/</span> <span class="mf">10.0</span><span class="p">))</span>
+<span class="gp">...</span>
+<span class="go">Quaternion(real=0.71, imag=&lt;0.71, 0.00, 0.00&gt;)</span>
+<span class="go">Quaternion(real=0.75, imag=&lt;0.66, 0.09, 0.00&gt;)</span>
+<span class="go">Quaternion(real=0.78, imag=&lt;0.61, 0.17, 0.00&gt;)</span>
+<span class="go">Quaternion(real=0.80, imag=&lt;0.55, 0.25, 0.00&gt;)</span>
+<span class="go">Quaternion(real=0.81, imag=&lt;0.48, 0.33, 0.00&gt;)</span>
+<span class="go">Quaternion(real=0.82, imag=&lt;0.41, 0.41, 0.00&gt;)</span>
+<span class="go">Quaternion(real=0.81, imag=&lt;0.33, 0.48, 0.00&gt;)</span>
+<span class="go">Quaternion(real=0.80, imag=&lt;0.25, 0.55, 0.00&gt;)</span>
+<span class="go">Quaternion(real=0.78, imag=&lt;0.17, 0.61, 0.00&gt;)</span>
+<span class="go">Quaternion(real=0.75, imag=&lt;0.09, 0.66, 0.00&gt;)</span>
+<span class="go">Quaternion(real=0.71, imag=&lt;0.00, 0.71, 0.00&gt;)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+<div class="section" id="id4">
+<h3>Operators<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Quaternions may be multiplied to compound rotations.  For example, to
+rotate 90 degrees around the X axis and then 90 degrees around the Y axis:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span> <span class="o">=</span> <span class="n">Quaternion</span><span class="o">.</span><span class="n">new_rotate_axis</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q2</span> <span class="o">=</span> <span class="n">Quaternion</span><span class="o">.</span><span class="n">new_rotate_axis</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span> <span class="o">*</span> <span class="n">q2</span>
+<span class="go">Quaternion(real=0.50, imag=&lt;0.50, 0.50, 0.50&gt;)</span>
+</pre></div>
+</div>
+<p>Multiplying a quaternion by a vector gives a vector, transformed
+appropriately:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">Quaternion</span><span class="o">.</span><span class="n">new_rotate_axis</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">*</span> <span class="n">Vector3</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">Vector3(0.00, 0.00, -1.00)</span>
+</pre></div>
+</div>
+<p>Similarly, any 3D object can be multiplied (e.g., <strong>Point3</strong>, <strong>Line3</strong>,
+<strong>Sphere</strong>, etc):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">*</span> <span class="n">Ray3</span><span class="p">(</span><span class="n">Point3</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">),</span> <span class="n">Vector3</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">))</span>
+<span class="go">Ray3(&lt;1.00, 1.00, -1.00&gt; + u&lt;1.00, 1.00, -1.00&gt;)</span>
+</pre></div>
+</div>
+<p>As with the matrix classes, the constructors are also available as in-place
+operators.  These are named <code class="docutils literal notranslate"><span class="pre">identity</span></code>, <code class="docutils literal notranslate"><span class="pre">rotate_euler</span></code> and
+<code class="docutils literal notranslate"><span class="pre">rotate_axis</span></code>.  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span> <span class="o">=</span> <span class="n">Quaternion</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span><span class="o">.</span><span class="n">rotate_euler</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">Quaternion(real=0.50, imag=&lt;0.50, 0.50, 0.50&gt;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span>
+<span class="go">Quaternion(real=0.50, imag=&lt;0.50, 0.50, 0.50&gt;)</span>
+</pre></div>
+</div>
+<p>Quaternions are usually unit length, but you may wish to use sized
+quaternions.  In this case, you can find the magnitude using <code class="docutils literal notranslate"><span class="pre">abs</span></code>,
+<code class="docutils literal notranslate"><span class="pre">magnitude</span></code> and <code class="docutils literal notranslate"><span class="pre">magnitude_squared</span></code>, as with the vector classes.
+Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span> <span class="o">=</span> <span class="n">Quaternion</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">q1</span><span class="p">)</span>
+<span class="go">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span><span class="o">.</span><span class="n">magnitude</span><span class="p">()</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+<p>Similarly, the class implements <code class="docutils literal notranslate"><span class="pre">normalize</span></code> and <code class="docutils literal notranslate"><span class="pre">normalized</span></code> in the
+same way as the vectors.</p>
+<p>The following methods do not alter the quaternion:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">conjugated()</span></code></dt><dd><p>Returns a quaternion that is the conjugate of the instance.  For
+example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span> <span class="o">=</span> <span class="n">Quaternion</span><span class="o">.</span><span class="n">new_rotate_axis</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span><span class="o">.</span><span class="n">conjugated</span><span class="p">()</span>
+<span class="go">Quaternion(real=0.71, imag=&lt;-0.71, -0.00, -0.00&gt;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span>
+<span class="go">Quaternion(real=0.71, imag=&lt;0.71, 0.00, 0.00&gt;)</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">get_angle_axis()</span></code></dt><dd><p>Returns a tuple (angle, axis), giving the angle to rotate around an
+axis equivalent to the quaternion.  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span> <span class="o">=</span> <span class="n">Quaternion</span><span class="o">.</span><span class="n">new_rotate_axis</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span><span class="o">.</span><span class="n">get_angle_axis</span><span class="p">()</span>
+<span class="go">(1.5707963267948966, Vector3(1.00, 0.00, 0.00))</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">get_matrix()</span></code></dt><dd><p>Returns a <strong>Matrix4</strong> implementing the transformation of the quaternion.
+For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span> <span class="o">=</span> <span class="n">Quaternion</span><span class="o">.</span><span class="n">new_rotate_axis</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">Vector3</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q1</span><span class="o">.</span><span class="n">get_matrix</span><span class="p">()</span>
+<span class="go">Matrix4([    1.00     0.00     0.00     0.00</span>
+<span class="go">             0.00     0.00    -1.00     0.00</span>
+<span class="go">             0.00     1.00     0.00     0.00</span>
+<span class="go">             0.00     0.00     0.00     1.00])</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="d-geometry">
+<h2>2D Geometry<a class="headerlink" href="#d-geometry" title="Permalink to this headline">¶</a></h2>
+<p>The following classes are available for dealing with simple 2D geometry.
+The interface to each shape is similar; in particular, the <code class="docutils literal notranslate"><span class="pre">connect</span></code>
+and <code class="docutils literal notranslate"><span class="pre">distance</span></code> methods are defined identically for each.</p>
+<p>For example, to find the closest point on a line to a circle:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">circ</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">Point2</span><span class="p">(</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">),</span> <span class="mf">2.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">line</span> <span class="o">=</span> <span class="n">Line2</span><span class="p">(</span><span class="n">Point2</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">),</span> <span class="n">Point2</span><span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">line</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">circ</span><span class="p">)</span><span class="o">.</span><span class="n">p1</span>
+<span class="go">Point2(0.50, -0.50)</span>
+</pre></div>
+</div>
+<p>To find the corresponding closest point on the circle to the line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">line</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">circ</span><span class="p">)</span><span class="o">.</span><span class="n">p2</span>
+<span class="go">Point2(1.59, 0.59)</span>
+</pre></div>
+</div>
+<div class="section" id="point2">
+<h3>Point2<a class="headerlink" href="#point2" title="Permalink to this headline">¶</a></h3>
+<p>A point on a 2D plane.  Construct in the obvious way:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Point2</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span>
+<span class="go">Point2(1.00, 2.00)</span>
+</pre></div>
+</div>
+<p><strong>Point2</strong> subclasses <strong>Vector2</strong>, so all of <strong>Vector2</strong> operators and
+methods apply.  In particular, subtracting two points gives a vector:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Point2</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span> <span class="o">-</span> <span class="n">Point2</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+<span class="go">Vector2(1.00, 3.00)</span>
+</pre></div>
+</div>
+<p>The following methods are also defined:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">connect(other)</span></code></dt><dd><p>Returns a <strong>LineSegment2</strong> which is the minimum length line segment
+that can connect the two shapes.  <em>other</em> may be a <strong>Point2</strong>, <strong>Line2</strong>,
+<strong>Ray2</strong>, <strong>LineSegment2</strong> or <strong>Circle</strong>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">distance(other)</span></code></dt><dd><p>Returns the absolute minimum distance to <em>other</em>.  Internally this
+simply returns the length of the result of <code class="docutils literal notranslate"><span class="pre">connect</span></code>.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="line2-ray2-linesegment2">
+<h3>Line2, Ray2, LineSegment2<a class="headerlink" href="#line2-ray2-linesegment2" title="Permalink to this headline">¶</a></h3>
+<p>A <strong>Line2</strong> is a line on a 2D plane extending to infinity in both directions;
+a <strong>Ray2</strong> has a finite end-point and extends to infinity in a single
+direction; a <strong>LineSegment2</strong> joins two points.</p>
+<p>All three classes support the same constructors, operators and methods,
+but may behave differently when calculating intersections etc.</p>
+<p>You may construct a line, ray or line segment using any of:</p>
+<ul class="simple">
+<li><p>another line, ray or line segment</p></li>
+<li><p>two points</p></li>
+<li><p>a point and a vector</p></li>
+<li><p>a point, a vector and a length</p></li>
+</ul>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Line2</span><span class="p">(</span><span class="n">Point2</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">Point2</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">))</span>
+<span class="go">Line2(&lt;1.00, 1.00&gt; + u&lt;1.00, 2.00&gt;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Line2</span><span class="p">(</span><span class="n">Point2</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">Vector2</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">))</span>
+<span class="go">Line2(&lt;1.00, 1.00&gt; + u&lt;1.00, 2.00&gt;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Ray2</span><span class="p">(</span><span class="n">Point2</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">Vector2</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="go">Ray2(&lt;1.00, 1.00&gt; + u&lt;0.45, 0.89&gt;)</span>
+</pre></div>
+</div>
+<p>Internally, lines, rays and line segments store a Point2 <em>p</em> and a
+Vector2 <em>v</em>.  You can also access (but not set) the two endpoints
+<em>p1</em> and <em>p2</em>.  These may or may not be meaningful for all types of lines.</p>
+<p>The following methods are supported by all three classes:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">intersect(other)</span></code></dt><dd><p>If <em>other</em> is a <strong>Line2</strong>, <strong>Ray2</strong> or <strong>LineSegment2</strong>, returns
+a <strong>Point2</strong> of intersection, or None if the lines are parallel.</p>
+<p>If <em>other</em> is a <strong>Circle</strong>, returns a <strong>LineSegment2</strong> or <strong>Point2</strong> giving
+the part of the line that intersects the circle, or None if there
+is no intersection.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">Point2</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">LineSegment2</span><span class="p">(</span><span class="n">Point2</span><span class="p">(</span><span class="o">-</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">Point2</span><span class="p">(</span><span class="o">-</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">LineSegment2</span><span class="p">(</span><span class="n">Point2</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span> <span class="n">Point2</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="go">LineSegment2(&lt;1.00, 0.00&gt; to &lt;0.50, 0.00&gt;)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">Point2</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">Ray2</span><span class="p">(</span><span class="n">Point2</span><span class="p">(</span><span class="mf">13.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">),</span> <span class="n">Vector2</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">intersect</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">connect(other)</span></code></dt><dd><p>Returns a <strong>LineSegment2</strong> which is the minimum length line segment
+that can connect the two shapes.  For two parallel lines, this
+line segment may be in an arbitrary position.  <em>other</em> may be
+a <strong>Point2</strong>, <strong>Line2</strong>, <strong>Ray2</strong>, <strong>LineSegment2</strong> or <strong>Circle</strong>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">distance(other)</span></code></dt><dd><p>Returns the absolute minimum distance to <em>other</em>.  Internally this
+simply returns the length of the result of <code class="docutils literal notranslate"><span class="pre">connect</span></code>.</p>
+</dd>
+</dl>
+<p><strong>LineSegment2</strong> also has a <em>length</em> property which is read-only.</p>
+</div>
+<div class="section" id="circle">
+<h3>Circle<a class="headerlink" href="#circle" title="Permalink to this headline">¶</a></h3>
+<p>Circles are constructed with a center <strong>Point2</strong> and a radius:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">Point2</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span>
+<span class="go">Circle(&lt;1.00, 1.00&gt;, radius=0.50)</span>
+</pre></div>
+</div>
+<p>Internally there are two attributes: <em>c</em>, giving the center point and
+<em>r</em>, giving the radius.</p>
+<p>The following methods are supported:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">intersect(other)</span></code></dt><dd><p>If <em>other</em> is a <strong>Line2</strong>, <strong>Ray2</strong> or <strong>LineSegment2</strong>, returns
+a <strong>LineSegment2</strong> giving the part of the line that intersects the
+circle, or None if there is no intersection.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">connect(other)</span></code></dt><dd><p>Returns a <strong>LineSegment2</strong> which is the minimum length line segment
+that can connect the two shapes. <em>other</em> may be a <strong>Point2</strong>, <strong>Line2</strong>,
+<strong>Ray2</strong>, <strong>LineSegment2</strong> or <strong>Circle</strong>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">distance(other)</span></code></dt><dd><p>Returns the absolute minimum distance to <em>other</em>.  Internally this
+simply returns the length of the result of <code class="docutils literal notranslate"><span class="pre">connect</span></code>.</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>3D Geometry<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>The following classes are available for dealing with simple 3D geometry.
+The interfaces are very similar to the 2D classes (but note that you
+cannot mix and match 2D and 3D operations).</p>
+<p>For example, to find the closest point on a line to a sphere:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sphere</span> <span class="o">=</span> <span class="n">Sphere</span><span class="p">(</span><span class="n">Point3</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,),</span> <span class="mf">2.</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">line</span> <span class="o">=</span> <span class="n">Line3</span><span class="p">(</span><span class="n">Point3</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">),</span> <span class="n">Point3</span><span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">line</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">sphere</span><span class="p">)</span><span class="o">.</span><span class="n">p1</span>
+<span class="go">Point3(1.50, 1.50, 0.00)</span>
+</pre></div>
+</div>
+<p>To find the corresponding closest point on the sphere to the line:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">line</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">sphere</span><span class="p">)</span><span class="o">.</span><span class="n">p2</span>
+<span class="go">Point3(1.32, 1.68, 1.05)</span>
+</pre></div>
+</div>
+<p>XXX I have not checked if these are correct.</p>
+<div class="section" id="point3">
+<h3>Point3<a class="headerlink" href="#point3" title="Permalink to this headline">¶</a></h3>
+<p>A point on a 3D plane.  Construct in the obvious way:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">Point3</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span>
+<span class="go">Point3(1.00, 2.00, 3.00)</span>
+</pre></div>
+</div>
+<p><strong>Point3</strong> subclasses <strong>Vector3</strong>, so all of <strong>Vector3</strong> operators and
+methods apply.  In particular, subtracting two points gives a vector:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Point3</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span> <span class="o">-</span> <span class="n">Point3</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="go">Vector3(0.00, 2.00, 5.00)</span>
+</pre></div>
+</div>
+<p>The following methods are also defined:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">intersect(other)</span></code></dt><dd><p>If <em>other</em> is a <strong>Sphere</strong>, returns <code class="docutils literal notranslate"><span class="pre">True</span></code> iff the point lies within
+the sphere.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">connect(other)</span></code></dt><dd><p>Returns a <strong>LineSegment3</strong> which is the minimum length line segment
+that can connect the two shapes.  <em>other</em> may be a <strong>Point3</strong>, <strong>Line3</strong>,
+<strong>Ray3</strong>, <strong>LineSegment3</strong>, <strong>Sphere</strong> or <strong>Plane</strong>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">distance(other)</span></code></dt><dd><p>Returns the absolute minimum distance to <em>other</em>.  Internally this
+simply returns the length of the result of <code class="docutils literal notranslate"><span class="pre">connect</span></code>.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="line3-ray3-linesegment3">
+<h3>Line3, Ray3, LineSegment3<a class="headerlink" href="#line3-ray3-linesegment3" title="Permalink to this headline">¶</a></h3>
+<p>A <strong>Line3</strong> is a line on a 3D plane extending to infinity in both directions;
+a <strong>Ray3</strong> has a finite end-point and extends to infinity in a single
+direction; a <strong>LineSegment3</strong> joins two points.</p>
+<p>All three classes support the same constructors, operators and methods,
+but may behave differently when calculating intersections etc.</p>
+<p>You may construct a line, ray or line segment using any of:</p>
+<ul class="simple">
+<li><p>another line, ray or line segment</p></li>
+<li><p>two points</p></li>
+<li><p>a point and a vector</p></li>
+<li><p>a point, a vector and a length</p></li>
+</ul>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Line3</span><span class="p">(</span><span class="n">Point3</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">Point3</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">))</span>
+<span class="go">Line3(&lt;1.00, 1.00, 1.00&gt; + u&lt;0.00, 1.00, 2.00&gt;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Line3</span><span class="p">(</span><span class="n">Point3</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">Vector3</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">))</span>
+<span class="go">Line3(&lt;0.00, 1.00, 1.00&gt; + u&lt;1.00, 1.00, 2.00&gt;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Ray3</span><span class="p">(</span><span class="n">Point3</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="n">Vector3</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="go">Ray3(&lt;1.00, 1.00, 1.00&gt; + u&lt;0.41, 0.41, 0.82&gt;)</span>
+</pre></div>
+</div>
+<p>Internally, lines, rays and line segments store a Point3 <em>p</em> and a
+Vector3 <em>v</em>.  You can also access (but not set) the two endpoints
+<em>p1</em> and <em>p2</em>.  These may or may not be meaningful for all types of lines.</p>
+<p>The following methods are supported by all three classes:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">intersect(other)</span></code></dt><dd><p>If <em>other</em> is a <strong>Sphere</strong>, returns a <strong>LineSegment3</strong> which is the
+intersection of the sphere and line, or <code class="docutils literal notranslate"><span class="pre">None</span></code> if there is no
+intersection.</p>
+<p>If <em>other</em> is a <strong>Plane</strong>, returns a <strong>Point3</strong> of intersection, or
+<code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">connect(other)</span></code></dt><dd><p>Returns a <strong>LineSegment3</strong> which is the minimum length line segment
+that can connect the two shapes.  For two parallel lines, this
+line segment may be in an arbitrary position.  <em>other</em> may be
+a <strong>Point3</strong>, <strong>Line3</strong>, <strong>Ray3</strong>, <strong>LineSegment3</strong>, <strong>Sphere</strong> or
+<strong>Plane</strong>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">distance(other)</span></code></dt><dd><p>Returns the absolute minimum distance to <em>other</em>.  Internally this
+simply returns the length of the result of <code class="docutils literal notranslate"><span class="pre">connect</span></code>.</p>
+</dd>
+</dl>
+<p><strong>LineSegment3</strong> also has a <em>length</em> property which is read-only.</p>
+</div>
+<div class="section" id="sphere">
+<h3>Sphere<a class="headerlink" href="#sphere" title="Permalink to this headline">¶</a></h3>
+<p>Spheres are constructed with a center <strong>Point3</strong> and a radius:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">Sphere</span><span class="p">(</span><span class="n">Point3</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="go">Sphere(&lt;1.00, 1.00, 1.00&gt;, radius=0.50)</span>
+</pre></div>
+</div>
+<p>Internally there are two attributes: <em>c</em>, giving the center point and
+<em>r</em>, giving the radius.</p>
+<p>The following methods are supported:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">intersect(other)</span></code>:</dt><dd><p>If <em>other</em> is a <strong>Point3</strong>, returns <code class="docutils literal notranslate"><span class="pre">True</span></code> iff the point lies
+within the sphere.</p>
+<p>If <em>other</em> is a <strong>Line3</strong>, <strong>Ray3</strong> or <strong>LineSegment3</strong>, returns
+a <strong>LineSegment3</strong> giving the intersection, or <code class="docutils literal notranslate"><span class="pre">None</span></code> if the
+line does not intersect the sphere.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">connect(other)</span></code></dt><dd><p>Returns a <strong>LineSegment3</strong> which is the minimum length line segment
+that can connect the two shapes. <em>other</em> may be a <strong>Point3</strong>, <strong>Line3</strong>,
+<strong>Ray3</strong>, <strong>LineSegment3</strong>, <strong>Sphere</strong> or <strong>Plane</strong>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">distance(other)</span></code></dt><dd><p>Returns the absolute minimum distance to <em>other</em>.  Internally this
+simply returns the length of the result of <code class="docutils literal notranslate"><span class="pre">connect</span></code>.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="plane">
+<h3>Plane<a class="headerlink" href="#plane" title="Permalink to this headline">¶</a></h3>
+<p>Planes can be constructed with any of:</p>
+<ul class="simple">
+<li><p>three <strong>Point3</strong>’s lying on the plane</p></li>
+<li><p>a <strong>Point3</strong> on the plane and the <strong>Vector3</strong> normal</p></li>
+<li><p>a <strong>Vector3</strong> normal and <em>k</em>, described below.</p></li>
+</ul>
+<p>Internally, planes are stored with the normal <em>n</em> and constant <em>k</em> such
+that <em>n.p</em> = <em>k</em> for any point on the plane <em>p</em>.</p>
+<p>The following methods are supported:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">intersect(other)</span></code></dt><dd><p>If <em>other</em> is a <strong>Line3</strong>, <strong>Ray3</strong> or <strong>LineSegment3</strong>, returns a
+<strong>Point3</strong> of intersection, or <code class="docutils literal notranslate"><span class="pre">None</span></code> if there is no intersection.</p>
+<p>If <em>other</em> is a <strong>Plane</strong>, returns the <strong>Line3</strong> of intersection.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">connect(other)</span></code></dt><dd><p>Returns a <strong>LineSegment3</strong> which is the minimum length line segment
+that can connect the two shapes. <em>other</em> may be a <strong>Point3</strong>, <strong>Line3</strong>,
+<strong>Ray3</strong>, <strong>LineSegment3</strong>, <strong>Sphere</strong> or <strong>Plane</strong>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">distance(other)</span></code></dt><dd><p>Returns the absolute minimum distance to <em>other</em>.  Internally this
+simply returns the length of the result of <code class="docutils literal notranslate"><span class="pre">connect</span></code>.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">euclid</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#vector-classes">Vector classes</a><ul>
+<li><a class="reference internal" href="#element-access">Element access</a></li>
+<li><a class="reference internal" href="#operators">Operators</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#matrix-classes">Matrix classes</a><ul>
+<li><a class="reference internal" href="#id1">Element access</a></li>
+<li><a class="reference internal" href="#class-constructors">Class constructors</a></li>
+<li><a class="reference internal" href="#id2">Operators</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#quaternions">Quaternions</a><ul>
+<li><a class="reference internal" href="#id3">Element access</a></li>
+<li><a class="reference internal" href="#constructors">Constructors</a></li>
+<li><a class="reference internal" href="#id4">Operators</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#d-geometry">2D Geometry</a><ul>
+<li><a class="reference internal" href="#point2">Point2</a></li>
+<li><a class="reference internal" href="#line2-ray2-linesegment2">Line2, Ray2, LineSegment2</a></li>
+<li><a class="reference internal" href="#circle">Circle</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id5">3D Geometry</a><ul>
+<li><a class="reference internal" href="#point3">Point3</a></li>
+<li><a class="reference internal" href="#line3-ray3-linesegment3">Line3, Ray3, LineSegment3</a></li>
+<li><a class="reference internal" href="#sphere">Sphere</a></li>
+<li><a class="reference internal" href="#plane">Plane</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/euclid.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">cocos</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">euclid</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
+    </div>
+  </body>
+</html>

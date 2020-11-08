@@ -5,6 +5,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    cocos.audio.pygame.base
    cocos.audio.pygame.mixer

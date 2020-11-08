@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Writing a cocos2d application &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Writing a cocos2d application &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Basic Concepts" href="basic_concepts.html" />
@@ -34,7 +35,8 @@
           <a href="installation.html" title="Installation, Dependencies and Compatibility"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">cocos2d Programming Guide</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">cocos2d Programming Guide</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Writing a cocos2d application</a></li> 
       </ul>
     </div>  
 
@@ -72,7 +74,7 @@ entire program in the <cite>samples/hello_world.py</cite> file.</p>
 </pre></div>
 </div>
 <p>Always call <code class="docutils literal notranslate"><span class="pre">super</span></code> in the constructor:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="nb">super</span><span class="p">(</span><span class="n">HelloWorld</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -135,13 +137,13 @@ You can find the entire program in the <cite>samples/hello_world_actions.py</cit
 </div>
 <p>If you’re going to use several actions, you can import all
 the available actions into the namespace with this import:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cocos.actions</span> <span class="k">import</span> <span class="o">*</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cocos.actions</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 <p>We subclass <cite>ColorLayer</cite> to have a background color, and then
 we call super() with a blueish color:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">HelloWorld</span><span class="p">(</span><span class="n">cocos</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">ColorLayer</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># blueish color</span>
         <span class="nb">super</span><span class="p">(</span> <span class="n">HelloWorld</span><span class="p">,</span> <span class="bp">self</span> <span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">255</span> <span class="p">)</span>
 </pre></div>
@@ -231,7 +233,7 @@ Cocos obtains inputs by listening to director.window events, and conveniently co
     <span class="c1"># you must set this variable to &#39;True&#39;</span>
     <span class="n">is_event_handler</span> <span class="o">=</span> <span class="kc">True</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
         <span class="nb">super</span><span class="p">(</span> <span class="n">KeyDisplay</span><span class="p">,</span> <span class="bp">self</span> <span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
@@ -286,7 +288,7 @@ Cocos obtains inputs by listening to director.window events, and conveniently co
 
     <span class="n">is_event_handler</span> <span class="o">=</span> <span class="kc">True</span>     <span class="c1">#: enable director.window events</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span> <span class="n">MouseDisplay</span><span class="p">,</span> <span class="bp">self</span> <span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">posx</span> <span class="o">=</span> <span class="mi">100</span>
@@ -376,11 +378,12 @@ references for OpenGL are <a class="reference external" href="http://opengl.org/
 and <a class="reference external" href="https://pyglet.readthedocs.io/en/stable/#api-reference">pyglet API Reference</a>.</p>
 <p>There are numerous examples of cocos2d applications in the <code class="docutils literal notranslate"><span class="pre">samples/</span></code>
 directory of the documentation and source distributions.  Keep checking
-<a class="reference external" href="http://www.cocos2d.org/">http://www.cocos2d.org/</a> for more examples and tutorials as they are written.</p>
+<a class="reference external" href="http://los-cocos.github.io/cocos-site">http://los-cocos.github.io/cocos-site</a> for more examples and tutorials as they are written.</p>
 </div>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -419,7 +422,7 @@ directory of the documentation and source distributions.  Keep checking
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -440,12 +443,13 @@ directory of the documentation and source distributions.  Keep checking
           <a href="installation.html" title="Installation, Dependencies and Compatibility"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >cocos2d Programming Guide</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" >cocos2d Programming Guide</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Writing a cocos2d application</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>

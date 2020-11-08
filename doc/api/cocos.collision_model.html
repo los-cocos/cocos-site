@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>cocos.collision_model module &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocos.collision_model module &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.compat module" href="cocos.compat.html" />
@@ -34,7 +35,8 @@
           <a href="cocos.cocosnode.html" title="cocos.cocosnode module"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.collision_model module</a></li> 
       </ul>
     </div>  
 
@@ -45,9 +47,9 @@
             
   <div class="section" id="module-cocos.collision_model">
 <span id="cocos-collision-model-module"></span><h1>cocos.collision_model module<a class="headerlink" href="#module-cocos.collision_model" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.collision_model.AARectShape">
-<em class="property">class </em><code class="sig-name descname">AARectShape</code><span class="sig-paren">(</span><em class="sig-param">center</em>, <em class="sig-param">half_width</em>, <em class="sig-param">half_height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">AARectShape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">half_width</span></em>, <em class="sig-param"><span class="n">half_height</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.collision_model.Cshape" title="cocos.collision_model.Cshape"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.collision_model.Cshape</span></code></a></p>
 <p>Implements the Cshape interface that uses rectangles with sides
 parallel to the coordinate axis as geometric shape.</p>
@@ -55,7 +57,7 @@ parallel to the coordinate axis as geometric shape.</p>
 distance, max( min(x0 - x1), min(y0 - y1) : (xi, yi) in recti )</p>
 <p>Good if actors don’t rotate.</p>
 <p>Look at Cshape for other class and methods documentation.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.AARectShape.copy">
 <code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a copy of itself</p>
@@ -66,9 +68,9 @@ distance, max( min(x0 - x1), min(y0 - y1) : (xi, yi) in recti )</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.AARectShape.distance">
-<code class="sig-name descname">distance</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape.distance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape.distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a float, distance from itself to other;</p>
 <p>Not necessarily  euclidean distance.
 It is distances between boundaries.</p>
@@ -79,9 +81,9 @@ It is distances between boundaries.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.AARectShape.fits_in_box">
-<code class="sig-name descname">fits_in_box</code><span class="sig-paren">(</span><em class="sig-param">packed_box</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape.fits_in_box" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fits_in_box</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">packed_box</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape.fits_in_box" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a boolean, True if the shape fully fits into the axis aligned
 rectangle defined by packed_box, False otherwise.</p>
 <dl class="field-list simple">
@@ -97,7 +99,7 @@ rectangle defined by packed_box, False otherwise.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.AARectShape.minmax">
 <code class="sig-name descname">minmax</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape.minmax" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the smallest axis aligned rectangle that contains all shape points.</p>
@@ -111,9 +113,9 @@ AABB for short.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.AARectShape.near_than">
-<code class="sig-name descname">near_than</code><span class="sig-paren">(</span><em class="sig-param">other</em>, <em class="sig-param">near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape.near_than" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">near_than</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em>, <em class="sig-param"><span class="n">near_distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape.near_than" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a boolean, True if distance(self, other)&lt;=near_distance</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -122,9 +124,9 @@ AABB for short.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.AARectShape.overlaps">
-<code class="sig-name descname">overlaps</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape.overlaps" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">overlaps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape.overlaps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if overlapping other, False otherwise</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -133,9 +135,9 @@ AABB for short.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.AARectShape.touches_point">
-<code class="sig-name descname">touches_point</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape.touches_point" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">touches_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.AARectShape.touches_point" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if the point (x,y) overlaps the shape, False otherwise</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -146,14 +148,14 @@ AABB for short.</p>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.collision_model.CircleShape">
-<em class="property">class </em><code class="sig-name descname">CircleShape</code><span class="sig-paren">(</span><em class="sig-param">center</em>, <em class="sig-param">r</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">CircleShape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">center</span></em>, <em class="sig-param"><span class="n">r</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.collision_model.Cshape" title="cocos.collision_model.Cshape"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.collision_model.Cshape</span></code></a></p>
 <p>Implements the Cshape interface that uses discs as geometric shape.</p>
 <p>Distance is the euclidean distance.</p>
 <p>Look at Cshape for other class and methods documentation.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CircleShape.copy">
 <code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a copy of itself</p>
@@ -164,9 +166,9 @@ AABB for short.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CircleShape.distance">
-<code class="sig-name descname">distance</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape.distance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape.distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a float, distance from itself to other;</p>
 <p>Not necessarily  euclidean distance.
 It is distances between boundaries.</p>
@@ -177,9 +179,9 @@ It is distances between boundaries.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CircleShape.fits_in_box">
-<code class="sig-name descname">fits_in_box</code><span class="sig-paren">(</span><em class="sig-param">packed_box</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape.fits_in_box" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fits_in_box</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">packed_box</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape.fits_in_box" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a boolean, True if the shape fully fits into the axis aligned
 rectangle defined by packed_box, False otherwise.</p>
 <dl class="field-list simple">
@@ -195,7 +197,7 @@ rectangle defined by packed_box, False otherwise.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CircleShape.minmax">
 <code class="sig-name descname">minmax</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape.minmax" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the smallest axis aligned rectangle that contains all shape points.</p>
@@ -209,9 +211,9 @@ AABB for short.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CircleShape.near_than">
-<code class="sig-name descname">near_than</code><span class="sig-paren">(</span><em class="sig-param">other</em>, <em class="sig-param">near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape.near_than" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">near_than</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em>, <em class="sig-param"><span class="n">near_distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape.near_than" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a boolean, True if distance(self, other)&lt;=near_distance</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -220,9 +222,9 @@ AABB for short.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CircleShape.overlaps">
-<code class="sig-name descname">overlaps</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape.overlaps" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">overlaps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape.overlaps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if overlapping other, False otherwise</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -231,9 +233,9 @@ AABB for short.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CircleShape.touches_point">
-<code class="sig-name descname">touches_point</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape.touches_point" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">touches_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CircleShape.touches_point" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if the point (x,y) overlaps the shape, False otherwise</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -244,7 +246,7 @@ AABB for short.</p>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.collision_model.CollisionManager">
 <em class="property">class </em><code class="sig-name descname">CollisionManager</code><a class="headerlink" href="#cocos.collision_model.CollisionManager" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -331,28 +333,28 @@ obj.cshape values changes.</p>
 </ul>
 </div></blockquote>
 <p>Examples actors for this case are food, coins, trees, rocks.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManager.add">
-<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.add" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes obj a know entity</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManager.any_near">
-<code class="sig-name descname">any_near</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.any_near" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">any_near</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">near_distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.any_near" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns None if no know object (except itself) is near than
 near_distance, else an arbitrary known object with distance
 less than near_distance
 obj is not required to be a known object</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManager.clear">
 <code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Empties the known set</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManager.iter_all_collisions">
 <code class="sig-name descname">iter_all_collisions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.iter_all_collisions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Iterator that exposes all collisions between known objects.
@@ -363,9 +365,9 @@ In other worlds, ‘obj1 collides with obj2’ means (obj1, obj2) or
 (obj2, obj1) will appear in the iterator output but not both.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManager.iter_colliding">
-<code class="sig-name descname">iter_colliding</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.iter_colliding" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">iter_colliding</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.iter_colliding" title="Permalink to this definition">¶</a></dt>
 <dd><p>A lazy iterator over objects colliding with obj, allows to spare some
 CPU when the loop processing the collisions breaks before exhausting
 the collisions.
@@ -377,39 +379,39 @@ obj is not required to be a known object</p>
 </div>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManager.known_objs">
 <code class="sig-name descname">known_objs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.known_objs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a set with all the objects known by the CollisionManager
 Used for debug and testing.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManager.knows">
-<code class="sig-name descname">knows</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.knows" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">knows</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.knows" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if obj was added to the collision manager, false otherwise
 Used for debug and testing.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManager.objs_colliding">
-<code class="sig-name descname">objs_colliding</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.objs_colliding" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">objs_colliding</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.objs_colliding" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a container with known objects that overlaps obj,
 excluding obj itself
 obj is not required to be a known object</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManager.objs_into_box">
-<code class="sig-name descname">objs_into_box</code><span class="sig-paren">(</span><em class="sig-param">minx</em>, <em class="sig-param">maxx</em>, <em class="sig-param">miny</em>, <em class="sig-param">maxy</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.objs_into_box" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">objs_into_box</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">minx</span></em>, <em class="sig-param"><span class="n">maxx</span></em>, <em class="sig-param"><span class="n">miny</span></em>, <em class="sig-param"><span class="n">maxy</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.objs_into_box" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a container with know objects that fully fits into the axis
 aligned rectangle defined by params</p>
 <p>Useful for elastic box selection</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManager.objs_near">
-<code class="sig-name descname">objs_near</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.objs_near" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">objs_near</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">near_distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.objs_near" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a container with the objects known by collision manager that
 are at distance to obj less or equal than near_distance, excluding
 itself.
@@ -417,9 +419,9 @@ Notice that it includes the ones colliding with obj.
 obj is not required to be a known object</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManager.objs_near_wdistance">
-<code class="sig-name descname">objs_near_wdistance</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.objs_near_wdistance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">objs_near_wdistance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">near_distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.objs_near_wdistance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list with the (other, distance) pairs that with all the
 known objects at distance less or equal than near_distance to obj,
 except obj itself.
@@ -429,67 +431,67 @@ If the game logic wants the list ordered by ascending distances, use
 ranked_objs_near instead.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManager.objs_touching_point">
-<code class="sig-name descname">objs_touching_point</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.objs_touching_point" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">objs_touching_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.objs_touching_point" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a container with known objects touching point (x, y)</p>
 <p>Useful for mouse pick</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManager.ranked_objs_near">
-<code class="sig-name descname">ranked_objs_near</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.ranked_objs_near" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ranked_objs_near</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">near_distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.ranked_objs_near" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as objs_near_wdistance but the list is ordered in increasing distance
 obj is not required to be a known object</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManager.remove_tricky">
-<code class="sig-name descname">remove_tricky</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.remove_tricky" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">remove_tricky</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.remove_tricky" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>(obj should have the same .cshape value that when added)</em>
 Makes collision manager forget about obj, thus no further query will
 return obj.
 obj is required to be a known object.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManager.they_collide">
-<code class="sig-name descname">they_collide</code><span class="sig-paren">(</span><em class="sig-param">obj1</em>, <em class="sig-param">obj2</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.they_collide" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">they_collide</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj1</span></em>, <em class="sig-param"><span class="n">obj2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManager.they_collide" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a boolean, True if obj1 overlaps objs2
 obj1, obj2 are not required to be known objects</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.collision_model.CollisionManagerBruteForce">
 <em class="property">class </em><code class="sig-name descname">CollisionManagerBruteForce</code><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.collision_model.CollisionManager" title="cocos.collision_model.CollisionManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.collision_model.CollisionManager</span></code></a></p>
 <p>Implements the CollisionManager interface with with the simpler code possible.</p>
 <p>Intended for reference and debugging, it has very bad performance.</p>
 <p>Look at CollisionManager for other class and methods documentation.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerBruteForce.add">
-<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.add" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes obj a know entity</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerBruteForce.any_near">
-<code class="sig-name descname">any_near</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.any_near" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">any_near</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">near_distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.any_near" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns None if no know object (except itself) is near than
 near_distance, else an arbitrary known object with distance
 less than near_distance
 obj is not required to be a known object</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerBruteForce.clear">
 <code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Empties the known set</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerBruteForce.iter_all_collisions">
 <code class="sig-name descname">iter_all_collisions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.iter_all_collisions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Iterator that exposes all collisions between known objects.
@@ -500,9 +502,9 @@ In other worlds, ‘obj1 collides with obj2’ means (obj1, obj2) or
 (obj2, obj1) will appear in the iterator output but not both.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerBruteForce.iter_colliding">
-<code class="sig-name descname">iter_colliding</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.iter_colliding" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">iter_colliding</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.iter_colliding" title="Permalink to this definition">¶</a></dt>
 <dd><p>A lazy iterator over objects colliding with obj, allows to spare some
 CPU when the loop processing the collisions breaks before exhausting
 the collisions.
@@ -514,39 +516,39 @@ obj is not required to be a known object</p>
 </div>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerBruteForce.known_objs">
 <code class="sig-name descname">known_objs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.known_objs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a set with all the objects known by the CollisionManager
 Used for debug and testing.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerBruteForce.knows">
-<code class="sig-name descname">knows</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.knows" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">knows</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.knows" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if obj was added to the collision manager, false otherwise
 Used for debug and testing.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerBruteForce.objs_colliding">
-<code class="sig-name descname">objs_colliding</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.objs_colliding" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">objs_colliding</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.objs_colliding" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a container with known objects that overlaps obj,
 excluding obj itself
 obj is not required to be a known object</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerBruteForce.objs_into_box">
-<code class="sig-name descname">objs_into_box</code><span class="sig-paren">(</span><em class="sig-param">minx</em>, <em class="sig-param">maxx</em>, <em class="sig-param">miny</em>, <em class="sig-param">maxy</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.objs_into_box" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">objs_into_box</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">minx</span></em>, <em class="sig-param"><span class="n">maxx</span></em>, <em class="sig-param"><span class="n">miny</span></em>, <em class="sig-param"><span class="n">maxy</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.objs_into_box" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a container with know objects that fully fits into the axis
 aligned rectangle defined by params</p>
 <p>Useful for elastic box selection</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerBruteForce.objs_near">
-<code class="sig-name descname">objs_near</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.objs_near" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">objs_near</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">near_distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.objs_near" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a container with the objects known by collision manager that
 are at distance to obj less or equal than near_distance, excluding
 itself.
@@ -554,9 +556,9 @@ Notice that it includes the ones colliding with obj.
 obj is not required to be a known object</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerBruteForce.objs_near_wdistance">
-<code class="sig-name descname">objs_near_wdistance</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.objs_near_wdistance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">objs_near_wdistance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">near_distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.objs_near_wdistance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list with the (other, distance) pairs that with all the
 known objects at distance less or equal than near_distance to obj,
 except obj itself.
@@ -566,41 +568,41 @@ If the game logic wants the list ordered by ascending distances, use
 ranked_objs_near instead.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerBruteForce.objs_touching_point">
-<code class="sig-name descname">objs_touching_point</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.objs_touching_point" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">objs_touching_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.objs_touching_point" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a container with known objects touching point (x, y)</p>
 <p>Useful for mouse pick</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerBruteForce.ranked_objs_near">
-<code class="sig-name descname">ranked_objs_near</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.ranked_objs_near" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ranked_objs_near</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">near_distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.ranked_objs_near" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as objs_near_wdistance but the list is ordered in increasing distance
 obj is not required to be a known object</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerBruteForce.remove_tricky">
-<code class="sig-name descname">remove_tricky</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.remove_tricky" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">remove_tricky</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.remove_tricky" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>(obj should have the same .cshape value that when added)</em>
 Makes collision manager forget about obj, thus no further query will
 return obj.
 obj is required to be a known object.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerBruteForce.they_collide">
-<code class="sig-name descname">they_collide</code><span class="sig-paren">(</span><em class="sig-param">obj1</em>, <em class="sig-param">obj2</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.they_collide" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">they_collide</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj1</span></em>, <em class="sig-param"><span class="n">obj2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerBruteForce.they_collide" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a boolean, True if obj1 overlaps objs2
 obj1, obj2 are not required to be known objects</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.collision_model.CollisionManagerGrid">
-<em class="property">class </em><code class="sig-name descname">CollisionManagerGrid</code><span class="sig-paren">(</span><em class="sig-param">xmin</em>, <em class="sig-param">xmax</em>, <em class="sig-param">ymin</em>, <em class="sig-param">ymax</em>, <em class="sig-param">cell_width</em>, <em class="sig-param">cell_height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">CollisionManagerGrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xmin</span></em>, <em class="sig-param"><span class="n">xmax</span></em>, <em class="sig-param"><span class="n">ymin</span></em>, <em class="sig-param"><span class="n">ymax</span></em>, <em class="sig-param"><span class="n">cell_width</span></em>, <em class="sig-param"><span class="n">cell_height</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.collision_model.CollisionManager" title="cocos.collision_model.CollisionManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.collision_model.CollisionManager</span></code></a></p>
 <p>Implements the CollisionManager interface based on the scheme
 known as spatial hashing.</p>
@@ -611,28 +613,28 @@ relation with &lt;some object&gt;’ arrives, only the objects in rectangles
 overlapping &lt;some object&gt; (or nearby ones) needs to be examined for the
 condition.</p>
 <p>Look at CollisionManager for other class and methods documentation.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerGrid.add">
-<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.add" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes obj a know entity</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerGrid.any_near">
-<code class="sig-name descname">any_near</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.any_near" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">any_near</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">near_distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.any_near" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns None if no know object (except itself) is near than
 near_distance, else an arbitrary known object with distance
 less than near_distance
 obj is not required to be a known object</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerGrid.clear">
 <code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Empties the known set</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerGrid.iter_all_collisions">
 <code class="sig-name descname">iter_all_collisions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.iter_all_collisions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Iterator that exposes all collisions between known objects.
@@ -643,9 +645,9 @@ In other worlds, ‘obj1 collides with obj2’ means (obj1, obj2) or
 (obj2, obj1) will appear in the iterator output but not both.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerGrid.iter_colliding">
-<code class="sig-name descname">iter_colliding</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.iter_colliding" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">iter_colliding</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.iter_colliding" title="Permalink to this definition">¶</a></dt>
 <dd><p>A lazy iterator over objects colliding with obj, allows to spare some
 CPU when the loop processing the collisions breaks before exhausting
 the collisions.
@@ -657,39 +659,39 @@ obj is not required to be a known object</p>
 </div>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerGrid.known_objs">
 <code class="sig-name descname">known_objs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.known_objs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a set with all the objects known by the CollisionManager
 Used for debug and testing.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerGrid.knows">
-<code class="sig-name descname">knows</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.knows" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">knows</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.knows" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if obj was added to the collision manager, false otherwise
 Used for debug and testing.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerGrid.objs_colliding">
-<code class="sig-name descname">objs_colliding</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.objs_colliding" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">objs_colliding</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.objs_colliding" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a container with known objects that overlaps obj,
 excluding obj itself
 obj is not required to be a known object</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerGrid.objs_into_box">
-<code class="sig-name descname">objs_into_box</code><span class="sig-paren">(</span><em class="sig-param">minx</em>, <em class="sig-param">maxx</em>, <em class="sig-param">miny</em>, <em class="sig-param">maxy</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.objs_into_box" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">objs_into_box</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">minx</span></em>, <em class="sig-param"><span class="n">maxx</span></em>, <em class="sig-param"><span class="n">miny</span></em>, <em class="sig-param"><span class="n">maxy</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.objs_into_box" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a container with know objects that fully fits into the axis
 aligned rectangle defined by params</p>
 <p>Useful for elastic box selection</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerGrid.objs_near">
-<code class="sig-name descname">objs_near</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.objs_near" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">objs_near</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">near_distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.objs_near" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a container with the objects known by collision manager that
 are at distance to obj less or equal than near_distance, excluding
 itself.
@@ -697,9 +699,9 @@ Notice that it includes the ones colliding with obj.
 obj is not required to be a known object</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerGrid.objs_near_wdistance">
-<code class="sig-name descname">objs_near_wdistance</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.objs_near_wdistance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">objs_near_wdistance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">near_distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.objs_near_wdistance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a list with the (other, distance) pairs that with all the
 known objects at distance less or equal than near_distance to obj,
 except obj itself.
@@ -709,39 +711,39 @@ If the game logic wants the list ordered by ascending distances, use
 ranked_objs_near instead.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerGrid.objs_touching_point">
-<code class="sig-name descname">objs_touching_point</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.objs_touching_point" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">objs_touching_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.objs_touching_point" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a container with known objects touching point (x, y)</p>
 <p>Useful for mouse pick</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerGrid.ranked_objs_near">
-<code class="sig-name descname">ranked_objs_near</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.ranked_objs_near" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ranked_objs_near</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em>, <em class="sig-param"><span class="n">near_distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.ranked_objs_near" title="Permalink to this definition">¶</a></dt>
 <dd><p>Same as objs_near_wdistance but the list is ordered in increasing distance
 obj is not required to be a known object</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerGrid.remove_tricky">
-<code class="sig-name descname">remove_tricky</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.remove_tricky" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">remove_tricky</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.remove_tricky" title="Permalink to this definition">¶</a></dt>
 <dd><p><em>(obj should have the same .cshape value that when added)</em>
 Makes collision manager forget about obj, thus no further query will
 return obj.
 obj is required to be a known object.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.CollisionManagerGrid.they_collide">
-<code class="sig-name descname">they_collide</code><span class="sig-paren">(</span><em class="sig-param">obj1</em>, <em class="sig-param">obj2</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.they_collide" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">they_collide</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obj1</span></em>, <em class="sig-param"><span class="n">obj2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.CollisionManagerGrid.they_collide" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a boolean, True if obj1 overlaps objs2
 obj1, obj2 are not required to be known objects</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.collision_model.Cshape">
 <em class="property">class </em><code class="sig-name descname">Cshape</code><a class="headerlink" href="#cocos.collision_model.Cshape" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
@@ -749,7 +751,7 @@ obj1, obj2 are not required to be known objects</p>
 answer questions about proximity or intersection with other shapes.</p>
 <p>Implementations are free to restrict the type of geometrical shapes
 that will accept, by example circles or axis aligned rectangles.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.Cshape.copy">
 <code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.Cshape.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a copy of itself</p>
@@ -760,9 +762,9 @@ that will accept, by example circles or axis aligned rectangles.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.Cshape.distance">
-<code class="sig-name descname">distance</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.Cshape.distance" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.Cshape.distance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a float, distance from itself to other;</p>
 <p>Not necessarily  euclidean distance.
 It is distances between boundaries.</p>
@@ -773,9 +775,9 @@ It is distances between boundaries.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.Cshape.fits_in_box">
-<code class="sig-name descname">fits_in_box</code><span class="sig-paren">(</span><em class="sig-param">packed_box</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.Cshape.fits_in_box" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fits_in_box</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">packed_box</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.Cshape.fits_in_box" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a boolean, True if the shape fully fits into the axis aligned
 rectangle defined by packed_box, False otherwise.</p>
 <dl class="field-list simple">
@@ -791,7 +793,7 @@ rectangle defined by packed_box, False otherwise.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.Cshape.minmax">
 <code class="sig-name descname">minmax</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.Cshape.minmax" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the smallest axis aligned rectangle that contains all shape points.</p>
@@ -805,9 +807,9 @@ AABB for short.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.Cshape.near_than">
-<code class="sig-name descname">near_than</code><span class="sig-paren">(</span><em class="sig-param">other</em>, <em class="sig-param">near_distance</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.Cshape.near_than" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">near_than</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em>, <em class="sig-param"><span class="n">near_distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.Cshape.near_than" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a boolean, True if distance(self, other)&lt;=near_distance</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -816,9 +818,9 @@ AABB for short.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.Cshape.overlaps">
-<code class="sig-name descname">overlaps</code><span class="sig-paren">(</span><em class="sig-param">other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.Cshape.overlaps" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">overlaps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.Cshape.overlaps" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if overlapping other, False otherwise</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -827,9 +829,9 @@ AABB for short.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.collision_model.Cshape.touches_point">
-<code class="sig-name descname">touches_point</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.Cshape.touches_point" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">touches_point</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.Cshape.touches_point" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if the point (x,y) overlaps the shape, False otherwise</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -840,62 +842,63 @@ AABB for short.</p>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.collision_model.aa_rect_distance_aa_rect">
-<code class="sig-name descname">aa_rect_distance_aa_rect</code><span class="sig-paren">(</span><em class="sig-param">aa_rect</em>, <em class="sig-param">other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.aa_rect_distance_aa_rect" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">aa_rect_distance_aa_rect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">aa_rect</span></em>, <em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.aa_rect_distance_aa_rect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Give the distance between two axis-aligned rectangles.</p>
 <p>The rect must have members ‘center’, ‘rx’, ‘ry’ where the latest two are
 the rect half_width and half_height.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.collision_model.aa_rect_distance_circle">
-<code class="sig-name descname">aa_rect_distance_circle</code><span class="sig-paren">(</span><em class="sig-param">aa_rect</em>, <em class="sig-param">circle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.aa_rect_distance_circle" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">aa_rect_distance_circle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">aa_rect</span></em>, <em class="sig-param"><span class="n">circle</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.aa_rect_distance_circle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Give the distance between an axis-aligned rectangle and a circle.</p>
 <p>The rect must have members ‘center’, ‘rx’, ‘ry’ where the latest two are
 the rect half_width and half_height.
 The circle must have members ‘center’, ‘r’, where the latest is the radius.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.collision_model.aa_rect_overlaps_aa_rect">
-<code class="sig-name descname">aa_rect_overlaps_aa_rect</code><span class="sig-paren">(</span><em class="sig-param">aa_rect</em>, <em class="sig-param">other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.aa_rect_overlaps_aa_rect" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">aa_rect_overlaps_aa_rect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">aa_rect</span></em>, <em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.aa_rect_overlaps_aa_rect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tells if two axis aligned rectangles overlap.</p>
 <p>The rects must have members ‘center’, ‘rx’, ‘ry’ where the latest two are
 the rect half_width and half_height.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.collision_model.aa_rect_overlaps_circle">
-<code class="sig-name descname">aa_rect_overlaps_circle</code><span class="sig-paren">(</span><em class="sig-param">aa_rect</em>, <em class="sig-param">circle</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.aa_rect_overlaps_circle" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">aa_rect_overlaps_circle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">aa_rect</span></em>, <em class="sig-param"><span class="n">circle</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.aa_rect_overlaps_circle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tells if an axis aligned rectangle and a circle overlap.</p>
 <p>The rect must have members ‘center’, ‘rx’, ‘ry’ where the latest two are
 the rect half_width and half_height.
 The circle must have members ‘center’, ‘r’, where the latest is the radius.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.collision_model.circle_distance_circle">
-<code class="sig-name descname">circle_distance_circle</code><span class="sig-paren">(</span><em class="sig-param">circle</em>, <em class="sig-param">other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.circle_distance_circle" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">circle_distance_circle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">circle</span></em>, <em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.circle_distance_circle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Give the distance between two circles.</p>
 <p>The circles must have members ‘center’, ‘r’, where the latest is the radius.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.collision_model.circle_overlaps_circle">
-<code class="sig-name descname">circle_overlaps_circle</code><span class="sig-paren">(</span><em class="sig-param">circle</em>, <em class="sig-param">other</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.circle_overlaps_circle" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">circle_overlaps_circle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">circle</span></em>, <em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.circle_overlaps_circle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tells if two circles overlap.</p>
 <p>The circles must have members ‘center’, ‘r’, where the latest is the radius.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.collision_model.clamp">
-<code class="sig-name descname">clamp</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">minimum</em>, <em class="sig-param">maximum</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.clamp" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">clamp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">minimum</span></em>, <em class="sig-param"><span class="n">maximum</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.collision_model.clamp" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -923,7 +926,7 @@ The circle must have members ‘center’, ‘r’, where the latest is the radi
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -944,12 +947,13 @@ The circle must have members ‘center’, ‘r’, where the latest is the radi
           <a href="cocos.cocosnode.html" title="cocos.cocosnode module"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.collision_model module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>

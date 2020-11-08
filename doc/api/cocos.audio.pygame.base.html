@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>cocos.audio.pygame.base module &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocos.audio.pygame.base module &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.audio.pygame.mixer module" href="cocos.audio.pygame.mixer.html" />
@@ -36,7 +37,8 @@
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="cocos.audio.pygame.html" accesskey="U">cocos.audio.pygame package</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="cocos.audio.pygame.html" accesskey="U">cocos.audio.pygame package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.audio.pygame.base module</a></li> 
       </ul>
     </div>  
 
@@ -58,17 +60,17 @@ Object constructors also get placed into this namespace, you can
 call functions like <cite>Rect</cite> and <cite>Surface</cite> to create objects of
 that type. As a convenience, you can import the members of
 pygame.locals directly into your module’s namespace with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygame.locals</span> <span class="k">import</span> <span class="o">*</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygame.locals</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 <p>Most of the pygame examples do this if you’d like to take a look.</p>
-<dl class="exception">
+<dl class="py exception">
 <dt id="cocos.audio.pygame.base.error">
 <em class="property">exception </em><code class="sig-name descname">error</code><a class="headerlink" href="#cocos.audio.pygame.base.error" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">RuntimeError</span></code></p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.pygame.base.get_error">
 <code class="sig-name descname">get_error</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.base.get_error" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get current error message.</p>
@@ -82,7 +84,7 @@ sometimes you may want to call this directly yourself.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.pygame.base.get_sdl_version">
 <code class="sig-name descname">get_sdl_version</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.base.get_sdl_version" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the version of the linked SDL runtime.</p>
@@ -96,7 +98,7 @@ sometimes you may want to call this directly yourself.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.pygame.base.init">
 <code class="sig-name descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.base.init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Autoinitialize all imported pygame modules.</p>
@@ -126,7 +128,7 @@ but if you initialize by hand, be aware of this constraint.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.pygame.base.quit">
 <code class="sig-name descname">quit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.base.quit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Uninitialize all pygame modules.</p>
@@ -139,9 +141,9 @@ program plans to keep running after it is done with pygame, then
 would be a good time to make this call.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.pygame.base.register_quit">
-<code class="sig-name descname">register_quit</code><span class="sig-paren">(</span><em class="sig-param">func</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.base.register_quit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">register_quit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">func</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.base.register_quit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Routine to call when pygame quits.</p>
 <p>The given callback routine will be called when pygame is
 quitting. Quit callbacks are served on a ‘last in, first out’
@@ -151,6 +153,7 @@ basis.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -178,7 +181,7 @@ basis.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -201,12 +204,13 @@ basis.</p>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="cocos.audio.pygame.html" >cocos.audio.pygame package</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="cocos.audio.pygame.html" >cocos.audio.pygame package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.audio.pygame.base module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>

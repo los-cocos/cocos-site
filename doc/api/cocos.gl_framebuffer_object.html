@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>cocos.gl_framebuffer_object module &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocos.gl_framebuffer_object module &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.grid module" href="cocos.grid.html" />
@@ -34,7 +35,8 @@
           <a href="cocos.framegrabber.html" title="cocos.framegrabber module"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.gl_framebuffer_object module</a></li> 
       </ul>
     </div>  
 
@@ -46,32 +48,32 @@
   <div class="section" id="module-cocos.gl_framebuffer_object">
 <span id="cocos-gl-framebuffer-object-module"></span><h1>cocos.gl_framebuffer_object module<a class="headerlink" href="#module-cocos.gl_framebuffer_object" title="Permalink to this headline">¶</a></h1>
 <p>A thin wrapper for OpenGL framebuffer objets. For implementation use only</p>
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.gl_framebuffer_object.FramebufferObject">
 <em class="property">class </em><code class="sig-name descname">FramebufferObject</code><a class="headerlink" href="#cocos.gl_framebuffer_object.FramebufferObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Wrapper for framebuffer objects. See</p>
 <p><a class="reference external" href="http://oss.sgi.com/projects/ogl-sample/registry/EXT/framebuffer_object.txt">http://oss.sgi.com/projects/ogl-sample/registry/EXT/framebuffer_object.txt</a></p>
 <p>API is not very OO, should be improved.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.gl_framebuffer_object.FramebufferObject.bind">
 <code class="sig-name descname">bind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.gl_framebuffer_object.FramebufferObject.bind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set FBO as current rendering target</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.gl_framebuffer_object.FramebufferObject.check_status">
 <code class="sig-name descname">check_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.gl_framebuffer_object.FramebufferObject.check_status" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check that currently set framebuffer is ready for rendering</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.gl_framebuffer_object.FramebufferObject.texture2d">
-<code class="sig-name descname">texture2d</code><span class="sig-paren">(</span><em class="sig-param">texture</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.gl_framebuffer_object.FramebufferObject.texture2d" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">texture2d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">texture</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.gl_framebuffer_object.FramebufferObject.texture2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Map currently bound framebuffer (not necessarily self) to texture</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.gl_framebuffer_object.FramebufferObject.unbind">
 <code class="sig-name descname">unbind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.gl_framebuffer_object.FramebufferObject.unbind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set default framebuffer as current rendering target</p>
@@ -82,6 +84,7 @@
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -109,7 +112,7 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -130,12 +133,13 @@
           <a href="cocos.framegrabber.html" title="cocos.framegrabber module"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.gl_framebuffer_object module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>

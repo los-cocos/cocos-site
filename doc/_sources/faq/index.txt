@@ -21,7 +21,7 @@ to improve the quality of your graphics without any problem.
 
 Also, the default projection matrix of cocos2d is a 3D one,
 so probably you won't need to change it. But you can override 
-the projection matrix by registering to the ``director on_resize``
+the projection matrix by registering to the ``director on_cocos_resize``
 event. See the `test/test_custom_on_resize.py` code as an example.
 
 To enable OpenGL depth test, you can call Director's `set_depth_test` method.
@@ -107,6 +107,6 @@ This unfinished code might help you: `gl_pbuffer.py`_
 .. _pyglet: http://www.pyglet.org
 .. _Bruce the Presentation Tool: http://code.google.com/p/bruce-tpt/
 .. _pycon 2008 cocos2d lighting talk: http://los-cocos.googlecode.com/svn/branches/pycon-lighting-talk/
-.. _effects: http://python.cocos2d.org/doc/programming_guide/effects.html
+.. _effects: http://los-cocos.github.io/cocos-site/doc/programming_guide/effects.html
 .. _pbuffer grabber: http://oss.sgi.com/projects/ogl-sample/registry/SGIX/pbuffer.txt
 .. _gl_pbuffer.py: http://los-cocos.googlecode.com/svn/branches/branch-0.2/cocos/gl_pbuffer.py 

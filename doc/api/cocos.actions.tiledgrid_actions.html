@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>cocos.actions.tiledgrid_actions module &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocos.actions.tiledgrid_actions module &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.audio package" href="cocos.audio.html" />
@@ -35,7 +36,8 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.actions.html" accesskey="U">cocos.actions package</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="cocos.actions.html" accesskey="U">cocos.actions package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.actions.tiledgrid_actions module</a></li> 
       </ul>
     </div>  
 
@@ -47,38 +49,70 @@
   <div class="section" id="module-cocos.actions.tiledgrid_actions">
 <span id="cocos-actions-tiledgrid-actions-module"></span><h1>cocos.actions.tiledgrid_actions module<a class="headerlink" href="#module-cocos.actions.tiledgrid_actions" title="Permalink to this headline">¶</a></h1>
 <p>Implementation of TiledGrid3DAction actions</p>
-<dl class="class">
+<dl class="py class">
+<dt id="cocos.actions.tiledgrid_actions.FadeOutBLTiles">
+<em class="property">class </em><code class="sig-name descname">FadeOutBLTiles</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutBLTiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.actions.tiledgrid_actions.FadeOutTRTiles" title="cocos.actions.tiledgrid_actions.FadeOutTRTiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.tiledgrid_actions.FadeOutTRTiles</span></code></a></p>
+<p>Fades out each tile following an Bottom-Left path until all the tiles are faded out.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">FadeOutBLTiles</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="cocos.actions.tiledgrid_actions.FadeOutBLTiles.test_func">
+<code class="sig-name descname">test_func</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">j</span></em>, <em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutBLTiles.test_func" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="cocos.actions.tiledgrid_actions.FadeOutDownTiles">
+<em class="property">class </em><code class="sig-name descname">FadeOutDownTiles</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutDownTiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.actions.tiledgrid_actions.FadeOutUpTiles" title="cocos.actions.tiledgrid_actions.FadeOutUpTiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.tiledgrid_actions.FadeOutUpTiles</span></code></a></p>
+<p>Fades out each tile following an downwards path until all the tiles are faded out.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">FadeOutDownTiles</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="cocos.actions.tiledgrid_actions.FadeOutDownTiles.test_func">
+<code class="sig-name descname">test_func</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">j</span></em>, <em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutDownTiles.test_func" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt id="cocos.actions.tiledgrid_actions.FadeOutTRTiles">
-<em class="property">class </em><code class="sig-name descname">FadeOutTRTiles</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutTRTiles" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">FadeOutTRTiles</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutTRTiles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.TiledGrid3DAction" title="cocos.actions.basegrid_actions.TiledGrid3DAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.basegrid_actions.TiledGrid3DAction</span></code></a></p>
 <p>Fades out each tile following a diagonal Top-Right path until all the tiles are faded out.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">FadeOutTRTiles</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.tiledgrid_actions.FadeOutTRTiles.test_func">
-<code class="sig-name descname">test_func</code><span class="sig-paren">(</span><em class="sig-param">i</em>, <em class="sig-param">j</em>, <em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutTRTiles.test_func" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">test_func</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">j</span></em>, <em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutTRTiles.test_func" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.tiledgrid_actions.FadeOutTRTiles.transform_tile">
-<code class="sig-name descname">transform_tile</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutTRTiles.transform_tile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform_tile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutTRTiles.transform_tile" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.tiledgrid_actions.FadeOutTRTiles.turn_off_tile">
-<code class="sig-name descname">turn_off_tile</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutTRTiles.turn_off_tile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">turn_off_tile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutTRTiles.turn_off_tile" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.tiledgrid_actions.FadeOutTRTiles.turn_on_tile">
-<code class="sig-name descname">turn_on_tile</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutTRTiles.turn_on_tile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">turn_on_tile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutTRTiles.turn_on_tile" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.tiledgrid_actions.FadeOutTRTiles.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutTRTiles.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutTRTiles.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets called on every frame
 ‘t’ is the time elapsed normalized to [0, 1]
 If this action takes 5 seconds to execute, <cite>t</cite> will be equal to 0
@@ -89,62 +123,140 @@ updated.</p>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="cocos.actions.tiledgrid_actions.FadeOutBLTiles">
-<em class="property">class </em><code class="sig-name descname">FadeOutBLTiles</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutBLTiles" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.actions.tiledgrid_actions.FadeOutTRTiles" title="cocos.actions.tiledgrid_actions.FadeOutTRTiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.tiledgrid_actions.FadeOutTRTiles</span></code></a></p>
-<p>Fades out each tile following an Bottom-Left path until all the tiles are faded out.</p>
-<p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">FadeOutBLTiles</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
-</div>
-<dl class="method">
-<dt id="cocos.actions.tiledgrid_actions.FadeOutBLTiles.test_func">
-<code class="sig-name descname">test_func</code><span class="sig-paren">(</span><em class="sig-param">i</em>, <em class="sig-param">j</em>, <em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutBLTiles.test_func" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.actions.tiledgrid_actions.FadeOutUpTiles">
-<em class="property">class </em><code class="sig-name descname">FadeOutUpTiles</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutUpTiles" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">FadeOutUpTiles</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutUpTiles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.actions.tiledgrid_actions.FadeOutTRTiles" title="cocos.actions.tiledgrid_actions.FadeOutTRTiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.tiledgrid_actions.FadeOutTRTiles</span></code></a></p>
 <p>Fades out each tile following an upwards path until all the tiles are faded out.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">FadeOutUpTiles</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 </div>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.tiledgrid_actions.FadeOutUpTiles.test_func">
-<code class="sig-name descname">test_func</code><span class="sig-paren">(</span><em class="sig-param">i</em>, <em class="sig-param">j</em>, <em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutUpTiles.test_func" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">test_func</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">j</span></em>, <em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutUpTiles.test_func" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.tiledgrid_actions.FadeOutUpTiles.transform_tile">
-<code class="sig-name descname">transform_tile</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutUpTiles.transform_tile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transform_tile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutUpTiles.transform_tile" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="cocos.actions.tiledgrid_actions.FadeOutDownTiles">
-<em class="property">class </em><code class="sig-name descname">FadeOutDownTiles</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutDownTiles" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.actions.tiledgrid_actions.FadeOutUpTiles" title="cocos.actions.tiledgrid_actions.FadeOutUpTiles"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.tiledgrid_actions.FadeOutUpTiles</span></code></a></p>
-<p>Fades out each tile following an downwards path until all the tiles are faded out.</p>
+<dl class="py class">
+<dt id="cocos.actions.tiledgrid_actions.JumpTiles3D">
+<em class="property">class </em><code class="sig-name descname">JumpTiles3D</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.JumpTiles3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.TiledGrid3DAction" title="cocos.actions.basegrid_actions.TiledGrid3DAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.basegrid_actions.TiledGrid3DAction</span></code></a></p>
+<p>Odd tiles will perform a jump in the z-axis using the sine function,
+while the even tiles will perform a jump using sine+pi function</p>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">FadeOutDownTiles</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">JumpTiles3D</span><span class="p">(</span><span class="n">jumps</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
-<dl class="method">
-<dt id="cocos.actions.tiledgrid_actions.FadeOutDownTiles.test_func">
-<code class="sig-name descname">test_func</code><span class="sig-paren">(</span><em class="sig-param">i</em>, <em class="sig-param">j</em>, <em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.FadeOutDownTiles.test_func" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dl class="py method">
+<dt id="cocos.actions.tiledgrid_actions.JumpTiles3D.init">
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">jumps</span><span class="o">=</span><span class="default_value">4</span></em>, <em class="sig-param"><span class="n">amplitude</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.JumpTiles3D.init" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>jumps</cite><span class="classifier">int</span></dt><dd><p>Number of jumps(2 * pi) that the action will perform. Default is 4</p>
+</dd>
+<dt><cite>amplitude</cite><span class="classifier">int</span></dt><dd><p>Wave amplitude (height). Default is 20</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cocos.actions.tiledgrid_actions.JumpTiles3D.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.JumpTiles3D.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets called on every frame
+‘t’ is the time elapsed normalized to [0, 1]
+If this action takes 5 seconds to execute, <cite>t</cite> will be equal to 0
+at 0 seconds. <cite>t</cite> will be 0.5 at 2.5 seconds and <cite>t</cite> will be 1 at 5sec.
+This method must not use self._elapsed, which is not guaranted to be
+updated.</p>
+</dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
+<dt id="cocos.actions.tiledgrid_actions.ShakyTiles3D">
+<em class="property">class </em><code class="sig-name descname">ShakyTiles3D</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShakyTiles3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.TiledGrid3DAction" title="cocos.actions.basegrid_actions.TiledGrid3DAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.basegrid_actions.TiledGrid3DAction</span></code></a></p>
+<p>Simulates a shaky floor composed of tiles</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">ShakyTiles3D</span><span class="p">(</span><span class="n">randrange</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="cocos.actions.tiledgrid_actions.ShakyTiles3D.init">
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">randrange</span><span class="o">=</span><span class="default_value">6</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShakyTiles3D.init" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>randrange</cite><span class="classifier">int</span></dt><dd><p>Number that will be used in random.randrange(-randrange, randrange) to do the effect</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cocos.actions.tiledgrid_actions.ShakyTiles3D.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShakyTiles3D.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets called on every frame
+‘t’ is the time elapsed normalized to [0, 1]
+If this action takes 5 seconds to execute, <cite>t</cite> will be equal to 0
+at 0 seconds. <cite>t</cite> will be 0.5 at 2.5 seconds and <cite>t</cite> will be 1 at 5sec.
+This method must not use self._elapsed, which is not guaranted to be
+updated.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="cocos.actions.tiledgrid_actions.ShatteredTiles3D">
+<em class="property">class </em><code class="sig-name descname">ShatteredTiles3D</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShatteredTiles3D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.TiledGrid3DAction" title="cocos.actions.basegrid_actions.TiledGrid3DAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.basegrid_actions.TiledGrid3DAction</span></code></a></p>
+<p>ShatterTiles shatters the tiles according to a random value.
+It is similar to shakes (see <cite>ShakyTiles3D</cite>) the tiles just one frame, and then continue with
+that state for duration time.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">ShatteredTiles3D</span><span class="p">(</span><span class="n">randrange</span><span class="o">=</span><span class="mi">12</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="cocos.actions.tiledgrid_actions.ShatteredTiles3D.init">
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">randrange</span><span class="o">=</span><span class="default_value">6</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShatteredTiles3D.init" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>randrange</cite><span class="classifier">int</span></dt><dd><p>Number that will be used in random.randrange(-randrange, randrange) to do the effect</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cocos.actions.tiledgrid_actions.ShatteredTiles3D.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShatteredTiles3D.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets called on every frame
+‘t’ is the time elapsed normalized to [0, 1]
+If this action takes 5 seconds to execute, <cite>t</cite> will be equal to 0
+at 0 seconds. <cite>t</cite> will be 0.5 at 2.5 seconds and <cite>t</cite> will be 1 at 5sec.
+This method must not use self._elapsed, which is not guaranted to be
+updated.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt id="cocos.actions.tiledgrid_actions.ShuffleTiles">
-<em class="property">class </em><code class="sig-name descname">ShuffleTiles</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShuffleTiles" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">ShuffleTiles</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShuffleTiles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.TiledGrid3DAction" title="cocos.actions.basegrid_actions.TiledGrid3DAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.basegrid_actions.TiledGrid3DAction</span></code></a></p>
 <p>ShuffleTiles moves the tiles randomly across the screen.
 To put them back use: Reverse(ShuffleTiles()) with the same seed parameter.</p>
@@ -152,9 +264,9 @@ To put them back use: Reverse(ShuffleTiles()) with the same seed parameter.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">ShuffleTiles</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">seed</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.tiledgrid_actions.ShuffleTiles.init">
-<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">seed=-1</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShuffleTiles.init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">seed</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShuffleTiles.init" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -165,21 +277,21 @@ To put them back use: Reverse(ShuffleTiles()) with the same seed parameter.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.tiledgrid_actions.ShuffleTiles.place_tile">
-<code class="sig-name descname">place_tile</code><span class="sig-paren">(</span><em class="sig-param">i</em>, <em class="sig-param">j</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShuffleTiles.place_tile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">place_tile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">j</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShuffleTiles.place_tile" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.tiledgrid_actions.ShuffleTiles.start">
 <code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShuffleTiles.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>External code sets self.target and then calls this method.
 Perform here any extra initialization needed.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.tiledgrid_actions.ShuffleTiles.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShuffleTiles.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShuffleTiles.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets called on every frame
 ‘t’ is the time elapsed normalized to [0, 1]
 If this action takes 5 seconds to execute, <cite>t</cite> will be equal to 0
@@ -190,23 +302,99 @@ updated.</p>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
+<dt id="cocos.actions.tiledgrid_actions.SplitCols">
+<em class="property">class </em><code class="sig-name descname">SplitCols</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.SplitCols" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.TiledGrid3DAction" title="cocos.actions.basegrid_actions.TiledGrid3DAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.basegrid_actions.TiledGrid3DAction</span></code></a></p>
+<p>Split the screen in a number of columns, and move
+these columns away from the screen.</p>
+<p>The odds columns are moved to the upwards, while the even
+columns are moved to the downwards.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">SplitCols</span><span class="p">(</span><span class="n">cols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="cocos.actions.tiledgrid_actions.SplitCols.init">
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cols</span><span class="o">=</span><span class="default_value">9</span></em>, <em class="sig-param"><span class="n">grid</span><span class="o">=</span><span class="default_value">- 1, - 1</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.SplitCols.init" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>cols</cite><span class="classifier">int</span></dt><dd><p>Number of columns that will have the effect. Default: 9</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cocos.actions.tiledgrid_actions.SplitCols.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.SplitCols.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets called on every frame
+‘t’ is the time elapsed normalized to [0, 1]
+If this action takes 5 seconds to execute, <cite>t</cite> will be equal to 0
+at 0 seconds. <cite>t</cite> will be 0.5 at 2.5 seconds and <cite>t</cite> will be 1 at 5sec.
+This method must not use self._elapsed, which is not guaranted to be
+updated.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="cocos.actions.tiledgrid_actions.SplitRows">
+<em class="property">class </em><code class="sig-name descname">SplitRows</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.SplitRows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.TiledGrid3DAction" title="cocos.actions.basegrid_actions.TiledGrid3DAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.basegrid_actions.TiledGrid3DAction</span></code></a></p>
+<p>Split the screen in a number of rows, and move
+these rows away from the screen.</p>
+<p>The odds rows are moved to the left, while the even rows are moved to
+the right.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">SplitRows</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="cocos.actions.tiledgrid_actions.SplitRows.init">
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rows</span><span class="o">=</span><span class="default_value">9</span></em>, <em class="sig-param"><span class="n">grid</span><span class="o">=</span><span class="default_value">- 1, - 1</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.SplitRows.init" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>rows</cite><span class="classifier">int</span></dt><dd><p>Number of rows that will have the effect. Default: 9</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cocos.actions.tiledgrid_actions.SplitRows.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.SplitRows.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets called on every frame
+‘t’ is the time elapsed normalized to [0, 1]
+If this action takes 5 seconds to execute, <cite>t</cite> will be equal to 0
+at 0 seconds. <cite>t</cite> will be 0.5 at 2.5 seconds and <cite>t</cite> will be 1 at 5sec.
+This method must not use self._elapsed, which is not guaranted to be
+updated.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt id="cocos.actions.tiledgrid_actions.TurnOffTiles">
-<em class="property">class </em><code class="sig-name descname">TurnOffTiles</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.TurnOffTiles" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">TurnOffTiles</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.TurnOffTiles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.TiledGrid3DAction" title="cocos.actions.basegrid_actions.TiledGrid3DAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.basegrid_actions.TiledGrid3DAction</span></code></a></p>
 <p>TurnOffTiles turns off each in random order</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">TurnOffTiles</span><span class="p">(</span><span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">seed</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.tiledgrid_actions.TurnOffTiles.get_tile_pos">
-<code class="sig-name descname">get_tile_pos</code><span class="sig-paren">(</span><em class="sig-param">idx</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.TurnOffTiles.get_tile_pos" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_tile_pos</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">idx</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.TurnOffTiles.get_tile_pos" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.tiledgrid_actions.TurnOffTiles.init">
-<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">seed=-1</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.TurnOffTiles.init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">seed</span><span class="o">=</span><span class="default_value">- 1</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.TurnOffTiles.init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize the Grid Action</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -220,26 +408,26 @@ updated.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.tiledgrid_actions.TurnOffTiles.start">
 <code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.TurnOffTiles.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>External code sets self.target and then calls this method.
 Perform here any extra initialization needed.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.tiledgrid_actions.TurnOffTiles.turn_off_tile">
-<code class="sig-name descname">turn_off_tile</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.TurnOffTiles.turn_off_tile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">turn_off_tile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.TurnOffTiles.turn_off_tile" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.tiledgrid_actions.TurnOffTiles.turn_on_tile">
-<code class="sig-name descname">turn_on_tile</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.TurnOffTiles.turn_on_tile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">turn_on_tile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.TurnOffTiles.turn_on_tile" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.tiledgrid_actions.TurnOffTiles.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.TurnOffTiles.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.TurnOffTiles.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets called on every frame
 ‘t’ is the time elapsed normalized to [0, 1]
 If this action takes 5 seconds to execute, <cite>t</cite> will be equal to 0
@@ -250,166 +438,18 @@ updated.</p>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="cocos.actions.tiledgrid_actions.SplitRows">
-<em class="property">class </em><code class="sig-name descname">SplitRows</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.SplitRows" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.TiledGrid3DAction" title="cocos.actions.basegrid_actions.TiledGrid3DAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.basegrid_actions.TiledGrid3DAction</span></code></a></p>
-<p>Split the screen in a number of rows, and move
-these rows away from the screen.</p>
-<p>The odds rows are moved to the left, while the even rows are moved to
-the right.</p>
-<p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">SplitRows</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
-<dl class="method">
-<dt id="cocos.actions.tiledgrid_actions.SplitRows.init">
-<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">rows=9</em>, <em class="sig-param">grid=(-1</em>, <em class="sig-param">-1)</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.SplitRows.init" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><cite>rows</cite><span class="classifier">int</span></dt><dd><p>Number of rows that will have the effect. Default: 9</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="cocos.actions.tiledgrid_actions.SplitRows.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.SplitRows.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets called on every frame
-‘t’ is the time elapsed normalized to [0, 1]
-If this action takes 5 seconds to execute, <cite>t</cite> will be equal to 0
-at 0 seconds. <cite>t</cite> will be 0.5 at 2.5 seconds and <cite>t</cite> will be 1 at 5sec.
-This method must not use self._elapsed, which is not guaranted to be
-updated.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="cocos.actions.tiledgrid_actions.SplitCols">
-<em class="property">class </em><code class="sig-name descname">SplitCols</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.SplitCols" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.TiledGrid3DAction" title="cocos.actions.basegrid_actions.TiledGrid3DAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.basegrid_actions.TiledGrid3DAction</span></code></a></p>
-<p>Split the screen in a number of columns, and move
-these columns away from the screen.</p>
-<p>The odds columns are moved to the upwards, while the even
-columns are moved to the downwards.</p>
-<p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">SplitCols</span><span class="p">(</span><span class="n">cols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
-<dl class="method">
-<dt id="cocos.actions.tiledgrid_actions.SplitCols.init">
-<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">cols=9</em>, <em class="sig-param">grid=(-1</em>, <em class="sig-param">-1)</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.SplitCols.init" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><cite>cols</cite><span class="classifier">int</span></dt><dd><p>Number of columns that will have the effect. Default: 9</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="cocos.actions.tiledgrid_actions.SplitCols.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.SplitCols.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets called on every frame
-‘t’ is the time elapsed normalized to [0, 1]
-If this action takes 5 seconds to execute, <cite>t</cite> will be equal to 0
-at 0 seconds. <cite>t</cite> will be 0.5 at 2.5 seconds and <cite>t</cite> will be 1 at 5sec.
-This method must not use self._elapsed, which is not guaranted to be
-updated.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="cocos.actions.tiledgrid_actions.ShakyTiles3D">
-<em class="property">class </em><code class="sig-name descname">ShakyTiles3D</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShakyTiles3D" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.TiledGrid3DAction" title="cocos.actions.basegrid_actions.TiledGrid3DAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.basegrid_actions.TiledGrid3DAction</span></code></a></p>
-<p>Simulates a shaky floor composed of tiles</p>
-<p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">ShakyTiles3D</span><span class="p">(</span><span class="n">randrange</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
-</pre></div>
-</div>
-<dl class="method">
-<dt id="cocos.actions.tiledgrid_actions.ShakyTiles3D.init">
-<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">randrange=6</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShakyTiles3D.init" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><cite>randrange</cite><span class="classifier">int</span></dt><dd><p>Number that will be used in random.randrange(-randrange, randrange) to do the effect</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="cocos.actions.tiledgrid_actions.ShakyTiles3D.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShakyTiles3D.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets called on every frame
-‘t’ is the time elapsed normalized to [0, 1]
-If this action takes 5 seconds to execute, <cite>t</cite> will be equal to 0
-at 0 seconds. <cite>t</cite> will be 0.5 at 2.5 seconds and <cite>t</cite> will be 1 at 5sec.
-This method must not use self._elapsed, which is not guaranted to be
-updated.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="cocos.actions.tiledgrid_actions.ShatteredTiles3D">
-<em class="property">class </em><code class="sig-name descname">ShatteredTiles3D</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShatteredTiles3D" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.TiledGrid3DAction" title="cocos.actions.basegrid_actions.TiledGrid3DAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.basegrid_actions.TiledGrid3DAction</span></code></a></p>
-<p>ShatterTiles shatters the tiles according to a random value.
-It is similar to shakes (see <cite>ShakyTiles3D</cite>) the tiles just one frame, and then continue with
-that state for duration time.</p>
-<p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">ShatteredTiles3D</span><span class="p">(</span><span class="n">randrange</span><span class="o">=</span><span class="mi">12</span><span class="p">))</span>
-</pre></div>
-</div>
-<dl class="method">
-<dt id="cocos.actions.tiledgrid_actions.ShatteredTiles3D.init">
-<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">randrange=6</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShatteredTiles3D.init" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><cite>randrange</cite><span class="classifier">int</span></dt><dd><p>Number that will be used in random.randrange(-randrange, randrange) to do the effect</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="cocos.actions.tiledgrid_actions.ShatteredTiles3D.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.ShatteredTiles3D.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets called on every frame
-‘t’ is the time elapsed normalized to [0, 1]
-If this action takes 5 seconds to execute, <cite>t</cite> will be equal to 0
-at 0 seconds. <cite>t</cite> will be 0.5 at 2.5 seconds and <cite>t</cite> will be 1 at 5sec.
-This method must not use self._elapsed, which is not guaranted to be
-updated.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.actions.tiledgrid_actions.WavesTiles3D">
-<em class="property">class </em><code class="sig-name descname">WavesTiles3D</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.WavesTiles3D" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">WavesTiles3D</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.WavesTiles3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.TiledGrid3DAction" title="cocos.actions.basegrid_actions.TiledGrid3DAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.basegrid_actions.TiledGrid3DAction</span></code></a></p>
 <p>Simulates waves using the math.sin() function in the z-axis of each tile</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">WavesTiles3D</span><span class="p">(</span><span class="n">waves</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">120</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
 </pre></div>
 </div>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.tiledgrid_actions.WavesTiles3D.init">
-<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">waves=4</em>, <em class="sig-param">amplitude=120</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.WavesTiles3D.init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">waves</span><span class="o">=</span><span class="default_value">4</span></em>, <em class="sig-param"><span class="n">amplitude</span><span class="o">=</span><span class="default_value">120</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.WavesTiles3D.init" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -422,47 +462,9 @@ updated.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.tiledgrid_actions.WavesTiles3D.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.WavesTiles3D.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets called on every frame
-‘t’ is the time elapsed normalized to [0, 1]
-If this action takes 5 seconds to execute, <cite>t</cite> will be equal to 0
-at 0 seconds. <cite>t</cite> will be 0.5 at 2.5 seconds and <cite>t</cite> will be 1 at 5sec.
-This method must not use self._elapsed, which is not guaranted to be
-updated.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
-<dt id="cocos.actions.tiledgrid_actions.JumpTiles3D">
-<em class="property">class </em><code class="sig-name descname">JumpTiles3D</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.JumpTiles3D" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.TiledGrid3DAction" title="cocos.actions.basegrid_actions.TiledGrid3DAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.basegrid_actions.TiledGrid3DAction</span></code></a></p>
-<p>Odd tiles will perform a jump in the z-axis using the sine function,
-while the even tiles will perform a jump using sine+pi function</p>
-<p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">scene</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">JumpTiles3D</span><span class="p">(</span><span class="n">jumps</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">amplitude</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">grid</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">),</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
-</pre></div>
-</div>
-<dl class="method">
-<dt id="cocos.actions.tiledgrid_actions.JumpTiles3D.init">
-<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">jumps=4</em>, <em class="sig-param">amplitude=20</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.JumpTiles3D.init" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><cite>jumps</cite><span class="classifier">int</span></dt><dd><p>Number of jumps(2 * pi) that the action will perform. Default is 4</p>
-</dd>
-<dt><cite>amplitude</cite><span class="classifier">int</span></dt><dd><p>Wave amplitude (height). Default is 20</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="cocos.actions.tiledgrid_actions.JumpTiles3D.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.JumpTiles3D.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.tiledgrid_actions.WavesTiles3D.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets called on every frame
 ‘t’ is the time elapsed normalized to [0, 1]
 If this action takes 5 seconds to execute, <cite>t</cite> will be equal to 0
@@ -476,6 +478,7 @@ updated.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -503,7 +506,7 @@ updated.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -525,12 +528,13 @@ updated.</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.actions.html" >cocos.actions package</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="cocos.actions.html" >cocos.actions package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.actions.tiledgrid_actions module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>

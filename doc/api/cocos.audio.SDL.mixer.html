@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>cocos.audio.SDL.mixer module &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocos.audio.SDL.mixer module &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.audio.SDL.rwops module" href="cocos.audio.SDL.rwops.html" />
@@ -36,7 +37,8 @@
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" accesskey="U">cocos.audio.SDL package</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" accesskey="U">cocos.audio.SDL package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.audio.SDL.mixer module</a></li> 
       </ul>
     </div>  
 
@@ -64,7 +66,7 @@ choppy, try using 8-bit audio, mono audio, or lower frequencies.</p>
 must call <cite>Mix_OpenAudio</cite> with the sampling rate of your music track.</p>
 </dd>
 </dl>
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.audio.SDL.mixer.Mix_Chunk">
 <em class="property">class </em><code class="sig-name descname">Mix_Chunk</code><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_Chunk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">_ctypes.Structure</span></code></p>
@@ -83,19 +85,19 @@ must call <cite>Mix_OpenAudio</cite> with the sampling rate of your music track.
 </dl>
 </dd>
 </dl>
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.audio.SDL.mixer.Mix_Chunk.alen">
 <code class="sig-name descname">alen</code><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_Chunk.alen" title="Permalink to this definition">¶</a></dt>
 <dd><p>Structure/Union member</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.audio.SDL.mixer.Mix_Chunk.allocated">
 <code class="sig-name descname">allocated</code><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_Chunk.allocated" title="Permalink to this definition">¶</a></dt>
 <dd><p>Structure/Union member</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.audio.SDL.mixer.Mix_Chunk.volume">
 <code class="sig-name descname">volume</code><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_Chunk.volume" title="Permalink to this definition">¶</a></dt>
 <dd><p>Structure/Union member</p>
@@ -103,9 +105,9 @@ must call <cite>Mix_OpenAudio</cite> with the sampling rate of your music track.
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.SDL.mixer.Mix_ChannelFinished">
-<code class="sig-name descname">Mix_ChannelFinished</code><span class="sig-paren">(</span><em class="sig-param">channel_finished</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_ChannelFinished" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Mix_ChannelFinished</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">channel_finished</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_ChannelFinished" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add your own callback when a channel has finished playing.</p>
 <p>The callback may be called from the mixer’s audio callback or it
 could be called as a result of <cite>Mix_HaltChannel</cite>, etc.</p>
@@ -123,9 +125,9 @@ and returns None.  Pass None here to disable the callback.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.SDL.mixer.Mix_FadeInChannel">
-<code class="sig-name descname">Mix_FadeInChannel</code><span class="sig-paren">(</span><em class="sig-param">channel</em>, <em class="sig-param">chunk</em>, <em class="sig-param">loops</em>, <em class="sig-param">ms</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_FadeInChannel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Mix_FadeInChannel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">channel</span></em>, <em class="sig-param"><span class="n">chunk</span></em>, <em class="sig-param"><span class="n">loops</span></em>, <em class="sig-param"><span class="n">ms</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_FadeInChannel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fade in a channel.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -144,9 +146,9 @@ if -1, loop infinitely.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.SDL.mixer.Mix_HookMusic">
-<code class="sig-name descname">Mix_HookMusic</code><span class="sig-paren">(</span><em class="sig-param">mix_func</em>, <em class="sig-param">udata</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_HookMusic" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Mix_HookMusic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mix_func</span></em>, <em class="sig-param"><span class="n">udata</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_HookMusic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add your own music player or additional mixer function.</p>
 <p>If <cite>mix_func</cite> is None, the default music player is re-enabled.</p>
 <dl class="simple">
@@ -164,9 +166,9 @@ call.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.SDL.mixer.Mix_HookMusicFinished">
-<code class="sig-name descname">Mix_HookMusicFinished</code><span class="sig-paren">(</span><em class="sig-param">music_finished</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_HookMusicFinished" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Mix_HookMusicFinished</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">music_finished</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_HookMusicFinished" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add your own callback when the music has finished playing.</p>
 <p>This callback is only called if the music finishes naturally.</p>
 <dl class="field-list simple">
@@ -179,9 +181,9 @@ call.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.SDL.mixer.Mix_LoadWAV">
-<code class="sig-name descname">Mix_LoadWAV</code><span class="sig-paren">(</span><em class="sig-param">file</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_LoadWAV" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Mix_LoadWAV</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_LoadWAV" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load a WAV, RIFF, AIFF, OGG or VOC file.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -196,9 +198,9 @@ call.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.SDL.mixer.Mix_PlayChannel">
-<code class="sig-name descname">Mix_PlayChannel</code><span class="sig-paren">(</span><em class="sig-param">channel</em>, <em class="sig-param">chunk</em>, <em class="sig-param">loops</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_PlayChannel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Mix_PlayChannel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">channel</span></em>, <em class="sig-param"><span class="n">chunk</span></em>, <em class="sig-param"><span class="n">loops</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_PlayChannel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Play an audio chunk on a specific channel.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -221,7 +223,7 @@ if -1, loop infinitely.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.SDL.mixer.Mix_QuerySpec">
 <code class="sig-name descname">Mix_QuerySpec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_QuerySpec" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find out what the actual audio device parameters are.</p>
@@ -237,9 +239,9 @@ value is 1 if the audio has been opened, 0 otherwise.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.SDL.mixer.Mix_QuickLoad_RAW">
-<code class="sig-name descname">Mix_QuickLoad_RAW</code><span class="sig-paren">(</span><em class="sig-param">mem</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_QuickLoad_RAW" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Mix_QuickLoad_RAW</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mem</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_QuickLoad_RAW" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load raw audio data of the mixer format from a sequence or SDL_array.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -253,9 +255,9 @@ value is 1 if the audio has been opened, 0 otherwise.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.SDL.mixer.Mix_QuickLoad_WAV">
-<code class="sig-name descname">Mix_QuickLoad_WAV</code><span class="sig-paren">(</span><em class="sig-param">mem</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_QuickLoad_WAV" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Mix_QuickLoad_WAV</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mem</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_QuickLoad_WAV" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load a wave file of the mixer format from a sequence or SDL_array.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -269,9 +271,9 @@ value is 1 if the audio has been opened, 0 otherwise.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.SDL.mixer.Mix_RegisterEffect">
-<code class="sig-name descname">Mix_RegisterEffect</code><span class="sig-paren">(</span><em class="sig-param">chan</em>, <em class="sig-param">f</em>, <em class="sig-param">d</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_RegisterEffect" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Mix_RegisterEffect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">chan</span></em>, <em class="sig-param"><span class="n">f</span></em>, <em class="sig-param"><span class="n">d</span></em>, <em class="sig-param"><span class="n">arg</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_RegisterEffect" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register a special effect function.</p>
 <p>At mixing time, the channel data is copied into a buffer and passed
 through each registered effect function.  After it passes through all
@@ -334,9 +336,9 @@ must have the signature (channel: int, udata: any) -&gt; None.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.SDL.mixer.Mix_SetPostMix">
-<code class="sig-name descname">Mix_SetPostMix</code><span class="sig-paren">(</span><em class="sig-param">mix_func</em>, <em class="sig-param">udata</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_SetPostMix" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Mix_SetPostMix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mix_func</span></em>, <em class="sig-param"><span class="n">udata</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.mixer.Mix_SetPostMix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set a function that is called after all mixing is performed.</p>
 <p>This can be used to provide real-time visual display of the audio
 stream or add a custom mixer filter for the stream data.</p>
@@ -358,6 +360,7 @@ call.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -385,7 +388,7 @@ call.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -408,12 +411,13 @@ call.</p>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" >cocos.audio.SDL package</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" >cocos.audio.SDL package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.audio.SDL.mixer module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>

@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>cocos.draw module &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocos.draw module &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.euclid module" href="cocos.euclid.html" />
@@ -34,7 +35,8 @@
           <a href="cocos.director.html" title="cocos.director module"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.draw module</a></li> 
       </ul>
     </div>  
 
@@ -45,16 +47,16 @@
             
   <div class="section" id="module-cocos.draw">
 <span id="cocos-draw-module"></span><h1>cocos.draw module<a class="headerlink" href="#module-cocos.draw" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.draw.Canvas">
 <em class="property">class </em><code class="sig-name descname">Canvas</code><a class="headerlink" href="#cocos.draw.Canvas" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.cocosnode.CocosNode</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Canvas.build_vbo">
 <code class="sig-name descname">build_vbo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.build_vbo" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Canvas.draw">
 <code class="sig-name descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is the function you will have to override if you want your
@@ -70,27 +72,27 @@ If you want OpenGL to do the scaling for you, you can:</p>
 </div>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Canvas.endcap">
-<code class="sig-name descname">endcap</code><span class="sig-paren">(</span><em class="sig-param">line</em>, <em class="sig-param">cap_type</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.endcap" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">endcap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">line</span></em>, <em class="sig-param"><span class="n">cap_type</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.endcap" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Canvas.free">
 <code class="sig-name descname">free</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.free" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Canvas.line_to">
-<code class="sig-name descname">line_to</code><span class="sig-paren">(</span><em class="sig-param">end</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.line_to" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">line_to</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">end</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.line_to" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Canvas.move_to">
-<code class="sig-name descname">move_to</code><span class="sig-paren">(</span><em class="sig-param">position</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.move_to" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">move_to</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">position</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.move_to" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Canvas.on_exit">
 <code class="sig-name descname">on_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.on_exit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called every time just before the node leaves the stage.</p>
@@ -102,169 +104,170 @@ be called until an <code class="xref py py-meth docutils literal notranslate"><s
 compiled vertex lists.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Canvas.pop">
 <code class="sig-name descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.pop" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Canvas.push">
 <code class="sig-name descname">push</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.push" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Canvas.rotate">
-<code class="sig-name descname">rotate</code><span class="sig-paren">(</span><em class="sig-param">radians</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.rotate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">rotate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">radians</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.rotate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Canvas.set_color">
-<code class="sig-name descname">set_color</code><span class="sig-paren">(</span><em class="sig-param">color</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.set_color" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_color</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">color</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.set_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Canvas.set_endcap">
-<code class="sig-name descname">set_endcap</code><span class="sig-paren">(</span><em class="sig-param">cap</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.set_endcap" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_endcap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cap</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.set_endcap" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Canvas.set_join">
-<code class="sig-name descname">set_join</code><span class="sig-paren">(</span><em class="sig-param">join</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.set_join" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_join</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">join</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.set_join" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Canvas.set_stroke_width">
-<code class="sig-name descname">set_stroke_width</code><span class="sig-paren">(</span><em class="sig-param">stroke_width</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.set_stroke_width" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_stroke_width</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stroke_width</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.set_stroke_width" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Canvas.translate">
-<code class="sig-name descname">translate</code><span class="sig-paren">(</span><em class="sig-param">vect</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.translate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">translate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vect</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Canvas.translate" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.draw.Context">
 <em class="property">class </em><code class="sig-name descname">Context</code><a class="headerlink" href="#cocos.draw.Context" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Context.copy">
 <code class="sig-name descname">copy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Context.copy" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Context.set_state">
 <code class="sig-name descname">set_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Context.set_state" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Context.unset_state">
 <code class="sig-name descname">unset_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Context.unset_state" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.draw.Line">
-<em class="property">class </em><code class="sig-name descname">Line</code><span class="sig-paren">(</span><em class="sig-param">start</em>, <em class="sig-param">end</em>, <em class="sig-param">color</em>, <em class="sig-param">stroke_width=1</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Line" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Line</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em>, <em class="sig-param"><span class="n">color</span></em>, <em class="sig-param"><span class="n">stroke_width</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Line" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.draw.Canvas" title="cocos.draw.Canvas"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.draw.Canvas</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Line.render">
 <code class="sig-name descname">render</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Line.render" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Line.color">
 <em class="property">property </em><code class="sig-name descname">color</code><a class="headerlink" href="#cocos.draw.Line.color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Line.end">
 <em class="property">property </em><code class="sig-name descname">end</code><a class="headerlink" href="#cocos.draw.Line.end" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Line.start">
 <em class="property">property </em><code class="sig-name descname">start</code><a class="headerlink" href="#cocos.draw.Line.start" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Line.stroke_width">
 <em class="property">property </em><code class="sig-name descname">stroke_width</code><a class="headerlink" href="#cocos.draw.Line.stroke_width" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.draw.Segment">
-<em class="property">class </em><code class="sig-name descname">Segment</code><span class="sig-paren">(</span><em class="sig-param">start</em>, <em class="sig-param">end</em>, <em class="sig-param">width</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Segment" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Segment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">end</span></em>, <em class="sig-param"><span class="n">width</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Segment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Segment.reversed">
 <code class="sig-name descname">reversed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.Segment.reversed" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Segment.bl">
 <em class="property">property </em><code class="sig-name descname">bl</code><a class="headerlink" href="#cocos.draw.Segment.bl" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Segment.br">
 <em class="property">property </em><code class="sig-name descname">br</code><a class="headerlink" href="#cocos.draw.Segment.br" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Segment.direction">
 <em class="property">property </em><code class="sig-name descname">direction</code><a class="headerlink" href="#cocos.draw.Segment.direction" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Segment.left">
 <em class="property">property </em><code class="sig-name descname">left</code><a class="headerlink" href="#cocos.draw.Segment.left" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Segment.line_width">
 <em class="property">property </em><code class="sig-name descname">line_width</code><a class="headerlink" href="#cocos.draw.Segment.line_width" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Segment.points">
 <em class="property">property </em><code class="sig-name descname">points</code><a class="headerlink" href="#cocos.draw.Segment.points" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Segment.right">
 <em class="property">property </em><code class="sig-name descname">right</code><a class="headerlink" href="#cocos.draw.Segment.right" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Segment.tl">
 <em class="property">property </em><code class="sig-name descname">tl</code><a class="headerlink" href="#cocos.draw.Segment.tl" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.draw.Segment.tr">
 <em class="property">property </em><code class="sig-name descname">tr</code><a class="headerlink" href="#cocos.draw.Segment.tr" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.draw.flatten">
-<code class="sig-name descname">flatten</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.flatten" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">flatten</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.flatten" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.draw.parameter">
-<code class="sig-name descname">parameter</code><span class="sig-paren">(</span><em class="sig-param">default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.parameter" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">parameter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">default</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.draw.parameter" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -292,7 +295,7 @@ compiled vertex lists.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -313,12 +316,13 @@ compiled vertex lists.</p>
           <a href="cocos.director.html" title="cocos.director module"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.draw module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>

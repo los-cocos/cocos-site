@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>cocos.batch module &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocos.batch module &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.camera module" href="cocos.camera.html" />
@@ -34,7 +35,8 @@
           <a href="cocos.scenes.transitions.html" title="cocos.scenes.transitions module"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.batch module</a></li> 
       </ul>
     </div>  
 
@@ -49,13 +51,13 @@
 <div class="section" id="batches">
 <h2>Batches<a class="headerlink" href="#batches" title="Permalink to this headline">¶</a></h2>
 <p>Batches allow you to optimize the number of gl calls using pyglets batch</p>
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.batch.BatchNode">
 <em class="property">class </em><code class="sig-name descname">BatchNode</code><a class="headerlink" href="#cocos.batch.BatchNode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.cocosnode.CocosNode</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.batch.BatchNode.add">
-<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param">child</em>, <em class="sig-param">z=0</em>, <em class="sig-param">name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.batch.BatchNode.add" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">child</span></em>, <em class="sig-param"><span class="n">z</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.batch.BatchNode.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a child and if it becomes part of the active scene, it calls
 its <code class="xref py py-meth docutils literal notranslate"><span class="pre">on_enter()</span></code> method.</p>
 <dl class="field-list simple">
@@ -72,7 +74,7 @@ its <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.batch.BatchNode.draw">
 <code class="sig-name descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.batch.BatchNode.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is the function you will have to override if you want your
@@ -88,9 +90,9 @@ If you want OpenGL to do the scaling for you, you can:</p>
 </div>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.batch.BatchNode.remove">
-<code class="sig-name descname">remove</code><span class="sig-paren">(</span><em class="sig-param">child</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.batch.BatchNode.remove" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">remove</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">child</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.batch.BatchNode.remove" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes a child given its name or object</p>
 <p>If the node was added with name, it is better to remove by name, else
 the name will be unavailable for further adds (and will raise an
@@ -104,7 +106,7 @@ will be called.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.batch.BatchNode.visit">
 <code class="sig-name descname">visit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.batch.BatchNode.visit" title="Permalink to this definition">¶</a></dt>
 <dd><p>All children are placed in to self.batch, so nothing to visit</p>
@@ -112,13 +114,13 @@ will be called.</p>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.batch.BatchableNode">
 <em class="property">class </em><code class="sig-name descname">BatchableNode</code><a class="headerlink" href="#cocos.batch.BatchableNode" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.cocosnode.CocosNode</span></code></a></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.batch.BatchableNode.add">
-<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param">child</em>, <em class="sig-param">z=0</em>, <em class="sig-param">name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.batch.BatchableNode.add" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">child</span></em>, <em class="sig-param"><span class="n">z</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.batch.BatchableNode.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a child and if it becomes part of the active scene, it calls
 its <code class="xref py py-meth docutils literal notranslate"><span class="pre">on_enter()</span></code> method.</p>
 <dl class="field-list simple">
@@ -135,9 +137,9 @@ its <code class="xref py py-meth docutils literal notranslate"><span class="pre"
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.batch.BatchableNode.remove">
-<code class="sig-name descname">remove</code><span class="sig-paren">(</span><em class="sig-param">child</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.batch.BatchableNode.remove" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">remove</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">child</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.batch.BatchableNode.remove" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes a child given its name or object</p>
 <p>If the node was added with name, it is better to remove by name, else
 the name will be unavailable for further adds (and will raise an
@@ -151,9 +153,9 @@ will be called.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.batch.BatchableNode.set_batch">
-<code class="sig-name descname">set_batch</code><span class="sig-paren">(</span><em class="sig-param">batch</em>, <em class="sig-param">groups=None</em>, <em class="sig-param">z=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.batch.BatchableNode.set_batch" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_batch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">batch</span></em>, <em class="sig-param"><span class="n">groups</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">z</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.batch.BatchableNode.set_batch" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -162,6 +164,7 @@ will be called.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -197,7 +200,7 @@ will be called.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -218,12 +221,13 @@ will be called.</p>
           <a href="cocos.scenes.transitions.html" title="cocos.scenes.transitions module"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.batch module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>

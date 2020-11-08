@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>cocos.grid module &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocos.grid module &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.mapcolliders module" href="cocos.mapcolliders.html" />
@@ -34,7 +35,8 @@
           <a href="cocos.gl_framebuffer_object.html" title="cocos.gl_framebuffer_object module"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.grid module</a></li> 
       </ul>
     </div>  
 
@@ -46,64 +48,7 @@
   <div class="section" id="module-cocos.grid">
 <span id="cocos-grid-module"></span><h1>cocos.grid module<a class="headerlink" href="#module-cocos.grid" title="Permalink to this headline">¶</a></h1>
 <p>Grid data structure</p>
-<dl class="class">
-<dt id="cocos.grid.GridBase">
-<em class="property">class </em><code class="sig-name descname">GridBase</code><a class="headerlink" href="#cocos.grid.GridBase" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>A Scene that takes two scenes and makes a transition between them</p>
-<dl class="method">
-<dt id="cocos.grid.GridBase.after_draw">
-<code class="sig-name descname">after_draw</code><span class="sig-paren">(</span><em class="sig-param">camera</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.GridBase.after_draw" title="Permalink to this definition">¶</a></dt>
-<dd><p>Called by CocosNode when the texture is already grabbed.
-The FrameBuffer will be unbound and the texture will be drawn</p>
-<dl class="field-list">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
-<dt><cite>camera</cite><span class="classifier"><cite>Camera</cite></span></dt><dd><p>The target’s camera object.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="cocos.grid.GridBase.before_draw">
-<code class="sig-name descname">before_draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.GridBase.before_draw" title="Permalink to this definition">¶</a></dt>
-<dd><p>Binds the framebuffer to a texture
-and set a 2d projection before binding
-to prevent calculating a new texture</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cocos.grid.GridBase.init">
-<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">grid</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.GridBase.init" title="Permalink to this definition">¶</a></dt>
-<dd><p>Initializes the grid creating both a vertex_list for an independent-tiled grid
-and creating also a vertex_list_indexed for a “united” (non independent tile) grid.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><cite>grid</cite><span class="classifier">euclid.Point2</span></dt><dd><p>size of a 2D grid</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="cocos.grid.GridBase.active">
-<em class="property">property </em><code class="sig-name descname">active</code><a class="headerlink" href="#cocos.grid.GridBase.active" title="Permalink to this definition">¶</a></dt>
-<dd><p>Determines whether the grid is active or not
-:type: bool</p>
-</dd></dl>
-
-<dl class="attribute">
-<dt id="cocos.grid.GridBase.texture">
-<code class="sig-name descname">texture</code><em class="property"> = None</em><a class="headerlink" href="#cocos.grid.GridBase.texture" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.grid.Grid3D">
 <em class="property">class </em><code class="sig-name descname">Grid3D</code><a class="headerlink" href="#cocos.grid.Grid3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.grid.GridBase" title="cocos.grid.GridBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.grid.GridBase</span></code></a></p>
@@ -114,9 +59,9 @@ and creating also a vertex_list_indexed for a “united” (non independent tile
 <span class="bp">self</span><span class="o">.</span><span class="n">vertex_list</span><span class="o">.</span><span class="n">colors</span><span class="p">:</span> <span class="n">RGBA</span><span class="p">,</span> <span class="k">with</span> <span class="n">values</span> <span class="kn">from</span> <span class="mi">0</span> <span class="o">-</span> <span class="mi">255</span>
 </pre></div>
 </div>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.grid.Grid3D.get_original_vertex">
-<code class="sig-name descname">get_original_vertex</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.Grid3D.get_original_vertex" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_original_vertex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.Grid3D.get_original_vertex" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the original vertex coordinate.
 The original vertices are the ones weren’t modified by the current action.</p>
 <dl class="field-list simple">
@@ -134,9 +79,9 @@ The original vertices are the ones weren’t modified by the current action.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.grid.Grid3D.get_vertex">
-<code class="sig-name descname">get_vertex</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.Grid3D.get_vertex" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_vertex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.Grid3D.get_vertex" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the current vertex coordinate</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -153,9 +98,9 @@ The original vertices are the ones weren’t modified by the current action.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.grid.Grid3D.set_vertex">
-<code class="sig-name descname">set_vertex</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">v</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.Grid3D.set_vertex" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_vertex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">v</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.Grid3D.set_vertex" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set a vertex point is a certain value</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -173,7 +118,64 @@ The original vertices are the ones weren’t modified by the current action.</p>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
+<dt id="cocos.grid.GridBase">
+<em class="property">class </em><code class="sig-name descname">GridBase</code><a class="headerlink" href="#cocos.grid.GridBase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A Scene that takes two scenes and makes a transition between them</p>
+<dl class="py method">
+<dt id="cocos.grid.GridBase.after_draw">
+<code class="sig-name descname">after_draw</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">camera</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.GridBase.after_draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called by CocosNode when the texture is already grabbed.
+The FrameBuffer will be unbound and the texture will be drawn</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><cite>camera</cite><span class="classifier"><cite>Camera</cite></span></dt><dd><p>The target’s camera object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cocos.grid.GridBase.before_draw">
+<code class="sig-name descname">before_draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.GridBase.before_draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Binds the framebuffer to a texture
+and set a 2d projection before binding
+to prevent calculating a new texture</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cocos.grid.GridBase.init">
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.GridBase.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the grid creating both a vertex_list for an independent-tiled grid
+and creating also a vertex_list_indexed for a “united” (non independent tile) grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><cite>grid</cite><span class="classifier">euclid.Point2</span></dt><dd><p>size of a 2D grid</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cocos.grid.GridBase.active">
+<em class="property">property </em><code class="sig-name descname">active</code><a class="headerlink" href="#cocos.grid.GridBase.active" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether the grid is active or not
+:type: bool</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="cocos.grid.GridBase.texture">
+<code class="sig-name descname">texture</code><em class="property"> = None</em><a class="headerlink" href="#cocos.grid.GridBase.texture" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt id="cocos.grid.TiledGrid3D">
 <em class="property">class </em><code class="sig-name descname">TiledGrid3D</code><a class="headerlink" href="#cocos.grid.TiledGrid3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.grid.GridBase" title="cocos.grid.GridBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.grid.GridBase</span></code></a></p>
@@ -185,9 +187,9 @@ the tiles can be separated from the grid.</p>
 <span class="bp">self</span><span class="o">.</span><span class="n">vertex_list</span><span class="o">.</span><span class="n">colors</span><span class="p">:</span> <span class="n">RGBA</span><span class="p">,</span> <span class="k">with</span> <span class="n">values</span> <span class="kn">from</span> <span class="mi">0</span> <span class="o">-</span> <span class="mi">255</span>
 </pre></div>
 </div>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.grid.TiledGrid3D.get_original_tile">
-<code class="sig-name descname">get_original_tile</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.TiledGrid3D.get_original_tile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_original_tile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.TiledGrid3D.get_original_tile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the 4-original tile coordinates.</p>
 <p>Coordinates positions:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&lt;--</span> <span class="mi">2</span>
@@ -214,9 +216,9 @@ the tiles can be separated from the grid.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.grid.TiledGrid3D.get_tile">
-<code class="sig-name descname">get_tile</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.TiledGrid3D.get_tile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_tile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.TiledGrid3D.get_tile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the current tile coordinates.</p>
 <p>Coordinates positions:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&lt;--</span> <span class="mi">2</span>
@@ -243,9 +245,9 @@ the tiles can be separated from the grid.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.grid.TiledGrid3D.set_tile">
-<code class="sig-name descname">set_tile</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">coords</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.TiledGrid3D.set_tile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_tile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">coords</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.grid.TiledGrid3D.set_tile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the 4 tile coordinates</p>
 <p>Coordinates positions:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&lt;--</span> <span class="mi">2</span>
@@ -273,6 +275,7 @@ the tiles can be separated from the grid.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -300,7 +303,7 @@ the tiles can be separated from the grid.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -321,12 +324,13 @@ the tiles can be separated from the grid.</p>
           <a href="cocos.gl_framebuffer_object.html" title="cocos.gl_framebuffer_object module"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.grid module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>

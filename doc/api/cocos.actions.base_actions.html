@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>cocos.actions.base_actions module &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocos.actions.base_actions module &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.actions.basegrid_actions module" href="cocos.actions.basegrid_actions.html" />
@@ -35,7 +36,8 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.actions.html" accesskey="U">cocos.actions package</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="cocos.actions.html" accesskey="U">cocos.actions package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.actions.base_actions module</a></li> 
       </ul>
     </div>  
 
@@ -375,55 +377,102 @@ chasee is less than 10.</p></li>
 </div></blockquote>
 <p>If fastness is greather than the chasee fastness this action will certainly
 terminate, but we dont know how much time when the action starts.</p>
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.actions.base_actions.Action">
-<em class="property">class </em><code class="sig-name descname">Action</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Action</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>The most general action</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.base_actions.Action.done">
 <code class="sig-name descname">done</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action.done" title="Permalink to this definition">¶</a></dt>
 <dd><p>False while the step method must be called.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.base_actions.Action.init">
-<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action.init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action.init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets called by __init__ with all the parameteres received,
 At this time the target for the action is unknown.
 Typical use is store parameters needed by the action.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.base_actions.Action.start">
 <code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>External code sets self.target and then calls this method.
 Perform here any extra initialization needed.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.base_actions.Action.step">
-<code class="sig-name descname">step</code><span class="sig-paren">(</span><em class="sig-param">dt</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action.step" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">step</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action.step" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets called every frame. <cite>dt</cite> is the number of seconds that elapsed
 since the last call.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.base_actions.Action.stop">
 <code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Action.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>When the action must cease to perform this function is called by
 external code; after this call no other method should be called.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.actions.base_actions.Action.target">
-<code class="sig-name descname">target</code><em class="property"> = None</em><a class="headerlink" href="#cocos.actions.base_actions.Action.target" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">target</code><a class="headerlink" href="#cocos.actions.base_actions.Action.target" title="Permalink to this definition">¶</a></dt>
 <dd><p><cite>CocosNode</cite> object that is the target of the action</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
+<dt id="cocos.actions.base_actions.InstantAction">
+<em class="property">class </em><code class="sig-name descname">InstantAction</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
+<p>Instant actions are actions that promises to do nothing when the
+methods step, update, and stop are called.
+Any changes that the action must perform on his target will be done in the
+.start() method
+The interface must be keept compatible with IntervalAction to allow the
+basic operators to combine an InstantAction with an IntervalAction and
+give an IntervalAction as a result.</p>
+<dl class="py method">
+<dt id="cocos.actions.base_actions.InstantAction.done">
+<code class="sig-name descname">done</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.done" title="Permalink to this definition">¶</a></dt>
+<dd><p>When in the worker role, this method is reliable.
+When in the component role, if the composite spares the call to
+step this method cannot be relied (an then the composite must decide
+by itself when the action is done).
+Example of later situation is Sequence_IntervalAction.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cocos.actions.base_actions.InstantAction.start">
+<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Here we must do out stuff</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cocos.actions.base_actions.InstantAction.step">
+<code class="sig-name descname">step</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.step" title="Permalink to this definition">¶</a></dt>
+<dd><p>does nothing - dont override</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cocos.actions.base_actions.InstantAction.stop">
+<code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>does nothing - dont override</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cocos.actions.base_actions.InstantAction.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>does nothing - dont override</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt id="cocos.actions.base_actions.IntervalAction">
 <em class="property">class </em><code class="sig-name descname">IntervalAction</code><a class="headerlink" href="#cocos.actions.base_actions.IntervalAction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.base_actions.Action</span></code></a></p>
@@ -446,7 +495,7 @@ while <cite>Place</cite>, <cite>Show</cite> and <cite>CallFunc</cite> aren’t.<
 RotateBy(angle, duration) will usually receive a positive duration, it
 will accept duration = 0, to ease on cases like
 action = RotateBy( angle, a-b )</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.base_actions.IntervalAction.done">
 <code class="sig-name descname">done</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.IntervalAction.done" title="Permalink to this definition">¶</a></dt>
 <dd><p>When in the worker role, this method is reliable.
@@ -456,9 +505,9 @@ by itself when the action is done).
 Example of later situation is Sequence_IntervalAction.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.base_actions.IntervalAction.step">
-<code class="sig-name descname">step</code><span class="sig-paren">(</span><em class="sig-param">dt</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.IntervalAction.step" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">step</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.IntervalAction.step" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dont customize this method: it will not be called when in the component
 role for certain composite actions (like Sequence_IntervalAction).
 In such situation the composite will calculate the suitable t and
@@ -466,9 +515,9 @@ directly call .update(t)
 You customize the action stepping by overriding .update</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.base_actions.IntervalAction.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.IntervalAction.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.IntervalAction.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets called on every frame
 ‘t’ is the time elapsed normalized to [0, 1]
 If this action takes 5 seconds to execute, <cite>t</cite> will be equal to 0
@@ -479,56 +528,9 @@ updated.</p>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="cocos.actions.base_actions.InstantAction">
-<em class="property">class </em><code class="sig-name descname">InstantAction</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.actions.base_actions.IntervalAction" title="cocos.actions.base_actions.IntervalAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.base_actions.IntervalAction</span></code></a></p>
-<p>Instant actions are actions that promises to do nothing when the
-methods step, update, and stop are called.
-Any changes that the action must perform on his target will be done in the
-.start() method
-The interface must be keept compatible with IntervalAction to allow the
-basic operators to combine an InstantAction with an IntervalAction and
-give an IntervalAction as a result.</p>
-<dl class="method">
-<dt id="cocos.actions.base_actions.InstantAction.done">
-<code class="sig-name descname">done</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.done" title="Permalink to this definition">¶</a></dt>
-<dd><p>When in the worker role, this method is reliable.
-When in the component role, if the composite spares the call to
-step this method cannot be relied (an then the composite must decide
-by itself when the action is done).
-Example of later situation is Sequence_IntervalAction.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cocos.actions.base_actions.InstantAction.start">
-<code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.start" title="Permalink to this definition">¶</a></dt>
-<dd><p>Here we must do out stuff</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cocos.actions.base_actions.InstantAction.step">
-<code class="sig-name descname">step</code><span class="sig-paren">(</span><em class="sig-param">dt</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.step" title="Permalink to this definition">¶</a></dt>
-<dd><p>does nothing - dont override</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cocos.actions.base_actions.InstantAction.stop">
-<code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.stop" title="Permalink to this definition">¶</a></dt>
-<dd><p>does nothing - dont override</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="cocos.actions.base_actions.InstantAction.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.InstantAction.update" title="Permalink to this definition">¶</a></dt>
-<dd><p>does nothing - dont override</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.actions.base_actions.Repeat">
-<em class="property">class </em><code class="sig-name descname">Repeat</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Repeat" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Repeat</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Repeat" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.actions.base_actions.Action" title="cocos.actions.base_actions.Action"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.base_actions.Action</span></code></a></p>
 <dl class="simple">
 <dt>Repeats an action forever.</dt><dd><p>Applied to InstantAction s means once per frame.</p>
@@ -541,15 +543,15 @@ Example of later situation is Sequence_IntervalAction.</p>
 </pre></div>
 </div>
 <p>Note: To repeat just a finite amount of time, just do action * times.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.base_actions.Repeat.done">
 <code class="sig-name descname">done</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Repeat.done" title="Permalink to this definition">¶</a></dt>
 <dd><p>False while the step method must be called.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.base_actions.Repeat.init">
-<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">action</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Repeat.init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Repeat.init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Init method.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -561,46 +563,25 @@ Example of later situation is Sequence_IntervalAction.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.base_actions.Repeat.start">
 <code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Repeat.start" title="Permalink to this definition">¶</a></dt>
 <dd><p>External code sets self.target and then calls this method.
 Perform here any extra initialization needed.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.base_actions.Repeat.step">
-<code class="sig-name descname">step</code><span class="sig-paren">(</span><em class="sig-param">dt</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Repeat.step" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">step</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Repeat.step" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets called every frame. <cite>dt</cite> is the number of seconds that elapsed
 since the last call.</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="function">
-<dt id="cocos.actions.base_actions.sequence">
-<code class="sig-name descname">sequence</code><span class="sig-paren">(</span><em class="sig-param">action_1</em>, <em class="sig-param">action_2</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.sequence" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns an action that runs first action_1 and then action_2
-The returned action will be instance of the most narrow class
-posible in InstantAction, IntervalAction, Action</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="cocos.actions.base_actions.spawn">
-<code class="sig-name descname">spawn</code><span class="sig-paren">(</span><em class="sig-param">action_1</em>, <em class="sig-param">action_2</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.spawn" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns an action that runs action_1 and action_2 in paralel.
-The returned action will be instance of the most narrow class
-posible in InstantAction, IntervalAction, Action</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="cocos.actions.base_actions.loop">
-<code class="sig-name descname">loop</code><span class="sig-paren">(</span><em class="sig-param">action</em>, <em class="sig-param">times</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.loop" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.actions.base_actions.Reverse">
-<code class="sig-name descname">Reverse</code><span class="sig-paren">(</span><em class="sig-param">action</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Reverse" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">Reverse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.Reverse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reverses the behavior of the action</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># rotates the sprite 180 degrees in 2 seconds counter clockwise</span>
@@ -610,12 +591,34 @@ posible in InstantAction, IntervalAction, Action</p>
 </div>
 </dd></dl>
 
+<dl class="py function">
+<dt id="cocos.actions.base_actions.loop">
+<code class="sig-name descname">loop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action</span></em>, <em class="sig-param"><span class="n">times</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.loop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="cocos.actions.base_actions.sequence">
+<code class="sig-name descname">sequence</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action_1</span></em>, <em class="sig-param"><span class="n">action_2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.sequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an action that runs first action_1 and then action_2
+The returned action will be instance of the most narrow class
+posible in InstantAction, IntervalAction, Action</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="cocos.actions.base_actions.spawn">
+<code class="sig-name descname">spawn</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">action_1</span></em>, <em class="sig-param"><span class="n">action_2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.base_actions.spawn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an action that runs action_1 and action_2 in paralel.
+The returned action will be instance of the most narrow class
+posible in InstantAction, IntervalAction, Action</p>
+</dd></dl>
+
 </div>
 </div>
 </div>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -672,7 +675,7 @@ posible in InstantAction, IntervalAction, Action</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -694,12 +697,13 @@ posible in InstantAction, IntervalAction, Action</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.actions.html" >cocos.actions package</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="cocos.actions.html" >cocos.actions package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.actions.base_actions module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>

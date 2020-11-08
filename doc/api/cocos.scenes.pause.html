@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>cocos.scenes.pause module &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocos.scenes.pause module &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.scenes.sequences module" href="cocos.scenes.sequences.html" />
@@ -35,7 +36,8 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.scenes.html" accesskey="U">cocos.scenes package</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="cocos.scenes.html" accesskey="U">cocos.scenes package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.scenes.pause module</a></li> 
       </ul>
     </div>  
 
@@ -47,12 +49,12 @@
   <div class="section" id="module-cocos.scenes.pause">
 <span id="cocos-scenes-pause-module"></span><h1>cocos.scenes.pause module<a class="headerlink" href="#module-cocos.scenes.pause" title="Permalink to this headline">¶</a></h1>
 <p>Pause scene</p>
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.scenes.pause.PauseLayer">
 <em class="property">class </em><code class="sig-name descname">PauseLayer</code><a class="headerlink" href="#cocos.scenes.pause.PauseLayer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.layer.base_layers.html#cocos.layer.base_layers.Layer" title="cocos.layer.base_layers.Layer"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.layer.base_layers.Layer</span></code></a></p>
 <p>Layer that shows the text ‘PAUSED’</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.scenes.pause.PauseLayer.draw">
 <code class="sig-name descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.pause.PauseLayer.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is the function you will have to override if you want your
@@ -68,12 +70,12 @@ If you want OpenGL to do the scaling for you, you can:</p>
 </div>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.scenes.pause.PauseLayer.on_key_press">
-<code class="sig-name descname">on_key_press</code><span class="sig-paren">(</span><em class="sig-param">k</em>, <em class="sig-param">m</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.pause.PauseLayer.on_key_press" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">on_key_press</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em>, <em class="sig-param"><span class="n">m</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.pause.PauseLayer.on_key_press" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.scenes.pause.PauseLayer.is_event_handler">
 <code class="sig-name descname">is_event_handler</code><em class="property"> = True</em><a class="headerlink" href="#cocos.scenes.pause.PauseLayer.is_event_handler" title="Permalink to this definition">¶</a></dt>
 <dd><p>enable pyglet’s events</p>
@@ -81,12 +83,12 @@ If you want OpenGL to do the scaling for you, you can:</p>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.scenes.pause.PauseScene">
-<em class="property">class </em><code class="sig-name descname">PauseScene</code><span class="sig-paren">(</span><em class="sig-param">background</em>, <em class="sig-param">*layers</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.pause.PauseScene" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">PauseScene</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">background</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">layers</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.pause.PauseScene" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.scene.html#cocos.scene.Scene" title="cocos.scene.Scene"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.scene.Scene</span></code></a></p>
 <p>Pause Scene</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.scenes.pause.PauseScene.draw">
 <code class="sig-name descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.pause.PauseScene.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is the function you will have to override if you want your
@@ -104,24 +106,25 @@ If you want OpenGL to do the scaling for you, you can:</p>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.scenes.pause.default_pause_scene">
 <code class="sig-name descname">default_pause_scene</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.pause.default_pause_scene" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.scenes.pause.get_pause_scene">
 <code class="sig-name descname">get_pause_scene</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.pause.get_pause_scene" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.scenes.pause.set_pause_scene_generator">
-<code class="sig-name descname">set_pause_scene_generator</code><span class="sig-paren">(</span><em class="sig-param">generator</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.pause.set_pause_scene_generator" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_pause_scene_generator</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">generator</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.scenes.pause.set_pause_scene_generator" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -149,7 +152,7 @@ If you want OpenGL to do the scaling for you, you can:</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -171,12 +174,13 @@ If you want OpenGL to do the scaling for you, you can:</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.scenes.html" >cocos.scenes package</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="cocos.scenes.html" >cocos.scenes package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.scenes.pause module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>

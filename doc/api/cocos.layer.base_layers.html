@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>cocos.layer.base_layers module &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocos.layer.base_layers module &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.layer.python_interpreter module" href="cocos.layer.python_interpreter.html" />
@@ -35,7 +36,8 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.layer.html" accesskey="U">cocos.layer package</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="cocos.layer.html" accesskey="U">cocos.layer package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.layer.base_layers module</a></li> 
       </ul>
     </div>  
 
@@ -54,24 +56,24 @@ time provides the desired behavior on rotation and scale.</p>
 <p>By default a layer will not listen to events, his <cite>is_event_handler</cite> must be set
 to True before the layer enters the stage to enable the automatic registering as
 event handler.</p>
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.layer.base_layers.Layer">
 <em class="property">class </em><code class="sig-name descname">Layer</code><a class="headerlink" href="#cocos.layer.base_layers.Layer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.cocosnode.CocosNode</span></code></a></p>
 <p>A CocosNode that can automatically register to listen to director.window events</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.layer.base_layers.Layer.on_enter">
 <code class="sig-name descname">on_enter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.base_layers.Layer.on_enter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called every time just before the node enters the stage.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.layer.base_layers.Layer.on_exit">
 <code class="sig-name descname">on_exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.base_layers.Layer.on_exit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called every time just before the node exits the stage.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.layer.base_layers.Layer.is_event_handler">
 <code class="sig-name descname">is_event_handler</code><em class="property"> = False</em><a class="headerlink" href="#cocos.layer.base_layers.Layer.is_event_handler" title="Permalink to this definition">¶</a></dt>
 <dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the event handlers of this layer will be registered. Defaults to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
@@ -79,9 +81,9 @@ event handler.</p>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.layer.base_layers.MultiplexLayer">
-<em class="property">class </em><code class="sig-name descname">MultiplexLayer</code><span class="sig-paren">(</span><em class="sig-param">*layers</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.base_layers.MultiplexLayer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">MultiplexLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">layers</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.base_layers.MultiplexLayer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.layer.base_layers.Layer" title="cocos.layer.base_layers.Layer"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.layer.base_layers.Layer</span></code></a></p>
 <p>A Composite layer that only enables one layer at a time.</p>
 <p>This is useful, for example, when you have 3 or 4 menus, but you want to
@@ -92,9 +94,9 @@ show one at the time.</p>
 <dd class="field-odd"><p><strong>*layers</strong> – iterable with the layers to be managed.</p>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.layer.base_layers.MultiplexLayer.switch_to">
-<code class="sig-name descname">switch_to</code><span class="sig-paren">(</span><em class="sig-param">layer_number</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.base_layers.MultiplexLayer.switch_to" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">switch_to</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layer_number</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.layer.base_layers.MultiplexLayer.switch_to" title="Permalink to this definition">¶</a></dt>
 <dd><p>Switches to another of the layers managed by this instance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -113,6 +115,7 @@ new layer will receive an <code class="docutils literal notranslate"><span class
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -140,7 +143,7 @@ new layer will receive an <code class="docutils literal notranslate"><span class
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -162,12 +165,13 @@ new layer will receive an <code class="docutils literal notranslate"><span class
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.layer.html" >cocos.layer package</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="cocos.layer.html" >cocos.layer package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.layer.base_layers module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>

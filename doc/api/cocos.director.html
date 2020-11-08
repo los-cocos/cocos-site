@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>cocos.director module &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocos.director module &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.draw module" href="cocos.draw.html" />
@@ -34,7 +35,8 @@
           <a href="cocos.custom_clocks.html" title="cocos.custom_clocks module"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.director module</a></li> 
       </ul>
     </div>  
 
@@ -50,7 +52,7 @@ and manages the logic behind the <code class="docutils literal notranslate"><spa
 <div class="section" id="initializing">
 <h2>Initializing<a class="headerlink" href="#initializing" title="Permalink to this headline">¶</a></h2>
 <p>The first thing to do, is to initialize the <code class="docutils literal notranslate"><span class="pre">director</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cocos.director</span> <span class="k">import</span> <span class="n">director</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cocos.director</span> <span class="kn">import</span> <span class="n">director</span>
 <span class="n">director</span><span class="o">.</span><span class="n">init</span><span class="p">(</span> <span class="n">parameters</span> <span class="p">)</span>
 </pre></div>
 </div>
@@ -108,13 +110,12 @@ to be run will be popped from the queue.</p>
 <div><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">director.get_window_size():</span></code>
 Returns an (x,y) pair with the _logical_ dimensions of the display.
-The display might have been resized, but coordinates are always relative
-to this size. If you need the _physical_ dimensions, check the dimensions
-of <code class="docutils literal notranslate"><span class="pre">director.window</span></code></p></li>
+When autoscale=True was specified in director.init the __logical__
+dimensions will remain the same even if the windows have been resized</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">get_virtual_coordinates(self,</span> <span class="pre">x,</span> <span class="pre">y):</span></code>
-Transforms coordinates that belongs the real (physical) window size, to
-the coordinates that belongs to the virtual (logical) window. Returns
-an x,y pair in logical coordinates.</p></li>
+Returns the logical coordinates for the screen coordinates x, y
+When using autoscale=True the x, y in pyglet’s mouse events should be
+transformed to logical coordinates.</p></li>
 </ul>
 </div></blockquote>
 <p>The director also has some useful attributes:</p>
@@ -131,20 +132,37 @@ the framerate indicator.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">self.scene</span></code>: The scene currently active</p></li>
 </ul>
 </div></blockquote>
-<dl class="class">
+<dl class="py class">
+<dt id="cocos.director.DefaultHandler">
+<em class="property">class </em><code class="sig-name descname">DefaultHandler</code><a class="headerlink" href="#cocos.director.DefaultHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="cocos.director.DefaultHandler.on_key_press">
+<code class="sig-name descname">on_key_press</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">symbol</span></em>, <em class="sig-param"><span class="n">modifiers</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.DefaultHandler.on_key_press" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt id="cocos.director.Director">
 <em class="property">class </em><code class="sig-name descname">Director</code><a class="headerlink" href="#cocos.director.Director" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pyglet.event.EventDispatcher</span></code></p>
 <p>Class that creates and handle the main Window and manages how
 and when to execute the Scenes</p>
 <p>You should not directly instantiate the class, instead you do:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cocos.director</span> <span class="k">import</span> <span class="n">director</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cocos.director</span> <span class="kn">import</span> <span class="n">director</span>
 </pre></div>
 </div>
 <p>to access the only one Director instance.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.director.Director.get_virtual_coordinates">
-<code class="sig-name descname">get_virtual_coordinates</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.get_virtual_coordinates" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_virtual_coordinates</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.get_virtual_coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>placeholder, will be replaced</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cocos.director.Director.get_virtual_coordinates_autoscale">
+<code class="sig-name descname">get_virtual_coordinates_autoscale</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.get_virtual_coordinates_autoscale" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transforms coordinates that belongs the <em>real</em> window size, to the
 coordinates that belongs to the <em>virtual</em> window.</p>
 <p>For example, if you created a window of 640x480, and it was resized
@@ -162,11 +180,19 @@ that belongs to your <em>virtual</em> window.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
+<dt id="cocos.director.Director.get_virtual_coordinates_no_autoscale">
+<code class="sig-name descname">get_virtual_coordinates_no_autoscale</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.get_virtual_coordinates_no_autoscale" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="cocos.director.Director.get_window_size">
 <code class="sig-name descname">get_window_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.get_window_size" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the size of the window when it was created, and not the
-actual size of the window.</p>
+<dd><p>Returns the size of the window</p>
+<p>If director.init(…) was called with autoscale=True it will return
+a virtuel size, the same as the size set in director.init(…)</p>
+<p>If director.init(…) was called with autoscale=Fakse it will return
+the physical size of the window.</p>
 <p>Usually you don’t want to know the current window size, because the
 Director() hides the complexity of rescaling your objects when
 the Window is resized or if the window is made fullscreen.</p>
@@ -183,9 +209,14 @@ Director will do the magic for you.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
+<dt id="cocos.director.Director.handle_closing">
+<code class="sig-name descname">handle_closing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dt</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.handle_closing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="cocos.director.Director.init">
-<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initializes the Director creating the main window.</p>
 <p>There are a few cocos exclusive parameters, the rest are the
 standard pyglet parameters for pyglet.window.Window.__init__
@@ -200,8 +231,6 @@ app don’t need to handle resizes.
 False: your app must include logic to deal with different window
 sizes along the session.
 Defaults to False</p>
-</dd>
-<dt><cite>do_not_scale</cite><span class="classifier">bool</span></dt><dd><p>Deprecated. The logical negation of autoscale</p>
 </dd>
 <dt><cite>audio_backend</cite><span class="classifier">string</span></dt><dd><p>one in [‘pyglet’,’sdl’]. Defaults to ‘pyglet’ for legacy support.</p>
 </dd>
@@ -241,7 +270,7 @@ settings</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.director.Director.on_draw">
 <code class="sig-name descname">on_draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.on_draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Handles the event ‘on_draw’ from the pyglet.window.Window</p>
@@ -259,26 +288,32 @@ The windows is painted as:</p>
 delayed to the next de-minimizing time.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.director.Director.on_pop">
 <code class="sig-name descname">on_pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.on_pop" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.director.Director.on_push">
-<code class="sig-name descname">on_push</code><span class="sig-paren">(</span><em class="sig-param">scene</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.on_push" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">on_push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scene</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.on_push" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.director.Director.pop">
 <code class="sig-name descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.pop" title="Permalink to this definition">¶</a></dt>
 <dd><p>If the scene stack is empty the appication is terminated.
 Else pops out a scene from the stack and sets as the running one.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
+<dt id="cocos.director.Director.post_resize_adjust">
+<code class="sig-name descname">post_resize_adjust</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.post_resize_adjust" title="Permalink to this definition">¶</a></dt>
+<dd><p>resize to eliminate the filling bands introduced</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="cocos.director.Director.push">
-<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param">scene</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.push" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">push</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scene</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.push" title="Permalink to this definition">¶</a></dt>
 <dd><p>Suspends the execution of the running scene, pushing it
 on the stack of suspended scenes. The new scene will be executed.</p>
 <dl class="field-list">
@@ -291,9 +326,9 @@ on the stack of suspended scenes. The new scene will be executed.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.director.Director.replace">
-<code class="sig-name descname">replace</code><span class="sig-paren">(</span><em class="sig-param">scene</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.replace" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">replace</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scene</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.replace" title="Permalink to this definition">¶</a></dt>
 <dd><p>Replaces the running scene with a new one. The running scene is terminated.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -305,9 +340,9 @@ on the stack of suspended scenes. The new scene will be executed.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.director.Director.run">
-<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param">scene</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.run" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scene</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.run" title="Permalink to this definition">¶</a></dt>
 <dd><p>Runs a scene, entering in the Director’s main loop.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -319,9 +354,9 @@ on the stack of suspended scenes. The new scene will be executed.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.director.Director.scaled_resize_window">
-<code class="sig-name descname">scaled_resize_window</code><span class="sig-paren">(</span><em class="sig-param">width</em>, <em class="sig-param">height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.scaled_resize_window" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">scaled_resize_window</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">width</span></em>, <em class="sig-param"><span class="n">height</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.scaled_resize_window" title="Permalink to this definition">¶</a></dt>
 <dd><p>One of two possible methods that are called when the main window is resized.</p>
 <p>This implementation scales the display such that the initial resolution
 requested by the programmer (the “logical” resolution) is always retained
@@ -341,42 +376,42 @@ largest set of Cocos transforms.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.director.Director.set_alpha_blending">
-<code class="sig-name descname">set_alpha_blending</code><span class="sig-paren">(</span><em class="sig-param">on=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.set_alpha_blending" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_alpha_blending</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">on</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.set_alpha_blending" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enables/Disables alpha blending in OpenGL
 using the GL_ONE_MINUS_SRC_ALPHA algorithm.
 On by default.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.director.Director.set_depth_test">
-<code class="sig-name descname">set_depth_test</code><span class="sig-paren">(</span><em class="sig-param">on=True</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.set_depth_test" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_depth_test</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">on</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.set_depth_test" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enables z test. On by default</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.director.Director.set_projection">
 <code class="sig-name descname">set_projection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.set_projection" title="Permalink to this definition">¶</a></dt>
 <dd><p>placeholder, will be set to one of set_projection2D or set_projection3D
 when director.init is called</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.director.Director.set_projection2D">
 <code class="sig-name descname">set_projection2D</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.set_projection2D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets a 2D projection (ortho) covering all the window</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.director.Director.set_projection3D">
 <code class="sig-name descname">set_projection3D</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.set_projection3D" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets a 3D projection mantaining the aspect ratio of the original window size</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.director.Director.set_recorder">
-<code class="sig-name descname">set_recorder</code><span class="sig-paren">(</span><em class="sig-param">framerate</em>, <em class="sig-param">template='frame-%d.png'</em>, <em class="sig-param">duration=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.set_recorder" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_recorder</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">framerate</span></em>, <em class="sig-param"><span class="n">template</span><span class="o">=</span><span class="default_value">'frame-%d.png'</span></em>, <em class="sig-param"><span class="n">duration</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.set_recorder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Will replace the app clock so that now we can ensure a steady
 frame rate and save one image per frame</p>
 <dl class="simple">
@@ -392,14 +427,14 @@ frame rate and save one image per frame</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.director.Director.set_show_FPS">
-<code class="sig-name descname">set_show_FPS</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.set_show_FPS" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_show_FPS</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.set_show_FPS" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.director.Director.unscaled_resize_window">
-<code class="sig-name descname">unscaled_resize_window</code><span class="sig-paren">(</span><em class="sig-param">width</em>, <em class="sig-param">height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.unscaled_resize_window" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">unscaled_resize_window</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">width</span></em>, <em class="sig-param"><span class="n">height</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.Director.unscaled_resize_window" title="Permalink to this definition">¶</a></dt>
 <dd><p>One of two possible methods that are called when the main window is resized.</p>
 <p>This implementation does not scale the display but rather forces the logical
 resolution to match the physical one.</p>
@@ -419,44 +454,34 @@ rendering.</p>
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.director.Director.event_types">
-<code class="sig-name descname">event_types</code><em class="property"> = ['on_push', 'on_pop', 'on_resize', 'on_cocos_resize']</em><a class="headerlink" href="#cocos.director.Director.event_types" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">event_types</code><em class="property"> = ['on_push', 'on_pop', 'on_cocos_resize']</em><a class="headerlink" href="#cocos.director.Director.event_types" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.director.Director.fps_display">
 <code class="sig-name descname">fps_display</code><em class="property"> = None</em><a class="headerlink" href="#cocos.director.Director.fps_display" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.director.Director.interpreter_locals">
-<code class="sig-name descname">interpreter_locals</code><em class="property"> = {'cocos': &lt;module 'cocos' from 'D:\\dev\\cocos2019\\cocos\\__init__.py'&gt;, 'director': &lt;cocos.director.Director object&gt;}</em><a class="headerlink" href="#cocos.director.Director.interpreter_locals" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">interpreter_locals</code><em class="property"> = {'cocos': &lt;module 'cocos' from 'D:\\dev\\cocos2020\\cocos\\__init__.py'&gt;, 'director': &lt;cocos.director.Director object&gt;}</em><a class="headerlink" href="#cocos.director.Director.interpreter_locals" title="Permalink to this definition">¶</a></dt>
 <dd><p>a dict with locals for the interactive python interpreter (fill with what you need)</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.director.Director.show_FPS">
 <em class="property">property </em><code class="sig-name descname">show_FPS</code><a class="headerlink" href="#cocos.director.Director.show_FPS" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="cocos.director.DefaultHandler">
-<em class="property">class </em><code class="sig-name descname">DefaultHandler</code><a class="headerlink" href="#cocos.director.DefaultHandler" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="method">
-<dt id="cocos.director.DefaultHandler.on_key_press">
-<code class="sig-name descname">on_key_press</code><span class="sig-paren">(</span><em class="sig-param">symbol</em>, <em class="sig-param">modifiers</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.director.DefaultHandler.on_key_press" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
 </div>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -493,7 +518,7 @@ rendering.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -514,12 +539,13 @@ rendering.</p>
           <a href="cocos.custom_clocks.html" title="cocos.custom_clocks module"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.director module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>

@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>cocos.fps module &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocos.fps module &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.framegrabber module" href="cocos.framegrabber.html" />
@@ -34,7 +35,8 @@
           <a href="cocos.euclid.html" title="cocos.euclid module"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.fps module</a></li> 
       </ul>
     </div>  
 
@@ -58,9 +60,9 @@ This is enough most of the time, if more functionality is desired then</p>
 <li><p>your subclass instance will be called as described in :class:FpsStatsABC.</p></li>
 </ul>
 </div></blockquote>
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.fps.FpsDisplay">
-<em class="property">class </em><code class="sig-name descname">FpsDisplay</code><span class="sig-paren">(</span><em class="sig-param">fn_time</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplay" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">FpsDisplay</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fn_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplay" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.fps.FpsStatsABC" title="cocos.fps.FpsStatsABC"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.fps.FpsStatsABC</span></code></a></p>
 <p>Calculates fps and min fps, maintains a Label view for director to display them.</p>
 <dl class="field-list simple">
@@ -73,51 +75,51 @@ Assumes fn_time minimum dt &lt; dt between frames, usually time.perf_counter (ne
 <p>min fps capped at 5000, it can also be 5000 if no frame has rendered in the refresh interval</p>
 <p>Don’t use time.clock as fn_time in platforms other than windows: it will flow
 slower than wall time.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.FpsDisplay.complete_refresh">
-<code class="sig-name descname">complete_refresh</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplay.complete_refresh" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">complete_refresh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplay.complete_refresh" title="Permalink to this definition">¶</a></dt>
 <dd><p>re-initializes data for the next stats time interval.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.FpsDisplay.draw">
 <code class="sig-name descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplay.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draws the fps view.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.FpsDisplay.init">
 <code class="sig-name descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplay.init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates the label used to display fps info.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.FpsDisplay.terminate">
 <code class="sig-name descname">terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplay.terminate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Nothing needed, so nothing done.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.FpsDisplay.tick">
 <code class="sig-name descname">tick</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplay.tick" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called after the active scene was drawn. Updates stats.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.fps.FpsDisplay.template">
 <code class="sig-name descname">template</code><em class="property"> = 'fps {0:4d} minfps {1:4d}'</em><a class="headerlink" href="#cocos.fps.FpsDisplay.template" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.fps.FpsDisplayDeprecatedPygletOldStyle">
 <em class="property">class </em><code class="sig-name descname">FpsDisplayDeprecatedPygletOldStyle</code><a class="headerlink" href="#cocos.fps.FpsDisplayDeprecatedPygletOldStyle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.fps.FpsStatsABC" title="cocos.fps.FpsStatsABC"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.fps.FpsStatsABC</span></code></a></p>
 <p>Calculates fps and maintains a view (not recommended for new code)</p>
 <p>Delegates to (deprecated) pyglet.clock.ClockDisplay.</p>
 <p>Measurements are comparable to the ones obtained in cocos &lt;= 0.6.3</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.FpsDisplayDeprecatedPygletOldStyle.draw">
 <code class="sig-name descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplayDeprecatedPygletOldStyle.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Opportunity to draw stats on top of the active scene, called after tick.</p>
@@ -125,7 +127,7 @@ slower than wall time.</p>
 ‘pass’ if the object is designed to gather stats and not display them.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.FpsDisplayDeprecatedPygletOldStyle.init">
 <code class="sig-name descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplayDeprecatedPygletOldStyle.init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called once before any other method; performs initialization.</p>
@@ -134,13 +136,13 @@ at the time of calling.</p>
 <p>Usually used to create the Label to display fps stats.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.FpsDisplayDeprecatedPygletOldStyle.terminate">
 <code class="sig-name descname">terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplayDeprecatedPygletOldStyle.terminate" title="Permalink to this definition">¶</a></dt>
 <dd><p>last call to this object, opportunity to cleanup / store data.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.FpsDisplayDeprecatedPygletOldStyle.tick">
 <code class="sig-name descname">tick</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplayDeprecatedPygletOldStyle.tick" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called each time the active scene has been draw; updates the stats</p>
@@ -149,9 +151,9 @@ at the time of calling.</p>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.fps.FpsDisplaySimple">
-<em class="property">class </em><code class="sig-name descname">FpsDisplaySimple</code><span class="sig-paren">(</span><em class="sig-param">fn_time</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplaySimple" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">FpsDisplaySimple</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fn_time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplaySimple" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.fps.FpsStatsABC" title="cocos.fps.FpsStatsABC"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.fps.FpsStatsABC</span></code></a></p>
 <p>Calculates fps, creates and maintains a Label view for director to display it.</p>
 <dl class="field-list simple">
@@ -161,50 +163,50 @@ at the time of calling.</p>
 </dl>
 <p>Don’t use time.clock as fn_time in platforms other than windows: it will flow
 slower than wall time.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.FpsDisplaySimple.complete_refresh">
-<code class="sig-name descname">complete_refresh</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplaySimple.complete_refresh" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">complete_refresh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplaySimple.complete_refresh" title="Permalink to this definition">¶</a></dt>
 <dd><p>re-initializes data for the next stats time interval</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.FpsDisplaySimple.draw">
 <code class="sig-name descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplaySimple.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Draws the fps view</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.FpsDisplaySimple.init">
 <code class="sig-name descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplaySimple.init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates the label used to display fps</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.FpsDisplaySimple.terminate">
 <code class="sig-name descname">terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplaySimple.terminate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Nothing needed, so nothing done</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.FpsDisplaySimple.tick">
 <code class="sig-name descname">tick</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsDisplaySimple.tick" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called after the active scene was drawn. Updates stats</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.fps.FpsDisplaySimple.template">
 <code class="sig-name descname">template</code><em class="property"> = 'fps {0:4d}'</em><a class="headerlink" href="#cocos.fps.FpsDisplaySimple.template" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.fps.FpsStatsABC">
 <em class="property">class </em><code class="sig-name descname">FpsStatsABC</code><a class="headerlink" href="#cocos.fps.FpsStatsABC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Interface to collect fps stats, optionally maintains a view</p>
 <p>Methods are called by director at appropriate times.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.FpsStatsABC.draw">
 <em class="property">abstract </em><code class="sig-name descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsStatsABC.draw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Opportunity to draw stats on top of the active scene, called after tick.</p>
@@ -212,7 +214,7 @@ slower than wall time.</p>
 ‘pass’ if the object is designed to gather stats and not display them.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.FpsStatsABC.init">
 <em class="property">abstract </em><code class="sig-name descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsStatsABC.init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called once before any other method; performs initialization.</p>
@@ -221,13 +223,13 @@ at the time of calling.</p>
 <p>Usually used to create the Label to display fps stats.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.FpsStatsABC.terminate">
 <em class="property">abstract </em><code class="sig-name descname">terminate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsStatsABC.terminate" title="Permalink to this definition">¶</a></dt>
 <dd><p>last call to this object, opportunity to cleanup / store data.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.FpsStatsABC.tick">
 <em class="property">abstract </em><code class="sig-name descname">tick</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.FpsStatsABC.tick" title="Permalink to this definition">¶</a></dt>
 <dd><p>Called each time the active scene has been draw; updates the stats</p>
@@ -236,24 +238,24 @@ at the time of calling.</p>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.fps.InfoLabel">
-<em class="property">class </em><code class="sig-name descname">InfoLabel</code><span class="sig-paren">(</span><em class="sig-param">template</em>, <em class="sig-param">font_name=None</em>, <em class="sig-param">font_size=36</em>, <em class="sig-param">color=(128</em>, <em class="sig-param">128</em>, <em class="sig-param">128</em>, <em class="sig-param">128)</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.InfoLabel" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">InfoLabel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">template</span></em>, <em class="sig-param"><span class="n">font_name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">font_size</span><span class="o">=</span><span class="default_value">36</span></em>, <em class="sig-param"><span class="n">color</span><span class="o">=</span><span class="default_value">128, 128, 128, 128</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.InfoLabel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Used to draw one liners on top of the scene drawing</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.InfoLabel.draw">
 <code class="sig-name descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.InfoLabel.draw" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.fps.InfoLabel.update_info">
-<code class="sig-name descname">update_info</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.InfoLabel.update_info" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.InfoLabel.update_info" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.fps.get_default_fpsdisplay">
 <code class="sig-name descname">get_default_fpsdisplay</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.fps.get_default_fpsdisplay" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns an FpsStatsABC instance used to collect and display fps information.</p>
@@ -262,6 +264,7 @@ at the time of calling.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -289,7 +292,7 @@ at the time of calling.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -310,12 +313,13 @@ at the time of calling.</p>
           <a href="cocos.euclid.html" title="cocos.euclid module"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.fps module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>

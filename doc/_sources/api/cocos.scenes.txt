@@ -5,6 +5,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    cocos.scenes.pause
    cocos.scenes.sequences

@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Documentation Notes &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation Notes &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Dev Notes" href="index.html" /> 
@@ -30,7 +31,8 @@
           <a href="index.html" title="Dev Notes"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Dev Notes</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Dev Notes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Documentation Notes</a></li> 
       </ul>
     </div>  
 
@@ -55,7 +57,7 @@
 <p>Please use 4 spaces indentation.</p>
 <p>Tabs usually break things, convert them to spaces.</p>
 <p>Inline literal text: ``my_literal_text`` -&gt; <code class="docutils literal notranslate"><span class="pre">my_literal_text</span></code>.
-(in link syntax <code class="docutils literal notranslate"><span class="pre">~</span></code> is a modidier that supress the high parts in a dotted name).</p>
+(in link syntax <code class="docutils literal notranslate"><span class="pre">~</span></code> is a modifier that suppress the high parts in a dotted name).</p>
 <p>Link to a cocos module: <code class="docutils literal notranslate"><span class="pre">:mod:`~cocos.cocosnode`</span> <span class="pre">-&gt;</span></code> <a class="reference internal" href="../api/cocos.cocosnode.html#module-cocos.cocosnode" title="cocos.cocosnode"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cocosnode</span></code></a></p>
 <p>Link to a cocos module: <code class="docutils literal notranslate"><span class="pre">:mod:`cocos.cocosnode`</span> <span class="pre">-&gt;</span></code> <a class="reference internal" href="../api/cocos.cocosnode.html#module-cocos.cocosnode" title="cocos.cocosnode"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cocos.cocosnode</span></code></a></p>
 <p>Link to a class: <code class="docutils literal notranslate"><span class="pre">:class:`~cocos.cocosnode.CocosNode`</span> <span class="pre">-&gt;</span></code> <a class="reference internal" href="../api/cocos.cocosnode.html#cocos.cocosnode.CocosNode" title="cocos.cocosnode.CocosNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">CocosNode</span></code></a></p>
@@ -85,7 +87,7 @@ argument types</p>
 <div><ul class="simple">
 <li><p>declare a label at the target location with <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">_labelname:</span></code> (the ‘_’ is not part of labelname)</p></li>
 <li><p>write the link as <code class="docutils literal notranslate"><span class="pre">:ref:`TextToShowInLink&lt;labelname&gt;`</span></code> (brackets included)</p></li>
-<li><p>if TextToShowInLink is ommited the ref should be just before a section and the section title will be used as the text to show in the link</p></li>
+<li><p>if TextToShowInLink is omitted the ref should be just before a section and the section title will be used as the text to show in the link</p></li>
 <li><p>labelname must be unique across all documents</p></li>
 </ul>
 </div></blockquote>
@@ -93,6 +95,10 @@ argument types</p>
 <dt>Link to another document in the current sphinx build:</dt><dd><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">:doc:`TextToShowInLink&lt;documentName&gt;`</span></code> (brackets included)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">:doc:`documentName`</span></code> (will show the document title in the link)</p></li>
+</ul>
+</dd>
+<dt>Link to another generated html (example to link drom the api to a top level document):</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">`euclid</span> <span class="pre">docs</span> <span class="pre">&lt;../euclid.html&gt;`_</span></code></p></li>
 </ul>
 </dd>
 </dl>
@@ -139,6 +145,7 @@ The docstring should contain a section for Arguments (if they are present in the
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -174,7 +181,7 @@ The docstring should contain a section for Arguments (if they are present in the
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -192,12 +199,13 @@ The docstring should contain a section for Arguments (if they are present in the
           <a href="index.html" title="Dev Notes"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >Dev Notes</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="index.html" >Dev Notes</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Documentation Notes</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>

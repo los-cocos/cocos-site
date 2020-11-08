@@ -5,6 +5,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    cocos.audio.SDL.array
    cocos.audio.SDL.audio

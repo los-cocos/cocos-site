@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>cocos.audio.pygame.music module &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocos.audio.pygame.music module &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.audio.pygame.version module" href="cocos.audio.pygame.version.html" />
@@ -36,7 +37,8 @@
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="cocos.audio.pygame.html" accesskey="U">cocos.audio.pygame package</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="cocos.audio.pygame.html" accesskey="U">cocos.audio.pygame package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.audio.pygame.music module</a></li> 
       </ul>
     </div>  
 
@@ -53,9 +55,9 @@ control the playback of music in the sound mixer.</p>
 <p>The difference between the music playback and regular Sound playback is that
 the music is streamed, and never actually loaded all at once. The mixer system
 only supports a single music stream at once.</p>
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.pygame.music.fadeout">
-<code class="sig-name descname">fadeout</code><span class="sig-paren">(</span><em class="sig-param">time</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.fadeout" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">fadeout</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">time</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.fadeout" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stop music playback after fading out.</p>
 <p>This will stop the music playback after it has been faded out over the
 specified time (measured in milliseconds).  Any queued music will be
@@ -71,7 +73,7 @@ unqueued.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.pygame.music.get_busy">
 <code class="sig-name descname">get_busy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.get_busy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if the music stream is playing.</p>
@@ -84,7 +86,7 @@ is idle this returns False.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.pygame.music.get_endevent">
 <code class="sig-name descname">get_endevent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.get_endevent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the event a channel sends when playback stops.</p>
@@ -97,7 +99,7 @@ If there is no endevent the function returns pygame.NOEVENT.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.pygame.music.get_pos">
 <code class="sig-name descname">get_pos</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.get_pos" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the amount of time music has been playing.</p>
@@ -112,7 +114,7 @@ does not take into account any starting position offsets.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.pygame.music.get_volume">
 <code class="sig-name descname">get_volume</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.get_volume" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the music volume.</p>
@@ -125,9 +127,9 @@ and 1.0.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.pygame.music.load">
-<code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.load" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load a music file for playback.</p>
 <p>This will load a music file and prepare it for playback. If a music stream
 is already playing it will be stopped. This does not start the music
@@ -144,7 +146,7 @@ other pygame loading functions.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.pygame.music.pause">
 <code class="sig-name descname">pause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.pause" title="Permalink to this definition">¶</a></dt>
 <dd><p>Temporarily stop music playback.</p>
@@ -152,9 +154,9 @@ other pygame loading functions.</p>
 with the <cite>unpause</cite> function.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.pygame.music.play">
-<code class="sig-name descname">play</code><span class="sig-paren">(</span><em class="sig-param">loops=0</em>, <em class="sig-param">start=0.0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.play" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">play</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">loops</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">0.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.play" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start the playback of the music stream.</p>
 <p>This will play the loaded music stream. If the music is already playing it
 will be restarted.</p>
@@ -178,9 +180,9 @@ NotImplementedError if it cannot set the start position</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.pygame.music.queue">
-<code class="sig-name descname">queue</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.queue" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">queue</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.queue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Queue a music file to follow the current one.</p>
 <p>This will load a music file and queue it. A queued music file will begin
 as soon as the current music naturally ends. If the current music is ever
@@ -202,16 +204,16 @@ music by Mozart once:</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.pygame.music.rewind">
 <code class="sig-name descname">rewind</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.rewind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Restart music.</p>
 <p>Resets playback of the current music to the beginning.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.pygame.music.set_endevent">
-<code class="sig-name descname">set_endevent</code><span class="sig-paren">(</span><em class="sig-param">eventtype=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.set_endevent" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_endevent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eventtype</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.set_endevent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Have the music send an event when playback stops.</p>
 <p>This causes Pygame to signal (by means of the event queue) when
 the music is done playing. The argument determines the type of
@@ -229,9 +231,9 @@ method with no argument.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.pygame.music.set_volume">
-<code class="sig-name descname">set_volume</code><span class="sig-paren">(</span><em class="sig-param">volume</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.set_volume" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_volume</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">volume</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.set_volume" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the music volume.</p>
 <p>Set the volume of the music playback. The value argument is between
 0.0 and 1.0. When new music is loaded the volume is reset.</p>
@@ -245,7 +247,7 @@ method with no argument.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.pygame.music.stop">
 <code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.stop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stop the music playback.</p>
@@ -253,7 +255,7 @@ method with no argument.</p>
 unqueued.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.pygame.music.unpause">
 <code class="sig-name descname">unpause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.pygame.music.unpause" title="Permalink to this definition">¶</a></dt>
 <dd><p>Resume paused music.</p>
@@ -263,6 +265,7 @@ unqueued.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -290,7 +293,7 @@ unqueued.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -313,12 +316,13 @@ unqueued.</p>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="cocos.audio.pygame.html" >cocos.audio.pygame package</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="cocos.audio.pygame.html" >cocos.audio.pygame package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.audio.pygame.music module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>

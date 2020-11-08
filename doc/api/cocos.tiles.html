@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>cocos.tiles module &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocos.tiles module &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.utils module" href="cocos.utils.html" />
@@ -34,7 +35,8 @@
           <a href="cocos.text.html" title="cocos.text module"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="cocos.html" accesskey="U">cocos package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.tiles module</a></li> 
       </ul>
     </div>  
 
@@ -48,33 +50,45 @@
 <p>Tile map management and rendering.</p>
 <p>This module provides an API for loading, saving and rendering a map
 constructed of image tiles.</p>
-<dl class="exception">
+<dl class="py exception">
 <dt id="cocos.tiles.ResourceError">
 <em class="property">exception </em><code class="sig-name descname">ResourceError</code><a class="headerlink" href="#cocos.tiles.ResourceError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
-<dl class="exception">
+<dl class="py exception">
 <dt id="cocos.tiles.TilesPropertyWithoutName">
 <em class="property">exception </em><code class="sig-name descname">TilesPropertyWithoutName</code><a class="headerlink" href="#cocos.tiles.TilesPropertyWithoutName" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
-<dl class="exception">
+<dl class="py exception">
 <dt id="cocos.tiles.TilesPropertyWithoutValue">
 <em class="property">exception </em><code class="sig-name descname">TilesPropertyWithoutValue</code><a class="headerlink" href="#cocos.tiles.TilesPropertyWithoutValue" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
-<dl class="exception">
+<dl class="py exception">
+<dt id="cocos.tiles.TmxPropertyTypeUnknownWarning">
+<em class="property">exception </em><code class="sig-name descname">TmxPropertyTypeUnknownWarning</code><a class="headerlink" href="#cocos.tiles.TmxPropertyTypeUnknownWarning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">UserWarning</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="cocos.tiles.TmxPropertyValueError">
+<em class="property">exception </em><code class="sig-name descname">TmxPropertyValueError</code><a class="headerlink" href="#cocos.tiles.TmxPropertyValueError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
 <dt id="cocos.tiles.TmxUnsupportedVariant">
 <em class="property">exception </em><code class="sig-name descname">TmxUnsupportedVariant</code><a class="headerlink" href="#cocos.tiles.TmxUnsupportedVariant" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.tiles.Cell">
-<em class="property">class </em><code class="sig-name descname">Cell</code><span class="sig-paren">(</span><em class="sig-param">i</em>, <em class="sig-param">j</em>, <em class="sig-param">width</em>, <em class="sig-param">height</em>, <em class="sig-param">properties</em>, <em class="sig-param">tile</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Cell" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Cell</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">j</span></em>, <em class="sig-param"><span class="n">width</span></em>, <em class="sig-param"><span class="n">height</span></em>, <em class="sig-param"><span class="n">properties</span></em>, <em class="sig-param"><span class="n">tile</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Cell" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Base class for cells from rect and hex maps.</p>
 <p>Common attributes:</p>
@@ -94,21 +108,21 @@ cell has a property ‘cost’ then you may access it as:</p>
 supply a default value.</p>
 <p>If the named property does not exist on the cell it will be looked up
 on the cell’s tile.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.Cell.get">
-<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Cell.get" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">default</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Cell.get" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.Cell.position">
 <em class="property">property </em><code class="sig-name descname">position</code><a class="headerlink" href="#cocos.tiles.Cell.position" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.tiles.HexCell">
-<em class="property">class </em><code class="sig-name descname">HexCell</code><span class="sig-paren">(</span><em class="sig-param">i</em>, <em class="sig-param">j</em>, <em class="sig-param">ignored</em>, <em class="sig-param">height</em>, <em class="sig-param">properties</em>, <em class="sig-param">tile</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexCell" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">HexCell</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">j</span></em>, <em class="sig-param"><span class="n">ignored</span></em>, <em class="sig-param"><span class="n">height</span></em>, <em class="sig-param"><span class="n">properties</span></em>, <em class="sig-param"><span class="n">tile</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexCell" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.tiles.Cell" title="cocos.tiles.Cell"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.tiles.Cell</span></code></a></p>
 <p>A flat-top, regular hexagon cell from a HexMap.</p>
 <p>Cell attributes:</p>
@@ -140,171 +154,171 @@ on the cell’s tile.</p>
 </div>
 <p>Note that all pixel attributes are <em>not</em> adjusted for screen,
 view or layer transformations.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.get_bottom">
 <code class="sig-name descname">get_bottom</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexCell.get_bottom" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.get_bottomleft">
 <code class="sig-name descname">get_bottomleft</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexCell.get_bottomleft" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.get_bottomright">
 <code class="sig-name descname">get_bottomright</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexCell.get_bottomright" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.get_center">
 <code class="sig-name descname">get_center</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexCell.get_center" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.get_left">
 <code class="sig-name descname">get_left</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexCell.get_left" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.get_midbottom">
 <code class="sig-name descname">get_midbottom</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexCell.get_midbottom" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.get_midbottomleft">
 <code class="sig-name descname">get_midbottomleft</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexCell.get_midbottomleft" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.get_midbottomright">
 <code class="sig-name descname">get_midbottomright</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexCell.get_midbottomright" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.get_midtop">
 <code class="sig-name descname">get_midtop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexCell.get_midtop" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.get_midtopleft">
 <code class="sig-name descname">get_midtopleft</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexCell.get_midtopleft" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.get_midtopright">
 <code class="sig-name descname">get_midtopright</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexCell.get_midtopright" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.get_origin">
 <code class="sig-name descname">get_origin</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexCell.get_origin" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.get_right">
 <code class="sig-name descname">get_right</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexCell.get_right" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.get_top">
 <code class="sig-name descname">get_top</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexCell.get_top" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.get_topleft">
 <code class="sig-name descname">get_topleft</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexCell.get_topleft" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.get_topright">
 <code class="sig-name descname">get_topright</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexCell.get_topright" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.bottom">
 <em class="property">property </em><code class="sig-name descname">bottom</code><a class="headerlink" href="#cocos.tiles.HexCell.bottom" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.bottomleft">
 <em class="property">property </em><code class="sig-name descname">bottomleft</code><a class="headerlink" href="#cocos.tiles.HexCell.bottomleft" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.bottomright">
 <em class="property">property </em><code class="sig-name descname">bottomright</code><a class="headerlink" href="#cocos.tiles.HexCell.bottomright" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.center">
 <em class="property">property </em><code class="sig-name descname">center</code><a class="headerlink" href="#cocos.tiles.HexCell.center" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.left">
 <em class="property">property </em><code class="sig-name descname">left</code><a class="headerlink" href="#cocos.tiles.HexCell.left" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.midbottom">
 <em class="property">property </em><code class="sig-name descname">midbottom</code><a class="headerlink" href="#cocos.tiles.HexCell.midbottom" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.midbottomleft">
 <em class="property">property </em><code class="sig-name descname">midbottomleft</code><a class="headerlink" href="#cocos.tiles.HexCell.midbottomleft" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.midbottomright">
 <em class="property">property </em><code class="sig-name descname">midbottomright</code><a class="headerlink" href="#cocos.tiles.HexCell.midbottomright" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.midtop">
 <em class="property">property </em><code class="sig-name descname">midtop</code><a class="headerlink" href="#cocos.tiles.HexCell.midtop" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.midtopleft">
 <em class="property">property </em><code class="sig-name descname">midtopleft</code><a class="headerlink" href="#cocos.tiles.HexCell.midtopleft" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.midtopright">
 <em class="property">property </em><code class="sig-name descname">midtopright</code><a class="headerlink" href="#cocos.tiles.HexCell.midtopright" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.origin">
 <em class="property">property </em><code class="sig-name descname">origin</code><a class="headerlink" href="#cocos.tiles.HexCell.origin" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.right">
 <em class="property">property </em><code class="sig-name descname">right</code><a class="headerlink" href="#cocos.tiles.HexCell.right" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.top">
 <em class="property">property </em><code class="sig-name descname">top</code><a class="headerlink" href="#cocos.tiles.HexCell.top" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.topleft">
 <em class="property">property </em><code class="sig-name descname">topleft</code><a class="headerlink" href="#cocos.tiles.HexCell.topleft" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexCell.topright">
 <em class="property">property </em><code class="sig-name descname">topright</code><a class="headerlink" href="#cocos.tiles.HexCell.topright" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.tiles.HexMap">
-<em class="property">class </em><code class="sig-name descname">HexMap</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">th</em>, <em class="sig-param">cells</em>, <em class="sig-param">origin=None</em>, <em class="sig-param">properties=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexMap" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">HexMap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">th</span></em>, <em class="sig-param"><span class="n">cells</span></em>, <em class="sig-param"><span class="n">origin</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">properties</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexMap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.tiles.RegularTesselationMap" title="cocos.tiles.RegularTesselationMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.tiles.RegularTesselationMap</span></code></a></p>
 <p>MapLayer with flat-top, regular hexagonal cells.</p>
 <p>Calculated attributes:</p>
@@ -323,23 +337,23 @@ increasing up, such that a map:</p>
 </div>
 <p>has cells = [[‘a’, ‘b’], [‘c’, ‘d’], [‘e’, ‘f’], [‘g’, ‘h’]]</p>
 <p>(and this the cell at (0, 0) is ‘a’ and (1, 1) is ‘d’)</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexMap.get_at_pixel">
-<code class="sig-name descname">get_at_pixel</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexMap.get_at_pixel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_at_pixel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexMap.get_at_pixel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the Cell at pixel (x,y).</p>
 <p>Return None if out of bounds.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexMap.get_in_region">
-<code class="sig-name descname">get_in_region</code><span class="sig-paren">(</span><em class="sig-param">left</em>, <em class="sig-param">bottom</em>, <em class="sig-param">right</em>, <em class="sig-param">top</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexMap.get_in_region" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_in_region</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span></em>, <em class="sig-param"><span class="n">bottom</span></em>, <em class="sig-param"><span class="n">right</span></em>, <em class="sig-param"><span class="n">top</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexMap.get_in_region" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return cells (in [column][row]) that are within the pixel bounds
 specified by the bottom-left (left, bottom) and top-right (right, top) corners.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexMap.get_key_at_pixel">
-<code class="sig-name descname">get_key_at_pixel</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexMap.get_key_at_pixel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_key_at_pixel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexMap.get_key_at_pixel" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the grid coordinates for the hex that covers the point (x, y)</p>
 <dl class="simple">
 <dt>Reference:</dt><dd><p>Hexagonal grid math, by Ruslan Shestopalyuk
@@ -348,58 +362,58 @@ specified by the bottom-left (left, bottom) and top-right (right, top) corners.<
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexMap.get_neighbor">
-<code class="sig-name descname">get_neighbor</code><span class="sig-paren">(</span><em class="sig-param">cell</em>, <em class="sig-param">direction</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexMap.get_neighbor" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_neighbor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cell</span></em>, <em class="sig-param"><span class="n">direction</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexMap.get_neighbor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the neighbor HexCell in the given direction which
 is one of self.UP, self.DOWN, self.UP_LEFT, self.UP_RIGHT,
 self.DOWN_LEFT or self.DOWN_RIGHT.</p>
 <p>Return None if out of bounds.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.HexMap.get_neighbors">
-<code class="sig-name descname">get_neighbors</code><span class="sig-paren">(</span><em class="sig-param">cell</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexMap.get_neighbors" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_neighbors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cell</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexMap.get_neighbors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all neighbor cells for the nominated cell.</p>
 <p>Return a dict with the directions (self.UP, self.DOWN, etc) as keys
 and neighbor cells as values.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.tiles.HexMap.DOWN">
 <code class="sig-name descname">DOWN</code><em class="property"> = 'down'</em><a class="headerlink" href="#cocos.tiles.HexMap.DOWN" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.tiles.HexMap.DOWN_LEFT">
 <code class="sig-name descname">DOWN_LEFT</code><em class="property"> = 'down left'</em><a class="headerlink" href="#cocos.tiles.HexMap.DOWN_LEFT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.tiles.HexMap.DOWN_RIGHT">
 <code class="sig-name descname">DOWN_RIGHT</code><em class="property"> = 'down right'</em><a class="headerlink" href="#cocos.tiles.HexMap.DOWN_RIGHT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.tiles.HexMap.UP">
 <code class="sig-name descname">UP</code><em class="property"> = 'up'</em><a class="headerlink" href="#cocos.tiles.HexMap.UP" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.tiles.HexMap.UP_LEFT">
 <code class="sig-name descname">UP_LEFT</code><em class="property"> = 'up left'</em><a class="headerlink" href="#cocos.tiles.HexMap.UP_LEFT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.tiles.HexMap.UP_RIGHT">
 <code class="sig-name descname">UP_RIGHT</code><em class="property"> = 'up right'</em><a class="headerlink" href="#cocos.tiles.HexMap.UP_RIGHT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.tiles.HexMapLayer">
-<em class="property">class </em><code class="sig-name descname">HexMapLayer</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">ignored</em>, <em class="sig-param">th</em>, <em class="sig-param">cells</em>, <em class="sig-param">origin=None</em>, <em class="sig-param">properties=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexMapLayer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">HexMapLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">ignored</span></em>, <em class="sig-param"><span class="n">th</span></em>, <em class="sig-param"><span class="n">cells</span></em>, <em class="sig-param"><span class="n">origin</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">properties</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.HexMapLayer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.tiles.HexMap" title="cocos.tiles.HexMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.tiles.HexMap</span></code></a>, <a class="reference internal" href="#cocos.tiles.MapLayer" title="cocos.tiles.MapLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.tiles.MapLayer</span></code></a></p>
 <p>A renderable, scrollable tile map covered by hexagonal tiles</p>
 <p>While visually the tiles look hexagonal, the texture that draws each
@@ -431,9 +445,9 @@ increasing up, such that a map:</p>
 <p>has cells = [[‘a’, ‘b’], [‘c’, ‘d’], [‘e’, ‘f’], [‘g’, ‘h’]]</p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.tiles.MapLayer">
-<em class="property">class </em><code class="sig-name descname">MapLayer</code><span class="sig-paren">(</span><em class="sig-param">properties</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.MapLayer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">MapLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">properties</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.MapLayer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.layer.scrolling.html#cocos.layer.scrolling.ScrollableLayer" title="cocos.layer.scrolling.ScrollableLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.layer.scrolling.ScrollableLayer</span></code></a></p>
 <p>Base class for Maps.</p>
 <p>Maps are comprised of tiles and can figure out which tiles are required to
@@ -451,9 +465,9 @@ be rendered on screen.</p>
 </div>
 <p>The debug flag turns on textual display of data about each visible cell
 including its cell index, origin pixel and any properties set on the cell.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.MapLayer.find_cells">
-<code class="sig-name descname">find_cells</code><span class="sig-paren">(</span><em class="sig-param">**requirements</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.MapLayer.find_cells" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">find_cells</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">requirements</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.MapLayer.find_cells" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find all cells that match the properties specified.</p>
 <p>For example:</p>
 <blockquote>
@@ -462,9 +476,9 @@ including its cell index, origin pixel and any properties set on the cell.</p>
 <p>Return a list of Cell instances.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.MapLayer.get">
-<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.MapLayer.get" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">default</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.MapLayer.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets a child given its name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -483,7 +497,7 @@ another node with this name will produce an Exception.</p>
 </div>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.MapLayer.get_visible_cells">
 <code class="sig-name descname">get_visible_cells</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.MapLayer.get_visible_cells" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given the current view in map-space pixels, transform it based
@@ -492,37 +506,37 @@ map-space pixels currently visible.</p>
 <p>Pass to get_in_region to return a list of Cell instances.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.MapLayer.is_visible">
-<code class="sig-name descname">is_visible</code><span class="sig-paren">(</span><em class="sig-param">rect</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.MapLayer.is_visible" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">is_visible</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rect</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.MapLayer.is_visible" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine whether the indicated rect (with .x, .y, .width and
 .height attributes) located in this Layer is visible.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.MapLayer.set_cell_color">
-<code class="sig-name descname">set_cell_color</code><span class="sig-paren">(</span><em class="sig-param">i</em>, <em class="sig-param">j</em>, <em class="sig-param">color</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.MapLayer.set_cell_color" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_cell_color</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">j</span></em>, <em class="sig-param"><span class="n">color</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.MapLayer.set_cell_color" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.MapLayer.set_cell_opacity">
-<code class="sig-name descname">set_cell_opacity</code><span class="sig-paren">(</span><em class="sig-param">i</em>, <em class="sig-param">j</em>, <em class="sig-param">opacity</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.MapLayer.set_cell_opacity" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_cell_opacity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">j</span></em>, <em class="sig-param"><span class="n">opacity</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.MapLayer.set_cell_opacity" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.MapLayer.set_debug">
-<code class="sig-name descname">set_debug</code><span class="sig-paren">(</span><em class="sig-param">debug</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.MapLayer.set_debug" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_debug</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">debug</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.MapLayer.set_debug" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.MapLayer.set_dirty">
 <code class="sig-name descname">set_dirty</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.MapLayer.set_dirty" title="Permalink to this definition">¶</a></dt>
 <dd><p>The viewport has changed in some way.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.MapLayer.set_view">
-<code class="sig-name descname">set_view</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">w</em>, <em class="sig-param">h</em>, <em class="sig-param">viewport_x=0</em>, <em class="sig-param">viewport_y=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.MapLayer.set_view" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_view</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">w</span></em>, <em class="sig-param"><span class="n">h</span></em>, <em class="sig-param"><span class="n">viewport_x</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">viewport_y</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.MapLayer.set_view" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets the position of the viewport for this layer.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -538,16 +552,16 @@ map-space pixels currently visible.</p>
 </dl>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.tiles.MapLayer.debug">
 <code class="sig-name descname">debug</code><em class="property"> = False</em><a class="headerlink" href="#cocos.tiles.MapLayer.debug" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.tiles.RectCell">
-<em class="property">class </em><code class="sig-name descname">RectCell</code><span class="sig-paren">(</span><em class="sig-param">i</em>, <em class="sig-param">j</em>, <em class="sig-param">width</em>, <em class="sig-param">height</em>, <em class="sig-param">properties</em>, <em class="sig-param">tile</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectCell" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">RectCell</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">j</span></em>, <em class="sig-param"><span class="n">width</span></em>, <em class="sig-param"><span class="n">height</span></em>, <em class="sig-param"><span class="n">properties</span></em>, <em class="sig-param"><span class="n">tile</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectCell" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.rect.html#cocos.rect.Rect" title="cocos.rect.Rect"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.rect.Rect</span></code></a>, <a class="reference internal" href="#cocos.tiles.Cell" title="cocos.tiles.Cell"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.tiles.Cell</span></code></a></p>
 <p>A rectangular cell from a MapLayer.</p>
 <p>Cell attributes:</p>
@@ -563,81 +577,81 @@ map-space pixels currently visible.</p>
 These are used by RectCellCollider.</p>
 <p>Note that all pixel attributes are <em>not</em> adjusted for screen,
 view or layer transformations.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RectCell.bottom">
 <em class="property">property </em><code class="sig-name descname">bottom</code><a class="headerlink" href="#cocos.tiles.RectCell.bottom" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RectCell.bottomleft">
 <em class="property">property </em><code class="sig-name descname">bottomleft</code><a class="headerlink" href="#cocos.tiles.RectCell.bottomleft" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RectCell.bottomright">
 <em class="property">property </em><code class="sig-name descname">bottomright</code><a class="headerlink" href="#cocos.tiles.RectCell.bottomright" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RectCell.center">
 <em class="property">property </em><code class="sig-name descname">center</code><a class="headerlink" href="#cocos.tiles.RectCell.center" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RectCell.left">
 <em class="property">property </em><code class="sig-name descname">left</code><a class="headerlink" href="#cocos.tiles.RectCell.left" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RectCell.midbottom">
 <em class="property">property </em><code class="sig-name descname">midbottom</code><a class="headerlink" href="#cocos.tiles.RectCell.midbottom" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RectCell.midleft">
 <em class="property">property </em><code class="sig-name descname">midleft</code><a class="headerlink" href="#cocos.tiles.RectCell.midleft" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RectCell.midright">
 <em class="property">property </em><code class="sig-name descname">midright</code><a class="headerlink" href="#cocos.tiles.RectCell.midright" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RectCell.midtop">
 <em class="property">property </em><code class="sig-name descname">midtop</code><a class="headerlink" href="#cocos.tiles.RectCell.midtop" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RectCell.origin">
 <em class="property">property </em><code class="sig-name descname">origin</code><a class="headerlink" href="#cocos.tiles.RectCell.origin" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RectCell.right">
 <em class="property">property </em><code class="sig-name descname">right</code><a class="headerlink" href="#cocos.tiles.RectCell.right" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RectCell.top">
 <em class="property">property </em><code class="sig-name descname">top</code><a class="headerlink" href="#cocos.tiles.RectCell.top" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RectCell.topleft">
 <em class="property">property </em><code class="sig-name descname">topleft</code><a class="headerlink" href="#cocos.tiles.RectCell.topleft" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RectCell.topright">
 <em class="property">property </em><code class="sig-name descname">topright</code><a class="headerlink" href="#cocos.tiles.RectCell.topright" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.tiles.RectMap">
-<em class="property">class </em><code class="sig-name descname">RectMap</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">tw</em>, <em class="sig-param">th</em>, <em class="sig-param">cells</em>, <em class="sig-param">origin=None</em>, <em class="sig-param">properties=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMap" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">RectMap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">tw</span></em>, <em class="sig-param"><span class="n">th</span></em>, <em class="sig-param"><span class="n">cells</span></em>, <em class="sig-param"><span class="n">origin</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">properties</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.tiles.RegularTesselationMap" title="cocos.tiles.RegularTesselationMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.tiles.RegularTesselationMap</span></code></a></p>
 <p>Rectangular map.</p>
 <p>Cells are stored in column-major order with y increasing up,
@@ -651,18 +665,18 @@ allowing [i][j] addressing:</p>
 </div>
 <p>Thus cells = [[‘a’, ‘d’], [‘b’, ‘e’], [‘c’, ‘f’]]</p>
 <p>(and thus the cell at (0, 0) is ‘a’ and (0, 1) is ‘d’)</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RectMap.get_at_pixel">
-<code class="sig-name descname">get_at_pixel</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMap.get_at_pixel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_at_pixel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMap.get_at_pixel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return Cell at pixel px=(x,y) on the map.</p>
 <p>The pixel coordinate passed in is in the map’s coordinate space,
 unmodified by screen, layer or view transformations.</p>
 <p>Return None if out of bounds.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RectMap.get_in_region">
-<code class="sig-name descname">get_in_region</code><span class="sig-paren">(</span><em class="sig-param">left</em>, <em class="sig-param">bottom</em>, <em class="sig-param">right</em>, <em class="sig-param">top</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMap.get_in_region" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_in_region</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span></em>, <em class="sig-param"><span class="n">bottom</span></em>, <em class="sig-param"><span class="n">right</span></em>, <em class="sig-param"><span class="n">top</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMap.get_in_region" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return cells that intersects the rectangle left, bottom, right, top
 in an area greater than zero</p>
 <p>(left, bottom) and (right, top) are the lower left and upper right
@@ -680,23 +694,23 @@ intersects</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RectMap.get_key_at_pixel">
-<code class="sig-name descname">get_key_at_pixel</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMap.get_key_at_pixel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_key_at_pixel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMap.get_key_at_pixel" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns the grid coordinates for the hex that covers the point (x, y)</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RectMap.get_neighbor">
-<code class="sig-name descname">get_neighbor</code><span class="sig-paren">(</span><em class="sig-param">cell</em>, <em class="sig-param">direction</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMap.get_neighbor" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_neighbor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cell</span></em>, <em class="sig-param"><span class="n">direction</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMap.get_neighbor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the neighbor Cell in the given direction (dx, dy) which
 is one of self.UP, self.DOWN, self.LEFT or self.RIGHT.</p>
 <p>Returns None if out of bounds.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RectMap.get_neighbors">
-<code class="sig-name descname">get_neighbors</code><span class="sig-paren">(</span><em class="sig-param">cell</em>, <em class="sig-param">diagonals=False</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMap.get_neighbors" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_neighbors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cell</span></em>, <em class="sig-param"><span class="n">diagonals</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMap.get_neighbors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get all cells touching the sides of the nominated cell.</p>
 <p>If “diagonals” is True then return the cells touching the corners
 of this cell too.</p>
@@ -704,168 +718,173 @@ of this cell too.</p>
 and neighbor cells as values.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.tiles.RectMap.DOWN">
 <code class="sig-name descname">DOWN</code><em class="property"> = (0, -1)</em><a class="headerlink" href="#cocos.tiles.RectMap.DOWN" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.tiles.RectMap.LEFT">
 <code class="sig-name descname">LEFT</code><em class="property"> = (-1, 0)</em><a class="headerlink" href="#cocos.tiles.RectMap.LEFT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.tiles.RectMap.RIGHT">
 <code class="sig-name descname">RIGHT</code><em class="property"> = (1, 0)</em><a class="headerlink" href="#cocos.tiles.RectMap.RIGHT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.tiles.RectMap.UP">
 <code class="sig-name descname">UP</code><em class="property"> = (0, 1)</em><a class="headerlink" href="#cocos.tiles.RectMap.UP" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.tiles.RectMapCollider">
 <em class="property">class </em><code class="sig-name descname">RectMapCollider</code><a class="headerlink" href="#cocos.tiles.RectMapCollider" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>moved to cocos.mapcolliders</p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.tiles.RectMapLayer">
-<em class="property">class </em><code class="sig-name descname">RectMapLayer</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">tw</em>, <em class="sig-param">th</em>, <em class="sig-param">cells</em>, <em class="sig-param">origin=None</em>, <em class="sig-param">properties=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMapLayer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">RectMapLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">tw</span></em>, <em class="sig-param"><span class="n">th</span></em>, <em class="sig-param"><span class="n">cells</span></em>, <em class="sig-param"><span class="n">origin</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">properties</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RectMapLayer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.tiles.RectMap" title="cocos.tiles.RectMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.tiles.RectMap</span></code></a>, <a class="reference internal" href="#cocos.tiles.MapLayer" title="cocos.tiles.MapLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.tiles.MapLayer</span></code></a></p>
 <p>A renderable, scrollable rect map.</p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.tiles.RegularTesselationMap">
 <em class="property">class </em><code class="sig-name descname">RegularTesselationMap</code><a class="headerlink" href="#cocos.tiles.RegularTesselationMap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>A regularly tesselated map that allows access to its cells by index
 (i, j).</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.RegularTesselationMap.get_cell">
-<code class="sig-name descname">get_cell</code><span class="sig-paren">(</span><em class="sig-param">i</em>, <em class="sig-param">j</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RegularTesselationMap.get_cell" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_cell</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">i</span></em>, <em class="sig-param"><span class="n">j</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.RegularTesselationMap.get_cell" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return Cell at cell pos=(i, j).</p>
 <p>Return None if out of bounds.</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.tiles.Resource">
-<em class="property">class </em><code class="sig-name descname">Resource</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Resource</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Load some tile mapping resources from an XML file.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.Resource.add_resource">
-<code class="sig-name descname">add_resource</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">resource</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.add_resource" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add_resource</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">resource</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.add_resource" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.Resource.find">
-<code class="sig-name descname">find</code><span class="sig-paren">(</span><em class="sig-param">cls</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.find" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">find</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cls</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.find" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find all elements of the given class in this resource.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.Resource.find_file">
-<code class="sig-name descname">find_file</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.find_file" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">find_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.find_file" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.Resource.findall">
-<code class="sig-name descname">findall</code><span class="sig-paren">(</span><em class="sig-param">cls</em>, <em class="sig-param">ns=''</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.findall" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">findall</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cls</span></em>, <em class="sig-param"><span class="n">ns</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.findall" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find all elements of the given class in this resource and all
 &lt;requires&gt;’ed resources.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.Resource.get_resource">
-<code class="sig-name descname">get_resource</code><span class="sig-paren">(</span><em class="sig-param">ref</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.get_resource" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_resource</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ref</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.get_resource" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.Resource.handle">
-<code class="sig-name descname">handle</code><span class="sig-paren">(</span><em class="sig-param">tag</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.handle" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">handle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.handle" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.Resource.register_factory">
-<em class="property">classmethod </em><code class="sig-name descname">register_factory</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.register_factory" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">register_factory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.register_factory" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.Resource.requires_factory">
-<code class="sig-name descname">requires_factory</code><span class="sig-paren">(</span><em class="sig-param">tag</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.requires_factory" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">requires_factory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.requires_factory" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.Resource.resource_factory">
-<code class="sig-name descname">resource_factory</code><span class="sig-paren">(</span><em class="sig-param">tag</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.resource_factory" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">resource_factory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.resource_factory" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.Resource.save_xml">
-<code class="sig-name descname">save_xml</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.save_xml" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save_xml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Resource.save_xml" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save this resource’s XML to the indicated file.</p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.tiles.Resource.cache">
 <code class="sig-name descname">cache</code><em class="property"> = {}</em><a class="headerlink" href="#cocos.tiles.Resource.cache" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="cocos.tiles.Resource.factories">
 <code class="sig-name descname">factories</code><em class="property"> = {'hexmap': &lt;function hexmap_factory&gt;, 'image': &lt;function image_factory&gt;, 'imageatlas': &lt;function imageatlas_factory&gt;, 'rectmap': &lt;function rectmap_factory&gt;, 'requires': &lt;function Resource.requires_factory&gt;, 'resource': &lt;function Resource.resource_factory&gt;, 'tileset': &lt;function tileset_factory&gt;}</em><a class="headerlink" href="#cocos.tiles.Resource.factories" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.tiles.Tile">
-<em class="property">class </em><code class="sig-name descname">Tile</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">properties</em>, <em class="sig-param">image</em>, <em class="sig-param">offset=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Tile" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Tile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">properties</span></em>, <em class="sig-param"><span class="n">image</span></em>, <em class="sig-param"><span class="n">offset</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.Tile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Tiles hold an image and some optional properties.</p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.tiles.TileSet">
-<em class="property">class </em><code class="sig-name descname">TileSet</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">properties</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TileSet" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">TileSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em>, <em class="sig-param"><span class="n">properties</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TileSet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
 <p>Contains a set of Tile objects referenced by some id.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.TileSet.add">
-<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param">properties</em>, <em class="sig-param">image</em>, <em class="sig-param">id=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TileSet.add" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">properties</span></em>, <em class="sig-param"><span class="n">image</span></em>, <em class="sig-param"><span class="n">id</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TileSet.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add a new Tile to this TileSet, generating a unique id if
 necessary.</p>
 <p>Returns the Tile instance.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.TileSet.from_atlas">
-<em class="property">classmethod </em><code class="sig-name descname">from_atlas</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">firstgid</em>, <em class="sig-param">file</em>, <em class="sig-param">tile_width</em>, <em class="sig-param">tile_height</em>, <em class="sig-param">row_padding=0</em>, <em class="sig-param">column_padding=0</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TileSet.from_atlas" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">from_atlas</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">firstgid</span></em>, <em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">tile_width</span></em>, <em class="sig-param"><span class="n">tile_height</span></em>, <em class="sig-param"><span class="n">row_padding</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">column_padding</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TileSet.from_atlas" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.TileSet.generate_id">
 <em class="property">classmethod </em><code class="sig-name descname">generate_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TileSet.generate_id" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="attribute">
+<dl class="py method">
+<dt id="cocos.tiles.TileSet.get_tile">
+<code class="sig-name descname">get_tile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gid</span></em>, <em class="sig-param"><span class="n">texture_region</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TileSet.get_tile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
 <dt id="cocos.tiles.TileSet.tile_id">
 <code class="sig-name descname">tile_id</code><em class="property"> = 0</em><a class="headerlink" href="#cocos.tiles.TileSet.tile_id" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.tiles.TmxObject">
-<em class="property">class </em><code class="sig-name descname">TmxObject</code><span class="sig-paren">(</span><em class="sig-param">tmxtype</em>, <em class="sig-param">usertype</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">width=0</em>, <em class="sig-param">height=0</em>, <em class="sig-param">name=None</em>, <em class="sig-param">gid=None</em>, <em class="sig-param">tile=None</em>, <em class="sig-param">visible=1</em>, <em class="sig-param">points=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObject" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">TmxObject</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tmxtype</span></em>, <em class="sig-param"><span class="n">usertype</span></em>, <em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">width</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">height</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gid</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">tile</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">visible</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">points</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObject" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.rect.html#cocos.rect.Rect" title="cocos.rect.Rect"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.rect.Rect</span></code></a></p>
 <p>Represents an object in a TMX object layer.</p>
 <p>Instances of this class are ussually constructed by calling
@@ -885,9 +904,9 @@ TmxObject.fromxml</p>
 </pre></div>
 </div>
 <p>A ‘rect’ AABB is itself, so x,y is it’s bottomleft corner.</p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.TmxObject.fromxml">
-<em class="property">classmethod </em><code class="sig-name descname">fromxml</code><span class="sig-paren">(</span><em class="sig-param">tag</em>, <em class="sig-param">tilesets</em>, <em class="sig-param">map_height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObject.fromxml" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">fromxml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">tilesets</span></em>, <em class="sig-param"><span class="n">map_height</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObject.fromxml" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -906,16 +925,16 @@ attributes in the instance will store the info parsed from the class</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.TmxObject.get">
-<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObject.get" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">default</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObject.get" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.tiles.TmxObjectLayer">
-<em class="property">class </em><code class="sig-name descname">TmxObjectLayer</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">color</em>, <em class="sig-param">objects</em>, <em class="sig-param">opacity=1</em>, <em class="sig-param">visible=1</em>, <em class="sig-param">position=(0</em>, <em class="sig-param">0)</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectLayer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">TmxObjectLayer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">color</span></em>, <em class="sig-param"><span class="n">objects</span></em>, <em class="sig-param"><span class="n">opacity</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">visible</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">position</span><span class="o">=</span><span class="default_value">0, 0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectLayer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.tiles.MapLayer" title="cocos.tiles.MapLayer"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.tiles.MapLayer</span></code></a></p>
 <p>A layer composed of basic primitive shapes.</p>
 <p>Actually encompasses a TMX &lt;objectgroup&gt; but even the TMX documentation
@@ -929,118 +948,128 @@ refers to them as object layers, so I will.</p>
 <span class="n">objects</span> <span class="o">-</span> <span class="n">the</span> <span class="n">objects</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">Layer</span> <span class="p">(</span><span class="n">TmxObject</span> <span class="n">instances</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.TmxObjectLayer.collide">
-<code class="sig-name descname">collide</code><span class="sig-paren">(</span><em class="sig-param">rect</em>, <em class="sig-param">propname</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectLayer.collide" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">collide</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rect</span></em>, <em class="sig-param"><span class="n">propname</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectLayer.collide" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find all objects the rect is touching that have the indicated
 property name set.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.TmxObjectLayer.find_cells">
-<code class="sig-name descname">find_cells</code><span class="sig-paren">(</span><em class="sig-param">**requirements</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectLayer.find_cells" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">find_cells</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">requirements</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectLayer.find_cells" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find all objects with the given properties set.</p>
 <p>Called “find_cells” for compatibility with existing cocos tile API.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.TmxObjectLayer.fromxml">
-<em class="property">classmethod </em><code class="sig-name descname">fromxml</code><span class="sig-paren">(</span><em class="sig-param">tag</em>, <em class="sig-param">tilesets</em>, <em class="sig-param">map_height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectLayer.fromxml" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">fromxml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">tilesets</span></em>, <em class="sig-param"><span class="n">map_height</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectLayer.fromxml" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.TmxObjectLayer.get_at">
-<code class="sig-name descname">get_at</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectLayer.get_at" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_at</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectLayer.get_at" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the first object found at the nominated (x, y) coordinate.</p>
 <p>Return an TmxObject instance or None.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.TmxObjectLayer.get_in_region">
-<code class="sig-name descname">get_in_region</code><span class="sig-paren">(</span><em class="sig-param">left</em>, <em class="sig-param">bottom</em>, <em class="sig-param">right</em>, <em class="sig-param">top</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectLayer.get_in_region" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_in_region</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">left</span></em>, <em class="sig-param"><span class="n">bottom</span></em>, <em class="sig-param"><span class="n">right</span></em>, <em class="sig-param"><span class="n">top</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectLayer.get_in_region" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return objects that overlaps any interior point of the rect with
 bottom-left (left, bottom) and top-right (right, top) corners.</p>
 <p>Return a list of TmxObject instances.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.TmxObjectLayer.match">
-<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param">**properties</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectLayer.match" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">match</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">properties</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectLayer.match" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find all objects with the given properties set to the given values.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.tiles.TmxObjectLayer.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">dt</em>, <em class="sig-param">*args</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectLayer.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dt</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.TmxObjectLayer.update" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="function">
-<dt id="cocos.tiles.color4_to_text">
-<code class="sig-name descname">color4_to_text</code><span class="sig-paren">(</span><em class="sig-param">v</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.color4_to_text" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt id="cocos.tiles.capture_layer">
+<code class="sig-name descname">capture_layer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layer</span></em>, <em class="sig-param"><span class="n">tilesets</span></em>, <em class="sig-param"><span class="n">width</span></em>, <em class="sig-param"><span class="n">height</span></em>, <em class="sig-param"><span class="n">cell_cls</span></em>, <em class="sig-param"><span class="n">layer_cls</span></em>, <em class="sig-param"><span class="n">tile_width</span></em>, <em class="sig-param"><span class="n">tile_height</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.capture_layer" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
+<dt id="cocos.tiles.capture_tileset">
+<code class="sig-name descname">capture_tileset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">map_path</span></em>, <em class="sig-param"><span class="n">tileset_tag</span></em>, <em class="sig-param"><span class="n">tileset_path</span></em>, <em class="sig-param"><span class="n">firstgid</span></em>, <em class="sig-param"><span class="n">tile_width</span></em>, <em class="sig-param"><span class="n">tile_height</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.capture_tileset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="cocos.tiles.color4_to_text">
+<code class="sig-name descname">color4_to_text</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">v</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.color4_to_text" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
 <dt id="cocos.tiles.decode_base64">
-<code class="sig-name descname">decode_base64</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.decode_base64" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">decode_base64</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.decode_base64" title="Permalink to this definition">¶</a></dt>
 <dd><p>returns a bytes object</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.tiles.decompress_gzip">
-<code class="sig-name descname">decompress_gzip</code><span class="sig-paren">(</span><em class="sig-param">in_bytes</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.decompress_gzip" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">decompress_gzip</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_bytes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.decompress_gzip" title="Permalink to this definition">¶</a></dt>
 <dd><p>decompress the input array of bytes to an array of bytes using gzip</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.tiles.decompress_zlib">
-<code class="sig-name descname">decompress_zlib</code><span class="sig-paren">(</span><em class="sig-param">in_bytes</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.decompress_zlib" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">decompress_zlib</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">in_bytes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.decompress_zlib" title="Permalink to this definition">¶</a></dt>
 <dd><p>decompress the input array of bytes to an array of bytes using zlib</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.tiles.hex_width">
-<code class="sig-name descname">hex_width</code><span class="sig-paren">(</span><em class="sig-param">height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.hex_width" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">hex_width</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">height</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.hex_width" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine a regular hexagon’s width given its height.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.tiles.hexmap_factory">
-<code class="sig-name descname">hexmap_factory</code><span class="sig-paren">(</span><em class="sig-param">resource</em>, <em class="sig-param">tag</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.hexmap_factory" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">hexmap_factory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resource</span></em>, <em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.hexmap_factory" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.tiles.image_factory">
-<code class="sig-name descname">image_factory</code><span class="sig-paren">(</span><em class="sig-param">resource</em>, <em class="sig-param">tag</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.image_factory" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">image_factory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resource</span></em>, <em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.image_factory" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.tiles.imageatlas_factory">
-<code class="sig-name descname">imageatlas_factory</code><span class="sig-paren">(</span><em class="sig-param">resource</em>, <em class="sig-param">tag</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.imageatlas_factory" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">imageatlas_factory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resource</span></em>, <em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.imageatlas_factory" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.tiles.load">
-<code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.load" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load resource(s) defined in the indicated XML file.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.tiles.load_tiles">
-<code class="sig-name descname">load_tiles</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.load_tiles" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">load_tiles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.load_tiles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load some tile mapping resources from an XML file.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.tiles.load_tmx">
-<code class="sig-name descname">load_tmx</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.load_tmx" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">load_tmx</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.load_tmx" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load some tile mapping resources from a TMX file.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.tiles.parse_tmx_points">
-<code class="sig-name descname">parse_tmx_points</code><span class="sig-paren">(</span><em class="sig-param">tag</em>, <em class="sig-param">obj_x</em>, <em class="sig-param">obj_y</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.parse_tmx_points" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">parse_tmx_points</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tag</span></em>, <em class="sig-param"><span class="n">obj_x</span></em>, <em class="sig-param"><span class="n">obj_y</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.parse_tmx_points" title="Permalink to this definition">¶</a></dt>
 <dd><p>parses tmx tag points into left, bottom, right, top, points</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -1064,29 +1093,48 @@ points: list of points in a gl coordinates system relative to (left, bottom)</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.tiles.rectmap_factory">
-<code class="sig-name descname">rectmap_factory</code><span class="sig-paren">(</span><em class="sig-param">resource</em>, <em class="sig-param">tag</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.rectmap_factory" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">rectmap_factory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resource</span></em>, <em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.rectmap_factory" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.tiles.text_to_4tuple_int">
-<code class="sig-name descname">text_to_4tuple_int</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.text_to_4tuple_int" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">text_to_4tuple_int</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.text_to_4tuple_int" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.tiles.tileset_factory">
-<code class="sig-name descname">tileset_factory</code><span class="sig-paren">(</span><em class="sig-param">resource</em>, <em class="sig-param">tag</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.tileset_factory" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">tileset_factory</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">resource</span></em>, <em class="sig-param"><span class="n">tag</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.tileset_factory" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.tiles.tmx_coords_to_gl">
-<code class="sig-name descname">tmx_coords_to_gl</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">map_height</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.tmx_coords_to_gl" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">tmx_coords_to_gl</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em>, <em class="sig-param"><span class="n">y</span></em>, <em class="sig-param"><span class="n">map_height</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.tmx_coords_to_gl" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py function">
+<dt id="cocos.tiles.tmx_get_path">
+<code class="sig-name descname">tmx_get_path</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node_path</span></em>, <em class="sig-param"><span class="n">source_attrib</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.tmx_get_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>In a tmx file a node can reference an external file using the “source”
+attrib.</p>
+<p>If present, it will contain a relative path from the node path, and the
+relpath will use the linux path separator even in Windows.</p>
+<p>If not present, content is embedded in the node.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="cocos.tiles.tmx_get_properties">
+<code class="sig-name descname">tmx_get_properties</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">node</span></em>, <em class="sig-param"><span class="n">map_path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.tiles.tmx_get_properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>type of the property can be string (default), int, float, bool, color or
+file; file value in the xml is relative to the map element, here it will
+be returned as an abspath</p>
+</dd></dl>
 
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -1114,7 +1162,7 @@ points: list of points in a gl coordinates system relative to (left, bottom)</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -1135,12 +1183,13 @@ points: list of points in a gl coordinates system relative to (left, bottom)</p>
           <a href="cocos.text.html" title="cocos.text module"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li> 
+          <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.tiles module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>

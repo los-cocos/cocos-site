@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>cocos.actions.quadmoveby_actions module &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocos.actions.quadmoveby_actions module &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.actions.tiledgrid_actions module" href="cocos.actions.tiledgrid_actions.html" />
@@ -35,7 +36,8 @@
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.actions.html" accesskey="U">cocos.actions package</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="cocos.actions.html" accesskey="U">cocos.actions package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.actions.quadmoveby_actions module</a></li> 
       </ul>
     </div>  
 
@@ -49,9 +51,54 @@
 <p>Implementation of QuadMoveBy actions</p>
 <p>These actions modifies the x and y coordinates of fixed-size grid of (1,1).
 The z-coordinate is not modified.</p>
-<dl class="class">
+<dl class="py class">
+<dt id="cocos.actions.quadmoveby_actions.CornerSwap">
+<em class="property">class </em><code class="sig-name descname">CornerSwap</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.CornerSwap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.actions.quadmoveby_actions.QuadMoveBy" title="cocos.actions.quadmoveby_actions.QuadMoveBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.quadmoveby_actions.QuadMoveBy</span></code></a></p>
+<p>CornerSwap moves the upper-left corner to the bottom-right corner in vice-versa in duration time.
+The resulting effect is a reflection + rotation.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="cocos.actions.quadmoveby_actions.Flip">
+<em class="property">class </em><code class="sig-name descname">Flip</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.Flip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.actions.quadmoveby_actions.QuadMoveBy" title="cocos.actions.quadmoveby_actions.QuadMoveBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.quadmoveby_actions.QuadMoveBy</span></code></a></p>
+<p>Flip moves the upper-left corner to the bottom-left corner and vice-versa, and
+moves the upper-right corner to the bottom-left corner and vice-versa, flipping the
+window upside-down, and right-left.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="cocos.actions.quadmoveby_actions.FlipX">
+<em class="property">class </em><code class="sig-name descname">FlipX</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.FlipX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.actions.quadmoveby_actions.QuadMoveBy" title="cocos.actions.quadmoveby_actions.QuadMoveBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.quadmoveby_actions.QuadMoveBy</span></code></a></p>
+<p>FlipX flips the screen horizontally, moving the left corners to the right, and vice-versa.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="cocos.actions.quadmoveby_actions.FlipY">
+<em class="property">class </em><code class="sig-name descname">FlipY</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.FlipY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.actions.quadmoveby_actions.QuadMoveBy" title="cocos.actions.quadmoveby_actions.QuadMoveBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.quadmoveby_actions.QuadMoveBy</span></code></a></p>
+<p>FlipY flips the screen vertically, moving the upper corners to the bottom, and vice-versa.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="cocos.actions.quadmoveby_actions.MoveCornerDown">
+<em class="property">class </em><code class="sig-name descname">MoveCornerDown</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.MoveCornerDown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.actions.quadmoveby_actions.QuadMoveBy" title="cocos.actions.quadmoveby_actions.QuadMoveBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.quadmoveby_actions.QuadMoveBy</span></code></a></p>
+<p>MoveCornerDown moves the upper-left corner to the bottom-right corner in duration time</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="cocos.actions.quadmoveby_actions.MoveCornerUp">
+<em class="property">class </em><code class="sig-name descname">MoveCornerUp</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.MoveCornerUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cocos.actions.quadmoveby_actions.QuadMoveBy" title="cocos.actions.quadmoveby_actions.QuadMoveBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.quadmoveby_actions.QuadMoveBy</span></code></a></p>
+<p>MoveCornerUp moves the bottom-right corner to the upper-left corner in duration time</p>
+</dd></dl>
+
+<dl class="py class">
 <dt id="cocos.actions.quadmoveby_actions.QuadMoveBy">
-<em class="property">class </em><code class="sig-name descname">QuadMoveBy</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.QuadMoveBy" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">QuadMoveBy</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.QuadMoveBy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cocos.actions.basegrid_actions.html#cocos.actions.basegrid_actions.Grid3DAction" title="cocos.actions.basegrid_actions.Grid3DAction"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.basegrid_actions.Grid3DAction</span></code></a></p>
 <p>QuadMoveBy moves each vertex of the grid. The size of the grid is (1,1)</p>
 <p>Vertex positions:</p>
@@ -70,9 +117,9 @@ The z-coordinate is not modified.</p>
         <span class="n">duration</span><span class="p">))</span>
 </pre></div>
 </div>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.quadmoveby_actions.QuadMoveBy.init">
-<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">src0=(0</em>, <em class="sig-param">0)</em>, <em class="sig-param">src1=(-1</em>, <em class="sig-param">-1)</em>, <em class="sig-param">src2=(-1</em>, <em class="sig-param">-1)</em>, <em class="sig-param">src3=(-1</em>, <em class="sig-param">-1)</em>, <em class="sig-param">delta0=(0</em>, <em class="sig-param">0)</em>, <em class="sig-param">delta1=(0</em>, <em class="sig-param">0)</em>, <em class="sig-param">delta2=(0</em>, <em class="sig-param">0)</em>, <em class="sig-param">delta3=(0</em>, <em class="sig-param">0)</em>, <em class="sig-param">grid=(1</em>, <em class="sig-param">1)</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.QuadMoveBy.init" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">src0</span><span class="o">=</span><span class="default_value">0, 0</span></em>, <em class="sig-param"><span class="n">src1</span><span class="o">=</span><span class="default_value">- 1, - 1</span></em>, <em class="sig-param"><span class="n">src2</span><span class="o">=</span><span class="default_value">- 1, - 1</span></em>, <em class="sig-param"><span class="n">src3</span><span class="o">=</span><span class="default_value">- 1, - 1</span></em>, <em class="sig-param"><span class="n">delta0</span><span class="o">=</span><span class="default_value">0, 0</span></em>, <em class="sig-param"><span class="n">delta1</span><span class="o">=</span><span class="default_value">0, 0</span></em>, <em class="sig-param"><span class="n">delta2</span><span class="o">=</span><span class="default_value">0, 0</span></em>, <em class="sig-param"><span class="n">delta3</span><span class="o">=</span><span class="default_value">0, 0</span></em>, <em class="sig-param"><span class="n">grid</span><span class="o">=</span><span class="default_value">1, 1</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.QuadMoveBy.init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initializes the QuadMoveBy</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -98,9 +145,9 @@ The z-coordinate is not modified.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.actions.quadmoveby_actions.QuadMoveBy.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.QuadMoveBy.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.QuadMoveBy.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets called on every frame
 ‘t’ is the time elapsed normalized to [0, 1]
 If this action takes 5 seconds to execute, <cite>t</cite> will be equal to 0
@@ -111,61 +158,16 @@ updated.</p>
 
 </dd></dl>
 
-<dl class="class">
-<dt id="cocos.actions.quadmoveby_actions.MoveCornerUp">
-<em class="property">class </em><code class="sig-name descname">MoveCornerUp</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.MoveCornerUp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.actions.quadmoveby_actions.QuadMoveBy" title="cocos.actions.quadmoveby_actions.QuadMoveBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.quadmoveby_actions.QuadMoveBy</span></code></a></p>
-<p>MoveCornerUp moves the bottom-right corner to the upper-left corner in duration time</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="cocos.actions.quadmoveby_actions.MoveCornerDown">
-<em class="property">class </em><code class="sig-name descname">MoveCornerDown</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.MoveCornerDown" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.actions.quadmoveby_actions.QuadMoveBy" title="cocos.actions.quadmoveby_actions.QuadMoveBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.quadmoveby_actions.QuadMoveBy</span></code></a></p>
-<p>MoveCornerDown moves the upper-left corner to the bottom-right corner in duration time</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="cocos.actions.quadmoveby_actions.CornerSwap">
-<em class="property">class </em><code class="sig-name descname">CornerSwap</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.CornerSwap" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.actions.quadmoveby_actions.QuadMoveBy" title="cocos.actions.quadmoveby_actions.QuadMoveBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.quadmoveby_actions.QuadMoveBy</span></code></a></p>
-<p>CornerSwap moves the upper-left corner to the bottom-right corner in vice-versa in duration time.
-The resulting effect is a reflection + rotation.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="cocos.actions.quadmoveby_actions.Flip">
-<em class="property">class </em><code class="sig-name descname">Flip</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.Flip" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.actions.quadmoveby_actions.QuadMoveBy" title="cocos.actions.quadmoveby_actions.QuadMoveBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.quadmoveby_actions.QuadMoveBy</span></code></a></p>
-<p>Flip moves the upper-left corner to the bottom-left corner and vice-versa, and
-moves the upper-right corner to the bottom-left corner and vice-versa, flipping the
-window upside-down, and right-left.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="cocos.actions.quadmoveby_actions.FlipX">
-<em class="property">class </em><code class="sig-name descname">FlipX</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.FlipX" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.actions.quadmoveby_actions.QuadMoveBy" title="cocos.actions.quadmoveby_actions.QuadMoveBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.quadmoveby_actions.QuadMoveBy</span></code></a></p>
-<p>FlipX flips the screen horizontally, moving the left corners to the right, and vice-versa.</p>
-</dd></dl>
-
-<dl class="class">
-<dt id="cocos.actions.quadmoveby_actions.FlipY">
-<em class="property">class </em><code class="sig-name descname">FlipY</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.FlipY" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#cocos.actions.quadmoveby_actions.QuadMoveBy" title="cocos.actions.quadmoveby_actions.QuadMoveBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.quadmoveby_actions.QuadMoveBy</span></code></a></p>
-<p>FlipY flips the screen vertically, moving the upper corners to the bottom, and vice-versa.</p>
-</dd></dl>
-
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.actions.quadmoveby_actions.SkewHorizontal">
-<em class="property">class </em><code class="sig-name descname">SkewHorizontal</code><span class="sig-paren">(</span><em class="sig-param">delta=None</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.SkewHorizontal" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">SkewHorizontal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">delta</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.SkewHorizontal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.actions.quadmoveby_actions.QuadMoveBy" title="cocos.actions.quadmoveby_actions.QuadMoveBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.quadmoveby_actions.QuadMoveBy</span></code></a></p>
 <p>SkewHorizontal skews the screen horizontally. default skew: x/3</p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.actions.quadmoveby_actions.SkewVertical">
-<em class="property">class </em><code class="sig-name descname">SkewVertical</code><span class="sig-paren">(</span><em class="sig-param">delta=None</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kw</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.SkewVertical" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">SkewVertical</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">delta</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kw</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.actions.quadmoveby_actions.SkewVertical" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#cocos.actions.quadmoveby_actions.QuadMoveBy" title="cocos.actions.quadmoveby_actions.QuadMoveBy"><code class="xref py py-class docutils literal notranslate"><span class="pre">cocos.actions.quadmoveby_actions.QuadMoveBy</span></code></a></p>
 <p>SkewVertical skews the screen vertically. default skew: y/3</p>
 </dd></dl>
@@ -173,6 +175,7 @@ window upside-down, and right-left.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -200,7 +203,7 @@ window upside-down, and right-left.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -222,12 +225,13 @@ window upside-down, and right-left.</p>
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
-          <li class="nav-item nav-item-2"><a href="cocos.actions.html" >cocos.actions package</a> &#187;</li> 
+          <li class="nav-item nav-item-2"><a href="cocos.actions.html" >cocos.actions package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.actions.quadmoveby_actions module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>

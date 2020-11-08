@@ -1,18 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>cocos.audio.SDL.array module &#8212; cocos v0.6.7 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cocos.audio.SDL.array module &#8212; cocos v0.6.9 documentation</title>
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="cocos.audio.SDL.audio module" href="cocos.audio.SDL.audio.html" />
@@ -36,7 +37,8 @@
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" accesskey="U">cocos.audio.SDL package</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" accesskey="U">cocos.audio.SDL package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.audio.SDL.array module</a></li> 
       </ul>
     </div>  
 
@@ -47,11 +49,11 @@
             
   <div class="section" id="module-cocos.audio.SDL.array">
 <span id="cocos-audio-sdl-array-module"></span><h1>cocos.audio.SDL.array module<a class="headerlink" href="#module-cocos.audio.SDL.array" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
+<dl class="py class">
 <dt id="cocos.audio.SDL.array.SDL_array">
-<em class="property">class </em><code class="sig-name descname">SDL_array</code><span class="sig-paren">(</span><em class="sig-param">ptr</em>, <em class="sig-param">count</em>, <em class="sig-param">ctype</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">SDL_array</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ptr</span></em>, <em class="sig-param"><span class="n">count</span></em>, <em class="sig-param"><span class="n">ctype</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.audio.SDL.array.SDL_array.as_bytes">
 <code class="sig-name descname">as_bytes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.as_bytes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Access the array as raw bytes, regardless of the underlying
@@ -65,7 +67,7 @@ buffer by individual components rather than the encoded pixel.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.audio.SDL.array.SDL_array.as_ctypes">
 <code class="sig-name descname">as_ctypes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.as_ctypes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Access the array as a ctypes array.</p>
@@ -76,7 +78,7 @@ buffer by individual components rather than the encoded pixel.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.audio.SDL.array.SDL_array.as_int16">
 <code class="sig-name descname">as_int16</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.as_int16" title="Permalink to this definition">¶</a></dt>
 <dd><p>Access the array as 16-bit integers, regardless of the underlying
@@ -88,7 +90,7 @@ data type.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.audio.SDL.array.SDL_array.as_int32">
 <code class="sig-name descname">as_int32</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.as_int32" title="Permalink to this definition">¶</a></dt>
 <dd><p>Access the array as 32-bit integers, regardless of the underlying
@@ -100,9 +102,9 @@ data type.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.audio.SDL.array.SDL_array.as_numpy">
-<code class="sig-name descname">as_numpy</code><span class="sig-paren">(</span><em class="sig-param">shape=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.as_numpy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">as_numpy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shape</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.as_numpy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Access the array as a numpy array.</p>
 <p>The numpy array shares the same underlying memory buffer, so
 changes are immediate, and you can use the numpy array as you would
@@ -116,9 +118,9 @@ normally.  To set the entire contents of the array at once, use a
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.audio.SDL.array.SDL_array.from_string">
-<code class="sig-name descname">from_string</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.from_string" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">from_string</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.from_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Copy string data into this array.</p>
 <p>The string must have exactly the same length of this array (in bytes).
 No size checking is performed.</p>
@@ -132,7 +134,7 @@ No size checking is performed.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.audio.SDL.array.SDL_array.have_numpy">
 <code class="sig-name descname">have_numpy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.have_numpy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine if the numpy array module is available.</p>
@@ -143,7 +145,7 @@ No size checking is performed.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="cocos.audio.SDL.array.SDL_array.to_string">
 <code class="sig-name descname">to_string</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.SDL_array.to_string" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a string with the contents of this array.</p>
@@ -156,9 +158,9 @@ No size checking is performed.</p>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="cocos.audio.SDL.array.to_ctypes">
-<code class="sig-name descname">to_ctypes</code><span class="sig-paren">(</span><em class="sig-param">values</em>, <em class="sig-param">count</em>, <em class="sig-param">ctype</em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.to_ctypes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_ctypes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">values</span></em>, <em class="sig-param"><span class="n">count</span></em>, <em class="sig-param"><span class="n">ctype</span></em><span class="sig-paren">)</span><a class="headerlink" href="#cocos.audio.SDL.array.to_ctypes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a ctypes array of the given count and type, with the contents
 of sequence <cite>values</cite>.</p>
 <dl class="field-list simple">
@@ -183,6 +185,7 @@ by the caller for as long as the array is used.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -210,7 +213,7 @@ by the caller for as long as the array is used.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -233,12 +236,13 @@ by the caller for as long as the array is used.</p>
         <li class="nav-item nav-item-0"><a href="../index.html">cocos</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="cocos.html" >cocos package</a> &#187;</li>
           <li class="nav-item nav-item-2"><a href="cocos.audio.html" >cocos.audio package</a> &#187;</li>
-          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" >cocos.audio.SDL package</a> &#187;</li> 
+          <li class="nav-item nav-item-3"><a href="cocos.audio.SDL.html" >cocos.audio.SDL package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">cocos.audio.SDL.array module</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2008-2019, cocos&#39;s team.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+        &#169; Copyright 2008-2020, cocos&#39;s team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.0.
     </div>
   </body>
 </html>
